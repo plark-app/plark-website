@@ -1,0 +1,96 @@
+@import '~normalize.css/normalize.css';
+@import './styles/fonts/critical-montserrat';
+@import './styles/colors';
+
+body {
+    min-width: 320px;
+    background: #fbfcff;
+    font-family: 'Montserrat', 'Helvetica', 'Arial', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: $color-dark;
+    line-height: 1.444;
+    overflow-y: scroll;
+
+    // It's part helps to scroll every page smoozy.
+    // I've checked it on iPhone! Website works bad on iPhone without this part.
+    // Very bad.
+
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    -webkit-font-smoothing: antialiased;
+    text-size-adjust: 100%;
+
+    min-height: 100vh;
+    margin: 0;
+
+    #app {
+        position: relative;
+        width: 100%;
+        min-height: 100vh;
+    }
+}
+
+* {
+    -webkit-tap-highlight-color: transparent;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    font-family: inherit;
+}
+
+input,
+textarea {
+    appearance: none;
+}
+
+:global {
+    a,
+    .link {
+        text-decoration: none;
+        color: #424cfd;
+    }
+
+    .link {
+        &.i-red {
+            color: #ff495c !important;
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
+
+        &.i-bold {
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    .text {
+        &-primary {
+        }
+
+        &-secondary {
+        }
+
+        &-shadow {
+        }
+
+        &-font-sm {
+            font-size: 14px;
+        }
+
+        &-font-xs {
+            font-size: 10px;
+        }
+    }
+}

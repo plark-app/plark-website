@@ -1,0 +1,130 @@
+const path = require("path");
+const autoprefixer = require("autoprefixer");
+
+module.exports = {
+  getTSLoader() {
+    return {
+      test: /(\.tsx?)$/,
+      use: [
+        "cache-loader",
+        {
+          loader: "awesome-typescript-loader",
+          options: { silent: true }
+        }
+      ]
+    };
+  },
+
+  getBaseCssLoadersList() {
+    return [
+      // 'cache-loader',
+      {
+        loader: "css-loader",
+        options: {
+          sourceMap: true,
+          modules: true,
+          // localIdentName: '[name]__[local]--[hash:base64:5]',
+          localIdentName: isDev
+            ? "[name]__[local]--[hash:base64:5]"
+            : "[hash:base64:6]",
+          camelCase: true,
+          importLoaders: 2
+        }
+      },
+      {
+        loader: "postcss-loader",
+        options: {
+          sourceMap: true,
+          plugins: [
+            autoprefixer({
+              grid: true,
+              browsers: ["> 0.5%", "not ie < 11"]
+            })
+          ]
+        }
+      },
+      {
+        loader: "sass-loader",
+        options: {
+          sourceMap: true,
+          includePaths: [path.resolve(process.cwd(), "src")],
+          outputStyle: "expanded"
+        }
+      }
+    ];
+  },
+
+  getSVGLoader() {
+    return {
+      test: /\.component\.svg$/,
+      use: [
+        "svg-react-loader",
+        {
+          loader: "svgo-loader",
+          options: {
+            floatPrecision: 2,
+            plugins: [
+              {
+                removeViewBox: false,
+                removeEmptyAttrs: true
+              }
+            ]
+          }
+        }
+      ]
+    };
+  },
+
+  getSVGIconsLoader() {
+    return {
+      test: /(?<!\.component)(?<!\.raw)\.svg$/,
+      exclude: [
+        path.resolve(process.cwd(), "resources"),
+        path.resolve(process.cwd(), "src")
+      ],
+      use: [
+        "svg-sprite-loader",
+        {
+          loader: "svgo-loader",
+          options: {
+            floatPrecision: 2,
+            plugins: [
+              {
+                removeEmptyAttrs: true
+              }
+            ]
+          }
+        }
+      ]
+    };
+  },
+
+  getImgLoader() {
+    return {
+      test: /(?<!\.component)(?<!\.raw)\.(png|jpg|gif|svg)$/i,
+      exclude: [path.resolve(process.cwd(), "resources")],
+      use: [
+        {
+          loader: "file-loader",
+          options: {
+            name: isDev ? "[name].[hash:6].[ext]" : "[hash:6].[ext]"
+          }
+        }
+      ]
+    };
+  },
+
+  getMDLoader() {
+    return {
+      test: /\.md$/,
+      use: ["cache-loader", "raw-loader", { loader: "markdown-loader" }]
+    };
+  },
+
+  getRawLoader() {
+    return {
+      test: /\.raw\.(png|jpg|gif|svg)$/i,
+      use: ["raw-loader"]
+    };
+  }
+};

@@ -1,0 +1,6 @@
+{
+    "private": true,
+    "name": "no-match",
+    "main": "no-match.tsx",
+    "typings": "no-match.tsx"
+}
