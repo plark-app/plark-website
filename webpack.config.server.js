@@ -4,7 +4,7 @@ const webpack = require("webpack");
 const nodeExternals = require("webpack-node-externals");
 const Loaders = require("./webpack/loaders");
 
-const isDev = process.env.NODE_ENV !== "production";
+const isDev = process.env.NODE_ENV !== 'production';
 
 module.exports = {
   mode: isDev ? "development" : "production",

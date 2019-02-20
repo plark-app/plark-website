@@ -1,6 +1,8 @@
 const path = require("path");
 const autoprefixer = require("autoprefixer");
 
+const isDev = process.env.NODE_ENV !== 'production';
+
 module.exports = {
   getTSLoader() {
     return {

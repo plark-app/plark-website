@@ -10,7 +10,7 @@ const CompressionPlugin = require("compression-webpack-plugin");
 const BrotliPlugin = require("brotli-webpack-plugin");
 const Loaders = require("./webpack/loaders");
 
-const isDev = process.env.NODE_ENV !== "production";
+const isDev = process.env.NODE_ENV !== 'production';
 const extractCSS = new MiniCssExtractPlugin({
   filename: isDev ? "[name].css" : "[contenthash:6].css"
 });
