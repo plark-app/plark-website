@@ -1,3 +1,3 @@
-declare module "react-is" {
-  export function isFragment(v: any): boolean;
+declare module 'react-is' {
+    export function isFragment(v: any): boolean;
 }

@@ -1,45 +1,45 @@
-import fs from "fs";
-import { createLogger, transports, format } from "winston";
-import { TransformableInfo } from "logform";
+import fs from 'fs';
+import { createLogger, transports, format } from 'winston';
+import { TransformableInfo } from 'logform';
 
-const mkdirp = require("mkdirp-sync");
+const mkdirp = require('mkdirp-sync');
 
-const logDir = process.env.LOG_PATH || "/var/log/docker/plark-website";
+const logDir = process.env.LOG_PATH || '/var/log/docker/plark-website';
 if (!fs.existsSync(logDir)) {
-  mkdirp(logDir);
+    mkdirp(logDir);
 }
 
 const fileFormat = format.combine(format.timestamp(), format.json());
 export const logger = createLogger({
-  transports: [
-    new transports.File({
-      format: fileFormat,
-      dirname: logDir,
-      filename: "error.json",
-      level: "error"
-    }),
-    new transports.File({
-      format: fileFormat,
-      dirname: logDir,
-      filename: "app.json",
-      level: "info"
-    })
-  ]
+    transports: [
+        new transports.File({
+            format: fileFormat,
+            dirname: logDir,
+            filename: 'error.json',
+            level: 'error',
+        }),
+        new transports.File({
+            format: fileFormat,
+            dirname: logDir,
+            filename: 'app.json',
+            level: 'info',
+        }),
+    ],
 });
 
-if (process.env.NODE_ENV !== "production" || process.env.DEBUG) {
-  logger.add(
-    new transports.Console({
-      level: "debug",
-      format: format.combine(
-        format.colorize(),
-        format.timestamp({ format: "YYYY-MM-DD HH:mm:ss" }),
-        format.printf((info: TransformableInfo) => {
-          return `${info.timestamp} ${info.level}: ${JSON.stringify(
-            info.message
-          )}`;
-        })
-      )
-    })
-  );
+if (process.env.NODE_ENV !== 'production' || process.env.DEBUG) {
+    logger.add(
+        new transports.Console({
+            level: 'debug',
+            format: format.combine(
+                format.colorize(),
+                format.timestamp({ format: 'YYYY-MM-DD HH:mm:ss' }),
+                format.printf((info: TransformableInfo) => {
+                    return `${info.timestamp} ${info.level}: ${JSON.stringify(
+                        info.message,
+                    )}`;
+                }),
+            ),
+        }),
+    );
 }

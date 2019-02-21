@@ -13,26 +13,26 @@ const headContent = `
 `;
 
 export default class GtmManager {
-  protected readonly gtmKey: string;
+    protected readonly gtmKey: string;
 
-  public constructor(gtmKey: string) {
-    this.gtmKey = gtmKey;
-  }
+    public constructor(gtmKey: string) {
+        this.gtmKey = gtmKey;
+    }
 
-  public renderHead(): JSX.Element {
-    const content = headContent.replace("{gtmKey}", this.gtmKey);
+    public renderHead(): JSX.Element {
+        const content = headContent.replace("{gtmKey}", this.gtmKey);
 
-    return <script dangerouslySetInnerHTML={{ __html: content }} />;
-  }
+        return <script dangerouslySetInnerHTML={{ __html: content }} />;
+    }
 
-  public renderBody(): JSX.Element {
-    return (
-      <noscript>
-        <iframe
-          src={`https://www.googletagmanager.com/ns.html?id=${this.gtmKey}`}
-          style={{ display: "none", visibility: "hidden", height: 0, width: 0 }}
-        />
-      </noscript>
-    );
-  }
+    public renderBody(): JSX.Element {
+        return (
+            <noscript>
+                <iframe
+                    src={`https://www.googletagmanager.com/ns.html?id=${this.gtmKey}`}
+                    style={{ display: 'none', visibility: 'hidden', height: 0, width: 0 }}
+                />
+            </noscript>
+        );
+    }
 }
