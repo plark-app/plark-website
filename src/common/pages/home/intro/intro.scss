@@ -1,0 +1,48 @@
+@import '../../../styles/colors';
+@import '../../../styles/media';
+@import '../../../styles/vars';
+
+.intro {
+    &__section {
+        background-color: $color-dark;
+    }
+
+    &__section-content {
+        height: 100vh;
+        min-height: 300px;
+        padding: 90px 0 60px 0;
+    }
+
+    &__topic {
+        margin: 0 auto;
+        max-width: 530px;
+        text-align: center;
+        color: white;
+    }
+
+
+    &__title {
+        font-size: 46px;
+        line-height: 1.13;
+        font-weight: bold;
+        margin: 0;
+        padding: 0;
+    }
+
+    &__pre-title {
+        opacity: 0.5;
+        font-size: 11px;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+        letter-spacing: 3px;
+    }
+
+    &__footer {
+        position: absolute;
+        bottom: 20px;
+        left: 0;
+        right: 0;
+
+        z-index: 0;
+    }
+}

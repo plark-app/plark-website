@@ -1,0 +1,6 @@
+{
+    "private": true,
+    "name": "footer",
+    "main": "footer.tsx",
+    "typings": "footer.tsx"
+}

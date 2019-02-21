@@ -23,8 +23,8 @@
         "locales:import": "gulp locales:import"
     },
     "dependencies": {
-        "slim-i18n": "1.1.0",
         "animated-scroll-to": "^1.2.2",
+        "animejs": "^3.0.1",
         "axios": "0.18.0",
         "babel-polyfill": "^6.26.0",
         "body-parser": "1.18.3",
@@ -61,6 +61,7 @@
         "react-youtube": "^7.6.0",
         "recompose": "0.27.1",
         "sitemap": "^1.13.0",
+        "slim-i18n": "1.1.0",
         "svg-sprite-loader": "3.8.0",
         "tslib": "1.9.2",
         "twitter": "^1.7.1",
@@ -68,6 +69,7 @@
         "winston": "^3.0.0"
     },
     "devDependencies": {
+        "@types/animejs": "^2.0.1",
         "@types/body-parser": "1.17.0",
         "@types/classnames": "2.2.4",
         "@types/compression": "0.0.36",

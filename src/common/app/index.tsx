@@ -4,13 +4,15 @@ import { compose } from 'recompose';
 import { Location } from 'history';
 import { TransitionGroup } from 'react-transition-group';
 import { Switch, withRouter, Route, RouteComponentProps } from 'react-router';
-
 import { joinUrlWithLocation, normalizeLocalePath } from 'common/utils/url';
+import { styleTrigger } from 'common/utils/style-trigger';
 import { getLocaleByShotCode } from 'common/utils/locale';
-import Head from 'common/utils/head';
 import { MatchProps, RouteDescriptor, isDefaultLocalePath, isAnyLocalePath } from 'common/utils/router';
+import Head from 'common/utils/head';
 import { routes } from 'common/routes';
 import AsyncRoute from 'common/components/async-route';
+
+import styles from '../app.scss';
 
 type AppProps = RouteComponentProps<MatchProps>;
 
@@ -20,6 +22,8 @@ class App extends React.Component<AppProps> {
     }
 
     public render(): JSX.Element {
+        styleTrigger(styles);
+
         return (
             <TransitionGroup>
                 <MainRouter {...this.props} />

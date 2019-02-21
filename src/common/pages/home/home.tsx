@@ -1,7 +1,40 @@
 import React from 'react';
+import Helmet from 'react-helmet';
+import Footer from 'common/components/footer';
+import Intro from './intro';
+import styles from './home.scss';
+
 
 export default class Home extends React.Component {
-    public render(): JSX.Element {
-        return <div>Epta!</div>;
+    public componentDidMount(): void {
+        document.addEventListener('scroll', this.__handlerScroll);
     }
+
+    public componentWillUnmount(): void {
+        document.removeEventListener('scroll', this.__handlerScroll);
+    }
+
+    public render(): JSX.Element {
+        return (
+            <>
+                <Helmet>
+                    <body className={styles.homeBody} />
+                </Helmet>
+                <Intro />
+                <div className={styles.homeLandingContent}>
+                    <div style={{ height: '2000px' }} />
+                </div>
+
+                <Footer />
+            </>
+        );
+    }
+
+
+    private __handlerScroll = () => {
+        const body = document.querySelector('html');
+        if (body) {
+            console.log(body.scrollTop);
+        }
+    };
 }
