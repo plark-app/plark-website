@@ -23,6 +23,10 @@
         "locales:import": "gulp locales:import"
     },
     "dependencies": {
+        "@fortawesome/fontawesome-svg-core": "^1.2.15",
+        "@fortawesome/free-brands-svg-icons": "^5.7.2",
+        "@fortawesome/free-solid-svg-icons": "^5.7.2",
+        "@fortawesome/react-fontawesome": "^0.1.4",
         "animated-scroll-to": "^1.2.2",
         "animejs": "^3.0.1",
         "axios": "0.18.0",
@@ -69,6 +73,7 @@
         "winston": "^3.0.0"
     },
     "devDependencies": {
+        "@fortawesome/fontawesome-common-types": "^0.2.15",
         "@types/animejs": "^2.0.1",
         "@types/body-parser": "1.17.0",
         "@types/classnames": "2.2.4",

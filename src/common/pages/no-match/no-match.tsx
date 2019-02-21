@@ -1,11 +1,11 @@
 import React from 'react';
 import { compose } from 'recompose';
-import { RouteComponentProps, withRouter } from 'react-router';
-
 import { withTranslations, WithTranslationsProps } from 'slim-i18n';
-
+import { RouteComponentProps, withRouter } from 'react-router';
+import Section from 'common/components/section';
 import * as text from './no-match-text';
 import styles from './no-match.scss';
+import { NavLink } from 'react-router-dom';
 
 type NoMatchProps = WithTranslationsProps & RouteComponentProps<object, any>;
 
@@ -21,7 +21,10 @@ class NoMatch extends React.Component<NoMatchProps> {
         const { i18n } = this.props;
         return (
             <>
-                <div className={styles.box}>{text.wentWrong(i18n)}</div>
+                <Section>
+                    <h1 className={styles.title}>{text.wentWrong(i18n)}</h1>
+                    <NavLink to="/">{text.backToHome(i18n)}</NavLink>
+                </Section>
             </>
         );
     }

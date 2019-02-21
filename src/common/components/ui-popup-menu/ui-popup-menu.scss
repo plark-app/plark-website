@@ -1,0 +1,83 @@
+@import '../../styles/vars';
+@import '../../styles/colors';
+
+.ui-popup-menu {
+    z-index: 1000;
+    position: relative;
+    background: #fff;
+    width: 100%;
+    box-shadow: 0 10px 20px transparentize(#333333, 0.8);
+    border-radius: 5px;
+    padding: 0;
+    will-change: transform, opacity;
+
+    &__body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+}
+
+.item {
+    width: 100%;
+    padding: 0 10px;
+    margin: 0;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    align-items: center;
+
+    height: 50px;
+    text-decoration: none;
+    text-align: left;
+
+    background: none;
+    color: $color-dark;
+    font-size: 14px;
+    font-weight: 500;
+
+    transition: color ease-in-out $dur;
+
+    &.i-active {
+        color: $color-primary;
+    }
+
+    &:hover,
+    &:focus {
+        color: $color-primary;
+        transition-duration: $dur-fast;
+    }
+
+    border-bottom: 1px solid transparentize(#333333, 0.9);
+}
+
+:global {
+    .popup-menu-animation {
+        &-enter {
+            opacity: 0;
+            transform: translateY(-10px);
+
+            &-active {
+                opacity: 1;
+                transform: translateY(0);
+                transition: transform ease-in-out, opacity ease-in-out;
+                transition-duration: $dur-fast;
+            }
+        }
+
+        &-exit {
+            opacity: 1;
+            transform: translateY(0);
+
+            &-active {
+                opacity: 0;
+                transform: translateY(-10px);
+                transition: transform ease-out, opacity ease-out;
+                transition-duration: $dur;
+            }
+        }
+    }
+}

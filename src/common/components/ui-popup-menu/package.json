@@ -1,0 +1,6 @@
+{
+    "private": true,
+    "name": "ui-popup-menu",
+    "main": "ui-popup-menu.tsx",
+    "typings": "ui-popup-menu.tsx"
+}

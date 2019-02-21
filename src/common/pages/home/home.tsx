@@ -21,6 +21,11 @@ export default class Home extends React.Component {
                     <body className={styles.homeBody} />
                 </Helmet>
                 <Intro />
+
+                <img src="/img/iphones.png"
+                     style={{ position: 'absolute', bottom: '-260px', left: '50%', transform: 'translateX(-50%)', width: '500px' }}
+                />
+
                 <div className={styles.homeLandingContent}>
                     <div style={{ height: '2000px' }} />
                 </div>
