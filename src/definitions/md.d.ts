@@ -1,4 +1,4 @@
-declare module "*.md" {
-  const md: string;
-  export = md;
+declare module '*.md' {
+    const md: string;
+    export = md;
 }

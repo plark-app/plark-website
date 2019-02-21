@@ -1,21 +1,21 @@
-declare module "sitemap" {
-  export interface Sitemap {
-    toString(): string;
-  }
+declare module 'sitemap' {
+    export interface Sitemap {
+        toString(): string;
+    }
 
-  export type SitemapOptions = {
-    hostname?: string;
-    cacheTime?: number;
-    xslUrl?: string;
-    xmlNs?: string;
-    urls: any[];
-  };
+    export type SitemapOptions = {
+        hostname?: string;
+        cacheTime?: number;
+        xslUrl?: string;
+        xmlNs?: string;
+        urls: any[];
+    };
 
-  interface SitemapGenerator {
-    createSitemap(option: SitemapOptions): Sitemap;
-  }
+    interface SitemapGenerator {
+        createSitemap(option: SitemapOptions): Sitemap;
+    }
 
-  const sitemapGenerator: SitemapGenerator;
+    const sitemapGenerator: SitemapGenerator;
 
-  export default sitemapGenerator;
+    export default sitemapGenerator;
 }

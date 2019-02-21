@@ -1,1 +1,1 @@
-export { default } from "common/pages/no-match";
+export { default } from 'common/pages/no-match';

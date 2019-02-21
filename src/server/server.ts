@@ -26,17 +26,22 @@ expressApp.use(
 
 expressApp.use(cookieParser());
 
-expressApp.use('/', expressStaticGzip(path.join(process.cwd(), 'dest/client'), {
-    enableBrotli: true,
-    orderPreference: ['br'],
-    maxAge: '1y',
-}));
+expressApp.use(
+    '/',
+    expressStaticGzip(path.join(process.cwd(), 'dest/client'), {
+        enableBrotli: true,
+        orderPreference: ['br'],
+        maxAge: '1y',
+    }),
+);
 
 const appHandlers = [
     Middlewares.redirects,
-    Middlewares.cache,
+    Middlewares.language,
+    // Middlewares.cache,
     Router.reactApplicationRender,
 ];
+
 if (process.env.NODE_ENV === 'development') {
     appHandlers.unshift(Middlewares.dev);
 }

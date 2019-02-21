@@ -1,77 +1,72 @@
-import i18next from "i18next";
-import { ITranslationsAdapter } from "slim-i18n";
-import { locales, getLocale } from "common/utils/locale";
+import i18next from 'i18next';
+import { ITranslationsAdapter } from 'slim-i18n';
+import { locales, getLocale } from 'common/utils/locale';
 
 i18next.init({
-  lng: "en-us",
-  lowerCaseLng: true,
-  keySeparator: false,
-  nsSeparator: false,
-  defaultNS: "translation",
-  resources: {
-    "en-us": {
-      translation: require(`resources/locales/en-us.json`)
-    }
-  }
+    lng: 'en-us',
+    lowerCaseLng: true,
+    keySeparator: false,
+    nsSeparator: false,
+    defaultNS: 'translation',
+    resources: {
+        'en-us': {
+            translation: require(`resources/locales/en-us.json`),
+        },
+    },
 });
 
 export default class I18N {
-  public get currentLanguage(): string {
-    return i18next.language;
-  }
+    public get currentLanguage(): string {
+        return i18next.language;
+    }
 
-  public get currentLanguageCode(): string {
-    return getLocale(this.currentLanguage).shortCode;
-  }
+    public get currentLanguageCode(): string {
+        return getLocale(this.currentLanguage).shortCode;
+    }
 
-  public isAvailableLanguage(language: string): boolean {
-    return locales[language] !== undefined;
-  }
+    public isAvailableLanguage(language: string): boolean {
+        return locales[language] !== undefined;
+    }
 
-  public getI18n = (): ITranslationsAdapter => {
-    return {
-      language: this.currentLanguage,
-      languageCode: this.currentLanguageCode,
-      gettext: (key: string) => i18next.t(key),
-      ngettext: (singularKey: string, _pluralKey: string, count: number) =>
-        i18next.t(singularKey, { count }),
-      pgettext: (context: string, key: string) => i18next.t(key, { context }),
-      npgettext: (
-        context: string,
-        key: string,
-        _pluralKey: string,
-        count: number
-      ) => i18next.t(key, { context, count })
+    public getI18n = (): ITranslationsAdapter => {
+        return {
+            language: this.currentLanguage,
+            languageCode: this.currentLanguageCode,
+            gettext: (key: string) => i18next.t(key),
+            ngettext: (singularKey: string, _pluralKey: string, count: number) => i18next.t(singularKey, { count }),
+            pgettext: (context: string, key: string) => i18next.t(key, { context }),
+            npgettext: (context: string, key: string, _pluralKey: string, count: number) =>
+                i18next.t(key, { context, count }),
+        };
     };
-  };
 
-  public onLanguageChanged(handler: () => void): void {
-    i18next.on("languageChanged", handler);
-  }
-
-  public async setLanguage(language: string): Promise<void> {
-    if (this.currentLanguage === language) {
-      return;
+    public onLanguageChanged(handler: () => void): void {
+        i18next.on('languageChanged', handler);
     }
 
-    // Load resource
-    const {
-      default: resource
-    } = await import(/* webpackChunkName: '[request]' */ `resources/locales/${language}.json`);
+    public async setLanguage(language: string): Promise<void> {
+        if (this.currentLanguage === language) {
+            return;
+        }
 
-    // Workaround for localise.biz exported json
-    if ("" in resource) {
-      delete resource[""];
+        // Load resource
+        const {
+            default: resource,
+        } = await import(/* webpackChunkName: '[request]' */ `resources/locales/${language}.json`);
+
+        // Workaround for localise.biz exported json
+        if ('' in resource) {
+            delete resource[''];
+        }
+
+        i18next.addResources(language, 'translation', resource);
+
+        await i18next.changeLanguage(language);
     }
-
-    i18next.addResources(language, "translation", resource);
-
-    await i18next.changeLanguage(language);
-  }
 }
 
 export type TranslateFunction = (i18n: ITranslationsAdapter) => string;
 
 export function __(text: string): TranslateFunction {
-  return (i18n: ITranslationsAdapter) => i18n.gettext(text);
+    return (i18n: ITranslationsAdapter) => i18n.gettext(text);
 }

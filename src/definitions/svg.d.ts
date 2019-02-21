@@ -1,8 +1,6 @@
-declare module "*.svg" {
-  import { ComponentType, ClassAttributes, SVGAttributes } from "react";
+declare module '*.svg' {
+    import { ComponentType, ClassAttributes, SVGAttributes } from 'react';
 
-  const svg: ComponentType<
-    ClassAttributes<SVGElement> & SVGAttributes<SVGElement>
-  >;
-  export = svg;
+    const svg: ComponentType<ClassAttributes<SVGElement> & SVGAttributes<SVGElement>>;
+    export = svg;
 }

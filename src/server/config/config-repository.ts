@@ -10,10 +10,7 @@ export type ConfigValue = object | string | number | null | undefined;
 export class ConfigRepository {
     private config: Record<string, ConfigValue> = {};
 
-    public get<T = ConfigValue>(
-        key: string | string[],
-        defaultValue: T | undefined = undefined,
-    ): T {
+    public get<T = ConfigValue>(key: string | string[], defaultValue: T | undefined = undefined): T {
         return get(this.config, key, defaultValue);
     }
 

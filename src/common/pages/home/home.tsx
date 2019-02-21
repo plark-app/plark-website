@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react';
 
 export default class Home extends React.Component {
-  public render(): JSX.Element {
-    return <div>Epta!</div>;
-  }
+    public render(): JSX.Element {
+        return <div>Epta!</div>;
+    }
 }

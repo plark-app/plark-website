@@ -8,14 +8,14 @@ module.exports = {
         return {
             test: /(\.tsx?)$/,
             use: [
-                'cache-loader',
+                // 'cache-loader',
                 {
                     loader: 'awesome-typescript-loader',
                     options: {
-                        silent: true
-                    }
-                }
-            ]
+                        silent: true,
+                    },
+                },
+            ],
         };
     },
 
@@ -28,8 +28,8 @@ module.exports = {
                     modules: true,
                     localIdentName: isDev ? '[name]__[local]--[hash:base64:5]' : '[hash:base64:6]',
                     camelCase: true,
-                    importLoaders: 2
-                }
+                    importLoaders: 2,
+                },
             },
             {
                 loader: 'postcss-loader',
@@ -38,19 +38,19 @@ module.exports = {
                     plugins: [
                         autoprefixer({
                             grid: true,
-                            browsers: ['> 0.5%', 'not ie < 11']
-                        })
-                    ]
-                }
+                            browsers: ['> 0.5%', 'not ie < 11'],
+                        }),
+                    ],
+                },
             },
             {
                 loader: 'sass-loader',
                 options: {
                     sourceMap: true,
                     includePaths: [path.resolve(process.cwd(), 'src')],
-                    outputStyle: 'expanded'
-                }
-            }
+                    outputStyle: 'expanded',
+                },
+            },
         ];
     },
 
@@ -66,61 +66,58 @@ module.exports = {
                         plugins: [
                             {
                                 removeViewBox: false,
-                                removeEmptyAttrs: true
-                            }
-                        ]
-                    }
-                }
-            ]
+                                removeEmptyAttrs: true,
+                            },
+                        ],
+                    },
+                },
+            ],
         };
     },
 
     getSVGIconsLoader() {
         return {
             test: /(?<!\.component)(?<!\.raw)\.svg$/,
-            exclude: [
-                path.resolve(process.cwd(), 'resources'),
-                path.resolve(process.cwd(), 'src')
-            ],
+            exclude: [path.resolve(process.cwd(), 'resources'), path.resolve(process.cwd(), 'src')],
             use: [
                 'svg-sprite-loader',
                 {
                     loader: 'svgo-loader',
                     options: {
                         floatPrecision: 3,
-                        plugins: [{removeEmptyAttrs: true}]
-                    }
-                }
-            ]
+                        plugins: [{ removeEmptyAttrs: true }],
+                    },
+                },
+            ],
         };
     },
 
     getImgLoader() {
         return {
             test: /(?<!\.component)(?<!\.raw)\.(png|jpg|gif|svg)$/i,
-            exclude: [path.resolve(process.cwd(), "resources")],
+            exclude: [path.resolve(process.cwd(), 'resources')],
             use: [
                 {
                     loader: 'file-loader',
                     options: {
-                        name: isDev ? '[name].[hash:6].[ext]' : '[hash:6].[ext]'
-                    }
-                }
-            ]
+                        name: isDev ? '[name].[hash:6].[ext]' : '[hash:6].[ext]',
+                    },
+                },
+            ],
         };
     },
 
     getMDLoader() {
         return {
             test: /\.md$/,
-            use: ['cache-loader', 'raw-loader', {loader: 'markdown-loader'}]
+            use: ['cache-loader', 'raw-loader', { loader: 'markdown-loader' }],
         };
     },
 
     getRawLoader() {
         return {
             test: /\.raw\.(png|jpg|gif|svg)$/i,
-            use: ['raw-loader']
+            use: ['raw-loader'],
         };
-    }
+    },
 };

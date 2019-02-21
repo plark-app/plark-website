@@ -1,18 +1,18 @@
-const os = require("os");
-const path = require("path");
-const webpack = require("webpack");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const StatsWriterPlugin = require("webpack-stats-plugin").StatsWriterPlugin;
-const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
-const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
-const RequireFrom = require("webpack-require-from");
-const CompressionPlugin = require("compression-webpack-plugin");
-const BrotliPlugin = require("brotli-webpack-plugin");
-const Loaders = require("./webpack/loaders");
+const os = require('os');
+const path = require('path');
+const webpack = require('webpack');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const StatsWriterPlugin = require('webpack-stats-plugin').StatsWriterPlugin;
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const RequireFrom = require('webpack-require-from');
+const CompressionPlugin = require('compression-webpack-plugin');
+const BrotliPlugin = require('brotli-webpack-plugin');
+const Loaders = require('./webpack/loaders');
 
 const isDev = process.env.NODE_ENV !== 'production';
 const extractCSS = new MiniCssExtractPlugin({
-    filename: isDev ? "[name].css" : "[contenthash:6].css"
+    filename: isDev ? '[name].css' : '[contenthash:6].css',
 });
 
 function getEntry(name) {
@@ -23,26 +23,26 @@ module.exports = {
     mode: isDev ? 'development' : 'production',
     devtool: isDev ? 'source-map' : false,
 
-    context: path.resolve(process.cwd(), "src"),
+    context: path.resolve(process.cwd(), 'src'),
 
     resolve: {
-        extensions: [".ts", ".tsx", ".js", ".jsx", ".json"],
-        modules: [path.resolve(process.cwd(), "src"), 'node_modules'],
+        extensions: ['.ts', '.tsx', '.js', '.jsx', '.json'],
+        modules: [path.resolve(process.cwd(), 'src'), 'node_modules'],
         alias: {
             resources: path.resolve(process.cwd(), 'resources'),
-            config: path.resolve(process.cwd(), 'config')
-        }
+            config: path.resolve(process.cwd(), 'config'),
+        },
     },
 
     entry: {
-        main: getEntry("client/main")
+        main: getEntry('client/main'),
     },
 
     output: {
-        path: path.resolve(process.cwd(), "dest/client"),
-        publicPath: "/",
-        filename: isDev ? "[name].js" : "[hash:6].js",
-        chunkFilename: isDev ? "[name].js" : "[chunkhash:6].js"
+        path: path.resolve(process.cwd(), 'dest/client'),
+        publicPath: '/',
+        filename: isDev ? '[name].js' : '[hash:6].js',
+        chunkFilename: isDev ? '[name].js' : '[chunkhash:6].js',
     },
 
     module: {
@@ -53,27 +53,27 @@ module.exports = {
             Loaders.getSVGIconsLoader(),
             Loaders.getSVGLoader(),
             Loaders.getImgLoader(),
-            Loaders.getRawLoader()
-        ]
+            Loaders.getRawLoader(),
+        ],
     },
 
     performance: {
-        hints: false
+        hints: false,
     },
 
     optimization: {
-        runtimeChunk: "single",
+        runtimeChunk: 'single',
         splitChunks: {
             cacheGroups: {
                 default: false,
                 vendors: {
                     test: /node_modules/,
-                    chunks: "initial",
-                    name: "vendors",
+                    chunks: 'initial',
+                    name: 'vendors',
                     priority: 10,
-                    enforce: true
-                }
-            }
+                    enforce: true,
+                },
+            },
         },
 
         minimizer: [
@@ -81,24 +81,24 @@ module.exports = {
                 sourceMap: isDev,
                 uglifyOptions: {
                     output: {
-                        comments: false
-                    }
+                        comments: false,
+                    },
                 },
-                parallel: os.cpus().length
+                parallel: os.cpus().length,
             }),
 
             new OptimizeCSSAssetsPlugin({
-                cssProcessorOptions: {discardComments: {removeAll: true}}
-            })
-        ]
+                cssProcessorOptions: { discardComments: { removeAll: true } },
+            }),
+        ],
     },
 
     plugins: getWebpackPlugins(),
 
     stats: {
         children: false,
-        chunks: false
-    }
+        chunks: false,
+    },
 };
 
 function getCSSLoader() {
@@ -106,37 +106,33 @@ function getCSSLoader() {
 
     return {
         test: /(\.scss|\.css)$/,
-        use: isDev
-            ? ["style-loader", ...loaders]
-            : [MiniCssExtractPlugin.loader, ...loaders]
+        use: isDev ? ['style-loader', ...loaders] : [MiniCssExtractPlugin.loader, ...loaders],
     };
 }
 
 function getWebpackPlugins() {
     const plugins = [
         new StatsWriterPlugin({
-            filename: "../stats.json",
+            filename: '../stats.json',
             transform(data) {
                 const assetsByChunkName = data.assetsByChunkName;
 
                 for (const key of Object.keys(assetsByChunkName)) {
                     if (Array.isArray(assetsByChunkName[key])) {
-                        assetsByChunkName[key] = assetsByChunkName[key].filter(
-                            name => !name.match(/\.map$/)
-                        );
+                        assetsByChunkName[key] = assetsByChunkName[key].filter((name) => !name.match(/\.map$/));
                     }
                 }
 
-                return JSON.stringify(assetsByChunkName, null, "    ");
-            }
+                return JSON.stringify(assetsByChunkName, null, '    ');
+            },
         }),
         new RequireFrom({
-            methodName: "__getPublicPath",
-            suppressErrors: true
+            methodName: '__getPublicPath',
+            suppressErrors: true,
         }),
         new webpack.DefinePlugin({
-            __isBrowser__: "true"
-        })
+            __isBrowser__: 'true',
+        }),
     ];
 
     // In production we have different environment
@@ -144,28 +140,23 @@ function getWebpackPlugins() {
         plugins.unshift(extractCSS);
         plugins.push(
             new CompressionPlugin({
-                asset: "[path].gz[query]",
-                algorithm: "gzip",
+                asset: '[path].gz[query]',
+                algorithm: 'gzip',
                 test: /\.js$|\.css$|\.html$|\.svg$/,
                 //   threshold: 10240,
-                minRatio: 0.8
-            })
+                minRatio: 0.8,
+            }),
         );
         plugins.push(
             new BrotliPlugin({
-                asset: "[path].br[query]",
+                asset: '[path].br[query]',
                 test: /\.js$|\.css$|\.html$|\.svg$/,
                 //   threshold: 10240,
-                minRatio: 0.8
-            })
+                minRatio: 0.8,
+            }),
         );
 
-        plugins.push(
-            new webpack.ContextReplacementPlugin(
-                /validatorjs[/\\]src[/\\]lang$/,
-                /en/
-            )
-        );
+        plugins.push(new webpack.ContextReplacementPlugin(/validatorjs[/\\]src[/\\]lang$/, /en/));
     }
 
     return plugins;

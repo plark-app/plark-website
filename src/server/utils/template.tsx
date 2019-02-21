@@ -37,47 +37,47 @@ export default function template(data: TemplateData): string {
     const bodyAttrs: any = helmet.bodyAttributes.toComponent();
 
     return (
-        "<!DOCTYPE html>" +
+        '<!DOCTYPE html>' +
         ReactDOMServer.renderToStaticMarkup(
             <html {...htmlAttrs}>
-            <head>
-                {helmet.title.toComponent()}
-                <meta charSet="UTF-8" />
-                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-                <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
-                <Favicon />
-                {getPreloadLinks(chunks)}
-                {helmet.meta.toComponent()}
-                {helmet.link.toComponent()}
-                {helmet.script.toComponent()}
-                {criticalCss && <style dangerouslySetInnerHTML={{ __html: criticalCss }} />}
-            </head>
-            <body {...bodyAttrs}>
-            <div id="app" dangerouslySetInnerHTML={{ __html: markup }} />
-            <script dangerouslySetInnerHTML={{ __html: initScript }} />
-            <script src={getChunkAssetFilePath("runtime")} defer />
-            {chunks.map((chunk: string) => (
-                <script key={chunk} src={getChunkAssetFilePath(chunk)} defer />
-            ))}
-            <script dangerouslySetInnerHTML={{ __html: getLoadCSSScript([...chunks]) }} />
-            {gtmManager.renderHead()}
-            {gtmManager.renderBody()}
-            </body>
+                <head>
+                    {helmet.title.toComponent()}
+                    <meta charSet="UTF-8" />
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                    <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
+                    <Favicon />
+                    {getPreloadLinks(chunks)}
+                    {helmet.meta.toComponent()}
+                    {helmet.link.toComponent()}
+                    {helmet.script.toComponent()}
+                    {criticalCss && <style dangerouslySetInnerHTML={{ __html: criticalCss }} />}
+                </head>
+                <body {...bodyAttrs}>
+                    <div id="app" dangerouslySetInnerHTML={{ __html: markup }} />
+                    <script dangerouslySetInnerHTML={{ __html: initScript }} />
+                    <script src={getChunkAssetFilePath('runtime')} defer />
+                    {chunks.map((chunk: string) => (
+                        <script key={chunk} src={getChunkAssetFilePath(chunk)} defer />
+                    ))}
+                    <script dangerouslySetInnerHTML={{ __html: getLoadCSSScript([...chunks]) }} />
+                    {gtmManager.renderHead()}
+                    {gtmManager.renderBody()}
+                </body>
             </html>,
         )
     );
 }
 
 function getLoadCSSScript(chunks: string[]): string {
-    if (process.env.NODE_ENV !== "production") {
-        return "";
+    if (process.env.NODE_ENV !== 'production') {
+        return '';
     }
 
     const chunksLoadCalls = chunks.map((chunk: string) => {
         try {
             return `loadCSS('${getChunkAssetFilePath(chunk, /\.css$/)}');`;
         } catch {
-            return "";
+            return '';
         }
     });
 
@@ -89,7 +89,7 @@ function getLoadCSSScript(chunks: string[]): string {
             usedLaterCSS.href = src;
             headElement.appendChild(usedLaterCSS);
         }
-        setTimeout(function(){${chunksLoadCalls.join("\n")}}, 0);
+        setTimeout(function(){${chunksLoadCalls.join('\n')}}, 0);
     `;
 }
 
@@ -116,20 +116,10 @@ function getPreloadLinks(chunks: string[]): JSX.Element | null {
                 crossOrigin="anonymous"
             />
             {[...chunks].map((chunk: string) => (
-                <link
-                    key={chunk + "style"}
-                    rel="preload"
-                    href={getChunkAssetFilePath(chunk, cssRe)}
-                    as="style"
-                />
+                <link key={chunk + 'style'} rel="preload" href={getChunkAssetFilePath(chunk, cssRe)} as="style" />
             ))}
-            {["runtime", ...chunks].map((chunk: string) => (
-                <link
-                    key={chunk + "script"}
-                    rel="preload"
-                    href={getChunkAssetFilePath(chunk)}
-                    as="script"
-                />
+            {['runtime', ...chunks].map((chunk: string) => (
+                <link key={chunk + 'script'} rel="preload" href={getChunkAssetFilePath(chunk)} as="script" />
             ))}
         </>
     );

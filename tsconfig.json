@@ -29,7 +29,6 @@
         ]
     },
     "exclude": [
-        "node_modules/@types",
         "dest/",
         "src/**/*.spec.tsx",
         "src/**/*.story.tsx"

@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 const headContent = `
     document.addEventListener('DOMContentLoaded', function(){
@@ -20,7 +20,7 @@ export default class GtmManager {
     }
 
     public renderHead(): JSX.Element {
-        const content = headContent.replace("{gtmKey}", this.gtmKey);
+        const content = headContent.replace('{gtmKey}', this.gtmKey);
 
         return <script dangerouslySetInnerHTML={{ __html: content }} />;
     }

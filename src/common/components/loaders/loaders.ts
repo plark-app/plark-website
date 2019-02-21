@@ -1,2 +1,2 @@
-export { RouteProgress } from "./route-progress";
-export { Spinner } from "./spinner";
+export { RouteProgress } from './route-progress';
+export { Spinner } from './spinner';

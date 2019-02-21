@@ -35,9 +35,7 @@ if (process.env.NODE_ENV !== 'production' || process.env.DEBUG) {
                 format.colorize(),
                 format.timestamp({ format: 'YYYY-MM-DD HH:mm:ss' }),
                 format.printf((info: TransformableInfo) => {
-                    return `${info.timestamp} ${info.level}: ${JSON.stringify(
-                        info.message,
-                    )}`;
+                    return `${info.timestamp} ${info.level}: ${JSON.stringify(info.message)}`;
                 }),
             ),
         }),
