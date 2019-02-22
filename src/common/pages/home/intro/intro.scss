@@ -5,9 +5,6 @@
 .intro {
     &__section {
         background-color: $color-dark;
-    }
-
-    &__section-content {
         height: 100vh;
         min-height: 300px;
         padding: 100px 0 50px 0;
@@ -42,11 +39,14 @@
         bottom: 20px;
         left: 0;
         right: 0;
-
         z-index: 0;
 
-        display: flex;
-        justify-content: space-between;
+        &-content {
+            display: flex;
+            justify-content: space-between;
+            padding-top: 0;
+            padding-bottom: 0;
+        }
 
         &-link {
             transition: opacity 0.4s;

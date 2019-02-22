@@ -14,7 +14,7 @@ export default () => {
     const i18n = useI18n();
 
     return (
-        <Section contentClassName={styles.introSectionContent} className={styles.introSection}>
+        <section className={styles.introSection}>
             <div className={styles.introTopic}>
                 <h2 className={styles.introPreTitle}>{text.preIntroTitle(i18n)}</h2>
                 <h1 className={styles.introTitle}>{text.introTitle(i18n)}</h1>
@@ -24,7 +24,7 @@ export default () => {
                 <PlatformDropDown />
             </div>
 
-            <div className={styles.introFooter}>
+            <Section className={styles.introFooter} contentClassName={styles.introFooterContent}>
                 <div>
                     <a href="https://github.com/plark-app" className={styles.introFooterSocial} target="_blank">
                         <FontAwesomeIcon icon={faGithub} />
@@ -51,7 +51,7 @@ export default () => {
                              className={styles.introFooterLink}
                     >{i18n.gettext('Privacy Policy')}</NavLink>
                 </div>
-            </div>
-        </Section>
+            </Section>
+        </section>
     );
 };

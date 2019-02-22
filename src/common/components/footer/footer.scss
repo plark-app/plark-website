@@ -1,3 +1,71 @@
 .footer {
     padding: 80px 50px;
+    color: white;
+
+    &__logo {
+        margin-bottom: 80px;
+    }
+
+    &__main {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__technical {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+}
+
+.platforms {
+    &__title {
+        font-size: 18px;
+        line-height: 1.66;
+        opacity: 0.5;
+        margin-bottom: 5px;
+        font-weight: 500;
+    }
+
+    &__container {
+    }
+}
+
+.subscribe {
+    &__title {
+        font-size: 14px;
+        font-weight: 500;
+        margin-bottom: 10px;
+    }
+
+    &__form {
+        display: flex;
+    }
+
+    &__input {
+        width: 250px;
+        height: 50px;
+        padding: 10px;
+        border-radius: 5px;
+        background-color: white;
+        border: none;
+        margin-right: 10px;
+    }
+}
+
+.nav {
+    width: 210px;
+
+    &__link {
+        display: block;
+        color: white;
+        opacity: 0.5;
+        font-size: 18px;
+        line-height: 30px;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
 }

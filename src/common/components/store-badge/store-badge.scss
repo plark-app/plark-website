@@ -1,0 +1,41 @@
+:global {
+    .badge {
+        display: block;
+        margin-right: 10px;
+        transition: transform 0.4s;
+        border-radius: 5px;
+        overflow: hidden;
+
+        &.-dark-bg {
+            box-shadow: 0 0 0 1px transparentize(white, 0.5);
+        }
+
+        &:hover {
+            transition-duration: 0.2s;
+            transform: translateY(-3px);
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        &__image {
+            display: block;
+            height: 40px;
+        }
+
+        &-container {
+            transition: opacity 0.2s;
+            display: flex;
+            flex-direction: row;
+            visibility: visible;
+            opacity: 1;
+
+            &.-inactive {
+                opacity: 0;
+                visibility: hidden;
+                transition-delay: 0.4s;
+            }
+        }
+    }
+}

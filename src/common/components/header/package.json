@@ -1,0 +1,6 @@
+{
+    "private": true,
+    "name": "header",
+    "main": "header.tsx",
+    "typings": "header.tsx"
+}

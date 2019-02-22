@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOMServer from 'react-dom/server';
 import { StaticRouter, StaticRouterContext } from 'react-router';
 import cssnano from 'cssnano';
-
 import { logger } from 'server/utils/logger';
 import { flush } from 'isomorphic-styles/lib/loader/collect-styles';
 import { TranslationsProvider, ITranslationsAdapter } from 'slim-i18n';

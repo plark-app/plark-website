@@ -35,6 +35,8 @@ expressApp.use(
     }),
 );
 
+expressApp.get('/sitemap.xml', Router.dynamicSitemap);
+
 const appHandlers = [
     Middlewares.redirects,
     Middlewares.language,

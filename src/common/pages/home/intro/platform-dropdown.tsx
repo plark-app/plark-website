@@ -1,41 +1,16 @@
 import React from 'react';
+import { map } from 'lodash';
 import cn from 'classnames';
 import { compose } from 'recompose';
 import { withTranslations, WithTranslationsProps } from 'slim-i18n';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { TranslateFunction } from 'common/i18n';
-import { faApple, faGooglePlay, faChrome, faFirefox, IconDefinition } from '@fortawesome/free-brands-svg-icons';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
+import InstallPlatformList, { Platform } from 'common/utils/install-platforms';
 import UIButton from 'common/components/ui-button';
 import { WithUIPopupMenu, UIPopupMenuItem, WithUIPopupMenuRenderProps } from 'common/components/ui-popup-menu';
 
 import styles from './intro.scss';
 import * as text from '../home.text';
-
-
-type DropDownItem = {
-    title: TranslateFunction;
-    icon: IconDefinition;
-    to: string;
-};
-
-const items: DropDownItem[] = [
-    {
-        title: text.download.apple,
-        icon: faApple,
-        to: 'https://apple.com',
-    },
-    {
-        title: text.download.chrome,
-        icon: faChrome,
-        to: 'https://apple.com',
-    },
-    {
-        title: text.download.firefox,
-        icon: faFirefox,
-        to: 'https://apple.com',
-    },
-];
 
 class PlatformDropDown extends React.PureComponent<Props> {
     public render(): JSX.Element {
@@ -46,16 +21,15 @@ class PlatformDropDown extends React.PureComponent<Props> {
         );
     }
 
-
     protected __renderPopupContent = () => {
         const { i18n } = this.props;
 
         return (
             <>
-                {items.map((item: any, index: number) => (
-                    <UIPopupMenuItem key={index} component="a" href={item.to} target="_blank">
+                {map(InstallPlatformList, (item: Platform, key: string) => (
+                    <UIPopupMenuItem key={key} component="a" href={item.url} target="_blank">
                         <FontAwesomeIcon icon={item.icon} className={styles.platformIcon} />
-                        {item.title(i18n)}
+                        {text.download[item.key](i18n)}
                     </UIPopupMenuItem>
                 ))}
             </>

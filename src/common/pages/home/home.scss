@@ -5,8 +5,29 @@
     }
 
     &__landing-content {
+        padding-top: 500px;
         background-color: white;
         border-radius: 20px;
         overflow: hidden;
+    }
+}
+
+.partners {
+    padding: 0;
+    background-color: #F4F4F4;
+
+    &-content {
+        padding-top: 24px;
+        padding-bottom: 24px;
+
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    &-logo {
+        margin-left: 10px;
+        margin-right: 10px;
     }
 }

@@ -1,0 +1,6 @@
+{
+    "private": true,
+    "name": "store-badge",
+    "main": "store-badge.tsx",
+    "typings": "store-badge.tsx"
+}
