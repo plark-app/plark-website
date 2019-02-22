@@ -4,6 +4,7 @@ import Footer from 'common/components/footer';
 import Header from 'common/components/header';
 import Intro from './intro';
 import Partners from './partners';
+import CEOCitation from './ceo-citation';
 import styles from './home.scss';
 
 
@@ -38,9 +39,12 @@ export default class Home extends React.Component {
                 <Header isWhite={this.state.activeHeader} />
                 <Intro />
 
-                <img src="/img/iphones.png" style={cssStylesOfIPhones} />
+                <img src="/img/iphones.png" style={cssStylesOfIPhones} alt="Plark interface" />
 
                 <div className={styles.homeLandingContent}>
+                    <CEOCitation />
+
+
                     <Partners />
                 </div>
 

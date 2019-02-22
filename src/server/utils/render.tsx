@@ -45,7 +45,7 @@ export async function render(params: RenderParams): Promise<RenderResult> {
         </StaticRouter>,
     );
 
-    let criticalCss = flush(1024 * 70);
+    let criticalCss = flush(1024 * 256);
     logger.debug(`Critical CSS size: ${criticalCss.length}, location: ${location}`);
     criticalCss = await compressCss(criticalCss);
     logger.debug(`Compressed Critical CSS size: ${criticalCss.length}`);

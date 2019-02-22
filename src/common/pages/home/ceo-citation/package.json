@@ -1,0 +1,6 @@
+{
+    "private": true,
+    "name": "ceo-citation",
+    "main": "ceo-citation.tsx",
+    "typings": "ceo-citation.tsx"
+}

@@ -5,7 +5,7 @@
     }
 
     &__landing-content {
-        padding-top: 500px;
+        padding-top: 250px;
         background-color: white;
         border-radius: 20px;
         overflow: hidden;
@@ -29,5 +29,27 @@
     &-logo {
         margin-left: 10px;
         margin-right: 10px;
+    }
+}
+
+.ceo {
+    margin-top: 250px;
+    margin-bottom: 250px;
+
+    &-content {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    &-separator {
+        margin: 20px auto;
+        height: 2px;
+        width: 90px;
+        background-color: $color-dark;
+    }
+
+    &-platforms {
+        justify-content: center;
+        margin-top: 50px;
     }
 }

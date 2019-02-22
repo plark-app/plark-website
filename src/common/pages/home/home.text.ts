@@ -11,3 +11,6 @@ export const download: Record<string, TranslateFunction> = {
     firefox: __('Download for Firefox'),
 };
 
+export const ceoCitation = __(
+    'We make it easy to purchase bitcoin using a variety of methods, including credit card, in-person purchases at a bitcoin ATM, or a store.',
+);

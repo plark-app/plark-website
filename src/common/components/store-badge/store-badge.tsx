@@ -8,6 +8,7 @@ export { styles };
 
 type StoreBadgeProps = {
     platform: Platform;
+    height?: number;
     darkBg?: boolean;
 };
 
@@ -19,12 +20,17 @@ export const BadgeContainer = ({ children, className, inactive = false }: any) =
 
 export default class StoreBadge extends React.PureComponent<StoreBadgeProps> {
     public render(): JSX.Element {
-        const { platform, darkBg = false } = this.props;
+        const { platform, darkBg = false, height = 40 } = this.props;
         const badgeClass = cn('badge', darkBg && '-dark-bg');
 
         return (
             <a href={platform.url} title={platform.key} className={badgeClass} target="_blank">
-                <img src={platform.badge} height={40} className="badge__image" />
+                <img src={platform.badge}
+                     height={height}
+                     className="badge__image"
+                     alt={platform.key}
+                     title={platform.key}
+                />
             </a>
         );
     }
