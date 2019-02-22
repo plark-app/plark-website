@@ -8,8 +8,8 @@
     &__title {
         margin: 0;
         padding: 0;
+        line-height: 1.135;
         color: currentColor;
-        line-height: 1.23;
         font-size: 22px;
         font-weight: 700;
 
@@ -28,12 +28,13 @@
     }
 
     &__desc {
-        font-size: 16px;
+        font-size: 18px;
         margin: 0;
-        color: $color-text-secondary;
+        line-height: 1.5;
+        color: $color-dark;
         display: block;
-        max-width: 770px;
-        font-weight: 500;
+        max-width: 460px;
+        font-weight: 400;
 
         @include from-md-width {
             font-size: 18px;

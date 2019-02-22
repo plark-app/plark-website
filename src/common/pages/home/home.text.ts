@@ -12,5 +12,13 @@ export const download: Record<string, TranslateFunction> = {
 };
 
 export const ceoCitation = __(
-    'We make it easy to purchase bitcoin using a variety of methods, including credit card, in-person purchases at a bitcoin ATM, or a store.',
+    'We make it easy to purchase Bitcoin using a variety of methods, including credit card, in-person purchases at a bitcoin ATM, or a store.',
+);
+
+
+export const lastCitation = __(
+    'We make it easy to send and receive Bitcoin using a variety of methods',
+);
+export const lastCitationDesc = __(
+    'The most durable glass ever in a smartphone. A beautiful new gold finish, achieved with an atomic-level process.',
 );

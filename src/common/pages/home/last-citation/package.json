@@ -1,0 +1,6 @@
+{
+    "private": true,
+    "name": "last-citation",
+    "main": "last-citation.tsx",
+    "typings": "last-citation.tsx"
+}

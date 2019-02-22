@@ -2,16 +2,22 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import Footer from 'common/components/footer';
 import Header from 'common/components/header';
+import { requestIdleCallback, cancelIdleCallback } from 'idle-callback';
 import Intro from './intro';
 import Partners from './partners';
 import CEOCitation from './ceo-citation';
+import AboutPlark from './about-plark';
+import LastCitation from './last-citation';
 import styles from './home.scss';
 
 
 export default class Home extends React.Component {
     public state: any = {
         activeHeader: false,
+        scrollTop: 0,
     };
+
+    protected _idleCallback: any;
 
     public componentDidMount(): void {
         document.addEventListener('scroll', this.__handlerScroll);
@@ -44,7 +50,9 @@ export default class Home extends React.Component {
                 <div className={styles.homeLandingContent}>
                     <CEOCitation />
 
+                    <AboutPlark scrollOffset={this.state.scrollTop} />
 
+                    <LastCitation />
                     <Partners />
                 </div>
 
@@ -55,6 +63,11 @@ export default class Home extends React.Component {
 
 
     private __handlerScroll = () => {
+        cancelIdleCallback(this._idleCallback);
+        this._idleCallback = requestIdleCallback(this.__actualizeScrollStatus);
+    };
+
+    private __actualizeScrollStatus = () => {
         const body = document.querySelector('html');
         if (!body) {
             return;
@@ -63,9 +76,9 @@ export default class Home extends React.Component {
         console.log(body.scrollTop);
 
         const activeHeader = body.scrollTop / window.innerHeight > 1;
-
-        if (activeHeader !== this.state.activeHeader) {
-            this.setState({ activeHeader: activeHeader });
-        }
+        this.setState({
+            activeHeader: activeHeader,
+            scrollTop: body.scrollTop,
+        });
     };
 }

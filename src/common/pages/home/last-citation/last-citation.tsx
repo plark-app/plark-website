@@ -12,15 +12,12 @@ export default () => {
     const i18n = useI18n();
 
     return (
-        <Section className={styles.ceo} contentClassName={styles.ceoContent}>
-            <Topic titleText={text.ceoCitation(i18n)} isCenter maxWidth={600} />
-            <div className={styles.ceoSeparator} />
-
-            <div className={styles.ceoPerson}>
-                <h4 className={styles.ceoPersonName}>Yehor Melnykov</h4>
-                <p className={styles.ceoPersonPosition}>CEO Plark LLC.</p>
-            </div>
-
+        <Section>
+            <Topic titleText={text.lastCitation(i18n)}
+                   descText={text.lastCitationDesc(i18n)}
+                   isCenter
+                   maxWidth={600}
+            />
 
             <BadgeContainer className={styles.ceoPlatforms}>
                 <StoreBadge platform={PlatformList.apple} height={50} />
