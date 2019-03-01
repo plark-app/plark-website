@@ -9,18 +9,15 @@ export const getStructuredData = (props: OpenGraphProps): React.ReactNode => {
     const data = {
         '@context': 'http://schema.org',
         '@type': 'Organization',
-        name: 'Unicheck',
+        name: 'Plark',
         description: description,
         image: `${SEO_HOST}/images/${i18n.language}/open-graph.jpg`,
         logo: `${SEO_HOST}/images/logo.png`,
         url: SEO_HOST,
-        telephone: '+1 281 912 0548 (US)',
         sameAs: [
-            'https://www.facebook.com/Unplag',
-            'https://twitter.com/unplag',
-            'https://www.linkedin.com/company/4849185',
+            'https://www.facebook.com/plark',
         ],
-        email: 'support@unicheck.com',
+        email: 'support@plark.io',
     };
 
     return <script type="application/ld+json">{JSON.stringify(data)}</script>;

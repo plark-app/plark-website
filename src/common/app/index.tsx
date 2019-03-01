@@ -35,7 +35,11 @@ class App extends React.Component<AppProps> {
         const { location, history } = this.props;
 
         if (isDefaultLocalePath(location)) {
-            return history.replace(normalizeLocalePath(location.pathname));
+            return history.replace([
+                normalizeLocalePath(location.pathname),
+                location.search,
+                location.hash,
+            ].join(''));
         }
 
         const isLocaleSetInPath = isAnyLocalePath(location);
@@ -43,6 +47,7 @@ class App extends React.Component<AppProps> {
         if (userLocale && !isLocaleSetInPath) {
             const { code } = getLocaleByShotCode(userLocale);
             const newPath = joinUrlWithLocation(location.pathname, code);
+
             return history.replace(newPath);
         }
     }

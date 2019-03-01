@@ -7,10 +7,9 @@ import { RouteHeadRenderFn } from './router/router';
 import { OpenGraph, PageSeoConfig, getStructuredData, Breadcrumbs, getHrefLangUrls } from './seo';
 
 const defaultSeoConfig: PageSeoConfig = {
-    title: 'Unicheck - best plagiarism checker',
+    title: 'Plark - safest multi asset wallet',
     description:
-        'Quick and accurate originality check for business and education. ' +
-        'Find similarities in any papers, essays, articles, content. Try now!',
+        'Plark is best wallet!',
 };
 
 const Head = ({ i18n, children: render, getSeoConfig }: HeadProps) => {
