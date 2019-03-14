@@ -1,0 +1,6 @@
+{
+    "private": true,
+    "name": "terms",
+    "main": "terms.tsx",
+    "typings": "terms.tsx"
+}

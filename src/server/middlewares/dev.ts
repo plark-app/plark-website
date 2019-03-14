@@ -8,7 +8,7 @@ export default function devMiddleware(_req: Request, res: Response, next: () => 
         return next();
     }
 
-    logger.debug('Render empty template');
+    logger.debug(_req.path);
     const html = template({
         chunks: ['vendors', 'main'],
     });

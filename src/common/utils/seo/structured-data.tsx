@@ -3,7 +3,7 @@ import { ITranslationsAdapter } from 'slim-i18n';
 import { SEO_HOST } from './utils';
 
 // tslint:disable:no-http-string
-export const getStructuredData = (props: OpenGraphProps): React.ReactNode => {
+export default (props: OpenGraphProps): React.ReactNode => {
     const { description, i18n } = props;
 
     const data = {

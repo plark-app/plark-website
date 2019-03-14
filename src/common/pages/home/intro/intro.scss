@@ -4,34 +4,49 @@
 
 .intro {
     &__section {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+
         background-color: $color-dark;
         height: 100vh;
         min-height: 300px;
         padding: 100px 0 50px 0;
+        z-index: 3;
     }
 
     &__topic {
         margin: 0 auto;
         max-width: 530px;
+        padding: 0 20px;
         text-align: center;
         color: white;
     }
 
 
     &__title {
-        font-size: 46px;
+        font-size: 28px;
         line-height: 1.13;
         font-weight: bold;
         margin: 0;
         padding: 0;
+
+        @include from-width(768px) {
+            font-size: 46px;
+        }
     }
 
     &__pre-title {
         opacity: 0.5;
-        font-size: 11px;
+        font-size: 8px;
         text-transform: uppercase;
         margin-bottom: 10px;
-        letter-spacing: 3px;
+        letter-spacing: 0.27em;
+
+        @include from-width(768px) {
+            font-size: 11px;
+        }
     }
 
     &__footer {

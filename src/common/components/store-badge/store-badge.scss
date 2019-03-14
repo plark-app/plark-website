@@ -1,3 +1,5 @@
+@import "../../styles/media";
+
 :global {
     .badge {
         display: block;
@@ -24,11 +26,15 @@
         }
 
         &-container {
+            display: none;
             transition: opacity 0.2s;
-            display: flex;
             flex-direction: row;
             visibility: visible;
             opacity: 1;
+
+            @include from-width(640px) {
+                display: flex;
+            }
 
             &.-inactive {
                 opacity: 0;

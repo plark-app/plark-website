@@ -1,12 +1,12 @@
 import React from 'react';
 import { useI18n } from 'slim-i18n';
+import { NavLink } from 'react-router-dom';
 import Section from 'common/components/section';
 import StoreBadge, { BadgeContainer } from 'common/components/store-badge';
 import PlatformList from 'common/utils/install-platforms';
 import Subscribe from './subscribe';
 import PlarkLogo from './plark-logo.component.svg';
 import styles from './footer.scss';
-import { NavLink } from 'react-router-dom';
 
 
 export default () => {

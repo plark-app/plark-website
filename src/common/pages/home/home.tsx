@@ -2,7 +2,7 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import Footer from 'common/components/footer';
 import Header from 'common/components/header';
-import { requestIdleCallback, cancelIdleCallback } from 'idle-callback';
+// import { requestIdleCallback, cancelIdleCallback } from 'idle-callback';
 import Intro from './intro';
 import Partners from './partners';
 import CEOCitation from './ceo-citation';
@@ -10,6 +10,15 @@ import AboutPlark from './about-plark';
 import LastCitation from './last-citation';
 import styles from './home.scss';
 
+// import { Controller, Scene } from 'react-scrollmagic';
+import { Tween, Timeline } from 'react-gsap';
+
+
+const IphoneImage = () => (
+    <div className={styles.phoneIntroImageBox}>
+        <img className={styles.phoneIntroImage} src="/img/iphones.png" />
+    </div>
+);
 
 export default class Home extends React.Component {
     public state: any = {
@@ -17,6 +26,7 @@ export default class Home extends React.Component {
         scrollTop: 0,
     };
 
+    protected height = 900;
     protected _idleCallback: any;
 
     public componentDidMount(): void {
@@ -28,13 +38,8 @@ export default class Home extends React.Component {
     }
 
     public render(): JSX.Element {
-        const cssStylesOfIPhones: any = {
-            position: 'absolute',
-            bottom: '-260px',
-            left: '50%',
-            transform: 'translateX(-50%)',
-            width: '500px',
-        };
+        let progress = this.state.scrollTop / this.height;
+        if (progress <= 0) progress = 0;
 
         return (
             <>
@@ -45,13 +50,21 @@ export default class Home extends React.Component {
                 <Header isWhite={this.state.activeHeader} />
                 <Intro />
 
-                <img src="/img/iphones.png" style={cssStylesOfIPhones} alt="Plark interface" />
-
                 <div className={styles.homeLandingContent}>
+                    <div style={{ height: this.height }}>
+                        <Timeline target={
+                            <div className={styles.phoneIntroContainer} style={{ transform: 'translateY(-50%)' }}>
+                                <IphoneImage />
+                            </div>}
+                                  totalProgress={progress}
+                                  paused
+                        >
+                            <Tween to={{ transform: 'translateY(100px)' }} />
+                        </Timeline>
+                    </div>
+
                     <CEOCitation />
-
                     <AboutPlark scrollOffset={this.state.scrollTop} />
-
                     <LastCitation />
                     <Partners />
                 </div>
@@ -63,22 +76,19 @@ export default class Home extends React.Component {
 
 
     private __handlerScroll = () => {
-        cancelIdleCallback(this._idleCallback);
-        this._idleCallback = requestIdleCallback(this.__actualizeScrollStatus);
+        this.__actualizeScrollStatus();
+        // cancelIdleCallback(this._idleCallback);
+        // this._idleCallback = requestIdleCallback(this.__actualizeScrollStatus);
     };
 
     private __actualizeScrollStatus = () => {
-        const body = document.querySelector('html');
-        if (!body) {
-            return;
-        }
+        const el = document.scrollingElement || document.documentElement;
 
-        console.log(body.scrollTop);
-
-        const activeHeader = body.scrollTop / window.innerHeight > 1;
+        const activeHeader = el.scrollTop / window.innerHeight > 1;
         this.setState({
             activeHeader: activeHeader,
-            scrollTop: body.scrollTop,
+            scrollTop: el.scrollTop,
         });
     };
 }
+

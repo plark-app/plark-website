@@ -1,0 +1,6 @@
+{
+    "private": true,
+    "name": "privacy-policy",
+    "main": "privacy-policy.tsx",
+    "typings": "privacy-policy.tsx"
+}
