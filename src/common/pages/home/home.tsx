@@ -2,16 +2,13 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import Footer from 'common/components/footer';
 import Header from 'common/components/header';
-// import { requestIdleCallback, cancelIdleCallback } from 'idle-callback';
 import Intro from './intro';
 import Partners from './partners';
 import CEOCitation from './ceo-citation';
 import AboutPlark from './about-plark';
 import LastCitation from './last-citation';
 import styles from './home.scss';
-
-// import { Controller, Scene } from 'react-scrollmagic';
-import { Tween, Timeline } from 'react-gsap';
+import { Tween } from 'react-gsap';
 
 
 const IphoneImage = () => (
@@ -31,6 +28,7 @@ export default class Home extends React.Component {
 
     public componentDidMount(): void {
         document.addEventListener('scroll', this.__handlerScroll);
+        this.height = window.innerHeight;
     }
 
     public componentWillUnmount(): void {
@@ -52,15 +50,15 @@ export default class Home extends React.Component {
 
                 <div className={styles.homeLandingContent}>
                     <div style={{ height: this.height }}>
-                        <Timeline target={
-                            <div className={styles.phoneIntroContainer} style={{ transform: 'translateY(-50%)' }}>
-                                <IphoneImage />
-                            </div>}
-                                  totalProgress={progress}
-                                  paused
+                        <Tween totalProgress={progress}
+                               paused
+                               from={{ y: -this.height / 2 }}
+                               to={{ y: 100, ease: 'Sine.easeIn' }}
                         >
-                            <Tween to={{ transform: 'translateY(100px)' }} />
-                        </Timeline>
+                            <div className={styles.phoneIntroContainer}>
+                                <IphoneImage />
+                            </div>
+                        </Tween>
                     </div>
 
                     <CEOCitation />

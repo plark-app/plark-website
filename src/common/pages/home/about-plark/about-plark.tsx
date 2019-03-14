@@ -5,6 +5,9 @@ import { compose } from 'recompose';
 import Section from 'common/components/section';
 import Topic from 'common/components/topic';
 
+import { Tween } from 'react-gsap';
+
+
 import styles from './about-plark.scss';
 
 type AboutPlarkProps = {
@@ -15,15 +18,16 @@ class AboutPlark extends React.PureComponent<WithTranslationsProps & AboutPlarkP
     public render(): React.ReactNode {
         return (
             <Section>
-                <div className={styles.iphone}>
-                    <img src="/img/iphone.png" alt="iPhone" title="iPhone" className={styles.iphoneMockup} />
-                    <img src="/img/screen-send.png"
-                         alt="Plark Screen - Send BTC"
-                         title="Plark screen - Send BTC"
-                         className={styles.iphoneScreen}
-                    />
-                </div>
-
+                <Tween>
+                    <div className={styles.iphone}>
+                        <img src="/img/iphone.png" alt="iPhone" title="iPhone" className={styles.iphoneMockup} />
+                        <img src="/img/screen-send.png"
+                             alt="Plark Screen - Send BTC"
+                             title="Plark screen - Send BTC"
+                             className={styles.iphoneScreen}
+                        />
+                    </div>
+                </Tween>
 
                 <div className={styles.features}>
                     <div className={cn(styles.featuresSide, styles.iLeft)}>

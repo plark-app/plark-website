@@ -1,5 +1,6 @@
 .iphone {
-    position: relative;
+    position: absolute;
+    left: 50%;
     max-width: 500px;
     width: 80%;
     margin: 0 auto;
@@ -23,7 +24,7 @@
 .features {
     display: flex;
     width: 1030px;
-    margin: 100px auto 0;
+    margin: 100vh auto 0;
     justify-content: space-between;
 
     &-iphone-space {
