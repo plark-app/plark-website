@@ -8,7 +8,6 @@ import CEOCitation from './ceo-citation';
 import AboutPlark from './about-plark';
 import LastCitation from './last-citation';
 import styles from './home.scss';
-import { Tween } from 'react-gsap';
 
 
 const IphoneImage = () => (
@@ -20,15 +19,17 @@ const IphoneImage = () => (
 export default class Home extends React.Component {
     public state: any = {
         activeHeader: false,
-        scrollTop: 0,
     };
 
     protected height = 900;
-    protected _idleCallback: any;
+    protected __sheduleAnimationFrame: boolean = false;
+    protected iphoneObject: React.RefObject<HTMLDivElement> = React.createRef();
 
     public componentDidMount(): void {
         document.addEventListener('scroll', this.__handlerScroll);
         this.height = window.innerHeight;
+
+        window.requestAnimationFrame(this.__updateProgress);
     }
 
     public componentWillUnmount(): void {
@@ -36,9 +37,6 @@ export default class Home extends React.Component {
     }
 
     public render(): JSX.Element {
-        let progress = this.state.scrollTop / this.height;
-        if (progress <= 0) progress = 0;
-
         return (
             <>
                 <Helmet>
@@ -50,19 +48,13 @@ export default class Home extends React.Component {
 
                 <div className={styles.homeLandingContent}>
                     <div style={{ height: this.height }}>
-                        <Tween totalProgress={progress}
-                               paused
-                               from={{ y: -this.height / 2 }}
-                               to={{ y: 100, ease: 'Sine.easeIn' }}
-                        >
-                            <div className={styles.phoneIntroContainer}>
-                                <IphoneImage />
-                            </div>
-                        </Tween>
+                        <div className={styles.phoneIntroContainer} ref={this.iphoneObject}>
+                            <IphoneImage />
+                        </div>
                     </div>
 
                     <CEOCitation />
-                    <AboutPlark scrollOffset={this.state.scrollTop} />
+                    <AboutPlark />
                     <LastCitation />
                     <Partners />
                 </div>
@@ -73,20 +65,42 @@ export default class Home extends React.Component {
     }
 
 
-    private __handlerScroll = () => {
+    private __updateProgress = () => {
+        const el = document.scrollingElement || document.documentElement;
+
+        let progress = el.scrollTop / this.height;
+        if (progress <= 0) progress = 0;
+        else if (progress >= 1) progress = 1;
+
+        const newValue = ((0.1 + 0.5) * progress - 0.5) * this.height;
+
+        if (this.iphoneObject.current) {
+            this.iphoneObject.current.style.transform = `translateY(${newValue}px)`;
+        }
+
+        this.__sheduleAnimationFrame = false;
         this.__actualizeScrollStatus();
-        // cancelIdleCallback(this._idleCallback);
-        // this._idleCallback = requestIdleCallback(this.__actualizeScrollStatus);
+    };
+
+
+    private __handlerScroll = () => {
+        if (this.__sheduleAnimationFrame) {
+            return;
+        }
+
+        this.__sheduleAnimationFrame = true;
+        window.requestAnimationFrame(this.__updateProgress);
     };
 
     private __actualizeScrollStatus = () => {
         const el = document.scrollingElement || document.documentElement;
-
         const activeHeader = el.scrollTop / window.innerHeight > 1;
-        this.setState({
-            activeHeader: activeHeader,
-            scrollTop: el.scrollTop,
-        });
+
+        if (this.state.activeHeader !== activeHeader) {
+            this.setState({
+                activeHeader: activeHeader,
+            });
+        }
     };
 }
 

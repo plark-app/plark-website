@@ -11,7 +11,7 @@ import { Tween } from 'react-gsap';
 import styles from './about-plark.scss';
 
 type AboutPlarkProps = {
-    scrollOffset: number;
+    scrollOffset?: number;
 };
 
 class AboutPlark extends React.PureComponent<WithTranslationsProps & AboutPlarkProps> {
