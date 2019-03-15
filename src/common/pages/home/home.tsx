@@ -11,8 +11,8 @@ import styles from './home.scss';
 
 
 const IphoneImage = () => (
-    <div className={styles.phoneIntroImageBox}>
-        <img className={styles.phoneIntroImage} src="/img/iphones.png" />
+    <div className="phone-intro__image-box">
+        <img className="phone-intro__image" src="/img/iphones.png" />
     </div>
 );
 
@@ -26,14 +26,14 @@ export default class Home extends React.Component {
     protected iphoneObject: React.RefObject<HTMLDivElement> = React.createRef();
 
     public componentDidMount(): void {
-        document.addEventListener('scroll', this.__handlerScroll);
+        window.addEventListener('scroll', this.__handlerScroll);
         this.height = window.innerHeight;
 
         window.requestAnimationFrame(this.__updateProgress);
     }
 
     public componentWillUnmount(): void {
-        document.removeEventListener('scroll', this.__handlerScroll);
+        window.removeEventListener('scroll', this.__handlerScroll);
     }
 
     public render(): JSX.Element {
@@ -48,7 +48,7 @@ export default class Home extends React.Component {
 
                 <div className={styles.homeLandingContent}>
                     <div style={{ height: this.height }}>
-                        <div className={styles.phoneIntroContainer} ref={this.iphoneObject}>
+                        <div className="phone-intro__container" ref={this.iphoneObject}>
                             <IphoneImage />
                         </div>
                     </div>
@@ -72,14 +72,29 @@ export default class Home extends React.Component {
         if (progress <= 0) progress = 0;
         else if (progress >= 1) progress = 1;
 
-        const newValue = ((0.1 + 0.5) * progress - 0.5) * this.height;
-
-        if (this.iphoneObject.current) {
-            this.iphoneObject.current.style.transform = `translateY(${newValue}px)`;
-        }
-
         this.__sheduleAnimationFrame = false;
         this.__actualizeScrollStatus();
+
+        if (!this.iphoneObject.current) {
+            return;
+        }
+
+        const phone = this.iphoneObject.current;
+
+        const start = -0.5;
+        const end = -0.8;
+
+        if (progress === 1) {
+            phone.classList.add('-fixed');
+            const newValue = (1 - (-end)) * this.height;
+            phone.style.transform = `translateY(${newValue}px)`;
+        } else {
+            phone.classList.contains('-fixed') && phone.classList.remove('-fixed');
+            const newValue = ((end - start) * progress + start) * this.height;
+            phone.style.transform = `translateY(${newValue}px)`;
+        }
+
+
     };
 
 
