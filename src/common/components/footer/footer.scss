@@ -1,4 +1,6 @@
 @import '../../styles/colors';
+@import '../../styles/vars';
+@import '../../styles/media';
 
 .footer {
     padding-top: 80px;
@@ -26,6 +28,8 @@
 }
 
 .platforms {
+    display: none;
+
     &__title {
         font-size: 18px;
         line-height: 1.66;
@@ -35,6 +39,10 @@
     }
 
     &__container {
+    }
+
+    @include from-width(640px) {
+        display: block;
     }
 }
 

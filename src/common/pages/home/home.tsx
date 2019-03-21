@@ -1,5 +1,6 @@
 import React from 'react';
 import Helmet from 'react-helmet';
+import Easeing from 'common/utils/easeing';
 import Footer from 'common/components/footer';
 import Header from 'common/components/header';
 import Intro from './intro';
@@ -8,6 +9,7 @@ import CEOCitation from './ceo-citation';
 import AboutPlark from './about-plark';
 import LastCitation from './last-citation';
 import styles from './home.scss';
+
 
 
 const IphoneImage = () => (
@@ -90,11 +92,10 @@ export default class Home extends React.Component {
             phone.style.transform = `translateY(${newValue}px)`;
         } else {
             phone.classList.contains('-fixed') && phone.classList.remove('-fixed');
-            const newValue = ((end - start) * progress + start) * this.height;
+            console.log();
+            const newValue = ((end - start) * Easeing.easeInQuad(progress) + start) * this.height;
             phone.style.transform = `translateY(${newValue}px)`;
         }
-
-
     };
 
 

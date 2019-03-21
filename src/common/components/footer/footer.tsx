@@ -23,6 +23,7 @@ export default () => {
 
                     <div className={styles.platforms}>
                         <h4 className={styles.platformsTitle}>{i18n.gettext('Choose your app.')}</h4>
+
                         <BadgeContainer className={styles.platformsContainer}>
                             <StoreBadge platform={PlatformList.apple} darkBg={true} />
                             <StoreBadge platform={PlatformList.chrome} darkBg={true} />
@@ -32,10 +33,23 @@ export default () => {
                 </div>
 
                 <nav className={styles.nav}>
-                    <NavLink to="/" className={styles.navLink}>{i18n.gettext('Home')}</NavLink>
+                    <NavLink to="/" className={styles.navLink}>
+                        {i18n.gettext('Home')}
+                    </NavLink>
+
+                    <NavLink to="/privacy" className={styles.navLink}>
+                        {i18n.gettext('Privacy Policy')}
+                    </NavLink>
+
+                    <NavLink to="/terms" className={styles.navLink}>
+                        {i18n.gettext('Terms of Use')}
+                    </NavLink>
+
                     <NavLink to="/card" className={styles.navLink}>{i18n.gettext('The Card')}</NavLink>
                     <NavLink to="/company" className={styles.navLink}>{i18n.gettext('The Company')}</NavLink>
+                </nav>
 
+                <nav className={styles.navigation}>
                     <a href="https://medium.com/plark" target="_blank" className={styles.navLink}>
                         {i18n.gettext('The Blog')}
                     </a>
@@ -50,9 +64,8 @@ export default () => {
                     <a href="https://fb.com/plark" target="_blank" className={styles.navLink}>
                         {i18n.gettext('Facebook')}
                     </a>
-                </nav>
 
-                <nav className={styles.navigation}>
+
                     <NavLink to="/faq" className={styles.navLink}>
                         {i18n.gettext('FAQ')}
                     </NavLink>
@@ -69,13 +82,7 @@ export default () => {
                         {i18n.gettext('Contact Us')}
                     </NavLink>
 
-                    <NavLink to="/privacy" className={styles.navLink}>
-                        {i18n.gettext('Privacy Policy')}
-                    </NavLink>
 
-                    <NavLink to="/terms" className={styles.navLink}>
-                        {i18n.gettext('Terms of Use')}
-                    </NavLink>
 
                     <NavLink to="/cardholder-agreement" className={styles.navLink}>
                         {i18n.gettext('Cardholder Agreement')}
