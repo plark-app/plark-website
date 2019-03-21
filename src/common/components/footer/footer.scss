@@ -3,33 +3,50 @@
 @import '../../styles/media';
 
 .footer {
-    padding-top: 80px;
-    padding-bottom: 80px;
+    padding-top: 60px;
+    padding-bottom: 30px;
     color: white;
     position: relative;
     background: $color-dark;
     z-index: 4;
 
     &__logo {
-        margin-bottom: 80px;
+        margin-bottom: 30px;
     }
 
     &__main {
         display: flex;
-        justify-content: space-between;
+        flex-direction: column;
     }
 
     &__technical {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: flex-start;
+        margin-bottom: 30px;
+    }
+
+    @include from-width(640px) {
+        padding-top: 80px;
+        padding-bottom: 80px;
+
+        &__technical {
+            margin-bottom: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        &__logo {
+            margin-bottom: 80px;
+        }
+
+        &__main {
+            flex-direction: row;
+            justify-content: space-between;
+        }
     }
 }
 
 .platforms {
-    display: none;
-
     &__title {
         font-size: 18px;
         line-height: 1.66;
@@ -39,10 +56,6 @@
     }
 
     &__container {
-    }
-
-    @include from-width(640px) {
-        display: block;
     }
 }
 
@@ -58,13 +71,17 @@
     }
 
     &__input {
-        width: 250px;
+        flex: 1;
         height: 50px;
         padding: 10px;
         border-radius: 5px;
         background-color: white;
         border: none;
         margin-right: 10px;
+
+        @include from-width(640px) {
+            width: 250px;
+        }
     }
 }
 

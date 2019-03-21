@@ -24,7 +24,7 @@ export default () => {
                     <div className={styles.platforms}>
                         <h4 className={styles.platformsTitle}>{i18n.gettext('Choose your app.')}</h4>
 
-                        <BadgeContainer className={styles.platformsContainer}>
+                        <BadgeContainer className={styles.platformsContainer} hideOnMobile={false}>
                             <StoreBadge platform={PlatformList.apple} darkBg={true} />
                             <StoreBadge platform={PlatformList.chrome} darkBg={true} />
                             <StoreBadge platform={PlatformList.firefox} darkBg={true} />
@@ -44,9 +44,6 @@ export default () => {
                     <NavLink to="/terms" className={styles.navLink}>
                         {i18n.gettext('Terms of Use')}
                     </NavLink>
-
-                    <NavLink to="/card" className={styles.navLink}>{i18n.gettext('The Card')}</NavLink>
-                    <NavLink to="/company" className={styles.navLink}>{i18n.gettext('The Company')}</NavLink>
                 </nav>
 
                 <nav className={styles.navigation}>
@@ -64,29 +61,6 @@ export default () => {
                     <a href="https://fb.com/plark" target="_blank" className={styles.navLink}>
                         {i18n.gettext('Facebook')}
                     </a>
-
-
-                    <NavLink to="/faq" className={styles.navLink}>
-                        {i18n.gettext('FAQ')}
-                    </NavLink>
-
-                    <NavLink to="/support" className={styles.navLink}>
-                        {i18n.gettext('Support')}
-                    </NavLink>
-
-                    <NavLink to="/careers" className={styles.navLink}>
-                        {i18n.gettext('Careers')}
-                    </NavLink>
-
-                    <NavLink to="/contact-us" className={styles.navLink}>
-                        {i18n.gettext('Contact Us')}
-                    </NavLink>
-
-
-
-                    <NavLink to="/cardholder-agreement" className={styles.navLink}>
-                        {i18n.gettext('Cardholder Agreement')}
-                    </NavLink>
                 </nav>
             </div>
         </Section>

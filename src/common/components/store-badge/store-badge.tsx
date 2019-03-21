@@ -12,11 +12,16 @@ type StoreBadgeProps = {
     darkBg?: boolean;
 };
 
-export const BadgeContainer = ({ children, className, inactive = false }: any) => (
-    <div className={cn('badge-container', inactive && '-inactive', className)}>
-        {children}
-    </div>
-);
+export const BadgeContainer = ({ children, className, inactive = false, hideOnMobile = true }: any) => {
+    const elementClass = cn(
+        'badge-container',
+        inactive && '-inactive',
+        hideOnMobile && '-hide-mobile',
+        className,
+    );
+
+    return <div className={elementClass}>{children}</div>;
+};
 
 export default class StoreBadge extends React.PureComponent<StoreBadgeProps> {
     public render(): JSX.Element {

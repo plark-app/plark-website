@@ -1,6 +1,10 @@
+@import '../../../styles/colors';
+@import '../../../styles/vars';
+@import '../../../styles/media';
+
+
 .iphone {
-    position: absolute;
-    left: 50%;
+    position: relative;
     max-width: 500px;
     width: 80%;
     margin: 0 auto;
@@ -19,33 +23,69 @@
         width: 100%;
         z-index: 2;
     }
+
+    @include from-width(768px) {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
 }
 
 .features {
     display: flex;
-    width: 1030px;
-    margin: 100vh auto 0;
-    justify-content: space-between;
+    flex-direction: column;
+    max-width: 1030px;
+    margin: 50px auto 0;
 
     &-iphone-space {
-        width: 312px;
-        margin-left: 40px;
-        margin-right: 40px;
+        display: none;
+    }
+
+    &__side-item {
+        margin-bottom: 40px;
     }
 
     &__side {
         display: flex;
         flex-direction: column;
-        margin-top: 80px;
     }
 
-    &__side-item {
-        width: 320px;
-        height: 180px;
-        margin-bottom: 100px;
+    @include from-width(768px) {
+        flex-direction: row;
+        justify-content: center;
+        margin-top: 100vh;
+
+        &__side-item {
+            width: 320px;
+            height: 180px;
+            margin-bottom: 30px;
+        }
+
+        &__side {
+            margin-top: 80px;
+        }
+
+        &-iphone-space {
+            display: block;
+            width: 50px;
+        }
+
+        &__side.i-left &__side-item {
+            text-align: right;
+        }
     }
 
-    &__side.i-left &__side-item {
-        text-align: right;
+    @include from-width(1080px) {
+        justify-content: space-between;
+
+        &__side-item {
+            margin-bottom: 100px;
+        }
+
+        &-iphone-space {
+            width: 312px;
+            margin-left: 40px;
+            margin-right: 40px;
+        }
     }
 }
