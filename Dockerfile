@@ -1,4 +1,6 @@
+# =======================
 # Install npm deps
+# =======================
 FROM node:10.14.0-alpine AS NODE_MODULES
 
 WORKDIR /usr/src/plark-website
@@ -10,7 +12,10 @@ RUN yarn install && \
 
 
 
+
+# =======================
 # Pull and push locales
+# =======================
 FROM node:10.14.0-alpine AS LOCALES
 
 ARG LOCO_READ_KEY
@@ -37,16 +42,18 @@ RUN apk update && apk add --no-cache gettext && \
 
 
 
+
+# =======================
 # Build app image
+# =======================
 FROM node:10.14.0-alpine
 
-ENV NODE_ENV=production
-ENV HOST=localhost
-ENV PORT=80
-ENV SECURE=true
-ENV GTM_KEY="GTM-K8BVBNG"
-
-ENV LOG_PATH="/var/log/docker/plark-website"
+ENV NODE_ENV=production \
+    HOST=localhost \
+    PORT=80 \
+    SECURE=true \
+    GTM_KEY="GTM-K8BVBNG" \
+    LOG_PATH="/var/log/docker/plark-website"
 
 WORKDIR /usr/src/plark-website
 
