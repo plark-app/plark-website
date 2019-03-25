@@ -44,6 +44,7 @@ ENV NODE_ENV=production
 ENV HOST=localhost
 ENV PORT=80
 ENV SECURE=true
+ENV GTM_KEY="GTM-K8BVBNG"
 
 ENV LOG_PATH="/var/log/docker/plark-website"
 
