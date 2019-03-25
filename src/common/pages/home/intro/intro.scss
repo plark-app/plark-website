@@ -4,6 +4,9 @@
 
 .intro {
     &__section {
+        transition: opacity 1s;
+        opacity: 1;
+
         position: fixed;
         top: 0;
         left: 0;
@@ -14,6 +17,10 @@
         min-height: 300px;
         padding: 100px 0 50px 0;
         z-index: 3;
+
+        &.-is-hide {
+            opacity: 0;
+        }
     }
 
     &__topic {

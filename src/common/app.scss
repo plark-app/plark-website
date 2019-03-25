@@ -1,6 +1,7 @@
 @import '~normalize.css/normalize.css';
 @import '~@fortawesome/fontawesome-svg-core/styles.css';
 @import './styles/colors';
+@import './styles/vars';
 
 body {
     min-width: 320px;
@@ -86,6 +87,28 @@ textarea {
         &-font-xs {
             font-size: 10px;
         }
+    }
+
+    // animations
+    .fade-enter {
+        pointer-events: none;
+        opacity: 0.01;
+    }
+
+    .fade-enter.fade-enter-active {
+        opacity: 1;
+        border-radius: 4px;
+        transition: opacity $dur-half ease-in-out;
+    }
+
+    .fade-exit {
+        pointer-events: none;
+        opacity: 1;
+    }
+
+    .fade-exit.fade-exit-active {
+        opacity: 0;
+        transition: opacity $dur-half ease-in-out;
     }
 
     .legal-section {

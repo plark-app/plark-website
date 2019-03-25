@@ -45,7 +45,7 @@ export default class Home extends React.Component {
                 </Helmet>
 
                 <Header isWhite={this.state.activeHeader} />
-                <Intro />
+                <Intro hideContent={this.state.activeHeader} />
 
                 <div className={styles.homeLandingContent}>
                     <div style={{ height: this.height }}>

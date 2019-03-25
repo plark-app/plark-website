@@ -25,7 +25,7 @@ class App extends React.Component<AppProps> {
         styleTrigger(styles);
 
         return (
-            <TransitionGroup>
+            <TransitionGroup component={null}>
                 <MainRouter {...this.props} />
             </TransitionGroup>
         );

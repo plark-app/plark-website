@@ -1,5 +1,6 @@
 import React from 'react';
-import { useI18n } from 'slim-i18n';
+import { useI18n } from 'slim-i18n'
+import cn from 'classnames';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faTelegramPlane } from '@fortawesome/free-brands-svg-icons';
 import Section from 'common/components/section';
@@ -12,11 +13,15 @@ export { styles };
 
 import * as text from '../home.text';
 
-export default () => {
+type IntroProps = {
+    hideContent?: boolean;
+}
+
+export default ({ hideContent = false }: IntroProps) => {
     const i18n = useI18n();
 
     return (
-        <section className={styles.introSection}>
+        <section className={cn(styles.introSection, hideContent ? styles.isHide : undefined)}>
             <div className={styles.introTopic}>
                 <h2 className={styles.introPreTitle}>{text.preIntroTitle(i18n)}</h2>
                 <h1 className={styles.introTitle}>{text.introTitle(i18n)}</h1>
