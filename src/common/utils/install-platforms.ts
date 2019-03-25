@@ -1,4 +1,4 @@
-import { faApple, faChrome, faFirefox, IconDefinition } from '@fortawesome/free-brands-svg-icons';
+import { faApple, faChrome, IconDefinition } from '@fortawesome/free-brands-svg-icons';
 
 export type PlatformType = 'apple' | 'android' | 'chrome' | 'firefox' | 'opera' | 'safari';
 
@@ -13,7 +13,7 @@ export default {
     apple: {
         key: 'apple',
         icon: faApple,
-        url: 'https://apple.com',
+        url: 'https://itunes.apple.com/app/id1455862890',
         badge: '/img/store/app-store.svg',
     },
     chrome: {
@@ -21,11 +21,5 @@ export default {
         icon: faChrome,
         url: 'https://chrome.google.com/webstore/detail/berrywallet/boidgcdefidhoojfljngigkjffbodjmn',
         badge: '/img/store/chrome-web-store.svg',
-    },
-    firefox: {
-        key: 'firefox',
-        icon: faFirefox,
-        url: 'https://addons.mozilla.org/ru/firefox/addon/berrywallet/',
-        badge: '/img/store/firefox-web-store.svg',
     },
 } as Record<PlatformType, Platform>;
