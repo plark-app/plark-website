@@ -8,9 +8,8 @@ import Partners from './partners';
 import CEOCitation from './ceo-citation';
 import AboutPlark from './about-plark';
 import LastCitation from './last-citation';
+
 import styles from './home.scss';
-
-
 
 const IphoneImage = () => (
     <div className="phone-intro__image-box">

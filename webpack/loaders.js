@@ -26,7 +26,7 @@ module.exports = {
                 options: {
                     sourceMap: true,
                     modules: true,
-                    localIdentName: isDev ? '[name]__[local]--[hash:base64:5]' : '[hash:base64:6]',
+                    localIdentName: isDev ? '[name]__[local]--[hash:base64:6]' : '[hash:base64:8]',
                     camelCase: true,
                     importLoaders: 2,
                 },

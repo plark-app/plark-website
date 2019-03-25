@@ -51,15 +51,12 @@ export default () => {
                         {i18n.gettext('The Blog')}
                     </a>
 
-                    <a href="https://instagram.com/plark" target="_blank" className={styles.navLink}>
-                        {i18n.gettext('Instagram')}
+                    <a href="https://github.com/plark-app" target="_blank" className={styles.navLink}>
+                        Github
                     </a>
 
-                    <a href="https://twitter.com/plark" target="_blank" className={styles.navLink}>
-                        {i18n.gettext('Twitter')}
-                    </a>
-                    <a href="https://fb.com/plark" target="_blank" className={styles.navLink}>
-                        {i18n.gettext('Facebook')}
+                    <a href="https://t.me/plarkapp" target="_blank" className={styles.navLink}>
+                        Telegram
                     </a>
                 </nav>
             </div>

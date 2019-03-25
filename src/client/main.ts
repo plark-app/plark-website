@@ -1,12 +1,15 @@
 import 'babel-polyfill';
 
+import { Location } from 'history';
 import createBrowserHistory from 'history/createBrowserHistory';
 import { requestIdleCallback } from 'idle-callback';
 import { getActiveRoute, RouteDescriptor, getRouteLocale } from 'common/utils/router';
 import { routes } from 'common/routes';
 import App from 'common/app';
 import I18N from 'common/i18n';
+
 import { render } from './render';
+import { actualizeStyleSheets } from './utils/style-sheets-actualizer';
 
 (async () => {
     const rootElement = document.getElementById('app');
@@ -29,6 +32,14 @@ import { render } from './render';
     // handle navigation change language
     const history = createBrowserHistory();
 
+    history.listen((location: Location) => {
+        // TODO: Prevent navigation before language is loaded
+        const nextLocale = getRouteLocale(location.pathname);
+        i18nInstance.setLanguage(nextLocale);
+
+        actualizeStyleSheets(location);
+    });
+
     i18nInstance.onLanguageChanged(() => {
         requestIdleCallback(() =>
             render({
@@ -41,8 +52,8 @@ import { render } from './render';
     });
 
     render({
-        rootElement: rootElement,
-        history: history,
+        rootElement,
+        history,
         i18n: i18nInstance.getI18n(),
         AppComponent: App,
     });

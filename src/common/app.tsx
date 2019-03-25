@@ -4,15 +4,15 @@ import { compose } from 'recompose';
 import { Location } from 'history';
 import { TransitionGroup } from 'react-transition-group';
 import { Switch, withRouter, Route, RouteComponentProps } from 'react-router';
+import Head from 'common/utils/head';
+import { routes } from 'common/routes';
 import { joinUrlWithLocation, normalizeLocalePath } from 'common/utils/url';
 import { styleTrigger } from 'common/utils/style-trigger';
 import { getLocaleByShotCode } from 'common/utils/locale';
 import { MatchProps, RouteDescriptor, isDefaultLocalePath, isAnyLocalePath } from 'common/utils/router';
-import Head from 'common/utils/head';
-import { routes } from 'common/routes';
 import AsyncRoute from 'common/components/async-route';
 
-import styles from '../app.scss';
+import styles from './app.scss';
 
 type AppProps = RouteComponentProps<MatchProps>;
 
@@ -45,8 +45,13 @@ class App extends React.Component<AppProps> {
         const isLocaleSetInPath = isAnyLocalePath(location);
         const userLocale = Cookie.get('user-locale');
         if (userLocale && !isLocaleSetInPath) {
+
             const { code } = getLocaleByShotCode(userLocale);
-            const newPath = joinUrlWithLocation(location.pathname, code);
+            const newPath = [
+                joinUrlWithLocation(location.pathname, code),
+                location.search,
+                location.hash,
+            ].join('');
 
             return history.replace(newPath);
         }

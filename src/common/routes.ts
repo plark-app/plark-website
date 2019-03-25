@@ -6,8 +6,8 @@ export const routes: RouteDescriptor[] = [
     {
         id: 'home',
         exact: true,
-        path: makeRoutePath('/'),
         rawPath: '/',
+        path: makeRoutePath('/'),
         load: makeRouteLoadFunction('home'),
         getSeoConfig: (i18n: ITranslationsAdapter): PageSeoConfig => ({
             title: i18n.gettext('Manage crypto currency with easy | Plark'),
@@ -23,8 +23,8 @@ export const routes: RouteDescriptor[] = [
     {
         id: 'privacy-policy',
         exact: true,
-        path: makeRoutePath('/privacy'),
         rawPath: '/privacy',
+        path: makeRoutePath('/privacy'),
         load: makeRouteLoadFunction('privacy-policy'),
         getSeoConfig: (i18n: ITranslationsAdapter): PageSeoConfig => ({
             title: i18n.gettext('Privacy Policy | Plark'),
@@ -40,12 +40,12 @@ export const routes: RouteDescriptor[] = [
     {
         id: 'terms-of-use',
         exact: true,
-        path: makeRoutePath('/terms'),
         rawPath: '/terms',
+        path: makeRoutePath('/terms'),
         load: makeRouteLoadFunction('terms'),
         getSeoConfig: (i18n: ITranslationsAdapter): PageSeoConfig => ({
-            title: i18n.gettext('Terms of Use | Plark'),
-            description: i18n.gettext('Terms of Use | Plark'),
+            title: i18n.gettext('Terms & Conditions | Plark'),
+            description: i18n.gettext('Terms & Conditions | Plark'),
             canonicalLink: 'https://plark.io/terms',
             path: '/terms',
         }),
@@ -59,8 +59,8 @@ export const routes: RouteDescriptor[] = [
         path: makeRoutePath(''),
         load: makeRouteLoadFunction('no-match'),
         getSeoConfig: (i18n: ITranslationsAdapter): PageSeoConfig => ({
-            title: i18n.gettext('404 not found'),
-            description: i18n.gettext('404 not found'),
+            title: i18n.gettext('Error 404. Page not found'),
+            description: i18n.gettext('Error 404. Page not found'),
             path: '',
         }),
     },

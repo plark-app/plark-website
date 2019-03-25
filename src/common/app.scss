@@ -1,4 +1,5 @@
 @import '~normalize.css/normalize.css';
+@import '~@fortawesome/fontawesome-svg-core/styles.css';
 @import './styles/colors';
 
 body {
@@ -10,18 +11,12 @@ body {
     color: $color-dark;
     line-height: 1.444;
     overflow-y: scroll;
-
-    // It's part helps to scroll every page smoozy.
-    // I've checked it on iPhone! Website works bad on iPhone without this part.
-    // Very bad.
-
     -webkit-user-drag: none;
     -khtml-user-drag: none;
     -webkit-overflow-scrolling: touch;
     -ms-overflow-style: -ms-autohiding-scrollbar;
     -webkit-font-smoothing: antialiased;
     text-size-adjust: 100%;
-
     min-height: 100vh;
     margin: 0;
 

@@ -11,9 +11,6 @@ const BrotliPlugin = require('brotli-webpack-plugin');
 const Loaders = require('./webpack/loaders');
 
 const isDev = process.env.NODE_ENV !== 'production';
-const extractCSS = new MiniCssExtractPlugin({
-    filename: isDev ? '[name].css' : '[contenthash:6].css',
-});
 
 function getEntry(name) {
     return name;
@@ -88,7 +85,7 @@ module.exports = {
             }),
 
             new OptimizeCSSAssetsPlugin({
-                cssProcessorOptions: { discardComments: { removeAll: true } },
+                cssProcessorOptions: {discardComments: {removeAll: true}},
             }),
         ],
     },
@@ -111,7 +108,17 @@ function getCSSLoader() {
 }
 
 function getWebpackPlugins() {
-    const plugins = [
+    const plugins = [];
+
+    if (!isDev) {
+        plugins.push(
+            new MiniCssExtractPlugin({
+                filename: '[name].[contenthash:8].css'
+            })
+        );
+    }
+
+    plugins.push(
         new StatsWriterPlugin({
             filename: '../stats.json',
             transform(data) {
@@ -125,19 +132,25 @@ function getWebpackPlugins() {
 
                 return JSON.stringify(assetsByChunkName, null, '    ');
             },
-        }),
+        })
+    );
+
+    plugins.push(
         new RequireFrom({
             methodName: '__getPublicPath',
             suppressErrors: true,
-        }),
+        })
+    );
+
+    plugins.push(
         new webpack.DefinePlugin({
             __isBrowser__: 'true',
-        }),
-    ];
+        })
+    );
+
 
     // In production we have different environment
-    if (false === isDev) {
-        plugins.unshift(extractCSS);
+    if (!isDev) {
         plugins.push(
             new CompressionPlugin({
                 asset: '[path].gz[query]',
@@ -156,7 +169,12 @@ function getWebpackPlugins() {
             }),
         );
 
-        plugins.push(new webpack.ContextReplacementPlugin(/validatorjs[/\\]src[/\\]lang$/, /en/));
+        plugins.push(
+            new webpack.ContextReplacementPlugin(
+                /validatorjs[/\\]src[/\\]lang$/,
+                /en/
+            )
+        );
     }
 
     return plugins;

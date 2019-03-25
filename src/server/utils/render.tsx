@@ -2,8 +2,8 @@ import React from 'react';
 import ReactDOMServer from 'react-dom/server';
 import { StaticRouter, StaticRouterContext } from 'react-router';
 import cssnano from 'cssnano';
-import { logger } from 'server/utils/logger';
 import { flush } from 'isomorphic-styles/lib/loader/collect-styles';
+import { logger } from 'server/utils/logger';
 import { TranslationsProvider, ITranslationsAdapter } from 'slim-i18n';
 
 export type ServerRenderingContext = {
@@ -45,7 +45,7 @@ export async function render(params: RenderParams): Promise<RenderResult> {
         </StaticRouter>,
     );
 
-    let criticalCss = flush(1024 * 256);
+    let criticalCss = flush(1024 * 70);
     logger.debug(`Critical CSS size: ${criticalCss.length}, location: ${location}`);
     criticalCss = await compressCss(criticalCss);
     logger.debug(`Compressed Critical CSS size: ${criticalCss.length}`);
