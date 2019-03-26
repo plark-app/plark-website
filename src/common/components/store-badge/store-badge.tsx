@@ -26,6 +26,11 @@ export const BadgeContainer = ({ children, className, inactive = false, hideOnMo
 export default class StoreBadge extends React.PureComponent<StoreBadgeProps> {
     public render(): JSX.Element {
         const { platform, darkBg = false, height = 40 } = this.props;
+
+        if (!platform) {
+            return <div />;
+        }
+
         const badgeClass = cn('badge', darkBg && '-dark-bg');
 
         return (

@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 
-import { logger } from 'server/utils/logger';
+import logger from 'server/utils/logger';
 import { getCache } from 'server/utils/memory-cache';
 import { setHeaderLinks } from 'server/utils/set-seo-headers';
 import { getActiveRoute, getRouteLocale, RouteDescriptor } from 'common/utils/router';

@@ -24,7 +24,6 @@ export default (props: HeaderProps) => {
                 <BadgeContainer inactive={!isWhite}>
                     <StoreBadge platform={PlatformList.apple} />
                     <StoreBadge platform={PlatformList.chrome} />
-                    <StoreBadge platform={PlatformList.firefox} />
                 </BadgeContainer>
             </Section>
         </header>

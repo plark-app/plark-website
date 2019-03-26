@@ -2,8 +2,7 @@ import fs from 'fs';
 import get from 'lodash/get';
 import yaml, { DocumentLoadResult } from 'js-yaml';
 import deepAssign from 'deep-assign';
-
-import { logger } from 'server/utils/logger';
+import logger from 'server/utils/logger';
 
 export type ConfigValue = object | string | number | null | undefined;
 

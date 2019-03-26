@@ -4,7 +4,7 @@ import I18N from 'common/i18n';
 import { getActiveRoute, RouteDescriptor, getRouteLocale } from 'common/utils/router';
 import { routes } from 'common/routes';
 import App from 'common/app';
-import { logger } from 'server/utils/logger';
+import logger from 'server/utils/logger';
 import template from 'server/utils/template';
 import { render, ServerRenderingContext } from 'server/utils/render';
 

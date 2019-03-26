@@ -9,7 +9,6 @@ import Header from 'common/components/header';
 import * as text from './no-match-text';
 import styles from './no-match.scss';
 
-
 type NoMatchProps = WithTranslationsProps & RouteComponentProps<object, any>;
 
 class NoMatch extends React.Component<NoMatchProps> {

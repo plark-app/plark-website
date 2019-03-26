@@ -22,7 +22,6 @@ export default () => {
             <BadgeContainer className={styles.ceoPlatforms}>
                 <StoreBadge platform={PlatformList.apple} height={50} />
                 <StoreBadge platform={PlatformList.chrome} height={50} />
-                <StoreBadge platform={PlatformList.firefox} height={50} />
             </BadgeContainer>
         </Section>
     );

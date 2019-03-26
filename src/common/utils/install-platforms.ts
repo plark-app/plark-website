@@ -1,6 +1,12 @@
 import { faApple, faChrome, IconDefinition } from '@fortawesome/free-brands-svg-icons';
 
-export type PlatformType = 'apple' | 'android' | 'chrome' | 'firefox' | 'opera' | 'safari';
+export type PlatformType
+    = 'apple'
+    | 'android'
+    | 'chrome'
+    | 'firefox'
+    | 'opera'
+    | 'safari';
 
 export type Platform = {
     key: PlatformType;

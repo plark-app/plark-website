@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 
-import { logger } from 'server/utils/logger';
+import logger from 'server/utils/logger';
 import template from 'server/utils/template';
 
 export default function devMiddleware(_req: Request, res: Response, next: () => void): void {

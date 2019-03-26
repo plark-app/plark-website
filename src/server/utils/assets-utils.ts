@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import { isString, find } from 'lodash';
 
-import { logger } from 'server/utils/logger';
+import logger from 'server/utils/logger';
 
 export const jsRe = /\.js$/;
 export const cssRe = /\.css$/;

@@ -3,7 +3,7 @@ import ReactDOMServer from 'react-dom/server';
 import { StaticRouter, StaticRouterContext } from 'react-router';
 import cssnano from 'cssnano';
 import { flush } from 'isomorphic-styles/lib/loader/collect-styles';
-import { logger } from 'server/utils/logger';
+import logger from 'server/utils/logger';
 import { TranslationsProvider, ITranslationsAdapter } from 'slim-i18n';
 
 export type ServerRenderingContext = {

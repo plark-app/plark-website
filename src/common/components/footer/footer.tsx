@@ -27,7 +27,6 @@ export default () => {
                         <BadgeContainer className={styles.platformsContainer} hideOnMobile={false}>
                             <StoreBadge platform={PlatformList.apple} darkBg={true} />
                             <StoreBadge platform={PlatformList.chrome} darkBg={true} />
-                            <StoreBadge platform={PlatformList.firefox} darkBg={true} />
                         </BadgeContainer>
                     </div>
                 </div>

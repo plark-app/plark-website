@@ -3,7 +3,7 @@ import express from 'express';
 import cookieParser from 'cookie-parser';
 import helmet from 'helmet';
 import { config } from 'server/config';
-import { logger } from 'server/utils/logger';
+import logger from 'server/utils/logger';
 import { applyDevEnv } from 'server/utils/dev-env';
 import Middlewares from 'server/middlewares';
 import Router from 'server/routes';

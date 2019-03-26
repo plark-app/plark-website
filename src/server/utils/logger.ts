@@ -10,7 +10,7 @@ if (!fs.existsSync(logDir)) {
 }
 
 const fileFormat = format.combine(format.timestamp(), format.json());
-export const logger = createLogger({
+const logger = createLogger({
     transports: [
         new transports.File({
             format: fileFormat,
@@ -27,17 +27,20 @@ export const logger = createLogger({
     ],
 });
 
-if (process.env.NODE_ENV !== 'production' || process.env.DEBUG) {
-    logger.add(
-        new transports.Console({
-            level: 'debug',
-            format: format.combine(
-                format.colorize(),
-                format.timestamp({ format: 'YYYY-MM-DD HH:mm:ss' }),
-                format.printf((info: TransformableInfo) => {
-                    return `${info.timestamp} ${info.level}: ${JSON.stringify(info.message)}`;
-                }),
-            ),
-        }),
-    );
-}
+const isDebugMode = process.env.NODE_ENV !== 'production' || process.env.DEBUG;
+
+logger.add(
+    new transports.Console({
+        level: isDebugMode ? 'debug' : 'info',
+        format: format.combine(
+            format.colorize(),
+            format.timestamp({ format: 'YYYY-MM-DD HH:mm:ss' }),
+            format.printf((info: TransformableInfo) => {
+                return `${info.timestamp} ${info.level}: ${JSON.stringify(info.message)}`;
+            }),
+        ),
+    }),
+);
+
+export { logger };
+export default logger;

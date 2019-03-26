@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 
-import { logger } from 'server/utils/logger';
+import logger from 'server/utils/logger';
 import { getActiveRedirect, RedirectDescriptor } from 'common/utils/router';
 import { redirects as rules } from 'common/redirects';
 
