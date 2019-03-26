@@ -113,35 +113,6 @@
     lodash "^4.17.11"
     to-fast-properties "^2.0.0"
 
-"@fortawesome/fontawesome-common-types@^0.2.15":
-  version "0.2.15"
-  resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-common-types/-/fontawesome-common-types-0.2.15.tgz#16af950653083d1e3064061de9f8e5e3b579f688"
-
-"@fortawesome/fontawesome-svg-core@1.2.15":
-  version "1.2.15"
-  resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-svg-core/-/fontawesome-svg-core-1.2.15.tgz#368f9fc7e8e8d8636495dc7483f97510f920ba97"
-  dependencies:
-    "@fortawesome/fontawesome-common-types" "^0.2.15"
-
-"@fortawesome/free-brands-svg-icons@5.7.2":
-  version "5.7.2"
-  resolved "https://registry.yarnpkg.com/@fortawesome/free-brands-svg-icons/-/free-brands-svg-icons-5.7.2.tgz#80ea37f12d22a281a5eadcd0cd3c870683e5dec1"
-  dependencies:
-    "@fortawesome/fontawesome-common-types" "^0.2.15"
-
-"@fortawesome/free-solid-svg-icons@5.7.2":
-  version "5.7.2"
-  resolved "https://registry.yarnpkg.com/@fortawesome/free-solid-svg-icons/-/free-solid-svg-icons-5.7.2.tgz#9ec2ed353d630092a8e19cc8aae2f716572963e5"
-  dependencies:
-    "@fortawesome/fontawesome-common-types" "^0.2.15"
-
-"@fortawesome/react-fontawesome@0.1.4":
-  version "0.1.4"
-  resolved "https://registry.yarnpkg.com/@fortawesome/react-fontawesome/-/react-fontawesome-0.1.4.tgz#18d61d9b583ca289a61aa7dccc05bd164d6bc9ad"
-  dependencies:
-    humps "^2.0.1"
-    prop-types "^15.5.10"
-
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/@mrmlnc/readdir-enhanced/-/readdir-enhanced-2.2.1.tgz#524af240d1a360527b730475ecfa1344aa540dde"
@@ -159,7 +130,7 @@
   dependencies:
     any-observable "^0.3.0"
 
-"@types/animejs@^2.0.1":
+"@types/animejs@2.0.1":
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/@types/animejs/-/animejs-2.0.1.tgz#f8088e8a0db301ffd4211bebe920d7896aab254c"
 
@@ -192,7 +163,7 @@
   dependencies:
     "@types/express" "*"
 
-"@types/cssnano@^4.0.0":
+"@types/cssnano@4.0.0":
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/@types/cssnano/-/cssnano-4.0.0.tgz#f1bb29d6d0813861a3d87e02946b2988d0110d4e"
   dependencies:
@@ -225,11 +196,11 @@
     "@types/express-serve-static-core" "*"
     "@types/serve-static" "*"
 
-"@types/fb@^0.0.23":
+"@types/fb@0.0.23":
   version "0.0.23"
   resolved "https://registry.yarnpkg.com/@types/fb/-/fb-0.0.23.tgz#8f601579bf41f968c5a55150f578e66dac37dcf8"
 
-"@types/gapi.auth2@^0.0.47":
+"@types/gapi.auth2@0.0.47":
   version "0.0.47"
   resolved "https://registry.yarnpkg.com/@types/gapi.auth2/-/gapi.auth2-0.0.47.tgz#1f48f301c14fade8a1542ac846986ae5698e43b5"
   dependencies:
@@ -239,11 +210,11 @@
   version "0.0.36"
   resolved "https://registry.yarnpkg.com/@types/gapi/-/gapi-0.0.36.tgz#e7fb3d4d4a6fbdbd0a9aef1cbd93d3b115d59a3d"
 
-"@types/gapi@^0.0.35":
+"@types/gapi@0.0.35":
   version "0.0.35"
   resolved "https://registry.yarnpkg.com/@types/gapi/-/gapi-0.0.35.tgz#8e0d672d66d8c6ce8493f5e8e550344f7ff500dc"
 
-"@types/helmet@^0.0.40":
+"@types/helmet@0.0.40":
   version "0.0.40"
   resolved "https://registry.yarnpkg.com/@types/helmet/-/helmet-0.0.40.tgz#133e1e3f0d7142d7244bf0ddaad4678798e9b4cf"
   dependencies:
@@ -253,7 +224,7 @@
   version "4.7.2"
   resolved "https://registry.yarnpkg.com/@types/history/-/history-4.7.2.tgz#0e670ea254d559241b6eeb3894f8754991e73220"
 
-"@types/js-cookie@^2.2.0":
+"@types/js-cookie@2.2.1":
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/@types/js-cookie/-/js-cookie-2.2.1.tgz#aa6f6d5e5aaf7d97959e9fa938ac2501cf1a76f4"
 
@@ -298,7 +269,7 @@
   version "1.5.1"
   resolved "https://registry.yarnpkg.com/@types/q/-/q-1.5.1.tgz#48fd98c1561fe718b61733daed46ff115b496e18"
 
-"@types/qs@^6.5.1":
+"@types/qs@6.5.1":
   version "6.5.1"
   resolved "https://registry.yarnpkg.com/@types/qs/-/qs-6.5.1.tgz#a38f69c62528d56ba7bd1f91335a8004988d72f7"
 
@@ -346,7 +317,7 @@
     "@types/history" "*"
     "@types/react" "*"
 
-"@types/react-slick@^0.23.1":
+"@types/react-slick@0.23.3":
   version "0.23.3"
   resolved "https://registry.yarnpkg.com/@types/react-slick/-/react-slick-0.23.3.tgz#c9d14323a75f54f46a652fb745fe553aad091ce0"
   dependencies:
@@ -358,7 +329,7 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react-youtube@^7.4.1":
+"@types/react-youtube@7.6.1":
   version "7.6.1"
   resolved "https://registry.yarnpkg.com/@types/react-youtube/-/react-youtube-7.6.1.tgz#5cc04110f721fb0766d69e0b233f56d6d20f9ec1"
   dependencies:
@@ -398,7 +369,7 @@
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/@types/unist/-/unist-2.0.3.tgz#9c088679876f374eb5983f150d4787aa6fb32d7e"
 
-"@types/validatorjs@^3.7.1":
+"@types/validatorjs@3.15.0":
   version "3.15.0"
   resolved "https://registry.yarnpkg.com/@types/validatorjs/-/validatorjs-3.15.0.tgz#2d7d00c5da82d53bf367d6674abc66eaee11ed7d"
 
@@ -446,7 +417,7 @@
     "@types/uglify-js" "*"
     source-map "^0.6.0"
 
-"@types/winston@^2.3.9":
+"@types/winston@2.4.4":
   version "2.4.4"
   resolved "https://registry.yarnpkg.com/@types/winston/-/winston-2.4.4.tgz#48cc744b7b42fad74b9a2e8490e0112bd9a3d08d"
   dependencies:
@@ -1079,7 +1050,7 @@ brorand@^1.0.1:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/brorand/-/brorand-1.1.0.tgz#12c25efe40a45e3c323eb8675a0a0ce57b22371f"
 
-brotli-webpack-plugin@^1.0.0:
+brotli-webpack-plugin@1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/brotli-webpack-plugin/-/brotli-webpack-plugin-1.1.0.tgz#57168f1f109c07d45b412f52b287fc9dab50103c"
   dependencies:
@@ -1235,7 +1206,7 @@ cache-base@^1.0.1:
     union-value "^1.0.0"
     unset-value "^1.0.0"
 
-cache-loader@^1.2.2:
+cache-loader@1.2.5:
   version "1.2.5"
   resolved "https://registry.yarnpkg.com/cache-loader/-/cache-loader-1.2.5.tgz#9ab15b0ae5f546f376083a695fc1a75f546cb266"
   dependencies:
@@ -1632,7 +1603,7 @@ compressible@~2.0.13, compressible@~2.0.16:
   dependencies:
     mime-db ">= 1.38.0 < 2"
 
-compression-webpack-plugin@^1.1.11:
+compression-webpack-plugin@1.1.12:
   version "1.1.12"
   resolved "https://registry.yarnpkg.com/compression-webpack-plugin/-/compression-webpack-plugin-1.1.12.tgz#becd2aec620ace96bb3fe9a42a55cf48acc8b4d4"
   dependencies:
@@ -1867,7 +1838,7 @@ css-declaration-sorter@^4.0.1:
     postcss "^7.0.1"
     timsort "^0.3.0"
 
-css-loader@^1.0.0:
+css-loader@1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/css-loader/-/css-loader-1.0.1.tgz#6885bb5233b35ec47b006057da01cc640b6b79fe"
   dependencies:
@@ -2005,7 +1976,7 @@ cssnano-util-same-parent@^4.0.0:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/cssnano-util-same-parent/-/cssnano-util-same-parent-4.0.1.tgz#574082fb2859d2db433855835d9a8456ea18bbf3"
 
-cssnano@^4.0.5, cssnano@^4.1.0:
+cssnano@4.1.10, cssnano@^4.1.0:
   version "4.1.10"
   resolved "https://registry.yarnpkg.com/cssnano/-/cssnano-4.1.10.tgz#0ac41f0b13d13d465487e111b778d42da631b8b2"
   dependencies:
@@ -2121,7 +2092,7 @@ deep-equal@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/deep-equal/-/deep-equal-1.0.1.tgz#f5d260292b660e084eff4cdbc9f08ad3247448b5"
 
-deep-extend@^0.5.0, deep-extend@^0.5.1:
+deep-extend@^0.5.1:
   version "0.5.1"
   resolved "https://registry.yarnpkg.com/deep-extend/-/deep-extend-0.5.1.tgz#b894a9dd90d3023fbf1c55a394fb858eb2066f1f"
 
@@ -2513,7 +2484,7 @@ escape-string-regexp@1.0.5, escape-string-regexp@^1.0.2, escape-string-regexp@^1
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/escape-string-regexp/-/escape-string-regexp-1.0.5.tgz#1b61c0562190a8dff6ae3bb2cf0200ca130b86d4"
 
-eslint-plugin-prettier@^2.2.0, eslint-plugin-prettier@^2.6.0:
+eslint-plugin-prettier@2.7.0, eslint-plugin-prettier@^2.2.0:
   version "2.7.0"
   resolved "https://registry.yarnpkg.com/eslint-plugin-prettier/-/eslint-plugin-prettier-2.7.0.tgz#b4312dcf2c1d965379d7f9d5b5f8aaadc6a45904"
   dependencies:
@@ -2538,7 +2509,7 @@ eslint-visitor-keys@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/eslint-visitor-keys/-/eslint-visitor-keys-1.0.0.tgz#3f3180fb2e291017716acb4c9d6d5b5c34a6a81d"
 
-eslint@^4.19.1:
+eslint@4.19.1:
   version "4.19.1"
   resolved "https://registry.yarnpkg.com/eslint/-/eslint-4.19.1.tgz#32d1d653e1d90408854bfb296f076ec7e186a300"
   dependencies:
@@ -2701,7 +2672,7 @@ expect-ct@0.1.1:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/expect-ct/-/expect-ct-0.1.1.tgz#de84476a2dbcb85000d5903737e9bc8a5ba7b897"
 
-express-static-gzip@^1.1.1:
+express-static-gzip@1.1.3:
   version "1.1.3"
   resolved "https://registry.yarnpkg.com/express-static-gzip/-/express-static-gzip-1.1.3.tgz#345ea02637d9d5865777d6fb57ccc0884abcda65"
   dependencies:
@@ -2937,7 +2908,7 @@ file-entry-cache@^4.0.0:
   dependencies:
     flat-cache "^2.0.1"
 
-file-loader@^1.1.11:
+file-loader@1.1.11:
   version "1.1.11"
   resolved "https://registry.yarnpkg.com/file-loader/-/file-loader-1.1.11.tgz#6fe886449b0f2a936e43cabaac0cdbfb369506f8"
   dependencies:
@@ -3591,7 +3562,7 @@ helmet-csp@2.7.1:
     dasherize "2.0.0"
     platform "1.3.5"
 
-helmet@^3.13.0:
+helmet@3.15.1:
   version "3.15.1"
   resolved "https://registry.yarnpkg.com/helmet/-/helmet-3.15.1.tgz#2c80d1a59138b6f23929605afca4b1c88b3298ec"
   dependencies:
@@ -3619,7 +3590,7 @@ hide-powered-by@1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/hide-powered-by/-/hide-powered-by-1.0.0.tgz#4a85ad65881f62857fc70af7174a1184dccce32b"
 
-highlight.js@^9.12.0:
+highlight.js@9.14.2:
   version "9.14.2"
   resolved "https://registry.yarnpkg.com/highlight.js/-/highlight.js-9.14.2.tgz#efbfb22dc701406e4da406056ef8c2b70ebe5b26"
 
@@ -3758,11 +3729,7 @@ https-browserify@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/https-browserify/-/https-browserify-1.0.0.tgz#ec06c10e0a34c0f2faf199f7fd7fc78fffd03c73"
 
-humps@^2.0.1:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/humps/-/humps-2.0.1.tgz#dd02ea6081bd0568dc5d073184463957ba9ef9aa"
-
-husky@^0.14.3:
+husky@0.14.3:
   version "0.14.3"
   resolved "https://registry.yarnpkg.com/husky/-/husky-0.14.3.tgz#c69ed74e2d2779769a17ba8399b54ce0b63c12c3"
   dependencies:
@@ -3800,7 +3767,7 @@ icss-utils@^2.1.0:
   dependencies:
     postcss "^6.0.1"
 
-idle-callback@^1.0.3:
+idle-callback@1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/idle-callback/-/idle-callback-1.0.3.tgz#ff2db093dfef766e670f6d3584a8ef274aa37106"
 
@@ -4338,7 +4305,7 @@ isomorphic-style-loader@4.0.0:
     loader-utils "^1.1.0"
     prop-types "^15.5.10"
 
-isomorphic-styles@^0.0.1-beta.10:
+isomorphic-styles@0.0.1-beta.10:
   version "0.0.1-beta.10"
   resolved "https://registry.yarnpkg.com/isomorphic-styles/-/isomorphic-styles-0.0.1-beta.10.tgz#e25b44b8cf7a80b3b6a232fc7eb453be9a7ef81f"
   dependencies:
@@ -4370,7 +4337,7 @@ js-base64@^2.1.8, js-base64@^2.1.9:
   version "2.5.1"
   resolved "https://registry.yarnpkg.com/js-base64/-/js-base64-2.5.1.tgz#1efa39ef2c5f7980bb1784ade4a8af2de3291121"
 
-js-cookie@^2.2.0:
+js-cookie@2.2.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/js-cookie/-/js-cookie-2.2.0.tgz#1b2c279a6eece380a12168b92485265b35b1effb"
 
@@ -4452,7 +4419,7 @@ json5@^2.1.0:
   dependencies:
     minimist "^1.2.0"
 
-jsona@^1.1.12:
+jsona@1.3.0:
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/jsona/-/jsona-1.3.0.tgz#f73275fec864534cb7c44abb76d3502496478aee"
 
@@ -4550,7 +4517,7 @@ liftoff@^2.1.0:
     rechoir "^0.6.2"
     resolve "^1.1.7"
 
-lint-staged@^7.2.0:
+lint-staged@7.3.0:
   version "7.3.0"
   resolved "https://registry.yarnpkg.com/lint-staged/-/lint-staged-7.3.0.tgz#90ff33e5ca61ed3dbac35b6f6502dbefdc0db58d"
   dependencies:
@@ -4931,7 +4898,7 @@ markdown-escapes@^1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/markdown-escapes/-/markdown-escapes-1.0.2.tgz#e639cbde7b99c841c0bacc8a07982873b46d2122"
 
-markdown-loader@^3.0.0:
+markdown-loader@3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/markdown-loader/-/markdown-loader-3.0.0.tgz#a36b65f66c9b4a22731b7d4824202ef972f23f11"
   dependencies:
@@ -5103,7 +5070,7 @@ mimic-response@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/mimic-response/-/mimic-response-1.0.1.tgz#4923538878eef42063cb8a3e3b0798781487ab1b"
 
-mini-css-extract-plugin@^0.4.1:
+mini-css-extract-plugin@0.4.5:
   version "0.4.5"
   resolved "https://registry.yarnpkg.com/mini-css-extract-plugin/-/mini-css-extract-plugin-0.4.5.tgz#c99e9e78d54f3fa775633aee5933aeaa4e80719a"
   dependencies:
@@ -5203,7 +5170,7 @@ mixin-object@^2.0.1:
     for-in "^0.1.3"
     is-extendable "^0.1.1"
 
-mkdirp-sync@^0.0.3:
+mkdirp-sync@0.0.3:
   version "0.0.3"
   resolved "https://registry.yarnpkg.com/mkdirp-sync/-/mkdirp-sync-0.0.3.tgz#2a7cf5b04f3ad7cba5f41f79a754939fc30d7e16"
 
@@ -5213,7 +5180,7 @@ mkdirp@0.5.x, "mkdirp@>=0.5 0", mkdirp@^0.5.0, mkdirp@^0.5.1, mkdirp@~0.5.0, mkd
   dependencies:
     minimist "0.0.8"
 
-moment@^2.22.2:
+moment@2.24.0:
   version "2.24.0"
   resolved "https://registry.yarnpkg.com/moment/-/moment-2.24.0.tgz#0d055d53f5052aa653c9f6eb68bb5d12bf5c2b5b"
 
@@ -6598,7 +6565,7 @@ qs@6.5.2, qs@~6.5.2:
   version "6.5.2"
   resolved "https://registry.yarnpkg.com/qs/-/qs-6.5.2.tgz#cb3ae806e8740444584ef154ce8ee98d403f3e36"
 
-qs@^6.5.2:
+qs@6.6.0:
   version "6.6.0"
   resolved "https://registry.yarnpkg.com/qs/-/qs-6.6.0.tgz#a99c0f69a8d26bf7ef012f871cdabb0aee4424c2"
 
@@ -6707,7 +6674,7 @@ react-fast-compare@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/react-fast-compare/-/react-fast-compare-1.0.0.tgz#813a039155e49b43ceffe99528fe5e9d97a6c938"
 
-react-gsap@^1.2.0:
+react-gsap@1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/react-gsap/-/react-gsap-1.2.0.tgz#38e89b6802c5521fd27677ce27ba6ac119f7348e"
   dependencies:
@@ -6791,7 +6758,7 @@ react-router@4.3.1, react-router@^4.3.1:
     prop-types "^15.6.1"
     warning "^4.0.1"
 
-react-scrollmagic@^2.1.0:
+react-scrollmagic@2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/react-scrollmagic/-/react-scrollmagic-2.1.0.tgz#1bd602a3c9f85627c46c62a8dbec1d7f6fb7ea49"
 
@@ -6811,7 +6778,7 @@ react-transition-group@2.4.0:
     prop-types "^15.6.2"
     react-lifecycles-compat "^3.0.4"
 
-react-youtube@^7.6.0:
+react-youtube@7.9.0:
   version "7.9.0"
   resolved "https://registry.yarnpkg.com/react-youtube/-/react-youtube-7.9.0.tgz#cf513c253581e1e45aa412a77d03420dfd7f7ba7"
   dependencies:
@@ -7065,7 +7032,7 @@ replace-ext@1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/replace-ext/-/replace-ext-1.0.0.tgz#de63128373fcbf7c3ccfa4de5a480c45a67958eb"
 
-request@^2.72.0, request@^2.87.0, request@^2.88.0:
+request@^2.87.0, request@^2.88.0:
   version "2.88.0"
   resolved "https://registry.yarnpkg.com/request/-/request-2.88.0.tgz#9c2fca4f7d35b592efe57c7f0a55e81052124fef"
   dependencies:
@@ -7459,7 +7426,7 @@ sister@^3.0.0:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/sister/-/sister-3.0.1.tgz#a36ba6a1d1e46415ba16cb4ecefe14cbd8d82d1f"
 
-sitemap@^1.13.0:
+sitemap@1.13.0:
   version "1.13.0"
   resolved "https://registry.yarnpkg.com/sitemap/-/sitemap-1.13.0.tgz#569cbe2180202926a62a266cd3de09c9ceb43f83"
   dependencies:
@@ -8351,13 +8318,6 @@ tweetnacl@^0.14.3, tweetnacl@~0.14.0:
   version "0.14.5"
   resolved "https://registry.yarnpkg.com/tweetnacl/-/tweetnacl-0.14.5.tgz#5ae68177f192d4456269d108afa93ff8743f4f64"
 
-twitter@^1.7.1:
-  version "1.7.1"
-  resolved "https://registry.yarnpkg.com/twitter/-/twitter-1.7.1.tgz#0762378f1dc1c050e48f666aca904e24b1a962f4"
-  dependencies:
-    deep-extend "^0.5.0"
-    request "^2.72.0"
-
 type-check@~0.3.2:
   version "0.3.2"
   resolved "https://registry.yarnpkg.com/type-check/-/type-check-0.3.2.tgz#5884cab512cf1d355e3fb784f30804b2b520db72"
@@ -8629,7 +8589,7 @@ validate-npm-package-license@^3.0.1:
     spdx-correct "^3.0.0"
     spdx-expression-parse "^3.0.0"
 
-validatorjs@^3.14.2:
+validatorjs@3.15.1:
   version "3.15.1"
   resolved "https://registry.yarnpkg.com/validatorjs/-/validatorjs-3.15.1.tgz#e674b6330c1432913a81128cdb7ff679463d4d2d"
 
@@ -8945,7 +8905,7 @@ winston-transport@^4.3.0:
     readable-stream "^2.3.6"
     triple-beam "^1.2.0"
 
-winston@*, winston@^3.0.0:
+winston@*, winston@3.2.1:
   version "3.2.1"
   resolved "https://registry.yarnpkg.com/winston/-/winston-3.2.1.tgz#63061377976c73584028be2490a1846055f77f07"
   dependencies:

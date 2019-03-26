@@ -66,6 +66,7 @@
         &-content {
             display: flex;
             justify-content: space-between;
+            align-items: center;
             padding-top: 0;
             padding-bottom: 0;
         }
@@ -85,14 +86,24 @@
         }
 
         &-social {
-            transition: color 0.4s;
+            display: block;
+            transition: all 0.4s;
             color: white;
             font-size: 16px;
             font-weight: 500;
             margin-right: 30px;
 
+            &-box {
+                display: flex;
+            }
+
+            & > svg {
+                display: block;
+            }
+
             &:hover {
                 transition-duration: 0.2s;
+                transform: scale(1.2);
                 color: $color-primary;
             }
         }
@@ -106,7 +117,7 @@
         margin-left: 5px;
         width: 24px !important;
         text-align: center;
-        font-size: 18px;
+        height: 18px;
     }
 
     &__button {
@@ -115,7 +126,7 @@
         &-icon {
             transition: transform 0.2s;
             margin-left: 10px;
-            font-size: 12px;
+            height: 12px;
 
             &.i-active {
                 transform: rotate(-180deg);

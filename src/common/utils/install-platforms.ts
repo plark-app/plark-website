@@ -1,4 +1,4 @@
-import { faApple, faChrome, IconDefinition } from '@fortawesome/free-brands-svg-icons';
+import Icons from 'common/components/icons';
 
 export type PlatformType
     = 'apple'
@@ -10,7 +10,7 @@ export type PlatformType
 
 export type Platform = {
     key: PlatformType;
-    icon: IconDefinition;
+    icon: any;
     url: string;
     badge: string;
 };
@@ -18,13 +18,13 @@ export type Platform = {
 export default {
     apple: {
         key: 'apple',
-        icon: faApple,
+        icon: Icons.Apple as any,
         url: 'https://itunes.apple.com/app/id1455862890',
         badge: '/img/store/app-store.svg',
     },
     chrome: {
         key: 'chrome',
-        icon: faChrome,
+        icon: Icons.Chrome as any,
         url: 'https://chrome.google.com/webstore/detail/berrywallet/boidgcdefidhoojfljngigkjffbodjmn',
         badge: '/img/store/chrome-web-store.svg',
     },

@@ -3,8 +3,9 @@ import { map } from 'lodash';
 import cn from 'classnames';
 import { compose } from 'recompose';
 import { withTranslations, WithTranslationsProps } from 'slim-i18n';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
+
+import Icons from 'common/components/icons';
+
 import InstallPlatformList, { Platform } from 'common/utils/install-platforms';
 import UIButton from 'common/components/ui-button';
 import { WithUIPopupMenu, UIPopupMenuItem, WithUIPopupMenuRenderProps } from 'common/components/ui-popup-menu';
@@ -26,12 +27,16 @@ class PlatformDropDown extends React.PureComponent<Props> {
 
         return (
             <>
-                {map(InstallPlatformList, (item: Platform, key: string) => (
-                    <UIPopupMenuItem key={key} component="a" href={item.url} target="_blank">
-                        <FontAwesomeIcon icon={item.icon} className={styles.platformIcon} />
-                        {text.download[item.key](i18n)}
-                    </UIPopupMenuItem>
-                ))}
+                {map(InstallPlatformList, (item: Platform, key: string) => {
+                    const ItemIcon = item.icon;
+
+                    return (
+                        <UIPopupMenuItem key={key} component="a" href={item.url} target="_blank">
+                            <ItemIcon className={styles.platformIcon} />
+                            <span>{text.download[item.key](i18n)}</span>
+                        </UIPopupMenuItem>
+                    );
+                })}
             </>
         );
     };
@@ -48,7 +53,7 @@ class PlatformDropDown extends React.PureComponent<Props> {
                           mode={popupProps.isOpen ? 'contained' : 'outlined'}
                 >
                     {text.platformTitle(i18n)}
-                    <FontAwesomeIcon icon={faChevronDown} className={arrowClass} />
+                    <Icons.CaretDown className={arrowClass} />
                 </UIButton>
             </div>
         );

@@ -3,7 +3,6 @@ import Footer from 'common/components/footer';
 import Header from 'common/components/header';
 import Section from 'common/components/section';
 import Topic from 'common/components/topic';
-
 import MarkdownContent from 'common/components/markdown-content';
 import textPrivacyPolicy from 'resources/terms/privacy-policy.md';
 

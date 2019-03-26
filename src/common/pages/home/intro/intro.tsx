@@ -1,8 +1,7 @@
 import React from 'react';
 import { useI18n } from 'slim-i18n'
 import cn from 'classnames';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub, faTelegramPlane } from '@fortawesome/free-brands-svg-icons';
+import Icons from 'common/components/icons';
 import Section from 'common/components/section';
 import NavLink from 'common/components/nav-link';
 import PlatformDropDown from './platform-dropdown';
@@ -32,12 +31,12 @@ export default ({ hideContent = false }: IntroProps) => {
             </div>
 
             <Section className={styles.introFooter} contentClassName={styles.introFooterContent}>
-                <div>
+                <div className={styles.introFooterSocialBox}>
                     <a href="https://github.com/plark-app" className={styles.introFooterSocial} target="_blank">
-                        <FontAwesomeIcon icon={faGithub} />
+                        <Icons.Github height={16} />
                     </a>
                     <a href="https://t.me/plark-app" className={styles.introFooterSocial} target="_blank">
-                        <FontAwesomeIcon icon={faTelegramPlane} />
+                        <Icons.Telegram height={16} />
                     </a>
                 </div>
 
