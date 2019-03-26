@@ -100,7 +100,7 @@ module.exports = {
                 {
                     loader: 'file-loader',
                     options: {
-                        name: isDev ? '[name].[hash:6].[ext]' : '[hash:6].[ext]',
+                        name: '[name].[hash:8].[ext]',
                     },
                 },
             ],

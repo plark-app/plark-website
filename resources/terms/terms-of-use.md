@@ -39,7 +39,7 @@ In consideration for Your consent to follow these Terms We grant You a personal,
 royalty-free, worldwide license to use the Software for the purpose of holding and transferring the Digital Assets.
 
 Part of the Plark Software complex can be distributed under an open source license, the text of which can be found
-on the following web-page on the GitHub (https://github.com/plark-app/plark-mobile-app). All other elements of
+on the following web-page on the GitHub ([github.com/plark-app/plark-wallet-mobile-application](https://github.com/plark-app/plark-wallet-mobile-application)). All other elements of
 Our Software complex, which are not mentioned under this link, in particular certain elements of the user interface and
 the user interface itself are proprietary and the conditions of the mentioned open source license don’t cover these 
 elements.

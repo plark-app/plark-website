@@ -38,8 +38,8 @@ module.exports = {
     output: {
         path: path.resolve(process.cwd(), 'dest/client'),
         publicPath: '/',
-        filename: isDev ? '[name].js' : '[hash:6].js',
-        chunkFilename: isDev ? '[name].js' : '[chunkhash:6].js',
+        filename: isDev ? '[name].js' : '[name].[hash:8].js',
+        chunkFilename: isDev ? '[name].js' : '[name].[chunkhash:8].js',
     },
 
     module: {
