@@ -4,8 +4,6 @@ import { Platform } from 'common/utils/install-platforms';
 
 import styles from './store-badge.scss';
 
-export { styles };
-
 type StoreBadgeProps = {
     platform: Platform;
     height?: number;
@@ -14,9 +12,9 @@ type StoreBadgeProps = {
 
 export const BadgeContainer = ({ children, className, inactive = false, hideOnMobile = true }: any) => {
     const elementClass = cn(
-        'badge-container',
-        inactive && '-inactive',
-        hideOnMobile && '-hide-mobile',
+        styles.badgeContainer,
+        inactive && styles.isInactive,
+        hideOnMobile && styles.isHideMobile,
         className,
     );
 
@@ -31,13 +29,13 @@ export default class StoreBadge extends React.PureComponent<StoreBadgeProps> {
             return <div />;
         }
 
-        const badgeClass = cn('badge', darkBg && '-dark-bg');
+        const badgeClass = cn(styles.badge, darkBg && styles.isDarkBg);
 
         return (
             <a href={platform.url} title={platform.key} className={badgeClass} target="_blank">
                 <img src={platform.badge}
                      height={height}
-                     className="badge__image"
+                     className={styles.badgeImage}
                      alt={platform.key}
                      title={platform.key}
                 />

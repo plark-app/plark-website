@@ -4,7 +4,9 @@ import Section from 'common/components/section';
 import NavLink from 'common/components/nav-link';
 import StoreBadge, { BadgeContainer } from 'common/components/store-badge';
 import PlatformList from 'common/utils/install-platforms';
+
 import PlarkLogo from './plark-logo.component.svg';
+
 import styles from './header.scss';
 
 type HeaderProps = {
@@ -18,7 +20,7 @@ export default (props: HeaderProps) => {
         <header id="header" className={cn(styles.header, isWhite && styles.isWhite)}>
             <Section contentClassName={styles.headerSectionContent}>
                 <NavLink to="/">
-                    <PlarkLogo height={24} />
+                    <PlarkLogo height={24} className={styles.headerLogo} />
                 </NavLink>
 
                 <BadgeContainer inactive={!isWhite}>
