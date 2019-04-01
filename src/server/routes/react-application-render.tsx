@@ -29,19 +29,23 @@ export default async function reactApplicationRender(req: Request, res: Response
 
         const context: ServerRenderingContext = {
             components: {},
+            initialComponentProps: {},
         };
 
         const { markup, criticalCss } = await render({
-            location,
-            context,
+            location: location,
+            context: context,
             i18n: i18nInstance.getI18n(),
             AppComponent: App,
         });
 
         const html = template({
-            criticalCss,
-            markup,
+            criticalCss: criticalCss,
+            markup: markup,
             chunks: ['vendors', 'main'],
+            initData: {
+                initialComponentProps: context.initialComponentProps,
+            },
         });
 
         const { statusCode = 200 } = context;

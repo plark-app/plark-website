@@ -42,7 +42,7 @@ export const routes: RouteDescriptor[] = [
         exact: true,
         rawPath: '/terms',
         path: makeRoutePath('/terms'),
-        load: makeRouteLoadFunction('terms'),
+        load: makeRouteLoadFunction('terms-of-use'),
         getSeoConfig: (i18n: ITranslationsAdapter): PageSeoConfig => ({
             title: i18n.gettext('Terms & Conditions | Plark'),
             description: i18n.gettext('Terms & Conditions | Plark'),

@@ -59,6 +59,7 @@ export function makeRoutePath(path: string): string {
 export function makeRouteLoadFunction(id: string): RouteLoadFn {
     return async () => {
         const componentPromise = import(/* webpackChunkName: '[request]' */ `common/routes/${id}`);
+
         return (await componentPromise).default;
     };
 }

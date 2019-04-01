@@ -8,6 +8,7 @@ import { TranslationsProvider, ITranslationsAdapter } from 'slim-i18n';
 
 export type ServerRenderingContext = {
     components: Record<string, React.ComponentType>;
+    initialComponentProps: Record<string, any>;
     redirectUrl?: string;
     statusCode?: number;
 } & StaticRouterContext;
@@ -55,10 +56,28 @@ export async function render(params: RenderParams): Promise<RenderResult> {
 
 async function loadDependencies(context: ServerRenderingContext): Promise<void> {
     const keys = Object.keys(context.components);
-    const promises = keys.map((key: string) => context.components[key]);
+    const promises = keys.map(async (key: string) => {
+        const component = await context.components[key];
+        const props = await fetchComponentProps(component);
+
+        return { component, props };
+    });
+
     const resolved = await Promise.all(promises);
-    resolved.forEach((result: React.ComponentType, i: number) => (context.components[keys[i]] = result));
+
+    resolved.forEach((result: any, i: number) => {
+        context.components[keys[i]] = result.component;
+        context.initialComponentProps[keys[i]] = result.props;
+    });
 }
+
+
+async function fetchComponentProps(component: any) {
+    if (component && component.hasOwnProperty('getInitialProps')) {
+        return await component.getInitialProps({ isBrowser: false, req: {} });
+    }
+}
+
 
 async function compressCss(css: string): Promise<string> {
     return new Promise((res: (str: string) => void, rej: (err: Error) => void) => {

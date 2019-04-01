@@ -6,7 +6,7 @@ import Topic from 'common/components/topic';
 import MarkdownContent from 'common/components/markdown-content';
 import textTermsOfUse from 'resources/terms/terms-of-use.md';
 
-export default class Terms extends React.Component {
+export default class TermsOfUse extends React.Component {
     public state: any = {
         activeHeader: false,
         scrollTop: 0,

@@ -42,5 +42,4 @@ logger.add(
     }),
 );
 
-export { logger };
 export default logger;
