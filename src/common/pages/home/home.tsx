@@ -36,7 +36,7 @@ export default class Home extends React.Component {
     public componentWillUnmount(): void {
         window.removeEventListener('scroll', this.__handlerScroll);
     }
-
+    
     public render(): JSX.Element {
         return (
             <>

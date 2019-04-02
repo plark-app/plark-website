@@ -8,13 +8,13 @@ import { OpenGraph, PageSeoConfig, getStructuredData, Breadcrumbs, getHrefLangUr
 
 const defaultSeoConfig: PageSeoConfig = {
     title: 'Plark - safest multi asset wallet',
-    description:
-        'Plark is best wallet!',
+    description: 'Pay like Spark!',
 };
 
 const Head = ({ i18n, children: render, getSeoConfig }: HeadProps) => {
     const children: React.ReactElement<object>[] = [];
-    const seoConfig: PageSeoConfig = Object.assign({}, defaultSeoConfig, getSeoConfig ? getSeoConfig(i18n) : {});
+    const seoConfig: PageSeoConfig
+        = Object.assign({}, defaultSeoConfig, getSeoConfig ? getSeoConfig(i18n) : {});
 
     if (render !== undefined) {
         // @ts-ignore
@@ -62,6 +62,7 @@ const Head = ({ i18n, children: render, getSeoConfig }: HeadProps) => {
         </>
     );
 };
+
 
 export type HeadOuterProps = {
     children?: RouteHeadRenderFn;
