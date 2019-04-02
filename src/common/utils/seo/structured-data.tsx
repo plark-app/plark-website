@@ -11,8 +11,8 @@ export default (props: OpenGraphProps): React.ReactNode => {
         '@type': 'Organization',
         name: 'Plark',
         description: description,
-        image: `${SEO_HOST}/images/${i18n.language}/open-graph.jpg`,
-        logo: `${SEO_HOST}/images/logo.png`,
+        image: `${SEO_HOST}/img/${i18n.language}/open-graph.png`,
+        logo: `${SEO_HOST}/img/logo.png`,
         url: SEO_HOST,
         sameAs: [
             'https://www.facebook.com/plark',

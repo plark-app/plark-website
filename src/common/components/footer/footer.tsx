@@ -45,7 +45,7 @@ export default () => {
                     </NavLink>
                 </nav>
 
-                <nav className={styles.navigation}>
+                <nav className={styles.nav}>
                     <a href="https://medium.com/plark" target="_blank" className={styles.navLink}>
                         {i18n.gettext('The Blog')}
                     </a>
