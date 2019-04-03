@@ -19,55 +19,6 @@ const gtmManager = new GtmManager(config.get<string>('app.gtmKey'));
 
 const clientConfig = getClientConfig();
 
-export default function template(data: TemplateData): string {
-    const { criticalCss = '', markup = '', chunks = [], initData = {} } = data;
-
-    const configString = JSON.stringify({ config: clientConfig, ...initData });
-
-    const initScript = `
-        window.__initData = ${configString};
-        window.__getPublicPath = function () {
-            return window.__initData.publicPath || '/';
-        };
-        window.__cssChunksMap = ${JSON.stringify(getCSSChunksMap())}
-    `;
-
-    const helmet = Helmet.renderStatic();
-    const htmlAttrs: any = helmet.htmlAttributes.toComponent();
-    const bodyAttrs: any = helmet.bodyAttributes.toComponent();
-
-    return (
-        '<!DOCTYPE html>' +
-        ReactDOMServer.renderToStaticMarkup(
-            <html {...htmlAttrs}>
-                <head>
-                    {helmet.title.toComponent()}
-                    <meta charSet="UTF-8" />
-                    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-                    <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
-                    <Favicon />
-                    {getPreloadLinks(chunks)}
-                    {helmet.meta.toComponent()}
-                    {helmet.link.toComponent()}
-                    {helmet.script.toComponent()}
-                    {criticalCss && <style dangerouslySetInnerHTML={{ __html: criticalCss }} />}
-                </head>
-                <body {...bodyAttrs}>
-                    <div id="app" dangerouslySetInnerHTML={{ __html: markup }} />
-                    <script dangerouslySetInnerHTML={{ __html: initScript }} />
-                    <script src={getChunkAssetFilePath('runtime')} defer />
-                    {chunks.map((chunk: string) => (
-                        <script key={chunk} src={getChunkAssetFilePath(chunk)} defer />
-                    ))}
-                    <script dangerouslySetInnerHTML={{ __html: getLoadCSSScript([...chunks]) }} />
-                    {gtmManager.renderHead()}
-                    {gtmManager.renderBody()}
-                </body>
-            </html>,
-        )
-    );
-}
-
 function getLoadCSSScript(chunks: string[]): string {
     if (process.env.NODE_ENV !== 'production') {
         return '';
@@ -112,4 +63,56 @@ function getPreloadLinks(chunks: string[]): JSX.Element | null {
 
 function getClientConfig(): ClientConfig {
     return {};
+}
+
+export default function template(data: TemplateData): string {
+    const { criticalCss = '', markup = '', chunks = [], initData = {} } = data;
+
+    const configString = JSON.stringify({ config: clientConfig, ...initData });
+
+    const initScript = `
+        window.__initData = ${configString};
+        window.__getPublicPath = function () {
+            return window.__initData.publicPath || '/';
+        };
+        window.__cssChunksMap = ${JSON.stringify(getCSSChunksMap())}
+    `;
+
+    const helmet = Helmet.renderStatic();
+    const htmlAttrs: any = helmet.htmlAttributes.toComponent();
+    const bodyAttrs: any = helmet.bodyAttributes.toComponent();
+
+    return (
+        '<!DOCTYPE html>' +
+        ReactDOMServer.renderToStaticMarkup(
+            <html {...htmlAttrs}>
+                <head>
+                    {helmet.title.toComponent()}
+                    <meta charSet="UTF-8" />
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                    <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
+                    <link rel="chrome-webstore-item"
+                          href="https://chrome.google.com/webstore/detail/plark/jgboighcjegimmmjkclbniaddfakallg" />
+                    <meta name="apple-itunes-app" content="app-id=1455862890" />
+                    <Favicon />
+                    {getPreloadLinks(chunks)}
+                    {helmet.meta.toComponent()}
+                    {helmet.link.toComponent()}
+                    {helmet.script.toComponent()}
+                    {criticalCss && <style dangerouslySetInnerHTML={{ __html: criticalCss }} />}
+                </head>
+                <body {...bodyAttrs}>
+                    <div id="app" dangerouslySetInnerHTML={{ __html: markup }} />
+                    <script dangerouslySetInnerHTML={{ __html: initScript }} />
+                    <script src={getChunkAssetFilePath('runtime')} defer />
+                    {chunks.map((chunk: string) => (
+                        <script key={chunk} src={getChunkAssetFilePath(chunk)} defer />
+                    ))}
+                    <script dangerouslySetInnerHTML={{ __html: getLoadCSSScript([...chunks]) }} />
+                    {gtmManager.renderHead()}
+                    {gtmManager.renderBody()}
+                </body>
+            </html>
+        )
+    );
 }

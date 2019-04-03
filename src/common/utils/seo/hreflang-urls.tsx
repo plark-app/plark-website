@@ -1,9 +1,13 @@
 import React from 'react';
+import { getLocales, DEFAULT_LOCALE, Locale } from '../locale';
 import { SEO_HOST } from './utils';
 
-export default (path: string) => [
-    <link key="en-us" rel="alternate" href={`${SEO_HOST}${path}`} hrefLang="en-us" />,
-    <link key="uk-ua" rel="alternate" href={`${SEO_HOST}/uk-ua${path}`} hrefLang="uk-ua" />,
-    <link key="es-es" rel="alternate" href={`${SEO_HOST}/es-es${path}`} hrefLang="es-es" />,
-    <link key="ru-ru" rel="alternate" href={`${SEO_HOST}/ru-ru${path}`} hrefLang="ru-ru" />,
-];
+export default (path: string) => getLocales().map((lc: Locale) => {
+    const url = [
+        SEO_HOST,
+        DEFAULT_LOCALE === lc.code ? '' : '/' + lc.code,
+        path,
+    ];
+
+    return <link key={lc.code} rel="alternate" href={url.join('')} hrefLang={lc.code} />;
+});

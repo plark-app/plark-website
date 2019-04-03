@@ -22,3 +22,6 @@ export const lastCitation = __(
 export const lastCitationDesc = __(
     'The most durable glass ever in a smartphone. A beautiful new gold finish, achieved with an atomic-level process.',
 );
+
+export const userName = __('Anonymous');
+export const userPosition = __('Happy user');

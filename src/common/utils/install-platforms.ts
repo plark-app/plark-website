@@ -25,7 +25,7 @@ export default {
     chrome: {
         key: 'chrome',
         icon: Icons.Chrome as any,
-        url: 'https://chrome.google.com/webstore/detail/berrywallet/boidgcdefidhoojfljngigkjffbodjmn',
+        url: 'https://chrome.google.com/webstore/detail/plark/jgboighcjegimmmjkclbniaddfakallg',
         badge: '/img/store/chrome-web-store.svg',
     },
 } as Record<PlatformType, Platform>;

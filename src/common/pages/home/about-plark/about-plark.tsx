@@ -1,12 +1,11 @@
 import React from 'react';
 import cn from 'classnames';
 import { withTranslations, WithTranslationsProps } from 'slim-i18n';
+import { Timeline, Tween } from 'react-gsap';
+import { Controller, Scene } from 'react-scrollmagic';
 import { compose } from 'recompose';
 import Section from 'common/components/section';
-import Topic from 'common/components/topic';
-
-import { Tween } from 'react-gsap';
-
+import Feature from './feature';
 
 import styles from './about-plark.scss';
 
@@ -15,66 +14,92 @@ type AboutPlarkProps = {
 };
 
 class AboutPlark extends React.PureComponent<WithTranslationsProps & AboutPlarkProps> {
+    public state: any = {
+        phoneOffset: 300,
+        useParallax: false,
+    };
+
+    public componentDidMount(): void {
+        const useParallax = window.innerWidth > 1080;
+        const phoneHeight = useParallax ? 780 : 450;
+        const phoneOffset = phoneHeight / 2;
+
+        this.setState({ phoneOffset, useParallax });
+    }
+
+
     public render(): React.ReactNode {
         return (
-            <Section>
-                <Tween>
-                    <div className={styles.iphone}>
-                        <img src="/img/iphone.png" alt="iPhone" title="iPhone" className={styles.iphoneMockup} />
-                        <img src="/img/screen-send.png"
-                             alt="Plark Screen - Send BTC"
-                             title="Plark screen - Send BTC"
-                             className={styles.iphoneScreen}
-                        />
-                    </div>
-                </Tween>
+            <Section className={styles.aboutContainer}>
+                {this.state.useParallax
+                    ? this.__renderParallaxPhone()
+                    : (
+                        <>
+                            {this.__renderPhone()}
 
-                <div className={styles.features}>
-                    <div className={cn(styles.featuresSide, styles.iLeft)}>
-                        <Topic titleText="Super secure"
-                               className={cn(styles.featuresSideItem)}
-                               descText={
-                                   'Poorly designed presentations are a thing of the past. Create beautiful and high-quality content that is aligned with your brand, in just a few clicks.'
-                               }
-                               isSmall
-                               titleTag="h3"
-                        />
-                        <Topic titleText="Exchange and go"
-                               className={cn(styles.featuresSideItem)}
-                               descText={
-                                   'Manually updating your business reports and sales pitches is tedious and painful. With Pitch, connect to external data sources to turn your presentations into.'
-                               }
-                               isSmall
-                               titleTag="h3"
-                        />
-                    </div>
-
-                    <div className={styles.featuresIphoneSpace} />
-
-                    <div className={cn(styles.featuresSide, styles.iRight)}>
-                        <Topic titleText="Multi-currency"
-                               className={styles.featuresSideItem}
-                               descText={
-                                   'For amazing augmented reality experiences. Incredible portraits with Depth Control. And speed and fluidity in everything you do.'
-                               }
-                               isSmall
-                               titleTag="h3"
-                        />
-
-                        <Topic titleText="Exceptional materials"
-                               className={cn(styles.featuresSideItem)}
-                               descText={
-                                   'The most durable glass ever in a smartphone. A beautiful new gold finish, achieved with an atomic-level process.'
-                               }
-                               isSmall
-                               titleTag="h3"
-                        />
-                    </div>
-                </div>
-
+                            <Feature index={0} />
+                            <Feature index={1} />
+                            <Feature index={2} />
+                            <Feature index={3} />
+                        </>
+                    )
+                }
             </Section>
         );
     }
+
+    protected __renderParallaxPhone = () => {
+        return (
+            <Controller>
+                <Scene duration={1300} offset={this.state.phoneOffset} pin>
+                    <Timeline>
+                        <Tween
+                            from={{ scale: 1 }}
+                            to={{ scale: 0.65 }}
+                        >
+                            {this.__renderPhone()}
+                        </Tween>
+
+                        <Tween staggerFrom={{ opacity: 0 }}
+                               staggerTo={{ opacity: 1 }}
+                               stagger={0.4}
+                               wrapper={<div className={styles.features} />}
+                        >
+                            <div className={styles.iLeft}>
+                                <Feature index={0} />
+                            </div>
+
+                            <div className={styles.iRight}>
+                                <Feature index={1} />
+                            </div>
+
+                            <div className={cn(styles.iLeft, styles.iBottom)}>
+                                <Feature index={2} />
+                            </div>
+
+                            <div className={cn(styles.iRight, styles.iBottom)}>
+                                <Feature index={3} />
+                            </div>
+                        </Tween>
+                    </Timeline>
+                </Scene>
+            </Controller>
+        );
+    };
+
+
+    protected __renderPhone = () => {
+        return (
+            <div className={styles.iphone}>
+                <img src="/img/iphone.png" alt="iPhone" title="iPhone" className={styles.iphoneMockup} />
+                <img src="/img/screen-send.png"
+                     alt="Plark Screen - Send BTC"
+                     title="Plark screen - Send BTC"
+                     className={styles.iphoneScreen}
+                />
+            </div>
+        );
+    };
 }
 
 export default compose<WithTranslationsProps & AboutPlarkProps, AboutPlarkProps>(

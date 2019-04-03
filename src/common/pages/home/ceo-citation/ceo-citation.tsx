@@ -16,8 +16,8 @@ export default () => {
             <div className={styles.ceoSeparator} />
 
             <div className={styles.ceoPerson}>
-                <h4 className={styles.ceoPersonName}>Yehor Melnykov</h4>
-                <p className={styles.ceoPersonPosition}>CEO Plark LLC.</p>
+                <h4 className={styles.ceoPersonName}>{text.userName(i18n)}</h4>
+                <p className={styles.ceoPersonPosition}>{text.userPosition(i18n)}</p>
             </div>
 
 

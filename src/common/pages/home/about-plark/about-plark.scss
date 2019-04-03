@@ -3,39 +3,52 @@
 @import '../../../styles/media';
 
 
+.about-container {
+    margin-bottom: 0;
+}
+
 .iphone {
     position: relative;
-    max-width: 500px;
-    width: 80%;
-    margin: 0 auto;
+    height: 450px;
+    margin: 0 auto 50px;
     z-index: 10;
 
+    &__mockup, &__screen {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 100%;
+        width: auto;
+    }
+
     &__mockup {
-        position: relative;
         z-index: 1;
-        width: 100%;
     }
 
     &__screen {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
         z-index: 2;
     }
 
-    @include from-width(768px) {
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
+    @include from-width(1080px) {
+        height: 780px;
+        margin-bottom: 0;
     }
 }
 
+
 .features {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
     flex-direction: column;
+    width: 100%;
     max-width: 1030px;
-    margin: 50px auto 0;
 
     &-iphone-space {
         display: none;
@@ -53,7 +66,6 @@
     @include from-width(768px) {
         flex-direction: row;
         justify-content: center;
-        margin-top: 100vh;
 
         &__side-item {
             width: 320px;
@@ -70,22 +82,18 @@
             width: 50px;
         }
 
-        &__side.i-left &__side-item {
+        .i-right &__side-item {
+            text-align: left;
+            margin-left: 150px;
+        }
+
+        .i-left &__side-item {
             text-align: right;
-        }
-    }
-
-    @include from-width(1080px) {
-        justify-content: space-between;
-
-        &__side-item {
-            margin-bottom: 100px;
+            margin-right: 150px;
         }
 
-        &-iphone-space {
-            width: 312px;
-            margin-left: 40px;
-            margin-right: 40px;
+        .i-bottom &__side-item {
+            margin-bottom: 0;
         }
     }
 }
