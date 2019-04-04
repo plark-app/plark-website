@@ -27,6 +27,15 @@
         left: 50%;
     }
 
+
+    &__box {
+        min-height: 600px;
+
+        @include from-width(1280px) {
+            min-height: 880px;
+        }
+    }
+
     &__image {
         object-fit: cover;
         height: auto;

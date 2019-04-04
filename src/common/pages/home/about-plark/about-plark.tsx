@@ -21,7 +21,7 @@ class AboutPlark extends React.PureComponent<WithTranslationsProps & AboutPlarkP
 
     public componentDidMount(): void {
         const useParallax = window.innerWidth > 1080;
-        const phoneHeight = useParallax ? 780 : 450;
+        const phoneHeight = useParallax ? 1009 : 450;
         const phoneOffset = phoneHeight / 2;
 
         this.setState({ phoneOffset, useParallax });
@@ -55,7 +55,7 @@ class AboutPlark extends React.PureComponent<WithTranslationsProps & AboutPlarkP
                     <Timeline>
                         <Tween
                             from={{ scale: 1 }}
-                            to={{ scale: 0.65 }}
+                            to={{ scale: 0.623 }}
                         >
                             {this.__renderPhone()}
                         </Tween>

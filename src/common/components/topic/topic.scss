@@ -67,15 +67,19 @@
 
     // For small elements like Card
     &.i-small &__title {
-        font-size: 18px;
+        font-size: 20px;
 
         @include from-lg-width {
-            font-size: 20px;
+            font-size: 24px;
         }
     }
 
     &.i-small &__desc {
-        font-size: 16px;
+        font-size: 18px;
+    }
+
+    &.i-small > &__title + &__desc {
+        margin-top: 15px;
     }
 
     // For intro as the first element of page

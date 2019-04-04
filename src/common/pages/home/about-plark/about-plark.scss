@@ -11,7 +11,7 @@
     position: relative;
     height: 450px;
     margin: 0 auto 50px;
-    z-index: 10;
+    z-index: 1;
 
     &__mockup, &__screen {
         display: block;
@@ -32,7 +32,7 @@
     }
 
     @include from-width(1080px) {
-        height: 780px;
+        height: 1009px;
         margin-bottom: 0;
     }
 }
@@ -48,7 +48,9 @@
     justify-content: space-between;
     flex-direction: column;
     width: 100%;
-    max-width: 1030px;
+    max-width: 1080px;
+
+    z-index: 2;
 
     &-iphone-space {
         display: none;
@@ -70,11 +72,7 @@
         &__side-item {
             width: 320px;
             height: 180px;
-            margin-bottom: 30px;
-        }
-
-        &__side {
-            margin-top: 80px;
+            margin-bottom: 100px;
         }
 
         &-iphone-space {
@@ -84,12 +82,12 @@
 
         .i-right &__side-item {
             text-align: left;
-            margin-left: 150px;
+            margin-left: 200px;
         }
 
         .i-left &__side-item {
             text-align: right;
-            margin-right: 150px;
+            margin-right: 200px;
         }
 
         .i-bottom &__side-item {

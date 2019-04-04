@@ -24,16 +24,19 @@ export default class Home extends React.Component {
         pageLoaded: false,
     };
 
-    protected height = 900;
+    protected start = 300;
+    protected end = 100;
+
+    protected innerWidth = 1080;
+    protected innerHeight = 900;
     protected __sheduleAnimationFrame: boolean = false;
     protected iphoneObject: React.RefObject<HTMLDivElement> = React.createRef();
 
     public componentDidMount(): void {
         window.addEventListener('scroll', this.__handlerScroll);
-        this.height = window.innerHeight;
+        window.addEventListener('resize', this.__handleScreenResize);
 
-        window.requestAnimationFrame(this.__updateProgress);
-
+        this.__handleScreenResize();
 
         setTimeout(() => {
             this.setState({ pageLoaded: true });
@@ -42,6 +45,7 @@ export default class Home extends React.Component {
 
     public componentWillUnmount(): void {
         window.removeEventListener('scroll', this.__handlerScroll);
+        window.removeEventListener('resize', this.__handleScreenResize);
     }
 
     public render(): JSX.Element {
@@ -55,7 +59,7 @@ export default class Home extends React.Component {
                 <Intro hideContent={this.state.activeHeader} />
 
                 <div className={styles.homeLandingContent}>
-                    <div style={{ height: this.height }}>
+                    <div className={styles.phoneIntroBox} style={{ height: this.innerHeight }}>
                         <div className={styles.phoneIntroContainer} ref={this.iphoneObject}>
                             <IphoneImage loaded={this.state.pageLoaded} />
                         </div>
@@ -76,7 +80,7 @@ export default class Home extends React.Component {
     private __updateProgress = () => {
         const el = document.scrollingElement || document.documentElement;
 
-        let progress = el.scrollTop / this.height;
+        let progress = el.scrollTop / this.innerHeight;
         if (progress <= 0) progress = 0;
         else if (progress >= 1) progress = 1;
 
@@ -89,19 +93,31 @@ export default class Home extends React.Component {
 
         const phone = this.iphoneObject.current;
 
-        const start = -0.5;
-        const end = -0.8;
+        const start = this.start;
+        const end = this.end;
 
         if (progress === 1) {
             phone.classList.add(styles.iFixed);
-            const newValue = (1 - (-end)) * this.height;
-            phone.style.transform = `translateY(${newValue}px)`;
+            phone.style.transform = `translateY(100px)`;
         } else {
             phone.classList.contains(styles.iFixed) && phone.classList.remove(styles.iFixed);
-            console.log();
-            const newValue = ((end - start) * Easeing.easeInQuad(progress) + start) * this.height;
+            const newValue = ((end - start) * Easeing.easeInQuad(progress) + start);
             phone.style.transform = `translateY(${newValue}px)`;
         }
+    };
+
+
+    private __handleScreenResize = () => {
+        const iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !(window as any).MSStream;
+        this.innerWidth = iOS ? screen.width : window.innerWidth;
+        this.innerHeight = iOS ? screen.height : window.innerHeight;
+
+        const isSmall = this.innerWidth < 768;
+        const startOffset = isSmall ? 340 : 370;
+        this.start = -this.innerHeight + startOffset;
+        this.end = -this.innerHeight + 100;
+
+        window.requestAnimationFrame(this.__updateProgress);
     };
 
 
