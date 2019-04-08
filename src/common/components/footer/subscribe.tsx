@@ -3,14 +3,27 @@ import { compose } from 'recompose';
 import { withTranslations, WithTranslationsProps } from 'slim-i18n';
 import UIButton from 'common/components/ui-button';
 import styles from './footer.scss';
+import Axios from 'axios';
 
 class Subscribe extends React.PureComponent<WithTranslationsProps> {
     public state: any = {
         email: '',
+        loading: false,
+        errorMessage: '',
+        success: false,
     };
 
     public render(): JSX.Element {
         const { i18n } = this.props;
+        const { loading, errorMessage, success } = this.state;
+
+        if (success) {
+            return (
+                <div className={styles.subscribeSuccess}>
+                    {i18n.gettext('You successful subscribed to our newsletter.')}
+                </div>
+            );
+        }
 
         return (
             <form onSubmit={this.__handleFormSubmit} className={styles.subscribe}>
@@ -20,7 +33,14 @@ class Subscribe extends React.PureComponent<WithTranslationsProps> {
 
                 <div className={styles.subscribeForm}>
                     <input value={this.state.email} onChange={this.__handleValue} className={styles.subscribeInput} />
-                    <UIButton color="primary">{i18n.gettext('Subscribe')}</UIButton>
+
+                    <UIButton color="primary" disabled={loading}>
+                        {loading ? 'Loading...' : i18n.gettext('Subscribe')}
+                    </UIButton>
+                </div>
+
+                <div className={styles.subscribeErrorMessage}>
+                    {errorMessage}
                 </div>
             </form>
         );
@@ -30,8 +50,32 @@ class Subscribe extends React.PureComponent<WithTranslationsProps> {
         this.setState({ email: e.target.value });
     };
 
-    private __handleFormSubmit = (event: FormEvent) => {
+    private __handleFormSubmit = async (event: FormEvent) => {
         event.preventDefault();
+
+        if (this.state.loading) {
+            return;
+        }
+
+        this.setState({ loading: true, errorMessage: '' });
+
+        if (!this.state.email || this.state.email.length < 4) {
+            this.setState({ loading: false, errorMessage: 'Provide valid email' });
+            return;
+        }
+
+        const requestData = {
+            email: this.state.email,
+        };
+
+        try {
+            await Axios.post('/api/email-subscribe', requestData, { timeout: 5000 });
+            this.setState({ success: true });
+        } catch (error) {
+            this.setState({ errorMessage: 'Provide valid email' });
+        } finally {
+            this.setState({ loading: false });
+        }
     };
 }
 

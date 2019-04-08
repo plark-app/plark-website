@@ -35,6 +35,7 @@ expressApp.use(
     }),
 );
 
+expressApp.use('/api', Router.createApiRouter());
 expressApp.get('/sitemap.xml', Router.dynamicSitemap);
 
 const appHandlers = [

@@ -53,6 +53,8 @@ ENV NODE_ENV=production \
     PORT=80 \
     SECURE=true \
     GTM_KEY="GTM-K8BVBNG" \
+    MAILCHIMP_API_KEY=false \
+    MAILCHIMP_LIST_ID=false \
     LOG_PATH="/var/log/docker/plark-website"
 
 WORKDIR /usr/src/plark-website

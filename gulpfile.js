@@ -3,12 +3,12 @@ const fs = require('fs');
 const path = require('path');
 const mkdirp = require('mkdirp-sync');
 const axios = require('axios');
-
 const PotExtractor = require('./pot-extractor');
+const dotenv = require('dotenv');
+const config = dotenv.config();
 
-const locoReadKey = process.env.LOCO_READ_KEY || 'fufbK3fOmiyqE26b6TfQuv9YcU3k4fpc';
-const locoWriteKey = process.env.LOCO_WRITE_KEY;
-
+const locoReadKey = config.parsed.LOCO_READ_KEY || 'fufbK3fOmiyqE26b6TfQuv9YcU3k4fpc';
+const locoWriteKey = config.parsed.LOCO_WRITE_KEY;
 const locales = require('./config/locales.json');
 
 gulp.task(
@@ -29,7 +29,7 @@ gulp.task('locales:import', () => {
     };
 
     const extractLocale = (locale) => {
-        const successLoad = function(response) {
+        const successLoad = (response) => {
             writeLocaleFile(locale, response.data);
         };
 
@@ -89,10 +89,10 @@ gulp.task('locales:export', () => {
 });
 
 function copyTask(opts) {
-    const { source, destination, destinations = [destination], pattern = '**/*' } = opts;
+    const {source, destination, destinations = [destination], pattern = '**/*'} = opts;
 
     return () => {
-        let stream = gulp.src(source + pattern, { base: source });
+        let stream = gulp.src(source + pattern, {base: source});
         destinations.forEach((destination) => {
             stream = stream.pipe(gulp.dest(destination));
         });

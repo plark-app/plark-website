@@ -16,6 +16,7 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
+.env
 node_modules
 package-lock.json
 yarn-error.log

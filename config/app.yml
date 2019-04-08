@@ -4,3 +4,6 @@ app:
   secure: true
 
   gtmKey: 'GTM-K8BVBNG'
+
+  mailchimpApiKey: false
+  mailchimpListID: false
