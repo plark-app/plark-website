@@ -1,5 +1,6 @@
 const gulp = require('gulp');
 const fs = require('fs');
+const _ = require('lodash');
 const path = require('path');
 const mkdirp = require('mkdirp-sync');
 const axios = require('axios');
@@ -7,8 +8,8 @@ const PotExtractor = require('./pot-extractor');
 const dotenv = require('dotenv');
 const config = dotenv.config();
 
-const locoReadKey = config.parsed.LOCO_READ_KEY || 'fufbK3fOmiyqE26b6TfQuv9YcU3k4fpc';
-const locoWriteKey = config.parsed.LOCO_WRITE_KEY;
+const locoReadKey = _.get(config, 'parsed.LOCO_READ_KEY', 'fufbK3fOmiyqE26b6TfQuv9YcU3k4fpc');
+const locoWriteKey = _.get(config, 'parsed.LOCO_WRITE_KEY');
 const locales = require('./config/locales.json');
 
 gulp.task(
