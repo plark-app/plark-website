@@ -17,7 +17,6 @@ Temporary Items
 .apdisk
 
 .env
-.env.yml
 node_modules
 package-lock.json
 yarn-error.log
