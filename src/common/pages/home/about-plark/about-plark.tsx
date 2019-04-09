@@ -30,17 +30,30 @@ class AboutPlark extends React.PureComponent<WithTranslationsProps & AboutPlarkP
 
     public render(): React.ReactNode {
         return (
-            <Section className={styles.aboutContainer}>
+            <Section className={styles.aboutContainer} contentClassName={styles.aboutContainerContent}>
                 {this.state.useParallax
                     ? this.__renderParallaxPhone()
                     : (
                         <>
-                            {this.__renderPhone()}
+                            <Controller>
+                                <Scene duration={500} offset={this.state.phoneOffset} pin>
+                                    <Timeline>
+                                        <Tween
+                                            from={{ scale: 1.5 }}
+                                            to={{ scale: 1 }}
+                                        >
+                                            {this.__renderPhone()}
+                                        </Tween>
+                                    </Timeline>
+                                </Scene>
+                            </Controller>
 
-                            <Feature index={0} />
-                            <Feature index={1} />
-                            <Feature index={2} />
-                            <Feature index={3} />
+                            <div className={styles.featuresPlainList}>
+                                <Feature index={0} />
+                                <Feature index={1} />
+                                <Feature index={2} />
+                                <Feature index={3} />
+                            </div>
                         </>
                     )
                 }

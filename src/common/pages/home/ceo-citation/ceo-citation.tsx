@@ -12,14 +12,12 @@ export default () => {
 
     return (
         <Section className={styles.ceo} contentClassName={styles.ceoContent}>
-            <Topic titleText={text.ceoCitation(i18n)} isCenter maxWidth={600} />
+            <Topic titleText={text.ceoCitation(i18n)} isCenter maxWidth={600} titleClassName={styles.ceoTitle} />
             <div className={styles.ceoSeparator} />
 
             <div className={styles.ceoPerson}>
                 <h4 className={styles.ceoPersonName}>{text.userName(i18n)}</h4>
-                <p className={styles.ceoPersonPosition}>{text.userPosition(i18n)}</p>
             </div>
-
 
             <BadgeContainer className={styles.ceoPlatforms}>
                 <StoreBadge platform={PlatformList.apple} height={50} />

@@ -12,8 +12,15 @@ export const download: Record<string, TranslateFunction> = {
 };
 
 export const ceoCitation = __(
-    'We make it easy to purchase Bitcoin using a variety of methods, including credit card, in-person purchases at a bitcoin ATM, or a store.',
+`We developed a simple and secure
+fully decentralized wallet to work on
+the fly, keep your crypto safe and
+exchange your currencies
+with ease.`,
 );
+
+export const userName = __('Plark team');
+export const userPosition = __('Happy user');
 
 
 export const lastCitation = __(
@@ -23,5 +30,3 @@ export const lastCitationDesc = __(
     'The most durable glass ever in a smartphone. A beautiful new gold finish, achieved with an atomic-level process.',
 );
 
-export const userName = __('Anonymous');
-export const userPosition = __('Happy user');

@@ -94,6 +94,14 @@
         padding-bottom: 0;
     }
 
+    &__title {
+        white-space: pre-line;
+
+        @include to-width(460px) {
+            white-space: normal;
+        }
+    }
+
     &-separator {
         margin: 20px auto;
         height: 2px;
@@ -115,6 +123,7 @@
             font-size: 18px;
             margin: 0;
             padding: 0;
+            opacity: 0.5;
         }
 
         &__position {

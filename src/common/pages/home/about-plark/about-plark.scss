@@ -5,11 +5,15 @@
 
 .about-container {
     margin-bottom: 0;
+
+    &__content {
+        padding-top: 250px;
+    }
 }
 
 .iphone {
     position: relative;
-    height: 450px;
+    height: 600px;
     margin: 0 auto 50px;
     z-index: 1;
 
@@ -58,6 +62,8 @@
 
     &__side-item {
         margin-bottom: 40px;
+        width: 100%;
+        min-width: 320px;
     }
 
     &__side {
@@ -65,15 +71,26 @@
         flex-direction: column;
     }
 
+    &__plain-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    @include from-width(699px) {
+        &__side-item {
+            margin-bottom: 40px;
+
+            width: calc(50% - 20px);
+            min-width: 320px;
+        }
+    }
+
     @include from-width(768px) {
         flex-direction: row;
         justify-content: center;
 
-        &__side-item {
-            width: 320px;
-            height: 180px;
-            margin-bottom: 100px;
-        }
 
         &-iphone-space {
             display: block;
@@ -92,6 +109,14 @@
 
         .i-bottom &__side-item {
             margin-bottom: 0;
+        }
+    }
+
+    @include from-width(1080px) {
+        &__side-item {
+            width: 320px;
+            height: 180px;
+            margin-bottom: 100px;
         }
     }
 }
