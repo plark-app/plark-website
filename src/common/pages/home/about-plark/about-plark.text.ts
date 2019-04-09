@@ -4,22 +4,22 @@ export const featureList: any[] = [
     {
         title: __('Super secure'),
         desc: __(
-            'Poorly designed presentations are a thing of the past. Create beautiful and high-quality content that is aligned with your brand, in just a few clicks.',
-        ),
-    }, {
-        title: __('Exchange and go'),
-        desc: __(
-            'Manually updating your business reports and sales pitches is tedious and painful. With Pitch, connect to external data sources to turn your presentations into.',
+            'You keep all the crypto in your own pocket. Plark is a fully decentralized wallet connecting directly to the blockchain with a 12-word private key. So be sure to keep your private key safe.',
         ),
     }, {
         title: __('Multi-currency'),
         desc: __(
-            'For amazing augmented reality experiences. Incredible portraits with Depth Control. And speed and fluidity in everything you do.',
+            'You can store your crypro in any of the popular currencies Bitcoin, Ethereum. Litecoin and Dash. And right now we are working to add new ones.',
         ),
     }, {
-        title: __('Exceptional materials'),
+        title: __('Fast & Simple'),
         desc: __(
-            'The most durable glass ever in a smartphone. A beautiful new gold finish, achieved with an atomic-level process.',
+            'It’s an easy-to-use wallet with simple features to fulfill your needs. It functionates in a blink of an eye, no matter what you ask Plark to do.',
+        ),
+    }, {
+        title: __('Exchange'),
+        desc: __(
+            'Exchange your crypro on the fly. Plark works seamlessly with CoinSwitch allowing you to make instant trades in seconds.',
         ),
     },
 ];

@@ -1,6 +1,6 @@
 import { __, TranslateFunction } from 'common/i18n';
 
-export const preIntroTitle = __('Safest multi-currency crypto wallet');
+export const preIntroTitle = __('Safest & simplest multi-currency crypto wallet');
 export const introTitle = __('Someone should have done this already.');
 
 export const platformTitle = __('Available on iOS & Google Chrome');
