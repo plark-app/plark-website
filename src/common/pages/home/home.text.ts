@@ -12,7 +12,7 @@ export const download: Record<string, TranslateFunction> = {
 };
 
 export const ceoCitation = __(
-`We developed a simple and secure
+    `We developed a simple and secure
 fully decentralized wallet to work on
 the fly, keep your crypto safe and
 exchange your currencies
@@ -29,4 +29,3 @@ export const lastCitation = __(
 export const lastCitationDesc = __(
     'No more waiting for a crypto-wallet to do its job. Simplicity and useful features only. Plark makes it possible.',
 );
-
