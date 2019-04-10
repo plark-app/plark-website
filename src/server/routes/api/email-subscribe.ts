@@ -14,7 +14,7 @@ export default async (req: express.Request, res: express.Response) => {
     if (!mailchimpApiKey) {
         res.sendStatus(500);
         logger.error('No Mailchimp API Key');
-        
+
         return;
     }
 
