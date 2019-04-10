@@ -10,8 +10,8 @@ export const routes: RouteDescriptor[] = [
         path: makeRoutePath('/'),
         load: makeRouteLoadFunction('home'),
         getSeoConfig: (i18n: ITranslationsAdapter): PageSeoConfig => ({
-            title: i18n.gettext('Manage crypto currency with easy | Plark'),
-            description: i18n.gettext('Manage crypto currency with easy | Plark'),
+            title: i18n.gettext('Safest & Simplest multi-currency crypto wallet | Plark'),
+            description: i18n.gettext('We developed a simple and secure fully decentralized wallet to work on the fly, keep your crypto safe and exchange your currencies with ease.'),
             canonicalLink: 'https://plark.io',
             path: '/',
         }),

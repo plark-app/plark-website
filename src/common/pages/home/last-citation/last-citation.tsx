@@ -15,8 +15,9 @@ export default () => {
         <Section>
             <Topic titleText={text.lastCitation(i18n)}
                    descText={text.lastCitationDesc(i18n)}
+                   titleClassName={styles.lastCitationTitle}
                    isCenter
-                   maxWidth={600}
+                   maxWidth={700}
             />
 
             <BadgeContainer className={styles.ceoPlatforms}>

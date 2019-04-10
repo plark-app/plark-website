@@ -60,11 +60,16 @@
     }
 
     &__footer {
+        display: none;
         position: absolute;
         bottom: 20px;
         left: 0;
         right: 0;
         z-index: 0;
+
+        @include from-width(996px) {
+            display: block;
+        }
 
         &-content {
             display: flex;

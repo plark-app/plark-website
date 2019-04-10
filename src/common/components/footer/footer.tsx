@@ -41,7 +41,7 @@ export default () => {
                     </NavLink>
 
                     <NavLink to="/terms" className={styles.navLink}>
-                        {i18n.gettext('Terms of Use')}
+                        {i18n.gettext('Terms & Conditions')}
                     </NavLink>
                 </nav>
 

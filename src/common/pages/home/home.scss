@@ -95,8 +95,6 @@
     }
 
     &__title {
-        white-space: pre-line;
-
         @include to-width(460px) {
             white-space: normal;
         }
@@ -133,4 +131,7 @@
             text-transform: uppercase;
         }
     }
+}
+
+.last-citation {
 }

@@ -24,9 +24,9 @@ export const userPosition = __('Happy user');
 
 
 export const lastCitation = __(
-    'We make it easy to send and receive Bitcoin using a variety of methods',
+    'Plark. Pay Like a Spark.\nThe fastest decentralized crypto-wallet ever.',
 );
 export const lastCitationDesc = __(
-    'The most durable glass ever in a smartphone. A beautiful new gold finish, achieved with an atomic-level process.',
+    'No more waiting for a crypto-wallet to do its job. Simplicity and useful features only. Plark makes it possible.',
 );
 

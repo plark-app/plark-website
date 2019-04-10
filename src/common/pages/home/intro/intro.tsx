@@ -42,9 +42,9 @@ export default ({ hideContent = false }: IntroProps) => {
 
                 <div>
                     <NavLink to="/terms"
-                             title={i18n.gettext('Terms & conditions')}
+                             title={i18n.gettext('Terms & Conditions')}
                              className={styles.introFooterLink}
-                    >{i18n.gettext('Terms & conditions')}</NavLink>
+                    >{i18n.gettext('Terms & Conditions')}</NavLink>
 
                     <NavLink to="/privacy"
                              title={i18n.gettext('Privacy Policy')}

@@ -12,6 +12,7 @@
         color: currentColor;
         font-size: 22px;
         font-weight: 700;
+        white-space: pre-line;
 
         @include from-sm-width {
             font-size: 28px;
@@ -33,7 +34,7 @@
         line-height: 1.5;
         color: $color-dark;
         display: block;
-        max-width: 460px;
+        max-width: 490px;
         font-weight: 400;
 
         @include from-md-width {

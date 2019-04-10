@@ -20,7 +20,7 @@ class OpenGraph extends React.PureComponent<OpenGraphProps> {
                 <meta property="og:description" content={description} />
                 <meta property="og:site_name" content="Plark" />
                 <meta property="og:type" content="website" />
-                <meta property="og:image" content={`${SEO_HOST}/img/${i18n.language}/open-graph.png`} />
+                <meta property="og:image" content={`${SEO_HOST}/img/${i18n.language}/open-graph.jpg`} />
                 <meta property="og:image:width" content="1200" />
                 <meta property="og:image:height" content="630" />
                 <meta property="og:locale" content={i18n.languageCode} />
