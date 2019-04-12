@@ -49,6 +49,7 @@
         "jsona": "1.3.0",
         "lodash": "4.17.10",
         "mailchimp-api-v3": "^1.13.0",
+        "marked": "^0.6.2",
         "mkdirp-sync": "0.0.3",
         "moment": "2.24.0",
         "prop-types": "15.6.1",

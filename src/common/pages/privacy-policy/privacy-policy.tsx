@@ -1,30 +1,31 @@
 import React from 'react';
+import { useI18n } from 'slim-i18n';
 import Footer from 'common/components/footer';
 import Header from 'common/components/header';
 import Section from 'common/components/section';
 import Topic from 'common/components/topic';
+import commonStyles from 'common/styles/common.scss';
 import MarkdownContent from 'common/components/markdown-content';
 import textPrivacyPolicy from 'resources/terms/privacy-policy.md';
 
-export default class PrivacyPolicy extends React.Component {
-    public state: any = {
-        activeHeader: false,
-        scrollTop: 0,
-    };
+export default () => {
+    const i18n = useI18n();
 
-    public render(): JSX.Element {
-        return (
-            <>
-                <Header isWhite={true} />
+    return (
+        <>
+            <Header isWhite={true} />
 
-                <Section className="legal-section">
-                    <Topic titleText="Privacy Policy" className="markdown-main-title" isIntro={true} />
+            <Section className={commonStyles.legalSection}>
+                <Topic titleText={i18n.gettext("Privacy Policy")}
+                       className={commonStyles.markdownMainTitle}
+                       isIntro={true}
+                       titleTag="h1"
+                />
 
-                    <MarkdownContent content={textPrivacyPolicy} />
-                </Section>
+                <MarkdownContent content={textPrivacyPolicy} />
+            </Section>
 
-                <Footer />
-            </>
-        );
-    }
+            <Footer />
+        </>
+    );
 }

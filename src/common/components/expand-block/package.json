@@ -1,0 +1,6 @@
+{
+    "private": true,
+    "name": "expand-block",
+    "main": "expand-block.tsx",
+    "typings": "expand-block.tsx"
+}

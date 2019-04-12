@@ -1,30 +1,31 @@
 import React from 'react';
+import { useI18n } from 'slim-i18n';
 import Footer from 'common/components/footer';
 import Header from 'common/components/header';
 import Section from 'common/components/section';
 import Topic from 'common/components/topic';
+import commonStyles from 'common/styles/common.scss';
 import MarkdownContent from 'common/components/markdown-content';
 import textTermsOfUse from 'resources/terms/terms-of-use.md';
 
-export default class TermsOfUse extends React.Component {
-    public state: any = {
-        activeHeader: false,
-        scrollTop: 0,
-    };
+export default () => {
+    const i18n = useI18n();
 
-    public render(): JSX.Element {
-        return (
-            <>
-                <Header isWhite={true} />
+    return (
+        <>
+            <Header isWhite={true} />
 
-                <Section className="legal-section">
-                    <Topic titleText="Terms & Conditions" className="markdown-main-title" isIntro={true} />
+            <Section className={commonStyles.legalSection}>
+                <Topic titleText={i18n.gettext("Terms & Conditions")}
+                       className={commonStyles.markdownMainTitle}
+                       isIntro={true}
+                       titleTag="h1"
+                />
 
-                    <MarkdownContent content={textTermsOfUse} />
-                </Section>
+                <MarkdownContent content={textTermsOfUse} />
+            </Section>
 
-                <Footer />
-            </>
-        );
-    }
+            <Footer />
+        </>
+    );
 }

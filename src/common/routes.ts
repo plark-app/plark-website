@@ -55,6 +55,23 @@ export const routes: RouteDescriptor[] = [
         }),
     },
     {
+        id: 'faq',
+        exact: true,
+        rawPath: '/faq',
+        path: makeRoutePath('/faq'),
+        load: makeRouteLoadFunction('faq'),
+        getSeoConfig: (i18n: ITranslationsAdapter): PageSeoConfig => ({
+            title: i18n.gettext('Frequently Asked Questions | Plark'),
+            description: i18n.gettext('Frequently Asked Questions | Plark'),
+            canonicalLink: 'https://plark.io/faq',
+            path: '/faq',
+        }),
+        getSitemapOption: (): SitemapOption => ({
+            path: '/faq',
+            priority: 0.8,
+        }),
+    },
+    {
         id: 'no-match',
         path: makeRoutePath(''),
         load: makeRouteLoadFunction('no-match'),

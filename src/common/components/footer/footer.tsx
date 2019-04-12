@@ -36,6 +36,10 @@ export default () => {
                         {i18n.gettext('Home')}
                     </NavLink>
 
+                    <NavLink to="/faq" className={styles.navLink}>
+                        {i18n.gettext('FAQ')}
+                    </NavLink>
+
                     <NavLink to="/privacy" className={styles.navLink}>
                         {i18n.gettext('Privacy Policy')}
                     </NavLink>
