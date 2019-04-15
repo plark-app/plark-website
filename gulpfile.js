@@ -6,6 +6,8 @@ const mkdirp = require('mkdirp-sync');
 const axios = require('axios');
 const PotExtractor = require('./pot-extractor');
 const dotenv = require('dotenv');
+const PlarkFAQ = require('./plark-faq');
+
 const config = dotenv.config();
 
 const locoReadKey = _.get(config, 'parsed.LOCO_READ_KEY', 'fufbK3fOmiyqE26b6TfQuv9YcU3k4fpc');
