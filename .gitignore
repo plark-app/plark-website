@@ -30,4 +30,4 @@ storybook-static
 build
 
 resources/locales/*
-src/common/faq/pages/faq-content/*
+src/common/pages/faq/faq-content/*
