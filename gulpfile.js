@@ -56,6 +56,7 @@ gulp.task('locales:import', () => {
     codes.forEach(extractLocale);
 });
 
+
 gulp.task('locales:export', () => {
     if (!locoWriteKey) {
         console.log('You have to set Locolise KEY for https://localise.biz/');
@@ -101,3 +102,35 @@ function copyTask(opts) {
         return stream;
     };
 }
+
+
+gulp.task('faq:import', () => {
+    const destPath = path.resolve('./resources/faq');
+    mkdirp(destPath);
+
+    const contentPath = './plark-faq/faq';
+    const files = fs.readdirSync(contentPath);
+
+    const jsonFileList = [];
+
+    for (let i = 0; i < files.length; i++) {
+        const fileName = files[i];
+        if (!fileName.endsWith('.md')) {
+            return;
+        }
+
+        const content = fs.readFileSync(contentPath + '/' + fileName);
+        const jsonFileName = fileName.replace('.md', '') + `.json`;
+        fs.writeFileSync(
+            path.resolve(destPath, jsonFileName),
+            JSON.stringify(PlarkFAQ.parseFAQItem(content)),
+        );
+
+        jsonFileList.push(jsonFileName);
+    }
+
+    fs.writeFileSync(
+        path.resolve(destPath, 'index.js'),
+        `export default [${jsonFileList.map(filename => `require('./${filename}')`).join(',')}];`
+    );
+});
