@@ -107,7 +107,7 @@ function copyTask(opts) {
 
 
 gulp.task('faq:import', () => {
-    const destPath = path.resolve('./resources/faq');
+    const destPath = path.resolve('./src/common/pages/faq/faq-content');
     mkdirp(destPath);
 
     const contentPath = './plark-faq/faq';

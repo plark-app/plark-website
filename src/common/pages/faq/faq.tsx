@@ -9,7 +9,7 @@ import Section from 'common/components/section';
 import commonStyles from 'common/styles/common.scss';
 import styles from './faq.scss';
 
-import * as text from './faq.text';
+const faqContent = require('./faq-content');
 
 export default () => {
 
@@ -27,7 +27,7 @@ export default () => {
 
                 <div>
                     {
-                        text.faqList.map((item: any, index: number) => (
+                        faqContent.map((item: any, index: number) => (
                             <ExpandBlock
                                 key={index}
                                 title={item.title}
