@@ -69,6 +69,9 @@ COPY src src/
 COPY package.json gulpfile.js pot-extractor.js tsconfig.json webpack.*.js ./
 
 RUN apk update && \
+    # Import submodules
+    git submodule init && \
+    git submodule update && \
     # Install packages
     apk add --no-cache gettext dumb-init && \
     yarn copy && \

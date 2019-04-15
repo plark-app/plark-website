@@ -13,7 +13,7 @@
         "start": "node ./dest/server/server.js",
         "dev-server": "webpack-cli --progress && npm start",
         "build": "NODE_ENV=production webpack-cli --progress",
-        "copy": "gulp copy",
+        "copy": "gulp copy && gulp faq:import",
         "tslint": "tslint -c tslint.json -p tsconfig.json",
         "eslint": "eslint .",
         "stylelint": "stylelint \"src/**/*.scss\"",
