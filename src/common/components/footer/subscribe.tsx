@@ -1,9 +1,9 @@
 import React, { ChangeEvent, FormEvent } from 'react';
+import Axios from 'axios';
 import { compose } from 'recompose';
 import { withTranslations, WithTranslationsProps } from 'slim-i18n';
 import UIButton from 'common/components/ui-button';
 import styles from './footer.scss';
-import Axios from 'axios';
 
 class Subscribe extends React.PureComponent<WithTranslationsProps> {
     public state: any = {
@@ -20,7 +20,7 @@ class Subscribe extends React.PureComponent<WithTranslationsProps> {
         if (success) {
             return (
                 <div className={styles.subscribeSuccess}>
-                    {i18n.gettext('You successful subscribed to our newsletter.')}
+                    {i18n.gettext('You subscribed successfully to our newsletter.')}
                 </div>
             );
         }
@@ -60,7 +60,11 @@ class Subscribe extends React.PureComponent<WithTranslationsProps> {
         this.setState({ loading: true, errorMessage: '' });
 
         if (!this.state.email || this.state.email.length < 4) {
-            this.setState({ loading: false, errorMessage: 'Provide valid email' });
+            this.setState({
+                loading: false,
+                errorMessage: 'Provide valid email',
+            });
+
             return;
         }
 

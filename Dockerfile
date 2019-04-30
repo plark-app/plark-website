@@ -24,6 +24,7 @@ ARG LOCO_WRITE_KEY
 WORKDIR /usr/src/plark-website
 COPY --from=NODE_MODULES /usr/src/plark-website/node_modules node_modules/
 COPY package.json gulpfile.js pot-extractor.js ./
+COPY plark-faq plark-faq/
 COPY config/locales.json config/locales.json
 
 RUN apk update && apk add --no-cache gettext && \
@@ -66,12 +67,10 @@ COPY docker docker/
 COPY webpack webpack/
 COPY config config/
 COPY src src/
+COPY plark-faq plark-faq/
 COPY package.json gulpfile.js pot-extractor.js tsconfig.json webpack.*.js ./
 
 RUN apk update && \
-    # Import submodules
-    git submodule init && \
-    git submodule update && \
     # Install packages
     apk add --no-cache gettext dumb-init && \
     yarn copy && \
