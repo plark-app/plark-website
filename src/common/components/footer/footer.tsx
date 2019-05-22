@@ -54,11 +54,19 @@ export default () => {
                         {i18n.gettext('The Blog')}
                     </a>
 
+                    <a href="https://www.reddit.com/r/plark" target="_blank" className={styles.navLink}>
+                        {i18n.gettext('Reddit')}
+                    </a>
+
+                    <a href="https://www.producthunt.com/posts/plark-crypto-wallet" target="_blank" className={styles.navLink}>
+                        {i18n.gettext('Product Hunt')}
+                    </a>
+
                     <a href="https://github.com/plark-app" target="_blank" className={styles.navLink}>
                         Github
                     </a>
 
-                    <a href="https://t.me/plarkapp" target="_blank" className={styles.navLink}>
+                    <a href="https://t.me/PlarkWallet" target="_blank" className={styles.navLink}>
                         Telegram
                     </a>
                 </nav>

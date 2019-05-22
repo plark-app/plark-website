@@ -35,8 +35,14 @@ export default ({ hideContent = false }: IntroProps) => {
                     <a href="https://github.com/plark-app" className={styles.introFooterSocial} target="_blank">
                         <Icons.Github height={16} />
                     </a>
-                    <a href="https://t.me/plark-app" className={styles.introFooterSocial} target="_blank">
+                    <a href="https://t.me/PlarkWallet" className={styles.introFooterSocial} target="_blank">
                         <Icons.Telegram height={16} />
+                    </a>
+                    <a href="https://www.producthunt.com/posts/plark-crypto-wallet" className={styles.introFooterSocial} target="_blank">
+                        <Icons.ProductHunt height={16} />
+                    </a>
+                    <a href="https://www.reddit.com/r/plark" className={styles.introFooterSocial} target="_blank">
+                        <Icons.Reddit height={16} />
                     </a>
                 </div>
 
