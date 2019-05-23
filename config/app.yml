@@ -7,3 +7,6 @@ app:
 
   mailchimpApiKey: false
   mailchimpListID: false
+
+  telegramBotToken: false
+  telegramChatID: false

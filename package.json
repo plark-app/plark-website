@@ -70,6 +70,7 @@
         "sitemap": "1.13.0",
         "slim-i18n": "1.1.0",
         "svg-sprite-loader": "3.8.0",
+        "telegraf": "^3.29.0",
         "tslib": "1.9.2",
         "validatorjs": "3.15.1",
         "winston": "3.2.1"
