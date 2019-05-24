@@ -58,7 +58,7 @@ ENV NODE_ENV=production \
     MAILCHIMP_LIST_ID=false \
     TELEGRAM_BOT_TOKEN=false \
     TELEGRAM_CHAT_ID=false \
-    LOG_PATH="/var/log/docker/plark-website" \
+    LOG_PATH="/var/log/docker/plark-website"
 
 WORKDIR /usr/src/plark-website
 
