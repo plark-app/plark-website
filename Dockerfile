@@ -56,7 +56,9 @@ ENV NODE_ENV=production \
     GTM_KEY="GTM-K8BVBNG" \
     MAILCHIMP_API_KEY=false \
     MAILCHIMP_LIST_ID=false \
-    LOG_PATH="/var/log/docker/plark-website"
+    TELEGRAM_BOT_TOKEN=false \
+    TELEGRAM_CHAT_ID=false \
+    LOG_PATH="/var/log/docker/plark-website" \
 
 WORKDIR /usr/src/plark-website
 
