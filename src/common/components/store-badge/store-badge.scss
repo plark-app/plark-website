@@ -2,7 +2,6 @@
 
 .badge {
     display: block;
-    margin-right: 10px;
     margin-bottom: 10px;
     transition: transform 0.4s;
     border-radius: 5px;
@@ -10,10 +9,6 @@
 
     @include from-width(640px) {
         margin-bottom: 0;
-    }
-
-    &.is-dark-bg {
-        box-shadow: 0 0 0 1px transparentize(white, 0.5);
     }
 
     &:hover {

@@ -11,7 +11,7 @@ import styles from './faq.scss';
 
 const faqContent = require('./faq-content').default;
 
-export default () => {
+export default function FaqPage(): JSX.Element {
 
     const i18n = useI18n();
 
@@ -21,7 +21,6 @@ export default () => {
             <Section className={commonStyles.legalSection}>
                 <Topic titleText={i18n.gettext("Frequently Asked Questions")}
                        className={commonStyles.markdownMainTitle}
-                       isIntro={true}
                        titleTag="h1"
                 />
 

@@ -19,7 +19,7 @@ export type UIButtonProps = {
     autoFocus?: boolean;
 };
 
-export default (props: UIButtonProps) => {
+export default function UIButton(props: UIButtonProps): JSX.Element {
     const {
         component = 'button',
         className,
@@ -45,7 +45,7 @@ export default (props: UIButtonProps) => {
         },
         children,
     );
-};
+}
 
 const getClassNames = ({ mode = 'contained', color = 'default' }: Partial<UIButtonProps>) => {
     const typeClassName = {

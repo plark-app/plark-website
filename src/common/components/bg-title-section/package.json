@@ -1,0 +1,6 @@
+{
+    "private": true,
+    "name": "section-bg-title",
+    "main": "section-bg-title.tsx",
+    "typings": "section-bg-title.tsx"
+}

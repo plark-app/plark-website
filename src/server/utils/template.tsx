@@ -51,6 +51,25 @@ function getPreloadLinks(chunks: string[]): JSX.Element | null {
 
     return (
         <>
+            <link rel="preconnect" href="https://sf.abarba.me" crossOrigin="" />
+            <link rel="preload"
+                  href="https://sf.abarba.me/SF-UI-Display-Regular.otf"
+                  as="font"
+                  type="font/woff2"
+                  crossOrigin="anonymous"
+            />
+            <link as="font"
+                  rel="preload"
+                  href="https://sf.abarba.me/SF-UI-Display-Medium.otf"
+                  type="font/woff2"
+                  crossOrigin="anonymous"
+            />
+            <link as="font"
+                  rel="preload"
+                  href="https://sf.abarba.me/SF-UI-Display-Bold.otf"
+                  type="font/woff2"
+                  crossOrigin="anonymous"
+            />
             {[...chunks].map((chunk: string) => (
                 <link key={chunk + 'style'} rel="preload" href={getChunkAssetFilePath(chunk, cssRe)} as="style" />
             ))}

@@ -18,7 +18,6 @@ export default () => {
             <Section className={commonStyles.legalSection}>
                 <Topic titleText={i18n.gettext("Terms & Conditions")}
                        className={commonStyles.markdownMainTitle}
-                       isIntro={true}
                        titleTag="h1"
                 />
 

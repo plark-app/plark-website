@@ -13,17 +13,15 @@ export type TTopicProps = {
     isWhite?: boolean;
     isCenter?: boolean;
     isSmall?: boolean;
-    isIntro?: boolean;
     maxWidth?: number;
 };
 
-export default (props: TTopicProps): JSX.Element => {
+export default function Topic(props: TTopicProps): JSX.Element {
     const {
         titleTag = 'h2',
         isWhite = false,
         isCenter = false,
         isSmall = false,
-        isIntro = false,
         maxWidth,
     } = props;
 
@@ -35,7 +33,6 @@ export default (props: TTopicProps): JSX.Element => {
         [styles.iWhite]: isWhite,
         [styles.iCenter]: isCenter,
         [styles.iSmall]: isSmall,
-        [styles.iIntro]: isIntro,
     });
 
     const topicStyle: React.CSSProperties = {};
@@ -49,4 +46,4 @@ export default (props: TTopicProps): JSX.Element => {
             {props.descText && <p className={cn(styles.topicDesc, props.descClassName)}>{props.descText}</p>}
         </div>
     );
-};
+}

@@ -1,9 +1,12 @@
+@import '../../styles/media';
+@import '../../styles/colors';
+
 .header {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    height: 70px;
+    height: 108px;
     z-index: 1000;
     transition: all 0.2s;
     background-color: transparent;
@@ -16,8 +19,6 @@
 
     &.-is-white {
         transition: all 0.4s;
-        background-color: transparentize(white, 0.2);
-        box-shadow: 0 1px 0 0 transparentize(#111111, 0.9);
     }
 
     &__section {
@@ -25,11 +26,29 @@
     }
 
     &__section-content {
-        padding-top: 0 !important;
-        padding-bottom: 0 !important;
-        height: 70px;
+        padding-top: 44px !important;
+        padding-bottom: 44px !important;
         display: flex;
         justify-content: space-between;
         align-items: center;
+    }
+}
+
+.nav {
+    display: flex;
+
+    &__unit {
+        transition: color 0.4s;
+
+        display: block;
+        font-size: 16px;
+        font-weight: 500;
+        margin-right: 50px;
+        color: $color-text-dark;
+
+        &:hover {
+            transition-duration:  0.2s;
+            color: $color-text-secondary;
+        }
     }
 }

@@ -3,12 +3,23 @@
 @import '../../styles/media';
 
 .footer {
-    padding-top: 60px;
-    padding-bottom: 30px;
-    color: white;
+    padding-top: 50px;
+    padding-bottom: 0;
+    border-top: 1px solid $color-gray30;
+
     position: relative;
-    background: $color-dark;
     z-index: 4;
+
+    &__second {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 65px;
+    }
+
+    &__content {
+        padding-bottom: 0;
+        padding-top: 0;
+    }
 
     &__logo {
         margin-bottom: 30px;
@@ -46,69 +57,83 @@
     }
 }
 
-.platforms {
-    &__title {
-        font-size: 18px;
-        line-height: 1.66;
-        opacity: 0.5;
-        margin-bottom: 5px;
-        font-weight: 500;
-    }
+.nav-link {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.71;
+    letter-spacing: 0.17px;
+    color: $color-text-secondary;
 
-    &__container {
+    transition: color 0.4s;
+
+    &:hover {
+        transition-duration: 0.2s;
+        color: $color-text-dark;
     }
 }
 
-.subscribe {
+.nav-column {
     &__title {
-        font-size: 14px;
-        font-weight: 500;
+        font-size: 16px;
+        line-height: 1.375;
+        color: $color-text-dark;
+        font-weight: bold;
         margin-bottom: 10px;
-        margin-top: 0;
     }
 
-    &__form {
+    & > .nav-link {
+        display: block;
+    }
+}
+
+
+.bottom-bar {
+    border-top: 1px solid $color-gray30;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin: 0;
+
+    &__content {
+        height: 60px;
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;;
         display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+
     }
 
-    &__input {
-        flex: 1;
-        height: 50px;
-        padding: 10px;
-        border-radius: 5px;
-        background-color: white;
-        border: none;
-        margin-right: 10px;
+    &__nav {
+        display: flex;
 
-        @include from-width(640px) {
-            width: 250px;
+        & > .nav-link {
+            display: block;
+            margin: 0 8px;
+
+            &:first-child {
+                margin-left: 0;
+            }
+
+            &:last-child {
+                margin-right: 0;
+            }
         }
     }
-
-    &__error-message {
-        margin-top: 10px;
-        color: white;
-        font-size: 12px;
-        height: 14px;
-    }
-
-    &__success {
-        font-size: 16px;
-    }
 }
 
-.nav {
-    width: 210px;
 
-    &__link {
-        display: block;
-        color: white;
-        opacity: 0.5;
-        font-size: 18px;
-        line-height: 30px;
+.social {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
 
-        &:hover {
-            opacity: 1;
+    &__item {
+        color: $color-gray40;
+        & > svg {
+            width: 18px;
+            height: 18px;
+            fill: $color-gray40;
         }
     }
 }

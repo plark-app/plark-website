@@ -2,10 +2,11 @@ import React, { ChangeEvent, FormEvent } from 'react';
 import Axios from 'axios';
 import { compose } from 'recompose';
 import { withTranslations, WithTranslationsProps } from 'slim-i18n';
-import UIButton from 'common/components/ui-button';
-import styles from './footer.scss';
+import UIButton from '../ui-button';
 
-class Subscribe extends React.PureComponent<WithTranslationsProps> {
+import styles from './subscribe-section.scss';
+
+class SubscribeForm extends React.PureComponent<WithTranslationsProps> {
     public state: any = {
         email: '',
         loading: false,
@@ -27,12 +28,8 @@ class Subscribe extends React.PureComponent<WithTranslationsProps> {
 
         return (
             <form onSubmit={this.__handleFormSubmit} className={styles.subscribe}>
-                <h4 className={styles.subscribeTitle}>
-                    {i18n.gettext('Stay smart. Subscribe to our newsletter.')}
-                </h4>
-
                 <div className={styles.subscribeForm}>
-                    <input value={this.state.email} onChange={this.__handleValue} className={styles.subscribeInput} />
+                    <input value={this.state.email} onChange={this.__handleValue} className={styles.subscribeInput} placeholder="enter your email" />
 
                     <UIButton color="primary" disabled={loading}>
                         {loading ? 'Loading...' : i18n.gettext('Subscribe')}
@@ -83,4 +80,4 @@ class Subscribe extends React.PureComponent<WithTranslationsProps> {
     };
 }
 
-export default compose<WithTranslationsProps, any>(withTranslations)(Subscribe);
+export default compose<WithTranslationsProps, any>(withTranslations)(SubscribeForm);

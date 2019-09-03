@@ -1,0 +1,6 @@
+{
+    "private": true,
+    "name": "citation-section",
+    "main": "citation-section.tsx",
+    "typings": "citation-section.tsx"
+}

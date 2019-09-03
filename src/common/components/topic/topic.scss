@@ -8,8 +8,7 @@
     &__title {
         margin: 0;
         padding: 0;
-        line-height: 1.135;
-        color: currentColor;
+        line-height: 1.1667;
         font-size: 22px;
         font-weight: 700;
         white-space: pre-line;
@@ -19,7 +18,7 @@
         }
 
         @include from-md-width {
-            font-size: 32px;
+            font-size: 60px;
         }
 
         .topic.i-center > & {
@@ -29,13 +28,13 @@
     }
 
     &__desc {
-        font-size: 18px;
-        margin: 0;
-        line-height: 1.5;
-        color: $color-dark;
+        font-size: 16px;
+        font-weight: bold;
+        line-height: 1.375;
+        color: $color-text-secondary;
+
         display: block;
-        max-width: 490px;
-        font-weight: 400;
+        max-width: 630px;
 
         @include from-md-width {
             font-size: 18px;
@@ -57,7 +56,7 @@
 
     // Where text must be white
     &.i-white {
-        color: #fff;
+        color: $color-white;
     }
 
     // Where text must be centered
@@ -81,26 +80,5 @@
 
     &.i-small > &__title + &__desc {
         margin-top: 15px;
-    }
-
-    // For intro as the first element of page
-    &.i-intro {
-        max-width: 1080px;
-    }
-
-    &.i-intro &__title {
-        font-size: 32px;
-
-        @include from-sm-width {
-            font-size: 42px;
-        }
-
-        @include from-md-width {
-            font-size: 60px;
-        }
-    }
-
-    &.i-intro &__desc {
-        max-width: 770px;
     }
 }

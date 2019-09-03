@@ -10,7 +10,7 @@ export const routes: RouteDescriptor[] = [
         path: makeRoutePath('/'),
         load: makeRouteLoadFunction('home'),
         getSeoConfig: (i18n: ITranslationsAdapter): PageSeoConfig => ({
-            title: i18n.gettext('Safest & Simplest multi-currency crypto wallet | Plark'),
+            title: i18n.gettext('Just a friendliest crypto currency wallet app you will use') + ' | Plark',
             description: i18n.gettext('We developed a simple and secure fully decentralized wallet to work on the fly, keep your crypto safe and exchange your currencies with ease.'),
             canonicalLink: 'https://plark.io',
             path: '/',
@@ -27,8 +27,8 @@ export const routes: RouteDescriptor[] = [
         path: makeRoutePath('/privacy'),
         load: makeRouteLoadFunction('privacy-policy'),
         getSeoConfig: (i18n: ITranslationsAdapter): PageSeoConfig => ({
-            title: i18n.gettext('Privacy Policy | Plark'),
-            description: i18n.gettext('Privacy Policy | Plark'),
+            title: i18n.gettext('Privacy Policy') + ' | Plark',
+            description: i18n.gettext('Privacy Policy'),
             canonicalLink: 'https://plark.io/privacy',
             path: '/privacy',
         }),
@@ -44,8 +44,8 @@ export const routes: RouteDescriptor[] = [
         path: makeRoutePath('/terms'),
         load: makeRouteLoadFunction('terms-of-use'),
         getSeoConfig: (i18n: ITranslationsAdapter): PageSeoConfig => ({
-            title: i18n.gettext('Terms & Conditions | Plark'),
-            description: i18n.gettext('Terms & Conditions | Plark'),
+            title: i18n.gettext('Terms & Conditions') + ' | Plark',
+            description: i18n.gettext('Terms & Conditions'),
             canonicalLink: 'https://plark.io/terms',
             path: '/terms',
         }),
@@ -61,8 +61,8 @@ export const routes: RouteDescriptor[] = [
         path: makeRoutePath('/faq'),
         load: makeRouteLoadFunction('faq'),
         getSeoConfig: (i18n: ITranslationsAdapter): PageSeoConfig => ({
-            title: i18n.gettext('Frequently Asked Questions | Plark'),
-            description: i18n.gettext('Frequently Asked Questions | Plark'),
+            title: i18n.gettext('Frequently Asked Questions') + ' | Plark',
+            description: i18n.gettext('Frequently Asked Questions'),
             canonicalLink: 'https://plark.io/faq',
             path: '/faq',
         }),

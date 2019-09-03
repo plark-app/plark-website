@@ -1,0 +1,39 @@
+@import "../../styles/colors";
+@import "../../styles/media";
+
+.section {
+
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+
+    &__content {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+}
+
+.title {
+    font-size: 90px;
+    line-height: 0.776;
+    font-weight: 400;
+    max-width: 664px;
+
+    color: transparent;
+    position: absolute;
+    text-transform: lowercase;
+
+    transform: translateY(-50%);
+    top: 0;
+    left: 32px;
+    margin: 0;
+
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: $color-gray20;
+}
+
+.content {
+    margin-left: 105px;
+    max-width: 500px;
+}
+

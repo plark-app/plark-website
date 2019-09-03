@@ -1,0 +1,6 @@
+{
+    "private": true,
+    "name": "store-qr",
+    "main": "store-qr.tsx",
+    "typings": "store-qr.tsx"
+}

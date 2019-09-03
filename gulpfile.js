@@ -25,7 +25,7 @@ gulp.task(
 
 gulp.task('pot', PotExtractor.extract);
 
-gulp.task('locales:import', () => {
+gulp.task('locales:import', async () => {
     mkdirp(path.resolve('./resources/locales'));
     const writeLocaleFile = (locale, translates) => {
         fs.writeFileSync(path.resolve(`./resources/locales/${locale}.json`), JSON.stringify(translates));
@@ -58,8 +58,7 @@ gulp.task('locales:import', () => {
     codes.forEach(extractLocale);
 });
 
-
-gulp.task('locales:export', () => {
+gulp.task('locales:export', async () => {
     if (!locoWriteKey) {
         console.log('You have to set Locolise KEY for https://localise.biz/');
         return;
@@ -93,10 +92,10 @@ gulp.task('locales:export', () => {
 });
 
 function copyTask(opts) {
-    const {source, destination, destinations = [destination], pattern = '**/*'} = opts;
+    const { source, destination, destinations = [destination], pattern = '**/*' } = opts;
 
     return () => {
-        let stream = gulp.src(source + pattern, {base: source});
+        let stream = gulp.src(source + pattern, { base: source });
         destinations.forEach((destination) => {
             stream = stream.pipe(gulp.dest(destination));
         });
@@ -105,8 +104,7 @@ function copyTask(opts) {
     };
 }
 
-
-gulp.task('faq:import', () => {
+gulp.task('faq:import', async () => {
     const destPath = path.resolve('./src/common/pages/faq/faq-content');
     mkdirp(destPath);
 
@@ -123,16 +121,13 @@ gulp.task('faq:import', () => {
 
         const content = fs.readFileSync(contentPath + '/' + fileName);
         const jsonFileName = fileName.replace('.md', '') + `.json`;
-        fs.writeFileSync(
-            path.resolve(destPath, jsonFileName),
-            JSON.stringify(PlarkFAQ.parseFAQItem(content)),
-        );
+        fs.writeFileSync(path.resolve(destPath, jsonFileName), JSON.stringify(PlarkFAQ.parseFAQItem(content)));
 
         jsonFileList.push(jsonFileName);
     }
 
     fs.writeFileSync(
         path.resolve(destPath, 'index.js'),
-        `export default [${jsonFileList.map(filename => `require('./${filename}')`).join(',')}];`
+        `export default [${jsonFileList.map((filename) => `require('./${filename}')`).join(',')}];`,
     );
 });

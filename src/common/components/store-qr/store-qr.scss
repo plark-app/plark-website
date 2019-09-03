@@ -1,0 +1,35 @@
+
+.box {
+    padding: 2px;
+    height: 50px;
+    width: 50px;
+    background-color: white;
+    border-radius: 5px;
+
+    &__small {
+        width: 46px;
+        height: 46px;
+        cursor: pointer;
+    }
+
+    &__big {
+        position: absolute;
+        bottom: 100%;
+        left: 100%;
+        overflow: hidden;
+        border-radius: 10px;
+        width: 200px;
+        height: 200px;
+
+        visibility: hidden;
+        opacity: 0;
+
+        transition: all 0.4s;
+    }
+
+    &:hover > &__big {
+        transition-duration: 0.2s;
+        visibility: visible;
+        opacity: 1;
+    }
+}
