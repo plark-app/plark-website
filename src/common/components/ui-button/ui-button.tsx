@@ -8,6 +8,7 @@ export type UIButtonProps = {
     type?: 'button' | 'submit';
     mode?: 'contained' | 'outlined';
     color?: 'default' | 'primary';
+    isSmall?: boolean;
     className?: string;
     disabled?: boolean;
     title?: string;
@@ -27,20 +28,33 @@ export default function UIButton(props: UIButtonProps): JSX.Element {
         onClick,
         title,
         children,
+        isSmall = false,
         color,
         mode,
         id,
         ...otherOptions
     } = props;
 
+    const buttonClassName = React.useMemo(() => {
+        return cn(
+            styles.uiButton,
+            getClassNames({ mode, color }),
+            {
+                [styles.isSmall]: isSmall,
+            },
+            className,
+        );
+
+    }, [mode, color, className, isSmall]);
+
     return React.createElement(
         component,
         {
-            className: cn(styles.uiButton, getClassNames({ mode, color }), className),
+            id: id,
+            className: buttonClassName,
             disabled: disabled,
             title: title,
             onClick: onClick,
-            id: id,
             ...otherOptions,
         },
         children,

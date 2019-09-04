@@ -43,7 +43,7 @@
     text-decoration: none;
 
     font-size: 14px;
-    font-weight: 600;
+    font-weight: bold;
     line-height: 20px;
     color: $color-dark;
     box-shadow: 0 8px 16px rgba(255, 255, 255, 0);
@@ -61,6 +61,13 @@
     &:focus {
         transform: translateY(-3px);
         transition-duration: $dur-fast, $dur-fast, $dur-fast, $dur-fast, $dur-fast;
+    }
+
+    &.is-small {
+        height: 46px;
+
+        font-size: 12px;
+        line-height: 14px;
     }
 
     &[disabled] {

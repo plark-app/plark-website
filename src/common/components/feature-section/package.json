@@ -1,0 +1,6 @@
+{
+    "private": true,
+    "name": "feature-section",
+    "main": "feature-section.tsx",
+    "typings": "feature-section.tsx"
+}

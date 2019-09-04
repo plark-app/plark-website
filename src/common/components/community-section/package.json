@@ -1,0 +1,6 @@
+{
+    "private": true,
+    "name": "community-section",
+    "main": "community-section.tsx",
+    "typings": "community-section.tsx"
+}

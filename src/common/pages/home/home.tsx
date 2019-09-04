@@ -1,6 +1,15 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import { Footer, Header, BgTitleSection, CitationSection, SubscribeSection, CardSection } from 'common/components';
+import {
+    Footer,
+    Header,
+    BgTitleSection,
+    CitationSection,
+    SubscribeSection,
+    CardSection,
+    FeatureSection,
+    CommunitySection,
+} from 'common/components';
 
 import IntroBlock from './intro';
 import styles from './home.scss';
@@ -63,6 +72,30 @@ export default class Home extends React.Component {
                         'right away. The feature, which best crypto wallet should have.'
                     }
                 />
+
+                <FeatureSection
+                    text={
+                        'No matter if you are on a friendly footing with crypto or getting started — purchasing it ' +
+                        'for real money can be a real pain in the neck. Plark pulls you round from this hell, ' +
+                        'allowing to buy your favorite coin for real money.'
+                    }
+                    image={{
+                        src: '/img/trade-screen.png',
+                    }}
+                />
+
+                <FeatureSection
+                    isLtr
+                    text={
+                        'No more struggling through thug life of crypto enthusiast, when you look for a decent ' +
+                        'exchange or on the watch of transaction processing.'
+                    }
+                    image={{
+                        src: '/img/trade-confirmation-screen.png',
+                    }}
+                />
+
+                <CommunitySection />
 
                 <SubscribeSection />
                 <Footer />
