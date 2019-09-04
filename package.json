@@ -19,7 +19,7 @@
         "eslint": "eslint .",
         "stylelint": "stylelint \"src/**/*.scss\"",
         "prettier": "prettier --write *.js **/*.js **/*.ts **/*.tsx",
-        "precommit": "lint-st§aged",
+        "precommit": "lint-staged",
         "locales:export": "gulp pot && gulp locales:export",
         "locales:import": "gulp locales:import"
     },
