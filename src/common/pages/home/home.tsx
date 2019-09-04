@@ -1,6 +1,6 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import { Footer, Header, BgTitleSection, CitationSection, SubscribeSection } from 'common/components';
+import { Footer, Header, BgTitleSection, CitationSection, SubscribeSection, CardSection } from 'common/components';
 
 import IntroBlock from './intro';
 import styles from './home.scss';
@@ -54,6 +54,14 @@ export default class Home extends React.Component {
                 <CitationSection
                     title="We don’t say Plark is the best crypto wallet. Better you say."
                     author="Plark Team"
+                />
+
+                <CardSection
+                    title="Credit Card is The Key"
+                    description={
+                        'Add your credit or debit card and purchase Bitcoin, Litecoin, Ethereum, and Dash ' +
+                        'right away. The feature, which best crypto wallet should have.'
+                    }
                 />
 
                 <SubscribeSection />

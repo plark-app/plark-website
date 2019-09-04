@@ -35,8 +35,8 @@
     }
 
     @include from-width(640px) {
-        padding-top: 80px;
-        padding-bottom: 80px;
+        padding-top: 0;
+        padding-bottom: 0;
 
         &__technical {
             margin-bottom: 0;
@@ -44,10 +44,6 @@
             flex-direction: column;
             justify-content: space-between;
             align-items: flex-start;
-        }
-
-        &__logo {
-            margin-bottom: 80px;
         }
 
         &__main {

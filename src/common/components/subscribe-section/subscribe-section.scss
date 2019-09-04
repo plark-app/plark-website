@@ -31,7 +31,7 @@
         margin-right: 10px;
         background-color: transparent;
         outline: none;
-        border: 2px solid $color-gray40;
+        border: 2px solid $color-gray20;
 
         &::placeholder {
             color: $color-gray10;
@@ -42,9 +42,17 @@
         }
     }
 
+    &__button {
+        width: 120px;
+
+        @include from-width(640px) {
+            width: 180px;
+        }
+    }
+
     &__error-message {
         margin-top: 10px;
-        color: white;
+        color: $color-danger;
         font-size: 12px;
         height: 14px;
     }

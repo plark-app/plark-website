@@ -1,0 +1,66 @@
+@import "../../styles/colors";
+@import "../../styles/media";
+
+.section {
+    &__content {
+        padding-top: 160px;
+        padding-bottom: 100px;
+    }
+}
+
+.topic {
+    &__description {
+        max-width: 620px !important;
+    }
+}
+
+
+.card-images {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 50px 0;
+
+    &__item {
+        margin: 0 12px;
+    }
+}
+
+
+.caption {
+    text-align: center;
+    margin: 50px auto;
+    width: 100%;
+    max-width: 500px;
+    font-size: 14px;
+    line-height: 1.28;
+    color: $color-gray10;
+}
+
+.chart {
+    position: absolute;
+    width: 100%;
+    min-width: 1280px;
+    left: 50%;
+    top: 290px;
+    transform: translateX(-50%);
+}
+
+.credit-card {
+    width: 80%;
+    max-width: 420px;
+    border-radius: 18px;
+    margin: 0 auto 120px auto;
+    box-shadow: 0 10px 70px $color-gray50;
+
+    &__image {
+        width: 100%;
+        display: block;
+    }
+}
+
+.download {
+    margin-top: 50px;
+    justify-content: center;
+}

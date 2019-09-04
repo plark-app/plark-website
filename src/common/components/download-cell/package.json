@@ -1,0 +1,6 @@
+{
+    "private": true,
+    "name": "download-cell",
+    "main": "download-cell.tsx",
+    "typings": "download-cell.tsx"
+}

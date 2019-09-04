@@ -10,8 +10,9 @@ export { RouteProgress, Spinner } from './loaders';
 export { default as TextBlock } from './text-block';
 export { default as StoreQR } from './store-qr';
 export { default as StoreBadge, BadgeContainer } from './store-badge';
-
+export { default as DownloadCell } from './download-cell';
 
 export { default as BgTitleSection } from './bg-title-section';
 export { default as CitationSection } from './citation-section';
+export { default as CardSection } from './card-section';
 export { default as SubscribeSection } from './subscribe-section';

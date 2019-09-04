@@ -1,4 +1,16 @@
 .title {
-    color: white;
-    font-size: 46px;
+    font-size: 80px;
+    line-height: 70px;
+    margin-bottom: 50px;
+}
+
+.button {
+    width: 180px;
+}
+
+.section {
+    min-height: 100vh;
+    display: flex;
+    align-items: flex-end;
+    padding-top: 100px;
 }

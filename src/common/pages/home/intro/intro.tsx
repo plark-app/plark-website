@@ -1,8 +1,6 @@
 import React from 'react';
 import { useI18n } from 'slim-i18n';
-// import cn from 'classnames';
-import PlatformList from 'common/utils/install-platforms';
-import { Section, StoreBadge, StoreQR } from 'common/components';
+import { Section, DownloadCell } from 'common/components';
 
 import styles from './intro.scss';
 
@@ -23,10 +21,7 @@ export default function IntroBlock(): JSX.Element {
                     {i18n.gettext('Just a friendliest crypto currency wallet app you will use')}
                 </h1>
 
-                <div className={styles.introButtons}>
-                    <StoreBadge platform={PlatformList.apple} />
-                    <StoreQR className={styles.introButtonsQr} />
-                </div>
+                <DownloadCell />
             </div>
         </Section>
     );

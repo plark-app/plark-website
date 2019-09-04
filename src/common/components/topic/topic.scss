@@ -21,7 +21,7 @@
             font-size: 60px;
         }
 
-        .topic.i-center > & {
+        .topic.is-center > & {
             margin-left: auto;
             margin-right: auto;
         }
@@ -40,11 +40,11 @@
             font-size: 18px;
         }
 
-        .topic.i-white > & {
+        .topic.is-white > & {
             color: currentColor;
         }
 
-        .topic.i-center > & {
+        .topic.is-center > & {
             margin-left: auto;
             margin-right: auto;
         }
@@ -55,30 +55,26 @@
     }
 
     // Where text must be white
-    &.i-white {
+    &.is-white {
         color: $color-white;
     }
 
     // Where text must be centered
-    &.i-center {
+    &.is-center {
         text-align: center;
         margin: 0 auto;
     }
 
     // For small elements like Card
-    &.i-small &__title {
-        font-size: 20px;
-
-        @include from-lg-width {
-            font-size: 24px;
-        }
+    &.is-small &__title {
+        color: $color-text-secondary;
+        font-size: 16px;
     }
 
-    &.i-small &__desc {
-        font-size: 18px;
-    }
-
-    &.i-small > &__title + &__desc {
-        margin-top: 15px;
+    &.is-small &__desc {
+        font-size: 24px;
+        line-height: 1.33;
+        color: $color-text-dark;
+        max-width: 800px;
     }
 }

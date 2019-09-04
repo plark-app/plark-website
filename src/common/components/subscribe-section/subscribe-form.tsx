@@ -29,9 +29,14 @@ class SubscribeForm extends React.PureComponent<WithTranslationsProps> {
         return (
             <form onSubmit={this.__handleFormSubmit} className={styles.subscribe}>
                 <div className={styles.subscribeForm}>
-                    <input value={this.state.email} onChange={this.__handleValue} className={styles.subscribeInput} placeholder="enter your email" />
+                    <input
+                        value={this.state.email}
+                        onChange={this.__handleValue}
+                        className={styles.subscribeInput}
+                        placeholder="enter your email"
+                    />
 
-                    <UIButton color="primary" disabled={loading}>
+                    <UIButton color="primary" disabled={loading} className={styles.subscribeButton}>
                         {loading ? 'Loading...' : i18n.gettext('Subscribe')}
                     </UIButton>
                 </div>

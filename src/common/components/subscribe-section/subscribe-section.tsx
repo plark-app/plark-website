@@ -17,6 +17,7 @@ export default function SubscribeSectionSection(_props: SubscribeSectionProps): 
     return (
         <Section className={styles.section} contentClassName={styles.sectionContent}>
             <Topic
+                isSmall
                 isCenter
                 titleText={title(i18n)}
                 descText={content(i18n)}

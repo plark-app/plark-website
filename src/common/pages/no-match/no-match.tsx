@@ -27,10 +27,12 @@ class NoMatch extends React.Component<NoMatchProps> {
         return (
             <>
                 <Header />
-                <Section>
+                <Section className={styles.section}>
                     <h1 className={styles.title}>{text.wentWrong(i18n)}</h1>
                     <NavLink to="/">
-                        <UIButton>{text.backToHome(i18n)}</UIButton>
+                        <UIButton color="primary" className={styles.button}>
+                            {text.backToHome(i18n)}
+                        </UIButton>
                     </NavLink>
                 </Section>
             </>

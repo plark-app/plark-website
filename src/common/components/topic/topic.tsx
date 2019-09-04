@@ -30,9 +30,9 @@ export default function Topic(props: TTopicProps): JSX.Element {
     };
 
     const topicClassName = cn(styles.topic, props.className, {
-        [styles.iWhite]: isWhite,
-        [styles.iCenter]: isCenter,
-        [styles.iSmall]: isSmall,
+        [styles.isWhite]: isWhite,
+        [styles.isCenter]: isCenter,
+        [styles.isSmall]: isSmall,
     });
 
     const topicStyle: React.CSSProperties = {};

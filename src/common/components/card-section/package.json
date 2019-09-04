@@ -1,0 +1,6 @@
+{
+    "private": true,
+    "name": "card-section",
+    "main": "card-section.tsx",
+    "typings": "card-section.tsx"
+}
