@@ -3,6 +3,7 @@
         position: relative;
         display: block;
         box-sizing: border-box;
+        -webkit-touch-callout: none;
         user-select: none;
         touch-action: pan-y;
         -webkit-tap-highlight-color: transparent;
@@ -13,19 +14,20 @@
         display: block;
         margin: 0;
         padding: 0;
-    }
 
-    .slick-list:focus {
-        outline: none;
-    }
+        &:focus {
+            outline: none;
+        }
 
-    .slick-list.dragging {
-        cursor: pointer;
-        cursor: hand;
+        &.dragging {
+            cursor: pointer;
+            cursor: hand;
+        }
     }
 
     .slick-slider .slick-track,
     .slick-slider .slick-list {
+        will-change: transform;
         transform: translate3d(0, 0, 0);
     }
 
@@ -36,17 +38,10 @@
         left: 0;
         margin-left: auto;
         margin-right: auto;
-    }
 
-    .slick-track:before,
-    .slick-track:after {
-        display: table;
-
-        content: '';
-    }
-
-    .slick-track:after {
-        clear: both;
+        :global(.slick-loading) & {
+            visibility: hidden;
+        }
     }
 
     .slick-loading .slick-track {

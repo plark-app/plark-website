@@ -11,7 +11,7 @@ type BgTitleProps = {
 export default function BgTitleSection(props: BgTitleProps): JSX.Element {
     return (
         <Section className={style.section} contentClassName={style.sectionContent}>
-            <h2 className={style.title}>{props.title}</h2>
+            <h3 className={style.title}>{props.title}</h3>
             <TextBlock className={style.content}>{props.content}</TextBlock>
         </Section>
     );

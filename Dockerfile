@@ -30,7 +30,7 @@ COPY config/locales.json config/locales.json
 RUN apk update && apk add --no-cache gettext && \
     # Install, build, remove dev deps
     yarn locales:import && \
-    yarn locales:export && \
+    # yarn locales:export && \
     # Remove extra resources
     rm -rf \
     node_modules \

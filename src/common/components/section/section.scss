@@ -10,12 +10,12 @@
 .section-content {
     width: 100%;
     position: relative;
-    max-width: 1320px;
+    max-width: 1106px;
     margin: 0 auto;
-    padding: 50px 20px;
+    padding: 60px 20px;
 
     @include from-sm-width {
-        padding: 50px 32px;
+        padding: 100px 32px;
     }
 
     &.i-without-padding {

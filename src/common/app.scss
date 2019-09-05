@@ -43,6 +43,10 @@ body {
     font-family: inherit;
 }
 
+:focus {
+    outline: none;
+}
+
 input,
 textarea {
     appearance: none;

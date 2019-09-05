@@ -6,6 +6,7 @@ import style from './citation.scss';
 type CitationProps = {
     title: string;
     author: string;
+    titleTag?: 'h1' | 'h2' | 'h3' | 'h4';
 };
 
 export default function CitationSection(props: CitationProps): JSX.Element {
@@ -13,6 +14,7 @@ export default function CitationSection(props: CitationProps): JSX.Element {
         <Section className={style.section} contentClassName={style.sectionContent}>
             <Topic
                 isCenter
+                titleTag={props.titleTag}
                 titleText={'"' + props.title + '"'}
                 descText={'— ' + props.author}
                 titleClassName={style.title}
