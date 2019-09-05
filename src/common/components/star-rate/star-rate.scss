@@ -1,0 +1,18 @@
+@import "../../styles/colors";
+
+.box {
+    display: flex;
+    justify-content: center;
+}
+
+.star {
+    fill: $color-text-secondary;
+
+    & + & {
+        margin-left: 5px;
+    }
+
+    &.is-active {
+        fill: $color-gold;
+    }
+}

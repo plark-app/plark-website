@@ -1,0 +1,6 @@
+{
+    "private": true,
+    "name": "feedback-section",
+    "main": "feedback-section.tsx",
+    "typings": "feedback-section.tsx"
+}

@@ -19,9 +19,11 @@ export default function FaqPage(): JSX.Element {
         <>
             <Header isWhite={true} />
             <Section className={commonStyles.legalSection}>
-                <Topic titleText={i18n.gettext("Frequently Asked Questions")}
-                       className={commonStyles.markdownMainTitle}
-                       titleTag="h1"
+
+                <Topic
+                    titleText={i18n.gettext('Frequently Asked Questions')}
+                    className={commonStyles.markdownMainTitle}
+                    titleTag="h1"
                 />
 
                 <div>

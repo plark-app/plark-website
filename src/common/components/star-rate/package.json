@@ -1,0 +1,6 @@
+{
+    "private": true,
+    "name": "star-rate",
+    "main": "star-rate.tsx",
+    "typings": "star-rate.tsx"
+}

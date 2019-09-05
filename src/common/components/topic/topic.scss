@@ -36,10 +36,6 @@
         display: block;
         max-width: 630px;
 
-        @include from-md-width {
-            font-size: 18px;
-        }
-
         .topic.is-white > & {
             color: currentColor;
         }

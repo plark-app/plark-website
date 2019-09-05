@@ -12,11 +12,7 @@
     position: relative;
     max-width: 1106px;
     margin: 0 auto;
-    padding: 60px 20px;
-
-    @include from-sm-width {
-        padding: 100px 32px;
-    }
+    padding: 100px 32px;
 
     &.i-without-padding {
         padding-top: 0;

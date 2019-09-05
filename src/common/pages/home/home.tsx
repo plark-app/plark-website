@@ -3,13 +3,14 @@ import Helmet from 'react-helmet';
 import {
     Footer,
     Header,
+    StickIphone,
     BgTitleSection,
     CitationSection,
     SubscribeSection,
     CardSection,
     FeatureSection,
     CommunitySection,
-    StickIphone,
+    FeedbackSection,
 } from 'common/components';
 import { useI18n } from 'slim-i18n';
 
@@ -110,6 +111,13 @@ export default function Home(): JSX.Element {
             />
 
             <CommunitySection />
+            <FeedbackSection
+                topic={{
+                    title: '“' + i18n.gettext('It’s my crypto wallet') + '”',
+                    description: i18n.gettext('— words, we would like to hear from you.'),
+                    titleTag: 'h3',
+                }}
+            />
 
             <SubscribeSection />
             <Footer />

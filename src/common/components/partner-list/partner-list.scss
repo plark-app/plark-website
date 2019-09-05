@@ -1,0 +1,53 @@
+@import "../../styles/colors";
+
+.list {
+    display: flex;
+    align-items: center;
+    height: 40px;
+
+    &.is-small {
+        height: 30px;
+    }
+}
+
+.partner {
+    fill: $color-gray45;
+    height: 50%;
+
+    & + & {
+        margin-left: 64px;
+
+        .is-small > & {
+            margin-left: 32px;
+        }
+    }
+
+    &.is-kuna {
+        height: 50%;
+    }
+
+    &.is-changelly {
+        height: 90%;
+    }
+
+    &.is-zerohub {
+        height: 50%;
+    }
+
+    &.is-choinswitch {
+        height: 41%;
+    }
+
+    &.is-wallettopup {
+        height: 70.5%;
+    }
+
+    &__section {
+
+    }
+
+    &__content {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+}

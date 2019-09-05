@@ -1,0 +1,6 @@
+{
+    "private": true,
+    "name": "partner-list",
+    "main": "partner-list.tsx",
+    "typings": "partner-list.tsx"
+}

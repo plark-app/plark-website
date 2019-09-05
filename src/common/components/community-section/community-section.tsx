@@ -58,7 +58,7 @@ export default React.memo(function CommunitySection() {
         variableWidth: true,
         speed: 300,
         autoplay: true,
-        autoplaySpeed: 2000,
+        autoplaySpeed: 4000,
         slidesToScroll: 1,
         slidesToShow: 1,
         cssEase: 'linear',
@@ -66,7 +66,7 @@ export default React.memo(function CommunitySection() {
     };
 
     return (
-        <Section>
+        <Section className={styles.section}>
             <Topic
                 isCenter
                 titleText="Luckless dictator? Penny-worth Bitcoin? Happy loner?"

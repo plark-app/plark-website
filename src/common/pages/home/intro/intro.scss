@@ -50,47 +50,8 @@
 }
 
 .partners {
-    &__section {
-
-    }
-
     &__content {
         padding-top: 20px;
         padding-bottom: 20px;
-    }
-
-    &__list {
-        display: flex;
-        align-items: center;
-        height: 30px;
-    }
-
-    &__item {
-        fill: $color-gray45;
-        height: 50%;
-
-        & + & {
-            margin-left: 37px;
-        }
-
-        &.is-kuna {
-            height: 50%;
-        }
-
-        &.is-changelly {
-            height: 90%;
-        }
-
-        &.is-zerohub {
-            height: 50%;
-        }
-
-        &.is-choinswitch {
-            height: 41%;
-        }
-
-        &.is-wallettopup {
-            height: 70.5%;
-        }
     }
 }

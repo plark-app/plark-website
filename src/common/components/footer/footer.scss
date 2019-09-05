@@ -17,8 +17,8 @@
     }
 
     &__content {
-        padding-bottom: 0;
-        padding-top: 0;
+        padding-top: 50px !important;
+        padding-bottom: 50px !important;
     }
 
     &__logo {
@@ -35,8 +35,8 @@
     }
 
     @include from-width(640px) {
-        padding-top: 0;
-        padding-bottom: 0;
+        padding-top: 20px;
+        padding-bottom: 20px;
 
         &__technical {
             margin-bottom: 0;
@@ -96,8 +96,6 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-
-
     }
 
     &__nav {
