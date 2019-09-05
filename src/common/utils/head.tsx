@@ -7,8 +7,8 @@ import { RouteHeadRenderFn } from './router/router';
 import { OpenGraph, PageSeoConfig, getStructuredData, Breadcrumbs, getHrefLangUrls } from './seo';
 
 const defaultSeoConfig: PageSeoConfig = {
-    title: 'Plark - safest multi asset wallet',
-    description: 'Pay like Spark!',
+    title: 'Plark - multi asset wallet',
+    description: 'We won’t scream how good we are. We won’t beg you to install our application. We do our job. No need to convince — use Plark.',
 };
 
 const Head = ({ i18n, children: render, getSeoConfig }: HeadProps) => {

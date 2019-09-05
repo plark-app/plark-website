@@ -1,9 +1,10 @@
 import React from 'react';
-import Helmet from 'react-helmet';
+import { useI18n } from 'slim-i18n';
 import {
     Footer,
     Header,
     StickIphone,
+    IntroSection,
     BgTitleSection,
     CitationSection,
     SubscribeSection,
@@ -12,20 +13,12 @@ import {
     CommunitySection,
     FeedbackSection,
 } from 'common/components';
-import { useI18n } from 'slim-i18n';
-
-import IntroBlock from './intro';
-import styles from './home.scss';
 
 export default function Home(): JSX.Element {
     const i18n = useI18n();
 
     return (
         <>
-            <Helmet>
-                <body className={styles.homeBody} />
-            </Helmet>
-
             <Header isWhite />
 
             <StickIphone picture={{
@@ -33,7 +26,7 @@ export default function Home(): JSX.Element {
                 alt: 'Plark Main screen',
                 title: 'PLark Main screen',
             }}>
-                <IntroBlock
+                <IntroSection
                     title={i18n.gettext('No sh*t wallet')}
                     subtitle={i18n.gettext('Just a friendliest crypto currency wallet app you will use')}
                 />
@@ -111,6 +104,7 @@ export default function Home(): JSX.Element {
             />
 
             <CommunitySection />
+
             <FeedbackSection
                 topic={{
                     title: '“' + i18n.gettext('It’s my crypto wallet') + '”',
@@ -120,6 +114,7 @@ export default function Home(): JSX.Element {
             />
 
             <SubscribeSection />
+
             <Footer />
         </>
     );

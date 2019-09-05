@@ -1,6 +1,6 @@
-@import '../../../styles/colors';
-@import '../../../styles/media';
-@import '../../../styles/vars';
+@import '../../styles/colors';
+@import '../../styles/media';
+@import '../../styles/vars';
 
 .intro {
     &__section {
@@ -12,7 +12,7 @@
 
     &__section-content {
         height: 100vh;
-        min-height: 680px;
+        min-height: 640px;
         display: flex;
         align-items: flex-end;
 
@@ -53,5 +53,13 @@
     &__content {
         padding-top: 20px;
         padding-bottom: 20px;
+    }
+
+    &__list {
+        max-width: calc(100% - 300px);
+    }
+
+    &__item {
+        margin-right: 20px;
     }
 }

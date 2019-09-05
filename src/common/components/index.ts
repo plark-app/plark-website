@@ -15,7 +15,9 @@ export { default as JoinLink } from './join-link';
 export { default as StickIphone } from './stick-iphone';
 export { default as StarRate } from './star-rate';
 export { default as PartnerList } from './partner-list';
+export { default as TwoIPhones } from './two-iphones';
 
+export { default as IntroSection } from './intro-section';
 export { default as BgTitleSection } from './bg-title-section';
 export { default as CitationSection } from './citation-section';
 export { default as CardSection } from './card-section';
@@ -23,3 +25,4 @@ export { default as SubscribeSection } from './subscribe-section';
 export { default as FeatureSection } from './feature-section';
 export { default as CommunitySection } from './community-section';
 export { default as FeedbackSection } from './feedback-section';
+export { default as OpenSourceSection } from './opensource-section';

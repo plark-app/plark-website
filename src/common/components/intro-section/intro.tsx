@@ -1,18 +1,13 @@
 import React from 'react';
 import { Section, DownloadCell, PartnerList } from 'common/components';
-
 import styles from './intro.scss';
-
-export { styles };
-
-// import * as text from '../home.text';
 
 type IntroBlockProps = {
     title: string;
     subtitle: string;
 };
 
-export default function IntroBlock(props: IntroBlockProps): JSX.Element {
+export default function IntroSection(props: IntroBlockProps): JSX.Element {
     return (
         <>
             <Section className={styles.introSection} contentClassName={styles.introSectionContent}>
@@ -25,7 +20,11 @@ export default function IntroBlock(props: IntroBlockProps): JSX.Element {
             </Section>
 
             <Section className={styles.partnersSection} contentClassName={styles.partnersContent}>
-                <PartnerList isSmall />
+                <PartnerList
+                    isSmall
+                    className={styles.partnersList}
+                    itemClassName={styles.partnersItem}
+                />
             </Section>
         </>
     );

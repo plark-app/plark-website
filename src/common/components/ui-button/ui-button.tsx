@@ -18,6 +18,8 @@ export type UIButtonProps = {
     component?: React.ComponentType<any> | string;
     tabIndex?: number;
     autoFocus?: boolean;
+
+    [key: string]: any;
 };
 
 export default function UIButton(props: UIButtonProps): JSX.Element {

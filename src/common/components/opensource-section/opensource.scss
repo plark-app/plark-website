@@ -1,0 +1,20 @@
+@import "../../styles/colors";
+
+.github {
+    margin-top: 30px;
+    text-align: center;
+
+    &__link {
+    }
+
+    &__icon {
+        height: 16px;
+        fill: $color-text-secondary;
+        transition: all 0.4s;
+
+        &:hover {
+            transition-duration: 0.2s;
+            fill: $color-text-dark;
+        }
+    }
+}

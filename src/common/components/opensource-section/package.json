@@ -1,0 +1,6 @@
+{
+    "private": true,
+    "name": "opensource-section",
+    "main": "opensource-section.tsx",
+    "typings": "opensource-section.tsx"
+}

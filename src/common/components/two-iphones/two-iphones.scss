@@ -1,0 +1,24 @@
+@import "../../styles/media";
+@import "../../styles/colors";
+
+.phones {
+    display: flex;
+    justify-content: center;
+    margin: 100px 0;
+
+    &__scene {
+        width: 210px;
+
+        & + & {
+            margin-left: 20px;
+        }
+
+        &:first-child {
+            margin-top: -60px;
+        }
+
+        &:last-child {
+            margin-bottom: -60px;
+        }
+    }
+}

@@ -10,14 +10,48 @@ export const routes: RouteDescriptor[] = [
         path: makeRoutePath('/'),
         load: makeRouteLoadFunction('home'),
         getSeoConfig: (i18n: ITranslationsAdapter): PageSeoConfig => ({
-            title: i18n.gettext('Just a friendliest crypto currency wallet app you will use') + ' | Plark',
-            description: i18n.gettext('We developed a simple and secure fully decentralized wallet to work on the fly, keep your crypto safe and exchange your currencies with ease.'),
+            title: i18n.gettext('The friendliest multi-currency crypto wallet.'),
+            description: i18n.gettext('We won’t scream how good we are. We won’t beg you to install our application. We do our job. No need to convince — use Plark.'),
             canonicalLink: 'https://plark.io',
             path: '/',
         }),
         getSitemapOption: (): SitemapOption => ({
             path: '/',
             priority: 1,
+        }),
+    },
+    {
+        id: 'mobile-wallet',
+        exact: true,
+        rawPath: '/mobile-wallet',
+        path: makeRoutePath('/mobile-wallet'),
+        load: makeRouteLoadFunction('mobile-wallet'),
+        getSeoConfig: (i18n: ITranslationsAdapter): PageSeoConfig => ({
+            title: i18n.gettext('Best mobile crypto wallet? Well, Plark.'),
+            description: i18n.gettext('We won’t scream how good we are. We won’t beg you to install our application. We do our job. No need to convince — use Plark.'),
+            canonicalLink: 'https://plark.io/mobile-wallet',
+            path: '/mobile-wallet',
+        }),
+        getSitemapOption: (): SitemapOption => ({
+            path: '/mobile-wallet',
+            priority: 0.9,
+        }),
+    },
+    {
+        id: 'faq',
+        exact: true,
+        rawPath: '/faq',
+        path: makeRoutePath('/faq'),
+        load: makeRouteLoadFunction('faq'),
+        getSeoConfig: (i18n: ITranslationsAdapter): PageSeoConfig => ({
+            title: i18n.gettext('Frequently Asked Questions') + ' | Plark',
+            description: i18n.gettext('Frequently Asked Questions'),
+            canonicalLink: 'https://plark.io/faq',
+            path: '/faq',
+        }),
+        getSitemapOption: (): SitemapOption => ({
+            path: '/faq',
+            priority: 0.8,
         }),
     },
     {
@@ -51,23 +85,6 @@ export const routes: RouteDescriptor[] = [
         }),
         getSitemapOption: (): SitemapOption => ({
             path: '/terms',
-            priority: 0.8,
-        }),
-    },
-    {
-        id: 'faq',
-        exact: true,
-        rawPath: '/faq',
-        path: makeRoutePath('/faq'),
-        load: makeRouteLoadFunction('faq'),
-        getSeoConfig: (i18n: ITranslationsAdapter): PageSeoConfig => ({
-            title: i18n.gettext('Frequently Asked Questions') + ' | Plark',
-            description: i18n.gettext('Frequently Asked Questions'),
-            canonicalLink: 'https://plark.io/faq',
-            path: '/faq',
-        }),
-        getSitemapOption: (): SitemapOption => ({
-            path: '/faq',
             priority: 0.8,
         }),
     },

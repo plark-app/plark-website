@@ -1,3 +1,4 @@
+@import "../../styles/media";
 @import "../../styles/colors";
 
 .section {
@@ -6,27 +7,8 @@
 }
 
 .phones {
-    display: flex;
-    justify-content: center;
-
-    margin: 160px 0;
-
-
-    &__scene {
-        width: 210px;
-
-        & + & {
-            margin-left: 20px;
-        }
-
-        &:first-child {
-            margin-top: -60px;
-        }
-
-        &:last-child {
-            margin-bottom: -60px;
-        }
-    }
+    margin-top: 160px;
+    margin-bottom: 160px;
 }
 
 .topic + .phones {
@@ -37,16 +19,20 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-
-    width: 800px;
     overflow: hidden;
 
-    margin: 0 30px;
+    width: 600px;
+    margin: 0 20px;
 
     transition: all 0.6s;
-    transform: scale(0.60);
+    transform: scale(0.7);
     opacity: 0.5;
     filter: blur(2px);
+
+    @include from-xxl-width {
+        width: 800px;
+        margin: 0 30px;
+    }
 
     :global(.slick-active) & {
         transition-duration: 0.3s;
@@ -58,10 +44,14 @@
 
     &__feedback {
         font-weight: bold;
-        font-size: 32px;
+        font-size: 28px;
         line-height: 1.18;
         text-align: center;
         margin: 25px 0 30px 0;
+
+        @include from-xxl-width {
+            font-size: 32px;
+        }
     }
 
     &__user {
@@ -75,5 +65,4 @@
 
 .partners {
     margin-top: 100px;
-    justify-content: center;
 }

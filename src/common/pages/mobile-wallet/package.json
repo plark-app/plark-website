@@ -1,0 +1,6 @@
+{
+    "private": true,
+    "name": "mobile-wallet",
+    "main": "mobile-wallet.tsx",
+    "typings": "mobile-wallet.tsx"
+}

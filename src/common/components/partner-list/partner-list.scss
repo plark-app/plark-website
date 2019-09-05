@@ -1,8 +1,12 @@
 @import "../../styles/colors";
+@import "../../styles/media";
 
 .list {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
     align-items: center;
+
     height: 40px;
 
     &.is-small {
@@ -14,12 +18,12 @@
     fill: $color-gray45;
     height: 50%;
 
-    & + & {
-        margin-left: 64px;
+    &:last-child {
+        margin-right: 0;
+    }
 
-        .is-small > & {
-            margin-left: 32px;
-        }
+    @include to-md-width {
+        margin-top: 30px;
     }
 
     &.is-kuna {

@@ -24,7 +24,7 @@ export default function Footer(): JSX.Element {
                         <NavLink to="/" className={styles.navLink}>
                             {i18n.gettext('Plark for Bitcoin')}
                         </NavLink>
-                        <NavLink to="/" className={styles.navLink}>
+                        <NavLink to="/mobile-wallet" className={styles.navLink}>
                             {i18n.gettext('Mobile Wallet')}
                         </NavLink>
                     </FooterColumn>

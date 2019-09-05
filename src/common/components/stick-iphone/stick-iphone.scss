@@ -1,0 +1,42 @@
+@import "../../styles/media";
+@import "../../styles/colors";
+
+.container {
+
+    position: absolute;
+    height: 100%;
+    padding-bottom: 25vh;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: calc(100vw - 40px);
+    opacity: 0.3;
+
+    @include from-width(1042px) {
+        width: 100%;
+        max-width: 1042px;
+        opacity: 1;
+    }
+}
+
+
+.iphone {
+    &__box {
+        position: sticky;
+        top: 0;
+        height: 100vh;
+    }
+
+    &__image {
+        width: 220px;
+        bottom: -90px;
+
+        position: absolute;
+        right: 0;
+
+        @include from-xxl-width {
+            width: 265px;
+            bottom: -90px;
+        }
+    }
+}

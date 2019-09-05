@@ -1,6 +1,6 @@
 import React from 'react';
 import Slider, { Settings } from 'react-slick';
-import { Section, Topic, StarRate, PartnerList } from 'common/components';
+import { Section, Topic, StarRate, PartnerList, TwoIPhones } from 'common/components';
 import userFeedbacks, { UserFeedback } from './feedbacks';
 import styles from './feedback-section.scss';
 
@@ -43,11 +43,7 @@ export default React.memo(function FeedbackSection(props: FeedbackSectionProps):
                 descText={topic.description}
             /> : undefined}
 
-            <div className={styles.phones}>
-                <img src="/img/trade-screen.png" className={styles.phonesScene} />
-                <img src="/img/trade-confirmation-screen.png" className={styles.phonesScene} />
-            </div>
-
+            <TwoIPhones className={styles.phones} />
 
             <div className={styles.slider}>
                 <Slider {...settings}>
