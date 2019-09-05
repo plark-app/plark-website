@@ -111,6 +111,7 @@ export default function Home(): JSX.Element {
             />
 
             <CommunitySection />
+
             <FeedbackSection
                 topic={{
                     title: '“' + i18n.gettext('It’s my crypto wallet') + '”',
@@ -120,6 +121,7 @@ export default function Home(): JSX.Element {
             />
 
             <SubscribeSection />
+
             <Footer />
         </>
     );

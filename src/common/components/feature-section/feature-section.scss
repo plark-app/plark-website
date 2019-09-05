@@ -27,5 +27,11 @@
 }
 
 .picture {
+    &__image {
+        width: 220px;
 
+        @include from-xxl-width {
+            width: 260px;
+        }
+    }
 }

@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './stick-iphone.scss';
 
 type StickIphoneProps = {
     children: React.ReactNode;
@@ -15,12 +16,9 @@ export default React.memo(function StickIphone(props: StickIphoneProps): JSX.Ele
 
     return (
         <div>
-            <div style={{ position: 'absolute', height: '100%', paddingBottom: '25vh', left: '50%', transform: 'translateX(-50%)', width: 1042,  }}>
-                <div style={{ position: 'sticky', top: 0, height: '100vh' }}>
-                    <img
-                        src={picture.src || '/img/main-screen.png'}
-                        style={{ position: 'absolute', right: 0, bottom: -90 }}
-                    />
+            <div className={styles.container}>
+                <div className={styles.iphoneBox}>
+                    <img src={picture.src || '/img/main-screen.png'} className={styles.iphoneImage} />
                 </div>
             </div>
 

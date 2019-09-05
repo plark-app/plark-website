@@ -39,7 +39,15 @@ function CommunityTopic(props: any) {
         <div className={styles.cardBottom}>
             <span className={styles.cardTiming}>Update 33 minutes ago</span>
 
-            <UIButton isSmall color="primary" mode="outlined">
+            <UIButton
+                isSmall
+                color="primary"
+                mode="outlined"
+                component="a"
+                href="https://community.plark.io"
+                target="_blank"
+                title={props.title}
+            >
                 Join discussion →
             </UIButton>
         </div>
