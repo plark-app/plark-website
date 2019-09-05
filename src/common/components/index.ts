@@ -12,6 +12,7 @@ export { default as StoreQR } from './store-qr';
 export { default as StoreBadge, BadgeContainer } from './store-badge';
 export { default as DownloadCell } from './download-cell';
 export { default as JoinLink } from './join-link';
+export { default as StickIphone } from './stick-iphone';
 
 export { default as BgTitleSection } from './bg-title-section';
 export { default as CitationSection } from './citation-section';
