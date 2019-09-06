@@ -2,7 +2,7 @@ export const SEO_HOST = 'https://plark.io';
 
 export type PageSeoConfig = {
     title: string;
-    description: string;
+    description?: string;
     pageName?: string;
     robotsRule?: string;
     canonicalLink?: string;

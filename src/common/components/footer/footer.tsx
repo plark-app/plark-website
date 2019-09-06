@@ -37,9 +37,9 @@ export default function Footer(): JSX.Element {
                         <NavLink to="/contact-us" className={styles.navLink}>
                             {i18n.gettext('Contact Us')}
                         </NavLink>
-                        <NavLink to="/carriers" className={styles.navLink}>
-                            {i18n.gettext('Carriers')}
-                        </NavLink>
+                        {/*<NavLink to="/carriers" className={styles.navLink}>*/}
+                        {/*    {i18n.gettext('Carriers')}*/}
+                        {/*</NavLink>*/}
                     </FooterColumn>
 
 

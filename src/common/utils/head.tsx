@@ -6,8 +6,8 @@ import { WithTranslationsProps, withTranslations, ITranslationsAdapter } from 's
 import { RouteHeadRenderFn } from './router/router';
 import { OpenGraph, PageSeoConfig, getStructuredData, Breadcrumbs, getHrefLangUrls } from './seo';
 
-const defaultSeoConfig: PageSeoConfig = {
-    title: 'Plark - multi asset wallet',
+const defaultSeoConfig = {
+    title: 'The friendliest multi-currency crypto wallet.',
     description: 'We won’t scream how good we are. We won’t beg you to install our application. We do our job. No need to convince — use Plark.',
 };
 
@@ -53,11 +53,11 @@ const Head = ({ i18n, children: render, getSeoConfig }: HeadProps) => {
 
                 {getStructuredData({
                     i18n: i18n,
-                    description: seoConfig.description,
+                    description: seoConfig.description as string,
                 })}
             </Helmet>
 
-            <OpenGraph title={seoConfig.title} description={seoConfig.description} />
+            <OpenGraph title={seoConfig.title} description={seoConfig.description as string} />
             <Breadcrumbs secondItem={seoConfig.pageName} />
         </>
     );

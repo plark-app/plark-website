@@ -5,6 +5,7 @@ import styles from './feature-section.scss';
 
 type FeatureSectionProps = {
     text: string;
+    withoutLink?: boolean;
     linkText?: string;
     linkUrl?: string;
     isLtr?: boolean;
@@ -19,6 +20,7 @@ type FeatureSectionProps = {
 };
 
 export default React.memo(function FeatureSection(props: FeatureSectionProps): JSX.Element {
+    const { withoutLink = false } = props;
 
     const {
         linkText = 'Get Plark app',
@@ -34,7 +36,7 @@ export default React.memo(function FeatureSection(props: FeatureSectionProps): J
         <Section className={styles.section} contentClassName={contentClass}>
             <div className={styles.content}>
                 {React.createElement(textTag, { className: styles.contentText }, props.text)}
-                <JoinLink href={linkUrl} target="_blank">{linkText}</JoinLink>
+                {withoutLink ? undefined : <JoinLink href={linkUrl} target="_blank">{linkText}</JoinLink>}
             </div>
 
             <div className={styles.picture}>

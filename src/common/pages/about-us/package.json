@@ -1,0 +1,6 @@
+{
+    "private": true,
+    "name": "about-us",
+    "main": "about-us.tsx",
+    "typings": "about-us.tsx"
+}

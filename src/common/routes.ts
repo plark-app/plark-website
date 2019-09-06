@@ -90,14 +90,45 @@ export const routes: RouteDescriptor[] = [
         }),
     },
     {
+        id: 'contact-us',
+        exact: true,
+        rawPath: '/contact-us',
+        path: makeRoutePath('/contact-us'),
+        load: makeRouteLoadFunction('contact-us'),
+        getSeoConfig: (i18n: ITranslationsAdapter): PageSeoConfig => ({
+            title: i18n.gettext('Stay in touch with a Plark team'),
+            canonicalLink: 'https://plark.io/contact-us',
+            path: '/contact-us',
+        }),
+        getSitemapOption: (): SitemapOption => ({
+            path: '/contact-us',
+            priority: 0.8,
+        }),
+    },
+    {
+        id: 'about-us',
+        exact: true,
+        rawPath: '/about-us',
+        path: makeRoutePath('/about-us'),
+        load: makeRouteLoadFunction('about-us'),
+        getSeoConfig: (i18n: ITranslationsAdapter): PageSeoConfig => ({
+            title: i18n.gettext('We make crypto simpler for you and his name is Plark'),
+            canonicalLink: 'https://plark.io/about-us',
+            path: '/about-us',
+        }),
+        getSitemapOption: (): SitemapOption => ({
+            path: '/about-us',
+            priority: 0.8,
+        }),
+    },
+    {
         id: 'faq',
         exact: true,
         rawPath: '/faq',
         path: makeRoutePath('/faq'),
         load: makeRouteLoadFunction('faq'),
         getSeoConfig: (i18n: ITranslationsAdapter): PageSeoConfig => ({
-            title: i18n.gettext('Frequently Asked Questions') + ' | Plark',
-            description: i18n.gettext('Frequently Asked Questions'),
+            title: i18n.gettext('Frequently Asked Questions'),
             canonicalLink: 'https://plark.io/faq',
             path: '/faq',
         }),
@@ -113,8 +144,7 @@ export const routes: RouteDescriptor[] = [
         path: makeRoutePath('/privacy'),
         load: makeRouteLoadFunction('privacy-policy'),
         getSeoConfig: (i18n: ITranslationsAdapter): PageSeoConfig => ({
-            title: i18n.gettext('Privacy Policy') + ' | Plark',
-            description: i18n.gettext('Privacy Policy'),
+            title: i18n.gettext('Privacy Policy'),
             canonicalLink: 'https://plark.io/privacy',
             path: '/privacy',
         }),
@@ -130,8 +160,7 @@ export const routes: RouteDescriptor[] = [
         path: makeRoutePath('/terms'),
         load: makeRouteLoadFunction('terms-of-use'),
         getSeoConfig: (i18n: ITranslationsAdapter): PageSeoConfig => ({
-            title: i18n.gettext('Terms & Conditions') + ' | Plark',
-            description: i18n.gettext('Terms & Conditions'),
+            title: i18n.gettext('Terms & Conditions'),
             canonicalLink: 'https://plark.io/terms',
             path: '/terms',
         }),

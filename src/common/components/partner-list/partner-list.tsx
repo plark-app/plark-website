@@ -14,15 +14,16 @@ type PartnerListProps = {
     itemClassName?: string;
 };
 
+
 export default React.memo(function PartnerList(props: PartnerListProps): JSX.Element {
     const containerClass = cn(styles.list, { [styles.isSmall]: props.isSmall }, props.className);
     const itemClassName = cn(styles.partner, props.itemClassName);
 
     return (
         <div className={containerClass}>
-            {partnerList.map((par: PartnerItem) => {
+            {partnerList.map((par: PartnerItem, i: number) => {
                 return (
-                    <a href={par.website} rel="nofollow" target="_blank" className={styles.partnerLink}>
+                    <a href={par.website} rel="nofollow" target="_blank" className={styles.partnerLink} key={i}>
                         {React.createElement<any>(par.logo, { className: itemClassName })}
                     </a>
                 );
@@ -45,17 +46,17 @@ const partnerList: PartnerItem[] = [{
 }, {
     title: 'Changelly',
     logo: ChangellyLogoSvg,
-    website: 'https://kuna.io',
+    website: 'https://changelly.com',
 }, {
     title: 'ZeroHub',
     logo: ZeroHubLogoSvg,
-    website: 'https://kuna.io',
+    website: 'https://www.0hub.com',
 }, {
     title: 'Coinswitch',
     logo: CoinswitchLogoSvg,
-    website: 'https://kuna.io',
+    website: 'https://coinswitch.co',
 }, {
     title: 'WalletTopUp',
     logo: WalletTopupLogoSvg,
-    website: 'https://kuna.io',
+    website: 'http://wallettopup.co.uk',
 }];

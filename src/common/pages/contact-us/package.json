@@ -1,0 +1,6 @@
+{
+    "private": true,
+    "name": "contact-us",
+    "main": "contact-us.tsx",
+    "typings": "contact-us.tsx"
+}
