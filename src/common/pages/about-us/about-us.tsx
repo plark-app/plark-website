@@ -5,6 +5,7 @@ import {
     Header,
     SubscribeSection,
     CardSection,
+    OpenSourceSection,
     FeatureSection,
     TwoIPhones,
     Topic,
@@ -31,6 +32,11 @@ export default function AboutUs(): JSX.Element {
 
                 <img src="/img/main-screen.png" className={style.introIphone} />
             </Section>
+
+            <OpenSourceSection
+                title={i18n.gettext('Fully open-source')}
+                description={i18n.gettext('Plark is a team of enthusiasts. We say: “Cryptocurrencies are simple.” Not only in words, but in deeds also.')}
+            />
 
             <TwoIPhones className={style.twoIphones} />
 
