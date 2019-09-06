@@ -21,7 +21,7 @@ export default function Footer(): JSX.Element {
                         <NavLink to="/android-wallet" className={styles.navLink}>
                             {i18n.gettext('Plark for Android')} <span style={{ fontSize: 10 }}>(coming soon)</span>
                         </NavLink>
-                        <NavLink to="/" className={styles.navLink}>
+                        <NavLink to="/bitcoin-wallet" className={styles.navLink}>
                             {i18n.gettext('Plark for Bitcoin')}
                         </NavLink>
                         <NavLink to="/mobile-wallet" className={styles.navLink}>

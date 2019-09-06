@@ -1,5 +1,5 @@
 import React from 'react';
-import { Section, Topic, TwoIPhones } from 'common/components';
+import { Section, Topic, TwoIPhones, Subcopy } from 'common/components';
 import styles from './columns-section.scss';
 
 type FeedbackSectionProps = {
@@ -10,7 +10,8 @@ type FeedbackSectionProps = {
     }
 
     texts: Array<{
-        title: string;
+        title?: string;
+        titleTag?: 'h1' | 'h2' | 'h3' | 'h4';
         content: string;
     }>;
 };
@@ -31,18 +32,7 @@ export default React.memo(function ColumnsSection(props: FeedbackSectionProps): 
 
             <TwoIPhones className={styles.phones} />
 
-
-            <div className={styles.subcopyWrapper}>
-                {texts.map((item: any, i: number) => {
-                    return (
-                        <article key={i} className={styles.subcopy}>
-                            <h4 className={styles.subcopyTitle}>{item.title}</h4>
-                            {' '}
-                            <p className={styles.subcopyContent}>{item.content}</p>
-                        </article>
-                    )
-                })}
-            </div>
+            <Subcopy texts={texts} />
         </Section>
     );
 });

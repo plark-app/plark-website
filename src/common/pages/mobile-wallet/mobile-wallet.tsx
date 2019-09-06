@@ -35,7 +35,7 @@ export default function MobileWallet(): JSX.Element {
                 />
 
                 <BgTitleSection
-                    title="start with no hassle"
+                    title={i18n.gettext('start with no hassle')}
                     content={
                         'We won’t ask anything. No name, no email, no phone number  — you stay entirely anonymous. ' +
                         'Thirty seconds and you are ready to go. We hide all the complexity out of your sight to ' +
@@ -44,7 +44,8 @@ export default function MobileWallet(): JSX.Element {
                 />
 
                 <BgTitleSection
-                    title="no accounts. no headache."
+                    textTag="h1"
+                    title={i18n.gettext('no accounts. no headache.')}
                     content={
                         'Plark is fully decentralized crypto wallet app that connects directly to the several ' +
                         'different blockchain nodes, using a uniquely generated 12-word backup phrase. There ' +
@@ -119,7 +120,7 @@ export default function MobileWallet(): JSX.Element {
             <FeedbackSection />
 
             <CitationSection
-                titleTag="h1"
+                titleTag="h3"
                 title="Do we think Plark is the best crypto wallet app? Better you say."
                 author="Plark Team"
             />

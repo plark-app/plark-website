@@ -1,0 +1,13 @@
+@import "../../styles/media";
+@import "../../styles/colors";
+
+.bitcoin-topic {
+    margin-bottom: 100px;
+
+    &__title {
+        font-size: 60px !important;
+        line-height: 1.16 !important;;
+        color: $color-text-dark !important;;
+    }
+}
+

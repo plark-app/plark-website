@@ -14,7 +14,7 @@ export default function CitationSection(props: CitationProps): JSX.Element {
         <Section className={style.section} contentClassName={style.sectionContent}>
             <Topic
                 isCenter
-                titleTag={props.titleTag}
+                titleTag={props.titleTag || 'h2'}
                 titleText={'"' + props.title + '"'}
                 descText={'— ' + props.author}
                 titleClassName={style.title}

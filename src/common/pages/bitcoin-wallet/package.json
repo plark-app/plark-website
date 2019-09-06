@@ -1,0 +1,6 @@
+{
+    "private": true,
+    "name": "bitcoin-wallet",
+    "main": "bitcoin-wallet.tsx",
+    "typings": "bitcoin-wallet.tsx"
+}

@@ -16,6 +16,7 @@ export { default as StickIphone } from './stick-iphone';
 export { default as StarRate } from './star-rate';
 export { default as PartnerList } from './partner-list';
 export { default as TwoIPhones } from './two-iphones';
+export { default as Subcopy } from './subcopy';
 
 export { default as IntroSection } from './intro-section';
 export { default as BgTitleSection } from './bg-title-section';

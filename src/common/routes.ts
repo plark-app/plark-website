@@ -73,6 +73,23 @@ export const routes: RouteDescriptor[] = [
         }),
     },
     {
+        id: 'bitcoin-wallet',
+        exact: true,
+        rawPath: '/bitcoin-wallet',
+        path: makeRoutePath('/bitcoin-wallet'),
+        load: makeRouteLoadFunction('bitcoin-wallet'),
+        getSeoConfig: (i18n: ITranslationsAdapter): PageSeoConfig => ({
+            title: i18n.gettext('The Best Bitcoin Wallet? Well, Plark.'),
+            description: i18n.gettext('We won’t scream how good we are. We won’t beg you to install our application. We do our job. No need to convince — use Plark.'),
+            canonicalLink: 'https://plark.io/bitcoin-wallet',
+            path: '/bitcoin-wallet',
+        }),
+        getSitemapOption: (): SitemapOption => ({
+            path: '/bitcoin-wallet',
+            priority: 0.9,
+        }),
+    },
+    {
         id: 'faq',
         exact: true,
         rawPath: '/faq',
