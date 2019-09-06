@@ -42,7 +42,7 @@ export default async function reactApplicationRender(req: Request, res: Response
         const html = template({
             criticalCss: criticalCss,
             markup: markup,
-            chunks: ['vendors', 'main'],
+            chunks: ['vendors', 'main', activeRoute.id],
             initData: {
                 initialComponentProps: context.initialComponentProps,
             },

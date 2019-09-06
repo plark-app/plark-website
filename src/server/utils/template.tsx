@@ -70,9 +70,20 @@ function getPreloadLinks(chunks: string[]): JSX.Element | null {
                   type="font/woff2"
                   crossOrigin="anonymous"
             />
-            {[...chunks].map((chunk: string) => (
-                <link key={chunk + 'style'} rel="preload" href={getChunkAssetFilePath(chunk, cssRe)} as="style" />
-            ))}
+            {[...chunks].map((chunk: string) => {
+                try {
+                    const link = getChunkAssetFilePath(chunk, cssRe);
+
+                    return <link
+                        key={chunk + 'style'}
+                        rel="preload"
+                        href={link}
+                        as="style"
+                    />;
+                } catch (error) {
+                    return undefined;
+                }
+            })}
             {['runtime', ...chunks].map((chunk: string) => (
                 <link key={chunk + 'script'} rel="preload" href={getChunkAssetFilePath(chunk)} as="script" />
             ))}
@@ -105,33 +116,33 @@ export default function template(data: TemplateData): string {
         '<!DOCTYPE html>' +
         ReactDOMServer.renderToStaticMarkup(
             <html {...htmlAttrs}>
-                <head>
-                    {helmet.title.toComponent()}
-                    <meta charSet="UTF-8" />
-                    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-                    <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
-                    <link rel="chrome-webstore-item"
-                          href="https://chrome.google.com/webstore/detail/plark/jgboighcjegimmmjkclbniaddfakallg" />
-                    <meta name="apple-itunes-app" content="app-id=1455862890" />
-                    <Favicon />
-                    {getPreloadLinks(chunks)}
-                    {helmet.meta.toComponent()}
-                    {helmet.link.toComponent()}
-                    {helmet.script.toComponent()}
-                    {criticalCss && <style dangerouslySetInnerHTML={{ __html: criticalCss }} />}
-                </head>
-                <body {...bodyAttrs}>
-                    <div id="app" dangerouslySetInnerHTML={{ __html: markup }} />
-                    <script dangerouslySetInnerHTML={{ __html: initScript }} />
-                    <script src={getChunkAssetFilePath('runtime')} defer />
-                    {chunks.map((chunk: string) => (
-                        <script key={chunk} src={getChunkAssetFilePath(chunk)} defer />
-                    ))}
-                    <script dangerouslySetInnerHTML={{ __html: getLoadCSSScript([...chunks]) }} />
-                    {gtmManager.renderHead()}
-                    {gtmManager.renderBody()}
-                </body>
-            </html>
+            <head>
+                {helmet.title.toComponent()}
+                <meta charSet="UTF-8" />
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
+                <link rel="chrome-webstore-item"
+                      href="https://chrome.google.com/webstore/detail/plark/jgboighcjegimmmjkclbniaddfakallg" />
+                <meta name="apple-itunes-app" content="app-id=1455862890" />
+                <Favicon />
+                {getPreloadLinks(chunks)}
+                {helmet.meta.toComponent()}
+                {helmet.link.toComponent()}
+                {helmet.script.toComponent()}
+                {criticalCss && <style dangerouslySetInnerHTML={{ __html: criticalCss }} />}
+            </head>
+            <body {...bodyAttrs}>
+            <div id="app" dangerouslySetInnerHTML={{ __html: markup }} />
+            <script dangerouslySetInnerHTML={{ __html: initScript }} />
+            <script src={getChunkAssetFilePath('runtime')} defer />
+            {chunks.map((chunk: string) => (
+                <script key={chunk} src={getChunkAssetFilePath(chunk)} defer />
+            ))}
+            <script dangerouslySetInnerHTML={{ __html: getLoadCSSScript([...chunks]) }} />
+            {gtmManager.renderHead()}
+            {gtmManager.renderBody()}
+            </body>
+            </html>,
         )
     );
 }
