@@ -15,10 +15,10 @@ export default function Footer(): JSX.Element {
             <Section className={styles.footer} contentClassName={styles.footerContent}>
                 <div className={styles.footerMain}>
                     <FooterColumn title={i18n.gettext('Product')}>
-                        <NavLink to="/" className={styles.navLink}>
+                        <NavLink to="/ios-wallet" className={styles.navLink}>
                             {i18n.gettext('Plark for iOS')}
                         </NavLink>
-                        <NavLink to="/" className={styles.navLink}>
+                        <NavLink to="/android-wallet" className={styles.navLink}>
                             {i18n.gettext('Plark for Android')} <span style={{ fontSize: 10 }}>(coming soon)</span>
                         </NavLink>
                         <NavLink to="/" className={styles.navLink}>

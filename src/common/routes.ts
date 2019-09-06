@@ -2,6 +2,7 @@ import { ITranslationsAdapter } from 'slim-i18n';
 import { RouteDescriptor, makeRoutePath, makeRouteLoadFunction } from 'common/utils/router';
 import { PageSeoConfig, SitemapOption } from 'common/utils/seo';
 
+
 export const routes: RouteDescriptor[] = [
     {
         id: 'home',
@@ -34,6 +35,40 @@ export const routes: RouteDescriptor[] = [
         }),
         getSitemapOption: (): SitemapOption => ({
             path: '/mobile-wallet',
+            priority: 0.9,
+        }),
+    },
+    {
+        id: 'ios-wallet',
+        exact: true,
+        rawPath: '/ios-wallet',
+        path: makeRoutePath('/ios-wallet'),
+        load: makeRouteLoadFunction('ios-wallet'),
+        getSeoConfig: (i18n: ITranslationsAdapter): PageSeoConfig => ({
+            title: i18n.gettext('Best iOS crypto wallet? Well, Plark.'),
+            description: i18n.gettext('We won’t scream how good we are. We won’t beg you to install our application. We do our job. No need to convince — use Plark.'),
+            canonicalLink: 'https://plark.io/ios-wallet',
+            path: '/ios-wallet',
+        }),
+        getSitemapOption: (): SitemapOption => ({
+            path: '/ios-wallet',
+            priority: 0.9,
+        }),
+    },
+    {
+        id: 'android-wallet',
+        exact: true,
+        rawPath: '/android-wallet',
+        path: makeRoutePath('/android-wallet'),
+        load: makeRouteLoadFunction('android-wallet'),
+        getSeoConfig: (i18n: ITranslationsAdapter): PageSeoConfig => ({
+            title: i18n.gettext('Best Android crypto wallet? Well, Plark.'),
+            description: i18n.gettext('We won’t scream how good we are. We won’t beg you to install our application. We do our job. No need to convince — use Plark.'),
+            canonicalLink: 'https://plark.io/android-wallet',
+            path: '/android-wallet',
+        }),
+        getSitemapOption: (): SitemapOption => ({
+            path: '/android-wallet',
             priority: 0.9,
         }),
     },

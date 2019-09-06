@@ -26,6 +26,7 @@ export default React.memo(function ColumnsSection(props: FeedbackSectionProps): 
                 titleText={topic.title}
                 titleTag={topic.titleTag}
                 descText={topic.description}
+                maxWidth={900}
             /> : undefined}
 
             <TwoIPhones className={styles.phones} />

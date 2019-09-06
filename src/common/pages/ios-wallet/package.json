@@ -1,0 +1,6 @@
+{
+    "private": true,
+    "name": "ios-wallet",
+    "main": "ios-wallet.tsx",
+    "typings": "ios-wallet.tsx"
+}

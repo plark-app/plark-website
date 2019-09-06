@@ -1,6 +1,6 @@
 import React from 'react';
 import cn from 'classnames';
-import { Section, JoinLink } from '../';
+import { Section, JoinLink } from 'common/components';
 import styles from './feature-section.scss';
 
 type FeatureSectionProps = {
@@ -8,6 +8,8 @@ type FeatureSectionProps = {
     linkText?: string;
     linkUrl?: string;
     isLtr?: boolean;
+
+    textTag?: 'h1' | 'h2' | 'h3' | 'p';
 
     image: {
         src: string;
@@ -21,6 +23,7 @@ export default React.memo(function FeatureSection(props: FeatureSectionProps): J
     const {
         linkText = 'Get Plark app',
         linkUrl = 'https://itunes.apple.com/app/apple-store/id1455862890?pt=118337376&ct=site&mt=8',
+        textTag = 'p',
     } = props;
 
     const contentClass = cn(styles.sectionContent, {
@@ -30,7 +33,7 @@ export default React.memo(function FeatureSection(props: FeatureSectionProps): J
     return (
         <Section className={styles.section} contentClassName={contentClass}>
             <div className={styles.content}>
-                <p className={styles.contentText}>{props.text}</p>
+                {React.createElement(textTag, { className: styles.contentText }, props.text)}
                 <JoinLink href={linkUrl} target="_blank">{linkText}</JoinLink>
             </div>
 

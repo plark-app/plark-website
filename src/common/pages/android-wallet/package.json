@@ -1,0 +1,6 @@
+{
+    "private": true,
+    "name": "android-wallet",
+    "main": "android-wallet.tsx",
+    "typings": "android-wallet.tsx"
+}
