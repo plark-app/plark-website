@@ -8,6 +8,7 @@ export type TTopicProps = {
     titleClassName?: string;
     titleText: React.ReactNode;
     titleTag?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p';
+    descriptionTag?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p';
     descClassName?: string;
     descText?: React.ReactNode;
     isWhite?: boolean;
@@ -19,6 +20,7 @@ export type TTopicProps = {
 export default function Topic(props: TTopicProps): JSX.Element {
     const {
         titleTag = 'h2',
+        descriptionTag = 'p',
         isWhite = false,
         isCenter = false,
         isSmall = false,
@@ -43,7 +45,11 @@ export default function Topic(props: TTopicProps): JSX.Element {
     return (
         <div className={topicClassName} style={topicStyle}>
             {React.createElement(titleTag, titleProps, props.titleText)}
-            {props.descText && <p className={cn(styles.topicDesc, props.descClassName)}>{props.descText}</p>}
+            {props.descText && React.createElement(
+                descriptionTag,
+                { className: cn(styles.topicDesc, props.descClassName) },
+                props.descText,
+            )}
         </div>
     );
 }

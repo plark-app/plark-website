@@ -23,7 +23,13 @@ export default React.memo(function PartnerList(props: PartnerListProps): JSX.Ele
         <div className={containerClass}>
             {partnerList.map((par: PartnerItem, i: number) => {
                 return (
-                    <a href={par.website} rel="nofollow" target="_blank" className={styles.partnerLink} key={i}>
+                    <a key={i}
+                       href={par.website}
+                       rel="nofollow"
+                       target="_blank"
+                       className={styles.partnerLink}
+                       title={par.title}
+                    >
                         {React.createElement<any>(par.logo, { className: itemClassName })}
                     </a>
                 );

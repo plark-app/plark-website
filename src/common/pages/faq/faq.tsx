@@ -9,7 +9,7 @@ import Section from 'common/components/section';
 import commonStyles from 'common/styles/common.scss';
 import styles from './faq.scss';
 
-const faqContent = require('./faq-content').IosWallet;
+const faqContent = require('./faq-content').default;
 
 export default function FaqPage(): JSX.Element {
 

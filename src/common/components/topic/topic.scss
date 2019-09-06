@@ -9,17 +9,9 @@
         margin: 0;
         padding: 0;
         line-height: 1.1667;
-        font-size: 22px;
+        font-size: 60px;
         font-weight: 700;
         white-space: pre-line;
-
-        @include from-sm-width {
-            font-size: 28px;
-        }
-
-        @include from-md-width {
-            font-size: 60px;
-        }
 
         .topic.is-center > & {
             margin-left: auto;

@@ -27,6 +27,17 @@
     }
 }
 
+.subtitle {
+    display: block;
+    font-size: 16px;
+    text-align: center;
+    max-width: 580px;
+    font-weight: bold;
+    margin: 50px auto 72px auto;
+    line-height: 1.38;
+    color: $color-text-secondary;
+}
+
 
 .caption {
     text-align: center;
