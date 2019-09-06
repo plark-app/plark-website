@@ -1,0 +1,44 @@
+@import "../../styles/media";
+@import "../../styles/colors";
+
+.section {
+    margin-top: 200px;
+    margin-bottom: 200px;
+}
+
+.phones {
+    margin-top: 160px;
+    margin-bottom: 160px;
+}
+
+.subcopy-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    margin-left: -20px;
+    margin-right: -20px;
+}
+
+.subcopy {
+    width: 260px;
+    font-size: 20px;
+    letter-spacing: 0.43px;
+    line-height: 1.31;
+    margin: 0 20px;
+
+    &__title, &__content  {
+        font-size: inherit;
+        display: inline;
+    }
+
+    &__title {
+        font-weight: bold;
+        color: $color-text-dark;
+    }
+
+    &__content {
+        font-weight: normal;
+        color: $color-gray50;
+    }
+}

@@ -6,49 +6,36 @@
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-
-    height: 40px;
-
-    &.is-small {
-        height: 30px;
-    }
 }
 
 .partner {
     fill: $color-gray45;
-    height: 50%;
+    height: 40px !important;
+    width: auto !important;
+    transition: fill 0.4s;
+
+    .is-small & {
+        height: 30px !important;
+    }
+
+    &__link {
+        display: block;
+    }
 
     &:last-child {
         margin-right: 0;
+    }
+
+    &:hover {
+        transition-delay: 0.2s;
+        fill: $color-gray70;
     }
 
     @include to-md-width {
         margin-top: 30px;
     }
 
-    &.is-kuna {
-        height: 50%;
-    }
-
-    &.is-changelly {
-        height: 90%;
-    }
-
-    &.is-zerohub {
-        height: 50%;
-    }
-
-    &.is-choinswitch {
-        height: 41%;
-    }
-
-    &.is-wallettopup {
-        height: 70.5%;
-    }
-
-    &__section {
-
-    }
+    &__section {}
 
     &__content {
         padding-top: 20px;

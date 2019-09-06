@@ -9,6 +9,7 @@ import {
     BgTitleSection,
     CitationSection,
     SubscribeSection,
+    ColumnsSection,
     CardSection,
     OpenSourceSection,
     FeatureSection,
@@ -65,11 +66,18 @@ export default function MobileWallet(): JSX.Element {
             </Section>
 
 
-            <Section>
-
-
-
-            </Section>
+            <ColumnsSection
+                texts={[{
+                    title: i18n.gettext('Your privacy is yours.'),
+                    content: i18n.gettext('Plark crypto mobile app encrypts private keys and transaction data on your device. Your data always remains private.'),
+                }, {
+                    title: i18n.gettext('Built-in Exchange.'),
+                    content: i18n.gettext('Exchange your crypto anonymously with the Plark’s fine-tailored feature in a few taps. Bitcoin, Ethereum, Litecoin, Dash cryptos are available with more to come.'),
+                }, {
+                    title: i18n.gettext('Friendliest crypto wallet app.'),
+                    content: i18n.gettext('No “tech talks” or mind-bending words. Plark makes it easy-peasy to get familiar with crypto.'),
+                }]}
+            />
 
 
             <CardSection

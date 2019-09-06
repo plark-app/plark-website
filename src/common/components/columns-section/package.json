@@ -1,0 +1,6 @@
+{
+    "private": true,
+    "name": "columns-section",
+    "main": "columns-section.tsx",
+    "typings": "columns-section.tsx"
+}

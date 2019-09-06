@@ -25,4 +25,5 @@ export { default as SubscribeSection } from './subscribe-section';
 export { default as FeatureSection } from './feature-section';
 export { default as CommunitySection } from './community-section';
 export { default as FeedbackSection } from './feedback-section';
+export { default as ColumnsSection } from './columns-section';
 export { default as OpenSourceSection } from './opensource-section';

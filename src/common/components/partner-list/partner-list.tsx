@@ -15,13 +15,47 @@ type PartnerListProps = {
 };
 
 export default React.memo(function PartnerList(props: PartnerListProps): JSX.Element {
+    const containerClass = cn(styles.list, { [styles.isSmall]: props.isSmall }, props.className);
+    const itemClassName = cn(styles.partner, props.itemClassName);
+
     return (
-        <div className={cn(styles.list, { [styles.isSmall]: props.isSmall }, props.className)}>
-            <KunaLogoSvg className={cn(styles.partner, styles.isKuna, props.itemClassName)} />
-            <ChangellyLogoSvg className={cn(styles.partner, styles.isChangelly, props.itemClassName)} />
-            <ZeroHubLogoSvg className={cn(styles.partner, styles.isZerohub, props.itemClassName)} />
-            <CoinswitchLogoSvg className={cn(styles.partner, styles.isCoinswitch, props.itemClassName)} />
-            <WalletTopupLogoSvg className={cn(styles.partner, styles.isWallettopup, props.itemClassName)} />
+        <div className={containerClass}>
+            {partnerList.map((par: PartnerItem) => {
+                return (
+                    <a href={par.website} rel="nofollow" target="_blank" className={styles.partnerLink}>
+                        {React.createElement<any>(par.logo, { className: itemClassName })}
+                    </a>
+                );
+            })}
         </div>
     );
 });
+
+
+type PartnerItem = {
+    title: string;
+    logo: React.ComponentType;
+    website: string;
+};
+
+const partnerList: PartnerItem[] = [{
+    title: 'Kuna.io',
+    logo: KunaLogoSvg,
+    website: 'https://kuna.io',
+}, {
+    title: 'Changelly',
+    logo: ChangellyLogoSvg,
+    website: 'https://kuna.io',
+}, {
+    title: 'ZeroHub',
+    logo: ZeroHubLogoSvg,
+    website: 'https://kuna.io',
+}, {
+    title: 'Coinswitch',
+    logo: CoinswitchLogoSvg,
+    website: 'https://kuna.io',
+}, {
+    title: 'WalletTopUp',
+    logo: WalletTopupLogoSvg,
+    website: 'https://kuna.io',
+}];
