@@ -1,6 +1,9 @@
 // tslint:disable:no-any
 declare global {
-    type ClientConfig = {};
+    type ClientConfig = {
+        host: string;
+        isSecure: boolean;
+    };
 
     interface Window {
         __initData: Record<string, any> & { config: ClientConfig };

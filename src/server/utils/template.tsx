@@ -92,7 +92,10 @@ function getPreloadLinks(chunks: string[]): JSX.Element | null {
 }
 
 function getClientConfig(): ClientConfig {
-    return {};
+    return {
+        host: config.get<string>('app.host'),
+        isSecure: config.get<boolean>('app.secure'),
+    };
 }
 
 export default function template(data: TemplateData): string {

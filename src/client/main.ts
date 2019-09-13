@@ -12,13 +12,19 @@ import { render } from './render';
 import { actualizeStyleSheets } from './utils/style-sheets-actualizer';
 
 (async () => {
-    const rootElement = document.getElementById('app');
+    const currentHost = window.location.hostname;
+    if (currentHost !== window.__initData.config.host) {
+        return;
+    }
+
     const currentPath = window.location.pathname;
     const activeRoute: RouteDescriptor | null = getActiveRoute(currentPath, routes);
     if (activeRoute === null) {
         console.error('Nothing match');
         return;
     }
+
+    const rootElement = document.getElementById('app');
 
     window.__initData.components = {
         [activeRoute.id]: await activeRoute.load(),
