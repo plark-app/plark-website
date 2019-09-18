@@ -28,3 +28,4 @@ export { default as CommunitySection } from './community-section';
 export { default as FeedbackSection } from './feedback-section';
 export { default as ColumnsSection } from './columns-section';
 export { default as OpenSourceSection } from './opensource-section';
+export { default as Socials } from './socials';

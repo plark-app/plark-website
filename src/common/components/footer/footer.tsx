@@ -3,9 +3,11 @@ import { useI18n } from 'slim-i18n';
 import PlarkLogo from 'resources/svgs/plark-logo.component.svg';
 import PlatformList from 'common/utils/install-platforms';
 import { Section, StoreBadge, NavLink } from 'common/components';
+import { Socials } from 'common/components';
+
 import FooterColumn from './footer-column.component';
+
 import styles from './footer.scss';
-import { Socials } from '../socials/socials';
 
 export default function Footer(): JSX.Element {
     const i18n = useI18n();

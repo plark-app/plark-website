@@ -1,9 +1,9 @@
 import React from 'react';
 import { useI18n } from 'slim-i18n';
 import { Footer, Header, Section, Topic, TwoIPhones, UIButton } from 'common/components';
+import { Socials } from 'common/components';
 
 import styles from './contact-us.scss';
-import { Socials } from 'common/components/socials/socials';
 
 export default function ContactUs(): JSX.Element {
     const i18n = useI18n();
@@ -39,4 +39,3 @@ export default function ContactUs(): JSX.Element {
         </>
     );
 }
-

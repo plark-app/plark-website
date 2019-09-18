@@ -7,7 +7,7 @@ import { Icons } from 'common/components';
 interface ISocialsProps {
     className?: string;
 }
-export function Socials(props: ISocialsProps): JSX.Element {
+export default function Socials(props: ISocialsProps): JSX.Element {
     return (
         <div className={classnames(styles.social, props.className)}>
             <a href="https://github.com/plark-app" className={styles.socialItem}>
