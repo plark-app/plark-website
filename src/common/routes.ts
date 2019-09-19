@@ -137,6 +137,25 @@ export const routes: RouteDescriptor[] = [
         }),
     },
     {
+        id: 'zcash-wallet',
+        exact: true,
+        rawPath: '/zcash-wallet',
+        path: makeRoutePath('/zcash-wallet'),
+        load: makeRouteLoadFunction('zcash-wallet'),
+        getSeoConfig: (i18n: ITranslationsAdapter): PageSeoConfig => ({
+            title: i18n.gettext('zcash Wallet for iOS? Plark.'),
+            description: i18n.gettext(
+                'Plark team has created a cross-functional application to fulfill all the needs for all cryptocurrency users. Get through the friendliest flow you have ever seen before. Try it, and you will probably call Plark the best wallet for zcash.',
+            ),
+            canonicalLink: 'https://plark.io/zcash-wallet',
+            path: '/zcash-wallet',
+        }),
+        getSitemapOption: (): SitemapOption => ({
+            path: '/zcash-wallet',
+            priority: 0.9,
+        }),
+    },
+    {
         id: 'contact-us',
         exact: true,
         rawPath: '/contact-us',
