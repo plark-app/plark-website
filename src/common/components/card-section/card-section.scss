@@ -75,3 +75,41 @@
     margin-top: 50px;
     justify-content: center;
 }
+
+.card-section {
+    &__steps {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        
+        margin: 80px auto;
+        max-width: 640px;
+    }
+
+    &__step {
+        width: 230px;
+        min-height: 120px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        flex-direction: column;
+
+        margin-bottom: 75px;
+
+        &-number {
+            color: $color-gray20;
+            font-size: 80px;
+            font-weight: 300;
+        }
+
+        &-descr {
+            color: $color-primary;
+            font-size: 16px;
+            font-weight: 700;
+            text-align: center;
+        }
+    }
+}

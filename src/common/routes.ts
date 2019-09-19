@@ -2,7 +2,6 @@ import { ITranslationsAdapter } from 'slim-i18n';
 import { RouteDescriptor, makeRoutePath, makeRouteLoadFunction } from 'common/utils/router';
 import { PageSeoConfig, SitemapOption } from 'common/utils/seo';
 
-
 export const routes: RouteDescriptor[] = [
     {
         id: 'home',
@@ -12,7 +11,9 @@ export const routes: RouteDescriptor[] = [
         load: makeRouteLoadFunction('home'),
         getSeoConfig: (i18n: ITranslationsAdapter): PageSeoConfig => ({
             title: i18n.gettext('The friendliest multi-currency crypto wallet.'),
-            description: i18n.gettext('We won’t scream how good we are. We won’t beg you to install our application. We do our job. No need to convince — use Plark.'),
+            description: i18n.gettext(
+                'We won’t scream how good we are. We won’t beg you to install our application. We do our job. No need to convince — use Plark.',
+            ),
             canonicalLink: 'https://plark.io',
             path: '/',
         }),
@@ -29,7 +30,9 @@ export const routes: RouteDescriptor[] = [
         load: makeRouteLoadFunction('mobile-wallet'),
         getSeoConfig: (i18n: ITranslationsAdapter): PageSeoConfig => ({
             title: i18n.gettext('Best mobile crypto wallet? Well, Plark.'),
-            description: i18n.gettext('We won’t scream how good we are. We won’t beg you to install our application. We do our job. No need to convince — use Plark.'),
+            description: i18n.gettext(
+                'We won’t scream how good we are. We won’t beg you to install our application. We do our job. No need to convince — use Plark.',
+            ),
             canonicalLink: 'https://plark.io/mobile-wallet',
             path: '/mobile-wallet',
         }),
@@ -46,7 +49,9 @@ export const routes: RouteDescriptor[] = [
         load: makeRouteLoadFunction('ios-wallet'),
         getSeoConfig: (i18n: ITranslationsAdapter): PageSeoConfig => ({
             title: i18n.gettext('Best iOS crypto wallet? Well, Plark.'),
-            description: i18n.gettext('We won’t scream how good we are. We won’t beg you to install our application. We do our job. No need to convince — use Plark.'),
+            description: i18n.gettext(
+                'We won’t scream how good we are. We won’t beg you to install our application. We do our job. No need to convince — use Plark.',
+            ),
             canonicalLink: 'https://plark.io/ios-wallet',
             path: '/ios-wallet',
         }),
@@ -63,7 +68,9 @@ export const routes: RouteDescriptor[] = [
         load: makeRouteLoadFunction('android-wallet'),
         getSeoConfig: (i18n: ITranslationsAdapter): PageSeoConfig => ({
             title: i18n.gettext('Best Android crypto wallet? Well, Plark.'),
-            description: i18n.gettext('We won’t scream how good we are. We won’t beg you to install our application. We do our job. No need to convince — use Plark.'),
+            description: i18n.gettext(
+                'We won’t scream how good we are. We won’t beg you to install our application. We do our job. No need to convince — use Plark.',
+            ),
             canonicalLink: 'https://plark.io/android-wallet',
             path: '/android-wallet',
         }),
@@ -80,12 +87,33 @@ export const routes: RouteDescriptor[] = [
         load: makeRouteLoadFunction('bitcoin-wallet'),
         getSeoConfig: (i18n: ITranslationsAdapter): PageSeoConfig => ({
             title: i18n.gettext('The Best Bitcoin Wallet? Well, Plark.'),
-            description: i18n.gettext('We won’t scream how good we are. We won’t beg you to install our application. We do our job. No need to convince — use Plark.'),
+            description: i18n.gettext(
+                'We won’t scream how good we are. We won’t beg you to install our application. We do our job. No need to convince — use Plark.',
+            ),
             canonicalLink: 'https://plark.io/bitcoin-wallet',
             path: '/bitcoin-wallet',
         }),
         getSitemapOption: (): SitemapOption => ({
             path: '/bitcoin-wallet',
+            priority: 0.9,
+        }),
+    },
+    {
+        id: 'litecoin-wallet',
+        exact: true,
+        rawPath: '/litecoin-wallet',
+        path: makeRoutePath('/litecoin-wallet'),
+        load: makeRouteLoadFunction('litecoin-wallet'),
+        getSeoConfig: (i18n: ITranslationsAdapter): PageSeoConfig => ({
+            title: i18n.gettext('Litecoin Wallet for iOS? Plark.'),
+            description: i18n.gettext(
+                'Plark team has created a cross-functional application to fulfill all the needs for all cryptocurrency users. Get through the friendliest flow you have ever seen before. Try it, and you will probably call Plark the best wallet for Litecoin.',
+            ),
+            canonicalLink: 'https://plark.io/litecoin-wallet',
+            path: '/litecoin-wallet',
+        }),
+        getSitemapOption: (): SitemapOption => ({
+            path: '/litecoin-wallet',
             priority: 0.9,
         }),
     },

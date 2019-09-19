@@ -1,0 +1,6 @@
+{
+    "private": true,
+    "name": "wallet-features-section",
+    "main": "wallet-features-section.tsx",
+    "typings": "wallet-features-section.tsx"
+}
