@@ -122,7 +122,7 @@ export default function TronWallet(): JSX.Element {
                         'Wallet for Tron is one of the most requested at this moment. In any case, we are dependably including new altcoins that acknowledge predominance inside crypto-buddies:',
                     ),
                     i18n.gettext(
-                        'Neo, Zcash, Cardano, Dogecoin, Bitcoin Cash, Stellar, Eos, Waves, Wechain, Ethereum Classic, Omisego, Qtum, Tether, Tezos, Ontology, Basic Attention Token, Chainlink, Bitcoin SV and others.',
+                        'Neo, Zcash, Cardano, Dogecoin, Bitcoin Cash, Stellar, EOS, Waves, Wechain, Ethereum Classic, Omisego, Qtum, Tether, Tezos, Ontology, Basic Attention Token, Chainlink, Bitcoin SV and others.',
                     ),
                 ]}
             />

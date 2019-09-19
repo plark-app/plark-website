@@ -93,7 +93,7 @@ export default function EosWallet(): JSX.Element {
                         'The wallet for EOS is one of the most popular at the moment. It will soon be available for Plark. But EOS is far from everything. We plan to add other popular cryptocurrencies, such as:',
                     ),
                     i18n.gettext(
-                        'Neo, Zcash, Cardano, Dogecoin, Bitcoin Cash, Stellar, Eos, Waves, Wechain, Ethereum Classic, Omisego, Qtum, Tether, Tezos, Ontology, Basic Attention Token, Chainlink, Bitcoin SV and others.',
+                        'Neo, Zcash, Cardano, Dogecoin, Bitcoin Cash, Stellar, EOS, Waves, Wechain, Ethereum Classic, Omisego, Qtum, Tether, Tezos, Ontology, Basic Attention Token, Chainlink, Bitcoin SV and others.',
                     ),
                 ]}
             />

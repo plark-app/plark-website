@@ -115,7 +115,7 @@ export default function DashWallet(): JSX.Element {
                         'Dash has been one of the most popular cryptocurrencies for several years now. Therefore, soon you will see Dash crypto wallet it in the list of available ones. Besides, other popular currencies are next in line for adding:',
                     ),
                     i18n.gettext(
-                        'Neo, Zcash, Cardano, Dogecoin, Bitcoin Cash, Stellar, Eos, Waves, Wechain, Ethereum Classic, Omisego, Qtum, Tether, Tezos, Ontology, Basic Attention Token, Chainlink, Bitcoin SV and others.',
+                        'Neo, Zcash, Cardano, Dogecoin, Bitcoin Cash, Stellar, EOS, Waves, Wechain, Ethereum Classic, Omisego, Qtum, Tether, Tezos, Ontology, Basic Attention Token, Chainlink, Bitcoin SV and others.',
                     ),
                 ]}
             />

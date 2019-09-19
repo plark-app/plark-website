@@ -130,7 +130,7 @@ export default function NeoWallet(): JSX.Element {
                         'Plark is a wallet for Neo that offers a full spectrum of features you need. We intend to include the most interesting and popular coins, for example:',
                     ),
                     i18n.gettext(
-                        'Iota, Monero, Zcash, Cardano, Dogecoin, Tron, Bitcoin Cash, Stellar, Eos, Waves, Wechain, Ethereum Classic, Omisego, Qtum, Tether, Tezos, Ontology, Basic Attention Token, Chainlink, Bitcoin SV and others.',
+                        'IOTA, Monero, Zcash, Cardano, Dogecoin, Tron, Bitcoin Cash, Stellar, EOS, Waves, Wechain, Ethereum Classic, Omisego, Qtum, Tether, Tezos, Ontology, Basic Attention Token, Chainlink, Bitcoin SV and others.',
                     ),
                 ]}
             />

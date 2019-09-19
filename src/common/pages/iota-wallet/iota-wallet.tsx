@@ -129,7 +129,7 @@ export default function IotaWallet(): JSX.Element {
                         'IOTA coin wallet is not the single one to be added soon. To fulfill everyone’s needs, our team is consistently adding the most popular currencies. The next to be added are:',
                     ),
                     i18n.gettext(
-                        'Monero, Neo, Zcash, Cardano, Dogecoin, Tron, Bitcoin Cash, Stellar, Eos, Waves, Wechain, Ethereum Classic, Omisego, Qtum, Tether, Tezos, Ontology, Basic Attention Token, Chainlink, Bitcoin SV and others.',
+                        'Monero, Neo, Zcash, Cardano, Dogecoin, Tron, Bitcoin Cash, Stellar, EOS, Waves, Wechain, Ethereum Classic, Omisego, Qtum, Tether, Tezos, Ontology, Basic Attention Token, Chainlink, Bitcoin SV and others.',
                     ),
                 ]}
             />

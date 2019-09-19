@@ -135,7 +135,7 @@ export default function LitecoinWallet(): JSX.Element {
                         'Wallet for Litecoin is one of the most mainstream right now. Be that as it may, we are reliably including new cryptographic forms of money that appreciate prevalence inside crypto-pals, specifically:',
                     ),
                     i18n.gettext(
-                        'Neo, Zcash, Cardano, Dogecoin, Tron, Bitcoin Cash, Stellar, Eos, Waves, Wechain, Ethereum Classic, Omisego, Qtum, Tether, Tezos, Ontology, Basic Attention Token, Chainlink, Bitcoin SV and others.',
+                        'Neo, Zcash, Cardano, Dogecoin, Tron, Bitcoin Cash, Stellar, EOS, Waves, Wechain, Ethereum Classic, Omisego, Qtum, Tether, Tezos, Ontology, Basic Attention Token, Chainlink, Bitcoin SV and others.',
                     ),
                 ]}
             />

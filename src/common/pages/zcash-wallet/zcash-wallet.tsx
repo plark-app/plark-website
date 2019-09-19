@@ -124,7 +124,7 @@ export default function ZCashWallet(): JSX.Element {
                 columns={[
                     i18n.gettext('Plark reliably adds more coins to the rundown. Here are the up and coming of them:'),
                     i18n.gettext(
-                        'Ripple, Monero, Neo, Dogecoin, Cardano, Tron, Bitcoin Cash, Stellar, Eos, Waves, Wechain, Ethereum Classic, Omisego, Qtum, Tether, Tezos, Ontology, Basic Attention Token, Chainlink, Bitcoin SV and others.',
+                        'Ripple, Monero, Neo, Dogecoin, Cardano, Tron, Bitcoin Cash, Stellar, EOS, Waves, Wechain, Ethereum Classic, Omisego, Qtum, Tether, Tezos, Ontology, Basic Attention Token, Chainlink, Bitcoin SV and others.',
                     ),
                 ]}
             />

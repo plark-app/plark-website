@@ -128,7 +128,7 @@ export default function RippleWallet(): JSX.Element {
                         'Plark is a wallet that offers an all-in-one solution for a seamless entry in cryptocurrency. At the moment you can manage Bitcoin, Litecoin, Ethereum, and Dash with much more top cryptocurrencies to be added soon. Download the Plark app for iOS and start your crypto-journey right away.',
                     ),
                     i18n.gettext(
-                        'We plan to add the most high-demand coins, such as: Iota, Monero, Neo, Zcash, Cardano, Dogecoin, Tron, Bitcoin Cash, Stellar, Eos, Waves, Wechain, Ethereum Classic, Omisego, Qtum, Tether, Tezos, Ontology, Basic Attention Token, Chainlink, Bitcoin SV and others.',
+                        'We plan to add the most high-demand coins, such as: IOTA, Monero, Neo, Zcash, Cardano, Dogecoin, Tron, Bitcoin Cash, Stellar, EOS, Waves, Wechain, Ethereum Classic, Omisego, Qtum, Tether, Tezos, Ontology, Basic Attention Token, Chainlink, Bitcoin SV and others.',
                     ),
                 ]}
             />
