@@ -1,0 +1,6 @@
+{
+    "private": true,
+    "name": "tron-wallet",
+    "main": "tron-wallet.tsx",
+    "typings": "tron-wallet.tsx"
+}

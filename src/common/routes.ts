@@ -194,6 +194,25 @@ export const routes: RouteDescriptor[] = [
         }),
     },
     {
+        id: 'tron-wallet',
+        exact: true,
+        rawPath: '/tron-wallet',
+        path: makeRoutePath('/tron-wallet'),
+        load: makeRouteLoadFunction('tron-wallet'),
+        getSeoConfig: (i18n: ITranslationsAdapter): PageSeoConfig => ({
+            title: i18n.gettext('tron Wallet for iOS? Plark.'),
+            description: i18n.gettext(
+                'Plark team has created a cross-functional application to fulfill all the needs for all cryptocurrency users. Get through the friendliest flow you have ever seen before. Try it, and you will probably call Plark the best wallet for tron.',
+            ),
+            canonicalLink: 'https://plark.io/tron-wallet',
+            path: '/tron-wallet',
+        }),
+        getSitemapOption: (): SitemapOption => ({
+            path: '/tron-wallet',
+            priority: 0.9,
+        }),
+    },
+    {
         id: 'contact-us',
         exact: true,
         rawPath: '/contact-us',
