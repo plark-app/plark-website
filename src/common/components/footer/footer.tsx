@@ -2,8 +2,7 @@ import React from 'react';
 import { useI18n } from 'slim-i18n';
 import PlarkLogo from 'resources/svgs/plark-logo.component.svg';
 import PlatformList from 'common/utils/install-platforms';
-import { Section, StoreBadge, NavLink } from 'common/components';
-import { Socials } from 'common/components';
+import { Section, StoreBadge, NavLink, Socials } from 'common/components';
 
 import FooterColumn from './footer-column.component';
 
@@ -38,9 +37,6 @@ export default function Footer(): JSX.Element {
                         <NavLink to="/contact-us" className={styles.navLink}>
                             {i18n.gettext('Contact Us')}
                         </NavLink>
-                        {/*<NavLink to="/carriers" className={styles.navLink}>*/}
-                        {/*    {i18n.gettext('Carriers')}*/}
-                        {/*</NavLink>*/}
                     </FooterColumn>
 
                     <FooterColumn title={i18n.gettext('Learn')}>

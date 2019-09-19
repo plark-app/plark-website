@@ -1,7 +1,6 @@
 import React from 'react';
 import { useI18n } from 'slim-i18n';
-import { Footer, Header, Section, Topic, TwoIPhones, UIButton } from 'common/components';
-import { Socials } from 'common/components';
+import { Footer, Header, Section, Topic, TwoIPhones, UIButton, Socials } from 'common/components';
 
 import styles from './contact-us.scss';
 
