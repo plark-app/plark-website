@@ -175,6 +175,25 @@ export const routes: RouteDescriptor[] = [
         }),
     },
     {
+        id: 'dogecoin-wallet',
+        exact: true,
+        rawPath: '/dogecoin-wallet',
+        path: makeRoutePath('/dogecoin-wallet'),
+        load: makeRouteLoadFunction('dogecoin-wallet'),
+        getSeoConfig: (i18n: ITranslationsAdapter): PageSeoConfig => ({
+            title: i18n.gettext('dogecoin Wallet for iOS? Plark.'),
+            description: i18n.gettext(
+                'Plark team has created a cross-functional application to fulfill all the needs for all cryptocurrency users. Get through the friendliest flow you have ever seen before. Try it, and you will probably call Plark the best wallet for dogecoin.',
+            ),
+            canonicalLink: 'https://plark.io/dogecoin-wallet',
+            path: '/dogecoin-wallet',
+        }),
+        getSitemapOption: (): SitemapOption => ({
+            path: '/dogecoin-wallet',
+            priority: 0.9,
+        }),
+    },
+    {
         id: 'contact-us',
         exact: true,
         rawPath: '/contact-us',
