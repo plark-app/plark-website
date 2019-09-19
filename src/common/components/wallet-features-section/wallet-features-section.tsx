@@ -24,7 +24,7 @@ export default function WalletFeaturesSection({ featuresList }: IWalletFeaturesS
                         {item.descr && <p className={styles.walletFeatureSectionItemDescr}>{item.descr}</p>}
                     </li>
                 ))}
-                <li className={styles.walletFeatureSectionItemImage}>
+                <li className={styles.walletFeatureSectionItemImage} style={{ order: featuresList.length / 2 - 1 }}>
                     <img className={styles.walletFeatureSectionImage} src={'/img/trade-screen.png'} />
                 </li>
             </ul>
