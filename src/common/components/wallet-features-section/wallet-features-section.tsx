@@ -1,4 +1,5 @@
 import React from 'react';
+import classnames from 'classnames';
 
 import styles from './wallet-features-section.scss';
 
@@ -8,12 +9,20 @@ export interface IWalletFeaturesItem {
 }
 export interface IWalletFeaturesSectionProps {
     featuresList: IWalletFeaturesItem[];
+    sectionClassName?: string;
+    listClassName?: string;
+    imgClassName?: string;
 }
 
-export default function WalletFeaturesSection({ featuresList }: IWalletFeaturesSectionProps): JSX.Element {
+export default function WalletFeaturesSection({
+    featuresList,
+    sectionClassName,
+    listClassName,
+    imgClassName,
+}: IWalletFeaturesSectionProps): JSX.Element {
     return (
-        <div className={styles.walletFeatureSection}>
-            <ul className={styles.walletFeatureSectionList}>
+        <div className={classnames(styles.walletFeatureSection, sectionClassName)}>
+            <ul className={classnames(styles.walletFeatureSectionList, listClassName)}>
                 {featuresList.map((item: IWalletFeaturesItem, i: number) => (
                     <li
                         style={{ order: i, textAlign: i > 3 ? 'left' : 'right' }}
@@ -24,7 +33,10 @@ export default function WalletFeaturesSection({ featuresList }: IWalletFeaturesS
                         {item.descr && <p className={styles.walletFeatureSectionItemDescr}>{item.descr}</p>}
                     </li>
                 ))}
-                <li className={styles.walletFeatureSectionItemImage} style={{ order: featuresList.length / 2 - 1 }}>
+                <li
+                    className={classnames(styles.walletFeatureSectionItemImage, imgClassName)}
+                    style={{ order: featuresList.length / 2 - 1 }}
+                >
                     <img className={styles.walletFeatureSectionImage} src={'/img/trade-screen.png'} />
                 </li>
             </ul>

@@ -308,6 +308,25 @@ export const routes: RouteDescriptor[] = [
         }),
     },
     {
+        id: 'ethereum-wallet',
+        exact: true,
+        rawPath: '/ethereum-wallet',
+        path: makeRoutePath('/ethereum-wallet'),
+        load: makeRouteLoadFunction('ethereum-wallet'),
+        getSeoConfig: (i18n: ITranslationsAdapter): PageSeoConfig => ({
+            title: i18n.gettext('dash Wallet for iOS? Plark.'),
+            description: i18n.gettext(
+                'Plark team has created a cross-functional application to fulfill all the needs for all cryptocurrency users. Get through the friendliest flow you have ever seen before. Try it, and you will probably call Plark the best wallet for ethereum.',
+            ),
+            canonicalLink: 'https://plark.io/ethereum-wallet',
+            path: '/ethereum-wallet',
+        }),
+        getSitemapOption: (): SitemapOption => ({
+            path: '/ethereum-wallet',
+            priority: 0.9,
+        }),
+    },
+    {
         id: 'contact-us',
         exact: true,
         rawPath: '/contact-us',

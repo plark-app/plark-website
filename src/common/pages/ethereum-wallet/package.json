@@ -1,0 +1,6 @@
+{
+    "private": true,
+    "name": "ethereum-wallet",
+    "main": "ethereum-wallet.tsx",
+    "typings": "ethereum-wallet.tsx"
+}
