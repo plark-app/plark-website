@@ -1,0 +1,6 @@
+{
+    "private": true,
+    "name": "ripple-wallet",
+    "main": "ripple-wallet.tsx",
+    "typings": "ripple-wallet.tsx"
+}

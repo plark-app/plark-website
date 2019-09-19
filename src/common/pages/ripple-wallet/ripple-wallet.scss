@@ -1,0 +1,56 @@
+.ripple-wallet {
+    
+    &__best-wallet {
+        margin-top: 300px;
+
+        &-topic {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        &-title {
+            max-width: 550px;
+            text-align: center;
+            margin: 0 auto;
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 32px;
+        }
+
+        &-descr {
+            max-width: 400px;
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 24px;
+            text-align: center;
+        }
+    }
+
+    &__download-section {
+        margin-top: 300px;
+
+        &-title {
+            color: #0b0c0d;
+            font-size: 48px;
+            font-weight: 700;
+            line-height: 70px;
+            text-align: center;
+        }
+
+        &-text {
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 24px;
+        }
+    }
+
+    &__good-choice {
+        text-align: center;
+    }
+
+    &__card-section-topic {
+        max-width: 100% !important;
+    }
+}
