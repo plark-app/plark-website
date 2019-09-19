@@ -232,6 +232,25 @@ export const routes: RouteDescriptor[] = [
         }),
     },
     {
+        id: 'dash-wallet',
+        exact: true,
+        rawPath: '/dash-wallet',
+        path: makeRoutePath('/dash-wallet'),
+        load: makeRouteLoadFunction('dash-wallet'),
+        getSeoConfig: (i18n: ITranslationsAdapter): PageSeoConfig => ({
+            title: i18n.gettext('dash Wallet for iOS? Plark.'),
+            description: i18n.gettext(
+                'Plark team has created a cross-functional application to fulfill all the needs for all cryptocurrency users. Get through the friendliest flow you have ever seen before. Try it, and you will probably call Plark the best wallet for dash.',
+            ),
+            canonicalLink: 'https://plark.io/dash-wallet',
+            path: '/dash-wallet',
+        }),
+        getSitemapOption: (): SitemapOption => ({
+            path: '/dash-wallet',
+            priority: 0.9,
+        }),
+    },
+    {
         id: 'contact-us',
         exact: true,
         rawPath: '/contact-us',
