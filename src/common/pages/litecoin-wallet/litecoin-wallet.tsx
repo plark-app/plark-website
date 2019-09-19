@@ -1,5 +1,5 @@
 import React from 'react';
-import { useI18n } from 'slim-i18n';
+import { useI18n, ITranslationsAdapter } from 'slim-i18n';
 
 import {
     Footer,
@@ -8,13 +8,9 @@ import {
     Topic,
     StickIphone,
     IntroSection,
-    CitationSection,
     SubscribeSection,
-    ColumnsSection,
     CardSection,
-    OpenSourceSection,
     FeatureSection,
-    FeedbackSection,
     WalletFeaturesSection,
     WalletColumnsSection,
 } from 'common/components';
@@ -22,32 +18,34 @@ import { IWalletFeaturesItem } from 'common/components/wallet-features-section';
 
 import styles from './litecoin-wallet.scss';
 
-const featuresList: IWalletFeaturesItem[] = [
-    {
-        title: 'Use a bank card to purchase Litecoin',
-    },
-    {
-        title: 'Sell Litecoin to get fiat directly on a bank card',
-    },
-    {
-        title: 'Store Litecoin in a safe place',
-    },
-    {
-        title: 'Send and receive Monero assets',
-    },
-    {
-        title: 'Trade Monero for other cryptocurrencies',
-    },
-    {
-        title: 'Manage your wallet for Litecoin ',
-    },
-    {
-        title: 'Keep an eye on the Litecoin actual price',
-    },
-    {
-        title: 'Keep an eye on the portfolio cost',
-    },
-];
+function featuresList(i18n: ITranslationsAdapter): IWalletFeaturesItem[] {
+    return [
+        {
+            title: i18n.gettext('Use a bank card to purchase Litecoin'),
+        },
+        {
+            title: i18n.gettext('Sell Litecoin to get fiat directly on a bank card'),
+        },
+        {
+            title: i18n.gettext('Store Litecoin in a safe place'),
+        },
+        {
+            title: i18n.gettext('Send and receive Monero assets'),
+        },
+        {
+            title: i18n.gettext('Trade Monero for other cryptocurrencies'),
+        },
+        {
+            title: i18n.gettext('Manage your wallet for Litecoin '),
+        },
+        {
+            title: i18n.gettext('Keep an eye on the Litecoin actual price'),
+        },
+        {
+            title: i18n.gettext('Keep an eye on the portfolio cost'),
+        },
+    ]
+};
 
 export default function LitecoinWallet(): JSX.Element {
     const i18n = useI18n();
@@ -80,7 +78,7 @@ export default function LitecoinWallet(): JSX.Element {
                     descClassName={styles.litecoinWalletBestWalletDescr}
                 />
             </Section>
-            <WalletFeaturesSection featuresList={featuresList} />
+            <WalletFeaturesSection featuresList={featuresList(i18n)} />
             <Section className={styles.litecoinWalletDownloadSection}>
                 <Topic
                     titleClassName={styles.litecoinWalletDownloadSectionTitle}
