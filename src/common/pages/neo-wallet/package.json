@@ -1,0 +1,6 @@
+{
+    "private": true,
+    "name": "neo-wallet",
+    "main": "neo-wallet.tsx",
+    "typings": "neo-wallet.tsx"
+}
