@@ -115,19 +115,3 @@
         }
     }
 }
-
-
-.social {
-    margin-top: 30px;
-    display: flex;
-    justify-content: space-between;
-
-    &__item {
-        color: $color-gray40;
-        & > svg {
-            width: 18px;
-            height: 18px;
-            fill: $color-gray40;
-        }
-    }
-}
