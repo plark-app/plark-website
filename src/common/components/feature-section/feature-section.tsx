@@ -5,6 +5,9 @@ import styles from './feature-section.scss';
 
 type FeatureSectionProps = {
     text: string;
+    textClassName?: string;
+    titleText?: string;
+    titleClassName?: string;
     withoutLink?: boolean;
     linkText?: string;
     linkUrl?: string;
@@ -16,16 +19,19 @@ type FeatureSectionProps = {
         src: string;
         alt?: string;
         title?: string;
-    }
+    };
 };
 
 export default React.memo(function FeatureSection(props: FeatureSectionProps): JSX.Element {
-    const { withoutLink = false } = props;
-
     const {
+        text,
+        withoutLink = false,
         linkText = 'Get Plark app',
         linkUrl = 'https://itunes.apple.com/app/apple-store/id1455862890?pt=118337376&ct=site&mt=8',
         textTag = 'p',
+        titleText,
+        textClassName,
+        titleClassName,
     } = props;
 
     const contentClass = cn(styles.sectionContent, {
@@ -35,8 +41,16 @@ export default React.memo(function FeatureSection(props: FeatureSectionProps): J
     return (
         <Section className={styles.section} contentClassName={contentClass}>
             <div className={styles.content}>
-                {React.createElement(textTag, { className: styles.contentText }, props.text)}
-                {withoutLink ? undefined : <JoinLink href={linkUrl} target="_blank">{linkText}</JoinLink>}
+                {titleText &&
+                    React.createElement('p', { className: cn(styles.contentTitle, titleClassName) }, titleText)}
+                {React.createElement(textTag, { className: cn(styles.contentText, textClassName) }, text)}
+                {withoutLink ? (
+                    undefined
+                ) : (
+                    <JoinLink href={linkUrl} target="_blank">
+                        {linkText}
+                    </JoinLink>
+                )}
             </div>
 
             <div className={styles.picture}>

@@ -1,0 +1,6 @@
+{
+    "private": true,
+    "name": "wallet-columns-section",
+    "main": "wallet-columns-section.tsx",
+    "typings": "wallet-columns-section.tsx"
+}

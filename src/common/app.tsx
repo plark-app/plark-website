@@ -82,7 +82,6 @@ class MainRouter extends React.Component<AppProps, MainRouterState> {
 
     public render(): JSX.Element {
         const location = this.state.location;
-
         return (
             <>
                 <Switch location={location}>

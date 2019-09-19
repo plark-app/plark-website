@@ -24,6 +24,14 @@
         font-weight: bold;
         color: $color-dark;
     }
+
+    &__title {
+        margin-bottom: 30px;
+        color: $color-primary;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 32px;
+    }
 }
 
 .picture {

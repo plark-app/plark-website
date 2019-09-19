@@ -1,0 +1,6 @@
+{
+    "private": true,
+    "name": "litecoin-wallet",
+    "main": "litecoin-wallet.tsx",
+    "typings": "litecoin-wallet.tsx"
+}
