@@ -1,0 +1,23 @@
+@import "../../styles/colors";
+@import "../../styles/media";
+
+.container {
+    margin-top: 100px;
+}
+
+.link {
+    &__url {
+        color: $color-text-dark;
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    &__description {
+        font-size: 14px;
+        color: $color-text-secondary;
+    }
+
+    & + & {
+        margin-top: 24px;
+    }
+}

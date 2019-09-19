@@ -108,9 +108,7 @@ export default function Footer(): JSX.Element {
                         {i18n.gettext('Terms')}
                     </NavLink>
 
-                    <a href="/sitemap.xml" className={styles.navLink}>
-                        Sitemap
-                    </a>
+                    <a href="/sitemap" className={styles.navLink}>Sitemap</a>
                 </nav>
 
                 <nav className={styles.bottomBarNav}>

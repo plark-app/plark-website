@@ -1,0 +1,6 @@
+{
+    "private": true,
+    "name": "sitemap",
+    "main": "sitemap.tsx",
+    "typings": "sitemap.tsx"
+}
