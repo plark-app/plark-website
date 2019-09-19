@@ -114,7 +114,7 @@ export default function CardanoWallet(): JSX.Element {
                         "Wallet for Cardano isn't the single one to be included soon. To satisfy everybody's needs, our company is adding the most popular positions:",
                     ),
                     i18n.gettext(
-                        'Ripple, Monero, Neo, Dogecoin, Cardano, Tron, Bitcoin Cash, Stellar, Eos, Waves, Wechain, Ethereum Classic, Omisego, Qtum, Tether, Tezos, Ontology, Basic Attention Token, Chainlink, Bitcoin SV and others.',
+                        'Ripple, Monero, Neo, Dogecoin, Cardano, Tron, Bitcoin Cash, Stellar, EOS, Waves, Wechain, Ethereum Classic, Omisego, Qtum, Tether, Tezos, Ontology, Basic Attention Token, Chainlink, Bitcoin SV and others.',
                     ),
                 ]}
             />

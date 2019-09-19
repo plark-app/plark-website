@@ -127,7 +127,7 @@ export default function MoneroWallet(): JSX.Element {
                         'Wallet for Monero is one of the most popular at the moment. But we are consistently adding new cryptocurrencies that enjoy popularity within crypto-buddies, namely:',
                     ),
                     i18n.gettext(
-                        'Iota, Neo, Zcash, Cardano, Dogecoin, Tron, Bitcoin Cash, Stellar, Eos, Waves, Wechain, Ethereum Classic, Omisego, Qtum, Tether, Tezos, Ontology, Basic Attention Token, Chainlink, Bitcoin SV and others.',
+                        'IOTA, Neo, Zcash, Cardano, Dogecoin, Tron, Bitcoin Cash, Stellar, EOS, Waves, Wechain, Ethereum Classic, Omisego, Qtum, Tether, Tezos, Ontology, Basic Attention Token, Chainlink, Bitcoin SV and others.',
                     ),
                 ]}
             />

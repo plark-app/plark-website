@@ -114,7 +114,7 @@ export default function DogecoinWallet(): JSX.Element {
                         'Dogecoin coin wallet is one of the most requested right now. In any case, we are reliably including new altcoins that appreciate prevalence inside crypto-mates, to be specific:',
                     ),
                     i18n.gettext(
-                        'Ripple, Neo, Zcash, Cardano, Tron, Bitcoin Cash, Stellar, Eos, Waves, Wechain, Ethereum Classic, Omisego, Qtum, Tether, Tezos, Ontology, Basic Attention Token, Chainlink, Bitcoin SV and others.',
+                        'Ripple, Neo, Zcash, Cardano, Tron, Bitcoin Cash, Stellar, EOS, Waves, Wechain, Ethereum Classic, Omisego, Qtum, Tether, Tezos, Ontology, Basic Attention Token, Chainlink, Bitcoin SV and others.',
                     ),
                 ]}
             />

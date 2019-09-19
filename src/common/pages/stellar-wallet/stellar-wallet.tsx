@@ -113,7 +113,7 @@ export default function StellarWallet(): JSX.Element {
                         'Stellar coin wallet has been one of the most requested for quite a while now. In this manner, soon you will see Stellar in the rundown of accessible ones. Likewise, other mainstream cryptos are next in line for including:',
                     ),
                     i18n.gettext(
-                        'Neo, Zcash, Cardano, Dogecoin, Bitcoin Cash, Stellar, Eos, Waves, Wechain, Ethereum Classic, Omisego, Qtum, Tether, Tezos, Ontology, Basic Attention Token, Chainlink, Bitcoin SV and others.',
+                        'Neo, Zcash, Cardano, Dogecoin, Bitcoin Cash, Stellar, EOS, Waves, Wechain, Ethereum Classic, Omisego, Qtum, Tether, Tezos, Ontology, Basic Attention Token, Chainlink, Bitcoin SV and others.',
                     ),
                 ]}
             />

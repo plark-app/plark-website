@@ -134,7 +134,7 @@ export default function EthereumWallet(): JSX.Element {
                         'Plark is an out-of-the-box solution for the most comfortable possible entry into cryptocurrency. With Plark, you have the full range of operations over your Ethereum assets.',
                     ),
                     i18n.gettext(
-                        'We plan to add the most high-demand coins, such as: Iota, Monero, Neo, Zcash, Cardano, Dogecoin, Tron, Bitcoin Cash, Stellar, Eos, Waves, Wechain, Ethereum Classic, Omisego, Qtum, Tether, Tezos, Ontology, Basic Attention Token, Chainlink, Bitcoin SV and others.',
+                        'We plan to add the most high-demand coins, such as: IOTA, Monero, Neo, Zcash, Cardano, Dogecoin, Tron, Bitcoin Cash, Stellar, EOS, Waves, Wechain, Ethereum Classic, Omisego, Qtum, Tether, Tezos, Ontology, Basic Attention Token, Chainlink, Bitcoin SV and others.',
                     ),
                 ]}
             />
