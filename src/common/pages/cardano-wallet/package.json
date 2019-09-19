@@ -1,0 +1,6 @@
+{
+    "private": true,
+    "name": "cardano-wallet",
+    "main": "cardano-wallet.tsx",
+    "typings": "cardano-wallet.tsx"
+}
