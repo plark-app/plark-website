@@ -117,8 +117,12 @@ export default function LitecoinWallet(): JSX.Element {
                 caption={i18n.gettext(
                     'For the time being, this element is accessible for Ukraine (UAH) as it were. We will include the Russian Federation (RUB), USA (US Dollar) and EEA (Euro) soon.',
                 )}
-                walletType={i18n.gettext('Litecoin')}
-                withSteps
+                steps={[
+                    i18n.gettext('Add your bank card to your Plark wallet'),
+                    i18n.gettext('Set the desired amount of coins to purchase or sell'),
+                    i18n.gettext('Activate Litecoin wallet'),
+                    i18n.gettext('Add your bank card to your Plark wallet'),
+                ]}
             />
 
             <WalletColumnsSection

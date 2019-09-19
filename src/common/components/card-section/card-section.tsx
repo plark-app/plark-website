@@ -15,8 +15,7 @@ type CardSectionProps = {
     caption?: string;
     titleClassName?: string;
     topicClassName?: string;
-    withSteps?: boolean;
-    walletType?: string;
+    steps?: string[];
 };
 
 export default function CardSection(props: CardSectionProps): JSX.Element {
@@ -43,34 +42,14 @@ export default function CardSection(props: CardSectionProps): JSX.Element {
 
             {props.subtitle && <p className={styles.subtitle}>{props.subtitle}</p>}
 
-            {props.withSteps && (
+            {props.steps && (
                 <div className={styles.cardSectionSteps}>
-                    <div className={styles.cardSectionStep}>
-                        <span className={styles.cardSectionStepNumber}>01</span>
-                        <p className={styles.cardSectionStepDescr}>
-                            {i18n.gettext('Add your bank card to your Plark wallet')}
-                        </p>
-                    </div>
-                    <div className={styles.cardSectionStep}>
-                        <span className={styles.cardSectionStepNumber}>02</span>
-                        <p className={styles.cardSectionStepDescr}>
-                            {i18n.gettext('Set the desired amount of coins to purchase or sell')}
-                        </p>
-                    </div>
-                    <div className={styles.cardSectionStep}>
-                        <span className={styles.cardSectionStepNumber}>03</span>
-                        <p className={styles.cardSectionStepDescr}>
-                            {i18n.gettext('Activate {wallet} wallet').format({
-                                wallet: props.walletType ? props.walletType : '',
-                            })}
-                        </p>
-                    </div>
-                    <div className={styles.cardSectionStep}>
-                        <span className={styles.cardSectionStepNumber}>04</span>
-                        <p className={styles.cardSectionStepDescr}>
-                            {i18n.gettext('Add your bank card to your Plark wallet')}
-                        </p>
-                    </div>
+                    {props.steps.map((step: string, i: number) => (
+                        <div key={i} className={styles.cardSectionStep}>
+                            <span className={styles.cardSectionStepNumber}>0{i + 1}</span>
+                            <p className={styles.cardSectionStepDescr}>{step}</p>
+                        </div>
+                    ))}
                 </div>
             )}
 
