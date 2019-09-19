@@ -1,0 +1,6 @@
+{
+    "private": true,
+    "name": "stellar-wallet",
+    "main": "stellar-wallet.tsx",
+    "typings": "stellar-wallet.tsx"
+}
