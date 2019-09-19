@@ -2,10 +2,12 @@ import React from 'react';
 import { useI18n } from 'slim-i18n';
 import PlarkLogo from 'resources/svgs/plark-logo.component.svg';
 import PlatformList from 'common/utils/install-platforms';
-import { Section, StoreBadge, NavLink, Icons } from 'common/components';
-import FooterColumn from './footer-column.component';
-import styles from './footer.scss';
+import { Section, StoreBadge, NavLink } from 'common/components';
+import { Socials } from 'common/components';
 
+import FooterColumn from './footer-column.component';
+
+import styles from './footer.scss';
 
 export default function Footer(): JSX.Element {
     const i18n = useI18n();
@@ -29,7 +31,6 @@ export default function Footer(): JSX.Element {
                         </NavLink>
                     </FooterColumn>
 
-
                     <FooterColumn title={i18n.gettext('Company')}>
                         <NavLink to="/about-us" className={styles.navLink}>
                             {i18n.gettext('About us')}
@@ -41,7 +42,6 @@ export default function Footer(): JSX.Element {
                         {/*    {i18n.gettext('Carriers')}*/}
                         {/*</NavLink>*/}
                     </FooterColumn>
-
 
                     <FooterColumn title={i18n.gettext('Learn')}>
                         <a href="https://community.plark.io" className={styles.navLink}>
@@ -71,32 +71,20 @@ export default function Footer(): JSX.Element {
                         <a href="https://github.com/plark-app" target="_blank" className={styles.navLink}>
                             GitHub
                         </a>
-                        <a href="https://www.producthunt.com/posts/plark-crypto-wallet" target="_blank"
-                           className={styles.navLink}>
+                        <a
+                            href="https://www.producthunt.com/posts/plark-crypto-wallet"
+                            target="_blank"
+                            className={styles.navLink}
+                        >
                             Product Hunt
                         </a>
                     </FooterColumn>
-
 
                     <FooterColumn title={i18n.gettext('Get in touch')} style={{ width: '170px' }}>
                         <a href="mailto:hi@plark.io" target="_blank" className={styles.navLink}>
                             hi@plark.io
                         </a>
-
-                        <div className={styles.social}>
-                            <a href="https://github.com/plark-app" className={styles.socialItem}>
-                                <Icons.Github />
-                            </a>
-                            <a href="https://t.me/PlarkWallet" className={styles.socialItem}>
-                                <Icons.Telegram />
-                            </a>
-                            <a href="https://twitter.com/PlarkWallet" className={styles.socialItem}>
-                                <Icons.Twitter />
-                            </a>
-                            <a href="https://www.facebook.com/plark.io/" className={styles.socialItem}>
-                                <Icons.Facebook />
-                            </a>
-                        </div>
+                        <Socials />
                     </FooterColumn>
                 </div>
 
@@ -120,13 +108,17 @@ export default function Footer(): JSX.Element {
                         {i18n.gettext('Terms')}
                     </NavLink>
 
-                    <a href="/sitemap.xml" className={styles.navLink}>Sitemap</a>
+                    <a href="/sitemap.xml" className={styles.navLink}>
+                        Sitemap
+                    </a>
                 </nav>
 
                 <nav className={styles.bottomBarNav}>
-                    <NavLink to="/" className={styles.navLink}>English (United States)</NavLink>
+                    <NavLink to="/" className={styles.navLink}>
+                        English (United States)
+                    </NavLink>
                 </nav>
             </Section>
         </footer>
     );
-};
+}

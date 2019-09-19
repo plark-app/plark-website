@@ -124,16 +124,16 @@ export const routes: RouteDescriptor[] = [
         path: makeRoutePath('/neo-wallet'),
         load: makeRouteLoadFunction('neo-wallet'),
         getSeoConfig: (i18n: ITranslationsAdapter): PageSeoConfig => ({
-            title: i18n.gettext('Neo Wallet for iOS? Plark.'),
+            title: i18n.gettext('NEO Wallet for iOS? Plark.'),
             description: i18n.gettext(
-                'Plark team has created a cross-functional application to fulfill all the needs for all cryptocurrency users. Get through the friendliest flow you have ever seen before. Try it, and you will probably call Plark the best wallet for neo.',
+                'Plark team has created a cross-functional application to fulfill all the needs for all cryptocurrency users. Get through the friendliest flow you have ever seen before. Try it, and you will probably call Plark the best wallet for Neo.',
             ),
             canonicalLink: 'https://plark.io/neo-wallet',
             path: '/neo-wallet',
         }),
         getSitemapOption: (): SitemapOption => ({
             path: '/neo-wallet',
-            priority: 0.9,
+            priority: 0.8,
         }),
     },
     {
@@ -143,16 +143,16 @@ export const routes: RouteDescriptor[] = [
         path: makeRoutePath('/zcash-wallet'),
         load: makeRouteLoadFunction('zcash-wallet'),
         getSeoConfig: (i18n: ITranslationsAdapter): PageSeoConfig => ({
-            title: i18n.gettext('zcash Wallet for iOS? Plark.'),
+            title: i18n.gettext('ZCash Wallet for iOS? Plark.'),
             description: i18n.gettext(
-                'Plark team has created a cross-functional application to fulfill all the needs for all cryptocurrency users. Get through the friendliest flow you have ever seen before. Try it, and you will probably call Plark the best wallet for zcash.',
+                'Plark team has created a cross-functional application to fulfill all the needs for all cryptocurrency users. Get through the friendliest flow you have ever seen before. Try it, and you will probably call Plark the best wallet for ZCash.',
             ),
             canonicalLink: 'https://plark.io/zcash-wallet',
             path: '/zcash-wallet',
         }),
         getSitemapOption: (): SitemapOption => ({
             path: '/zcash-wallet',
-            priority: 0.9,
+            priority: 0.8,
         }),
     },
     {
@@ -162,16 +162,16 @@ export const routes: RouteDescriptor[] = [
         path: makeRoutePath('/cardano-wallet'),
         load: makeRouteLoadFunction('cardano-wallet'),
         getSeoConfig: (i18n: ITranslationsAdapter): PageSeoConfig => ({
-            title: i18n.gettext('cardano Wallet for iOS? Plark.'),
+            title: i18n.gettext('Cardano Wallet for iOS? Plark.'),
             description: i18n.gettext(
-                'Plark team has created a cross-functional application to fulfill all the needs for all cryptocurrency users. Get through the friendliest flow you have ever seen before. Try it, and you will probably call Plark the best wallet for cardano.',
+                'Plark team has created a cross-functional application to fulfill all the needs for all cryptocurrency users. Get through the friendliest flow you have ever seen before. Try it, and you will probably call Plark the best wallet for Cardano.',
             ),
             canonicalLink: 'https://plark.io/cardano-wallet',
             path: '/cardano-wallet',
         }),
         getSitemapOption: (): SitemapOption => ({
             path: '/cardano-wallet',
-            priority: 0.9,
+            priority: 0.8,
         }),
     },
     {

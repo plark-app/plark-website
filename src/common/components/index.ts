@@ -28,6 +28,6 @@ export { default as CommunitySection } from './community-section';
 export { default as FeedbackSection } from './feedback-section';
 export { default as ColumnsSection } from './columns-section';
 export { default as OpenSourceSection } from './opensource-section';
-
 export { default as WalletFeaturesSection } from './wallet-features-section';
 export { default as WalletColumnsSection } from './wallet-columns-section';
+export { default as Socials } from './socials';
