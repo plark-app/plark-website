@@ -1,0 +1,40 @@
+.contact-us {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    &__title {
+        font-weight: 700;
+        font-size: 80px;
+    }
+
+    &__topic {
+        width: 100%;
+        max-width: 500px;
+
+        margin-bottom: 100px;
+        
+        &__descr.contact-us__topic__descr {
+            margin-top: 0px;
+            max-width: 375px;
+            margin-bottom: 30px;
+        }
+    }
+
+
+    &__actions {
+        display: flex;
+        justify-content: flex-start;
+
+        &__button {
+            width: 180px;
+
+            margin-right: 50px;
+        }
+    }
+
+    &__socials {
+        display: flex;
+        min-width: 180px;
+    }
+}
