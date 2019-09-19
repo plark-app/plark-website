@@ -270,6 +270,25 @@ export const routes: RouteDescriptor[] = [
         }),
     },
     {
+        id: 'eos-wallet',
+        exact: true,
+        rawPath: '/eos-wallet',
+        path: makeRoutePath('/eos-wallet'),
+        load: makeRouteLoadFunction('eos-wallet'),
+        getSeoConfig: (i18n: ITranslationsAdapter): PageSeoConfig => ({
+            title: i18n.gettext('dash Wallet for iOS? Plark.'),
+            description: i18n.gettext(
+                'Plark team has created a cross-functional application to fulfill all the needs for all cryptocurrency users. Get through the friendliest flow you have ever seen before. Try it, and you will probably call Plark the best wallet for eos.',
+            ),
+            canonicalLink: 'https://plark.io/eos-wallet',
+            path: '/eos-wallet',
+        }),
+        getSitemapOption: (): SitemapOption => ({
+            path: '/eos-wallet',
+            priority: 0.9,
+        }),
+    },
+    {
         id: 'contact-us',
         exact: true,
         rawPath: '/contact-us',
