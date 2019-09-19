@@ -213,6 +213,25 @@ export const routes: RouteDescriptor[] = [
         }),
     },
     {
+        id: 'bitcoincash-wallet',
+        exact: true,
+        rawPath: '/bitcoincash-wallet',
+        path: makeRoutePath('/bitcoincash-wallet'),
+        load: makeRouteLoadFunction('bitcoincash-wallet'),
+        getSeoConfig: (i18n: ITranslationsAdapter): PageSeoConfig => ({
+            title: i18n.gettext('bitcoincash Wallet for iOS? Plark.'),
+            description: i18n.gettext(
+                'Plark team has created a cross-functional application to fulfill all the needs for all cryptocurrency users. Get through the friendliest flow you have ever seen before. Try it, and you will probably call Plark the best wallet for bitcoincash.',
+            ),
+            canonicalLink: 'https://plark.io/bitcoincash-wallet',
+            path: '/bitcoincash-wallet',
+        }),
+        getSitemapOption: (): SitemapOption => ({
+            path: '/bitcoincash-wallet',
+            priority: 0.9,
+        }),
+    },
+    {
         id: 'contact-us',
         exact: true,
         rawPath: '/contact-us',
