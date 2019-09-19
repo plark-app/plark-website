@@ -270,9 +270,9 @@ export const routes: RouteDescriptor[] = [
         }),
     },
     {
-        id: 'eos-wallet',
+        id: 'ripple-wallet',
         exact: true,
-        rawPath: '/eos-wallet',
+        rawPath: '/ripple-wallet',
         path: makeRoutePath('/eos-wallet'),
         load: makeRouteLoadFunction('eos-wallet'),
         getSeoConfig: (i18n: ITranslationsAdapter): PageSeoConfig => ({
@@ -285,6 +285,25 @@ export const routes: RouteDescriptor[] = [
         }),
         getSitemapOption: (): SitemapOption => ({
             path: '/eos-wallet',
+            priority: 0.9,
+        }),
+    },
+    {
+        id: 'ripple-wallet',
+        exact: true,
+        rawPath: '/ripple-wallet',
+        path: makeRoutePath('/ripple-wallet'),
+        load: makeRouteLoadFunction('ripple-wallet'),
+        getSeoConfig: (i18n: ITranslationsAdapter): PageSeoConfig => ({
+            title: i18n.gettext('dash Wallet for iOS? Plark.'),
+            description: i18n.gettext(
+                'Plark team has created a cross-functional application to fulfill all the needs for all cryptocurrency users. Get through the friendliest flow you have ever seen before. Try it, and you will probably call Plark the best wallet for ripple.',
+            ),
+            canonicalLink: 'https://plark.io/ripple-wallet',
+            path: '/ripple-wallet',
+        }),
+        getSitemapOption: (): SitemapOption => ({
+            path: '/ripple-wallet',
             priority: 0.9,
         }),
     },
