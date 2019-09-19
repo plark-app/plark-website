@@ -10,6 +10,7 @@ export const routes: RouteDescriptor[] = [
         path: makeRoutePath('/'),
         load: makeRouteLoadFunction('home'),
         getSeoConfig: (i18n: ITranslationsAdapter): PageSeoConfig => ({
+            pageName: i18n.gettext('Home'),
             title: i18n.gettext('The friendliest multi-currency crypto wallet.'),
             description: i18n.gettext(
                 'We won’t scream how good we are. We won’t beg you to install our application. We do our job. No need to convince — use Plark.',
@@ -29,6 +30,7 @@ export const routes: RouteDescriptor[] = [
         path: makeRoutePath('/mobile-wallet'),
         load: makeRouteLoadFunction('mobile-wallet'),
         getSeoConfig: (i18n: ITranslationsAdapter): PageSeoConfig => ({
+            pageName: i18n.gettext('Mobile Wallet'),
             title: i18n.gettext('Best mobile crypto wallet? Well, Plark.'),
             description: i18n.gettext(
                 'We won’t scream how good we are. We won’t beg you to install our application. We do our job. No need to convince — use Plark.',
@@ -48,6 +50,7 @@ export const routes: RouteDescriptor[] = [
         path: makeRoutePath('/ios-wallet'),
         load: makeRouteLoadFunction('ios-wallet'),
         getSeoConfig: (i18n: ITranslationsAdapter): PageSeoConfig => ({
+            pageName: i18n.gettext('iOS Wallet'),
             title: i18n.gettext('Best iOS crypto wallet? Well, Plark.'),
             description: i18n.gettext(
                 'We won’t scream how good we are. We won’t beg you to install our application. We do our job. No need to convince — use Plark.',
@@ -67,6 +70,7 @@ export const routes: RouteDescriptor[] = [
         path: makeRoutePath('/android-wallet'),
         load: makeRouteLoadFunction('android-wallet'),
         getSeoConfig: (i18n: ITranslationsAdapter): PageSeoConfig => ({
+            pageName: i18n.gettext('Android Wallet'),
             title: i18n.gettext('Best Android crypto wallet? Well, Plark.'),
             description: i18n.gettext(
                 'We won’t scream how good we are. We won’t beg you to install our application. We do our job. No need to convince — use Plark.',
@@ -86,6 +90,7 @@ export const routes: RouteDescriptor[] = [
         path: makeRoutePath('/bitcoin-wallet'),
         load: makeRouteLoadFunction('bitcoin-wallet'),
         getSeoConfig: (i18n: ITranslationsAdapter): PageSeoConfig => ({
+            pageName: i18n.gettext('Bitcoin Wallet'),
             title: i18n.gettext('The Best Bitcoin Wallet? Well, Plark.'),
             description: i18n.gettext(
                 'We won’t scream how good we are. We won’t beg you to install our application. We do our job. No need to convince — use Plark.',
@@ -105,7 +110,8 @@ export const routes: RouteDescriptor[] = [
         path: makeRoutePath('/litecoin-wallet'),
         load: makeRouteLoadFunction('litecoin-wallet'),
         getSeoConfig: (i18n: ITranslationsAdapter): PageSeoConfig => ({
-            title: i18n.gettext('Litecoin Wallet for iOS? Plark.'),
+            pageName: i18n.gettext('Litecoin Wallet'),
+            title: i18n.gettext('Litecoin wallet for iOS? Plark.'),
             description: i18n.gettext(
                 'Plark team has created a cross-functional application to fulfill all the needs for all cryptocurrency users. Get through the friendliest flow you have ever seen before. Try it, and you will probably call Plark the best wallet for Litecoin.',
             ),
@@ -124,7 +130,8 @@ export const routes: RouteDescriptor[] = [
         path: makeRoutePath('/neo-wallet'),
         load: makeRouteLoadFunction('neo-wallet'),
         getSeoConfig: (i18n: ITranslationsAdapter): PageSeoConfig => ({
-            title: i18n.gettext('NEO Wallet for iOS? Plark.'),
+            pageName: i18n.gettext('NEO Wallet'),
+            title: i18n.gettext('NEO wallet for iOS? Plark.'),
             description: i18n.gettext(
                 'Plark team has created a cross-functional application to fulfill all the needs for all cryptocurrency users. Get through the friendliest flow you have ever seen before. Try it, and you will probably call Plark the best wallet for Neo.',
             ),
@@ -137,127 +144,14 @@ export const routes: RouteDescriptor[] = [
         }),
     },
     {
-        id: 'zcash-wallet',
-        exact: true,
-        rawPath: '/zcash-wallet',
-        path: makeRoutePath('/zcash-wallet'),
-        load: makeRouteLoadFunction('zcash-wallet'),
-        getSeoConfig: (i18n: ITranslationsAdapter): PageSeoConfig => ({
-            title: i18n.gettext('Zcash Wallet for iOS? Plark.'),
-            description: i18n.gettext(
-                'Plark team has created a cross-functional application to fulfill all the needs for all cryptocurrency users. Get through the friendliest flow you have ever seen before. Try it, and you will probably call Plark the best wallet for Zcash.',
-            ),
-            canonicalLink: 'https://plark.io/zcash-wallet',
-            path: '/zcash-wallet',
-        }),
-        getSitemapOption: (): SitemapOption => ({
-            path: '/zcash-wallet',
-            priority: 0.8,
-        }),
-    },
-    {
-        id: 'cardano-wallet',
-        exact: true,
-        rawPath: '/cardano-wallet',
-        path: makeRoutePath('/cardano-wallet'),
-        load: makeRouteLoadFunction('cardano-wallet'),
-        getSeoConfig: (i18n: ITranslationsAdapter): PageSeoConfig => ({
-            title: i18n.gettext('Cardano Wallet for iOS? Plark.'),
-            description: i18n.gettext(
-                'Plark team has created a cross-functional application to fulfill all the needs for all cryptocurrency users. Get through the friendliest flow you have ever seen before. Try it, and you will probably call Plark the best wallet for Cardano.',
-            ),
-            canonicalLink: 'https://plark.io/cardano-wallet',
-            path: '/cardano-wallet',
-        }),
-        getSitemapOption: (): SitemapOption => ({
-            path: '/cardano-wallet',
-            priority: 0.8,
-        }),
-    },
-    {
-        id: 'dogecoin-wallet',
-        exact: true,
-        rawPath: '/dogecoin-wallet',
-        path: makeRoutePath('/dogecoin-wallet'),
-        load: makeRouteLoadFunction('dogecoin-wallet'),
-        getSeoConfig: (i18n: ITranslationsAdapter): PageSeoConfig => ({
-            title: i18n.gettext('dogecoin Wallet for iOS? Plark.'),
-            description: i18n.gettext(
-                'Plark team has created a cross-functional application to fulfill all the needs for all cryptocurrency users. Get through the friendliest flow you have ever seen before. Try it, and you will probably call Plark the best wallet for dogecoin.',
-            ),
-            canonicalLink: 'https://plark.io/dogecoin-wallet',
-            path: '/dogecoin-wallet',
-        }),
-        getSitemapOption: (): SitemapOption => ({
-            path: '/dogecoin-wallet',
-            priority: 0.9,
-        }),
-    },
-    {
-        id: 'tron-wallet',
-        exact: true,
-        rawPath: '/tron-wallet',
-        path: makeRoutePath('/tron-wallet'),
-        load: makeRouteLoadFunction('tron-wallet'),
-        getSeoConfig: (i18n: ITranslationsAdapter): PageSeoConfig => ({
-            title: i18n.gettext('tron Wallet for iOS? Plark.'),
-            description: i18n.gettext(
-                'Plark team has created a cross-functional application to fulfill all the needs for all cryptocurrency users. Get through the friendliest flow you have ever seen before. Try it, and you will probably call Plark the best wallet for tron.',
-            ),
-            canonicalLink: 'https://plark.io/tron-wallet',
-            path: '/tron-wallet',
-        }),
-        getSitemapOption: (): SitemapOption => ({
-            path: '/tron-wallet',
-            priority: 0.9,
-        }),
-    },
-    {
-        id: 'bitcoincash-wallet',
-        exact: true,
-        rawPath: '/bitcoincash-wallet',
-        path: makeRoutePath('/bitcoincash-wallet'),
-        load: makeRouteLoadFunction('bitcoincash-wallet'),
-        getSeoConfig: (i18n: ITranslationsAdapter): PageSeoConfig => ({
-            title: i18n.gettext('bitcoincash Wallet for iOS? Plark.'),
-            description: i18n.gettext(
-                'Plark team has created a cross-functional application to fulfill all the needs for all cryptocurrency users. Get through the friendliest flow you have ever seen before. Try it, and you will probably call Plark the best wallet for bitcoincash.',
-            ),
-            canonicalLink: 'https://plark.io/bitcoincash-wallet',
-            path: '/bitcoincash-wallet',
-        }),
-        getSitemapOption: (): SitemapOption => ({
-            path: '/bitcoincash-wallet',
-            priority: 0.9,
-        }),
-    },
-    {
-        id: 'dash-wallet',
-        exact: true,
-        rawPath: '/dash-wallet',
-        path: makeRoutePath('/dash-wallet'),
-        load: makeRouteLoadFunction('dash-wallet'),
-        getSeoConfig: (i18n: ITranslationsAdapter): PageSeoConfig => ({
-            title: i18n.gettext('Dash Wallet for iOS? Plark.'),
-            description: i18n.gettext(
-                'Plark team has created a cross-functional application to fulfill all the needs for all cryptocurrency users. Get through the friendliest flow you have ever seen before. Try it, and you will probably call Plark the best wallet for dash.',
-            ),
-            canonicalLink: 'https://plark.io/dash-wallet',
-            path: '/dash-wallet',
-        }),
-        getSitemapOption: (): SitemapOption => ({
-            path: '/dash-wallet',
-            priority: 0.9,
-        }),
-    },
-    {
         id: 'stellar-wallet',
         exact: true,
         rawPath: '/stellar-wallet',
         path: makeRoutePath('/stellar-wallet'),
         load: makeRouteLoadFunction('stellar-wallet'),
         getSeoConfig: (i18n: ITranslationsAdapter): PageSeoConfig => ({
-            title: i18n.gettext('dash Wallet for iOS? Plark.'),
+            pageName: i18n.gettext('Stellar Wallet'),
+            title: i18n.gettext('Stellar wallet for iOS? Plark.'),
             description: i18n.gettext(
                 'Plark team has created a cross-functional application to fulfill all the needs for all cryptocurrency users. Get through the friendliest flow you have ever seen before. Try it, and you will probably call Plark the best wallet for stellar.',
             ),
@@ -266,17 +160,18 @@ export const routes: RouteDescriptor[] = [
         }),
         getSitemapOption: (): SitemapOption => ({
             path: '/stellar-wallet',
-            priority: 0.9,
+            priority: 0.7,
         }),
     },
     {
-        id: 'ripple-wallet',
+        id: 'eos-wallet',
         exact: true,
-        rawPath: '/ripple-wallet',
+        rawPath: '/eos-wallet',
         path: makeRoutePath('/eos-wallet'),
         load: makeRouteLoadFunction('eos-wallet'),
         getSeoConfig: (i18n: ITranslationsAdapter): PageSeoConfig => ({
-            title: i18n.gettext('dash Wallet for iOS? Plark.'),
+            pageName: i18n.gettext('EOS Wallet'),
+            title: i18n.gettext('EOS wallet for iOS? Plark.'),
             description: i18n.gettext(
                 'Plark team has created a cross-functional application to fulfill all the needs for all cryptocurrency users. Get through the friendliest flow you have ever seen before. Try it, and you will probably call Plark the best wallet for eos.',
             ),
@@ -285,7 +180,7 @@ export const routes: RouteDescriptor[] = [
         }),
         getSitemapOption: (): SitemapOption => ({
             path: '/eos-wallet',
-            priority: 0.9,
+            priority: 0.7,
         }),
     },
     {
@@ -295,7 +190,8 @@ export const routes: RouteDescriptor[] = [
         path: makeRoutePath('/ripple-wallet'),
         load: makeRouteLoadFunction('ripple-wallet'),
         getSeoConfig: (i18n: ITranslationsAdapter): PageSeoConfig => ({
-            title: i18n.gettext('dash Wallet for iOS? Plark.'),
+            pageName: i18n.gettext('Ripple Wallet'),
+            title: i18n.gettext('Ripple wallet for iOS? Plark.'),
             description: i18n.gettext(
                 'Plark team has created a cross-functional application to fulfill all the needs for all cryptocurrency users. Get through the friendliest flow you have ever seen before. Try it, and you will probably call Plark the best wallet for ripple.',
             ),
@@ -304,7 +200,7 @@ export const routes: RouteDescriptor[] = [
         }),
         getSitemapOption: (): SitemapOption => ({
             path: '/ripple-wallet',
-            priority: 0.9,
+            priority: 0.8,
         }),
     },
     {
@@ -314,7 +210,8 @@ export const routes: RouteDescriptor[] = [
         path: makeRoutePath('/zcash-wallet'),
         load: makeRouteLoadFunction('zcash-wallet'),
         getSeoConfig: (i18n: ITranslationsAdapter): PageSeoConfig => ({
-            title: i18n.gettext('zcash Wallet for iOS? Plark.'),
+            pageName: i18n.gettext('Zcash Wallet'),
+            title: i18n.gettext('Zcash wallet for iOS? Plark.'),
             description: i18n.gettext(
                 'Plark team has created a cross-functional application to fulfill all the needs for all cryptocurrency users. Get through the friendliest flow you have ever seen before. Try it, and you will probably call Plark the best wallet for zcash.',
             ),
@@ -323,159 +220,7 @@ export const routes: RouteDescriptor[] = [
         }),
         getSitemapOption: (): SitemapOption => ({
             path: '/zcash-wallet',
-            priority: 0.9,
-        }),
-    },
-    {
-        id: 'cardano-wallet',
-        exact: true,
-        rawPath: '/cardano-wallet',
-        path: makeRoutePath('/cardano-wallet'),
-        load: makeRouteLoadFunction('cardano-wallet'),
-        getSeoConfig: (i18n: ITranslationsAdapter): PageSeoConfig => ({
-            title: i18n.gettext('cardano Wallet for iOS? Plark.'),
-            description: i18n.gettext(
-                'Plark team has created a cross-functional application to fulfill all the needs for all cryptocurrency users. Get through the friendliest flow you have ever seen before. Try it, and you will probably call Plark the best wallet for cardano.',
-            ),
-            canonicalLink: 'https://plark.io/cardano-wallet',
-            path: '/cardano-wallet',
-        }),
-        getSitemapOption: (): SitemapOption => ({
-            path: '/cardano-wallet',
-            priority: 0.9,
-        }),
-    },
-    {
-        id: 'dogecoin-wallet',
-        exact: true,
-        rawPath: '/dogecoin-wallet',
-        path: makeRoutePath('/dogecoin-wallet'),
-        load: makeRouteLoadFunction('dogecoin-wallet'),
-        getSeoConfig: (i18n: ITranslationsAdapter): PageSeoConfig => ({
-            title: i18n.gettext('dogecoin Wallet for iOS? Plark.'),
-            description: i18n.gettext(
-                'Plark team has created a cross-functional application to fulfill all the needs for all cryptocurrency users. Get through the friendliest flow you have ever seen before. Try it, and you will probably call Plark the best wallet for dogecoin.',
-            ),
-            canonicalLink: 'https://plark.io/dogecoin-wallet',
-            path: '/dogecoin-wallet',
-        }),
-        getSitemapOption: (): SitemapOption => ({
-            path: '/dogecoin-wallet',
-            priority: 0.9,
-        }),
-    },
-    {
-        id: 'tron-wallet',
-        exact: true,
-        rawPath: '/tron-wallet',
-        path: makeRoutePath('/tron-wallet'),
-        load: makeRouteLoadFunction('tron-wallet'),
-        getSeoConfig: (i18n: ITranslationsAdapter): PageSeoConfig => ({
-            title: i18n.gettext('tron Wallet for iOS? Plark.'),
-            description: i18n.gettext(
-                'Plark team has created a cross-functional application to fulfill all the needs for all cryptocurrency users. Get through the friendliest flow you have ever seen before. Try it, and you will probably call Plark the best wallet for tron.',
-            ),
-            canonicalLink: 'https://plark.io/tron-wallet',
-            path: '/tron-wallet',
-        }),
-        getSitemapOption: (): SitemapOption => ({
-            path: '/tron-wallet',
-            priority: 0.9,
-        }),
-    },
-    {
-        id: 'bitcoincash-wallet',
-        exact: true,
-        rawPath: '/bitcoincash-wallet',
-        path: makeRoutePath('/bitcoincash-wallet'),
-        load: makeRouteLoadFunction('bitcoincash-wallet'),
-        getSeoConfig: (i18n: ITranslationsAdapter): PageSeoConfig => ({
-            title: i18n.gettext('bitcoincash Wallet for iOS? Plark.'),
-            description: i18n.gettext(
-                'Plark team has created a cross-functional application to fulfill all the needs for all cryptocurrency users. Get through the friendliest flow you have ever seen before. Try it, and you will probably call Plark the best wallet for bitcoincash.',
-            ),
-            canonicalLink: 'https://plark.io/bitcoincash-wallet',
-            path: '/bitcoincash-wallet',
-        }),
-        getSitemapOption: (): SitemapOption => ({
-            path: '/bitcoincash-wallet',
-            priority: 0.9,
-        }),
-    },
-    {
-        id: 'dash-wallet',
-        exact: true,
-        rawPath: '/dash-wallet',
-        path: makeRoutePath('/dash-wallet'),
-        load: makeRouteLoadFunction('dash-wallet'),
-        getSeoConfig: (i18n: ITranslationsAdapter): PageSeoConfig => ({
-            title: i18n.gettext('dash Wallet for iOS? Plark.'),
-            description: i18n.gettext(
-                'Plark team has created a cross-functional application to fulfill all the needs for all cryptocurrency users. Get through the friendliest flow you have ever seen before. Try it, and you will probably call Plark the best wallet for dash.',
-            ),
-            canonicalLink: 'https://plark.io/dash-wallet',
-            path: '/dash-wallet',
-        }),
-        getSitemapOption: (): SitemapOption => ({
-            path: '/dash-wallet',
-            priority: 0.9,
-        }),
-    },
-    {
-        id: 'stellar-wallet',
-        exact: true,
-        rawPath: '/stellar-wallet',
-        path: makeRoutePath('/stellar-wallet'),
-        load: makeRouteLoadFunction('stellar-wallet'),
-        getSeoConfig: (i18n: ITranslationsAdapter): PageSeoConfig => ({
-            title: i18n.gettext('dash Wallet for iOS? Plark.'),
-            description: i18n.gettext(
-                'Plark team has created a cross-functional application to fulfill all the needs for all cryptocurrency users. Get through the friendliest flow you have ever seen before. Try it, and you will probably call Plark the best wallet for stellar.',
-            ),
-            canonicalLink: 'https://plark.io/stellar-wallet',
-            path: '/stellar-wallet',
-        }),
-        getSitemapOption: (): SitemapOption => ({
-            path: '/stellar-wallet',
-            priority: 0.9,
-        }),
-    },
-    {
-        id: 'ripple-wallet',
-        exact: true,
-        rawPath: '/ripple-wallet',
-        path: makeRoutePath('/eos-wallet'),
-        load: makeRouteLoadFunction('eos-wallet'),
-        getSeoConfig: (i18n: ITranslationsAdapter): PageSeoConfig => ({
-            title: i18n.gettext('dash Wallet for iOS? Plark.'),
-            description: i18n.gettext(
-                'Plark team has created a cross-functional application to fulfill all the needs for all cryptocurrency users. Get through the friendliest flow you have ever seen before. Try it, and you will probably call Plark the best wallet for eos.',
-            ),
-            canonicalLink: 'https://plark.io/eos-wallet',
-            path: '/eos-wallet',
-        }),
-        getSitemapOption: (): SitemapOption => ({
-            path: '/eos-wallet',
-            priority: 0.9,
-        }),
-    },
-    {
-        id: 'ripple-wallet',
-        exact: true,
-        rawPath: '/ripple-wallet',
-        path: makeRoutePath('/ripple-wallet'),
-        load: makeRouteLoadFunction('ripple-wallet'),
-        getSeoConfig: (i18n: ITranslationsAdapter): PageSeoConfig => ({
-            title: i18n.gettext('dash Wallet for iOS? Plark.'),
-            description: i18n.gettext(
-                'Plark team has created a cross-functional application to fulfill all the needs for all cryptocurrency users. Get through the friendliest flow you have ever seen before. Try it, and you will probably call Plark the best wallet for ripple.',
-            ),
-            canonicalLink: 'https://plark.io/ripple-wallet',
-            path: '/ripple-wallet',
-        }),
-        getSitemapOption: (): SitemapOption => ({
-            path: '/ripple-wallet',
-            priority: 0.9,
+            priority: 0.7,
         }),
     },
     {
@@ -485,7 +230,8 @@ export const routes: RouteDescriptor[] = [
         path: makeRoutePath('/ethereum-wallet'),
         load: makeRouteLoadFunction('ethereum-wallet'),
         getSeoConfig: (i18n: ITranslationsAdapter): PageSeoConfig => ({
-            title: i18n.gettext('dash Wallet for iOS? Plark.'),
+            pageName: i18n.gettext('Ethereum Wallet'),
+            title: i18n.gettext('Ethereum wallet for iOS? Plark.'),
             description: i18n.gettext(
                 'Plark team has created a cross-functional application to fulfill all the needs for all cryptocurrency users. Get through the friendliest flow you have ever seen before. Try it, and you will probably call Plark the best wallet for ethereum.',
             ),
@@ -498,13 +244,114 @@ export const routes: RouteDescriptor[] = [
         }),
     },
     {
+        id: 'dash-wallet',
+        exact: true,
+        rawPath: '/dash-wallet',
+        path: makeRoutePath('/dash-wallet'),
+        load: makeRouteLoadFunction('dash-wallet'),
+        getSeoConfig: (i18n: ITranslationsAdapter): PageSeoConfig => ({
+            pageName: i18n.gettext('Dash Wallet'),
+            title: i18n.gettext('Dash wallet for iOS? Plark.'),
+            description: i18n.gettext(
+                'Plark team has created a cross-functional application to fulfill all the needs for all cryptocurrency users. Get through the friendliest flow you have ever seen before. Try it, and you will probably call Plark the best wallet for dash.',
+            ),
+            canonicalLink: 'https://plark.io/dash-wallet',
+            path: '/dash-wallet',
+        }),
+        getSitemapOption: (): SitemapOption => ({
+            path: '/dash-wallet',
+            priority: 0.9,
+        }),
+    },
+    {
+        id: 'bitcoincash-wallet',
+        exact: true,
+        rawPath: '/bitcoincash-wallet',
+        path: makeRoutePath('/bitcoincash-wallet'),
+        load: makeRouteLoadFunction('bitcoincash-wallet'),
+        getSeoConfig: (i18n: ITranslationsAdapter): PageSeoConfig => ({
+            pageName: i18n.gettext('Bitcoin Cash Wallet'),
+            title: i18n.gettext('Bitcoin Cash wallet for iOS? Plark.'),
+            description: i18n.gettext(
+                'Plark team has created a cross-functional application to fulfill all the needs for all cryptocurrency users. Get through the friendliest flow you have ever seen before. Try it, and you will probably call Plark the best wallet for bitcoincash.',
+            ),
+            canonicalLink: 'https://plark.io/bitcoincash-wallet',
+            path: '/bitcoincash-wallet',
+        }),
+        getSitemapOption: (): SitemapOption => ({
+            path: '/bitcoincash-wallet',
+            priority: 0.9,
+        }),
+    },
+    {
+        id: 'tron-wallet',
+        exact: true,
+        rawPath: '/tron-wallet',
+        path: makeRoutePath('/tron-wallet'),
+        load: makeRouteLoadFunction('tron-wallet'),
+        getSeoConfig: (i18n: ITranslationsAdapter): PageSeoConfig => ({
+            pageName: i18n.gettext('Tron Wallet'),
+            title: i18n.gettext('Tron wallet for iOS? Plark.'),
+            description: i18n.gettext(
+                'Plark team has created a cross-functional application to fulfill all the needs for all cryptocurrency users. Get through the friendliest flow you have ever seen before. Try it, and you will probably call Plark the best wallet for tron.',
+            ),
+            canonicalLink: 'https://plark.io/tron-wallet',
+            path: '/tron-wallet',
+        }),
+        getSitemapOption: (): SitemapOption => ({
+            path: '/tron-wallet',
+            priority: 0.8,
+        }),
+    },
+    {
+        id: 'dogecoin-wallet',
+        exact: true,
+        rawPath: '/dogecoin-wallet',
+        path: makeRoutePath('/dogecoin-wallet'),
+        load: makeRouteLoadFunction('dogecoin-wallet'),
+        getSeoConfig: (i18n: ITranslationsAdapter): PageSeoConfig => ({
+            pageName: i18n.gettext('Dogecoin Wallet'),
+            title: i18n.gettext('Dogecoin wallet for iOS? Plark.'),
+            description: i18n.gettext(
+                'Plark team has created a cross-functional application to fulfill all the needs for all cryptocurrency users. Get through the friendliest flow you have ever seen before. Try it, and you will probably call Plark the best wallet for dogecoin.',
+            ),
+            canonicalLink: 'https://plark.io/dogecoin-wallet',
+            path: '/dogecoin-wallet',
+        }),
+        getSitemapOption: (): SitemapOption => ({
+            path: '/dogecoin-wallet',
+            priority: 0.8,
+        }),
+    },
+    {
+        id: 'cardano-wallet',
+        exact: true,
+        rawPath: '/cardano-wallet',
+        path: makeRoutePath('/cardano-wallet'),
+        load: makeRouteLoadFunction('cardano-wallet'),
+        getSeoConfig: (i18n: ITranslationsAdapter): PageSeoConfig => ({
+            pageName: i18n.gettext('Cardano Wallet'),
+            title: i18n.gettext('Cardano wallet for iOS? Plark.'),
+            description: i18n.gettext(
+                'Plark team has created a cross-functional application to fulfill all the needs for all cryptocurrency users. Get through the friendliest flow you have ever seen before. Try it, and you will probably call Plark the best wallet for cardano.',
+            ),
+            canonicalLink: 'https://plark.io/cardano-wallet',
+            path: '/cardano-wallet',
+        }),
+        getSitemapOption: (): SitemapOption => ({
+            path: '/cardano-wallet',
+            priority: 0.9,
+        }),
+    },
+    {
         id: 'iota-wallet',
         exact: true,
         rawPath: '/iota-wallet',
         path: makeRoutePath('/iota-wallet'),
         load: makeRouteLoadFunction('iota-wallet'),
         getSeoConfig: (i18n: ITranslationsAdapter): PageSeoConfig => ({
-            title: i18n.gettext('dash Wallet for iOS? Plark.'),
+            pageName: i18n.gettext('IOTA Wallet'),
+            title: i18n.gettext('IOTA wallet for iOS? Plark.'),
             description: i18n.gettext(
                 'Plark team has created a cross-functional application to fulfill all the needs for all cryptocurrency users. Get through the friendliest flow you have ever seen before. Try it, and you will probably call Plark the best wallet for iota.',
             ),
@@ -523,7 +370,8 @@ export const routes: RouteDescriptor[] = [
         path: makeRoutePath('/monero-wallet'),
         load: makeRouteLoadFunction('monero-wallet'),
         getSeoConfig: (i18n: ITranslationsAdapter): PageSeoConfig => ({
-            title: i18n.gettext('dash Wallet for iOS? Plark.'),
+            pageName: i18n.gettext('Monero Wallet'),
+            title: i18n.gettext('Monero wallet for iOS? Plark.'),
             description: i18n.gettext(
                 'Plark team has created a cross-functional application to fulfill all the needs for all cryptocurrency users. Get through the friendliest flow you have ever seen before. Try it, and you will probably call Plark the best wallet for monero.',
             ),
@@ -532,7 +380,7 @@ export const routes: RouteDescriptor[] = [
         }),
         getSitemapOption: (): SitemapOption => ({
             path: '/monero-wallet',
-            priority: 0.9,
+            priority: 0.7,
         }),
     },
     {
@@ -542,6 +390,7 @@ export const routes: RouteDescriptor[] = [
         path: makeRoutePath('/contact-us'),
         load: makeRouteLoadFunction('contact-us'),
         getSeoConfig: (i18n: ITranslationsAdapter): PageSeoConfig => ({
+            pageName: i18n.gettext('Contact us'),
             title: i18n.gettext('Stay in touch with a Plark team'),
             canonicalLink: 'https://plark.io/contact-us',
             path: '/contact-us',
@@ -558,6 +407,7 @@ export const routes: RouteDescriptor[] = [
         path: makeRoutePath('/about-us'),
         load: makeRouteLoadFunction('about-us'),
         getSeoConfig: (i18n: ITranslationsAdapter): PageSeoConfig => ({
+            pageName: i18n.gettext('About us'),
             title: i18n.gettext('We make crypto simpler for you and his name is Plark'),
             canonicalLink: 'https://plark.io/about-us',
             path: '/about-us',
@@ -574,6 +424,7 @@ export const routes: RouteDescriptor[] = [
         path: makeRoutePath('/faq'),
         load: makeRouteLoadFunction('faq'),
         getSeoConfig: (i18n: ITranslationsAdapter): PageSeoConfig => ({
+            pageName: i18n.gettext('FAQ'),
             title: i18n.gettext('Frequently Asked Questions'),
             canonicalLink: 'https://plark.io/faq',
             path: '/faq',
@@ -590,6 +441,7 @@ export const routes: RouteDescriptor[] = [
         path: makeRoutePath('/privacy'),
         load: makeRouteLoadFunction('privacy-policy'),
         getSeoConfig: (i18n: ITranslationsAdapter): PageSeoConfig => ({
+            pageName: i18n.gettext('Privacy Policy'),
             title: i18n.gettext('Privacy Policy'),
             canonicalLink: 'https://plark.io/privacy',
             path: '/privacy',
@@ -606,6 +458,7 @@ export const routes: RouteDescriptor[] = [
         path: makeRoutePath('/terms'),
         load: makeRouteLoadFunction('terms-of-use'),
         getSeoConfig: (i18n: ITranslationsAdapter): PageSeoConfig => ({
+            pageName: i18n.gettext('Terms & Conditions'),
             title: i18n.gettext('Terms & Conditions'),
             canonicalLink: 'https://plark.io/terms',
             path: '/terms',
@@ -613,6 +466,23 @@ export const routes: RouteDescriptor[] = [
         getSitemapOption: (): SitemapOption => ({
             path: '/terms',
             priority: 0.8,
+        }),
+    },
+    {
+        id: 'sitemap',
+        exact: true,
+        rawPath: '/sitemap',
+        path: makeRoutePath('/sitemap'),
+        load: makeRouteLoadFunction('sitemap'),
+        getSeoConfig: (i18n: ITranslationsAdapter): PageSeoConfig => ({
+            title: i18n.gettext('Plark Sitemap'),
+            description: i18n.gettext('Plark Sitemap'),
+            canonicalLink: 'https://plark.io/sitemap',
+            path: '/sitemap',
+        }),
+        getSitemapOption: (): SitemapOption => ({
+            path: '/sitemap',
+            priority: 0.5,
         }),
     },
     {
