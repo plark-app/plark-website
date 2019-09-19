@@ -1,0 +1,6 @@
+{
+    "private": true,
+    "name": "dogecoin-wallet",
+    "main": "dogecoin-wallet.tsx",
+    "typings": "dogecoin-wallet.tsx"
+}
