@@ -1,0 +1,6 @@
+{
+    "private": true,
+    "name": "dash-wallet",
+    "main": "dash-wallet.tsx",
+    "typings": "dash-wallet.tsx"
+}
