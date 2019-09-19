@@ -38,7 +38,7 @@ module.exports = {
                     plugins: [
                         autoprefixer({
                             grid: true,
-                            browsers: ['> 0.5%', 'not ie < 11'],
+                            overrideBrowserslist: ['> 1%', 'not ie < 11'],
                         }),
                     ],
                 },
@@ -85,7 +85,7 @@ module.exports = {
                     loader: 'svgo-loader',
                     options: {
                         floatPrecision: 3,
-                        plugins: [{ removeEmptyAttrs: true }],
+                        plugins: [{removeEmptyAttrs: true}],
                     },
                 },
             ],
@@ -110,7 +110,7 @@ module.exports = {
     getMDLoader() {
         return {
             test: /\.md$/,
-            use: ['cache-loader', 'raw-loader', { loader: 'markdown-loader' }],
+            use: ['cache-loader', 'raw-loader', {loader: 'markdown-loader'}],
         };
     },
 
