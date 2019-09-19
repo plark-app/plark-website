@@ -251,6 +251,25 @@ export const routes: RouteDescriptor[] = [
         }),
     },
     {
+        id: 'stellar-wallet',
+        exact: true,
+        rawPath: '/stellar-wallet',
+        path: makeRoutePath('/stellar-wallet'),
+        load: makeRouteLoadFunction('stellar-wallet'),
+        getSeoConfig: (i18n: ITranslationsAdapter): PageSeoConfig => ({
+            title: i18n.gettext('dash Wallet for iOS? Plark.'),
+            description: i18n.gettext(
+                'Plark team has created a cross-functional application to fulfill all the needs for all cryptocurrency users. Get through the friendliest flow you have ever seen before. Try it, and you will probably call Plark the best wallet for stellar.',
+            ),
+            canonicalLink: 'https://plark.io/stellar-wallet',
+            path: '/stellar-wallet',
+        }),
+        getSitemapOption: (): SitemapOption => ({
+            path: '/stellar-wallet',
+            priority: 0.9,
+        }),
+    },
+    {
         id: 'contact-us',
         exact: true,
         rawPath: '/contact-us',
