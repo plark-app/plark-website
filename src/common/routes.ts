@@ -517,6 +517,25 @@ export const routes: RouteDescriptor[] = [
         }),
     },
     {
+        id: 'monero-wallet',
+        exact: true,
+        rawPath: '/monero-wallet',
+        path: makeRoutePath('/monero-wallet'),
+        load: makeRouteLoadFunction('monero-wallet'),
+        getSeoConfig: (i18n: ITranslationsAdapter): PageSeoConfig => ({
+            title: i18n.gettext('dash Wallet for iOS? Plark.'),
+            description: i18n.gettext(
+                'Plark team has created a cross-functional application to fulfill all the needs for all cryptocurrency users. Get through the friendliest flow you have ever seen before. Try it, and you will probably call Plark the best wallet for monero.',
+            ),
+            canonicalLink: 'https://plark.io/monero-wallet',
+            path: '/monero-wallet',
+        }),
+        getSitemapOption: (): SitemapOption => ({
+            path: '/monero-wallet',
+            priority: 0.9,
+        }),
+    },
+    {
         id: 'contact-us',
         exact: true,
         rawPath: '/contact-us',
