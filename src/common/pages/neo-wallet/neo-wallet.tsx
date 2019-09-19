@@ -112,8 +112,12 @@ export default function NeoWallet(): JSX.Element {
                 caption={i18n.gettext(
                     'Right now, this element is accessible only for Ukraine (UAH). We will include the Russian Federation (RUB), USA (US Dollar) and EEA (Euro) soon.',
                 )}
-                walletType={'Neo'}
-                withSteps
+                steps={[
+                    i18n.gettext('Add your bank card to your Plark wallet'),
+                    i18n.gettext('Set the desired amount of coins to purchase or sell'),
+                    i18n.gettext('Activate Neo wallet'),
+                    i18n.gettext('Add your bank card to your Plark wallet'),
+                ]}
             />
 
             <WalletColumnsSection
