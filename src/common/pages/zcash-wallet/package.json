@@ -1,0 +1,6 @@
+{
+    "private": true,
+    "name": "zcash-wallet",
+    "main": "zcash-wallet.tsx",
+    "typings": "zcash-wallet.tsx"
+}
