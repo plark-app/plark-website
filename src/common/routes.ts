@@ -327,6 +327,25 @@ export const routes: RouteDescriptor[] = [
         }),
     },
     {
+        id: 'iota-wallet',
+        exact: true,
+        rawPath: '/iota-wallet',
+        path: makeRoutePath('/iota-wallet'),
+        load: makeRouteLoadFunction('iota-wallet'),
+        getSeoConfig: (i18n: ITranslationsAdapter): PageSeoConfig => ({
+            title: i18n.gettext('dash Wallet for iOS? Plark.'),
+            description: i18n.gettext(
+                'Plark team has created a cross-functional application to fulfill all the needs for all cryptocurrency users. Get through the friendliest flow you have ever seen before. Try it, and you will probably call Plark the best wallet for iota.',
+            ),
+            canonicalLink: 'https://plark.io/iota-wallet',
+            path: '/iota-wallet',
+        }),
+        getSitemapOption: (): SitemapOption => ({
+            path: '/iota-wallet',
+            priority: 0.9,
+        }),
+    },
+    {
         id: 'contact-us',
         exact: true,
         rawPath: '/contact-us',

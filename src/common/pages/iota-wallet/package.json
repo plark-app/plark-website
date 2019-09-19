@@ -1,0 +1,6 @@
+{
+    "private": true,
+    "name": "iota-wallet",
+    "main": "iota-wallet.tsx",
+    "typings": "iota-wallet.tsx"
+}
