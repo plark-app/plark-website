@@ -1,5 +1,5 @@
 .cardano-wallet {
-    
+
     &__best-wallet {
         margin-top: 300px;
 
@@ -50,5 +50,11 @@
 
     &__card-section-topic {
         max-width: 100% !important;
+    }
+
+    &__hardware-title {
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto;
     }
 }

@@ -58,6 +58,7 @@ export default function DashWallet(): JSX.Element {
                 <Topic
                     className={styles.dashWalletBestWalletTopic}
                     titleText={i18n.gettext('The Best Dash Wallet? Indeed, Plark.')}
+                    titleTag="h1"
                     titleClassName={styles.dashWalletBestWalletTitle}
                     descText={i18n.gettext(
                         'From time to time you come to the point where you think, “Damn, why does it take me so much time to deal with crypto routine?” We are the same people as you, and we did. That’s how Plark appears. And today it serves you with a full range of features:',
@@ -71,6 +72,7 @@ export default function DashWallet(): JSX.Element {
                     titleClassName={styles.dashWalletDownloadSectionTitle}
                     className={styles.dashWalletDownloadSectionTopic}
                     titleText={i18n.gettext('Online Dash Wallet? Think twice about your security.')}
+                    titleTag="h3"
                 />
             </Section>
 
@@ -91,6 +93,7 @@ export default function DashWallet(): JSX.Element {
                     titleText={i18n.gettext(
                         'It’s never too late to get into crypto. Create your Dash coin wallet and feel no FOMO.',
                     )}
+                    titleTag="h2"
                 />
             </Section>
 

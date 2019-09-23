@@ -39,6 +39,7 @@ export default function EosWallet(): JSX.Element {
                 <Topic
                     className={styles.eosWalletBestWalletTopic}
                     titleText={i18n.gettext('The Best EOS Wallet? Plark.')}
+                    titleTag="h1"
                     titleClassName={styles.eosWalletBestWalletTitle}
                     descText={i18n.gettext(
                         `Do you like to spend time cycling, playing the guitar, or walking with your pet? Do you want to enjoy the morning moment with a cup of coffee, not being in a hurry? Time is a resource that cannot be replenished. So why should you spend time on something that doesn’t bring joy? Why should you spend time on what can be done in a few taps via phone? Up to this point — it was not possible. Plark changes everything.`,
@@ -51,6 +52,7 @@ export default function EosWallet(): JSX.Element {
                     titleClassName={styles.eosWalletDownloadSectionTitle}
                     className={styles.eosWalletDownloadSectionTopic}
                     titleText={i18n.gettext('Create your EOS coin wallet and feel no FOMO.')}
+                    titleTag="h2"
                 />
             </Section>
 
@@ -80,6 +82,7 @@ export default function EosWallet(): JSX.Element {
                     titleClassName={styles.eosWalletDownloadSectionTitle}
                     className={styles.eosWalletDownloadSectionTopic}
                     titleText={i18n.gettext('Exodus Wallet EOS? Good choice. Still, you may try Plark.')}
+                    titleTag="h3"
                 />
             </Section>
 

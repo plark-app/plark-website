@@ -58,6 +58,7 @@ export default function StellarWallet(): JSX.Element {
                 <Topic
                     className={styles.stellarWalletBestWalletTopic}
                     titleText={i18n.gettext('The Best Stellar Wallet? Plark.')}
+                    titleTag="h1"
                     titleClassName={styles.stellarWalletBestWalletTitle}
                     descText={i18n.gettext(
                         `Every now and then you get to the meaningful part where you think, "Damn, for what reason does it require so much time to manage crypto?" We are indistinguishable individuals from you, and we did. That is how Plark shows up. What's more, today it serves you with a full scope of highlights:`,
@@ -71,6 +72,7 @@ export default function StellarWallet(): JSX.Element {
                     titleClassName={styles.stellarWalletDownloadSectionTitle}
                     className={styles.stellarWalletDownloadSectionTopic}
                     titleText={i18n.gettext('Stellar Desktop Wallet? Not really convenient.')}
+                    titleTag="h3"
                 />
             </Section>
 
@@ -89,6 +91,7 @@ export default function StellarWallet(): JSX.Element {
                     titleClassName={styles.stellarWalletDownloadSectionTitle}
                     className={styles.stellarWalletDownloadSectionTopic}
                     titleText={i18n.gettext('Make your Stellar Lumens wallet and feel no FOMO.')}
+                    titleTag="h2"
                 />
             </Section>
 

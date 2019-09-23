@@ -74,6 +74,7 @@ export default function IotaWallet(): JSX.Element {
                 <Topic
                     className={styles.iotaWalletBestWalletTopic}
                     titleText={i18n.gettext('What’s The Best IOTA Wallet? Well, Plark.')}
+                    titleTag="h1"
                     titleClassName={styles.iotaWalletBestWalletTitle}
                     descText={i18n.gettext(
                         'We offer exceptional functionality that allows you to control your coins fully. Download the Plark app and experience all its benefits right now:',
@@ -82,7 +83,7 @@ export default function IotaWallet(): JSX.Element {
                 />
             </Section>
 
-            <WalletFeaturesSection 
+            <WalletFeaturesSection
                 listClassName={styles.iotaWalletFeaturesList}
                 imgClassName={styles.iotaWalletFeaturesListImage}
                 featuresList={featuresList(i18n)}
@@ -95,6 +96,7 @@ export default function IotaWallet(): JSX.Element {
                     titleText={i18n.gettext(
                         'IOTA hardware wallet is secure, but Plark is more convenient. Control your IOTA assets. Anytime. Anywhere.',
                     )}
+                    titleTag="h2"
                 />
             </Section>
 

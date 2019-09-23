@@ -71,6 +71,7 @@ export default function LitecoinWallet(): JSX.Element {
                 <Topic
                     className={styles.litecoinWalletBestWalletTopic}
                     titleText={i18n.gettext('The Best Litecoin Wallet? Well, Plark.')}
+                    titleTag="h1"
                     titleClassName={styles.litecoinWalletBestWalletTitle}
                     descText={i18n.gettext(
                         'Plark team has created a cross-functional application to fulfill all the needs for all cryptocurrency users. Get through the friendliest flow you have ever seen before. Try it, and you will probably call Plark the best wallet for Litecoin.',
@@ -86,6 +87,7 @@ export default function LitecoinWallet(): JSX.Element {
                     titleText={i18n.gettext(
                         'Are you still using a Litecoin wallet online? Treat yourself — download Plark',
                     )}
+                    titleTag="h2"
                 />
             </Section>
 
@@ -105,6 +107,7 @@ export default function LitecoinWallet(): JSX.Element {
                     titleText={i18n.gettext(
                         'Litecoin desktop wallet is a good choice. By the way, you forgot to bring along the PC.',
                     )}
+                    titleTag="h3"
                 />
             </Section>
 

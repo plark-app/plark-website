@@ -67,6 +67,7 @@ export default function CardanoWallet(): JSX.Element {
                 <Topic
                     className={styles.cardanoWalletBestWalletTopic}
                     titleText={i18n.gettext('The Best Cardano Wallet? Plark.')}
+                    titleTag="h1"
                     titleClassName={styles.cardanoWalletBestWalletTitle}
                     descText={i18n.gettext(
                         'We offer outstanding usefulness that enables you to control your Cardano coins completely. Download the Plark application and experience every one of its advantages at this moment:',
@@ -80,6 +81,7 @@ export default function CardanoWallet(): JSX.Element {
                     titleClassName={styles.cardanoWalletDownloadSectionTitle}
                     className={styles.cardanoWalletDownloadSectionTopic}
                     titleText={i18n.gettext('Cardano desktop wallet? Huh? It’s 2019 outside — get a mobile app.')}
+                    titleTag="h2"
                 />
             </Section>
 
@@ -92,6 +94,14 @@ export default function CardanoWallet(): JSX.Element {
                 image={{ src: '/img/trade-screen.png' }}
                 withoutLink
             />
+
+            <Section className={styles.cardanoWalletHardwareSection}>
+                <Topic
+                    titleClassName={styles.cardanoWalletHardwareTitle}
+                    titleText={i18n.gettext('Cardano hardware wallet? Come on, get out of a cave.')}
+                    titleTag="h3"
+                />
+            </Section>
 
             <CardSection
                 title={i18n.gettext('Purchase and Sell Cardano using Bank Card')}
