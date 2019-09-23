@@ -16,22 +16,14 @@ export default function IntroSection(props: IntroBlockProps): JSX.Element {
             <Section className={styles.introSection} contentClassName={styles.introSectionContent}>
                 <div className={styles.introTopic}>
                     <h3 className={styles.introTopicShit}>{props.title}</h3>
-                    {React.createElement(
-                        subtitleTag,
-                        { className: styles.introTopicTitle },
-                        props.subtitle,
-                    )}
-                    
+                    {React.createElement(subtitleTag, { className: styles.introTopicTitle }, props.subtitle)}
+
                     <DownloadCell />
                 </div>
             </Section>
 
             <Section className={styles.partnersSection} contentClassName={styles.partnersContent}>
-                <PartnerList
-                    isSmall
-                    className={styles.partnersList}
-                    itemClassName={styles.partnersItem}
-                />
+                <PartnerList isSmall className={styles.partnersList} itemClassName={styles.partnersItem} />
             </Section>
         </>
     );
