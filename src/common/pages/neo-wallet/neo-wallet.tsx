@@ -70,6 +70,7 @@ export default function NeoWallet(): JSX.Element {
                 <Topic
                     className={styles.neoWalletBestWalletTopic}
                     titleText={i18n.gettext('The Best Neo Wallet? Plark.')}
+                    titleTag="h1"
                     titleClassName={styles.neoWalletBestWalletTitle}
                     descText={i18n.gettext(
                         'Plark is across the board application you need on your cell phone since it opens the most vital usefulness both for tenderfoots and experienced crypto-buddies:',
@@ -83,6 +84,7 @@ export default function NeoWallet(): JSX.Element {
                     titleClassName={styles.neoWalletDownloadSectionTitle}
                     className={styles.neoWalletDownloadSectionTopic}
                     titleText={i18n.gettext('Neo web wallet is not the most convenient way to manage crypto.')}
+                    titleTag="h3"
                 />
             </Section>
 
@@ -100,6 +102,7 @@ export default function NeoWallet(): JSX.Element {
                 <Topic
                     titleClassName={styles.neoWalletGoodChoice}
                     titleText={i18n.gettext('Plark is a solid Neo coin wallet. British scientists proved.')}
+                    titleTag="h2"
                 />
             </Section>
 

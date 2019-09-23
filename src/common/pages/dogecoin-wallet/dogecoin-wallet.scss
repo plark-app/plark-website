@@ -1,5 +1,5 @@
 .dogecoin-wallet {
-    
+
     &__best-wallet {
         margin-top: 300px;
 
@@ -51,5 +51,12 @@
 
     &__card-section-topic {
         max-width: 100% !important;
+    }
+
+    &__still-looking {
+        &__title {
+            text-align: center;
+            font-size: 48px;
+        }
     }
 }

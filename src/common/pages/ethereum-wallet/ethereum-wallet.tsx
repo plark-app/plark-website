@@ -75,6 +75,7 @@ export default function EthereumWallet(): JSX.Element {
                     className={styles.ethereumWalletBestWalletTopic}
                     titleText={i18n.gettext('What’s The Best Ethereum Wallet? Well, Plark.')}
                     titleClassName={styles.ethereumWalletBestWalletTitle}
+                    titleTag="h1"
                     descText={i18n.gettext(
                         'With Plark you can perform any operation when it comes to cryptocurrency, namely Ethereum. Easygoing user interface will help you to find out the available features:',
                     )}
@@ -87,6 +88,17 @@ export default function EthereumWallet(): JSX.Element {
                 imgClassName={styles.ethereumWalletFeaturesListImage}
                 featuresList={featuresList(i18n)}
             />
+
+            <Section className={styles.ethereumWalletManageEthereum}>
+                <Topic
+                    className={styles.ethereumWalletManageEthereumTopic}
+                    titleText={i18n.gettext(
+                        'Manage your Ethereum whenever you need it. Sounds much easier than any Ethereum paper wallet, huh?',
+                    )}
+                    titleClassName={styles.ethereumWalletManageEthereumTitle}
+                    titleTag="h2"
+                />
+            </Section>
 
             <FeatureSection
                 titleText={i18n.gettext('Download Plark Wallet for Ethereum')}
@@ -104,6 +116,7 @@ export default function EthereumWallet(): JSX.Element {
                     titleText={i18n.gettext(
                         'Plark offers high-end security level, which might be compared to any Ledger wallet for Ethereum.',
                     )}
+                    titleTag="h3"
                 />
             </Section>
 

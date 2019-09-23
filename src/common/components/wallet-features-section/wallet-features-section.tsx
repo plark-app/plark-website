@@ -20,6 +20,7 @@ export default function WalletFeaturesSection({
     listClassName,
     imgClassName,
 }: IWalletFeaturesSectionProps): JSX.Element {
+    const phoneOrder: number = Math.floor(featuresList.length / 2);
     return (
         <div className={classnames(styles.walletFeatureSection, sectionClassName)}>
             <ul className={classnames(styles.walletFeatureSectionList, listClassName)}>
@@ -34,8 +35,8 @@ export default function WalletFeaturesSection({
                     </li>
                 ))}
                 <li
+                    style={{ order: phoneOrder }}
                     className={classnames(styles.walletFeatureSectionItemImage, imgClassName)}
-                    style={{ order: featuresList.length / 2 - 1 }}
                 >
                     <img className={styles.walletFeatureSectionImage} src={'/img/trade-screen.png'} />
                 </li>

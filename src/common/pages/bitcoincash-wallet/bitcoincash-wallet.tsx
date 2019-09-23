@@ -39,6 +39,7 @@ export default function BitcoincashWallet(): JSX.Element {
                 <Topic
                     className={styles.bitcoincashWalletBestWalletTopic}
                     titleText={i18n.gettext('The Best Bitcoin Cash Wallet? Plark.')}
+                    titleTag="h1"
                     titleClassName={styles.bitcoincashWalletBestWalletTitle}
                     descText={i18n.gettext(
                         "With regard to application use, we want our clients to feel good. That is the reason we've wiped out everything that may trouble you in any way. We won’t bother you with asking name, telephone number, or email to get into Plark.",
@@ -53,6 +54,7 @@ export default function BitcoincashWallet(): JSX.Element {
                     titleText={i18n.gettext(
                         'Bitcoin Cash online wallet? On the off chance that you want to be robbed — use it.',
                     )}
+                    titleTag="h3"
                 />
             </Section>
 
@@ -89,6 +91,7 @@ export default function BitcoincashWallet(): JSX.Element {
                 <Topic
                     titleClassName={styles.bitcoincashWalletGoodChoice}
                     titleText={i18n.gettext('“Cash App Bitcoin Wallet”? What a strange Google request you got there.')}
+                    titleTag="h2"
                 />
             </Section>
 

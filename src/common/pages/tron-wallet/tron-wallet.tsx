@@ -68,6 +68,7 @@ export default function TronWallet(): JSX.Element {
                 <Topic
                     className={styles.tronWalletBestWalletTopic}
                     titleText={i18n.gettext('The Best Tron Wallet? Indeed, Plark.')}
+                    titleTag="h1"
                     titleClassName={styles.tronWalletBestWalletTitle}
                     descText={i18n.gettext(
                         'Plark team has made cross-practical application to satisfy every requirement for all cryptocurrency clients. Experience the friendliest flow for Tron crypto wallet you have ever observed previously:',
@@ -81,6 +82,7 @@ export default function TronWallet(): JSX.Element {
                     titleClassName={styles.tronWalletDownloadSectionTitle}
                     className={styles.tronWalletDownloadSectionTopic}
                     titleText={i18n.gettext('Are you looking for a Tron coin wallet? What for? Plark is here.')}
+                    titleTag="h2"
                 />
             </Section>
 
@@ -98,6 +100,7 @@ export default function TronWallet(): JSX.Element {
                 <Topic
                     titleClassName={styles.tronWalletGoodChoice}
                     titleText={i18n.gettext('Tron online wallet? Think twice about security.')}
+                    titleTag="h3"
                 />
             </Section>
 

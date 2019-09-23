@@ -72,6 +72,7 @@ export default function MoneroWallet(): JSX.Element {
                 <Topic
                     className={styles.moneroWalletBestWalletTopic}
                     titleText={i18n.gettext('The Best Monero Wallet? Well, Plark.')}
+                    titleTag="h1"
                     titleClassName={styles.moneroWalletBestWalletTitle}
                     descText={i18n.gettext(
                         'Plark is a non-compromised app that has everything you need. We aspire to get called “The best wallet for Monero.” Download the Plark for your device to experience all the cutting-edge features it offers:',
@@ -93,6 +94,7 @@ export default function MoneroWallet(): JSX.Element {
                     titleText={i18n.gettext(
                         'Are you looking for a Monero hardware wallet? Well, Plark does it better.',
                     )}
+                    titleTag="h2"
                 />
             </Section>
 
@@ -105,6 +107,16 @@ export default function MoneroWallet(): JSX.Element {
                 image={{ src: '/img/trade-screen.png' }}
                 withoutLink
             />
+
+            <Section>
+                <Topic
+                    titleClassName={styles.moneroWalletSecureTitle}
+                    titleText={i18n.gettext(
+                        'Are you still using a Monero wallet online? Think it over — that’s not really secure.',
+                    )}
+                    titleTag="h3"
+                />
+            </Section>
 
             <CardSection
                 title={i18n.gettext('Trade Monero via Bank Card')}

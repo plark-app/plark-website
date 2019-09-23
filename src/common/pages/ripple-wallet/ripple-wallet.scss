@@ -1,5 +1,42 @@
 .ripple-wallet {
-    
+
+    &__intro {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+
+    &__features-title {
+        margin-top: 300px;
+
+        &-topic {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        &-title {
+            text-align: center;
+            margin: 0 auto;
+            line-height: 1.1667;
+            font-size: 60px;
+            font-weight: 700;
+            white-space: pre-line;
+        }
+
+        &-descr {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 16px;
+            font-weight: bold;
+            line-height: 1.375;
+            color: #959BA3;
+            display: block;
+            max-width: 630px;
+        }
+    }
+
     &__best-wallet {
         margin-top: 300px;
 

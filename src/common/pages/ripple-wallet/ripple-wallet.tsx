@@ -70,6 +70,20 @@ export default function RippleWallet(): JSX.Element {
                 />
             </StickIphone>
 
+
+            <Section className={styles.rippleWalletFeaturesTitle}>
+                <Topic
+                    className={styles.rippleWalletFeaturesTitleTopic}
+                    titleText={i18n.gettext('The Best Ripple Wallet? Well, Plark.')}
+                    titleTag="h1"
+                    titleClassName={styles.rippleWalletFeaturesTitleTitle}
+                    descText={i18n.gettext(
+                        'Plark is the all-in-one app you need on your mobile phone since it opens the most crucial functionality both for beginners and experienced crypto-fellows.',
+                    )}
+                    descClassName={styles.rippleWalletFeaturesTitleDescr}
+                />
+            </Section>
+
             <WalletFeaturesSection featuresList={featuresList(i18n)} />
 
             <Section className={styles.rippleWalletBestWallet}>
@@ -81,6 +95,7 @@ export default function RippleWallet(): JSX.Element {
                         'which is more convenient than any Ripple desktop wallet in terms of accessibility',
                     )}
                     descClassName={styles.rippleWalletBestWalletDescr}
+                    descriptionTag="h3"
                 />
             </Section>
 
@@ -98,6 +113,7 @@ export default function RippleWallet(): JSX.Element {
                 <Topic
                     titleClassName={styles.rippleWalletGoodChoice}
                     titleText={i18n.gettext('Download the friendliest Ripple coin wallet now.')}
+                    titleTag="h2"
                 />
             </Section>
 

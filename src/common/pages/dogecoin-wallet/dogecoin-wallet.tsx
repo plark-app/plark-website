@@ -67,6 +67,7 @@ export default function DogecoinWallet(): JSX.Element {
                 <Topic
                     className={styles.dogecoinWalletBestWalletTopic}
                     titleText={i18n.gettext('The Best Dogecoin Wallet? Indeed, Plark.')}
+                    titleTag="h1"
                     titleClassName={styles.dogecoinWalletBestWalletTitle}
                     descText={i18n.gettext(
                         'Plark is a non-bargained application that has all that you need. We seek to get called "The best wallet for Monero." Download the Plark for your iOS gadget to encounter all the bleeding edge highlights it offers:',
@@ -80,13 +81,14 @@ export default function DogecoinWallet(): JSX.Element {
                     titleClassName={styles.dogecoinWalletDownloadSectionTitle}
                     className={styles.dogecoinWalletDownloadSectionTopic}
                     titleText={i18n.gettext('Online Dogecoin wallet? Not a good choice in terms of security.')}
+                    titleTag="h2"
                 />
             </Section>
 
             <FeatureSection
                 titleText={i18n.gettext('Download Plark Wallet for Dogecoin')}
                 text={i18n.gettext(
-                   "Plark offers one of the quickest and most straightforward approaches to buy and oversee Dogecoin. Alongside top of the line security level, Plark fills in as a free Dogecoin wallet and exchange across the board (being much more secure than Dogecoin wallet online). Since now, you don't have to make accounts on various services or search for a trusty one to get it or continue with various kinds of activities. Since Plark is a mobile app, prepare for an ultra utility day in and day out.",
+                    "Plark offers one of the quickest and most straightforward approaches to buy and oversee Dogecoin. Alongside top of the line security level, Plark fills in as a free Dogecoin wallet and exchange across the board (being much more secure than Dogecoin wallet online). Since now, you don't have to make accounts on various services or search for a trusty one to get it or continue with various kinds of activities. Since Plark is a mobile app, prepare for an ultra utility day in and day out.",
                 )}
                 textClassName={styles.dogecoinWalletDownloadSectionText}
                 image={{ src: '/img/trade-screen.png' }}
@@ -103,6 +105,17 @@ export default function DogecoinWallet(): JSX.Element {
                     'For the present, this feature is accessible for Ukraine (UAH). We will include the Russian Federation (RUB), USA (US Dollar) and EEA (Euro) soon.',
                 )}
             />
+
+            <Section>
+                <Topic
+                    titleClassName={styles.dogecoinWalletStillLookingTitle}
+                    className={styles.dogecoinWalletStillLookingTopic}
+                    titleText={i18n.gettext(
+                        'Are you still looking for a Dogecoin wallet app? Well, you’ve already found it.',
+                    )}
+                    titleTag="h3"
+                />
+            </Section>
 
             <WalletColumnsSection
                 titleText={i18n.gettext('What is Dogecoin?')}

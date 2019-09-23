@@ -1,5 +1,5 @@
 .ethereum-wallet {
-    
+
     &__best-wallet {
         margin-top: 300px;
 
@@ -18,6 +18,25 @@
 
         &-descr {
             text-align: center;
+        }
+    }
+
+    &__manage-ethereum {
+        margin-top: 300px;
+
+        &-topic {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        &-title {
+            max-width: 900px;
+            text-align: center;
+            margin: 0 auto;
+
+            font-size: 40px;
         }
     }
 

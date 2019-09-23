@@ -67,7 +67,8 @@ export default function ZCashWallet(): JSX.Element {
             <Section className={styles.zcashWalletBestWallet}>
                 <Topic
                     className={styles.zcashWalletBestWalletTopic}
-                    titleText={i18n.gettext('The Best Zcash Wallet? Plark. ')}
+                    titleText={i18n.gettext('The Best Zcash Wallet? Plark.')}
+                    titleTag="h1"
                     titleClassName={styles.zcashWalletBestWalletTitle}
                     descText={i18n.gettext(
                         'With Plark, you can play out any activity with regards to digital money, to be specific Zcash. Friendly UI will assist you with finding out the accessible features, such as:',
@@ -81,6 +82,7 @@ export default function ZCashWallet(): JSX.Element {
                     titleClassName={styles.zcashWalletDownloadSectionTitle}
                     className={styles.zcashWalletDownloadSectionTopic}
                     titleText={i18n.gettext('Zcash wallet online, huh? Not a good choice when it comes to security.')}
+                    titleTag="h2"
                 />
             </Section>
 
@@ -98,6 +100,7 @@ export default function ZCashWallet(): JSX.Element {
                 <Topic
                     titleClassName={styles.zcashWalletGoodChoice}
                     titleText={i18n.gettext('Create Zcash wallet — get closer to crypto.')}
+                    titleTag="h3"
                 />
             </Section>
 
