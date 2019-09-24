@@ -1,0 +1,6 @@
+{
+    "private": true,
+    "name": "close-button",
+    "main": "close-button.tsx",
+    "typings": "close-button.tsx"
+}

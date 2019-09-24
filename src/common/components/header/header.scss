@@ -2,6 +2,12 @@
 @import '../../styles/colors';
 
 .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+    height: 80px;
+
     position: fixed;
     top: 0;
     left: 0;
@@ -24,15 +30,6 @@
     &__section {
         padding: 0;
     }
-
-    &__section-content {
-        max-width: 1362px !important;
-        padding-top: 44px !important;
-        padding-bottom: 44px !important;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
 }
 
 .nav {
@@ -42,7 +39,7 @@
     &__unit {
         transition: color 0.4s;
 
-        display: block;
+        display: none;
         font-size: 16px;
         font-weight: 500;
         margin-right: 50px;
@@ -52,5 +49,65 @@
             transition-duration:  0.2s;
             color: $color-text-secondary;
         }
+
+        @include from-width(540px) {
+            display: block;
+        }
+    }
+
+    &__badge {
+        margin-right: 20px;
+        margin-bottom: 0 !important;
+    }
+
+    &__menu-btn {
+        display: block;
+
+        @include from-width(540px) {
+            display: none!important;
+        }
+    }
+}
+
+.dropdown-menu {
+    display: flex;
+    flex-direction: column;
+
+    position: absolute;
+    z-index: 10;
+
+    top: 100px;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background-color: #eef1f5;
+
+    &__item {
+        display: flex;
+        align-items: center;
+
+        height: 40px;
+        transition: color 0.4s;
+        font-size: 16px;
+        font-weight: 500;
+        color: $color-text-dark;
+
+        &:hover {
+            transition-duration:  0.2s;
+            color: $color-text-secondary;
+        }
+    }
+
+    &.is-opened {
+        animation: openMenu 0.3s ease-in;
+    }
+}
+
+@keyframes openMenu {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
     }
 }

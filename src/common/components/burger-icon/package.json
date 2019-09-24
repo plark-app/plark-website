@@ -1,0 +1,6 @@
+{
+    "private": true,
+    "name": "burder-icon",
+    "main": "burder-icon.tsx",
+    "typings": "burder-icon.tsx"
+}
