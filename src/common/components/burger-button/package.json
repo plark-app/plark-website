@@ -1,0 +1,6 @@
+{
+    "private": true,
+    "name": "burger-button",
+    "main": "burger-button.tsx",
+    "typings": "burger-button.tsx"
+}
