@@ -11,7 +11,7 @@
 
     @include from-md-width {
         padding-top: 0px;
-        padding-bottom: 20px;
+        //padding-bottom: 20px;
     }
 
     &__second {
@@ -119,11 +119,13 @@
 
         @include from-md-width {
             flex-direction: row;
+            min-height: auto;
         }
     }
 
     &__nav {
         display: flex;
+        align-items: center;
 
         & > .nav-link {
             display: block;

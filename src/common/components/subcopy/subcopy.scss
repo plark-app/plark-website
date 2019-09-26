@@ -3,21 +3,28 @@
 
 .subcopy-wrapper {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
 
-    margin-left: -20px;
-    margin-right: -20px;
+    @include from-lg-width {
+        flex-direction: row;
+    }
 }
 
 .subcopy {
     width: 260px;
+
     font-size: 20px;
     letter-spacing: 0.43px;
     line-height: 1.31;
-    margin: 0 20px;
 
-    &__title, &__content  {
+    @include to-lg-width {
+        margin: 20px 0;
+    }
+
+    &__title,
+    &__content {
         font-size: inherit;
         display: inline;
     }
