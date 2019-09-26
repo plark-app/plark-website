@@ -4,7 +4,7 @@ import classnames from 'classnames';
 import VisaSvg from 'resources/svgs/cards/visa.component.svg';
 import MasterCardSvg from 'resources/svgs/cards/mastercard.component.svg';
 import AmExpress from 'resources/svgs/cards/amexpress.component.svg';
-import UnknownSvg from 'resources/svgs/cards/unknown.component.svg';
+import DinersClubSvg from '../resources/svgs/cards/dinersclub.component.svg';
 import DiscoverSvg from 'resources/svgs/cards/discover.component.svg';
 import JCBSvg from 'resources/svgs/cards/jcb.component.svg';
 import UnionSvg from 'resources/svgs/cards/union.component.svg';
@@ -31,7 +31,7 @@ const cardsList: Card[] = [
     },
     {
         name: 'Card',
-        svg: UnknownSvg,
+        svg: DinersClubSvg,
     },
     {
         name: 'Discover card',
