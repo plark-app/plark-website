@@ -6,7 +6,7 @@
         "order/properties-alphabetical-order": null,
         "selector-class-pattern": null,
         "selector-max-compound-selectors": 4,
-        "selector-no-qualifying-type": null,
+        "selector-no-qualifying-type": null
     },
     "ignoreFiles": [
         "dest/",
