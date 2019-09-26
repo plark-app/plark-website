@@ -32,7 +32,10 @@
         display: block;
         max-width: 630px;
 
+        text-align: left;
+
         @include from-md-width() {
+            text-align: center;
             font-size: 16px;
         }
 

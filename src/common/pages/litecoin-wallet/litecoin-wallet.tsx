@@ -44,8 +44,8 @@ function featuresList(i18n: ITranslationsAdapter): IWalletFeaturesItem[] {
         {
             title: i18n.gettext('Keep an eye on the portfolio cost'),
         },
-    ]
-};
+    ];
+}
 
 export default function LitecoinWallet(): JSX.Element {
     const i18n = useI18n();

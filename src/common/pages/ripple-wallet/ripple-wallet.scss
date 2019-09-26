@@ -1,3 +1,6 @@
+@import '../../styles/vars';
+@import '../../styles/media';
+
 .ripple-wallet {
 
     &__intro {
@@ -68,12 +71,19 @@
     &__download-section {
         margin-top: 300px;
 
+    &__download-section {
+        margin-top: 300px;
+
         &-title {
             color: #0b0c0d;
-            font-size: 48px;
+            font-size: 24px;
             font-weight: 700;
-            line-height: 70px;
-            text-align: center;
+            line-height: 36px;
+
+            @include from-md-width {
+                 font-size: 48px;
+                 line-height: 70px;
+            }
         }
 
         &-text {

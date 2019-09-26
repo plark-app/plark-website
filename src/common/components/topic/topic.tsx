@@ -45,11 +45,12 @@ export default function Topic(props: TTopicProps): JSX.Element {
     return (
         <div className={topicClassName} style={topicStyle}>
             {React.createElement(titleTag, titleProps, props.titleText)}
-            {props.descText && React.createElement(
-                descriptionTag,
-                { className: cn(styles.topicDesc, props.descClassName) },
-                props.descText,
-            )}
+            {props.descText &&
+                React.createElement(
+                    descriptionTag,
+                    { className: cn(styles.topicDesc, props.descClassName) },
+                    props.descText,
+                )}
         </div>
     );
 }
