@@ -1,4 +1,6 @@
 @import "../../styles/colors";
+@import "../../styles/media";
+@import "../../styles/vars";
 
 
 .box {
@@ -17,7 +19,8 @@
     &__big {
         position: absolute;
         bottom: 100%;
-        left: 100%;
+        left: 50%;
+        transform: translateX(-50%);
         overflow: hidden;
         border-radius: 5px;
         width: 200px;
@@ -29,6 +32,11 @@
         transition: all 0.4s;
 
         box-shadow: 0 20px 30px transparentize($color-dark, 0.7);
+
+        @include from-md-width() {
+            left: 100%;
+            transform: none;
+        }
     }
 
     &:hover > &__big {

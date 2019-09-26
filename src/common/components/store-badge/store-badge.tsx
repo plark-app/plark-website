@@ -8,6 +8,7 @@ type StoreBadgeProps = {
     platform: Platform;
     height?: number;
     darkBg?: boolean;
+    className?: string;
 };
 
 export const BadgeContainer = ({ children, className, inactive = false, hideOnMobile = true }: any) => {
@@ -29,12 +30,13 @@ export default function StoreBadge(props: StoreBadgeProps): JSX.Element {
     }
 
     return (
-        <a href={platform.url} title={platform.key} className={styles.badge} target="_blank">
-            <img src={platform.badge}
-                 height={height}
-                 className={styles.badgeImage}
-                 alt={platform.key}
-                 title={platform.key}
+        <a href={platform.url} title={platform.key} className={cn(styles.badge, props.className)} target="_blank">
+            <img
+                src={platform.badge}
+                height={height}
+                className={styles.badgeImage}
+                alt={platform.key}
+                title={platform.key}
             />
         </a>
     );

@@ -1,5 +1,6 @@
 @import "../../styles/colors";
 @import "../../styles/media";
+@import "../../styles/vars";
 
 .section {
     &__content {
@@ -11,6 +12,7 @@
 .topic {
     &__description {
         max-width: 620px !important;
+        font-size: 20px;
     }
 }
 
@@ -20,7 +22,7 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    margin: 50px 0;
+    margin: 50px auto;
 
     &__item {
         margin: 0 12px;
@@ -54,8 +56,12 @@
     width: 100%;
     min-width: 1280px;
     left: 50%;
-    top: 290px;
+    top: 190px;
     transform: translateX(-50%);
+
+    @include from-md-width() {
+        top: 290px;
+    }
 }
 
 .credit-card {
@@ -82,7 +88,7 @@
         justify-content: space-between;
         align-items: flex-start;
         flex-wrap: wrap;
-        
+
         margin: 80px auto;
         max-width: 640px;
     }

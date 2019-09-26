@@ -1,10 +1,20 @@
-@import "../../styles/media";
-@import "../../styles/colors";
+@import '../../styles/media';
+@import '../../styles/colors';
+@import '../../styles/vars';
 
 .phones {
     display: flex;
     justify-content: center;
     margin: 100px 0;
+
+    @include from-md-width() {
+        margin-top: 160px;
+        margin-bottom: 160px;
+    }
+
+    img {
+        max-width: 160px;
+    }
 
     &__scene {
         width: 210px;

@@ -1,0 +1,26 @@
+.burger-button {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    width: 25px;
+    height: 11px;
+
+    background-color: transparent;
+
+    padding: 0;
+    border: none;
+    outline: none;
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    span {
+        display: flex;
+        width: 25px;
+        height: 3px;
+        background-color: #0b0c0d;
+    }
+}

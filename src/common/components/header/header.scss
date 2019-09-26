@@ -2,15 +2,31 @@
 @import '../../styles/colors';
 
 .header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    padding: 0 20px;
+    height: 50px;
+
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    height: 108px;
+
     z-index: 1000;
     transition: all 0.2s;
-    background-color: transparent;
+    background-color: #eef1f5;
     box-shadow: 0 1px 0 0 transparent;
+
+    border-bottom: 1px solid #0b0c0d;
+
+    @include from-md-width {
+        margin: 0 auto;
+        max-width: 1362px;
+        height: 105px;
+        border-bottom: 0;
+    }
 
 
     &__logo {
@@ -25,32 +41,94 @@
         padding: 0;
     }
 
-    &__section-content {
-        max-width: 1362px !important;
-        padding-top: 44px !important;
-        padding-bottom: 44px !important;
+    &__nav {
         display: flex;
-        justify-content: space-between;
         align-items: center;
+        margin-left: auto;
+
+        &-unit {
+            transition: color 0.4s;
+
+            display: none;
+            font-size: 16px;
+            font-weight: 500;
+            margin-right: 50px;
+            color: $color-text-dark;
+
+            &:hover {
+                transition-duration: 0.2s;
+                color: $color-text-secondary;
+            }
+
+            @include from-md-width {
+                display: block;
+            }
+        }
+
+        &-badge {
+            margin-left: auto;
+            margin-bottom: 0 !important;
+        }
+
+        &-menu-btn {
+            display: flex;
+
+            @include from-md-width {
+                display: none !important;
+            }
+        }
+    }
+
+    &__dropdown-menu {
+        display: flex;
+        flex-direction: column;
+
+        position: absolute;
+        z-index: 10;
+
+        top: 50px;
+        left: 0;
+        width: 100%;
+        background-color: #eef1f5;
+
+        &-item {
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            height: 40px;
+            transition: color 0.4s;
+            font-size: 16px;
+            font-weight: 500;
+            color: $color-text-dark;
+
+            &:hover {
+                transition-duration: 0.2s;
+                color: $color-text-secondary;
+            }
+        }
+
+        &-btn {
+            margin-right: 10px;
+        }
     }
 }
 
-.nav {
-    display: flex;
-    align-items: center;
+:global {
+    .mobile-menu-enter {
+        opacity: 0;
+    }
 
-    &__unit {
-        transition: color 0.4s;
+    .mobile-menu-enter-active {
+        opacity: 1;
+        transition: all 300ms;
+    }
 
-        display: block;
-        font-size: 16px;
-        font-weight: 500;
-        margin-right: 50px;
-        color: $color-text-dark;
+    .mobile-menu-exit {
+        opacity: 1;
+    }
 
-        &:hover {
-            transition-duration:  0.2s;
-            color: $color-text-secondary;
-        }
+    .mobile-menu-exit-active {
+        opacity: 0;
+        transition: all 300ms;
     }
 }

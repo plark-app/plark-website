@@ -2,17 +2,29 @@
 @import "../../styles/colors";
 
 .section {
-    margin-top: 200px;
-    margin-bottom: 200px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    padding: 0;
+
+    @include from-md-width() {
+        margin-bottom: 200px;
+        margin-top: 200px;
+    }
 }
 
 .phones {
-    margin-top: 160px;
-    margin-bottom: 160px;
-}
+    max-width: 100%;
+    margin: 100px 0;
+    margin-top: 100px;
 
-.topic + .phones {
-    margin-top: 220px;
+    img {
+        max-width: 160px;
+    }
+
+    @include from-md-width() {
+        margin-top: 160px;
+        margin-bottom: 160px;
+    }
 }
 
 .card {
@@ -21,13 +33,17 @@
     align-items: center;
     overflow: hidden;
 
-    width: 600px;
+    width: 335px;
     margin: 0 20px;
 
     transition: all 0.6s;
     transform: scale(0.7);
     opacity: 0.5;
     filter: blur(2px);
+
+    @include from-md-width {
+        width: 600px;
+    }
 
     @include from-xxl-width {
         width: 800px;
@@ -43,11 +59,16 @@
     }
 
     &__feedback {
-        font-weight: bold;
-        font-size: 28px;
+        font-size: 18px;
+        font-weight: 700;
         line-height: 1.18;
         text-align: center;
-        margin: 25px 0 30px 0;
+        margin: 20px auto;
+
+        @include from-md-width {
+            font-size: 28px;
+            margin: 25px 0 30px 0;
+        }
 
         @include from-xxl-width {
             font-size: 32px;

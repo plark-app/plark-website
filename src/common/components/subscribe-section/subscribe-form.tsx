@@ -27,11 +27,11 @@ class SubscribeForm extends React.PureComponent<WithTranslationsProps> {
         }
 
         return (
-            <form onSubmit={this.__handleFormSubmit} className={styles.subscribe}>
+            <form onSubmit={this._handleFormSubmit} className={styles.subscribe}>
                 <div className={styles.subscribeForm}>
                     <input
                         value={this.state.email}
-                        onChange={this.__handleValue}
+                        onChange={this._handleValue}
                         className={styles.subscribeInput}
                         placeholder="enter your email"
                     />
@@ -41,18 +41,16 @@ class SubscribeForm extends React.PureComponent<WithTranslationsProps> {
                     </UIButton>
                 </div>
 
-                <div className={styles.subscribeErrorMessage}>
-                    {errorMessage}
-                </div>
+                <div className={styles.subscribeErrorMessage}>{errorMessage}</div>
             </form>
         );
     }
 
-    private __handleValue = (e: ChangeEvent<HTMLInputElement>) => {
+    private _handleValue = (e: ChangeEvent<HTMLInputElement>) => {
         this.setState({ email: e.target.value });
     };
 
-    private __handleFormSubmit = async (event: FormEvent) => {
+    private _handleFormSubmit = async (event: FormEvent) => {
         event.preventDefault();
 
         if (this.state.loading) {

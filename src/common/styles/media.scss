@@ -1,12 +1,12 @@
 @import './vars';
 
 @mixin from-width($width) {
-    @media screen and (min-width: $width + 1) {
+    @media screen and (min-width: $width) {
         @content;
     }
 }
 @mixin to-width($width) {
-    @media screen and (max-width: $width - 1) {
+    @media screen and (max-width: $width - 1px) {
         @content;
     }
 }

@@ -1,8 +1,9 @@
 import React from 'react';
 import classnames from 'classnames';
 
-import styles from './socials.scss';
 import { Icons } from 'common/components';
+
+import styles from './socials.scss';
 
 interface ISocialsProps {
     className?: string;

@@ -7,6 +7,8 @@
     display: flex;
     justify-content: space-between;
 
+    max-width: 250px;
+
     &__item {
         color: $color-gray40;
         & > svg {

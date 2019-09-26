@@ -9,11 +9,10 @@ type FeedbackSectionProps = {
         title: string;
         description?: string;
         titleTag?: 'h1' | 'h2' | 'h3' | 'h4';
-    }
+    };
 };
 
 export default React.memo(function FeedbackSection(props: FeedbackSectionProps): JSX.Element {
-
     const { topic } = props;
 
     const settings: Settings = {
@@ -30,18 +29,22 @@ export default React.memo(function FeedbackSection(props: FeedbackSectionProps):
         slidesToScroll: 1,
         slidesToShow: 1,
         cssEase: 'linear',
-        centerPadding: '50px',
+        centerPadding: '20px',
     };
 
     return (
         <Section className={styles.section}>
-            {topic ? <Topic
-                isCenter
-                className={styles.topic}
-                titleText={topic.title}
-                titleTag={topic.titleTag}
-                descText={topic.description}
-            /> : undefined}
+            {topic ? (
+                <Topic
+                    isCenter
+                    className={styles.topic}
+                    titleText={topic.title}
+                    titleTag={topic.titleTag}
+                    descText={topic.description}
+                />
+            ) : (
+                undefined
+            )}
 
             <TwoIPhones className={styles.phones} />
 
@@ -55,11 +58,10 @@ export default React.memo(function FeedbackSection(props: FeedbackSectionProps):
                 </Slider>
             </div>
 
-            <PartnerList className={styles.partners} />
+            <PartnerList isSmall className={styles.partners} />
         </Section>
     );
 });
-
 
 function FeedbackCard(props: UserFeedback) {
     return (
