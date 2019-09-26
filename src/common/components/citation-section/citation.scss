@@ -2,9 +2,10 @@
 @import "../../styles/media";
 
 .section {
-    height: 750px;
     display: flex;
     align-items: center;
+
+    margin-top: 150px;
 
     &__content {
         padding-top: 0;
@@ -15,6 +16,10 @@
 .title {
     margin-bottom: 40px;
     max-width: 1070px;
+    color: #0b0c0d;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 40px;
 }
 
 .author {

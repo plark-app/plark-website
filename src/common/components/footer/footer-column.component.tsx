@@ -1,18 +1,51 @@
-import React from 'react';
-import styles from './footer.scss';
+import React, { useState } from 'react';
+import classNames from 'classnames';
+import { compose } from 'recompose';
 
-type FooterColumnProps = {
+import withWindow, { WithWindowProps } from 'common/components/with-window';
+
+import styles from './footer-column.scss';
+import * as CSSTransition from 'react-transition-group/CSSTransition';
+
+type FooterColumnOuterProps = {
     title: string;
     children?: React.ReactNode;
     style?: any;
+    opened?: boolean;
 };
 
-export default React.memo(function FooterColumn(props: FooterColumnProps): JSX.Element {
-    return (
-        <nav className={styles.navColumn} style={props.style}>
-            <h4 className={styles.navColumnTitle}>{props.title}</h4>
+type FooterColumnInnerProps = FooterColumnOuterProps & WithWindowProps;
 
-            {props.children}
-        </nav>
+export function FooterColumn(props: FooterColumnInnerProps): JSX.Element {
+    const [open, setOpen] = useState(false);
+    const { dimensions } = props;
+    const { width } = dimensions;
+    if (width < 768) {
+        return (
+            <div
+                className={classNames(styles.footerColumn, { [styles.isOpen]: open || props.opened })}
+                style={props.style}
+                onClick={() => setOpen(!open)}
+            >
+                <div className={styles.footerColumnTitle}>
+                    <h4 className={styles.footerColumnTitleText}>{props.title}</h4>
+                    {!props.opened && <div className={styles.footerColumnTriangle} />}
+                </div>
+                <CSSTransition in={open || props.opened} classNames={'faded'} timeout={300} unmountOnExit>
+                    <div className={styles.footerColumnList}>{props.children}</div>
+                </CSSTransition>
+            </div>
+        );
+    }
+
+    return (
+        <div className={classNames(styles.footerColumn, styles.isOpen)} style={props.style}>
+            <div className={styles.footerColumnTitle}>
+                <h4 className={styles.footerColumnTitleText}>{props.title}</h4>
+            </div>
+            <div className={styles.footerColumnList}>{props.children}</div>
+        </div>
     );
-});
+}
+
+export default compose<FooterColumnInnerProps, FooterColumnOuterProps>(withWindow)(FooterColumn);

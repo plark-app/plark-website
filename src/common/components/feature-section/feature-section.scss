@@ -1,40 +1,73 @@
-@import "../../styles/colors";
-@import "../../styles/media";
+@import '../../styles/colors';
+@import '../../styles/media';
 
-.section {
+.feature-section {
     &__content {
-        min-height: 100vh;
         display: flex;
-        justify-content: space-between;
-        align-items: center;
+        flex-direction: column-reverse;
+        justify-content: flex-start;
+        align-items: flex-start;
+
+        padding-top: 100px;
+        padding-bottom: 0;
+
+        @include from-md-width() {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
 
         &.is-ltr {
-            flex-direction: row-reverse;
+            @include from-md-width() {
+                flex-direction: row-reverse;
+            }
+        }
+    }
+
+    &__content.is-ltr .feature-section__text {
+        @include from-md-width {
+            margin-left: 50px;
+            margin-right: 0;
+        }
+    }
+
+    &__text {
+        max-width: 500px;
+        width: 100%;
+
+        @include from-md-width {
+            margin-right: 50px;
+            margin-left: 0;
+        }
+
+        @include from-lg-width {
+            margin: 0;
+        }
+
+        &__descr {
+            font-size: 24px;
+            line-height: 1.33;
+            font-weight: bold;
+            color: $color-dark;
+        }
+
+        &__title {
+            margin-bottom: 30px;
+            color: $color-primary;
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 32px;
         }
     }
 }
 
-.content {
-    max-width: 500px;
-    width: 100%;
-
-    &__text {
-        font-size: 24px;
-        line-height: 1.33;
-        font-weight: bold;
-        color: $color-dark;
-    }
-
-    &__title {
-        margin-bottom: 30px;
-        color: $color-primary;
-        font-size: 24px;
-        font-weight: 700;
-        line-height: 32px;
-    }
-}
-
 .picture {
+    margin-bottom: 50px;
+
+    @include from-md-width() {
+        margin-bottom: 0;
+    }
+
     &__image {
         width: 220px;
 

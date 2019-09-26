@@ -21,11 +21,13 @@ export default function Home(): JSX.Element {
         <>
             <Header isWhite />
 
-            <StickIphone picture={{
-                src: '/img/main-screen.png',
-                alt: 'Plark Main screen',
-                title: 'PLark Main screen',
-            }}>
+            <StickIphone
+                picture={{
+                    src: '/img/main-screen.png',
+                    alt: 'Plark Main screen',
+                    title: 'PLark Main screen',
+                }}
+            >
                 <IntroSection
                     title={i18n.gettext('No sh*t wallet')}
                     subtitle={i18n.gettext('Just a friendliest crypto currency wallet app you will use')}
@@ -49,6 +51,7 @@ export default function Home(): JSX.Element {
                 />
 
                 <BgTitleSection
+                    withMobile
                     title="one wallet for everything"
                     content={
                         'No more bunch of wallets and apps, no more messing with passwords and backup phrases. ' +

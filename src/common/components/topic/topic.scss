@@ -9,9 +9,13 @@
         margin: 0;
         padding: 0;
         line-height: 1.1667;
-        font-size: 60px;
+        font-size: 28px;
         font-weight: 700;
         white-space: pre-line;
+
+        @include from-md-width() {
+            font-size: 60px;
+        }
 
         .topic.is-center > & {
             margin-left: auto;
@@ -20,13 +24,17 @@
     }
 
     &__desc {
-        font-size: 16px;
+        font-size: 14px;
         font-weight: bold;
         line-height: 1.375;
         color: $color-text-secondary;
 
         display: block;
         max-width: 630px;
+
+        @include from-md-width() {
+            font-size: 16px;
+        }
 
         .topic.is-white > & {
             color: currentColor;

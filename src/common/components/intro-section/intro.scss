@@ -11,25 +11,37 @@
     }
 
     &__section-content {
-        min-height: 640px;
         display: flex;
-        align-items: flex-end;
+        flex-direction: column;
+        justify-content: center;
 
-        padding-bottom: 50px;
+        padding-bottom: 40px;
+
+        @include from-md-width {
+            height: 100vh;
+        }
     }
 
     &__topic {
         &-shit {
-            font-size: 80px;
+            font-size: 36px;
             line-height: 70px;
-            font-weight: bold;
+            font-weight: 700;
             margin-bottom: 16px;
             color: $color-text-dark;
+
+            @include from-md-width {
+                font-size: 60px;
+            }
+
+            @include from-lg-width {
+                font-size: 80px;
+            }
         }
 
         &-title {
             font-size: 16px;
-            font-weight: bold;
+            font-weight: 700;
             color: $color-text-secondary;
         }
     }
@@ -46,19 +58,42 @@
             letter-spacing: 0.27em;
         }
     }
+
+    &__phone-section {
+        margin-top: 50px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 .partners {
-    &__content {
-        padding-top: 20px;
-        padding-bottom: 20px;
+    &__item {
+        margin-top: 0;
+        max-height: 27px;
     }
 
     &__list {
-        max-width: calc(100% - 360px);
-    }
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
 
-    &__item {
-        margin-right: 20px;
+        margin-top: 50px;
+
+        width: 100%;
+        min-height: 60px;
+
+        @include from-md-width {
+            max-width: 480px;
+        }
+
+        @include from-lg-width {
+            max-width: 700px;
+        }
+
+        @include from-xl-width {
+            max-width: 760px;
+        }
     }
 }

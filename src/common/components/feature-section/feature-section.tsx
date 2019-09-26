@@ -34,16 +34,20 @@ export default React.memo(function FeatureSection(props: FeatureSectionProps): J
         titleClassName,
     } = props;
 
-    const contentClass = cn(styles.sectionContent, {
+    const contentClass = cn(styles.featureSectionContent, {
         [styles.isLtr]: props.isLtr,
     });
 
     return (
-        <Section className={styles.section} contentClassName={contentClass}>
-            <div className={styles.content}>
+        <Section className={styles.featureSection} contentClassName={contentClass}>
+            <div className={styles.featureSectionText}>
                 {titleText &&
-                    React.createElement('p', { className: cn(styles.contentTitle, titleClassName) }, titleText)}
-                {React.createElement(textTag, { className: cn(styles.contentText, textClassName) }, text)}
+                    React.createElement(
+                        'p',
+                        { className: cn(styles.featureSectionTextTitle, titleClassName) },
+                        titleText,
+                    )}
+                {React.createElement(textTag, { className: cn(styles.featureSectionTextDescr, textClassName) }, text)}
                 {withoutLink ? (
                     undefined
                 ) : (

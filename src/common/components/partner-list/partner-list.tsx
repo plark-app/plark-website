@@ -14,7 +14,6 @@ type PartnerListProps = {
     itemClassName?: string;
 };
 
-
 export default React.memo(function PartnerList(props: PartnerListProps): JSX.Element {
     const containerClass = cn(styles.list, { [styles.isSmall]: props.isSmall }, props.className);
     const itemClassName = cn(styles.partner, props.itemClassName);
@@ -23,12 +22,13 @@ export default React.memo(function PartnerList(props: PartnerListProps): JSX.Ele
         <div className={containerClass}>
             {partnerList.map((par: PartnerItem, i: number) => {
                 return (
-                    <a key={i}
-                       href={par.website}
-                       rel="nofollow"
-                       target="_blank"
-                       className={styles.partnerLink}
-                       title={par.title}
+                    <a
+                        key={i}
+                        href={par.website}
+                        rel="nofollow"
+                        target="_blank"
+                        className={styles.partnerLink}
+                        title={par.title}
                     >
                         {React.createElement<any>(par.logo, { className: itemClassName })}
                     </a>
@@ -38,31 +38,36 @@ export default React.memo(function PartnerList(props: PartnerListProps): JSX.Ele
     );
 });
 
-
 type PartnerItem = {
     title: string;
     logo: React.ComponentType;
     website: string;
 };
 
-const partnerList: PartnerItem[] = [{
-    title: 'Kuna.io',
-    logo: KunaLogoSvg,
-    website: 'https://kuna.io',
-}, {
-    title: 'Changelly',
-    logo: ChangellyLogoSvg,
-    website: 'https://changelly.com',
-}, {
-    title: 'ZeroHub',
-    logo: ZeroHubLogoSvg,
-    website: 'https://www.0hub.com',
-}, {
-    title: 'Coinswitch',
-    logo: CoinswitchLogoSvg,
-    website: 'https://coinswitch.co',
-}, {
-    title: 'WalletTopUp',
-    logo: WalletTopupLogoSvg,
-    website: 'http://wallettopup.co.uk',
-}];
+const partnerList: PartnerItem[] = [
+    {
+        title: 'Kuna.io',
+        logo: KunaLogoSvg,
+        website: 'https://kuna.io',
+    },
+    {
+        title: 'Changelly',
+        logo: ChangellyLogoSvg,
+        website: 'https://changelly.com',
+    },
+    {
+        title: 'ZeroHub',
+        logo: ZeroHubLogoSvg,
+        website: 'https://www.0hub.com',
+    },
+    {
+        title: 'Coinswitch',
+        logo: CoinswitchLogoSvg,
+        website: 'https://coinswitch.co',
+    },
+    {
+        title: 'WalletTopUp',
+        logo: WalletTopupLogoSvg,
+        website: 'http://wallettopup.co.uk',
+    },
+];

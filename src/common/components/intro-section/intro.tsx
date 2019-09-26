@@ -1,14 +1,18 @@
 import React from 'react';
+import { compose } from 'recompose';
 import { Section, DownloadCell, PartnerList } from 'common/components';
+import withWindow, { WithWindowProps } from 'common/components/with-window';
+
 import styles from './intro.scss';
 
-type IntroBlockProps = {
+type IntroOuterProps = {
     title: string;
     subtitle: string;
     subtitleTag?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p';
-};
+}
+type IntroInnerProps = IntroOuterProps & WithWindowProps;
 
-export default function IntroSection(props: IntroBlockProps): JSX.Element {
+function IntroSection(props: IntroInnerProps): JSX.Element {
     const { subtitleTag = 'h2' } = props;
 
     return (
@@ -17,14 +21,17 @@ export default function IntroSection(props: IntroBlockProps): JSX.Element {
                 <div className={styles.introTopic}>
                     <h3 className={styles.introTopicShit}>{props.title}</h3>
                     {React.createElement(subtitleTag, { className: styles.introTopicTitle }, props.subtitle)}
-
                     <DownloadCell />
                 </div>
-            </Section>
-
-            <Section className={styles.partnersSection} contentClassName={styles.partnersContent}>
                 <PartnerList isSmall className={styles.partnersList} itemClassName={styles.partnersItem} />
             </Section>
+            {props.dimensions.width < 768 && (
+                <div className={styles.introPhoneSection}>
+                    <img src="/img/main-screen.png" alt={''} />
+                </div>
+            )}
         </>
     );
 }
+
+export default compose<IntroInnerProps, IntroOuterProps>(withWindow)(IntroSection);

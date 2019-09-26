@@ -7,6 +7,7 @@ import { Section, Topic, DownloadCell } from 'common/components';
 import ChartSvg from 'resources/svgs/chart.component.svg';
 
 import styles from './card-section.scss';
+import { CardsList } from './cards-list';
 
 type CardSectionProps = {
     title: string;
@@ -53,14 +54,7 @@ export default function CardSection(props: CardSectionProps): JSX.Element {
                 </div>
             )}
 
-            <div className={styles.cardImages}>
-                <img
-                    src="/img/exotic-cards.png"
-                    alt="UnionPay / American express cards"
-                    className={styles.cardImagesItem}
-                />
-                <img src="/img/common-cards.png" alt="Visa/Mastercard cards" className={styles.cardImagesItem} />
-            </div>
+            <CardsList className={styles.cardImages} />
             {props.caption ? (
                 <p className={styles.caption}>{props.caption}</p>
             ) : (

@@ -1,9 +1,14 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
+
 import cn from 'classnames';
-import { useI18n, ITranslationsAdapter, withTranslations } from 'slim-i18n';
+import { CSSTransition } from 'react-transition-group';
+import { compose } from 'recompose';
+import { useI18n, withTranslations, WithTranslationsProps } from 'slim-i18n';
 
 import { NavLink, StoreBadge } from 'common/components';
 import BurgerButton from 'common/components/burger-button';
+import withWindow, { WithWindowProps } from 'common/components/with-window';
 
 import PlatformList from 'common/utils/install-platforms';
 
@@ -11,92 +16,50 @@ import PlarkLogo from 'resources/svgs/plark-logo.component.svg';
 
 import styles from './header.scss';
 
-type DropdownMenuProps = {
-    className?: string;
-};
-
-function DropdownMenu({ className }: DropdownMenuProps): JSX.Element | null {
-    const i18n = useI18n();
-    return (
-        <nav className={cn(styles.dropdownMenu, className)}>
-            <a href="https://community.plark.io/" className={styles.dropdownMenuItem}>
-                {i18n.gettext('Community')}
-            </a>
-            <a href="/blog" className={styles.dropdownMenuItem}>
-                {i18n.gettext('Blog')}
-            </a>
-        </nav>
-    );
-}
-
-type HeaderProps = {
-    isWhite?: boolean;
-    i18n: ITranslationsAdapter;
-};
-
 type HeaderState = {
     openedMenu: boolean;
-    windowWidth: number;
 };
 
-class Header extends React.Component<HeaderProps, HeaderState> {
+type HeaderOuterProps = {
+    isWhite?: boolean;
+};
+
+type HeaderInnerProps = HeaderOuterProps & WithTranslationsProps & WithWindowProps;
+
+class Header extends React.Component<HeaderInnerProps, HeaderState> {
     public state: HeaderState = {
         openedMenu: false,
-        windowWidth: 1000,
     };
-
-    public componentDidMount(): void {
-        this.setState({
-            windowWidth: window.innerWidth,
-        });
-        window.addEventListener('resize', this._resizeHandler);
-    }
-
-    public componentWillUnmount(): void {
-        window.removeEventListener('resize', this._resizeHandler);
-    }
-
     public render(): JSX.Element {
-        const { isWhite, i18n } = this.props;
+        const { isWhite, i18n, dimensions } = this.props;
+        const { width } = dimensions;
         return (
             <header id="header" className={cn(styles.header, isWhite && styles.isWhite)}>
-                {this._renderMobileMenu()}
+                {width < 768 && this._renderMobileMenu()}
                 <NavLink to="/">
                     <PlarkLogo height={20} className={styles.headerLogo} />
                 </NavLink>
-                <nav className={styles.nav}>
-                    <a href="https://community.plark.io/" className={styles.navUnit}>
+                <nav className={styles.headerNav}>
+                    <a href="https://community.plark.io/" className={styles.headerNavUnit}>
                         {i18n.gettext('Community')}
                     </a>
-                    <a href="/blog" className={styles.navUnit}>
+                    <a href="/blog" className={styles.headerNavUnit}>
                         {i18n.gettext('Blog')}
                     </a>
-                    <StoreBadge className={styles.navBadge} platform={PlatformList.apple} height={35} />
+                    <StoreBadge className={styles.headerNavBadge} platform={PlatformList.apple} height={35} />
                 </nav>
             </header>
         );
     }
 
     private _renderMobileMenu = (): JSX.Element | null => {
-        const { windowWidth, openedMenu } = this.state;
-
-        if (windowWidth < 540) {
-            return (
-                <>
-                    <BurgerButton className={styles.dropdownMenuBtn} onClick={this._toggleMenu} />
-                    {openedMenu && <DropdownMenu className={cn({ [styles.isOpened]: openedMenu })} />}
-                </>
-            );
-        }
-        return null;
-    };
-
-    private _resizeHandler = () => {
-        if (typeof window !== undefined) {
-            this.setState({
-                windowWidth: window.innerWidth,
-            });
-        }
+        const { openedMenu } = this.state;
+        return (
+            <>
+                <BurgerButton className={styles.headerDropdownMenuBtn} onClick={this._toggleMenu} />
+                <DropdownMenu opened={openedMenu} />
+            </>
+        );
     };
 
     private _toggleMenu = () => {
@@ -106,4 +69,29 @@ class Header extends React.Component<HeaderProps, HeaderState> {
     };
 }
 
-export default withTranslations(Header);
+type DropdownMenuProps = {
+    className?: string;
+    opened: boolean;
+};
+
+function DropdownMenu({ className, opened }: DropdownMenuProps): JSX.Element | null {
+    const i18n = useI18n();
+    return ReactDOM.createPortal(
+        <CSSTransition in={opened} classNames={'mobile-menu'} timeout={300} unmountOnExit>
+            <nav className={cn(styles.headerDropdownMenu, className)}>
+                <a href="https://community.plark.io/" className={styles.headerDropdownMenuItem}>
+                    {i18n.gettext('Community')}
+                </a>
+                <a href="/blog" className={styles.headerDropdownMenuItem}>
+                    {i18n.gettext('Blog')}
+                </a>
+            </nav>
+        </CSSTransition>,
+        document.body,
+    );
+}
+
+export default compose<HeaderInnerProps, HeaderOuterProps>(
+    withTranslations,
+    withWindow,
+)(Header);

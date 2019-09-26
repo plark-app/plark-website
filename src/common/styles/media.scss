@@ -17,27 +17,27 @@
 }
 // from width
 @mixin from-xxl-width() {
-    @include from-width($xxl-width) {
+    @include from-width($xxl-width - 1) {
         @content;
     }
 }
 @mixin from-xl-width() {
-    @include from-width($xl-width) {
+    @include from-width($xl-width - 1) {
         @content;
     }
 }
 @mixin from-lg-width() {
-    @include from-width($lg-width) {
+    @include from-width($lg-width - 1) {
         @content;
     }
 }
 @mixin from-md-width() {
-    @include from-width($md-width) {
+    @include from-width($md-width - 1) {
         @content;
     }
 }
 @mixin from-sm-width() {
-    @include from-width($sm-width) {
+    @include from-width($sm-width - 1) {
         @content;
     }
 }
