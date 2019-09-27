@@ -17,10 +17,6 @@
     margin: 100px 0;
     margin-top: 100px;
 
-    img {
-        max-width: 160px;
-    }
-
     @include from-md-width() {
         margin-top: 160px;
         margin-bottom: 160px;

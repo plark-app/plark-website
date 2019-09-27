@@ -7,7 +7,7 @@ type FeedbackSectionProps = {
         title: string;
         description?: string;
         titleTag?: 'h1' | 'h2' | 'h3' | 'h4';
-    }
+    };
 
     texts: Array<{
         title?: string;
@@ -20,19 +20,25 @@ export default React.memo(function ColumnsSection(props: FeedbackSectionProps): 
     const { topic, texts } = props;
 
     return (
-        <Section className={styles.section}>
-            {topic ? <Topic
-                isCenter
-                className={styles.topic}
-                titleText={topic.title}
-                titleTag={topic.titleTag}
-                descText={topic.description}
-                maxWidth={900}
-            /> : undefined}
+        <>
+            <Section className={styles.section}>
+                {topic ? (
+                    <Topic
+                        isCenter
+                        className={styles.topic}
+                        titleText={topic.title}
+                        titleTag={topic.titleTag}
+                        descText={topic.description}
+                        maxWidth={900}
+                    />
+                ) : (
+                    undefined
+                )}
 
-            <TwoIPhones className={styles.phones} />
+                <TwoIPhones className={styles.phones} />
 
-            <Subcopy texts={texts} />
-        </Section>
+                <Subcopy texts={texts} />
+            </Section>
+        </>
     );
 });

@@ -1,3 +1,6 @@
+@import '../../styles/vars';
+@import '../../styles/media';
+
 .wallet-columns {
     display: flex;
     flex-direction: column;
@@ -10,23 +13,29 @@
     }
 
     &__descr {
-        margin: 0 auto;
+        margin: 0 auto 70px;
         color: #0b0c0d;
         font-size: 32px;
         font-weight: 700;
 
         max-width: 900px;
-        margin-bottom: 70px;
     }
 
     &__content {
         display: flex;
-        justify-content: space-between;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
 
         margin: 0 auto;
 
         width: 100%;
         max-width: 900px;
+
+        @include from-md-width {
+            flex-direction: row;
+            justify-content: space-between;
+        }
 
         &-text {
             text-align: left;
@@ -35,6 +44,12 @@
             font-size: 20px;
             font-weight: 400;
             line-height: 26px;
+
+            margin-bottom: 50px;
+
+            @include from-md-width {
+                margin-bottom: 0;
+            }
         }
     }
 }
