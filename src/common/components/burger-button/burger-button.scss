@@ -4,8 +4,8 @@
     flex-direction: column;
     justify-content: space-between;
 
-    width: 25px;
-    height: 11px;
+    width: 20px;
+    height: 20px;
 
     background-color: transparent;
 
@@ -13,14 +13,51 @@
     border: none;
     outline: none;
 
+    position: relative;
+
+    transition: all ease-in-out 0.5s;
+
     &:hover {
         cursor: pointer;
     }
 
-    span {
-        display: flex;
-        width: 25px;
-        height: 3px;
+
+    &:before,
+    &:after {
+        position: absolute;
+        content: ' ';
+        width: 3px;
+
         background-color: #0b0c0d;
+
+        transform: rotate(90deg);
+
+        transition: all ease-in-out 0.3s;
+    }
+
+    &:before {
+        height: 25px;
+        transform: translateY(calc(-25px / 4)) translateX(calc(25px / 2)) rotate(90deg);
+    }
+
+    &:after {
+        height: 12.5px;
+        transform: translateY(calc(25px / 4)) translateX(calc(12.5px / 2)) rotate(90deg);
+    }
+
+    &.is-open {
+
+        &:before,
+        &:after {
+            height: 20px;
+        }
+
+        &:before {
+            transform: translateX(calc(25px / 2)) rotate(135deg);
+        }
+
+        &:after {
+            transform: translateX(calc(25px / 2)) rotate(45deg);
+        }
     }
 }
