@@ -31,3 +31,5 @@ export { default as OpenSourceSection } from './opensource-section';
 export { default as WalletFeaturesSection } from './wallet-features-section';
 export { default as WalletColumnsSection } from './wallet-columns-section';
 export { default as Socials } from './socials';
+
+export { IMenuRoute, IMenuRouteLink, menuRoutes } from './menu-routes';
