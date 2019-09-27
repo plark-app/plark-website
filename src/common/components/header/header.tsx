@@ -18,6 +18,7 @@ import styles from './header.scss';
 
 type HeaderState = {
     openedMenu: boolean;
+    scrolled: boolean;
 };
 
 type HeaderOuterProps = {
@@ -29,12 +30,26 @@ type HeaderInnerProps = HeaderOuterProps & WithTranslationsProps & WithWindowPro
 class Header extends React.Component<HeaderInnerProps, HeaderState> {
     public state: HeaderState = {
         openedMenu: false,
+        scrolled: false,
     };
+
+    public componentDidMount(): void {
+        document.addEventListener('scroll', this._handleScroll);
+    }
+
+    public componentWillUnmount(): void {
+        document.removeEventListener('scroll', this._handleScroll);
+    }
+
     public render(): JSX.Element {
         const { isWhite, i18n, dimensions } = this.props;
         const { width } = dimensions;
+        const { scrolled } = this.state;
         return (
-            <header id="header" className={cn(styles.header, isWhite && styles.isWhite)}>
+            <header
+                id="header"
+                className={cn(styles.header, isWhite && styles.isWhite, { [styles.isScrolled]: scrolled })}
+            >
                 {width < 768 && this._renderMobileMenu()}
                 <NavLink to="/">
                     <PlarkLogo height={20} className={styles.headerLogo} />
@@ -67,6 +82,13 @@ class Header extends React.Component<HeaderInnerProps, HeaderState> {
             openedMenu: !this.state.openedMenu,
         });
     };
+    private _handleScroll = (): void => {
+        if (typeof window !== undefined) {
+            this.setState({
+                scrolled: window.scrollY > 100,
+            });
+        }
+    }
 }
 
 type DropdownMenuProps = {

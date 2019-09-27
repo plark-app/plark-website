@@ -17,6 +17,9 @@ export default function Footer(): JSX.Element {
             <Section className={styles.footer} contentClassName={styles.footerContent}>
                 <div className={styles.footerMain}>
                     {menuRoutes.map((column: IMenuRoute, i: number) => {
+                        if (column.columnType === 'hide_in_footer') {
+                            return null;
+                        }
                         return (
                             <FooterColumn
                                 title={column.title(i18n)}
@@ -77,16 +80,20 @@ function ColumnLinks({ links }: ColumnLinksProps): JSX.Element {
             {links.map((link: IMenuRouteLink, i: number) => {
                 if (link.source === 'external') {
                     return (
-                        <a key={i} href={link.to} className={styles.navLink} target={'_blank'}>
-                            {link.text(i18n)}
-                            {link.additional && link.additional}
-                        </a>
+                        <div key={i}>
+                            <a key={i} href={link.to} className={styles.navLink} target={'_blank'}>
+                                {link.text(i18n)}
+                                {link.additional && link.additional}
+                            </a>
+                        </div>
                     );
                 }
                 return (
-                    <NavLink key={i} to={link.to} className={styles.navLink}>
-                        {link.text(i18n)}
-                    </NavLink>
+                    <div key={i}>
+                        <NavLink key={i} to={link.to} className={styles.navLink}>
+                            {link.text(i18n)}
+                        </NavLink>
+                    </div>
                 );
             })}
         </>
