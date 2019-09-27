@@ -83,7 +83,7 @@
         display: flex;
         flex-direction: column;
 
-        position: absolute;
+        position: fixed;
         z-index: 10;
 
         top: 50px;
@@ -109,6 +109,41 @@
 
         &-btn {
             margin-right: 10px;
+        }
+    }
+
+    &__close-menu {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        border: none;
+        background-color: transparent;
+        outline: none;
+
+        padding: 0;
+
+        width: 25px;
+        margin-right: 10px;
+
+        position: relative;
+
+
+        &:before,
+        &:after {
+            position: absolute;
+            content: ' ';
+            height: 22px;
+            width: 3px;
+            background-color: #0b0c0d;
+        }
+
+        &:before {
+            transform: rotate(45deg);
+        }
+
+        &:after {
+            transform: rotate(-45deg);
         }
     }
 }

@@ -34,10 +34,6 @@ const cardsList: Card[] = [
         svg: DinersClubSvg,
     },
     {
-        name: 'Card',
-        svg: DinersClubSvg,
-    },
-    {
         name: 'Discover card',
         svg: DiscoverSvg,
     },

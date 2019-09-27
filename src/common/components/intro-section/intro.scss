@@ -65,6 +65,19 @@
         display: flex;
         justify-content: center;
         align-items: center;
+
+        > img {
+            width: 100%;
+            height: 100%;
+
+            max-width: 200px;
+            max-height: 500px;
+
+            @include from-md-width {
+                max-width: 269px;
+                max-height: 700px;
+            }
+        }
     }
 }
 
