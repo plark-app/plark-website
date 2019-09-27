@@ -15,27 +15,33 @@
     right: 0;
 
     z-index: 1000;
-    transition: all 0.2s;
     background-color: #eef1f5;
+    border-bottom: 1px solid #0b0c0d;
     box-shadow: 0 1px 0 0 transparent;
 
-    border-bottom: 1px solid #0b0c0d;
+    box-sizing: border-box;
+    transition: all ease-in-out 0.2s;
 
     @include from-md-width {
         margin: 0 auto;
         max-width: 1362px;
         height: 105px;
-        border-bottom: 0;
-        background-color: transparent;
+        border-bottom-color: transparent;
+    }
+
+    &.-is-white {
+        transition: all 0.4s;
+    }
+
+    &.is-scrolled {
+        @include from-md-width {
+            border-bottom-color: #dfe4eb;
+        }
     }
 
 
     &__logo {
         display: block;
-    }
-
-    &.-is-white {
-        transition: all 0.4s;
     }
 
     &__section {

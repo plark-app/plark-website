@@ -24,23 +24,26 @@ export default function SitemapPage(): JSX.Element {
                                 <h3 className={styles.containerColumnTitle}>{route.title(i18n)}</h3>
                                 <div className={styles.containerColumnLinks}>
                                     {route.links.map((link: IMenuRouteLink, j: number) => {
-                                        if (link.source === 'external') {
-                                            return (
-                                                <a
-                                                    key={j}
-                                                    href={link.to}
-                                                    className={styles.containerColumnItem}
-                                                    target={'_blank'}
-                                                >
-                                                    {link.text(i18n)}
-                                                    {link.additional && link.additional}
-                                                </a>
-                                            );
-                                        }
                                         return (
-                                            <NavLink key={j} to={link.to} className={styles.containerColumnItem}>
-                                                {link.text(i18n)}
-                                            </NavLink>
+                                            <div key={j} className={styles.containerColumnItem}>
+                                                {link.source === 'external' ? (
+                                                    <a
+                                                        href={link.to}
+                                                        className={styles.containerColumnLink}
+                                                        target={'_blank'}
+                                                    >
+                                                        {link.text(i18n)}
+                                                        {link.additional && link.additional}
+                                                    </a>
+                                                ) : (
+                                                    <NavLink
+                                                        to={link.to}
+                                                        className={styles.containerColumnLink}
+                                                    >
+                                                        {link.text(i18n)}
+                                                    </NavLink>
+                                                )}
+                                            </div>
                                         );
                                     })}
                                 </div>

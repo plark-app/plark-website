@@ -10,8 +10,72 @@ export interface IMenuRouteLink {
 export interface IMenuRoute {
     title: TranslateFunction;
     links: IMenuRouteLink[];
-    columnType?: 'get_in_touch';
+    columnType?: 'get_in_touch' | 'hide_in_footer';
 }
+
+const cryptoCurrencies: IMenuRouteLink[] = [
+    {
+        to: '/bitcoin-wallet',
+        text: __('Bitcoin'),
+    },
+    {
+        to: '/bitcoincash-wallet',
+        text: __('Bitcoin Cash'),
+    },
+    {
+        to: '/cardano-wallet',
+        text: __('Cardano'),
+    },
+    {
+        to: '/dash-wallet',
+        text: __('Dash'),
+    },
+    {
+        to: '/dogecoin-wallet',
+        text: __('Dogecoin'),
+    },
+
+    {
+        to: '/eos-wallet',
+        text: __('EOS'),
+    },
+    {
+        to: '/ethereum-wallet',
+        text: __('Ethereum'),
+    },
+    {
+        to: '/iota-wallet',
+        text: __('IOTA'),
+    },
+    {
+        to: '/litecoin-wallet',
+        text: __('Litecoin'),
+    },
+    {
+        to: '/monero-wallet',
+        text: __('Monero'),
+    },
+    {
+        to: '/neo-wallet',
+        text: __('NEO'),
+    },
+    {
+        to: '/ripple-wallet',
+        text: __('Ripple'),
+    },
+    {
+        to: '/stellar-wallet',
+        text: __('Stellar'),
+    },
+    {
+        to: '/tron-wallet',
+        text: __('Tron'),
+    },
+    {
+        to: '/zcash-wallet',
+        text: __('Zcash'),
+    },
+];
 
 export const menuRoutes: IMenuRoute[] = [
     {
@@ -69,6 +133,11 @@ export const menuRoutes: IMenuRoute[] = [
                 text: __('FAQs'),
             },
         ],
+    },
+    {
+        title: __('Cryptocurrencies'),
+        links: cryptoCurrencies,
+        columnType: 'hide_in_footer',
     },
     {
         title: __('Social'),
