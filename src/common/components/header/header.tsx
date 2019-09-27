@@ -56,7 +56,7 @@ class Header extends React.Component<HeaderInnerProps, HeaderState> {
         const { openedMenu } = this.state;
         return (
             <>
-                <BurgerButton className={styles.headerDropdownMenuBtn} onClick={this._toggleMenu} />
+                <BurgerButton opened={openedMenu} className={styles.headerDropdownMenuBtn} onClick={this._toggleMenu} />
                 <DropdownMenu opened={openedMenu} />
             </>
         );

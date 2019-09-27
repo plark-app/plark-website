@@ -85,12 +85,19 @@
 .card-section {
     &__steps {
         display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
 
         margin: 80px auto;
         max-width: 640px;
+
+        @include from-md-width {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
     }
 
     &__step {

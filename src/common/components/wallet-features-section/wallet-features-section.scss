@@ -1,9 +1,11 @@
 @import '../../styles/vars';
+@import '../../styles/media';
 @import '../../styles/colors';
 
 .wallet-feature-section {
     display: flex;
-    margin-top: 300px;
+
+    margin-top: 150px;
 
     &__list {
         display: flex;
@@ -16,25 +18,43 @@
         padding: 0;
 
         list-style-type: none;
-        max-height: 550px;
         flex-wrap: wrap;
 
         padding-top: 130px;
+
+        @include from-md-width {
+            max-height: 550px;
+        }
     }
 
     &__item {
-        margin: 25px 0;
+        margin: 25px auto;
+
+        @include from-md-width {
+            margin: 25px 0;
+        }
 
         &__title {
-            max-width: 270px;
+            max-width: 100%;
             color: $color-primary;
             font-size: 16px;
             font-weight: 700;
+
+            @include from-md-width {
+                max-width: 220px;
+            }
+
+            @include from-lg-width {
+                max-width: 270px;
+            }
         }
     }
 
     &__item--image {
-        margin: 0 50px;
+        margin: 0 auto;
+        @include from-md-width {
+            margin: 0 50px;
+        }
     }
 
     &__image {

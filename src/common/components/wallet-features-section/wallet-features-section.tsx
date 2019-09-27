@@ -1,5 +1,8 @@
 import React from 'react';
 import classnames from 'classnames';
+import { compose } from 'recompose';
+
+import withWindow, { WithWindowProps } from 'common/components/with-window';
 
 import styles from './wallet-features-section.scss';
 
@@ -7,26 +10,31 @@ export interface IWalletFeaturesItem {
     title: string;
     descr?: string;
 }
-export interface IWalletFeaturesSectionProps {
+
+export type WalletFeaturesSectionOuterProps = {
     featuresList: IWalletFeaturesItem[];
     sectionClassName?: string;
     listClassName?: string;
     imgClassName?: string;
-}
+};
 
-export default function WalletFeaturesSection({
+export type WalletFeaturesSectionInnerProps = WalletFeaturesSectionOuterProps & WithWindowProps;
+
+function WalletFeaturesSection({
     featuresList,
     sectionClassName,
     listClassName,
     imgClassName,
-}: IWalletFeaturesSectionProps): JSX.Element {
-    const phoneOrder: number = Math.floor(featuresList.length / 2);
+    dimensions,
+}: WalletFeaturesSectionInnerProps): JSX.Element {
+    const { width } = dimensions;
+    const phoneOrder: number = width < 768 ? -1 : Math.floor((featuresList.length - 1) / 2);
     return (
         <div className={classnames(styles.walletFeatureSection, sectionClassName)}>
             <ul className={classnames(styles.walletFeatureSectionList, listClassName)}>
                 {featuresList.map((item: IWalletFeaturesItem, i: number) => (
                     <li
-                        style={{ order: i, textAlign: i > 3 ? 'left' : 'right' }}
+                        style={{ order: i, textAlign: width >= 768 ? (i > 3 ? 'left' : 'right') : 'center' }}
                         key={i}
                         className={styles.walletFeatureSectionItem}
                     >
@@ -44,3 +52,7 @@ export default function WalletFeaturesSection({
         </div>
     );
 }
+
+export default compose<WalletFeaturesSectionInnerProps, WalletFeaturesSectionOuterProps>(withWindow)(
+    WalletFeaturesSection,
+);

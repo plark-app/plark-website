@@ -6,13 +6,11 @@ import styles from './burger-button.scss';
 export type BurgerButtonProps = {
     className?: string;
     onClick: () => void;
+    opened: boolean;
 };
 
-export default function BurgerButton({ className, onClick }: BurgerButtonProps): JSX.Element {
+export default function BurgerButton({ className, onClick, opened }: BurgerButtonProps): JSX.Element {
     return (
-        <button onClick={onClick} className={classnames(styles.burgerButton, className)}>
-            <span />
-            <span style={{ width: '50%' }} />
-        </button>
+        <button onClick={onClick} className={classnames(styles.burgerButton, className, { [styles.isOpen]: opened })} />
     );
 }
