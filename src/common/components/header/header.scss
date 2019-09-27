@@ -1,3 +1,4 @@
+@import '../../styles/vars';
 @import '../../styles/media';
 @import '../../styles/colors';
 
@@ -7,6 +8,7 @@
     justify-content: flex-start;
 
     padding: 0 20px;
+    width: 100%;
     height: 50px;
 
     position: fixed;
@@ -24,9 +26,21 @@
 
     @include from-md-width {
         margin: 0 auto;
-        max-width: 1362px;
+        padding: 0 calc((100% - 728px) / 2);
         height: 105px;
         border-bottom-color: transparent;
+    }
+
+    @include from-lg-width {
+        padding: 0 calc((100% - 952px) / 2);
+    }
+
+    @include  from-xl-width {
+        padding: 0 calc((100% - 1100px) / 2);
+    }
+
+    @include from-xxl-width {
+        padding: 0 calc((100% - 1362px) / 2);
     }
 
     &.-is-white {
