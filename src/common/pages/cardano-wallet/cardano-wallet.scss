@@ -1,3 +1,5 @@
+@import '../../styles/media';
+
 .cardano-wallet {
 
     &__best-wallet {
@@ -28,10 +30,14 @@
             color: #0b0c0d;
             font-size: 48px;
             font-weight: 700;
-            line-height: 70px;
+            line-height: 1.5;
             text-align: center;
 
             margin: 0 auto;
+
+            @include from-md-width {
+                font-size: 48px;
+            }
         }
 
         &-text {
