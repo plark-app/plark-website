@@ -1,11 +1,10 @@
 import React from 'react';
 import { useI18n } from 'slim-i18n';
-import { routes } from 'common/routes';
-import { CommonRouteDescriptor } from 'common/utils/router';
-import { Footer, Header, NavLink, Section, Topic } from 'common/components';
+
+import { Footer, Header, NavLink, Section, Topic, IMenuRoute, IMenuRouteLink, menuRoutes } from 'common/components';
 import styles from './sitemap.scss';
 
-export default function SitemapPage() {
+export default function SitemapPage(): JSX.Element {
     const i18n = useI18n();
 
     return (
@@ -13,25 +12,38 @@ export default function SitemapPage() {
             <Header isWhite={true} />
 
             <Section>
-                <Topic
-                    titleText={i18n.gettext('Sitemap')}
-                    titleTag="h1"
-                />
+                <Topic className={styles.sitemapTopic} titleText={i18n.gettext('Sitemap')} titleTag="h1" />
 
                 <div className={styles.container}>
-                    {routes.map((route: CommonRouteDescriptor) => {
-                        const seoConfig = route.getSeoConfig && route.getSeoConfig(i18n);
-
-                        if (!seoConfig || !route.getSitemapOption) {
-                            return;
+                    {menuRoutes.map((route: IMenuRoute, i: number) => {
+                        if (route.columnType === 'get_in_touch') {
+                            return null;
                         }
-
                         return (
-                            <div key={route.id} className={styles.link}>
-                                <NavLink to={route.path} className={styles.linkUrl}>
-                                    {seoConfig.pageName || seoConfig.title}
-                                </NavLink>
-                                <p className={styles.linkDescription}>{seoConfig.description}</p>
+                            <div key={i} className={styles.containerColumn}>
+                                <h3 className={styles.containerColumnTitle}>{route.title(i18n)}</h3>
+                                <div className={styles.containerColumnLinks}>
+                                    {route.links.map((link: IMenuRouteLink, j: number) => {
+                                        if (link.source === 'external') {
+                                            return (
+                                                <a
+                                                    key={j}
+                                                    href={link.to}
+                                                    className={styles.containerColumnItem}
+                                                    target={'_blank'}
+                                                >
+                                                    {link.text(i18n)}
+                                                    {link.additional && link.additional}
+                                                </a>
+                                            );
+                                        }
+                                        return (
+                                            <NavLink key={j} to={link.to} className={styles.containerColumnItem}>
+                                                {link.text(i18n)}
+                                            </NavLink>
+                                        );
+                                    })}
+                                </div>
                             </div>
                         );
                     })}
