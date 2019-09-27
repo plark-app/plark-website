@@ -3,7 +3,7 @@
 .neo-wallet {
 
     &__best-wallet {
-        margin-top: 300px;
+        margin-top: 100px;
 
         &-topic {
             display: flex;
@@ -23,12 +23,15 @@
     }
 
     &__download-section {
-        margin-top: 300px;
+        @include from-md-width {
+            margin-top: 300px;
+        }
+        // margin-top: 300px;
 
         &-title {
             max-width: 800px;
             color: #0b0c0d;
-            font-size: 48px;
+            font-size: 24px;
             font-weight: 700;
             line-height: 1.5;
             text-align: center;

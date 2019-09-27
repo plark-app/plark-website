@@ -41,7 +41,7 @@
     }
 
     &__best-wallet {
-        margin-top: 300px;
+        margin-top: 100px;
 
         &-topic {
             display: flex;
@@ -69,7 +69,9 @@
     }
 
     &__download-section {
-        margin-top: 300px;
+        @include from-md-width {
+            margin-top: 300px;
+        }
 
         &-title {
             color: #0b0c0d;
@@ -78,7 +80,7 @@
             line-height: 1.5;
 
             @include from-md-width {
-                 font-size: 48px;
+                font-size: 48px;
             }
         }
 

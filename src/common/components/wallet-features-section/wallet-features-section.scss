@@ -4,7 +4,8 @@
 
 .wallet-feature-section {
     display: flex;
-    margin-top: 300px;
+
+    margin-top: 150px;
 
     &__list {
         display: flex;
@@ -27,7 +28,11 @@
     }
 
     &__item {
-        margin: 25px 0;
+        margin: 25px auto;
+
+        @include from-md-width {
+            margin: 25px 0;
+        }
 
         &__title {
             max-width: 100%;
@@ -46,7 +51,10 @@
     }
 
     &__item--image {
-        margin: 0 50px;
+        margin: 0 auto;
+        @include from-md-width {
+            margin: 0 50px;
+        }
     }
 
     &__image {
