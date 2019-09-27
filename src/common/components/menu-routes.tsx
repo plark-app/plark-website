@@ -15,16 +15,12 @@ export interface IMenuRoute {
 
 const cryptoCurrencies: IMenuRouteLink[] = [
     {
-        to: '/android-wallet',
-        text: __('Android'),
-    },
-    {
         to: '/bitcoin-wallet',
         text: __('Bitcoin'),
     },
     {
         to: '/bitcoincash-wallet',
-        text: __('Bitcoincash'),
+        text: __('Bitcoin Cash'),
     },
     {
         to: '/cardano-wallet',
@@ -48,20 +44,12 @@ const cryptoCurrencies: IMenuRouteLink[] = [
         text: __('Ethereum'),
     },
     {
-        to: '/ios-wallet',
-        text: __('iOS'),
-    },
-    {
         to: '/iota-wallet',
-        text: __('Iota'),
+        text: __('IOTA'),
     },
     {
         to: '/litecoin-wallet',
         text: __('Litecoin'),
-    },
-    {
-        to: '/mobile-wallet',
-        text: __('Mobile'),
     },
     {
         to: '/monero-wallet',
