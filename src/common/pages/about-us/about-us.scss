@@ -3,7 +3,6 @@
 
 .intro {
     &__content {
-        height: 100vh;
         min-height: 640px;
 
         display: flex;
@@ -26,8 +25,12 @@
         }
     }
 
-    &__topic-escription {
-        max-width: 500px;
+    &__topic {
+        max-width: 700px;
+
+        &-description {
+            max-width: 500px;
+        }
     }
 }
 

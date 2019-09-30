@@ -1,7 +1,16 @@
+@import '../../styles/vars';
+@import '../../styles/media';
+
 .contact-us {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
+    flex-direction: column-reverse;
+
+
+    @include from-md-width {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
 
     &__title {
         font-weight: 700;
@@ -11,13 +20,17 @@
     &__topic {
         width: 100%;
         max-width: 500px;
+        margin: 0 auto 100px;
 
-        margin-bottom: 100px;
-        
         &__descr.contact-us__topic__descr {
             margin-top: 0px;
-            max-width: 375px;
+            max-width: 365px;
             margin-bottom: 30px;
+            text-align: left;
+
+            @include from-lg-width {
+                max-width: 375px;
+            }
         }
     }
 
@@ -25,16 +38,38 @@
     &__actions {
         display: flex;
         justify-content: flex-start;
+        flex-wrap: wrap;
 
         &__button {
-            width: 180px;
+            width: 100%;
 
-            margin-right: 50px;
+            @include from-md-width {
+                width: 180px;
+                margin-right: 50px;
+            }
         }
     }
 
     &__socials {
         display: flex;
-        min-width: 180px;
+        justify-content: space-around;
+        min-width: 100%;
+
+        @include from-md-width {
+            justify-content: space-between;
+            min-width: 180px;
+        }
+    }
+
+    &__phones {
+        display: flex;
+
+        @include from-md-width {
+            margin-right: 68px;
+        }
+
+        @include from-lg-width {
+            margin-right: 0;
+        }
     }
 }
