@@ -108,7 +108,7 @@ export const menuRoutes: IMenuRoute[] = [
             },
             {
                 to: '/contact-us',
-                text: __('Contact-us'),
+                text: __('Contact us'),
             },
             // {
             //     to: '/carriers',
@@ -178,8 +178,8 @@ export const menuRoutes: IMenuRoute[] = [
         title: __('Get in touch'),
         links: [
             {
-                to: 'mailto:hi@plark.io',
-                text: __('hi@plark.io'),
+                to: 'mailto:info@plark.io',
+                text: __('info@plark.io'),
                 source: 'external',
             },
         ],

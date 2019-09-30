@@ -24,7 +24,13 @@ export default function ContactUs(): JSX.Element {
                         descClassName={styles.contactUsTopicDescr}
                     />
                     <div className={styles.contactUsActions}>
-                        <UIButton color="primary" className={styles.contactUsActionsButton}>
+                        <UIButton
+                            color="primary"
+                            className={styles.contactUsActionsButton}
+                            component={'a'}
+                            href={'mailto:info@plark.io'}
+                            target={'_blank'}
+                        >
                             {i18n.gettext('Write us')}
                         </UIButton>
 
@@ -32,7 +38,7 @@ export default function ContactUs(): JSX.Element {
                     </div>
                 </div>
 
-                <TwoIPhones />
+                <TwoIPhones className={styles.contactUsPhones} />
             </Section>
 
             <Footer />
