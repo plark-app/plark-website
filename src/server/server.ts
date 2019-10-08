@@ -36,7 +36,7 @@ expressApp.use(
 );
 
 expressApp.use('/api', Router.createApiRouter());
-expressApp.get('/sitemap.xml', Router.dynamicSitemap);
+expressApp.get('/dynamic-sitemap.xml', Router.dynamicSitemap);
 expressApp.get('/robots.txt', Router.robotsTxt);
 
 

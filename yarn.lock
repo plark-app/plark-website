@@ -6908,9 +6908,10 @@ react-router@4.3.1, react-router@^4.3.1:
     prop-types "^15.6.1"
     warning "^4.0.1"
 
-react-scrollmagic@2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/react-scrollmagic/-/react-scrollmagic-2.1.0.tgz#1bd602a3c9f85627c46c62a8dbec1d7f6fb7ea49"
+react-scrollmagic@2.1.1:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/react-scrollmagic/-/react-scrollmagic-2.1.1.tgz#3c174ccc1d6b884d0d17257d36fc010258dae1f8"
+  integrity sha512-ELdWwdLWHF9qrZA74GTA/2JuxgbZxjq/mlXGNAYDQ9+pOzj2TGqiGNqm4rhQM+ifdh9YrB/2Xmzyy/AtWoeGPw==
 
 react-side-effect@^1.1.0:
   version "1.1.5"

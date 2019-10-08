@@ -4,7 +4,13 @@ import Helmet from 'react-helmet';
 import { compose } from 'recompose';
 import { WithTranslationsProps, withTranslations, ITranslationsAdapter } from 'slim-i18n';
 import { RouteHeadRenderFn } from './router/router';
-import { OpenGraph, PageSeoConfig, getStructuredData, Breadcrumbs, getHrefLangUrls } from './seo';
+import {
+    OpenGraph,
+    PageSeoConfig,
+    getStructuredData,
+    Breadcrumbs,
+    // getHrefLangUrls
+} from './seo';
 
 const defaultSeoConfig = {
     title: 'The friendliest multi-currency crypto wallet.',
@@ -36,10 +42,10 @@ const Head = ({ i18n, children: render, getSeoConfig }: HeadProps) => {
     return (
         <>
             <Helmet encodeSpecialCharacters={false} title={seoConfig.title}>
-                <html lang={i18n.languageCode} />
-                <meta name="Content-Language" content={i18n.languageCode} />
+                <html lang={i18n.language} />
+                <meta name="Content-Language" content={i18n.language} />
                 <meta name="description" content={seoConfig.description} />
-                {seoConfig.path !== undefined ? getHrefLangUrls(seoConfig.path) : null}
+                {/*{seoConfig.path !== undefined ? getHrefLangUrls(seoConfig.path) : null}*/}
                 {seoConfig.canonicalLink !== undefined ? <link rel="canonical" href={seoConfig.canonicalLink} /> : null}
                 {seoConfig.robotsRule && <meta name="robots" content={seoConfig.robotsRule} />}
 

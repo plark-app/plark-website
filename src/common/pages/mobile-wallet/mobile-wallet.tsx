@@ -97,6 +97,7 @@ export default function MobileWallet(): JSX.Element {
                 }
                 image={{
                     src: '/img/trade-screen.png',
+                    alt: 'Trade Screen in Plark'
                 }}
             />
 
@@ -109,6 +110,7 @@ export default function MobileWallet(): JSX.Element {
                 }
                 image={{
                     src: '/img/trade-confirmation-screen.png',
+                    alt: 'Trade Confirmation Screen in Plark'
                 }}
             />
 
