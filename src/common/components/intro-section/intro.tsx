@@ -40,7 +40,7 @@ function IntroSection(props: IntroInnerProps): JSX.Element {
             </Section>
             {props.dimensions.width < 768 && (
                 <div className={styles.introPhoneSection}>
-                    <img src="/img/main-screen.png" alt={''} />
+                    <img src="/img/main-screen.png" alt="Main screen" />
                 </div>
             )}
         </>

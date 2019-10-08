@@ -6,7 +6,9 @@ export function setHeaderLinks(path: string, currentLocale: string): string[] | 
     linksData.push(`<${SEO_HOST}/${currentLocale}${path}>; rel="canonical",`);
 
     getLocales().map((locale: Locale) => {
-        linksData.push(`<${SEO_HOST}/${locale.code}${path}>; rel="alternate"; hreflang="${locale.shortCode}"`);
+        if (locale.code !== currentLocale) {
+            linksData.push(`<${SEO_HOST}/${locale.code}${path}>; rel="alternate"; hreflang="${locale.shortCode}"`);
+        }
     });
 
     return linksData;
