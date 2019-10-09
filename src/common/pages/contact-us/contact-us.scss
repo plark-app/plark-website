@@ -4,12 +4,13 @@
 .contact-us {
     display: flex;
     flex-direction: column-reverse;
+    align-items: center;
 
 
-    @include from-md-width {
+    @include from-lg-width {
         flex-direction: row;
         justify-content: space-between;
-        align-items: flex-end;
+        align-items: center;
     }
 
     &__title {
@@ -20,7 +21,6 @@
     &__topic {
         width: 100%;
         max-width: 500px;
-        margin: 0 auto 100px;
 
         &__descr.contact-us__topic__descr {
             margin-top: 0px;
