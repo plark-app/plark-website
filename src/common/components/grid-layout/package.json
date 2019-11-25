@@ -1,0 +1,6 @@
+{
+    "private": true,
+    "name": "grid-layout",
+    "main": "grid-layout.tsx",
+    "typings": "grid-layout.tsx"
+}
