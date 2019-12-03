@@ -1,19 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
 import cn from 'classnames';
 import { CSSTransition } from 'react-transition-group';
 import { compose } from 'recompose';
 import { useI18n, withTranslations, WithTranslationsProps } from 'slim-i18n';
-
-import { NavLink, StoreBadge } from 'common/components';
-import BurgerButton from 'common/components/burger-button';
-import withWindow, { WithWindowProps } from 'common/components/with-window';
-
 import PlatformList from 'common/utils/install-platforms';
-
+import { NavLink, StoreBadge, BurgerButton, withWindow, WithWindowProps } from 'common/components';
 import PlarkLogo from 'resources/svgs/plark-logo.component.svg';
-
 import styles from './header.scss';
 
 type HeaderState = {
@@ -45,11 +38,15 @@ class Header extends React.Component<HeaderInnerProps, HeaderState> {
         const { isWhite, i18n, dimensions } = this.props;
         const { width } = dimensions;
         const { scrolled } = this.state;
+
+        const headerClassName = cn(
+            styles.header,
+            isWhite && styles.isWhite,
+            scrolled && styles.isScrolled,
+        );
+
         return (
-            <header
-                id="header"
-                className={cn(styles.header, isWhite && styles.isWhite, { [styles.isScrolled]: scrolled })}
-            >
+            <header id="header" className={headerClassName}>
                 {width < 768 && this._renderMobileMenu()}
                 <NavLink to="/">
                     <PlarkLogo height={20} className={styles.headerLogo} />
@@ -88,7 +85,7 @@ class Header extends React.Component<HeaderInnerProps, HeaderState> {
                 scrolled: window.scrollY > 100,
             });
         }
-    }
+    };
 }
 
 type DropdownMenuProps = {

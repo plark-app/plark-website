@@ -12,7 +12,7 @@ type DownloadCellProps = {
 export default React.memo(function DownloadCell(props: DownloadCellProps) {
     return (
         <div className={cn(styles.buttons, props.className)}>
-            <StoreBadge platform={PlatformList.apple} />
+            <StoreBadge platform={PlatformList.apple} height={40} />
             <StoreQR className={styles.buttonsQr} />
         </div>
     );

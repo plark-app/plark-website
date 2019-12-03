@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
 import classNames from 'classnames';
 import { compose } from 'recompose';
-
-import withWindow, { WithWindowProps } from 'common/components/with-window';
-
-import styles from './footer-column.scss';
 import * as CSSTransition from 'react-transition-group/CSSTransition';
+import { withWindow, WithWindowProps } from 'common/components';
+import styles from './footer-column.scss';
 
 type FooterColumnOuterProps = {
     title: string;

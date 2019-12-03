@@ -13,9 +13,9 @@
     &__section-content {
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: flex-end;
 
-        padding-bottom: 40px;
+        padding-bottom: 100px;
 
         @include from-md-width {
             height: 100vh;
@@ -23,40 +23,39 @@
     }
 
     &__topic {
+        max-width: 280px;
+
         &-shit {
-            font-size: 36px;
-            line-height: 1.5;
+            font-size: 42px;
+            line-height: 1.1;
             font-weight: 700;
-            margin-bottom: 16px;
+            margin-bottom: 10px;
             color: $color-text-dark;
+            text-transform: lowercase;
 
             @include from-md-width {
-                font-size: 60px;
-            }
-
-            @include from-lg-width {
-                font-size: 80px;
+                font-size: 42px;
             }
         }
 
         &-title {
-            font-size: 16px;
+            font-size: 14px;
             font-weight: 700;
-            color: $color-text-secondary;
+            color: $color-text-dark;
+            text-transform: lowercase;
+            margin-bottom: 40px;
         }
     }
 
-    &__pre-title {
-        opacity: 0.5;
-        font-size: 8px;
-        text-transform: uppercase;
-        margin-bottom: 10px;
-        letter-spacing: 0.2em;
+    &__arrow {
+        position: absolute;
+        width: 48px;
+        height: 48px;
 
-        @include from-width(768px) {
-            font-size: 11px;
-            letter-spacing: 0.27em;
-        }
+        cursor: pointer;
+        bottom: 44px;
+        left: 50%;
+        transform: translateX(-50%);
     }
 
     &__phone-section {
@@ -77,32 +76,6 @@
                 max-width: 269px;
                 max-height: 700px;
             }
-        }
-    }
-}
-
-.partners {
-    &__item {
-        margin-top: 0;
-        max-height: 27px;
-    }
-
-    &__list {
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-
-        margin-top: 50px;
-
-        width: 100%;
-        min-height: 60px;
-
-        @include from-md-width {
-            max-width: 480px;
-        }
-
-        @include from-lg-width {
-            max-width: 600px;
         }
     }
 }

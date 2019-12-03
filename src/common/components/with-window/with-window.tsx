@@ -12,7 +12,7 @@ export type WithWindowState = {
     height: number;
 };
 
-export default function withWindow<T extends WithWindowProps>(
+export function withWindow<T extends WithWindowProps>(
     component: React.ComponentType<T>,
 ): React.ComponentType<T> {
     return class extends React.Component<T & WithWindowProps, WithWindowState> {

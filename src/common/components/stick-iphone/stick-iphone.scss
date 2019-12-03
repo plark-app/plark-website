@@ -32,15 +32,13 @@
     }
 
     &__image {
-        width: 220px;
-        top: 170px;
-
+        width: 230px;
         position: absolute;
         right: 0;
 
         @include from-xxl-width {
-            width: 265px;
-            top: 170px;
+            width: 230px;
+            bottom: 20px;
         }
     }
 }

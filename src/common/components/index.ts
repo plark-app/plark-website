@@ -2,6 +2,8 @@ export * from './grid';
 export * from './grid-layout';
 export * from './loaders';
 export * from './ui-popup-menu';
+export * from './burger-button';
+export * from './with-window';
 
 export { default as Topic } from './topic';
 export { default as Icons } from './icons';

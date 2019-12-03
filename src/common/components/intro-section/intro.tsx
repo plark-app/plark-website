@@ -1,10 +1,8 @@
 import React from 'react';
 import cn from 'classnames';
 import { compose } from 'recompose';
-
-import { Section, DownloadCell, PartnerList } from 'common/components';
-import withWindow, { WithWindowProps } from 'common/components/with-window';
-
+import { Section, DownloadCell, withWindow, WithWindowProps } from 'common/components';
+import ArrowDownSvg from 'resources/svgs/arrow-down.component.svg';
 import styles from './intro.scss';
 
 type IntroOuterProps = {
@@ -21,7 +19,11 @@ type IntroOuterProps = {
 type IntroInnerProps = IntroOuterProps & WithWindowProps;
 
 function IntroSection(props: IntroInnerProps): JSX.Element {
-    const { subtitleTag = 'h2', noDownload, noPartners } = props;
+    const { subtitleTag = 'h2', noDownload } = props;
+
+    const onClickArrow = React.useCallback(() => {
+
+    }, []);
 
     return (
         <>
@@ -34,10 +36,10 @@ function IntroSection(props: IntroInnerProps): JSX.Element {
                     {React.createElement(subtitleTag, { className: styles.introTopicTitle }, props.subtitle)}
                     {!noDownload && <DownloadCell />}
                 </div>
-                {!noPartners && (
-                    <PartnerList isSmall className={styles.partnersList} itemClassName={styles.partnersItem} />
-                )}
+
+                <ArrowDownSvg className={styles.introArrow} onClick={onClickArrow} />
             </Section>
+
             {props.dimensions.width < 768 && (
                 <div className={styles.introPhoneSection}>
                     <img src="/img/main-screen.png" alt="Main screen" />

@@ -1,8 +1,7 @@
 import React from 'react';
 import classnames from 'classnames';
 import { compose } from 'recompose';
-
-import withWindow, { WithWindowProps } from 'common/components/with-window';
+import { withWindow, WithWindowProps } from 'common/components';
 
 import styles from './wallet-features-section.scss';
 
