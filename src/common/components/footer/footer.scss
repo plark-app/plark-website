@@ -7,11 +7,11 @@
     border-top: 1px solid $color-gray30;
 
     position: relative;
-    z-index: 4;
+    z-index: 990;
+    background: $color-gray05;
 
     @include from-md-width {
-        padding-top: 0px;
-        //padding-bottom: 20px;
+        padding-top: 0;
     }
 
     &__second {
@@ -33,7 +33,7 @@
     &__content.footer__content {
         padding: 0;
 
-        @include  from-md-width {
+        @include from-md-width {
             padding-top: 50px !important;
             padding-bottom: 50px !important;
         }

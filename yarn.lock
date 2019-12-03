@@ -637,9 +637,10 @@ amdefine@>=0.0.4:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/amdefine/-/amdefine-1.0.1.tgz#4a5282ac164729e93619bcfd3ad151f817ce91f5"
 
-animated-scroll-to@1.2.2:
-  version "1.2.2"
-  resolved "https://registry.yarnpkg.com/animated-scroll-to/-/animated-scroll-to-1.2.2.tgz#d6688e72f3ecec1a296fc2b36fe29290e7fff694"
+animated-scroll-to@2.0.5:
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/animated-scroll-to/-/animated-scroll-to-2.0.5.tgz#475fcf742ee38de0a969920182a6aaba319771b4"
+  integrity sha512-xDZY/geNZSJj99xftr8uAAJpp6k6yI8mdBNp8HM1LTwmeebaw4EjkHL8y0PtsuZg9/UG9tUNn2JqaZxEfzJxLw==
 
 animejs@3.0.1:
   version "3.0.1"
@@ -1950,9 +1951,10 @@ crypto-browserify@^3.11.0:
     randombytes "^2.0.0"
     randomfill "^1.0.3"
 
-crypto-js@^3.1.9-1:
+crypto-js@3.1.9-1:
   version "3.1.9-1"
   resolved "https://registry.yarnpkg.com/crypto-js/-/crypto-js-3.1.9-1.tgz#fda19e761fc077e01ffbfdc6e9fdfc59e8806cd8"
+  integrity sha1-/aGedh/Ad+Af+/3G6f38WeiAbNg=
 
 css-color-names@0.0.4, css-color-names@^0.0.4:
   version "0.0.4"
@@ -2441,9 +2443,10 @@ dot-prop@^4.1.1:
   dependencies:
     is-obj "^1.0.0"
 
-dotenv@^7.0.0:
+dotenv@7.0.0:
   version "7.0.0"
   resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-7.0.0.tgz#a2be3cd52736673206e8a85fb5210eea29628e7c"
+  integrity sha512-M3NhsLbV1i6HuGzBUH8vXrtxOk+tWmzWKDMbAVSUp3Zsjm7ywFeuwrUXhmhQyRK1q5B5GGy7hcXPbj3bnfZg2g==
 
 duplexer@^0.1.1:
   version "0.1.1"
@@ -4980,9 +4983,10 @@ lru-cache@^4.0.1, lru-cache@^4.1.1:
     pseudomap "^1.0.2"
     yallist "^2.1.2"
 
-mailchimp-api-v3@^1.13.0:
+mailchimp-api-v3@1.13.0:
   version "1.13.0"
   resolved "https://registry.yarnpkg.com/mailchimp-api-v3/-/mailchimp-api-v3-1.13.0.tgz#4b25c9c0aeccd77543a62d7a82d30b7bafa86bd8"
+  integrity sha512-viPruh7WUwcYjUHu4TSqze21V1gx8Fw0Tnmnxzx4JornNiz2GvTUR8E3HCibTu38NOkFx73GtgWHheUmFcU7Hg==
   dependencies:
     bluebird "^3.4.0"
     lodash "^4.17.11"
@@ -8284,9 +8288,10 @@ tar@^4, tar@^4.0.2:
     safe-buffer "^5.1.2"
     yallist "^3.0.2"
 
-telegraf@^3.29.0:
+telegraf@3.29.0:
   version "3.29.0"
   resolved "https://registry.yarnpkg.com/telegraf/-/telegraf-3.29.0.tgz#0655d02b9a2d72d53ff20787947aa10ad54a747c"
+  integrity sha512-zvlY2Wnls7D/sJDTD21tORR9S1Exe6NThUCvYhdhCoKx7+OOZlplSd4yhSZbRI4bViuFdyhxCE+IuWS/ZmAElg==
   dependencies:
     "@types/node" "^11.12.1"
     debug "^4.0.1"

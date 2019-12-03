@@ -9,16 +9,18 @@
     left: 50%;
     transform: translateX(-50%);
 
-    width: calc(100vw - 40px);
+    width: calc(100vw - 24px);
 
     @include from-md-width {
         display: block;
         opacity: 1;
     }
 
-    @include from-width(1042px) {
+    @include from-width(1280px) {
+        $percent: 1 / 6;
+
         width: 100%;
-        max-width: 1042px;
+        max-width: 1280px * 0.8333;
         opacity: 1;
     }
 }
@@ -35,6 +37,7 @@
         width: 230px;
         position: absolute;
         right: 0;
+        bottom: 20px;
 
         @include from-xxl-width {
             width: 230px;

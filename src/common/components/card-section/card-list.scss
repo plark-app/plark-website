@@ -3,12 +3,15 @@
 
 .card-list {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     width: 100%;
     padding: 0;
     min-height: 75px;
-
     max-width: 674px;
+
+    @include from-md-width {
+        justify-content: space-between;
+    }
 
     &__item {
         display: flex;

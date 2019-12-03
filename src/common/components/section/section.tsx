@@ -8,13 +8,23 @@ export type TSectionProps = {
     className?: string | string[];
     contentClassName?: string;
     outerContent?: React.ReactNode;
+    withLeftPadding?: boolean;
 };
 
-export default (props: TSectionProps) => (
-    <section className={cn(styles.section, props.className)}>
-        {props.outerContent}
-        <div className={cn(styles.sectionContent, props.contentClassName)}>
-            {props.children}
-        </div>
-    </section>
-);
+export function Section(props: TSectionProps) {
+
+    const contentClass = cn(
+        styles.sectionContent,
+        props.contentClassName,
+        props.withLeftPadding && styles.iLeftPadding,
+    );
+
+    return (
+        <section className={cn(styles.section, props.className)}>
+            {props.outerContent}
+            <div className={contentClass}>
+                {props.children}
+            </div>
+        </section>
+    );
+};

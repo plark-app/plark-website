@@ -2,7 +2,7 @@ import React from 'react';
 import { useI18n } from 'slim-i18n';
 import Footer from 'common/components/footer';
 import Header from 'common/components/header';
-import Section from 'common/components/section';
+import { Section } from 'common/components';
 import Topic from 'common/components/topic';
 import commonStyles from 'common/styles/common.scss';
 import MarkdownContent from 'common/components/markdown-content';
@@ -15,7 +15,7 @@ export default () => {
         <>
             <Header isWhite={true} />
 
-            <Section className={commonStyles.legalSection}>
+            <Section className={commonStyles.legalSection} withLeftPadding>
                 <Topic titleText={i18n.gettext("Terms & Conditions")}
                        className={commonStyles.markdownMainTitle}
                        titleTag="h1"

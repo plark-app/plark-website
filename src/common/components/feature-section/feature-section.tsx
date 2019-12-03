@@ -39,7 +39,7 @@ export default React.memo(function FeatureSection(props: FeatureSectionProps): J
     });
 
     return (
-        <Section className={styles.featureSection} contentClassName={contentClass}>
+        <Section className={styles.featureSection} contentClassName={contentClass} withLeftPadding>
             <div className={styles.featureSectionText}>
                 {titleText &&
                     React.createElement(

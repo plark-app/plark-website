@@ -16,7 +16,6 @@ $col-num: 12;
 }
 
 .col {
-    width: 100%;
     margin-left: $var-gutter / 2;
     margin-right: $var-gutter / 2;
 
@@ -29,18 +28,8 @@ $col-num: 12;
     @while $i <= $col-num {
         $percent: unquote((100 / ($col-num / $i)) + "%");
 
-        &-xs-#{$i} {
-            width: calc(#{$percent} - #{$var-gutter});
-        }
-
-        @include from-sm-width {
-            &-sm-#{$i} {
-                width: calc(#{$percent} - #{$var-gutter});
-            }
-        }
-
-        @include from-md-width {
-            &-md-#{$i} {
+        @include from-xxl-width {
+            &-xl-#{$i} {
                 width: calc(#{$percent} - #{$var-gutter});
             }
         }
@@ -51,10 +40,20 @@ $col-num: 12;
             }
         }
 
-        @include from-xxl-width {
-            &-xl-#{$i} {
+        @include from-md-width {
+            &-md-#{$i} {
                 width: calc(#{$percent} - #{$var-gutter});
             }
+        }
+
+        @include from-sm-width {
+            &-sm-#{$i} {
+                width: calc(#{$percent} - #{$var-gutter});
+            }
+        }
+
+        &-xs-#{$i} {
+            width: calc(#{$percent} - #{$var-gutter});
         }
 
         $i: $i + 1;

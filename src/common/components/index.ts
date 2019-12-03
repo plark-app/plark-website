@@ -4,13 +4,13 @@ export * from './loaders';
 export * from './ui-popup-menu';
 export * from './burger-button';
 export * from './with-window';
+export * from './section';
 
 export { default as Topic } from './topic';
 export { default as Icons } from './icons';
 export { default as UIButton } from './ui-button';
 export { default as Footer } from './footer';
 export { default as Header } from './header';
-export { default as Section } from './section';
 export { default as NavLink } from './nav-link';
 export { default as TextBlock } from './text-block';
 export { default as StoreQR } from './store-qr';

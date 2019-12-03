@@ -1,5 +1,5 @@
 import React from 'react';
-import Section from '../section';
+import { Section } from '../section';
 import Topic from '../topic';
 import style from './citation.scss';
 

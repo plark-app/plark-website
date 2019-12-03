@@ -31,12 +31,11 @@ export default function StoreBadge(props: StoreBadgeProps): JSX.Element {
 
     return (
         <a href={platform.url} title={platform.key} className={cn(styles.badge, props.className)} target="_blank">
-            <img
-                src={platform.badge}
-                height={height}
-                className={styles.badgeImage}
-                alt={platform.key}
-                title={platform.key}
+            <img src={platform.badge}
+                 height={height}
+                 className={styles.badgeImage}
+                 alt={platform.key}
+                 title={platform.key}
             />
         </a>
     );

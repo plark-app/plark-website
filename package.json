@@ -24,7 +24,7 @@
         "locales:import": "gulp locales:import"
     },
     "dependencies": {
-        "animated-scroll-to": "1.2.2",
+        "animated-scroll-to": "2.0.5",
         "animejs": "3.0.1",
         "axios": "0.18.0",
         "babel-polyfill": "6.26.0",
