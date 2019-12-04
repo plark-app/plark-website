@@ -46,13 +46,13 @@ class Header extends React.Component<HeaderInnerProps, HeaderState> {
         );
 
         const appstore = PlatformList.apple;
-        const showMobileMenu = width && width < 768;
+        const showMobileMenu = width > 0 && width < 768;
 
         return (
             <>
                 <header id="header" className={headerClassName}>
                     <Row className={styles.headerSection}>
-                        {showMobileMenu && this._renderMobileMenu()}
+                        {showMobileMenu ? this._renderMobileMenu() : undefined}
                         <NavLink to="/">
                             <PlarkLogo height={20} className={styles.headerLogo} />
                         </NavLink>
