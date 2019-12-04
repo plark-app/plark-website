@@ -1,6 +1,7 @@
+import { ISitemapItemOptionsLoose } from 'sitemap';
 import { ITranslationsAdapter } from 'slim-i18n';
 import { RouteDescriptor, makeRoutePath, makeRouteLoadFunction } from 'common/utils/router';
-import { PageSeoConfig, SitemapOption } from 'common/utils/seo';
+import { PageSeoConfig } from 'common/utils/seo';
 
 export const routes: RouteDescriptor[] = [
     {
@@ -18,8 +19,8 @@ export const routes: RouteDescriptor[] = [
             canonicalLink: 'https://plark.io',
             path: '/',
         }),
-        getSitemapOption: (): SitemapOption => ({
-            path: '/',
+        getSitemapOption: (): ISitemapItemOptionsLoose => ({
+            url: '/',
             priority: 1,
         }),
     },
@@ -38,8 +39,8 @@ export const routes: RouteDescriptor[] = [
             canonicalLink: 'https://plark.io/mobile-wallet',
             path: '/mobile-wallet',
         }),
-        getSitemapOption: (): SitemapOption => ({
-            path: '/mobile-wallet',
+        getSitemapOption: (): ISitemapItemOptionsLoose => ({
+            url: '/mobile-wallet',
             priority: 0.9,
         }),
     },
@@ -58,8 +59,8 @@ export const routes: RouteDescriptor[] = [
             canonicalLink: 'https://plark.io/ios-wallet',
             path: '/ios-wallet',
         }),
-        getSitemapOption: (): SitemapOption => ({
-            path: '/ios-wallet',
+        getSitemapOption: (): ISitemapItemOptionsLoose => ({
+            url: '/ios-wallet',
             priority: 0.9,
         }),
     },
@@ -78,8 +79,8 @@ export const routes: RouteDescriptor[] = [
             canonicalLink: 'https://plark.io/android-wallet',
             path: '/android-wallet',
         }),
-        getSitemapOption: (): SitemapOption => ({
-            path: '/android-wallet',
+        getSitemapOption: (): ISitemapItemOptionsLoose => ({
+            url: '/android-wallet',
             priority: 0.9,
         }),
     },
@@ -98,8 +99,8 @@ export const routes: RouteDescriptor[] = [
             canonicalLink: 'https://plark.io/bitcoin-wallet',
             path: '/bitcoin-wallet',
         }),
-        getSitemapOption: (): SitemapOption => ({
-            path: '/bitcoin-wallet',
+        getSitemapOption: (): ISitemapItemOptionsLoose => ({
+            url: '/bitcoin-wallet',
             priority: 0.9,
         }),
     },
@@ -118,8 +119,8 @@ export const routes: RouteDescriptor[] = [
             canonicalLink: 'https://plark.io/litecoin-wallet',
             path: '/litecoin-wallet',
         }),
-        getSitemapOption: (): SitemapOption => ({
-            path: '/litecoin-wallet',
+        getSitemapOption: (): ISitemapItemOptionsLoose => ({
+            url: '/litecoin-wallet',
             priority: 0.9,
         }),
     },
@@ -138,8 +139,8 @@ export const routes: RouteDescriptor[] = [
             canonicalLink: 'https://plark.io/neo-wallet',
             path: '/neo-wallet',
         }),
-        getSitemapOption: (): SitemapOption => ({
-            path: '/neo-wallet',
+        getSitemapOption: (): ISitemapItemOptionsLoose => ({
+            url: '/neo-wallet',
             priority: 0.8,
         }),
     },
@@ -158,8 +159,8 @@ export const routes: RouteDescriptor[] = [
             canonicalLink: 'https://plark.io/stellar-wallet',
             path: '/stellar-wallet',
         }),
-        getSitemapOption: (): SitemapOption => ({
-            path: '/stellar-wallet',
+        getSitemapOption: (): ISitemapItemOptionsLoose => ({
+            url: '/stellar-wallet',
             priority: 0.7,
         }),
     },
@@ -178,8 +179,8 @@ export const routes: RouteDescriptor[] = [
             canonicalLink: 'https://plark.io/eos-wallet',
             path: '/eos-wallet',
         }),
-        getSitemapOption: (): SitemapOption => ({
-            path: '/eos-wallet',
+        getSitemapOption: (): ISitemapItemOptionsLoose => ({
+            url: '/eos-wallet',
             priority: 0.7,
         }),
     },
@@ -198,8 +199,8 @@ export const routes: RouteDescriptor[] = [
             canonicalLink: 'https://plark.io/ripple-wallet',
             path: '/ripple-wallet',
         }),
-        getSitemapOption: (): SitemapOption => ({
-            path: '/ripple-wallet',
+        getSitemapOption: (): ISitemapItemOptionsLoose => ({
+            url: '/ripple-wallet',
             priority: 0.8,
         }),
     },
@@ -218,8 +219,8 @@ export const routes: RouteDescriptor[] = [
             canonicalLink: 'https://plark.io/zcash-wallet',
             path: '/zcash-wallet',
         }),
-        getSitemapOption: (): SitemapOption => ({
-            path: '/zcash-wallet',
+        getSitemapOption: (): ISitemapItemOptionsLoose => ({
+            url: '/zcash-wallet',
             priority: 0.7,
         }),
     },
@@ -238,8 +239,8 @@ export const routes: RouteDescriptor[] = [
             canonicalLink: 'https://plark.io/ethereum-wallet',
             path: '/ethereum-wallet',
         }),
-        getSitemapOption: (): SitemapOption => ({
-            path: '/ethereum-wallet',
+        getSitemapOption: (): ISitemapItemOptionsLoose => ({
+            url: '/ethereum-wallet',
             priority: 0.9,
         }),
     },
@@ -258,8 +259,8 @@ export const routes: RouteDescriptor[] = [
             canonicalLink: 'https://plark.io/dash-wallet',
             path: '/dash-wallet',
         }),
-        getSitemapOption: (): SitemapOption => ({
-            path: '/dash-wallet',
+        getSitemapOption: (): ISitemapItemOptionsLoose => ({
+            url: '/dash-wallet',
             priority: 0.9,
         }),
     },
@@ -278,8 +279,8 @@ export const routes: RouteDescriptor[] = [
             canonicalLink: 'https://plark.io/bitcoincash-wallet',
             path: '/bitcoincash-wallet',
         }),
-        getSitemapOption: (): SitemapOption => ({
-            path: '/bitcoincash-wallet',
+        getSitemapOption: (): ISitemapItemOptionsLoose => ({
+            url: '/bitcoincash-wallet',
             priority: 0.9,
         }),
     },
@@ -298,8 +299,8 @@ export const routes: RouteDescriptor[] = [
             canonicalLink: 'https://plark.io/tron-wallet',
             path: '/tron-wallet',
         }),
-        getSitemapOption: (): SitemapOption => ({
-            path: '/tron-wallet',
+        getSitemapOption: (): ISitemapItemOptionsLoose => ({
+            url: '/tron-wallet',
             priority: 0.8,
         }),
     },
@@ -318,8 +319,8 @@ export const routes: RouteDescriptor[] = [
             canonicalLink: 'https://plark.io/dogecoin-wallet',
             path: '/dogecoin-wallet',
         }),
-        getSitemapOption: (): SitemapOption => ({
-            path: '/dogecoin-wallet',
+        getSitemapOption: (): ISitemapItemOptionsLoose => ({
+            url: '/dogecoin-wallet',
             priority: 0.8,
         }),
     },
@@ -338,8 +339,8 @@ export const routes: RouteDescriptor[] = [
             canonicalLink: 'https://plark.io/cardano-wallet',
             path: '/cardano-wallet',
         }),
-        getSitemapOption: (): SitemapOption => ({
-            path: '/cardano-wallet',
+        getSitemapOption: (): ISitemapItemOptionsLoose => ({
+            url: '/cardano-wallet',
             priority: 0.9,
         }),
     },
@@ -358,8 +359,8 @@ export const routes: RouteDescriptor[] = [
             canonicalLink: 'https://plark.io/iota-wallet',
             path: '/iota-wallet',
         }),
-        getSitemapOption: (): SitemapOption => ({
-            path: '/iota-wallet',
+        getSitemapOption: (): ISitemapItemOptionsLoose => ({
+            url: '/iota-wallet',
             priority: 0.9,
         }),
     },
@@ -378,8 +379,8 @@ export const routes: RouteDescriptor[] = [
             canonicalLink: 'https://plark.io/monero-wallet',
             path: '/monero-wallet',
         }),
-        getSitemapOption: (): SitemapOption => ({
-            path: '/monero-wallet',
+        getSitemapOption: (): ISitemapItemOptionsLoose => ({
+            url: '/monero-wallet',
             priority: 0.7,
         }),
     },
@@ -395,8 +396,8 @@ export const routes: RouteDescriptor[] = [
             canonicalLink: 'https://plark.io/contact-us',
             path: '/contact-us',
         }),
-        getSitemapOption: (): SitemapOption => ({
-            path: '/contact-us',
+        getSitemapOption: (): ISitemapItemOptionsLoose => ({
+            url: '/contact-us',
             priority: 0.8,
         }),
     },
@@ -412,8 +413,8 @@ export const routes: RouteDescriptor[] = [
             canonicalLink: 'https://plark.io/about-us',
             path: '/about-us',
         }),
-        getSitemapOption: (): SitemapOption => ({
-            path: '/about-us',
+        getSitemapOption: (): ISitemapItemOptionsLoose => ({
+            url: '/about-us',
             priority: 0.8,
         }),
     },
@@ -429,8 +430,8 @@ export const routes: RouteDescriptor[] = [
             canonicalLink: 'https://plark.io/faq',
             path: '/faq',
         }),
-        getSitemapOption: (): SitemapOption => ({
-            path: '/faq',
+        getSitemapOption: (): ISitemapItemOptionsLoose => ({
+            url: '/faq',
             priority: 0.8,
         }),
     },
@@ -446,8 +447,8 @@ export const routes: RouteDescriptor[] = [
             canonicalLink: 'https://plark.io/privacy',
             path: '/privacy',
         }),
-        getSitemapOption: (): SitemapOption => ({
-            path: '/privacy',
+        getSitemapOption: (): ISitemapItemOptionsLoose => ({
+            url: '/privacy',
             priority: 0.8,
         }),
     },
@@ -463,8 +464,8 @@ export const routes: RouteDescriptor[] = [
             canonicalLink: 'https://plark.io/terms',
             path: '/terms',
         }),
-        getSitemapOption: (): SitemapOption => ({
-            path: '/terms',
+        getSitemapOption: (): ISitemapItemOptionsLoose => ({
+            url: '/terms',
             priority: 0.8,
         }),
     },
@@ -480,8 +481,8 @@ export const routes: RouteDescriptor[] = [
             canonicalLink: 'https://plark.io/sitemap',
             path: '/sitemap',
         }),
-        getSitemapOption: (): SitemapOption => ({
-            path: '/sitemap',
+        getSitemapOption: (): ISitemapItemOptionsLoose => ({
+            url: '/sitemap',
             priority: 0.5,
         }),
     },

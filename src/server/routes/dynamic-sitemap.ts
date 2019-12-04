@@ -1,13 +1,13 @@
 import { Request, Response } from 'express';
 import moment from 'moment';
-import sm from 'sitemap';
+import { createSitemap, EnumChangefreq, ISitemapItemOptionsLoose } from 'sitemap';
 
 import { routes } from 'common/routes';
-import { SEO_HOST, SitemapUrlOption } from 'common/utils/seo';
+import { SEO_HOST } from 'common/utils/seo';
 import { CommonRouteDescriptor, getSitemapLinks } from 'common/utils/router';
 
 export default async function dynamicSitemap(_req: Request, res: Response) {
-    const sitemapUrlOptions: SitemapUrlOption[] = [];
+    const sitemapUrlOptions: ISitemapItemOptionsLoose[] = [];
 
     const now = moment().format('YYYY-MM-DD');
 
@@ -16,18 +16,18 @@ export default async function dynamicSitemap(_req: Request, res: Response) {
             return;
         }
 
-        const { path, lastmod, changefreq, priority } = route.getSitemapOption();
+        const { url, lastmod, changefreq, priority } = route.getSitemapOption();
 
         sitemapUrlOptions.push({
-            url: path,
+            url: url,
             priority: priority || 0.5,
-            changefreq: changefreq || 'monthly',
+            changefreq: changefreq || EnumChangefreq.MONTHLY,
             lastmod: lastmod || now,
-            links: getSitemapLinks(path),
-        } as SitemapUrlOption);
+            links: getSitemapLinks(url),
+        });
     });
 
-    const sitemap = sm.createSitemap({
+    const sitemap = createSitemap({
         hostname: SEO_HOST,
         urls: sitemapUrlOptions,
     });
