@@ -91,3 +91,16 @@
         @content;
     }
 }
+
+
+@mixin left-padding {
+    @include to-width(1280px) {
+        $percent: 100% / 12;
+        padding-left: calc(#{$percent} - 24px + 36px);
+    }
+
+    @include from-md-width {
+        $percent: 1280px / 12 - 24px;
+        padding-left: calc(#{$percent} + 36px);
+    }
+}
