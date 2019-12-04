@@ -1,12 +1,11 @@
 import React from 'react';
 import cn from 'classnames';
-import { compose } from 'recompose';
 import scrollTo from 'animated-scroll-to';
-import { Section, DownloadCell, withWindow, WithWindowProps } from 'common/components';
+import { Section, DownloadCell, useDimensions } from 'common/components';
 import ArrowDownSvg from 'resources/svgs/arrow-down.component.svg';
 import styles from './intro.scss';
 
-type IntroOuterProps = {
+type IntroProps = {
     title: string;
     subtitle: string;
     subtitleTag?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p';
@@ -17,12 +16,9 @@ type IntroOuterProps = {
     noPartners?: boolean;
 };
 
-type IntroInnerProps
-    = IntroOuterProps
-    & WithWindowProps;
-
-function IntroSection(props: IntroInnerProps): JSX.Element {
+export default function IntroSection(props: IntroProps): JSX.Element {
     const { subtitleTag = 'h2', noDownload } = props;
+    const dimensions = useDimensions();
 
     const onClickArrow = React.useCallback(() => {
         scrollTo(window.innerHeight, {
@@ -32,10 +28,15 @@ function IntroSection(props: IntroInnerProps): JSX.Element {
 
     return (
         <>
-            <Section
-                className={cn(styles.introSection, props.sectionClassName)}
-                contentClassName={cn(styles.introSectionContent, props.contentClassName)}
-                withLeftPadding
+            {(dimensions.width && dimensions.width < 768) && (
+                <div className={styles.introPhoneSection}>
+                    <img src="/img/main-screen.png" alt="Main screen" />
+                </div>
+            )}
+
+            <Section className={cn(styles.introSection, props.sectionClassName)}
+                     contentClassName={cn(styles.introSectionContent, props.contentClassName)}
+                     withLeftPadding
             >
                 <div className={cn(styles.introTopic, props.topicClassName)}>
                     <h3 className={styles.introTopicShit}>{props.title}</h3>
@@ -45,14 +46,6 @@ function IntroSection(props: IntroInnerProps): JSX.Element {
 
                 <ArrowDownSvg className={styles.introArrow} onClick={onClickArrow} />
             </Section>
-
-            {props.dimensions.width < 768 && (
-                <div className={styles.introPhoneSection}>
-                    <img src="/img/main-screen.png" alt="Main screen" />
-                </div>
-            )}
         </>
     );
 }
-
-export default compose<IntroInnerProps, IntroOuterProps>(withWindow)(IntroSection);

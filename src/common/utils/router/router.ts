@@ -155,6 +155,9 @@ export function getSitemapLinks(path: string): SitemapLink[] {
     return getLocales().map((locale: Locale) => {
         const url = `${SEO_HOST}/${locale.code}${path}`;
 
-        return { lang: locale.shortCode, url };
+        return {
+            lang: locale.shortCode,
+            url: url,
+        };
     });
 }

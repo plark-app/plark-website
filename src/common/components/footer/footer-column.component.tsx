@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import classNames from 'classnames';
-import { compose } from 'recompose';
+import cn from 'classnames';
 import * as CSSTransition from 'react-transition-group/CSSTransition';
-import { withWindow, WithWindowProps } from 'common/components';
+import { useDimensions } from 'common/components';
 import styles from './footer-column.scss';
 
 type FooterColumnOuterProps = {
@@ -12,23 +11,24 @@ type FooterColumnOuterProps = {
     opened?: boolean;
 };
 
-type FooterColumnInnerProps = FooterColumnOuterProps & WithWindowProps;
+type FooterColumnInnerProps
+    = FooterColumnOuterProps;
 
-export function FooterColumn(props: FooterColumnInnerProps): JSX.Element {
+export default function FooterColumn(props: FooterColumnInnerProps): JSX.Element {
     const [open, setOpen] = useState(false);
-    const { dimensions } = props;
-    const { width } = dimensions;
-    if (width < 768) {
+    const dimensions = useDimensions();
+
+    if (dimensions.width && dimensions.width < 768) {
         return (
-            <div
-                className={classNames(styles.footerColumn, { [styles.isOpen]: open || props.opened })}
-                style={props.style}
-                onClick={() => setOpen(!open)}
+            <div className={cn(styles.footerColumn, { [styles.isOpen]: open || props.opened })}
+                 style={props.style}
+                 onClick={() => setOpen(!open)}
             >
                 <div className={styles.footerColumnTitle}>
                     <h4 className={styles.footerColumnTitleText}>{props.title}</h4>
                     {!props.opened && <div className={styles.footerColumnTriangle} />}
                 </div>
+
                 <CSSTransition in={open || props.opened} classNames={'faded'} timeout={300} unmountOnExit>
                     <div className={styles.footerColumnList}>{props.children}</div>
                 </CSSTransition>
@@ -37,7 +37,7 @@ export function FooterColumn(props: FooterColumnInnerProps): JSX.Element {
     }
 
     return (
-        <div className={classNames(styles.footerColumn, styles.isOpen)} style={props.style}>
+        <div className={cn(styles.footerColumn, styles.isOpen)} style={props.style}>
             <div className={styles.footerColumnTitle}>
                 <h4 className={styles.footerColumnTitleText}>{props.title}</h4>
             </div>
@@ -45,5 +45,3 @@ export function FooterColumn(props: FooterColumnInnerProps): JSX.Element {
         </div>
     );
 }
-
-export default compose<FooterColumnInnerProps, FooterColumnOuterProps>(withWindow)(FooterColumn);

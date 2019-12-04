@@ -12,7 +12,7 @@ type NoMatchProps
 
 
 class NoMatch extends React.Component<NoMatchProps> {
-    public componentWillMount(): void {
+    public UNSAFE_componentWillMount(): void {
         const { staticContext } = this.props;
         if (staticContext) {
             staticContext.statusCode = 404;
@@ -21,6 +21,7 @@ class NoMatch extends React.Component<NoMatchProps> {
 
     public render(): JSX.Element {
         const { i18n } = this.props;
+
         return (
             <>
                 <Header />

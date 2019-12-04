@@ -5,7 +5,7 @@ import { CSSTransition } from 'react-transition-group';
 import { compose } from 'recompose';
 import { useI18n, withTranslations, WithTranslationsProps } from 'slim-i18n';
 import PlatformList from 'common/utils/install-platforms';
-import { NavLink, BurgerButton, withWindow, WithWindowProps, Row, Col } from 'common/components';
+import { NavLink, BurgerButton, withWindowSize, WithWindowSizeProps, Row, Col } from 'common/components';
 import PlarkLogo from 'resources/svgs/plark-logo.component.svg';
 import styles from './header.scss';
 
@@ -18,7 +18,7 @@ type HeaderOuterProps = {
     isWhite?: boolean;
 };
 
-type HeaderInnerProps = HeaderOuterProps & WithTranslationsProps & WithWindowProps;
+type HeaderInnerProps = HeaderOuterProps & WithTranslationsProps & WithWindowSizeProps;
 
 class Header extends React.Component<HeaderInnerProps, HeaderState> {
     public state: HeaderState = {
@@ -46,12 +46,13 @@ class Header extends React.Component<HeaderInnerProps, HeaderState> {
         );
 
         const appstore = PlatformList.apple;
+        const showMobileMenu = width && width < 768;
 
         return (
             <>
                 <header id="header" className={headerClassName}>
                     <Row className={styles.headerSection}>
-                        {width < 768 && this._renderMobileMenu()}
+                        {showMobileMenu && this._renderMobileMenu()}
                         <NavLink to="/">
                             <PlarkLogo height={20} className={styles.headerLogo} />
                         </NavLink>
@@ -115,6 +116,11 @@ type DropdownMenuProps = {
 
 function DropdownMenu({ className, opened }: DropdownMenuProps): JSX.Element | null {
     const i18n = useI18n();
+
+    if (!__isBrowser__) {
+        return <div />;
+    }
+
     return ReactDOM.createPortal(
         <CSSTransition in={opened} classNames={'mobile-menu'} timeout={300} unmountOnExit>
             <nav className={cn(styles.headerDropdownMenu, className)}>
@@ -132,5 +138,5 @@ function DropdownMenu({ className, opened }: DropdownMenuProps): JSX.Element | n
 
 export default compose<HeaderInnerProps, HeaderOuterProps>(
     withTranslations,
-    withWindow,
+    withWindowSize,
 )(Header);

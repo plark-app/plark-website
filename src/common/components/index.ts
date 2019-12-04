@@ -3,10 +3,11 @@ export * from './grid-layout';
 export * from './loaders';
 export * from './ui-popup-menu';
 export * from './burger-button';
-export * from './with-window';
 export * from './section';
+export * from './window-size-helper';
+export * from './menu-routes';
+export * from './topic';
 
-export { default as Topic } from './topic';
 export { default as Icons } from './icons';
 export { default as UIButton } from './ui-button';
 export { default as Footer } from './footer';
@@ -35,5 +36,3 @@ export { default as OpenSourceSection } from './opensource-section';
 export { default as WalletFeaturesSection } from './wallet-features-section';
 export { default as WalletColumnsSection } from './wallet-columns-section';
 export { default as Socials } from './socials';
-
-export { IMenuRoute, IMenuRouteLink, menuRoutes } from './menu-routes';

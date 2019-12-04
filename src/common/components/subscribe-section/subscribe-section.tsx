@@ -2,7 +2,7 @@ import React from 'react';
 import { useI18n } from 'slim-i18n';
 import { __ } from 'common/i18n';
 import { Section } from '../section';
-import Topic from '../topic';
+import { Topic } from '../topic';
 import styles from './subscribe-section.scss';
 import SubscribeForm from './subscribe-form';
 

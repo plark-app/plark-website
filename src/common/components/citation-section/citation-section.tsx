@@ -1,6 +1,6 @@
 import React from 'react';
 import { Section } from '../section';
-import Topic from '../topic';
+import { Topic } from '../topic';
 import style from './citation.scss';
 
 type CitationProps = {

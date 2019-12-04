@@ -3,15 +3,14 @@ import { useI18n } from 'slim-i18n';
 
 import PlatformList from 'common/utils/install-platforms';
 import { Section, StoreBadge, NavLink, menuRoutes, IMenuRoute, IMenuRouteLink, Socials } from 'common/components';
-
 import PlarkLogo from 'resources/svgs/plark-logo.component.svg';
-
 import FooterColumn from './footer-column.component';
 
 import styles from './footer.scss';
 
 export default function Footer(): JSX.Element {
     const i18n = useI18n();
+
     return (
         <footer>
             <Section className={styles.footer} contentClassName={styles.footerContent}>
