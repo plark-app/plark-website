@@ -16,7 +16,7 @@ export function Section(props: TSectionProps) {
     const contentClass = cn(
         styles.sectionContent,
         props.contentClassName,
-        props.withLeftPadding && styles.iLeftPadding,
+        props.withLeftPadding && styles.iLeftPadding
     );
 
     return (

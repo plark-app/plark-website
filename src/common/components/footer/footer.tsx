@@ -1,6 +1,6 @@
 import React from 'react';
+import moment from 'moment';
 import { useI18n } from 'slim-i18n';
-
 import PlatformList from 'common/utils/install-platforms';
 import { Section, StoreBadge, NavLink, menuRoutes, IMenuRoute, IMenuRouteLink, Socials } from 'common/components';
 import PlarkLogo from 'resources/svgs/plark-logo.component.svg';
@@ -10,6 +10,17 @@ import styles from './footer.scss';
 
 export default function Footer(): JSX.Element {
     const i18n = useI18n();
+
+    const [copyrightYears] = React.useState(() => {
+        const needYear = '2018';
+        const currentYear = moment().format('Y');
+        
+        if (currentYear === needYear) {
+            return currentYear;
+        }
+
+        return needYear + ' - ' + currentYear;
+    });
 
     return (
         <footer>
@@ -44,7 +55,7 @@ export default function Footer(): JSX.Element {
 
             <Section className={styles.bottomBar} contentClassName={styles.bottomBarContent}>
                 <nav className={styles.bottomBarNav}>
-                    <span className={styles.navLink}>Plark @ 2019</span>
+                    <span className={styles.navLink}>Plark @ {copyrightYears}</span>
                     <NavLink to="/privacy" className={styles.navLink}>
                         {i18n.gettext('Privacy')}
                     </NavLink>

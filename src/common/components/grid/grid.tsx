@@ -42,11 +42,11 @@ export function Col(props: ColProps): JSX.Element {
     const totalClassName = React.useMemo(() => cn(
         styles.col,
         noGutter && styles.iNoGutter,
-        xl && styles[`colXl${xl}`],
-        lg && styles[`colLg${lg}`],
-        md && styles[`colMd${md}`],
-        sm && styles[`colSm${sm}`],
-        xs && styles[`colXs${xs}`],
+        xl && styles[`xl${xl}`],
+        lg && styles[`lg${lg}`],
+        md && styles[`md${md}`],
+        sm && styles[`sm${sm}`],
+        xs && styles[`xs${xs}`],
         className,
     ), [sm, md, lg, xl, xs, className, noGutter]);
 

@@ -21,6 +21,7 @@ export default function BgTitleSection(props: BgTitleProps): JSX.Element {
 
             <div className={style.contentBox}>
                 <span className={style.title}>{props.title}</span>
+                <hr className={style.contentBoxSeparator} />
                 <TextBlock className={style.content} tag={props.textTag}>
                     {props.content}
                 </TextBlock>

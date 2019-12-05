@@ -31,7 +31,16 @@ export function withWindowSize<T extends WithWindowSizeProps>(
 
 
 export function useDimensions(): WithWindowState {
-    const [dimension, setDimensions] = React.useState<WithWindowState>({ width: 0, height: 0 });
+    const [dimension, setDimensions] = React.useState<WithWindowState>(() => {
+        if (!window) {
+            return { width: 0, height: 0 };
+        }
+
+        return {
+            width: window.innerWidth,
+            height: window.innerHeight,
+        };
+    });
 
     const updateDimension = React.useCallback(() => {
         setDimensions({

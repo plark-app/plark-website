@@ -28,7 +28,7 @@ export default function IntroSection(props: IntroProps): JSX.Element {
 
     return (
         <>
-            {(dimensions.width && dimensions.width < 768) && (
+            {(dimensions && dimensions.width < 768) && (
                 <div className={styles.introPhoneSection}>
                     <img src="/img/main-screen.png" alt="Main screen" />
                 </div>
