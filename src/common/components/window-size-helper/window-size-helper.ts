@@ -32,8 +32,11 @@ export function withWindowSize<T extends WithWindowSizeProps>(
 
 export function useDimensions(): WithWindowState {
     const [dimension, setDimensions] = React.useState<WithWindowState>(() => {
-        if (!window) {
-            return { width: 0, height: 0 };
+        if (typeof window === 'undefined') {
+            return {
+                width: 0,
+                height: 0,
+            };
         }
 
         return {

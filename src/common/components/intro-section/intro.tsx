@@ -20,6 +20,8 @@ export default function IntroSection(props: IntroProps): JSX.Element {
     const { subtitleTag = 'h2', noDownload } = props;
     const dimensions = useDimensions();
 
+    const { width } = dimensions;
+
     const onClickArrow = React.useCallback(() => {
         scrollTo(window.innerHeight, {
             speed: 400,
@@ -27,25 +29,23 @@ export default function IntroSection(props: IntroProps): JSX.Element {
     }, []);
 
     return (
-        <>
-            {(dimensions && dimensions.width < 768) && (
+        <Section className={cn(styles.introSection, props.sectionClassName)}
+                 contentClassName={cn(styles.introSectionContent, props.contentClassName)}
+                 withLeftPadding
+        >
+            {(width > 0 && width < 768) && (
                 <div className={styles.introPhoneSection}>
                     <img src="/img/main-screen.png" alt="Main screen" />
                 </div>
             )}
 
-            <Section className={cn(styles.introSection, props.sectionClassName)}
-                     contentClassName={cn(styles.introSectionContent, props.contentClassName)}
-                     withLeftPadding
-            >
-                <div className={cn(styles.introTopic, props.topicClassName)}>
-                    <h3 className={styles.introTopicShit}>{props.title}</h3>
-                    {React.createElement(subtitleTag, { className: styles.introTopicTitle }, props.subtitle)}
-                    {!noDownload && <DownloadCell />}
-                </div>
+            <div className={cn(styles.introTopic, props.topicClassName)}>
+                <h3 className={styles.introTopicShit}>{props.title}</h3>
+                {React.createElement(subtitleTag, { className: styles.introTopicTitle }, props.subtitle)}
+                {!noDownload && <DownloadCell />}
+            </div>
 
-                <ArrowDownSvg className={styles.introArrow} onClick={onClickArrow} />
-            </Section>
-        </>
+            <ArrowDownSvg className={styles.introArrow} onClick={onClickArrow} />
+        </Section>
     );
 }

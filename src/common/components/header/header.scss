@@ -32,6 +32,10 @@
 
         $percent: 1280px / 12 - 24px;
         padding-left: calc(#{$percent} + 36px);
+
+        @include to-sm-width {
+            padding-left: 50px;
+        }
     }
 
     &.-is-white {

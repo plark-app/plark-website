@@ -108,7 +108,11 @@
 
 
 @mixin left-padding {
-    @include to-width(1280px) {
+    @include to-sm-width {
+        padding-left: 16px;
+    }
+
+    @include only-width($sm-width, 1280px) {
         $percent: 100% / 12;
         padding-left: calc(#{$percent} - 24px + 36px);
     }
@@ -118,6 +122,7 @@
         padding-left: calc(#{$percent} + 36px);
     }
 }
+
 
 @mixin make-width($box-column) {
     $percent: 100% * ($box-column / $col-num);
