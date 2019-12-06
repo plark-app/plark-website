@@ -89,7 +89,7 @@ class Header extends React.Component<HeaderInnerProps, HeaderState> {
 
         return (
             <>
-                <BurgerButton opened={openedMenu} className={styles.headerDropdownMenuBtn} onClick={this._toggleMenu} />
+                <BurgerButton opened={openedMenu} className={styles.dropdownMenuBtn} onClick={this._toggleMenu} />
                 <DropdownMenu opened={openedMenu} />
             </>
         );
@@ -123,11 +123,14 @@ function DropdownMenu({ className, opened }: DropdownMenuProps): JSX.Element | n
 
     return ReactDOM.createPortal(
         <CSSTransition in={opened} classNames={'mobile-menu'} timeout={300} unmountOnExit>
-            <nav className={cn(styles.headerDropdownMenu, className)}>
-                <a href="https://community.plark.io/" className={styles.headerDropdownMenuItem}>
+            <nav className={cn(styles.dropdownMenu, className)}>
+                <a href="https://t.me/PlarkWalletSupport" className={styles.dropdownMenuItem}>
+                    {i18n.gettext('Support')}
+                </a>
+                <a href="https://community.plark.io/" className={styles.dropdownMenuItem}>
                     {i18n.gettext('Community')}
                 </a>
-                <a href="/blog" className={styles.headerDropdownMenuItem}>
+                <a href="/blog" className={styles.dropdownMenuItem}>
                     {i18n.gettext('Blog')}
                 </a>
             </nav>
