@@ -67,7 +67,7 @@
             transform: translateX(-50%) translateY(5px);
         }
 
-        @include to-sm-width {
+        @include to-md-width {
             top: calc(100vh - 100px);
         }
     }

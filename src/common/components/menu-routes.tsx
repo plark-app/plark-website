@@ -5,6 +5,7 @@ export interface IMenuRouteLink {
     text: TranslateFunction;
     additional?: JSX.Element;
     source?: 'external';
+    noBlank?: boolean;
 }
 
 export interface IMenuRoute {
@@ -125,8 +126,10 @@ export const menuRoutes: IMenuRoute[] = [
                 source: 'external',
             },
             {
-                to: '/blog',
+                to: 'https://plark.io/blog',
                 text: __('Blog'),
+                source: 'external',
+                noBlank: true,
             },
             {
                 to: '/faq',

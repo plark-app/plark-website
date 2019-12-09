@@ -73,7 +73,7 @@ class Header extends React.Component<HeaderInnerProps, HeaderState> {
                     <a href="https://t.me/PlarkWalletSupport" className={styles.sidenavUnit}>
                         {i18n.gettext('Support')}
                     </a>
-                    <a href="/blog" className={styles.sidenavUnit}>
+                    <a href="https://plark.io/blog" className={styles.sidenavUnit}>
                         {i18n.gettext('Blog')}
                     </a>
                     <a href="https://community.plark.io" className={styles.sidenavUnit}>
@@ -130,7 +130,7 @@ function DropdownMenu({ className, opened }: DropdownMenuProps): JSX.Element | n
                 <a href="https://community.plark.io/" className={styles.dropdownMenuItem}>
                     {i18n.gettext('Community')}
                 </a>
-                <a href="/blog" className={styles.dropdownMenuItem}>
+                <a href="https://plark.io/blog" className={styles.dropdownMenuItem}>
                     {i18n.gettext('Blog')}
                 </a>
             </nav>

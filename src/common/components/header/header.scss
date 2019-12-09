@@ -112,9 +112,13 @@
         transition: all 0.5s;
 
         &:hover {
-            transition: all 0.2s;
-            transform: translateY(-3px);
+            transition: all 0.2s ease-out;
+            transform: translateX(-3px);
             color: $color-gray50;
+        }
+
+        &:active {
+            transform: translateX(2px);
         }
     }
 }

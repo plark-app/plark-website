@@ -14,7 +14,7 @@ export default function Footer(): JSX.Element {
     const [copyrightYears] = React.useState(() => {
         const needYear = '2018';
         const currentYear = moment().format('Y');
-        
+
         if (currentYear === needYear) {
             return currentYear;
         }
@@ -64,9 +64,9 @@ export default function Footer(): JSX.Element {
                         {i18n.gettext('Terms')}
                     </NavLink>
 
-                    <a href="/sitemap" className={styles.navLink}>
-                        Sitemap
-                    </a>
+                    <NavLink to="/sitemap" className={styles.navLink}>
+                        {i18n.gettext('Sitemap')}
+                    </NavLink>
                 </nav>
 
                 <nav className={styles.bottomBarNav}>
@@ -91,13 +91,18 @@ function ColumnLinks({ links }: ColumnLinksProps): JSX.Element {
                 if (link.source === 'external') {
                     return (
                         <div key={i}>
-                            <a key={i} href={link.to} className={styles.navLink} target={'_blank'}>
+                            <a key={i}
+                               href={link.to}
+                               className={styles.navLink}
+                               target={link.noBlank ? undefined : '_blank'}
+                            >
                                 {link.text(i18n)}
                                 {link.additional && link.additional}
                             </a>
                         </div>
                     );
                 }
+
                 return (
                     <div key={i}>
                         <NavLink key={i} to={link.to} className={styles.navLink}>
