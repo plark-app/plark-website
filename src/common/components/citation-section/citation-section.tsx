@@ -1,6 +1,5 @@
 import React from 'react';
 import { Section } from '../section';
-import { Topic } from '../topic';
 import style from './citation.scss';
 
 type CitationProps = {
@@ -10,16 +9,17 @@ type CitationProps = {
 };
 
 export default function CitationSection(props: CitationProps): JSX.Element {
+
+    const { titleTag = 'h2' } = props;
+
     return (
-        <Section className={style.section} contentClassName={style.sectionContent}>
-            <Topic
-                isCenter
-                titleTag={props.titleTag || 'h2'}
-                titleText={'"' + props.title + '"'}
-                descText={'— ' + props.author}
-                titleClassName={style.title}
-                descClassName={style.author}
-            />
+        <Section className={style.section} contentClassName={style.sectionContent} withLeftPadding>
+            <div className={style.citation}>
+                {React.createElement(titleTag, {
+                    className: style.citationText,
+                }, props.title)}
+                <p className={style.citationAuthor}>— {props.author}</p>
+            </div>
         </Section>
     );
 }

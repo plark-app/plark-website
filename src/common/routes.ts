@@ -34,7 +34,7 @@ export const routes: RouteDescriptor[] = [
             pageName: i18n.gettext('Mobile Wallet'),
             title: i18n.gettext('Best mobile crypto wallet? Well, Plark.'),
             description: i18n.gettext(
-                'We won’t scream how good we are. We won’t beg you to install our application. We do our job. No need to convince — use Plark.',
+                'No name, no email address, no phone number - you remain completely anonymous. We hide all complexity from your sight to make the stream fresh.',
             ),
             canonicalLink: 'https://plark.io/mobile-wallet',
             path: '/mobile-wallet',
@@ -54,7 +54,7 @@ export const routes: RouteDescriptor[] = [
             pageName: i18n.gettext('iOS Wallet'),
             title: i18n.gettext('Best iOS crypto wallet? Well, Plark.'),
             description: i18n.gettext(
-                'We won’t scream how good we are. We won’t beg you to install our application. We do our job. No need to convince — use Plark.',
+                'There is nothing you need to provide — no name, no phone number, no email. A few taps and you are ready. No complexity at all, we make the flow benign and slight for you.',
             ),
             canonicalLink: 'https://plark.io/ios-wallet',
             path: '/ios-wallet',
@@ -74,7 +74,7 @@ export const routes: RouteDescriptor[] = [
             pageName: i18n.gettext('Android Wallet'),
             title: i18n.gettext('Best Android crypto wallet? Well, Plark.'),
             description: i18n.gettext(
-                'We won’t scream how good we are. We won’t beg you to install our application. We do our job. No need to convince — use Plark.',
+                'For real. No regular registration is needed. It will take you about 30 seconds to get in. No need to provide us with your name, phone number or even email.',
             ),
             canonicalLink: 'https://plark.io/android-wallet',
             path: '/android-wallet',
@@ -94,7 +94,7 @@ export const routes: RouteDescriptor[] = [
             pageName: i18n.gettext('Bitcoin Wallet'),
             title: i18n.gettext('The Best Bitcoin Wallet? Well, Plark.'),
             description: i18n.gettext(
-                'We won’t scream how good we are. We won’t beg you to install our application. We do our job. No need to convince — use Plark.',
+                'When it comes to application usage, we want our users to feel comfortable. That’s why we’ we eliminated all the points that may bother you in any way.',
             ),
             canonicalLink: 'https://plark.io/bitcoin-wallet',
             path: '/bitcoin-wallet',
@@ -393,6 +393,7 @@ export const routes: RouteDescriptor[] = [
         getSeoConfig: (i18n: ITranslationsAdapter): PageSeoConfig => ({
             pageName: i18n.gettext('Contact us'),
             title: i18n.gettext('Stay in touch with a Plark team'),
+            description: i18n.gettext('Stay in touch. Plark Staff will never ask for personal information, including a 12-word phrase.'),
             canonicalLink: 'https://plark.io/contact-us',
             path: '/contact-us',
         }),
@@ -410,6 +411,7 @@ export const routes: RouteDescriptor[] = [
         getSeoConfig: (i18n: ITranslationsAdapter): PageSeoConfig => ({
             pageName: i18n.gettext('About us'),
             title: i18n.gettext('We make crypto simpler for you and his name is Plark'),
+            description: i18n.gettext('Add your credit or debit card and purchase Bitcoin, Litecoin, Ethereum, and Dash right away. The feature, which best crypto wallet should have.'),
             canonicalLink: 'https://plark.io/about-us',
             path: '/about-us',
         }),
@@ -427,6 +429,7 @@ export const routes: RouteDescriptor[] = [
         getSeoConfig: (i18n: ITranslationsAdapter): PageSeoConfig => ({
             pageName: i18n.gettext('FAQ'),
             title: i18n.gettext('Frequently Asked Questions'),
+            description: i18n.gettext('How can I send cryptocurrency? What is cryptocurrency address? Popular frequently asked questions. Ask your question and get a quick answer on Plark.io.'),
             canonicalLink: 'https://plark.io/faq',
             path: '/faq',
         }),
@@ -444,6 +447,7 @@ export const routes: RouteDescriptor[] = [
         getSeoConfig: (i18n: ITranslationsAdapter): PageSeoConfig => ({
             pageName: i18n.gettext('Privacy Policy'),
             title: i18n.gettext('Privacy Policy'),
+            description: i18n.gettext('Privacy Policy of Plark.io'),
             canonicalLink: 'https://plark.io/privacy',
             path: '/privacy',
         }),
@@ -461,6 +465,7 @@ export const routes: RouteDescriptor[] = [
         getSeoConfig: (i18n: ITranslationsAdapter): PageSeoConfig => ({
             pageName: i18n.gettext('Terms & Conditions'),
             title: i18n.gettext('Terms & Conditions'),
+            description: i18n.gettext('Terms & Conditions of Plark.io'),
             canonicalLink: 'https://plark.io/terms',
             path: '/terms',
         }),

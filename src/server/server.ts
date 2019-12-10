@@ -30,6 +30,7 @@ expressApp.use(
     '/',
     expressStaticGzip(path.join(process.cwd(), 'dest/client'), {
         enableBrotli: true,
+        index: false,
         orderPreference: ['br'],
         maxAge: '1y',
     }),

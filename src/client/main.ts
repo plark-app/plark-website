@@ -1,7 +1,7 @@
 import 'babel-polyfill';
 
 import { Location } from 'history';
-import createBrowserHistory from 'history/createBrowserHistory';
+import { createBrowserHistory } from 'history';
 import { requestIdleCallback } from 'idle-callback';
 import { getActiveRoute, RouteDescriptor, getRouteLocale } from 'common/utils/router';
 import { routes } from 'common/routes';

@@ -2,7 +2,6 @@ import React, { ChangeEvent, FormEvent } from 'react';
 import Axios from 'axios';
 import { compose } from 'recompose';
 import { withTranslations, WithTranslationsProps } from 'slim-i18n';
-import UIButton from '../ui-button';
 
 import styles from './subscribe-section.scss';
 
@@ -33,12 +32,12 @@ class SubscribeForm extends React.PureComponent<WithTranslationsProps> {
                         value={this.state.email}
                         onChange={this._handleValue}
                         className={styles.subscribeInput}
-                        placeholder="enter your email"
+                        placeholder="email address"
                     />
 
-                    <UIButton color="primary" disabled={loading} className={styles.subscribeButton}>
-                        {loading ? 'Loading...' : i18n.gettext('Subscribe')}
-                    </UIButton>
+                    <button disabled={loading} className={styles.subscribeButton} type="submit">
+                        {loading ? 'Loading...' : '→'}
+                    </button>
                 </div>
 
                 <div className={styles.subscribeErrorMessage}>{errorMessage}</div>

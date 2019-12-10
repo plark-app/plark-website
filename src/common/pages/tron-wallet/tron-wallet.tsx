@@ -54,8 +54,8 @@ export default function TronWallet(): JSX.Element {
             <StickIphone
                 picture={{
                     src: '/img/main-screen.png',
-                    alt: 'Plark Main screen',
-                    title: 'Plark Main screen',
+                    alt: 'multi cryptocurrency mobile wallet',
+                    title: 'cryptocurrency mobile wallet',
                 }}
             >
                 <IntroSection
@@ -87,13 +87,17 @@ export default function TronWallet(): JSX.Element {
             </Section>
 
             <FeatureSection
+                withoutLink
                 titleText={i18n.gettext('Download Plark Wallet for Tron')}
                 text={i18n.gettext(
                     "Plark offers one of the fastest and least requesting ways to deal with purchase and administer Tron. Nearby best in class security level, Plark fills in as a wallet and exchange. Since now, you don't need to make accounts on different exchanges or quest for a blessed one. So get ready for an ultra utility each moment of your life (even better than any Tron desktop wallet offers).",
                 )}
                 textClassName={styles.tronWalletDownloadSectionText}
-                image={{ src: '/img/trade-screen.png' }}
-                withoutLink
+                image={{
+                    src: '/img/trade-screen.png',
+                    alt: 'best mobile wallet for cryptocurrency',
+                    title: 'mobile wallet for cryptocurrency',
+                }}
             />
 
             <Section>

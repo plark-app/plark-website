@@ -6,6 +6,8 @@ export interface IMenuRouteLink {
     additional?: JSX.Element;
     source?: 'external';
     noBlank?: boolean;
+    rel?: string;
+    comingSoon?: boolean;
 }
 
 export interface IMenuRoute {
@@ -81,61 +83,69 @@ const cryptoCurrencies: IMenuRouteLink[] = [
 export const menuRoutes: IMenuRoute[] = [
     {
         title: __('Product'),
-        links: [
-            {
-                to: '/ios-wallet',
-                text: __('Plark for iOS'),
-            },
-            {
-                to: '/android-wallet',
-                text: __('Plark for Android (coming soon)'),
-            },
-            {
-                to: '/bitcoin-wallet',
-                text: __('Plark for Bitcoin'),
-            },
-            {
-                to: '/mobile-wallet',
-                text: __('Mobile Wallet'),
-            },
-        ],
+        links: [{
+            to: '/ios-wallet',
+            text: __('Plark for iOS'),
+        }, {
+            to: '/android-wallet',
+            text: __('Plark for Android'),
+            comingSoon: true,
+        }, {
+            to: '/mobile-wallet',
+            text: __('Mobile Wallet'),
+        }, {
+            to: '/bitcoin-wallet',
+            text: __('Plark for Bitcoin'),
+        }, {
+            to: '/litecoin-wallet',
+            text: __('Litecoin wallet'),
+        }, {
+            to: '/dogecoin-wallet',
+            text: __('Dogecoin wallet'),
+            comingSoon: true,
+        }, {
+            to: '/ripple-wallet',
+            text: __('Ripple wallet'),
+            comingSoon: true,
+        }, {
+            to: '/monero-wallet',
+            text: __('Monero wallet'),
+            comingSoon: true,
+        }, {
+            to: '/iota-wallet',
+            text: __('IOTA wallet'),
+            comingSoon: true,
+        }, {
+            to: '/zcash-wallet',
+            text: __('Zcash wallet'),
+            comingSoon: true,
+        }],
     },
     {
         title: __('Company'),
-        links: [
-            {
-                to: '/about-us',
-                text: __('About us'),
-            },
-            {
-                to: '/contact-us',
-                text: __('Contact us'),
-            },
-            // {
-            //     to: '/carriers',
-            //     text: __('Carriers'),
-            // },
-        ],
+        links: [{
+            to: '/about-us',
+            text: __('About us'),
+        }, {
+            to: '/contact-us',
+            text: __('Contact us'),
+        }],
     },
     {
         title: __('Learn'),
-        links: [
-            {
-                to: 'https://community.plark.io',
-                text: __('Community'),
-                source: 'external',
-            },
-            {
-                to: 'https://plark.io/blog',
-                text: __('Blog'),
-                source: 'external',
-                noBlank: true,
-            },
-            {
-                to: '/faq',
-                text: __('FAQs'),
-            },
-        ],
+        links: [{
+            to: 'https://community.plark.io',
+            text: __('Community'),
+            source: 'external',
+        }, {
+            to: 'https://plark.io/blog',
+            text: __('Blog'),
+            source: 'external',
+            noBlank: true,
+        }, {
+            to: '/faq',
+            text: __('FAQs'),
+        }],
     },
     {
         title: __('Cryptocurrencies'),
@@ -144,38 +154,37 @@ export const menuRoutes: IMenuRoute[] = [
     },
     {
         title: __('Social'),
-        links: [
-            {
-                to: 'https://t.me/PlarkWallet',
-                text: __('Telegram'),
-                source: 'external',
-            },
-            {
-                to: 'https://www.facebook.com/plark.io/',
-                text: __('Facebook'),
-                source: 'external',
-            },
-            {
-                to: 'https://twitter.com/PlarkWallet',
-                text: __('Twitter'),
-                source: 'external',
-            },
-            {
-                to: 'https://www.reddit.com/r/plark',
-                text: __('Reddit'),
-                source: 'external',
-            },
-            {
-                to: 'https://github.com/plark-app',
-                text: __('GitHub'),
-                source: 'external',
-            },
-            {
-                to: 'https://www.producthunt.com/posts/plark-crypto-wallet',
-                text: __('Product Hunt'),
-                source: 'external',
-            },
-        ],
+        links: [{
+            to: 'https://t.me/PlarkWallet',
+            text: __('Telegram'),
+            source: 'external',
+            rel: 'nofollow',
+        }, {
+            to: 'https://www.facebook.com/plark.io/',
+            text: __('Facebook'),
+            source: 'external',
+            rel: 'nofollow',
+        }, {
+            to: 'https://twitter.com/PlarkWallet',
+            text: __('Twitter'),
+            source: 'external',
+            rel: 'nofollow',
+        }, {
+            to: 'https://www.reddit.com/r/plark',
+            text: __('Reddit'),
+            source: 'external',
+            rel: 'nofollow',
+        }, {
+            to: 'https://github.com/plark-app',
+            text: __('GitHub'),
+            source: 'external',
+            rel: 'nofollow',
+        }, {
+            to: 'https://www.producthunt.com/posts/plark-crypto-wallet',
+            text: __('Product Hunt'),
+            source: 'external',
+            rel: 'nofollow',
+        }],
     },
     {
         title: __('Get in touch'),

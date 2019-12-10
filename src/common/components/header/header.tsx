@@ -62,7 +62,7 @@ class Header extends React.Component<HeaderInnerProps, HeaderState> {
                         </Col>
 
                         <nav className={styles.headerNav}>
-                            <a href={appstore.url} className={styles.headerAppstore}>
+                            <a href={appstore.url} className={styles.headerAppstore} rel="nofollow">
                                  Available on the App Store →
                             </a>
                         </nav>
@@ -70,14 +70,14 @@ class Header extends React.Component<HeaderInnerProps, HeaderState> {
                 </header>
 
                 <nav className={styles.sidenav}>
-                    <a href="https://t.me/PlarkWalletSupport" className={styles.sidenavUnit}>
-                        {i18n.gettext('Support')}
+                    <a href="https://community.plark.io" className={styles.sidenavUnit}>
+                        {i18n.gettext('Community')}
                     </a>
                     <a href="https://plark.io/blog" className={styles.sidenavUnit}>
                         {i18n.gettext('Blog')}
                     </a>
-                    <a href="https://community.plark.io" className={styles.sidenavUnit}>
-                        {i18n.gettext('Community')}
+                    <a href="https://t.me/PlarkWalletSupport" className={styles.sidenavUnit}>
+                        {i18n.gettext('Support')}
                     </a>
                 </nav>
             </>
@@ -89,8 +89,14 @@ class Header extends React.Component<HeaderInnerProps, HeaderState> {
 
         return (
             <>
-                <BurgerButton opened={openedMenu} className={styles.dropdownMenuBtn} onClick={this._toggleMenu} />
-                <DropdownMenu opened={openedMenu} />
+                <BurgerButton
+                    opened={openedMenu}
+                    className={styles.dropdownMenuBtn}
+                    onClick={this._toggleMenu}
+                />
+                <DropdownMenu
+                    opened={openedMenu}
+                />
             </>
         );
     };
@@ -124,7 +130,11 @@ function DropdownMenu({ className, opened }: DropdownMenuProps): JSX.Element | n
     return ReactDOM.createPortal(
         <CSSTransition in={opened} classNames={'mobile-menu'} timeout={300} unmountOnExit>
             <nav className={cn(styles.dropdownMenu, className)}>
-                <a href="https://t.me/PlarkWalletSupport" className={styles.dropdownMenuItem}>
+                <a href="https://t.me/PlarkWalletSupport"
+                   className={styles.dropdownMenuItem}
+                   rel="nofollow"
+                   target="_blank"
+                >
                     {i18n.gettext('Support')}
                 </a>
                 <a href="https://community.plark.io/" className={styles.dropdownMenuItem}>

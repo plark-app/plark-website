@@ -1,6 +1,7 @@
 @import '../../styles/vars';
 @import '../../styles/media';
 @import '../../styles/colors';
+@import '../../styles/text';
 
 .header {
     padding: 0;
@@ -52,14 +53,9 @@
     }
 
     &__center-label {
-        font-size: 12px;
-        line-height: 1.167;
-        font-weight: 400;
-        color: $color-text-dark;
-        letter-spacing: 0;
+        @include text-special;
 
         margin-left: 12px;
-        text-transform: lowercase;
         white-space: pre-wrap;
 
         @include to-sm-width {
@@ -70,24 +66,6 @@
     &__nav {
         display: flex;
         align-items: center;
-
-        &-unit {
-            transition: color 0.4s;
-            display: none;
-            font-size: 16px;
-            font-weight: 500;
-            margin-right: 50px;
-            color: $color-text-dark;
-
-            &:hover {
-                transition-duration: 0.2s;
-                color: $color-text-secondary;
-            }
-
-            @include from-md-width {
-                display: block;
-            }
-        }
 
         &-badge {
             margin-left: auto;
@@ -104,11 +82,7 @@
     }
 
     &__appstore {
-        font-size: 14px;
-        line-height: 20px;
-        font-weight: 700;
-        color: $color-text-dark;
-
+        @include text-h4;
         transition: all 0.5s;
 
         &:hover {
@@ -130,10 +104,12 @@
     z-index: 950;
 
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     left: 0;
+
+    transform: rotate(-90deg);
 
     @include from-width(1280px) {
         left: calc((100vw - 1280px) / 2);
@@ -144,14 +120,7 @@
     }
 
     &__unit {
-        line-height: 24px;
-        text-transform: lowercase;
-        letter-spacing: 0;
-        font-size: 12px;
-        font-weight: 400;
-        transform: rotate(-90deg);
-        color: $color-text-dark;
-
+        @include text-special;
         transition: all 0.3s;
 
         &:hover {
@@ -159,7 +128,7 @@
         }
 
         & + & {
-            margin-top: 50px;
+            margin-left: 50px;
         }
     }
 }

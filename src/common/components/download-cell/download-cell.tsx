@@ -12,7 +12,13 @@ type DownloadCellProps = {
 export default React.memo(function DownloadCell(props: DownloadCellProps) {
     return (
         <div className={cn(styles.buttons, props.className)}>
-            <StoreBadge platform={PlatformList.apple} height={40} />
+            <StoreBadge
+                platform={PlatformList.apple}
+                height={40}
+                alt="Install cryptocurrency wallet from App Store"
+                title="Plark cryptocurrency wallet in App Store"
+            />
+
             <StoreQR className={styles.buttonsQr} />
         </div>
     );

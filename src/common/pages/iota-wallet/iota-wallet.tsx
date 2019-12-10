@@ -59,8 +59,8 @@ export default function IotaWallet(): JSX.Element {
             <StickIphone
                 picture={{
                     src: '/img/main-screen.png',
-                    alt: 'Plark Main screen',
-                    title: 'Plark Main screen',
+                    alt: 'multi cryptocurrency mobile wallet',
+                    title: 'cryptocurrency mobile wallet',
                 }}
             >
                 <IntroSection
@@ -91,23 +91,27 @@ export default function IotaWallet(): JSX.Element {
 
             <Section className={styles.iotaWalletSecure}>
                 <Topic
+                    titleTag="h2"
                     className={styles.iotaWalletSecureTopic}
                     titleClassName={styles.iotaWalletSecureTitle}
                     titleText={i18n.gettext(
                         'IOTA hardware wallet is secure, but Plark is more convenient. Control your IOTA assets. Anytime. Anywhere.',
                     )}
-                    titleTag="h2"
                 />
             </Section>
 
             <FeatureSection
+                withoutLink
                 titleText={i18n.gettext('Download Plark Wallet for IOTA')}
                 text={i18n.gettext(
                     'Create your personal IOTA wallet and enjoy the convenience and advantages of the Plark app. We guarantee 100% security of your funds from the technical side. There is no way to hack your wallet since it is connected directly to the blockchain. We do not store your keys on our server, so you are the single person who has full access and control over your coins.',
                 )}
                 textClassName={styles.iotaWalletDownloadSectionText}
-                image={{ src: '/img/trade-screen.png' }}
-                withoutLink
+                image={{
+                    src: '/img/trade-screen.png',
+                    alt: 'best mobile wallet for cryptocurrency',
+                    title: 'mobile wallet for cryptocurrency',
+                }}
             />
 
             <CardSection

@@ -24,8 +24,8 @@ export default function AndroidWallet(): JSX.Element {
             <StickIphone
                 picture={{
                     src: '/img/main-screen.png',
-                    alt: 'Plark Main screen',
-                    title: 'Plark Main screen',
+                    alt: 'multi cryptocurrency mobile wallet',
+                    title: 'cryptocurrency mobile wallet',
                 }}
             >
                 <IntroSection
@@ -87,7 +87,11 @@ export default function AndroidWallet(): JSX.Element {
                 text={i18n.gettext(
                     'Our team thinks Plark is the best-looking Android crypto wallet. A lot of companies underestimate the power of kicky design. Well, we don’t. That’s why Plark for Android will be perfectly shaped like a jewel. You will get back to it every time to delight its simplicity and elegance.',
                 )}
-                image={{ src: '/img/trade-screen.png' }}
+                image={{
+                    src: '/img/trade-screen.png',
+                    alt: 'best mobile wallet for cryptocurrency',
+                    title: 'mobile wallet for cryptocurrency'
+                }}
             />
 
             <FeatureSection
@@ -95,14 +99,22 @@ export default function AndroidWallet(): JSX.Element {
                 text={i18n.gettext(
                     'The educational aspect is crucial. No matter if you are experienced one or not — there is always something new to learn. We’ve prepared Help Center and FAQ at your disposal, while our 24/7 Support is always open for you to ask or suggest.',
                 )}
-                image={{ src: '/img/trade-confirmation-screen.png' }}
+                image={{
+                    src: '/img/trade-confirmation-screen.png',
+                    alt: 'best mobile cryptocurrency wallet',
+                    title: 'best mobile wallet for cryptocurrency'
+                }}
             />
 
             <FeatureSection
                 text={i18n.gettext(
                     'You may adjust the transaction speed through setting up the mining fee size. It allows you to proceed with transaction faster or slower by paying more or less, according to your current needs.',
                 )}
-                image={{ src: '/img/trade-screen.png' }}
+                image={{
+                    src: '/img/trade-screen.png',
+                    alt: 'best mobile wallet for cryptocurrency',
+                    title: 'mobile wallet for cryptocurrency'
+                }}
             />
 
             <OpenSourceSection

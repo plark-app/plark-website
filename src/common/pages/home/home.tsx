@@ -25,8 +25,8 @@ export default function Home(): JSX.Element {
             <StickIphone
                 picture={{
                     src: '/img/main-screen.png',
-                    alt: 'Plark Main screen',
-                    title: 'PLark Main screen',
+                    alt: 'multi cryptocurrency mobile wallet',
+                    title: 'cryptocurrency mobile wallet',
                 }}
             >
                 <IntroSection
@@ -73,7 +73,7 @@ export default function Home(): JSX.Element {
 
             <CitationSection
                 titleTag="h1"
-                title="We don’t say Plark is the best crypto wallet. Better you say."
+                title={`We don’t say Plark is the best crypto wallet.\nBetter you say.`}
                 author="Plark Team"
             />
 
@@ -93,6 +93,8 @@ export default function Home(): JSX.Element {
                 }
                 image={{
                     src: '/img/trade-screen.png',
+                    alt: 'best mobile wallet for cryptocurrency',
+                    title: 'mobile wallet for cryptocurrency',
                 }}
             />
 
@@ -104,6 +106,8 @@ export default function Home(): JSX.Element {
                 }
                 image={{
                     src: '/img/trade-confirmation-screen.png',
+                    alt: 'best mobile cryptocurrency wallet',
+                    title: 'best mobile wallet for cryptocurrency',
                 }}
             />
 

@@ -48,7 +48,13 @@ export default function Footer(): JSX.Element {
                 <div className={styles.footerSecond}>
                     <PlarkLogo height={25} className={styles.footerLogo} />
                     <div>
-                        <StoreBadge className={styles.footerBadge} platform={PlatformList.apple} height={40} />
+                        <StoreBadge
+                            className={styles.footerBadge}
+                            platform={PlatformList.apple}
+                            height={40}
+                            alt="Install cryptocurrency wallet from App Store"
+                            title="Plark cryptocurrency wallet in App Store"
+                        />
                     </div>
                 </div>
             </Section>
@@ -95,6 +101,7 @@ function ColumnLinks({ links }: ColumnLinksProps): JSX.Element {
                                href={link.to}
                                className={styles.navLink}
                                target={link.noBlank ? undefined : '_blank'}
+                               rel={link.rel}
                             >
                                 {link.text(i18n)}
                                 {link.additional && link.additional}
@@ -106,7 +113,8 @@ function ColumnLinks({ links }: ColumnLinksProps): JSX.Element {
                 return (
                     <div key={i}>
                         <NavLink key={i} to={link.to} className={styles.navLink}>
-                            {link.text(i18n)}
+                            <span>{link.text(i18n)}</span>
+                            {link.comingSoon ? <span className={styles.navLinkSoon}>(comming soon)</span> : undefined}
                         </NavLink>
                     </div>
                 );

@@ -107,29 +107,55 @@
 }
 
 
-@mixin left-padding {
+@function col-absolute($deep: 1) {
+    @return 1280px * ($deep / $col-num) - $var-gutter;
+}
+
+@function col-percent($deep: 1) {
+    @return 100% * ($deep / $col-num);
+}
+
+
+@mixin left-padding($deep: 1) {
     @include to-sm-width {
         padding-left: 16px;
     }
 
     @include only-width($sm-width, 1280px) {
-        $percent: 100% / 12;
+        $percent: col-percent($deep);
+
         padding-left: calc(#{$percent} - 24px + 36px);
     }
 
-    @include from-md-width {
-        $percent: 1280px / 12 - 24px;
-        padding-left: calc(#{$percent} + 36px);
+    @include from-width(1280px) {
+        $value: col-absolute($deep);
+        padding-left: $value + 36px;
     }
 }
 
 
-@mixin make-width($box-column) {
-    $percent: 100% * ($box-column / $col-num);
-    max-width: calc(#{$percent} - #{$var-gutter});
+@mixin left-margin($deep: 1) {
+    @include only-width($sm-width, 1280px) {
+        $percent: col-percent($deep);
+        margin-left: calc(#{$percent} - 24px + 36px);
+    }
 
     @include from-width(1280px) {
-        $percent: 1280px * ($box-column / 12) - $var-gutter;
+        $value: col-absolute($deep);
+
+        margin-left: $value + 36px;
+    }
+}
+
+
+@mixin make-width($deep: 1) {
+    @include to-width(1280px) {
+        $percent: col-percent($deep);
+        max-width: calc(#{$percent} - #{$var-gutter});
+    }
+
+    @include from-width(1280px) {
+        $percent: col-absolute($deep);
         max-width: $percent;
     }
 }

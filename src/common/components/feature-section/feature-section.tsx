@@ -41,17 +41,14 @@ export default React.memo(function FeatureSection(props: FeatureSectionProps): J
     return (
         <Section className={styles.featureSection} contentClassName={contentClass} withLeftPadding>
             <div className={styles.featureSectionText}>
-                {titleText &&
-                    React.createElement(
-                        'p',
-                        { className: cn(styles.featureSectionTextTitle, titleClassName) },
-                        titleText,
-                    )}
+                {titleText && React.createElement(
+                    'p',
+                    { className: cn(styles.featureSectionTextTitle, titleClassName) },
+                    titleText,
+                )}
                 {React.createElement(textTag, { className: cn(styles.featureSectionTextDescr, textClassName) }, text)}
-                {withoutLink ? (
-                    undefined
-                ) : (
-                    <JoinLink href={linkUrl} target="_blank">
+                {withoutLink ? undefined : (
+                    <JoinLink href={linkUrl} target="_blank" rel="nofollow">
                         {linkText}
                     </JoinLink>
                 )}

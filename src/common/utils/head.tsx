@@ -3,6 +3,7 @@ import { isFragment } from 'react-is';
 import Helmet from 'react-helmet';
 import { ITranslationsAdapter, useI18n } from 'slim-i18n';
 import { RouteHeadRenderFn } from './router/router';
+import { DEFAULT_LOCALE } from './locale';
 import {
     OpenGraph,
     PageSeoConfig,
@@ -41,11 +42,14 @@ export default function Head({ children: render, getSeoConfig }: HeadProps) {
     return (
         <>
             <Helmet encodeSpecialCharacters={false} title={seoConfig.title}>
-                <html lang={i18n.language} />
-                <meta name="Content-Language" content={i18n.language} />
+                <html lang={i18n.languageCode} />
+                <meta name="Content-Language" content={i18n.languageCode} />
                 <meta name="description" content={seoConfig.description} />
                 {/*{seoConfig.path !== undefined ? getHrefLangUrls(seoConfig.path) : null}*/}
-                {seoConfig.canonicalLink !== undefined ? <link rel="canonical" href={seoConfig.canonicalLink} /> : null}
+                {(seoConfig.canonicalLink !== undefined && i18n.language !== DEFAULT_LOCALE)
+                    ? <link rel="canonical" href={seoConfig.canonicalLink} />
+                    : null
+                }
                 {seoConfig.robotsRule && <meta name="robots" content={seoConfig.robotsRule} />}
 
                 {React.Children.map(children, (child: React.ReactChild, key: number) => {

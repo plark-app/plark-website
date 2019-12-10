@@ -25,8 +25,8 @@ export default function BitcoincashWallet(): JSX.Element {
             <StickIphone
                 picture={{
                     src: '/img/main-screen.png',
-                    alt: 'Plark Main screen',
-                    title: 'Plark Main screen',
+                    alt: 'multi cryptocurrency mobile wallet',
+                    title: 'cryptocurrency mobile wallet',
                 }}
             >
                 <IntroSection
@@ -59,32 +59,44 @@ export default function BitcoincashWallet(): JSX.Element {
             </Section>
 
             <FeatureSection
+                withoutLink
                 titleText={i18n.gettext('Security matters')}
                 text={i18n.gettext(
                     'All that ought to be secured is secured. You can ensure it since Plark encodes everything that matters both transactions’ information and private keys. Your gadget holds this data, so you are the sole individual to get to those. There is no Bitcoin Cash web wallet that gives a similar degree of security.',
                 )}
                 textClassName={styles.bitcoincashWalletDownloadSectionText}
-                image={{ src: '/img/main-screen.png' }}
-                withoutLink
+                image={{
+                    src: '/img/main-screen.png',
+                    alt: 'multi cryptocurrency mobile wallet',
+                    title: 'cryptocurrency mobile wallet',
+                }}
             />
             <FeatureSection
+                isLtr
+                withoutLink
                 titleText={i18n.gettext('Trade your Bitcoin Cash. ')}
                 text={i18n.gettext(
                     'Plark enables you to exchange Bitcoin Cash to other currencies immediately. Presumably the kickiest cross-rates both for Bitcoin Cash and other accessible cryptos. Each exchange will complete inside our Bitcoin Cash wallet iOS application.',
                 )}
                 textClassName={styles.bitcoincashWalletDownloadSectionText}
-                image={{ src: '/img/trade-confirmation-screen.png' }}
-                withoutLink
-                isLtr
+                image={{
+                    src: '/img/trade-confirmation-screen.png',
+                    alt: 'best mobile cryptocurrency wallet',
+                    title: 'best mobile wallet for cryptocurrency',
+                }}
             />
             <FeatureSection
+                withoutLink
                 titleText={i18n.gettext('Enjoy the design.')}
                 text={i18n.gettext(
                     'Design is the thing that causes individuals to get back again and again. Regardless of whether we talk about Bitcoin Cash desktop wallet or mobile application, for what reason would it be advisable for us to disregard this? Nonsense! We at Plark excited to make our clients joy even with the littlest subtleties.',
                 )}
                 textClassName={styles.bitcoincashWalletDownloadSectionText}
-                image={{ src: '/img/trade-screen.png' }}
-                withoutLink
+                image={{
+                    src: '/img/trade-screen.png',
+                    alt: 'best mobile wallet for cryptocurrency',
+                    title: 'mobile wallet for cryptocurrency',
+                }}
             />
 
             <Section>
@@ -96,13 +108,17 @@ export default function BitcoincashWallet(): JSX.Element {
             </Section>
 
             <FeatureSection
+                withoutLink
                 titleText={i18n.gettext('Qualify yourself.')}
                 text={i18n.gettext(
                     'At Plark, we are glad to help individuals get over "Bitcoin Cash science." This marvel is still at its beginning of appropriation and advancement. Consequently, getting the message out about crypto and giving individuals a reasonable comprehension of how it functions and why it makes a difference is significant. Thus, you can discover Help Center and FAQ, which help you make things justifiable. Every minute of every day Support available to you also, if there is something unanswered left',
                 )}
                 textClassName={styles.bitcoincashWalletDownloadSectionText}
-                image={{ src: '/img/main-screen.png' }}
-                withoutLink
+                image={{
+                    src: '/img/main-screen.png',
+                    alt: 'multi cryptocurrency mobile wallet',
+                    title: 'cryptocurrency mobile wallet'
+                }}
             />
 
             <Section>

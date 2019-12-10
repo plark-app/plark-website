@@ -26,8 +26,8 @@ export default function MobileWallet(): JSX.Element {
 
             <StickIphone picture={{
                 src: '/img/main-screen.png',
-                alt: 'Plark Main screen',
-                title: 'Plark Main screen',
+                alt: 'multi cryptocurrency mobile wallet',
+                title: 'cryptocurrency mobile wallet',
             }}>
                 <IntroSection
                     title={i18n.gettext('No sh*t wallet')}
@@ -97,7 +97,8 @@ export default function MobileWallet(): JSX.Element {
                 }
                 image={{
                     src: '/img/trade-screen.png',
-                    alt: 'Trade Screen in Plark'
+                    alt: 'best mobile wallet for cryptocurrency',
+                    title: 'mobile wallet for cryptocurrency',
                 }}
             />
 
@@ -110,7 +111,8 @@ export default function MobileWallet(): JSX.Element {
                 }
                 image={{
                     src: '/img/trade-confirmation-screen.png',
-                    alt: 'Trade Confirmation Screen in Plark'
+                    alt: 'best mobile cryptocurrency wallet',
+                    title: 'best mobile wallet for cryptocurrency',
                 }}
             />
 
