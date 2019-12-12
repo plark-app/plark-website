@@ -3,7 +3,7 @@ import cn from 'classnames';
 import { Section, JoinLink } from 'common/components';
 import styles from './feature-section.scss';
 
-type FeatureSectionProps = {
+export type FeatureSectionProps = {
     text: string;
     textClassName?: string;
     titleText?: string;
@@ -22,7 +22,7 @@ type FeatureSectionProps = {
     };
 };
 
-export default React.memo(function FeatureSection(props: FeatureSectionProps): JSX.Element {
+export const FeatureSection = React.memo(function FeatureSection(props: FeatureSectionProps): JSX.Element {
     const {
         text,
         withoutLink = false,

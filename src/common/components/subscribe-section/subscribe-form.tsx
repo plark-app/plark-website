@@ -82,4 +82,6 @@ class SubscribeForm extends React.PureComponent<WithTranslationsProps> {
     };
 }
 
-export default compose<WithTranslationsProps, any>(withTranslations)(SubscribeForm);
+export default compose<WithTranslationsProps, any>(
+    withTranslations,
+)(SubscribeForm);

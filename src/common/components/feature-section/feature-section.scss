@@ -1,5 +1,6 @@
 @import '../../styles/colors';
 @import '../../styles/media';
+@import '../../styles/text';
 
 .feature-section {
     &__content {
@@ -45,10 +46,7 @@
         }
 
         &__descr {
-            font-size: 24px;
-            line-height: 1.33;
-            font-weight: bold;
-            color: $color-dark;
+            @include text-h2($color-dark);
         }
 
         &__title {

@@ -7,11 +7,15 @@
 .section {
     &__content {
         display: flex;
+        flex-wrap: wrap;
     }
 }
 
 .subscribe {
     &__title {
+
+        margin-bottom: 20px;
+
         width: 100%;
         @include text-h2;
         @include from-width(1280px) {
@@ -22,6 +26,7 @@
     &__content {
         @include text-h3;
         margin-bottom: 50px;
+        max-width: 100%;
 
         @include from-width(1280px) {
             max-width: col-absolute(4);
@@ -29,9 +34,12 @@
     }
 
     &__form-container {
-        margin-left: col-absolute(1) + $var-gutter * 1.5;
         width: 100%;
         max-width: 590px;
+
+        @include from-width(1280px) {
+            margin-left: col-absolute(1) + $var-gutter * 1.5;
+        }
     }
 
     &__form {
@@ -49,7 +57,6 @@
     &__input {
         height: 60px;
         padding: 8px 0;
-        font-size: 42px;
         font-weight: bold;
         color: $color-text-dark;
         background-color: transparent;
@@ -61,13 +68,18 @@
             color: $color-gray10;
         }
 
+        font-size: 28px;
+        @include from-md-width {
+            font-size: 42px;
+        }
+
         @include from-width(640px) {
             width: calc(100% - 190px);
         }
     }
 
     &__button {
-        font-size: 42px;
+        font-size: 28px;
         font-weight: bold;
         background: none;
         border: none;
@@ -78,6 +90,10 @@
 
         &:hover {
             color: $color-text-dark;
+        }
+
+        @include from-md-width {
+            font-size: 42px;
         }
     }
 

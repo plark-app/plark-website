@@ -8,6 +8,7 @@ export * from './window-size-helper';
 export * from './menu-routes';
 export * from './topic';
 export * from './subscribe-section';
+export * from './feature-section';
 
 export { default as Icons } from './icons';
 export { default as UIButton } from './ui-button';
@@ -28,7 +29,6 @@ export { default as IntroSection } from './intro-section';
 export { default as BgTitleSection } from './bg-title-section';
 export { default as CitationSection } from './citation-section';
 export { default as CardSection } from './card-section';
-export { default as FeatureSection } from './feature-section';
 export { default as CommunitySection } from './community-section';
 export { default as FeedbackSection } from './feedback-section';
 export { default as ColumnsSection } from './columns-section';

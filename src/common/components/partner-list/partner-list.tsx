@@ -3,7 +3,6 @@ import cn from 'classnames';
 import KunaLogoSvg from 'resources/svgs/partners/kuna.component.svg';
 import ChangellyLogoSvg from 'resources/svgs/partners/changelly.component.svg';
 import ZeroHubLogoSvg from 'resources/svgs/partners/zerohub.component.svg';
-import WalletTopupLogoSvg from 'resources/svgs/partners/wallettopup.component.svg';
 
 import styles from './partner-list.scss';
 
@@ -50,18 +49,13 @@ const partnerList: PartnerItem[] = [
         website: 'https://kuna.io',
     },
     {
-        title: 'Changelly',
-        logo: ChangellyLogoSvg,
-        website: 'https://changelly.com',
-    },
-    {
         title: 'ZeroHub',
         logo: ZeroHubLogoSvg,
         website: 'https://www.0hub.com',
     },
     {
-        title: 'WalletTopUp',
-        logo: WalletTopupLogoSvg,
-        website: 'http://wallettopup.co.uk',
+        title: 'Changelly',
+        logo: ChangellyLogoSvg,
+        website: 'https://changelly.com',
     },
 ];

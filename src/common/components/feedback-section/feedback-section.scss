@@ -1,5 +1,6 @@
-@import "../../styles/media";
 @import "../../styles/colors";
+@import "../../styles/media";
+@import "../../styles/text";
 
 .section {
     margin-top: 100px;
@@ -15,7 +16,6 @@
 .phones {
     max-width: 100%;
     margin: 100px 0;
-    margin-top: 100px;
 
     @include from-md-width() {
         margin-top: 160px;
@@ -38,11 +38,11 @@
     filter: blur(2px);
 
     @include from-md-width {
-        width: 600px;
+        width: 560px;
     }
 
     @include from-xxl-width {
-        width: 800px;
+        width: 750px;
         margin: 0 30px;
     }
 
@@ -56,26 +56,17 @@
 
     &__feedback {
         font-size: 18px;
-        font-weight: 700;
-        line-height: 1.18;
         text-align: center;
         margin: 20px auto;
 
+        @include text-h2;
         @include from-md-width {
-            font-size: 28px;
             margin: 25px 0 30px 0;
-        }
-
-        @include from-xxl-width {
-            font-size: 32px;
         }
     }
 
     &__user {
-        font-size: 16px;
-        color: $color-text-secondary;
-        font-weight: bold;
-
+        @include text-h3($color-text-secondary);
         text-align: center;
     }
 }

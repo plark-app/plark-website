@@ -1,15 +1,16 @@
 @import "../../styles/colors";
 @import "../../styles/media";
+@import "../../styles/text";
 
 .link {
-    display: inline-block;
+    display: flex;
+    align-items: center;
+
     margin-top: 50px;
-    font-size: 16px;
-    line-height: 1.46;
-    font-weight: bold;
-    color: $color-text-secondary;
+    @include text-h3($color-text-secondary);
 
     transition: color 0.4s;
+
     &:hover {
         transition-duration: 0.2s;
         color: $color-text-dark;
@@ -19,6 +20,7 @@
         transition: transform 0.4s;
 
         display: inline-block;
+        margin-top: 1px;
         margin-left: 10px;
     }
 
