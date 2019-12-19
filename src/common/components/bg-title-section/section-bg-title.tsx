@@ -1,4 +1,5 @@
 import React from 'react';
+import cn from 'classnames';
 import { Section } from '../section';
 import TextBlock from '../text-block';
 import style from './section-bg-title.scss';
@@ -8,6 +9,8 @@ type BgTitleProps = {
     content: string;
     textTag?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p';
     withMobile?: boolean;
+
+    secondaryContent?: string;
 };
 
 export default function BgTitleSection(props: BgTitleProps): JSX.Element {
@@ -20,11 +23,21 @@ export default function BgTitleSection(props: BgTitleProps): JSX.Element {
             )}
 
             <div className={style.contentBox}>
-                <span className={style.title}>{props.title}</span>
+                <span className={cn(style.title, style.leftSide)}>{props.title}</span>
+
                 <hr className={style.contentBoxSeparator} />
-                <TextBlock className={style.content} tag={props.textTag}>
-                    {props.content}
-                </TextBlock>
+
+                <div className={style.underlineContent}>
+                    <TextBlock className={cn(style.content, style.leftSide)} tag={props.textTag}>
+                        {props.content}
+                    </TextBlock>
+
+                    <div className={style.rightSide}>
+                        {props.secondaryContent ? (
+                            <p className={style.secondaryContent}>{props.secondaryContent}</p>
+                        ) : undefined}
+                    </div>
+                </div>
             </div>
         </Section>
     );

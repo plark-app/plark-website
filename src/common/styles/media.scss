@@ -135,7 +135,7 @@
 
 
 @mixin left-margin($deep: 1) {
-    @include only-width($sm-width, 1280px) {
+    @include to-width(1280px) {
         $percent: col-percent($deep);
         margin-left: calc(#{$percent} - 24px + 36px);
     }

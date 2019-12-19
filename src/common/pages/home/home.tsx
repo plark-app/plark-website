@@ -41,6 +41,13 @@ export default function Home(): JSX.Element {
                         'feature in a few taps. Bitcoin, Ethereum, Litecoin, and Dash cryptos are ' +
                         'available with more to come.'
                     }
+                    secondaryContent={
+                        'A cryptocurrency (or crypto currency) is a digital asset designed to work as a ' +
+                        'medium of exchange that uses strong cryptography to secure financial transactions, ' +
+                        'control the creation of additional units, and verify the transfer of assets. ' +
+                        'Cryptocurrencies use decentralized control as opposed to centralized digital currency ' +
+                        'and central banking systems.'
+                    }
                 />
 
                 <BgTitleSection
