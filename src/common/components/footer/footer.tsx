@@ -1,17 +1,27 @@
 import React from 'react';
+import moment from 'moment';
 import { useI18n } from 'slim-i18n';
-
 import PlatformList from 'common/utils/install-platforms';
 import { Section, StoreBadge, NavLink, menuRoutes, IMenuRoute, IMenuRouteLink, Socials } from 'common/components';
-
 import PlarkLogo from 'resources/svgs/plark-logo.component.svg';
-
 import FooterColumn from './footer-column.component';
 
 import styles from './footer.scss';
 
 export default function Footer(): JSX.Element {
     const i18n = useI18n();
+
+    const [copyrightYears] = React.useState(() => {
+        const needYear = '2018';
+        const currentYear = moment().format('Y');
+
+        if (currentYear === needYear) {
+            return currentYear;
+        }
+
+        return needYear + ' - ' + currentYear;
+    });
+
     return (
         <footer>
             <Section className={styles.footer} contentClassName={styles.footerContent}>
@@ -38,14 +48,20 @@ export default function Footer(): JSX.Element {
                 <div className={styles.footerSecond}>
                     <PlarkLogo height={25} className={styles.footerLogo} />
                     <div>
-                        <StoreBadge className={styles.footerBadge} platform={PlatformList.apple} height={40} />
+                        <StoreBadge
+                            className={styles.footerBadge}
+                            platform={PlatformList.apple}
+                            height={40}
+                            alt="Install cryptocurrency wallet from App Store"
+                            title="Plark cryptocurrency wallet in App Store"
+                        />
                     </div>
                 </div>
             </Section>
 
             <Section className={styles.bottomBar} contentClassName={styles.bottomBarContent}>
                 <nav className={styles.bottomBarNav}>
-                    <span className={styles.navLink}>Plark @ 2019</span>
+                    <span className={styles.navLink}>Plark @ {copyrightYears}</span>
                     <NavLink to="/privacy" className={styles.navLink}>
                         {i18n.gettext('Privacy')}
                     </NavLink>
@@ -54,9 +70,9 @@ export default function Footer(): JSX.Element {
                         {i18n.gettext('Terms')}
                     </NavLink>
 
-                    <a href="/sitemap" className={styles.navLink}>
-                        Sitemap
-                    </a>
+                    <NavLink to="/sitemap" className={styles.navLink}>
+                        {i18n.gettext('Sitemap')}
+                    </NavLink>
                 </nav>
 
                 <nav className={styles.bottomBarNav}>
@@ -81,17 +97,24 @@ function ColumnLinks({ links }: ColumnLinksProps): JSX.Element {
                 if (link.source === 'external') {
                     return (
                         <div key={i}>
-                            <a key={i} href={link.to} className={styles.navLink} target={'_blank'}>
+                            <a key={i}
+                               href={link.to}
+                               className={styles.navLink}
+                               target={link.noBlank ? undefined : '_blank'}
+                               rel={link.rel}
+                            >
                                 {link.text(i18n)}
                                 {link.additional && link.additional}
                             </a>
                         </div>
                     );
                 }
+
                 return (
                     <div key={i}>
                         <NavLink key={i} to={link.to} className={styles.navLink}>
-                            {link.text(i18n)}
+                            <span>{link.text(i18n)}</span>
+                            {link.comingSoon ? <span className={styles.navLinkSoon}>(comming soon)</span> : undefined}
                         </NavLink>
                     </div>
                 );

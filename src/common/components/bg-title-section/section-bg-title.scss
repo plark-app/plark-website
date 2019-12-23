@@ -1,6 +1,7 @@
 @import "../../styles/colors";
 @import "../../styles/media";
 @import "../../styles/vars";
+@import "../../styles/text";
 
 .section {
     margin-top: 100px;
@@ -42,35 +43,64 @@
     }
 }
 
-.title {
-    display: none;
-    font-size: 90px;
-    line-height: 0.776;
-    font-weight: 400;
-    max-width: 664px;
+.content-box {
+    width: 100%;
+    display: block;
 
-    color: transparent;
-    position: absolute;
-    text-transform: lowercase;
+    &__separator {
+        margin: 30px 0;
+        height: 4px;
+        background: $color-text-dark;
+        border: none;
 
-    transform: translateY(-50%);
-    top: 0;
-    left: 32px;
-    margin: 0 0 0 -105px;
+        @include make-width(3);
 
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: $color-gray20;
-
-    @include from-lg-width() {
-        display: block;
+        @include to-xl-width {
+            @include make-width(8);
+        }
     }
+}
+
+.underline-content {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.left-side {
+    @include make-width(3);
+
+    @include to-xl-width {
+        @include make-width(8);
+    }
+}
+
+.right-side {
+    margin-top: 40px;
+
+    @include from-md-width {
+        @include left-margin(1);
+    }
+}
+
+.title {
+    text-transform: lowercase;
+    display: block;
+    @include text-h2;
 }
 
 .content {
-    max-width: 480px;
-
-    @include from-lg-width {
-        max-width: 520px;
-    }
+    @include text-h3;
+    width: 100%;
 }
 
+.secondary-content {
+    @include text-caption;
+
+    @include make-width(8);
+
+    @include from-xl-width {
+        @include make-width(3);
+    }
+
+    color: $color-gray50;
+}

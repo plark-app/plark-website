@@ -1,6 +1,7 @@
 @import '../../styles/colors';
 @import '../../styles/media';
 @import '../../styles/vars';
+@import '../../styles/text';
 
 .topic {
     width: 100%;
@@ -67,13 +68,13 @@
 
     // For small elements like Card
     &.is-small &__title {
+        @include text-h4;
+        text-transform: lowercase;
         color: $color-text-secondary;
-        font-size: 16px;
     }
 
     &.is-small &__desc {
-        font-size: 24px;
-        line-height: 1.33;
+        @include text-h2;
         color: $color-text-dark;
         max-width: 800px;
     }

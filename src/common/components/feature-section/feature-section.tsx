@@ -3,7 +3,7 @@ import cn from 'classnames';
 import { Section, JoinLink } from 'common/components';
 import styles from './feature-section.scss';
 
-type FeatureSectionProps = {
+export type FeatureSectionProps = {
     text: string;
     textClassName?: string;
     titleText?: string;
@@ -22,7 +22,7 @@ type FeatureSectionProps = {
     };
 };
 
-export default React.memo(function FeatureSection(props: FeatureSectionProps): JSX.Element {
+export const FeatureSection = React.memo(function FeatureSection(props: FeatureSectionProps): JSX.Element {
     const {
         text,
         withoutLink = false,
@@ -39,19 +39,16 @@ export default React.memo(function FeatureSection(props: FeatureSectionProps): J
     });
 
     return (
-        <Section className={styles.featureSection} contentClassName={contentClass}>
+        <Section className={styles.featureSection} contentClassName={contentClass} withLeftPadding>
             <div className={styles.featureSectionText}>
-                {titleText &&
-                    React.createElement(
-                        'p',
-                        { className: cn(styles.featureSectionTextTitle, titleClassName) },
-                        titleText,
-                    )}
+                {titleText && React.createElement(
+                    'p',
+                    { className: cn(styles.featureSectionTextTitle, titleClassName) },
+                    titleText,
+                )}
                 {React.createElement(textTag, { className: cn(styles.featureSectionTextDescr, textClassName) }, text)}
-                {withoutLink ? (
-                    undefined
-                ) : (
-                    <JoinLink href={linkUrl} target="_blank">
+                {withoutLink ? undefined : (
+                    <JoinLink href={linkUrl} target="_blank" rel="nofollow">
                         {linkText}
                     </JoinLink>
                 )}

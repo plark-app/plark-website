@@ -44,12 +44,12 @@ export default function DashWallet(): JSX.Element {
             <StickIphone
                 picture={{
                     src: '/img/main-screen.png',
-                    alt: 'Plark Main screen',
-                    title: 'Plark Main screen',
+                    alt: 'multi cryptocurrency mobile wallet',
+                    title: 'cryptocurrency mobile wallet',
                 }}
             >
                 <IntroSection
-                    title={i18n.gettext('No sh*t wallet')}
+                    title={i18n.gettext('Crypto wallet made easy')}
                     subtitle={i18n.gettext('The friendliest one for you')}
                     subtitleTag="h3"
                 />
@@ -77,23 +77,27 @@ export default function DashWallet(): JSX.Element {
             </Section>
 
             <FeatureSection
+                withoutLink
                 titleText={i18n.gettext('Download Plark Wallet for Dash')}
                 text={i18n.gettext(
                     'Stop fooling yourself with a search for a convenient and reliable service for buying, selling, and exchanging cryptocurrencies. We have created the most comfortable conditions for both beginners and advanced users. Minimum time to create an account and no personal data needed. Just a few touches and you get your personal wallet key. That’s all.',
                 )}
                 textClassName={styles.dashWalletDownloadSectionText}
-                image={{ src: '/img/trade-screen.png' }}
-                withoutLink
+                image={{
+                    src: '/img/trade-screen.png',
+                    alt: 'best mobile wallet for cryptocurrency',
+                    title: 'mobile wallet for cryptocurrency',
+                }}
             />
 
             <Section className={styles.dashWalletDownloadSection}>
                 <Topic
+                    titleTag="h2"
                     titleClassName={styles.dashWalletDownloadSectionTitle}
                     className={styles.dashWalletDownloadSectionTopic}
                     titleText={i18n.gettext(
                         'It’s never too late to get into crypto. Create your Dash coin wallet and feel no FOMO.',
                     )}
-                    titleTag="h2"
                 />
             </Section>
 

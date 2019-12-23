@@ -1,5 +1,4 @@
 .burger-button {
-
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -37,12 +36,12 @@
 
     &:before {
         height: 25px;
-        transform: translateY(calc(-25px / 4)) translateX(calc(25px / 2)) rotate(90deg);
+        transform: translateY(-6.25px) translateX(12.5px) rotate(90deg);
     }
 
     &:after {
         height: 12.5px;
-        transform: translateY(calc(25px / 4)) translateX(calc(12.5px / 2)) rotate(90deg);
+        transform: translateY(6.25px) translateX(18.75px) rotate(90deg);
     }
 
     &.is-open {
@@ -52,11 +51,11 @@
         }
 
         &:before {
-            transform: translateX(calc(25px / 2)) rotate(135deg);
+            transform: translateX(12.5px) rotate(135deg);
         }
 
         &:after {
-            transform: translateX(calc(25px / 2)) rotate(45deg);
+            transform: translateX(12.5px) rotate(45deg);
         }
     }
 }

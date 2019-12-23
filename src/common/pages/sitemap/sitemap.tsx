@@ -11,7 +11,7 @@ export default function SitemapPage(): JSX.Element {
         <>
             <Header isWhite={true} />
 
-            <Section>
+            <Section withLeftPadding>
                 <Topic className={styles.sitemapTopic} titleText={i18n.gettext('Sitemap')} titleTag="h1" />
 
                 <div className={styles.container}>

@@ -1,5 +1,5 @@
 import React from 'react';
-import classnames from 'classnames';
+import cn from 'classnames';
 
 import styles from './burger-button.scss';
 
@@ -9,8 +9,19 @@ export type BurgerButtonProps = {
     opened: boolean;
 };
 
-export default function BurgerButton({ className, onClick, opened }: BurgerButtonProps): JSX.Element {
-    return (
-        <button onClick={onClick} className={classnames(styles.burgerButton, className, { [styles.isOpen]: opened })} />
+export function BurgerButton(props: BurgerButtonProps): JSX.Element {
+    const { className, onClick, opened } = props;
+
+    const buttonClassName = cn(
+        styles.burgerButton,
+        className,
+        {
+            [styles.isOpen]: opened,
+        },
     );
+
+    return <button
+        onClick={onClick}
+        className={buttonClassName}
+    />;
 }

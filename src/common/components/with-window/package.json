@@ -1,6 +1,0 @@
-{
-  "private": true,
-  "name": "with-window",
-  "main": "with-window.tsx",
-  "typings": "with-window.tsx"
-}

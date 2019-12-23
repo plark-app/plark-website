@@ -28,11 +28,11 @@ export default function BitcoinWallet(): JSX.Element {
 
             <StickIphone picture={{
                 src: '/img/main-screen.png',
-                alt: 'Plark Main screen',
-                title: 'Plark Main screen',
+                alt: 'multi cryptocurrency mobile wallet',
+                title: 'cryptocurrency mobile wallet',
             }}>
                 <IntroSection
-                    title={i18n.gettext('No sh*t wallet')}
+                    title={i18n.gettext('Crypto wallet made easy')}
                     subtitle={i18n.gettext('Just the friendliest crypto currency wallet you will use.')}
                 />
 
@@ -75,13 +75,21 @@ export default function BitcoinWallet(): JSX.Element {
 
             <FeatureSection
                 text={i18n.gettext('Educate yourself. At Plark we are happy to help people get over “Bitcoin science.” This phenomenon is still at its early days of adoption and development. Thus, spreading the word about Bitcoin and giving people a clear understanding of how it works and why it matters is crucial. For this reason, you can find Help Center and FAQ, which help you make things understandable. 24/7 Support at your disposal as well, if there is something unanswered left.')}
-                image={{ src: '/img/trade-screen.png' }}
+                image={{
+                    src: '/img/trade-screen.png',
+                    alt: 'best mobile wallet for cryptocurrency',
+                    title: 'mobile wallet for cryptocurrency',
+                }}
             />
 
             <FeatureSection
                 isLtr
                 text={i18n.gettext('Adjust transaction speed. Bitcoin network, thanks to its features, allows you to adjust transaction speed through setting up the mining fee in Settings. It’s up to you: if a transaction should be finished in no time — feel free to prioritize it higher over the rest users. The opposite is also true.')}
-                image={{ src: '/img/trade-confirmation-screen.png' }}
+                image={{
+                    src: '/img/trade-confirmation-screen.png',
+                    alt: 'best mobile cryptocurrency wallet',
+                    title: 'best mobile wallet for cryptocurrency',
+                }}
             />
 
             <OpenSourceSection

@@ -22,8 +22,8 @@ export default function AboutUs(): JSX.Element {
             <StickIphone
                 picture={{
                     src: '/img/main-screen.png',
-                    alt: 'Plark Main screen',
-                    title: 'PLark Main screen',
+                    alt: 'multi cryptocurrency mobile wallet',
+                    title: 'cryptocurrency mobile wallet',
                 }}
             >
                 <IntroSection
@@ -63,6 +63,8 @@ export default function AboutUs(): JSX.Element {
                 )}
                 image={{
                     src: '/img/trade-screen.png',
+                    alt: 'best mobile wallet for cryptocurrency',
+                    title: 'mobile wallet for cryptocurrency',
                 }}
             />
 

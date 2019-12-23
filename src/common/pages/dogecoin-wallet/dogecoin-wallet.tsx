@@ -53,12 +53,12 @@ export default function DogecoinWallet(): JSX.Element {
             <StickIphone
                 picture={{
                     src: '/img/main-screen.png',
-                    alt: 'Plark Main screen',
-                    title: 'Plark Main screen',
+                    alt: 'multi cryptocurrency mobile wallet',
+                    title: 'cryptocurrency mobile wallet',
                 }}
             >
                 <IntroSection
-                    title={i18n.gettext('No sh*t wallet')}
+                    title={i18n.gettext('Crypto wallet made easy')}
                     subtitle={i18n.gettext('The friendliest one for you')}
                     subtitleTag="h3"
                 />
@@ -86,13 +86,17 @@ export default function DogecoinWallet(): JSX.Element {
             </Section>
 
             <FeatureSection
+                withoutLink
                 titleText={i18n.gettext('Download Plark Wallet for Dogecoin')}
                 text={i18n.gettext(
                     "Plark offers one of the quickest and most straightforward approaches to buy and oversee Dogecoin. Alongside top of the line security level, Plark fills in as a free Dogecoin wallet and exchange across the board (being much more secure than Dogecoin wallet online). Since now, you don't have to make accounts on various services or search for a trusty one to get it or continue with various kinds of activities. Since Plark is a mobile app, prepare for an ultra utility day in and day out.",
                 )}
                 textClassName={styles.dogecoinWalletDownloadSectionText}
-                image={{ src: '/img/trade-screen.png' }}
-                withoutLink
+                image={{
+                    src: '/img/trade-screen.png',
+                    alt: 'best mobile wallet for cryptocurrency',
+                    title: 'mobile wallet for cryptocurrency',
+                }}
             />
 
             <CardSection

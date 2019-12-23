@@ -18,7 +18,11 @@ export default React.memo(function StickIphone(props: StickIphoneProps): JSX.Ele
         <div>
             <div className={styles.container}>
                 <div className={styles.iphoneBox}>
-                    <img src={picture.src || '/img/main-screen.png'} className={styles.iphoneImage} />
+                    <img
+                        className={styles.iphoneImage}
+                        src={picture.src || '/img/main-screen.png'}
+                        alt={picture.alt || 'Plark Wallet'}
+                    />
                 </div>
             </div>
 

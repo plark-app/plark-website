@@ -32,16 +32,12 @@ function getLoadCSSScript(chunks: string[]): string {
         }
     });
 
-    return `
-        function loadCSS(src) {
-            var headElement = document.getElementsByTagName('head')[0];
-            var usedLaterCSS = document.createElement('link');
-            usedLaterCSS.rel = 'stylesheet';
-            usedLaterCSS.href = src;
+    return `function loadCSS(src) {
+            var headElement=document.getElementsByTagName('head')[0], usedLaterCSS=document.createElement('link');
+            usedLaterCSS.rel='stylesheet';usedLaterCSS.href=src;
             headElement.appendChild(usedLaterCSS);
         }
-        setTimeout(function(){${chunksLoadCalls.join('\n')}}, 0);
-    `;
+        setTimeout(function(){${chunksLoadCalls.join(';')}}, 0);`;
 }
 
 function getPreloadLinks(chunks: string[]): JSX.Element | null {
@@ -51,22 +47,21 @@ function getPreloadLinks(chunks: string[]): JSX.Element | null {
 
     return (
         <>
-            <link rel="preconnect" href="https://sf.abarba.me" crossOrigin="" />
             <link rel="preload"
-                  href="https://sf.abarba.me/SF-UI-Display-Regular.otf"
+                  href="/fonts/SFProDisplay-Regular.woff2"
                   as="font"
                   type="font/woff2"
                   crossOrigin="anonymous"
             />
             <link as="font"
                   rel="preload"
-                  href="https://sf.abarba.me/SF-UI-Display-Medium.otf"
+                  href="/fonts/SFProDisplay-Medium.woff2"
                   type="font/woff2"
                   crossOrigin="anonymous"
             />
             <link as="font"
                   rel="preload"
-                  href="https://sf.abarba.me/SF-UI-Display-Bold.otf"
+                  href="/fonts/SFProDisplay-Bold.woff2"
                   type="font/woff2"
                   crossOrigin="anonymous"
             />
@@ -104,11 +99,9 @@ export default function template(data: TemplateData): string {
     const configString = JSON.stringify({ config: clientConfig, ...initData });
 
     const initScript = `
-        window.__initData = ${configString};
-        window.__getPublicPath = function () {
-            return window.__initData.publicPath || '/';
-        };
-        window.__cssChunksMap = ${JSON.stringify(getCSSChunksMap())}
+        window.__initData=${configString};
+        window.__getPublicPath=function(){return window.__initData.publicPath || '/';};
+        window.__cssChunksMap=${JSON.stringify(getCSSChunksMap())}
     `;
 
     const helmet = Helmet.renderStatic();
@@ -116,13 +109,13 @@ export default function template(data: TemplateData): string {
     const bodyAttrs: any = helmet.bodyAttributes.toComponent();
 
     return (
-        '<!DOCTYPE html>' +
+        '<!DOCTYPE html>\n' +
         ReactDOMServer.renderToStaticMarkup(
             <html {...htmlAttrs}>
             <head>
                 {helmet.title.toComponent()}
                 <meta charSet="UTF-8" />
-                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <meta name="viewport" content="width=device-width,initial-scale=1.0" />
                 <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
                 <link rel="chrome-webstore-item"
                       href="https://chrome.google.com/webstore/detail/plark/jgboighcjegimmmjkclbniaddfakallg" />

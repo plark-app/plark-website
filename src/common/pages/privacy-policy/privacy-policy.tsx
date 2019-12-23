@@ -12,7 +12,7 @@ export default () => {
         <>
             <Header isWhite={true} />
 
-            <Section className={commonStyles.legalSection}>
+            <Section className={commonStyles.legalSection} withLeftPadding>
                 <Topic titleText={i18n.gettext("Privacy Policy")}
                        className={commonStyles.markdownMainTitle}
                        titleTag="h1"

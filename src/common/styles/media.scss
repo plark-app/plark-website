@@ -5,37 +5,44 @@
         @content;
     }
 }
+
 @mixin to-width($width) {
     @media screen and (max-width: $width - 1px) {
         @content;
     }
 }
+
 @mixin only-width($from, $to) {
     @media screen and (min-width: $from) and (max-width: $to - 1px) {
         @content;
     }
 }
+
 // from width
 @mixin from-xxl-width() {
     @include from-width($xxl-width) {
         @content;
     }
 }
+
 @mixin from-xl-width() {
     @include from-width($xl-width) {
         @content;
     }
 }
+
 @mixin from-lg-width() {
     @include from-width($lg-width) {
         @content;
     }
 }
+
 @mixin from-md-width() {
     @include from-width($md-width) {
         @content;
     }
 }
+
 @mixin from-sm-width() {
     @include from-width($sm-width) {
         @content;
@@ -49,16 +56,19 @@
         @content;
     }
 }
+
 @mixin to-lg-width() {
     @include to-width($lg-width) {
         @content;
     }
 }
+
 @mixin to-md-width() {
     @include to-width($md-width) {
         @content;
     }
 }
+
 @mixin to-sm-width() {
     @include to-width($sm-width) {
         @content;
@@ -71,23 +81,81 @@
         @content;
     }
 }
+
 @mixin only-lg-width() {
     @include only-width($lg-width, $xl-width) {
         @content;
     }
 }
+
 @mixin only-md-width() {
     @include only-width($md-width, $lg-width) {
         @content;
     }
 }
+
 @mixin only-sm-width() {
     @include only-width($sm-width, $md-width) {
         @content;
     }
 }
+
 @mixin only-xs-width() {
     @include to-width($sm-width) {
         @content;
+    }
+}
+
+
+@function col-absolute($deep: 1) {
+    @return 1280px * ($deep / $col-num) - $var-gutter;
+}
+
+@function col-percent($deep: 1) {
+    @return 100% * ($deep / $col-num);
+}
+
+
+@mixin left-padding($deep: 1) {
+    @include to-sm-width {
+        padding-left: 16px;
+    }
+
+    @include only-width($sm-width, 1280px) {
+        $percent: col-percent($deep);
+
+        padding-left: calc(#{$percent} - 24px + 36px);
+    }
+
+    @include from-width(1280px) {
+        $value: col-absolute($deep);
+        padding-left: $value + 36px;
+    }
+}
+
+
+@mixin left-margin($deep: 1) {
+    @include to-width(1280px) {
+        $percent: col-percent($deep);
+        margin-left: calc(#{$percent} - 24px + 36px);
+    }
+
+    @include from-width(1280px) {
+        $value: col-absolute($deep);
+
+        margin-left: $value + 36px;
+    }
+}
+
+
+@mixin make-width($deep: 1) {
+    @include to-width(1280px) {
+        $percent: col-percent($deep);
+        max-width: calc(#{$percent} - #{$var-gutter});
+    }
+
+    @include from-width(1280px) {
+        $percent: col-absolute($deep);
+        max-width: $percent;
     }
 }

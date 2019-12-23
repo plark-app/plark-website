@@ -26,11 +26,11 @@ export default function IosWallet(): JSX.Element {
 
             <StickIphone picture={{
                 src: '/img/main-screen.png',
-                alt: 'Plark Main screen',
-                title: 'Plark Main screen',
+                alt: 'multi cryptocurrency mobile wallet',
+                title: 'cryptocurrency mobile wallet',
             }}>
                 <IntroSection
-                    title={i18n.gettext('No sh*t wallet')}
+                    title={i18n.gettext('Crypto wallet made easy')}
                     subtitle={i18n.gettext('One of the best iPhone crypto wallets.')}
                     subtitleTag="h3"
                 />
@@ -83,13 +83,21 @@ export default function IosWallet(): JSX.Element {
 
             <FeatureSection
                 text={i18n.gettext('Complicated can be simple. Cryptocurrency is not an exception. And we prove it. Help Center, FAQ, and 24/7 Support are at your service. We bet you will have nothing to ask left and the world of crypto will become clear as a bell for you.')}
-                image={{ src: '/img/trade-screen.png' }}
+                image={{
+                    src: '/img/trade-screen.png',
+                    alt: 'best mobile wallet for cryptocurrency',
+                    title: 'mobile wallet for cryptocurrency',
+                }}
             />
 
             <FeatureSection
                 isLtr
                 text={i18n.gettext('We give you total control over transactions fees. You are free to set the mining fee to speed up a transaction or lower the fee, if not in a hurry.')}
-                image={{ src: '/img/trade-confirmation-screen.png' }}
+                image={{
+                    src: '/img/trade-confirmation-screen.png',
+                    alt: 'best mobile cryptocurrency wallet',
+                    title: 'best mobile wallet for cryptocurrency',
+                }}
             />
 
             <OpenSourceSection

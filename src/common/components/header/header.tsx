@@ -1,19 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
 import cn from 'classnames';
 import { CSSTransition } from 'react-transition-group';
 import { compose } from 'recompose';
 import { useI18n, withTranslations, WithTranslationsProps } from 'slim-i18n';
-
-import { NavLink, StoreBadge } from 'common/components';
-import BurgerButton from 'common/components/burger-button';
-import withWindow, { WithWindowProps } from 'common/components/with-window';
-
 import PlatformList from 'common/utils/install-platforms';
-
+import { NavLink, BurgerButton, withWindowSize, WithWindowSizeProps, Row, Col } from 'common/components';
 import PlarkLogo from 'resources/svgs/plark-logo.component.svg';
-
 import styles from './header.scss';
 
 type HeaderState = {
@@ -23,9 +16,12 @@ type HeaderState = {
 
 type HeaderOuterProps = {
     isWhite?: boolean;
+    showLabel?: boolean;
 };
 
-type HeaderInnerProps = HeaderOuterProps & WithTranslationsProps & WithWindowProps;
+type HeaderInnerProps
+    = HeaderOuterProps
+    & WithTranslationsProps & WithWindowSizeProps;
 
 class Header extends React.Component<HeaderInnerProps, HeaderState> {
     public state: HeaderState = {
@@ -42,37 +38,70 @@ class Header extends React.Component<HeaderInnerProps, HeaderState> {
     }
 
     public render(): JSX.Element {
-        const { isWhite, i18n, dimensions } = this.props;
+        const { isWhite, i18n, dimensions, showLabel = false } = this.props;
         const { width } = dimensions;
         const { scrolled } = this.state;
+
+        const headerClassName = cn(
+            styles.header,
+            isWhite && styles.isWhite,
+            scrolled && styles.isScrolled,
+        );
+
+        const appstore = PlatformList.apple;
+        const showMobileMenu = width > 0 && width < 768;
+
         return (
-            <header
-                id="header"
-                className={cn(styles.header, isWhite && styles.isWhite, { [styles.isScrolled]: scrolled })}
-            >
-                {width < 768 && this._renderMobileMenu()}
-                <NavLink to="/">
-                    <PlarkLogo height={20} className={styles.headerLogo} />
-                </NavLink>
-                <nav className={styles.headerNav}>
-                    <a href="https://community.plark.io/" className={styles.headerNavUnit}>
+            <>
+                <header id="header" className={headerClassName}>
+                    <Row className={styles.headerSection}>
+                        {showMobileMenu ? this._renderMobileMenu() : undefined}
+                        <NavLink to="/">
+                            <PlarkLogo height={20} className={styles.headerLogo} />
+                        </NavLink>
+
+                        {showLabel ? (
+                            <Col className={styles.headerCenterLabel}>
+                                {`An independent brand experience\nstudio based in Kiev`}
+                            </Col>
+                        ) : undefined}
+
+                        <nav className={styles.headerNav}>
+                            <a href={appstore.url} className={styles.headerAppstore} rel="nofollow">
+                                 Available on App Store →
+                            </a>
+                        </nav>
+                    </Row>
+                </header>
+
+                <nav className={styles.sidenav}>
+                    <a href="https://community.plark.io" className={styles.sidenavUnit}>
                         {i18n.gettext('Community')}
                     </a>
-                    <a href="/blog" className={styles.headerNavUnit}>
+                    <a href="https://plark.io/blog" className={styles.sidenavUnit}>
                         {i18n.gettext('Blog')}
                     </a>
-                    <StoreBadge className={styles.headerNavBadge} platform={PlatformList.apple} height={35} />
+                    <a href="https://t.me/PlarkWalletSupport" className={styles.sidenavUnit}>
+                        {i18n.gettext('Support')}
+                    </a>
                 </nav>
-            </header>
+            </>
         );
     }
 
     private _renderMobileMenu = (): JSX.Element | null => {
         const { openedMenu } = this.state;
+
         return (
             <>
-                <BurgerButton opened={openedMenu} className={styles.headerDropdownMenuBtn} onClick={this._toggleMenu} />
-                <DropdownMenu opened={openedMenu} />
+                <BurgerButton
+                    opened={openedMenu}
+                    className={styles.dropdownMenuBtn}
+                    onClick={this._toggleMenu}
+                />
+                <DropdownMenu
+                    opened={openedMenu}
+                />
             </>
         );
     };
@@ -88,7 +117,7 @@ class Header extends React.Component<HeaderInnerProps, HeaderState> {
                 scrolled: window.scrollY > 100,
             });
         }
-    }
+    };
 }
 
 type DropdownMenuProps = {
@@ -98,13 +127,25 @@ type DropdownMenuProps = {
 
 function DropdownMenu({ className, opened }: DropdownMenuProps): JSX.Element | null {
     const i18n = useI18n();
+
+    if (!__isBrowser__) {
+        return <div />;
+    }
+
     return ReactDOM.createPortal(
         <CSSTransition in={opened} classNames={'mobile-menu'} timeout={300} unmountOnExit>
-            <nav className={cn(styles.headerDropdownMenu, className)}>
-                <a href="https://community.plark.io/" className={styles.headerDropdownMenuItem}>
+            <nav className={cn(styles.dropdownMenu, className)}>
+                <a href="https://t.me/PlarkWalletSupport"
+                   className={styles.dropdownMenuItem}
+                   rel="nofollow"
+                   target="_blank"
+                >
+                    {i18n.gettext('Support')}
+                </a>
+                <a href="https://community.plark.io/" className={styles.dropdownMenuItem}>
                     {i18n.gettext('Community')}
                 </a>
-                <a href="/blog" className={styles.headerDropdownMenuItem}>
+                <a href="https://plark.io/blog" className={styles.dropdownMenuItem}>
                     {i18n.gettext('Blog')}
                 </a>
             </nav>
@@ -115,5 +156,5 @@ function DropdownMenu({ className, opened }: DropdownMenuProps): JSX.Element | n
 
 export default compose<HeaderInnerProps, HeaderOuterProps>(
     withTranslations,
-    withWindow,
+    withWindowSize,
 )(Header);

@@ -17,7 +17,13 @@ export function actualizeStyleSheets(location: Location): void {
     }
 
     const cssChunksMap = window.__cssChunksMap;
-    const chunkAssets = [...cssChunksMap.vendors, ...cssChunksMap.main, ...cssChunksMap[activeRoute.id]];
+    const cssChunckForActiveRoute = cssChunksMap[activeRoute.id] || [];
+    const chunkAssets = [
+        ...cssChunksMap.vendors,
+        ...cssChunksMap.main,
+        ...cssChunckForActiveRoute,
+    ];
+
     for (const styleSheet of Array.from(document.styleSheets)) {
         const { href } = styleSheet;
         if (href === null || !href.match(baseHost)) {

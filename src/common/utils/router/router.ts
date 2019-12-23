@@ -2,6 +2,7 @@ import React from 'react';
 import { matchPath } from 'react-router';
 import { History, LocationDescriptor } from 'history';
 import get from 'lodash/get';
+import { ISitemapItemOptionsLoose } from 'sitemap';
 
 import { WithTranslationsProps, ITranslationsAdapter } from 'slim-i18n';
 import {
@@ -12,7 +13,7 @@ import {
     getLocales,
     Locale,
 } from 'common/utils/locale';
-import { PageSeoConfig, SitemapOption } from 'common/utils/seo';
+import { PageSeoConfig } from 'common/utils/seo';
 import { SitemapLink, SEO_HOST } from '../seo/utils';
 
 export type RouteLoadFn = () => Promise<React.ComponentType>;
@@ -26,7 +27,7 @@ export type CommonRouteDescriptor = {
 
     head?: RouteHeadRenderFn;
     getSeoConfig?: (i18n: ITranslationsAdapter) => PageSeoConfig;
-    getSitemapOption?: () => SitemapOption;
+    getSitemapOption?: () => ISitemapItemOptionsLoose;
 };
 
 export type RouteDescriptor = CommonRouteDescriptor & {
@@ -153,6 +154,10 @@ function isAnyLocalePathString(path: string): boolean {
 export function getSitemapLinks(path: string): SitemapLink[] {
     return getLocales().map((locale: Locale) => {
         const url = `${SEO_HOST}/${locale.code}${path}`;
-        return { lang: locale.shortCode, url };
+
+        return {
+            lang: locale.shortCode,
+            url: url,
+        };
     });
 }

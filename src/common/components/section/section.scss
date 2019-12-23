@@ -10,12 +10,16 @@
 .section-content {
     width: 100%;
     position: relative;
-    max-width: 1106px;
+    max-width: 1280px;
     margin: 0 auto;
-    padding: 100px 32px;
+    padding: 100px 12px;
 
     &.i-without-padding {
         padding-top: 0;
         padding-bottom: 0;
+    }
+
+    &.i-left-padding {
+        @include left-padding;
     }
 }

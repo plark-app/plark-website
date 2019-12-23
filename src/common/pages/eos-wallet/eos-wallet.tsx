@@ -25,12 +25,12 @@ export default function EosWallet(): JSX.Element {
             <StickIphone
                 picture={{
                     src: '/img/main-screen.png',
-                    alt: 'Plark Main screen',
-                    title: 'Plark Main screen',
+                    alt: 'multi cryptocurrency mobile wallet',
+                    title: 'cryptocurrency mobile wallet',
                 }}
             >
                 <IntroSection
-                    title={i18n.gettext('No sh*t wallet')}
+                    title={i18n.gettext('Crypto wallet made easy')}
                     subtitle={i18n.gettext('The friendliest one for you')}
                     subtitleTag="h3"
                 />
@@ -49,21 +49,25 @@ export default function EosWallet(): JSX.Element {
             </Section>
             <Section className={styles.eosWalletDownloadSection}>
                 <Topic
+                    titleTag="h2"
                     titleClassName={styles.eosWalletDownloadSectionTitle}
                     className={styles.eosWalletDownloadSectionTopic}
                     titleText={i18n.gettext('Create your EOS coin wallet and feel no FOMO.')}
-                    titleTag="h2"
                 />
             </Section>
 
             <FeatureSection
+                withoutLink
                 titleText={i18n.gettext('Download Plark Wallet for EOS')}
                 text={i18n.gettext(
                     'Cryptocurrency becomes convenient and understandable. But not by itself. Our goal was to create such an application in which everything will be in place. In which any of your actions is a minimum of time and effort. Buying, selling, storing, receiving, and sending - all this requires only one mobile application - Plark. Once you’ve created EOS token wallet, all thoughts about the EOS management routine will be reduced by ten times. We measured.',
                 )}
                 textClassName={styles.eosWalletDownloadSectionText}
-                image={{ src: '/img/trade-screen.png' }}
-                withoutLink
+                image={{
+                    src: '/img/trade-screen.png',
+                    alt: 'best mobile wallet for cryptocurrency',
+                    title: 'mobile wallet for cryptocurrency',
+                }}
             />
 
             <CardSection

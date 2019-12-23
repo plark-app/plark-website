@@ -3,7 +3,7 @@ import { get } from 'lodash';
 import { StaticContext } from 'react-router';
 import { RouteComponentProps } from 'react-router-dom';
 import { CSSTransition } from 'react-transition-group';
-import { RouteProgress, Spinner } from 'common/components/loaders';
+import { RouteProgress, Spinner } from 'common/components';
 
 export type AsyncRouteStaticContext = StaticContext & {
     components: Record<string, Promise<React.ComponentType> | React.ComponentType | undefined>;
@@ -28,7 +28,7 @@ export default class AsyncRoute extends React.Component<AsyncRouteProps> {
         componentProps: {},
     };
 
-    public componentWillMount(): void {
+    public UNSAFE_componentWillMount(): void {
         const { id } = this.props;
         this._handleData(id);
     }

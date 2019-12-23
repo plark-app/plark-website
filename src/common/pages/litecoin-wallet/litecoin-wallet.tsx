@@ -57,12 +57,12 @@ export default function LitecoinWallet(): JSX.Element {
             <StickIphone
                 picture={{
                     src: '/img/main-screen.png',
-                    alt: 'Plark Main screen',
-                    title: 'Plark Main screen',
+                    alt: 'multi cryptocurrency mobile wallet',
+                    title: 'cryptocurrency mobile wallet',
                 }}
             >
                 <IntroSection
-                    title={i18n.gettext('No sh*t wallet')}
+                    title={i18n.gettext('Crypto wallet made easy')}
                     subtitle={i18n.gettext('The friendliest one for your Litecoin assets')}
                     subtitleTag="h3"
                 />
@@ -92,13 +92,17 @@ export default function LitecoinWallet(): JSX.Element {
             </Section>
 
             <FeatureSection
+                withoutLink
                 titleText={i18n.gettext('Download Plark Wallet for Litecoin')}
                 text={i18n.gettext(
                     "Plark offers one of the quickest and least demanding approaches to buy and oversee Litecoin. Alongside top of the line security level, Plark fills in as a wallet and trade across the board tool. Since now, you don't have to make accounts on various trades or search for an endowed one to get it or continue with alternate sorts of tasks. So prepare for an ultra utility every minute of every day (Android Litecoin wallet may see the world soon too)",
                 )}
                 textClassName={styles.litecoinWalletDownloadSectionText}
-                image={{ src: '/img/trade-screen.png' }}
-                withoutLink
+                image={{
+                    src: '/img/trade-screen.png',
+                    alt: 'best mobile wallet for cryptocurrency',
+                    title: 'mobile wallet for cryptocurrency',
+                }}
             />
 
             <Section>

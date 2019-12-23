@@ -6,6 +6,14 @@
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+
+    max-width: 780px;
+    margin-left: auto;
+    margin-right: auto;
+
+    @include to-md-width {
+        justify-content: center;
+    }
 }
 
 .partner {
@@ -20,6 +28,8 @@
 
     &__link {
         display: block;
+        margin-left: 10px;
+        margin-right: 10px;
     }
 
     &:last-child {

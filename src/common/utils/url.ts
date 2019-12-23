@@ -1,4 +1,4 @@
-import { LocationDescriptor } from 'history';
+import * as H from 'history';
 import { isAnyLocalePath } from './router/router';
 import { DEFAULT_LOCALE } from './locale';
 
@@ -9,7 +9,8 @@ if (__isBrowser__) {
 
 export { baseHost };
 
-export function generateUrl(to: LocationDescriptor, locale: string = DEFAULT_LOCALE): LocationDescriptor {
+
+export function generateUrl(to: H.LocationDescriptor<any>, locale: string = DEFAULT_LOCALE): H.LocationDescriptor<any> {
     if (typeof to !== 'string') {
         return {
             ...to,
@@ -19,6 +20,7 @@ export function generateUrl(to: LocationDescriptor, locale: string = DEFAULT_LOC
 
     return joinUrlWithLocation(to, locale);
 }
+
 
 export function joinUrlWithLocation(to: string = '', locale: string = DEFAULT_LOCALE): string {
     if (locale === DEFAULT_LOCALE) {
@@ -32,6 +34,7 @@ export function joinUrlWithLocation(to: string = '', locale: string = DEFAULT_LO
     return `/${locale}${to}`;
 }
 
+
 export function replaceLocale(path: string, fromLocale?: string, toLocale?: string): string {
     if (toLocale === DEFAULT_LOCALE) {
         toLocale = undefined;
@@ -44,8 +47,10 @@ export function replaceLocale(path: string, fromLocale?: string, toLocale?: stri
 
     const resultPathSegment = makePathSegment(toLocale);
     const searchPathSegment = new RegExp(`^/${fromLocale}`);
+
     return path.replace(searchPathSegment, resultPathSegment);
 }
+
 
 function makePathSegment(locale?: string): string {
     if (locale === undefined) {
@@ -54,6 +59,7 @@ function makePathSegment(locale?: string): string {
 
     return `/${locale}`;
 }
+
 
 export function normalizeLocalePath(path: string): string {
     // replace '/en-us' path segment to '/'

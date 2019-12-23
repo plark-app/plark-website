@@ -59,12 +59,12 @@ export default function EthereumWallet(): JSX.Element {
             <StickIphone
                 picture={{
                     src: '/img/main-screen.png',
-                    alt: 'Plark Main screen',
-                    title: 'Plark Main screen',
+                    alt: 'multi cryptocurrency mobile wallet',
+                    title: 'cryptocurrency mobile wallet',
                 }}
             >
                 <IntroSection
-                    title={i18n.gettext('No sh*t wallet')}
+                    title={i18n.gettext('Crypto wallet made easy')}
                     subtitle={i18n.gettext('The friendliest one for your Ethereum assets')}
                     subtitleTag="h3"
                 />
@@ -101,22 +101,26 @@ export default function EthereumWallet(): JSX.Element {
             </Section>
 
             <FeatureSection
+                withoutLink
                 titleText={i18n.gettext('Download Plark Wallet for Ethereum')}
                 text={i18n.gettext(
                     'Plark grants you a possibility to manage your Ethereum coins the way you want. The only thing you need to keep close at hand your mobile phone. The most straightforward registration procedure, where no personal data is required.',
                 )}
                 textClassName={styles.ethereumWalletDownloadSectionText}
-                image={{ src: '/img/trade-screen.png' }}
-                withoutLink
+                image={{
+                    src: '/img/trade-screen.png',
+                    alt: 'best mobile wallet for cryptocurrency',
+                    title: 'mobile wallet for cryptocurrency',
+                }}
             />
 
             <Section>
                 <Topic
+                    titleTag="h3"
                     titleClassName={styles.ethereumWalletGoodChoice}
                     titleText={i18n.gettext(
                         'Plark offers high-end security level, which might be compared to any Ledger wallet for Ethereum.',
                     )}
-                    titleTag="h3"
                 />
             </Section>
 

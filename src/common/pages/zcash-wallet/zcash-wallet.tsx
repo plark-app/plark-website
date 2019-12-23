@@ -54,12 +54,12 @@ export default function ZCashWallet(): JSX.Element {
             <StickIphone
                 picture={{
                     src: '/img/main-screen.png',
-                    alt: 'Plark Main screen',
-                    title: 'Plark Main screen',
+                    alt: 'multi cryptocurrency mobile wallet',
+                    title: 'cryptocurrency mobile wallet',
                 }}
             >
                 <IntroSection
-                    title={i18n.gettext('No sh*t wallet')}
+                    title={i18n.gettext('Crypto wallet made easy')}
                     subtitle={i18n.gettext('The friendliest one for your Zcash assets')}
                     subtitleTag="h3"
                 />
@@ -79,21 +79,25 @@ export default function ZCashWallet(): JSX.Element {
             <WalletFeaturesSection featuresList={featuresList(i18n)} />
             <Section className={styles.zcashWalletDownloadSection}>
                 <Topic
+                    titleTag="h2"
                     titleClassName={styles.zcashWalletDownloadSectionTitle}
                     className={styles.zcashWalletDownloadSectionTopic}
                     titleText={i18n.gettext('Zcash wallet online, huh? Not a good choice when it comes to security.')}
-                    titleTag="h2"
                 />
             </Section>
 
             <FeatureSection
+                withoutLink
                 titleText={i18n.gettext('Download Plark Wallet for Zcash')}
                 text={i18n.gettext(
                     'Plark allows you to manage your Zcash coins how you need. The main thing you have to keep close within reach your cell phone. The clearest entry, where no personal information is required. At the moment, Plark is available exclusively for iOS, but who knows — maybe the Zcash wallet for Windows will see the world sometime.',
                 )}
                 textClassName={styles.zcashWalletDownloadSectionText}
-                image={{ src: '/img/trade-screen.png' }}
-                withoutLink
+                image={{
+                    src: '/img/trade-screen.png',
+                    alt: 'best mobile wallet for cryptocurrency',
+                    title: 'mobile wallet for cryptocurrency',
+                }}
             />
 
             <Section>

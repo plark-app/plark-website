@@ -53,12 +53,12 @@ export default function CardanoWallet(): JSX.Element {
             <StickIphone
                 picture={{
                     src: '/img/main-screen.png',
-                    alt: 'Plark Main screen',
-                    title: 'Plark Main screen',
+                    alt: 'multi cryptocurrency mobile wallet',
+                    title: 'cryptocurrency mobile wallet',
                 }}
             >
                 <IntroSection
-                    title={i18n.gettext('No sh*t wallet')}
+                    title={i18n.gettext('Crypto wallet made easy')}
                     subtitle={i18n.gettext('The friendliest one for your Cardano assets')}
                     subtitleTag="h3"
                 />
@@ -86,13 +86,17 @@ export default function CardanoWallet(): JSX.Element {
             </Section>
 
             <FeatureSection
+                withoutLink
                 titleText={i18n.gettext('Download Plark Wallet for Cardano')}
                 text={i18n.gettext(
                     "Make your own Cardano iOS wallet and appreciate the accommodation and focal points of the Plark application. We ensure 100% security of your assets. There is no real way to hack your wallet since it is associated legitimately to the blockchain. We don't store your keys on our server, so you are the single individual who has full access and authority over your coins.",
                 )}
                 textClassName={styles.cardanoWalletDownloadSectionText}
-                image={{ src: '/img/trade-screen.png' }}
-                withoutLink
+                image={{
+                    src: '/img/trade-screen.png',
+                    alt: 'best mobile wallet for cryptocurrency',
+                    title: 'mobile wallet for cryptocurrency',
+                }}
             />
 
             <Section className={styles.cardanoWalletHardwareSection}>
