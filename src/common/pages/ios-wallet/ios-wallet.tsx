@@ -30,7 +30,7 @@ export default function IosWallet(): JSX.Element {
                 title: 'cryptocurrency mobile wallet',
             }}>
                 <IntroSection
-                    title={i18n.gettext('No sh*t wallet')}
+                    title={i18n.gettext('Crypto wallet made easy')}
                     subtitle={i18n.gettext('One of the best iPhone crypto wallets.')}
                     subtitleTag="h3"
                 />

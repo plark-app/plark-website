@@ -16,9 +16,12 @@ type HeaderState = {
 
 type HeaderOuterProps = {
     isWhite?: boolean;
+    showLabel?: boolean;
 };
 
-type HeaderInnerProps = HeaderOuterProps & WithTranslationsProps & WithWindowSizeProps;
+type HeaderInnerProps
+    = HeaderOuterProps
+    & WithTranslationsProps & WithWindowSizeProps;
 
 class Header extends React.Component<HeaderInnerProps, HeaderState> {
     public state: HeaderState = {
@@ -35,7 +38,7 @@ class Header extends React.Component<HeaderInnerProps, HeaderState> {
     }
 
     public render(): JSX.Element {
-        const { isWhite, i18n, dimensions } = this.props;
+        const { isWhite, i18n, dimensions, showLabel = false } = this.props;
         const { width } = dimensions;
         const { scrolled } = this.state;
 
@@ -57,13 +60,15 @@ class Header extends React.Component<HeaderInnerProps, HeaderState> {
                             <PlarkLogo height={20} className={styles.headerLogo} />
                         </NavLink>
 
-                        <Col className={styles.headerCenterLabel}>
-                            {`An independent brand experience\nstudio based in Kiev`}
-                        </Col>
+                        {showLabel ? (
+                            <Col className={styles.headerCenterLabel}>
+                                {`An independent brand experience\nstudio based in Kiev`}
+                            </Col>
+                        ) : undefined}
 
                         <nav className={styles.headerNav}>
                             <a href={appstore.url} className={styles.headerAppstore} rel="nofollow">
-                                 Available on the App Store →
+                                 Available on App Store →
                             </a>
                         </nav>
                     </Row>

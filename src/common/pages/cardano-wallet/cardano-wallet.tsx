@@ -58,7 +58,7 @@ export default function CardanoWallet(): JSX.Element {
                 }}
             >
                 <IntroSection
-                    title={i18n.gettext('No sh*t wallet')}
+                    title={i18n.gettext('Crypto wallet made easy')}
                     subtitle={i18n.gettext('The friendliest one for your Cardano assets')}
                     subtitleTag="h3"
                 />

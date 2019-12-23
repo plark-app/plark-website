@@ -60,7 +60,7 @@ export default function CardSection(props: CardSectionProps): JSX.Element {
             ) : (
                 <p className={styles.caption}>
                     {i18n.gettext(
-                        'For now, this feature is available for Ukraine (UAH) only. The Russian Federation (RUB), USA (US Dollar) and EEA (Euro) will be added soon.',
+                        'For now, the feature is on for Ukraine (UAH) only. The USA (US Dollar), EEA (Euro), and the Russian Federation (Rub) are coming soon.',
                     )}
                 </p>
             )}

@@ -29,7 +29,7 @@ export default function AndroidWallet(): JSX.Element {
                 }}
             >
                 <IntroSection
-                    title={i18n.gettext('No sh*t wallet')}
+                    title={i18n.gettext('Crypto wallet made easy')}
                     subtitle={i18n.gettext('Just the friendliest crypto currency wallet you will use.')}
                 />
 
