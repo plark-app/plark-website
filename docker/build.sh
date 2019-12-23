@@ -9,5 +9,5 @@ yarn locales:import
 
 docker build \
     --file ./Dockerfile \
-    --tag plark/website:$APPLICATION_VERSION \
-    --tag plark/website .
+    --tag plark/plark-website:$APPLICATION_VERSION \
+    --tag plark/plark-website .
