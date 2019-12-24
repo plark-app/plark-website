@@ -1,5 +1,6 @@
 import React from 'react';
 import moment from 'moment';
+import cn from 'classnames';
 import { useI18n } from 'slim-i18n';
 import PlatformList from 'common/utils/install-platforms';
 import { Section, StoreBadge, NavLink, menuRoutes, IMenuRoute, IMenuRouteLink, Socials } from 'common/components';
@@ -47,7 +48,7 @@ export default function Footer(): JSX.Element {
 
                 <div className={styles.footerSecond}>
                     <PlarkLogo height={25} className={styles.footerLogo} />
-                    <div>
+                    <div className={styles.footerSecondStoreContainer}>
                         <StoreBadge
                             className={styles.footerBadge}
                             platform={PlatformList.apple}
@@ -113,8 +114,10 @@ function ColumnLinks({ links }: ColumnLinksProps): JSX.Element {
                 return (
                     <div key={i}>
                         <NavLink key={i} to={link.to} className={styles.navLink}>
-                            <span>{link.text(i18n)}</span>
-                            {link.comingSoon ? <span className={styles.navLinkSoon}>(comming soon)</span> : undefined}
+                            <span className={styles.navLinkContent}>{link.text(i18n)}</span>
+                            {link.comingSoon ? (
+                                <span className={cn(styles.navLinkContent, styles.navLinkSoon)}>(coming soon)</span>
+                            ) : undefined}
                         </NavLink>
                     </div>
                 );

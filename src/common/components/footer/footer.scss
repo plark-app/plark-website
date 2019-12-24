@@ -21,9 +21,8 @@
 
         padding: 0 20px;
         min-height: 90px;
-        //margin-top: 65px;
 
-        > div {
+        &-store-container {
             @include from-md-width {
                 width: calc(100% / 6);
             }
@@ -79,7 +78,7 @@
     vertical-align: center;
     transition: color 0.4s;
 
-    & > span {
+    &__content {
         display: inline-block;
     }
 
