@@ -153,7 +153,7 @@ function isAnyLocalePathString(path: string): boolean {
 
 export function getSitemapLinks(path: string): SitemapLink[] {
     return getLocales().map((locale: Locale) => {
-        const url = `${SEO_HOST}/${locale.code}${path}`;
+        const url = `${SEO_HOST}${locale.code === DEFAULT_LOCALE ? '' : '/' + locale.code}${path}`;
 
         return {
             lang: locale.shortCode,

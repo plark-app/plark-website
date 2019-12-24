@@ -35,7 +35,11 @@ export default function IntroSection(props: IntroProps): JSX.Element {
         >
             {(width > 0 && width < 768) && (
                 <div className={styles.introPhoneSection}>
-                    <img src="/img/main-screen.png" alt="Main screen" />
+                    <img alt="Main screen"
+                         title="cryptocurrency mobile wallet"
+                         src="/img/main-screen.png"
+                         className={styles.introPhoneSectionImage}
+                    />
                 </div>
             )}
 

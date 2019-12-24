@@ -18,7 +18,7 @@ export default function BgTitleSection(props: BgTitleProps): JSX.Element {
         <Section className={style.section} contentClassName={style.sectionContent} withLeftPadding>
             {props.withMobile && (
                 <div className={style.sectionWithMobile}>
-                    <img src="/img/main-screen.png" alt="Main Screen" />
+                    <img src="/img/main-screen.png" alt="Main Screen" className={style.sectionWithMobileImage} />
                 </div>
             )}
 

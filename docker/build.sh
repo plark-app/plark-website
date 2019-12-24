@@ -10,4 +10,4 @@ yarn locales:import
 docker build \
     --file ./Dockerfile \
     --tag plark/plark-website:$APPLICATION_VERSION \
-    --tag plark/plark-website .
+    --tag plark/plark-website:latest .
