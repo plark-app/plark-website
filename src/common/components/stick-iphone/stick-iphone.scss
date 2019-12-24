@@ -34,13 +34,14 @@
     }
 
     &__image {
-        width: 230px;
+        max-width: 230px;
+        max-height: calc(100vh - 110px);
         position: absolute;
         right: 0;
         bottom: 20px;
 
         @include from-xxl-width {
-            width: 230px;
+            max-width: 230px;
             bottom: 20px;
         }
     }

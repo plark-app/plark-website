@@ -1,7 +1,7 @@
 import React from 'react';
 import cn from 'classnames';
 import scrollTo from 'animated-scroll-to';
-import { Section, DownloadCell, useDimensions } from 'common/components';
+import { Section, DownloadCell } from 'common/components';
 import ArrowDownSvg from 'resources/svgs/arrow-down.component.svg';
 import styles from './intro.scss';
 
@@ -18,9 +18,6 @@ type IntroProps = {
 
 export default function IntroSection(props: IntroProps): JSX.Element {
     const { subtitleTag = 'h2', noDownload } = props;
-    const dimensions = useDimensions();
-
-    const { width } = dimensions;
 
     const onClickArrow = React.useCallback(() => {
         scrollTo(window.innerHeight, {
@@ -28,22 +25,16 @@ export default function IntroSection(props: IntroProps): JSX.Element {
         });
     }, []);
 
+    const topicClassName = cn(styles.introTopic, props.topicClassName);
+
     return (
         <Section className={cn(styles.introSection, props.sectionClassName)}
                  contentClassName={cn(styles.introSectionContent, props.contentClassName)}
                  withLeftPadding
         >
-            {(width > 0 && width < 768) && (
-                <div className={styles.introPhoneSection}>
-                    <img alt="Main screen"
-                         title="cryptocurrency mobile wallet"
-                         src="/img/main-screen.png"
-                         className={styles.introPhoneSectionImage}
-                    />
-                </div>
-            )}
+            <IntroPhoneSection />
 
-            <div className={cn(styles.introTopic, props.topicClassName)}>
+            <div className={topicClassName}>
                 <h3 className={styles.introTopicShit}>{props.title}</h3>
                 {React.createElement(subtitleTag, { className: styles.introTopicTitle }, props.subtitle)}
                 {!noDownload && <DownloadCell />}
@@ -52,4 +43,15 @@ export default function IntroSection(props: IntroProps): JSX.Element {
             <ArrowDownSvg className={styles.introArrow} onClick={onClickArrow} />
         </Section>
     );
+}
+
+
+function IntroPhoneSection(): JSX.Element {
+    return <div className={styles.introPhoneSection}>
+        <img alt="Main screen"
+             title="cryptocurrency mobile wallet"
+             src="/img/main-screen.png"
+             className={styles.introPhoneSectionImage}
+        />
+    </div>;
 }
