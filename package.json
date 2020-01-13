@@ -14,7 +14,7 @@
         "dev-server": "webpack-cli --progress && npm start",
         "build": "NODE_ENV=production webpack-cli --progress",
         "copy": "gulp copy && gulp faq:import",
-        "faq-init": "git submodule update",
+        "faq-init": "git submodule init && git submodule update",
         "tslint": "tslint -c tslint.json -p tsconfig.json",
         "eslint": "eslint .",
         "stylelint": "stylelint \"src/**/*.scss\"",
