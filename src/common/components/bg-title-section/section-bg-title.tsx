@@ -10,10 +10,16 @@ type BgTitleProps = {
     textTag?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p';
     withMobile?: boolean;
 
-    secondaryContent?: string;
+    wiki?: {
+        text: string;
+        linkTitle?: string;
+        url?: string;
+    };
 };
 
 export default function BgTitleSection(props: BgTitleProps): JSX.Element {
+    const { wiki } = props;
+
     return (
         <Section className={style.section} contentClassName={style.sectionContent} withLeftPadding>
             {props.withMobile && (
@@ -32,11 +38,20 @@ export default function BgTitleSection(props: BgTitleProps): JSX.Element {
                         {props.content}
                     </TextBlock>
 
-                    <div className={style.rightSide}>
-                        {props.secondaryContent ? (
-                            <p className={style.secondaryContent}>{props.secondaryContent}</p>
-                        ) : undefined}
-                    </div>
+                    {wiki ? (
+                        <div className={style.rightSide}>
+                            <p className={style.secondaryContent}>{wiki.text}</p>
+                            {wiki.url ? (
+                                <a href={wiki.url}
+                                   title={wiki.linkTitle}
+                                   className={cn('citation', style.rightSideLink)}
+                                >
+                                    {wiki.linkTitle}
+                                </a>
+                            ) : undefined}
+                        </div>
+                    ) : undefined}
+
                 </div>
             </div>
         </Section>

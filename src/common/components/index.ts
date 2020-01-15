@@ -9,6 +9,7 @@ export * from './menu-routes';
 export * from './topic';
 export * from './subscribe-section';
 export * from './feature-section';
+export * from './presentation-section';
 
 export { default as Icons } from './icons';
 export { default as UIButton } from './ui-button';

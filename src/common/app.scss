@@ -3,6 +3,7 @@
 @import './styles/colors';
 @import './styles/vars';
 @import './styles/slick';
+@import './styles/text';
 
 //@import "~slick-carousel/slick/slick.css";
 //@import "~slick-carousel/slick/slick-theme.css";
@@ -126,4 +127,39 @@ span {
         opacity: 0;
         transition: opacity $dur-half ease-in-out;
     }
+
+    .citation {
+        display: block;
+        @include text-caption($color-text-secondary);
+
+        line-height: 20px;
+        border-left: 1px solid $color-text-secondary;
+        padding-left: 10px;
+
+        margin-top: 20px;
+        margin-left: 10px;
+    }
+
+    a.citation {
+        cursor: pointer;
+        transition: all 0.5s;
+
+        &:after {
+            transition: transform 0.5s;
+            display: inline-block;
+            content: '→';
+            margin-left: 6px;
+            transform: translateX(0);
+        }
+
+        &:hover {
+            transition-duration: 0.2s;
+            color: $color-text-dark;
+
+            &:after {
+                transform: translateX(3px);
+            }
+        }
+    }
 }
+

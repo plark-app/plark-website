@@ -78,7 +78,12 @@
     margin-top: 40px;
 
     @include from-md-width {
+        margin-top: 0;
         @include left-margin(1);
+    }
+
+    &__link {
+
     }
 }
 

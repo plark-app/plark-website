@@ -14,10 +14,11 @@ type IntroProps = {
     topicClassName?: string;
     noDownload?: boolean;
     noPartners?: boolean;
+    withPhone?: boolean;
 };
 
 export default function IntroSection(props: IntroProps): JSX.Element {
-    const { subtitleTag = 'h2', noDownload } = props;
+    const { subtitleTag = 'h2', noDownload, withPhone = false } = props;
 
     const onClickArrow = React.useCallback(() => {
         scrollTo(window.innerHeight, {
@@ -32,7 +33,7 @@ export default function IntroSection(props: IntroProps): JSX.Element {
                  contentClassName={cn(styles.introSectionContent, props.contentClassName)}
                  withLeftPadding
         >
-            <IntroPhoneSection />
+            <IntroPhoneSection showDesktop={withPhone} isVideo />
 
             <div className={topicClassName}>
                 <h3 className={styles.introTopicShit}>{props.title}</h3>
@@ -46,8 +47,52 @@ export default function IntroSection(props: IntroProps): JSX.Element {
 }
 
 
-function IntroPhoneSection(): JSX.Element {
-    return <div className={styles.introPhoneSection}>
+type IntroPhoneSectionProps = {
+    showDesktop?: boolean;
+    isVideo?: boolean;
+};
+
+function IntroPhoneSection(props: IntroPhoneSectionProps): JSX.Element {
+
+    const videoRef = React.useRef<HTMLVideoElement>();
+    React.useEffect(() => {
+        if (!props.isVideo) {
+            return;
+        }
+
+        setTimeout(() => {
+            if (videoRef.current) {
+                videoRef.current.muted = false;
+                videoRef.current.play();
+            }
+        }, 500);
+    }, [props.isVideo]);
+
+    if (props.isVideo) {
+        return (
+            <div className={cn(styles.introPhoneSection, props.showDesktop && styles.iShowDesktop)}>
+                <div className={cn(styles.videoWrapper, styles.introPhoneSectionImage)}>
+                    <img alt="Main screen"
+                         title="cryptocurrency mobile wallet"
+                         src="/img/iphone-frame-left.png"
+                         className={styles.videoFrame}
+                    />
+                    <video width="400"
+                           controls={false}
+                           autoPlay
+                           loop
+                           className={styles.videoVideo}
+                           ref={videoRef as any}
+                    >
+                        <source src="/videos/iphone.mp4" type="video/mp4" />
+                        Your browser does not support HTML5 video.
+                    </video>
+                </div>
+            </div>
+        );
+    }
+
+    return <div className={cn(styles.introPhoneSection, props.showDesktop && styles.iShowDesktop)}>
         <img alt="Main screen"
              title="cryptocurrency mobile wallet"
              src="/img/main-screen.png"

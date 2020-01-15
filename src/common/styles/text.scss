@@ -2,6 +2,7 @@
 @import './media';
 @import './colors';
 
+
 @mixin text-h1($text-color: $color-text-dark) {
     color: $text-color;
     font-size: 32px;

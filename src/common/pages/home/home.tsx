@@ -6,6 +6,7 @@ import {
     Header,
     StickIphone,
     IntroSection,
+    PresentationSection,
     BgTitleSection,
     CitationSection,
     SubscribeSection,
@@ -22,6 +23,30 @@ export default function Home(): JSX.Element {
         <>
             <Header isWhite />
 
+            <IntroSection
+                withPhone
+                title={i18n.gettext('Crypto wallet made easy')}
+                subtitle={i18n.gettext('All-in-one app that opens up the door to the dizzying world of crypto')}
+            />
+
+            <PresentationSection
+                mainText={i18n.gettext('A blockchain, originally block chain, is a growing list of records, called blocks, that are linked using cryptography. Each block contains a cryptographic hash of the previous block, a timestamp, and transaction data.')}
+                secondText={i18n.gettext('Plark is a team of enthusiasts. We say: “Cryptocurrencies are simple.” Not only in words, but in deeds also.')}
+                link={{
+                    text: i18n.gettext('Join discussion on Flarum'),
+                    url: 'https://community.plark.io',
+                }}
+                citation={{
+                    text: i18n.gettext(`The root problem with conventional currency is all the trust that's required to make it work. The central bank must be trusted not to debase the currency, but the history of fiat currencies is full of breaches of that trust. Banks must be trusted to hold our money and transfer it electronically, but they lend it out in waves of credit bubbles with barely a fraction in reserve. We have to trust them with our privacy, trust them not to let identity thieves drain our accounts.`),
+                    author: i18n.gettext('— Satoshi Nakamoto'),
+                }}
+                image={{
+                    src: '/img/team/image_1.png',
+                    caption: i18n.gettext('Visual artist & director Ersinhan Ersin was at The Next Web Conference 2018'),
+                    subCaption: i18n.gettext('Westergasfabriek B.V., Amsterdam, Netherlands'),
+                }}
+            />
+
             <StickIphone
                 picture={{
                     src: '/img/main-screen.png',
@@ -29,11 +54,6 @@ export default function Home(): JSX.Element {
                     title: 'cryptocurrency mobile wallet',
                 }}
             >
-                <IntroSection
-                    title={i18n.gettext('Crypto wallet made easy')}
-                    subtitle={i18n.gettext('All-in-one app that opens up the door to the dizzying world of crypto')}
-                />
-
                 <BgTitleSection
                     title="Exchange used to be a multistep nightmare. Then came Plark"
                     content={
@@ -41,6 +61,11 @@ export default function Home(): JSX.Element {
                         'No more messing with exchanges, no more awful lot of passwords and backup phrases. ' +
                         'Stay anonymous and do everything right in your crypto currency wallet.'
                     }
+                    wiki={{
+                        text: i18n.gettext('A cryptocurrency (or crypto currency) is a digital asset designed to work as a medium of exchange that uses strong cryptography to secure financial transactions, control the creation of additional units, and verify the transfer of assets. Cryptocurrencies use decentralized control as opposed to centralized digital currency and central banking systems.'),
+                        linkTitle: 'en.wikipedia.org',
+                        url: 'https://en.wikipedia.org/wiki/Cryptocurrency'
+                    }}
                 />
 
                 <BgTitleSection
@@ -101,9 +126,9 @@ export default function Home(): JSX.Element {
             <FeatureSection
                 isLtr
                 text={
-                    "From now on, everyday struggle of crypto enthusiasts is officially over." +
-                    "Stop sneaking around, looking for a decent exchange. Pull a smartphone out of " +
-                    "your pocket and let a transaction happen."
+                    'From now on, everyday struggle of crypto enthusiasts is officially over.' +
+                    'Stop sneaking around, looking for a decent exchange. Pull a smartphone out of ' +
+                    'your pocket and let a transaction happen.'
                 }
                 image={{
                     src: '/img/trade-confirmation-screen.png',

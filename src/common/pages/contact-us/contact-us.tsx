@@ -12,7 +12,7 @@ export default function ContactUs(): JSX.Element {
         <>
             <Header isWhite />
 
-            <Section contentClassName={styles.contactUs}>
+            <Section contentClassName={styles.contactUs} withLeftPadding>
                 <div className={styles.contactUsTopic}>
                     <Topic
                         titleClassName={styles.contactUsTitle}

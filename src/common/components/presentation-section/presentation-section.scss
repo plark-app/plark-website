@@ -1,0 +1,100 @@
+@import "../../styles/colors";
+@import "../../styles/media";
+@import "../../styles/text";
+
+
+.section {
+    &__content {
+        display: flex;
+        padding-bottom: 0;
+
+        @include from-md-width {
+            padding-top: 200px;
+        }
+    }
+}
+
+.main {
+    @include make-width(3);
+    border-top: 4px solid $color-dark;
+    padding-top: 20px;
+
+    &__caption {
+        @include text-h3;
+    }
+
+    &__text {
+        @include text-h2;
+    }
+
+    &__caption + &__text {
+        margin-top: 100px;
+    }
+
+    &__link {
+        display: inline-block;
+        margin-top: 30px;
+        @include text-subtitle2($color-text-secondary);
+        transition: all 0.5s;
+
+        &:after {
+            display: inline-block;
+            content: '→';
+            margin-left: 8px;
+            transition: transform 0.5s;
+            transform: translateX(0);
+        }
+
+        &:hover {
+            transition-duration: 0.3s;
+            color: $color-text-dark;
+
+            &:after {
+                transform: translateX(3px);
+            }
+        }
+    }
+}
+
+
+.citation {
+    @include make-width(5);
+    @include left-margin(1);
+
+    &__quote {
+        width: 56px;
+        height: 40px;
+        margin-bottom: 20px;
+        fill: $color-text-secondary;
+    }
+
+    &__text {
+        @include text-h3($color-text-secondary);
+    }
+
+    &__author {
+        margin-top: 40px;
+        margin-left: 20px;
+    }
+}
+
+
+.picture {
+    padding-left: calc((100vw - 1280px) / 2 + (1280px * 1 / 3));
+
+    &__image {
+        width: 100%;
+        max-width: 1100px;
+        max-height: 700px;
+        display: block;
+    }
+
+    &__caption {
+        margin-top: 20px;
+        @include text-subtitle2;
+    }
+
+    &__subcaption {
+        @include text-caption($color-text-secondary);
+    }
+}

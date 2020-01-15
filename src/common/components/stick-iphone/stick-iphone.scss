@@ -9,7 +9,7 @@
     left: 50%;
     transform: translateX(-50%);
 
-    width: calc(100vw - 24px);
+    width: calc(100vw - 48px);
 
     @include from-md-width {
         display: block;

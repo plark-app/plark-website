@@ -12,7 +12,6 @@ export type TSectionProps = {
 };
 
 export function Section(props: TSectionProps) {
-
     const contentClass = cn(
         styles.sectionContent,
         props.contentClassName,
