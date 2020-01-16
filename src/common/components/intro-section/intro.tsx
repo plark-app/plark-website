@@ -33,7 +33,7 @@ export default function IntroSection(props: IntroProps): JSX.Element {
                  contentClassName={cn(styles.introSectionContent, props.contentClassName)}
                  withLeftPadding
         >
-            <IntroPhoneSection showDesktop={withPhone} isVideo />
+            <IntroPhoneSection showDesktop={withPhone} />
 
             <div className={topicClassName}>
                 <h3 className={styles.introTopicShit}>{props.title}</h3>

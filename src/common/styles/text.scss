@@ -45,21 +45,21 @@
 @mixin text-subtitle2($text-color: $color-text-dark) {
     color: $text-color;
     font-size: 12px;
-    line-height: 1.833;
+    line-height: 1.833; // 22px
     font-weight: bold;
 }
 
 @mixin text-caption($text-color: $color-text-dark) {
     color: $text-color;
     font-size: 12px;
-    line-height: 1.833;
+    line-height: 1.833; // 22px
     font-weight: 500;
 }
 
 @mixin text-special($text-color: $color-text-dark) {
     color: $text-color;
     font-size: 12px;
-    line-height: 1.166;
+    line-height: 1.166; // 14px
     font-weight: 400;
 
     letter-spacing: 0;

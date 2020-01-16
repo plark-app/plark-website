@@ -1,0 +1,32 @@
+@import '../../styles/colors';
+@import '../../styles/media';
+@import '../../styles/text';
+
+.section {
+    &__content {
+        padding-top: 200px;
+        padding-bottom: 100px;
+    }
+}
+
+.black-block {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    background-color: $color-dark;
+    height: 200px;
+}
+
+.image {
+    margin-top: -200px;
+    max-height: 827px;
+    object-fit: cover;
+}
+
+.caption {
+    margin-top: 20px;
+}
+
+

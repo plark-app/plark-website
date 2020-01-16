@@ -39,17 +39,29 @@
         }
     }
 
-    &.-is-white {
-        transition: all 0.4s;
+    &.is-white {
+
+    }
+
+    &.is-black {
+        background-color: $color-dark;
+
+        &.is-scrolled {
+            border-bottom-color: $color-gray50;
+        }
     }
 
     &.is-scrolled {
         border-bottom-color: $color-text-dark;
     }
 
-
     &__logo {
         display: block;
+        fill: $color-dark;
+
+        .is-black & {
+            fill: $color-gray01;
+        }
     }
 
     &__center-label {
@@ -60,6 +72,10 @@
 
         @include to-sm-width {
             display: none;
+        }
+
+        .is-black & {
+            color: $color-gray05;
         }
     }
 
@@ -84,6 +100,10 @@
     &__appstore {
         @include text-h4;
         transition: all 0.5s;
+
+        .is-black & {
+            color: $color-white;
+        }
 
         &:hover {
             transition: all 0.2s ease-out;
@@ -123,6 +143,10 @@
         @include text-special;
         transition: all 0.3s;
 
+        .is-black & {
+            color: $color-gray05;
+        }
+
         &:hover {
             color: $color-gray50;
         }
@@ -132,6 +156,7 @@
         }
     }
 }
+
 
 :global {
     .mobile-menu-enter {

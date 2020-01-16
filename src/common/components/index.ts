@@ -1,15 +1,19 @@
 export * from './grid';
 export * from './grid-layout';
 export * from './loaders';
+export * from './caption';
 export * from './ui-popup-menu';
 export * from './burger-button';
 export * from './section';
-export * from './window-size-helper';
+export * from './window-size-helper/window-size-helper';
 export * from './menu-routes';
 export * from './topic';
 export * from './subscribe-section';
 export * from './feature-section';
 export * from './presentation-section';
+export * from './photo-citation-section';
+export * from './big-photo-section';
+export * from './dark-features-section';
 
 export { default as Icons } from './icons';
 export { default as UIButton } from './ui-button';

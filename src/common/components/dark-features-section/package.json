@@ -1,0 +1,6 @@
+{
+    "private": true,
+    "name": "dark-features-section",
+    "main": "dark-features-section.tsx",
+    "types": "dark-features-section.tsx"
+}

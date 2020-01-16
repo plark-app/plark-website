@@ -7,9 +7,11 @@ import {
     StickIphone,
     IntroSection,
     PresentationSection,
+    PhotoCitationSection,
     BgTitleSection,
-    CitationSection,
+    BigPhotoSection,
     SubscribeSection,
+    DarkFeaturesSection,
     CardSection,
     FeatureSection,
     CommunitySection,
@@ -64,7 +66,7 @@ export default function Home(): JSX.Element {
                     wiki={{
                         text: i18n.gettext('A cryptocurrency (or crypto currency) is a digital asset designed to work as a medium of exchange that uses strong cryptography to secure financial transactions, control the creation of additional units, and verify the transfer of assets. Cryptocurrencies use decentralized control as opposed to centralized digital currency and central banking systems.'),
                         linkTitle: 'en.wikipedia.org',
-                        url: 'https://en.wikipedia.org/wiki/Cryptocurrency'
+                        url: 'https://en.wikipedia.org/wiki/Cryptocurrency',
                     }}
                 />
 
@@ -95,10 +97,37 @@ export default function Home(): JSX.Element {
                 />
             </StickIphone>
 
-            <CitationSection
-                titleTag="h1"
-                title={`We don’t say Plark is the best crypto wallet. Better you say.`}
-                author="Plark Team"
+            <PhotoCitationSection
+                image={{
+                    src: '/img/team/image_2.png',
+                    alt: 'Plark team',
+                }}
+                citation={{
+                    text: i18n.gettext(`We don’t say Plark is the best crypto wallet. Better you say.`),
+                    author: i18n.gettext('— Plark team'),
+                }}
+
+                caption={{
+                    title: i18n.gettext('Visual artist Ersinhan Ersin was at The Next Web Conference 2018'),
+                    description: i18n.gettext('Westergasfabriek B.V., Amsterdam, Netherlands'),
+                }}
+            />
+
+            <DarkFeaturesSection
+                title={i18n.gettext('probably the most secure crypto wallet')}
+                link={{
+                    url: 'https://dl.plark.io/app/website-appstore',
+                    text: i18n.gettext('Get Plark app'),
+                    title: i18n.gettext('Get Plark app'),
+                }}
+            />
+
+            <BigPhotoSection
+                src="/img/team/image_3.png"
+                alt="Plark team"
+                title="Plark team"
+                caption={i18n.gettext('Visual artist & director Ersinhan Ersin was at The Next Web Conference 2018')}
+                captionDescription={i18n.gettext('Westergasfabriek B.V., Amsterdam, Netherlands')}
             />
 
             <CardSection

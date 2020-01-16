@@ -27,7 +27,7 @@ export const FeatureSection = React.memo(function FeatureSection(props: FeatureS
         text,
         withoutLink = false,
         linkText = 'Get Plark app',
-        linkUrl = 'https://itunes.apple.com/app/apple-store/id1455862890?pt=118337376&ct=site&mt=8',
+        linkUrl = 'https://dl.plark.io/app/website-appstore',
         textTag = 'p',
         titleText,
         textClassName,

@@ -19,7 +19,7 @@ export default {
     apple: {
         key: 'apple',
         icon: Icons.Apple as any,
-        url: 'https://itunes.apple.com/app/apple-store/id1455862890?pt=118337376&ct=site&mt=8',
+        url: 'https://dl.plark.io/app/website-appstore',
         badge: '/img/store/app-store.svg',
     },
     chrome: {
