@@ -25,17 +25,6 @@
         @include text-subtitle2($color-gray01);
         transition: color 0.5s;
         text-transform: lowercase;
-
-        &:after {
-            margin-left: 5px;
-            display: inline-block;
-            content: '→';
-        }
-
-        &:hover {
-            transition-duration: 0.2s;
-            color: $color-gray50;
-        }
     }
 }
 

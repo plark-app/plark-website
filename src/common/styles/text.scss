@@ -5,13 +5,9 @@
 
 @mixin text-h1($text-color: $color-text-dark) {
     color: $text-color;
-    font-size: 32px;
+    font-size: 42px;
     line-height: 1.19;
     font-weight: bold;
-
-    @include from-md-width {
-        font-size: 42px;
-    }
 }
 
 @mixin text-h2($text-color: $color-text-dark) {

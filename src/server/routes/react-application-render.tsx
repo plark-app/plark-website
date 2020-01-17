@@ -9,7 +9,6 @@ import template from 'server/utils/template';
 import { render, ServerRenderingContext } from 'server/utils/render';
 
 import { setCache } from 'server/utils/memory-cache';
-import { setHeaderLinks } from 'server/utils/set-seo-headers';
 
 export default async function reactApplicationRender(req: Request, res: Response) {
     const { originalUrl: location } = req;
@@ -56,10 +55,6 @@ export default async function reactApplicationRender(req: Request, res: Response
         logger.debug(`Cache set: ${location}`);
         setCache(location, { html, statusCode });
         res.setHeader('Content-Type', 'text/html; charset=UTF-8');
-
-        if (activeRoute.rawPath !== undefined) {
-            res.setHeader('Link', setHeaderLinks(activeRoute.rawPath, locale));
-        }
 
         res.status(statusCode).write(html);
         res.end();

@@ -1,0 +1,6 @@
+{
+    "private": true,
+    "name": "iphone-screen",
+    "main": "iphone-screen.tsx",
+    "typings": "iphone-screen.tsx"
+}

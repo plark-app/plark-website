@@ -14,6 +14,9 @@ export * from './presentation-section';
 export * from './photo-citation-section';
 export * from './big-photo-section';
 export * from './dark-features-section';
+export * from './iphone-screen';
+export * from './store-badge';
+export * from './store-qr';
 
 export { default as Icons } from './icons';
 export { default as UIButton } from './ui-button';
@@ -21,8 +24,6 @@ export { default as Footer } from './footer';
 export { default as Header } from './header';
 export { default as NavLink } from './nav-link';
 export { default as TextBlock } from './text-block';
-export { default as StoreQR } from './store-qr';
-export { default as StoreBadge, BadgeContainer } from './store-badge';
 export { default as DownloadCell } from './download-cell';
 export { default as JoinLink } from './join-link';
 export { default as StickIphone } from './stick-iphone';

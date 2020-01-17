@@ -1,7 +1,7 @@
 import React from 'react';
 import cn from 'classnames';
 import scrollTo from 'animated-scroll-to';
-import { Section, DownloadCell } from 'common/components';
+import { Section, DownloadCell, IPhoneScreen } from 'common/components';
 import ArrowDownSvg from 'resources/svgs/arrow-down.component.svg';
 import styles from './intro.scss';
 
@@ -29,15 +29,22 @@ export default function IntroSection(props: IntroProps): JSX.Element {
     const topicClassName = cn(styles.introTopic, props.topicClassName);
 
     return (
-        <Section className={cn(styles.introSection, props.sectionClassName)}
-                 contentClassName={cn(styles.introSectionContent, props.contentClassName)}
-                 withLeftPadding
+        <Section
+            className={cn(styles.introSection, props.sectionClassName)}
+            contentClassName={cn(styles.introSectionContent, props.contentClassName)}
+            withLeftPadding
         >
-            <IntroPhoneSection showDesktop={withPhone} />
+            <IntroPhoneSection
+                showDesktop={withPhone}
+            />
 
-            <div className={topicClassName}>
-                <h3 className={styles.introTopicShit}>{props.title}</h3>
-                {React.createElement(subtitleTag, { className: styles.introTopicTitle }, props.subtitle)}
+
+            <div>
+                <div className={topicClassName}>
+                    <h3 className={styles.introTopicShit}>{props.title}</h3>
+                    {React.createElement(subtitleTag, { className: styles.introTopicTitle }, props.subtitle)}
+                </div>
+
                 {!noDownload && <DownloadCell />}
             </div>
 
@@ -49,54 +56,15 @@ export default function IntroSection(props: IntroProps): JSX.Element {
 
 type IntroPhoneSectionProps = {
     showDesktop?: boolean;
-    isVideo?: boolean;
 };
 
 function IntroPhoneSection(props: IntroPhoneSectionProps): JSX.Element {
-
-    const videoRef = React.useRef<HTMLVideoElement>();
-    React.useEffect(() => {
-        if (!props.isVideo) {
-            return;
-        }
-
-        setTimeout(() => {
-            if (videoRef.current) {
-                videoRef.current.muted = false;
-                videoRef.current.play();
-            }
-        }, 500);
-    }, [props.isVideo]);
-
-    if (props.isVideo) {
-        return (
-            <div className={cn(styles.introPhoneSection, props.showDesktop && styles.iShowDesktop)}>
-                <div className={cn(styles.videoWrapper, styles.introPhoneSectionImage)}>
-                    <img alt="Main screen"
-                         title="cryptocurrency mobile wallet"
-                         src="/img/iphone-frame-left.png"
-                         className={styles.videoFrame}
-                    />
-                    <video width="400"
-                           controls={false}
-                           autoPlay
-                           loop
-                           className={styles.videoVideo}
-                           ref={videoRef as any}
-                    >
-                        <source src="/videos/iphone.mp4" type="video/mp4" />
-                        Your browser does not support HTML5 video.
-                    </video>
-                </div>
-            </div>
-        );
-    }
-
     return <div className={cn(styles.introPhoneSection, props.showDesktop && styles.iShowDesktop)}>
-        <img alt="Main screen"
-             title="cryptocurrency mobile wallet"
-             src="/img/main-screen.png"
-             className={styles.introPhoneSectionImage}
+        <IPhoneScreen
+            src="/videos/iphone.mp4"
+            srcType="video/mp4"
+            type="video"
+            className={styles.introPhoneSectionImage}
         />
     </div>;
 }

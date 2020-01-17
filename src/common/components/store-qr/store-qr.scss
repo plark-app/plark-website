@@ -4,16 +4,30 @@
 
 
 .box {
-    padding: 2px;
     height: 40px;
-    width: 40px;
-    background-color: white;
+    padding: 0 10px;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
     border-radius: 5px;
+    cursor: pointer;
+    border: 1px solid $color-dark;
+
+    @include to-width(640px) {
+        display: none;
+    }
 
     &__small {
-        width: 36px;
-        height: 36px;
-        cursor: pointer;
+        width: 24px;
+        height: 24px;
+        margin-right: 10px;
+    }
+
+    &__text {
+        color: currentColor;
+        font-size: 12px;
+        line-height: 1.833;
+        font-weight: bold;
     }
 
     &__big {

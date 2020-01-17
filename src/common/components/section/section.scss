@@ -17,7 +17,12 @@
     position: relative;
     max-width: 1280px;
     margin: 0 auto;
-    padding: 100px 12px;
+    padding: 100px 20px;
+
+    @include from-md-width {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
 
     .is-dark & {
         color: $color-white;

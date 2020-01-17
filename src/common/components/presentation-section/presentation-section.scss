@@ -35,24 +35,6 @@
         display: inline-block;
         margin-top: 30px;
         @include text-subtitle2($color-text-secondary);
-        transition: all 0.5s;
-
-        &:after {
-            display: inline-block;
-            content: '→';
-            margin-left: 8px;
-            transition: transform 0.5s;
-            transform: translateX(0);
-        }
-
-        &:hover {
-            transition-duration: 0.3s;
-            color: $color-text-dark;
-
-            &:after {
-                transform: translateX(3px);
-            }
-        }
     }
 }
 

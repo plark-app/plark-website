@@ -89,8 +89,8 @@ class Header extends React.Component<HeaderInnerProps, HeaderState> {
                         ) : undefined}
 
                         <nav className={styles.headerNav}>
-                            <a href={appstore.url} className={styles.headerAppstore} rel="nofollow">
-                                 Available on App Store →
+                            <a href={appstore.url} className={cn(styles.headerAppstore, 'arrow-link')} rel="nofollow">
+                                 Available on App Store
                             </a>
                         </nav>
                     </Row>

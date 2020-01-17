@@ -44,7 +44,7 @@ export default function BgTitleSection(props: BgTitleProps): JSX.Element {
                             {wiki.url ? (
                                 <a href={wiki.url}
                                    title={wiki.linkTitle}
-                                   className={cn('citation', style.rightSideLink)}
+                                   className={cn('citation', style.rightSideLink, 'arrow-link')}
                                 >
                                     {wiki.linkTitle}
                                 </a>

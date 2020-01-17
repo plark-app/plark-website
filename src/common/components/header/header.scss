@@ -29,7 +29,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding-right: 12px;
+        padding-right: 24px;
 
         $percent: 1280px / 12 - 24px;
         padding-left: calc(#{$percent} + 36px);
@@ -103,16 +103,6 @@
 
         .is-black & {
             color: $color-white;
-        }
-
-        &:hover {
-            transition: all 0.2s ease-out;
-            transform: translateX(-3px);
-            color: $color-gray50;
-        }
-
-        &:active {
-            transform: translateX(2px);
         }
     }
 }

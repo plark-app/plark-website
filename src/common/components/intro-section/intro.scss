@@ -15,7 +15,7 @@
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
-
+        padding-top: 50px;
         padding-bottom: 100px;
 
         @include from-md-width {
@@ -23,11 +23,13 @@
         }
 
         @include to-sm-width {
+            padding-top: 128px;
             padding-bottom: 50px;
         }
     }
 
     &__topic {
+        margin-top: 50px;
         max-width: 280px;
 
         &-shit {
@@ -54,25 +56,22 @@
         left: 50%;
         transform: translateX(-50%) translateY(0);
         transition: all 0.5s ease-out;
+        color: $color-dark;
 
         &:hover {
             transition-duration: 0.3s;
             transform: translateX(-50%) translateY(5px);
+            color: $color-success;
         }
 
         @include to-md-width {
-            top: calc(100vh - 100px);
+            display: none;
         }
     }
 
     &__phone-section {
         margin-top: 0;
-        margin-bottom: 78px;
-        padding-top: 20px;
-
         width: 100%;
-        height: calc(100vh - 78px);
-
         display: flex;
         justify-content: center;
         align-items: flex-start;
@@ -100,9 +99,6 @@
             }
 
             &.i-show-desktop &-image {
-                width: auto;
-                max-width: 230px;
-                max-height: calc(100vh - 110px);
                 position: absolute;
                 right: 0;
                 bottom: 20px;
@@ -120,36 +116,12 @@
 
         &-image {
             width: 100%;
-            max-width: 150px;
+            max-width: 340px;
 
             @include from-md-width {
                 max-width: 269px;
                 max-height: 700px;
             }
         }
-    }
-}
-
-.video {
-    &__video {
-        position: relative;
-        transform: perspective(170px) rotateY(-2.09deg) scaleY(1.29);
-        transform-origin: center bottom;
-        width: 256px;
-        left: 5px;
-        bottom: 23px;
-        z-index: 1;
-    }
-
-    &__frame {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 300px;
-        z-index: 2;
-    }
-
-    &__wrapper {
-        position: relative;
     }
 }

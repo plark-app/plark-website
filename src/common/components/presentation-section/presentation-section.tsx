@@ -41,7 +41,7 @@ export function PresentationSection(props: PresentationSectionProps): JSX.Elemen
                 {secondText ? <p className={styles.mainCaption}>{secondText}</p> : undefined}
                 <p className={styles.mainText}>{mainText}</p>
                 {link ? (
-                    <a href={link.url} target="_blank" title={link?.text} className={styles.mainLink}>
+                    <a href={link.url} target="_blank" title={link.text} className={cn(styles.mainLink, 'arrow-link')}>
                         {link.text}
                     </a>
                 ) : undefined}
