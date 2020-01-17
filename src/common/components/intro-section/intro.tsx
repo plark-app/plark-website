@@ -37,8 +37,7 @@ export default function IntroSection(props: IntroProps): JSX.Element {
             <IntroPhoneSection
                 showDesktop={withPhone}
             />
-
-
+            
             <div>
                 <div className={topicClassName}>
                     <h3 className={styles.introTopicShit}>{props.title}</h3>

@@ -117,9 +117,29 @@ export default function Home(): JSX.Element {
                 title={i18n.gettext('probably the most secure crypto wallet')}
                 link={{
                     url: 'https://dl.plark.io/app/website-appstore',
-                    text: i18n.gettext('Get Plark app'),
+                    text: i18n.gettext(' Available on the App Store'),
                     title: i18n.gettext('Get Plark app'),
                 }}
+                features={[{
+                    text: i18n.gettext('Only you have access to your funds and transaction data. Neither Plark nor any 3rd party can access your money and data that are stored on your device only.'),
+                    link: {
+                        url: 'https://community.plark.io',
+                        text: 'join discussion on Flarum',
+                        title: 'Plark community'
+                    },
+                    image: {
+                        url: '/img/trade-confirmation-screen.png',
+                        alt: 'plark cryptocurrency wallet',
+                        title: 'Plark cryptocurrency wallet'
+                    }
+                }, {
+                    text: i18n.gettext('No more struggling through thug life of crypto enthusiast, when you look for a decent exchange or on the watch of transaction processing.'),
+                    image: {
+                        url: '/img/trade-screen.png',
+                        alt: 'plark cryptocurrency wallet',
+                        title: 'Plark cryptocurrency wallet'
+                    }
+                }]}
             />
 
             <BigPhotoSection

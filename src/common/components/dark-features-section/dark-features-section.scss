@@ -5,14 +5,16 @@
 
 .section {
     &__content {
-        padding-top: 300px;
-        padding-bottom: 300px;
+        padding-top: 0;
+        padding-bottom: 250px;
         display: flex;
         justify-content: space-between;
     }
 }
 
 .left {
+    width: 100%;
+    padding-top: 300px;
     @include make-width(3);
 
     &__title {
@@ -28,21 +30,50 @@
     }
 }
 
-.center {
-    @include left-margin(1);
-    width: 100%;
-    @include make-width(3);
-}
+.feature {
+    &__list {
+        width: 100%;
+        @include left-margin(1);
+    }
 
+    height: 100vh;
+    max-height: 750px;
+    display: flex;
+    align-items: flex-end;
 
-.right {
-    width: 100%;
-    @include make-width(4);
+    &-text, &-image {
+        height: 100vh;
+    }
 
+    &-text {
+        width: 100%;
+        height: calc(100vh - 300px);
 
-    &__image {
-        display: block;
-        margin: 0 auto;
-        @include make-width(2);
+        @include from-height(750px) {
+            height: 450px;
+        }
+
+        @include make-width(3);
+
+        &__content {
+            @include text-h3($color-gray01);
+        }
+    }
+
+    &-image {
+        @include make-width(4);
+        width: 100%;
+
+        &__img {
+            display: block;
+            position: absolute;
+            bottom: 20px;
+
+            left: 50%;
+            transform: translateX(-50%);
+
+            width: 15vw;
+            max-width: 230px;
+        }
     }
 }

@@ -25,7 +25,7 @@ export function IPhoneScreen(props: IphoneScreenProps): JSX.Element {
                 videoRef.current.muted = false;
                 videoRef.current.play();
             }
-        }, 500);
+        }, 1000);
     }, [isVideo]);
 
     return (

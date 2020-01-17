@@ -6,21 +6,21 @@
 @mixin text-h1($text-color: $color-text-dark) {
     color: $text-color;
     font-size: 42px;
-    line-height: 1.19;
+    line-height: 1.19; // 50px
     font-weight: bold;
 }
 
 @mixin text-h2($text-color: $color-text-dark) {
     color: $text-color;
     font-size: 24px;
-    line-height: 1.25;
+    line-height: 1.25; // 30px
     font-weight: bold;
 }
 
 @mixin text-h3($text-color: $color-text-dark) {
     color: $text-color;
     font-size: 16px;
-    line-height: 1.375;
+    line-height: 1.375; // 22px
     font-weight: bold;
 }
 
@@ -34,7 +34,7 @@
 @mixin text-subtitle1($text-color: $color-text-dark) {
     color: $text-color;
     font-size: 14px;
-    line-height: 1.428;
+    line-height: 1.428; // 20px
     font-weight: 400;
 }
 
