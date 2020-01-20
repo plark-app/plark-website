@@ -1,0 +1,6 @@
+{
+    "private": true,
+    "name": "chart-background",
+    "main": "chart-background.tsx",
+    "typings": "chart-background.tsx"
+}

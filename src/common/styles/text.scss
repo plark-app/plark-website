@@ -41,6 +41,13 @@
 @mixin text-subtitle2($text-color: $color-text-dark) {
     color: $text-color;
     font-size: 12px;
+    line-height: 1.5; // 18px
+    font-weight: 500;
+}
+
+@mixin text-subtitle3($text-color: $color-text-dark) {
+    color: $text-color;
+    font-size: 12px;
     line-height: 1.833; // 22px
     font-weight: bold;
 }

@@ -52,16 +52,7 @@
 }
 
 .chart {
-    position: absolute;
-    width: 100%;
-    min-width: 1280px;
-    left: 50%;
-    top: 190px;
-    transform: translateX(-50%);
-
-    @include from-md-width() {
-        top: 290px;
-    }
+    stroke: #CDD2DB;
 }
 
 .credit-card {

@@ -12,8 +12,8 @@ import {
     BigPhotoSection,
     SubscribeSection,
     DarkFeaturesSection,
-    CardSection,
-    FeatureSection,
+    DarkCardSection,
+    CitationSection,
     CommunitySection,
     FeedbackSection,
 } from 'common/components';
@@ -113,6 +113,15 @@ export default function Home(): JSX.Element {
                 }}
             />
 
+            <DarkCardSection
+                title="Credit Card is The Key"
+                subtitle="Bitcoin is pseudonymous rather than anonymous in that the cryptocurrency within a wallet is not tied to people, but rather to one or more specific keys."
+                description={
+                    'Add your credit or debit card, make a couple of tweaks, and watch the magic happen. ' +
+                    'Purchase Bitcoin, Litecoin, Ethereum, and Dash for fiat currency right in the wallet.'
+                }
+            />
+
             <DarkFeaturesSection
                 title={i18n.gettext('probably the most secure crypto wallet')}
                 link={{
@@ -150,40 +159,10 @@ export default function Home(): JSX.Element {
                 captionDescription={i18n.gettext('Westergasfabriek B.V., Amsterdam, Netherlands')}
             />
 
-            <CardSection
-                title="Credit Card is The Key"
-                description={
-                    'Add your credit or debit card, make a couple of tweaks, and watch the magic happen. ' +
-                    'Purchase Bitcoin, Litecoin, Ethereum, and Dash for fiat currency right in the wallet.'
-                }
-            />
-
-            <FeatureSection
-                text={
-                    'Whether you are on a friendly footing with crypto or just planning ' +
-                    'to hit the road — purchasing it for real money can be a pain in the neck. ' +
-                    'Plark pulls you around, offering a bunch of tools – all crucial for smooth ' +
-                    'and painless transactions of all kinds.'
-                }
-                image={{
-                    src: '/img/trade-screen.png',
-                    alt: 'best mobile wallet for cryptocurrency',
-                    title: 'mobile wallet for cryptocurrency',
-                }}
-            />
-
-            <FeatureSection
-                isLtr
-                text={
-                    'From now on, everyday struggle of crypto enthusiasts is officially over.' +
-                    'Stop sneaking around, looking for a decent exchange. Pull a smartphone out of ' +
-                    'your pocket and let a transaction happen.'
-                }
-                image={{
-                    src: '/img/trade-confirmation-screen.png',
-                    alt: 'best mobile cryptocurrency wallet',
-                    title: 'best mobile wallet for cryptocurrency',
-                }}
+            <CitationSection
+                title="Talk, discuss, solve — we bet, you will find like-minded fellows"
+                author="— words, we would like to hear from you."
+                lowercase
             />
 
             <CommunitySection />

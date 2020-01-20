@@ -9,13 +9,17 @@
 
 .citation {
     @include from-width($grid-width) {
-        margin-left: col-absolute(4) + $var-gutter / 2;
-        max-width: col-absolute(5)
+        margin-left: col-absolute(5) + $var-gutter / 2;
+        max-width: col-absolute(6);
     }
 
     &__text {
         @include text-h1;
         white-space: pre-wrap;
+
+        &.is-lowercase {
+            text-transform: lowercase;
+        }
     }
 
     &__author {

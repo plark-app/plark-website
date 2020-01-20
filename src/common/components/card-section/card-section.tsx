@@ -1,11 +1,7 @@
 import React from 'react';
 import { useI18n } from 'slim-i18n';
-import classnames from 'classnames';
-
-import { Section, Topic, DownloadCell } from 'common/components';
-
-import ChartSvg from 'resources/svgs/chart.component.svg';
-
+import cn from 'classnames';
+import { Section, Topic, DownloadCell, ChartBackground } from 'common/components';
 import styles from './card-section.scss';
 import { CardsList } from './cards-list';
 
@@ -19,12 +15,12 @@ type CardSectionProps = {
     steps?: string[];
 };
 
-export default function CardSection(props: CardSectionProps): JSX.Element {
+export function CardSection(props: CardSectionProps): JSX.Element {
     const i18n = useI18n();
 
     return (
         <Section
-            outerContent={<CardSectionBackground />}
+            outerContent={<ChartBackground className={styles.chart} />}
             className={styles.section}
             contentClassName={styles.sectionContent}
         >
@@ -35,7 +31,7 @@ export default function CardSection(props: CardSectionProps): JSX.Element {
             <Topic
                 isCenter
                 isSmall
-                descClassName={classnames(styles.topicDescription, props.topicClassName)}
+                descClassName={cn(styles.topicDescription, props.topicClassName)}
                 titleText={props.title}
                 titleClassName={props.titleClassName}
                 descText={props.description}
@@ -68,8 +64,4 @@ export default function CardSection(props: CardSectionProps): JSX.Element {
             <DownloadCell className={styles.download} />
         </Section>
     );
-}
-
-function CardSectionBackground(): JSX.Element {
-    return <ChartSvg className={styles.chart} />;
 }

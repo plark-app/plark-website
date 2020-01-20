@@ -1,0 +1,127 @@
+@import "../../styles/colors";
+@import "../../styles/media";
+@import "../../styles/vars";
+@import "../../styles/text";
+
+.section {
+    &__content {
+        padding-top: 240px;
+        padding-bottom: 100px;
+
+        display: flex;
+    }
+}
+
+.left {
+    width: 100%;
+    @include make-width(3);
+
+    &__title {
+        @include text-h2($color-text-white);
+    }
+
+    &__subtitle {
+        @include text-subtitle2($color-text-secondary);
+    }
+
+    &__title + &__subtitle {
+        margin-top: 20px;
+    }
+}
+
+.right {
+    width: 100%;
+    @include left-margin(1);
+
+}
+
+
+.card-images {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 30px 0;
+}
+
+.subtitle {
+    display: block;
+    font-size: 16px;
+    max-width: 580px;
+    font-weight: bold;
+    margin: 50px auto 72px auto;
+    line-height: 1.38;
+    color: $color-text-secondary;
+}
+
+
+.caption {
+    display: block;
+    margin: 30px 0;
+    width: 100%;
+    max-width: 445px;
+
+    @include text-subtitle2($color-gray70);
+}
+
+.chart {
+    stroke: $color-gray70;
+}
+
+.credit-card {
+    @include make-width(5);
+    max-width: 420px;
+    border-radius: 18px;
+
+    &__image {
+        width: 100%;
+        display: block;
+        position: relative;
+        z-index: 2;
+    }
+
+    &:after {
+        z-index: 1;
+        content: '';
+        display: block;
+        position: absolute;
+        top: 30px;
+        left: 30px;
+        right: 30px;
+        bottom: 1px;
+        box-shadow: 0 12px 85px $color-gray70;
+    }
+}
+
+.description {
+    @include make-width(5);
+    margin-bottom: 30px;
+    margin-top: 70px;
+}
+
+.download-link {
+    display: inline-block;
+    margin-top: 70px;
+
+    @include text-subtitle3($color-gray01);
+}
+
+.features {
+    margin-top: 30px;
+    border-top: 4px solid $color-gray01;
+    padding-top: 10px;
+    display: flex;
+
+    &__item {
+        width: 86px;
+        margin-right: 30px;
+    }
+
+    &__value {
+        @include text-h3($color-text-white);
+        margin-bottom: 5px;
+    }
+
+    &__caption {
+        @include text-subtitle2($color-text-secondary);
+        margin-bottom: 5px;
+    }
+}
