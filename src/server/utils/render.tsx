@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
+import { HelmetProvider } from 'react-helmet-async';
 import { StaticRouter, StaticRouterContext } from 'react-router';
 import cssnano from 'cssnano';
 import { flush } from 'isomorphic-styles/lib/loader/collect-styles';
@@ -23,16 +24,21 @@ export type RenderParams = {
 export type RenderResult = {
     markup: string;
     criticalCss?: string;
+    helmet: any;
 };
 
 export async function render(params: RenderParams): Promise<RenderResult> {
     const { location, context, i18n, AppComponent } = params;
 
+    const helmetContext: any = {};
+
     ReactDOMServer.renderToString(
         <StaticRouter location={location} context={context}>
-            <TranslationsProvider value={i18n}>
-                <AppComponent />
-            </TranslationsProvider>
+            <HelmetProvider context={helmetContext}>
+                <TranslationsProvider value={i18n}>
+                    <AppComponent />
+                </TranslationsProvider>
+            </HelmetProvider>
         </StaticRouter>,
     );
 
@@ -40,18 +46,22 @@ export async function render(params: RenderParams): Promise<RenderResult> {
 
     const markup = ReactDOMServer.renderToString(
         <StaticRouter location={location} context={context}>
-            <TranslationsProvider value={i18n}>
-                <AppComponent />
-            </TranslationsProvider>
+            <HelmetProvider context={helmetContext}>
+                <TranslationsProvider value={i18n}>
+                    <AppComponent />
+                </TranslationsProvider>
+            </HelmetProvider>
         </StaticRouter>,
     );
+
+    const { helmet } = helmetContext;
 
     let criticalCss = flush(1024 * 70);
     logger.debug(`Critical CSS size: ${criticalCss.length}, location: ${location}`);
     criticalCss = await compressCss(criticalCss);
     logger.debug(`Compressed Critical CSS size: ${criticalCss.length}`);
 
-    return { markup, criticalCss };
+    return { markup, criticalCss, helmet };
 }
 
 async function loadDependencies(context: ServerRenderingContext): Promise<void> {

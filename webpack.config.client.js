@@ -85,7 +85,11 @@ module.exports = {
             }),
 
             new OptimizeCSSAssetsPlugin({
-                cssProcessorOptions: {discardComments: {removeAll: true}},
+                cssProcessorOptions: {
+                    discardComments: {
+                        removeAll: true,
+                    },
+                },
             }),
         ],
     },
@@ -113,8 +117,8 @@ function getWebpackPlugins() {
     if (!isDev) {
         plugins.push(
             new MiniCssExtractPlugin({
-                filename: '[name].[contenthash:8].css'
-            })
+                filename: '[name].[contenthash:8].css',
+            }),
         );
     }
 
@@ -132,22 +136,21 @@ function getWebpackPlugins() {
 
                 return JSON.stringify(assetsByChunkName, null, '    ');
             },
-        })
+        }),
     );
 
     plugins.push(
         new RequireFrom({
             methodName: '__getPublicPath',
             suppressErrors: true,
-        })
+        }),
     );
 
     plugins.push(
         new webpack.DefinePlugin({
             __isBrowser__: 'true',
-        })
+        }),
     );
-
 
     // In production we have different environment
     if (!isDev) {
@@ -169,12 +172,7 @@ function getWebpackPlugins() {
             }),
         );
 
-        plugins.push(
-            new webpack.ContextReplacementPlugin(
-                /validatorjs[/\\]src[/\\]lang$/,
-                /en/
-            )
-        );
+        plugins.push(new webpack.ContextReplacementPlugin(/validatorjs[/\\]src[/\\]lang$/, /en/));
     }
 
     return plugins;

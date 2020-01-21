@@ -11,6 +11,7 @@ export default function devMiddleware(_req: Request, res: Response, next: () => 
     logger.debug(_req.path);
     const html = template({
         chunks: ['vendors', 'main'],
+        helmet: undefined,
     });
 
     res.setHeader('Content-Type', 'text/html; charset=UTF-8');

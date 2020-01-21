@@ -44,7 +44,7 @@ expressApp.get('/robots.txt', Router.robotsTxt);
 const appHandlers = [
     Middlewares.redirects,
     Middlewares.language,
-    // Middlewares.cache,
+    Middlewares.cache,
     Router.reactApplicationRender,
 ];
 

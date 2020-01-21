@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
-import Helmet from 'react-helmet';
 
 import { config } from 'server/config';
 import { getChunkAssetFilePath, getCSSChunksMap, cssRe } from './assets-utils';
@@ -10,6 +9,7 @@ import Favicon from './favicon';
 export type TemplateData = Partial<{
     criticalCss: string;
     markup: string;
+    helmet: any;
     chunks: string[];
     // tslint:disable-next-line:no-any
     initData: Record<string, any>;
@@ -94,7 +94,7 @@ function getClientConfig(): ClientConfig {
 }
 
 export default function template(data: TemplateData): string {
-    const { criticalCss = '', markup = '', chunks = [], initData = {} } = data;
+    const { criticalCss = '', markup = '', chunks = [], initData = {}, helmet } = data;
 
     const configString = JSON.stringify({ config: clientConfig, ...initData });
 
@@ -104,16 +104,15 @@ export default function template(data: TemplateData): string {
         window.__cssChunksMap=${JSON.stringify(getCSSChunksMap())}
     `;
 
-    const helmet = Helmet.renderStatic();
-    const htmlAttrs: any = helmet.htmlAttributes.toComponent();
-    const bodyAttrs: any = helmet.bodyAttributes.toComponent();
+    const htmlAttrs: any = helmet?.htmlAttributes.toComponent();
+    const bodyAttrs: any = helmet?.bodyAttributes.toComponent();
 
     return (
         '<!DOCTYPE html>\n' +
         ReactDOMServer.renderToStaticMarkup(
             <html {...htmlAttrs}>
             <head>
-                {helmet.title.toComponent()}
+                {helmet?.title.toComponent()}
                 <meta charSet="UTF-8" />
                 <meta name="viewport" content="width=device-width,initial-scale=1.0" />
                 <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
@@ -122,9 +121,9 @@ export default function template(data: TemplateData): string {
                 <meta name="apple-itunes-app" content="app-id=1455862890" />
                 <Favicon />
                 {getPreloadLinks(chunks)}
-                {helmet.meta.toComponent()}
-                {helmet.link.toComponent()}
-                {helmet.script.toComponent()}
+                {helmet?.meta.toComponent()}
+                {helmet?.link.toComponent()}
+                {helmet?.script.toComponent()}
                 {criticalCss && <style dangerouslySetInnerHTML={{ __html: criticalCss }} />}
             </head>
             <body {...bodyAttrs}>
