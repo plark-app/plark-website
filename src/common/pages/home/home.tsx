@@ -134,20 +134,20 @@ export default function Home(): JSX.Element {
                     link: {
                         url: 'https://community.plark.io',
                         text: 'join discussion on Flarum',
-                        title: 'Plark community'
+                        title: 'Plark community',
                     },
                     image: {
                         url: '/img/trade-confirmation-screen.png',
                         alt: 'plark cryptocurrency wallet',
-                        title: 'Plark cryptocurrency wallet'
-                    }
+                        title: 'Plark cryptocurrency wallet',
+                    },
                 }, {
                     text: i18n.gettext('No more struggling through thug life of crypto enthusiast, when you look for a decent exchange or on the watch of transaction processing.'),
                     image: {
                         url: '/img/trade-screen.png',
                         alt: 'plark cryptocurrency wallet',
-                        title: 'Plark cryptocurrency wallet'
-                    }
+                        title: 'Plark cryptocurrency wallet',
+                    },
                 }]}
             />
 
@@ -165,15 +165,8 @@ export default function Home(): JSX.Element {
                 lowercase
             />
 
+            <FeedbackSection />
             <CommunitySection />
-
-            <FeedbackSection
-                topic={{
-                    title: '“' + i18n.gettext('It’s my crypto wallet') + '”',
-                    description: i18n.gettext('— the highest praise we’ve ever dreamed to earn from you.'),
-                    titleTag: 'h3',
-                }}
-            />
 
             <SubscribeSection />
 

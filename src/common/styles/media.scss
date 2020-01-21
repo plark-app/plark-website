@@ -167,7 +167,11 @@
 }
 
 
-@mixin make-width($deep: 1) {
+@mixin make-width($deep: 1, $maximize-width: false) {
+    @if $maximize-width {
+        width: 100%;
+    }
+
     @include to-width(1280px) {
         $percent: col-percent($deep);
         max-width: calc(#{$percent} - #{$var-gutter});

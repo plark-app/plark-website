@@ -97,13 +97,7 @@ export default function BitcoinWallet(): JSX.Element {
                 description={i18n.gettext('Plark’s code is open-source, so feel free to visit our page at GitHub and take the possible advantage of it.')}
             />
 
-            <FeedbackSection
-                topic={{
-                    titleTag: 'h2',
-                    title: i18n.gettext('"Online Bitcoin wallet? If you want to get robbed — use it."'),
-                    description: i18n.gettext('— Plark Team'),
-                }}
-            />
+            <FeedbackSection />
 
             <Section>
 

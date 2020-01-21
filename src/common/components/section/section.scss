@@ -36,4 +36,9 @@
     &.i-left-padding {
         @include left-padding;
     }
+
+    &.is-flex {
+        display: flex;
+        flex-wrap: wrap;
+    }
 }

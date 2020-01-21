@@ -9,17 +9,19 @@ export type TSectionProps = {
     contentClassName?: string;
     outerContent?: React.ReactNode;
     withLeftPadding?: boolean;
+    flexContent?: boolean;
 
     isDark?: boolean;
 };
 
-export function Section(props: TSectionProps) {
-    const { isDark = false } = props;
+export const Section = React.memo(function Section(props: TSectionProps) {
+    const { isDark = false, flexContent = false, withLeftPadding = false } = props;
 
     const contentClass = cn(
         styles.sectionContent,
         props.contentClassName,
-        props.withLeftPadding && styles.iLeftPadding,
+        withLeftPadding && styles.iLeftPadding,
+        flexContent && styles.isFlex,
     );
 
     const sectionClass = React.useMemo(() => cn(
@@ -37,4 +39,4 @@ export function Section(props: TSectionProps) {
             <div className={contentClass}>{props.children}</div>
         </section>
     );
-}
+});
