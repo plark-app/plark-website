@@ -1,6 +1,6 @@
 import React from 'react';
 import { isFragment } from 'react-is';
-import Helmet from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 import { ITranslationsAdapter, useI18n } from 'slim-i18n';
 import { RouteHeadRenderFn } from './router/router';
 import { DEFAULT_LOCALE } from './locale';

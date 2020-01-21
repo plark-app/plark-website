@@ -1,6 +1,6 @@
 import React from 'react';
 import { compose } from 'recompose';
-import Helmet from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 import { WithTranslationsProps, withTranslations } from 'slim-i18n';
 import { withRouter, RouteComponentProps } from 'react-router-dom';
 import { SEO_HOST } from './utils';

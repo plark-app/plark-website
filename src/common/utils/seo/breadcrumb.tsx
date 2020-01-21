@@ -1,5 +1,5 @@
 import React from 'react';
-import Helmet from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 import { useLocation } from 'react-router';
 import { useI18n } from 'slim-i18n';
 import { SEO_HOST } from './utils';
