@@ -20,7 +20,7 @@
     padding-top: 20px;
 
     &__caption {
-        @include text-h3;
+        @include text-main;
     }
 
     &__text {
@@ -51,7 +51,7 @@
     }
 
     &__text {
-        @include text-h3($color-text-secondary);
+        @include text-main($color-text-secondary);
     }
 
     &__author {

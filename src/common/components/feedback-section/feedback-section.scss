@@ -36,8 +36,8 @@
         &__button {
             position: relative;
             cursor: pointer;
-            width: 40px;
-            height: 40px;
+            width: 36px;
+            height: 36px;
 
             &__arrow {
                 transition: all 0.2s ease-in-out;
@@ -95,7 +95,7 @@
     }
 
     &__feedback {
-        @include text-h3;
+        @include text-main;
         margin-top: 30px;
         margin-bottom: 20px;
     }

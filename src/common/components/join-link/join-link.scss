@@ -7,5 +7,5 @@
     align-items: center;
 
     margin-top: 50px;
-    @include text-h3($color-text-secondary);
+    @include text-main($color-text-secondary);
 }

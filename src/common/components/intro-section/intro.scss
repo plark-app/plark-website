@@ -40,7 +40,7 @@
         }
 
         &-title {
-            @include text-h3;
+            @include text-main;
             text-transform: lowercase;
             margin-bottom: 40px;
         }

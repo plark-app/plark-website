@@ -3,7 +3,7 @@ import cn from 'classnames';
 import Slider, { Settings } from 'react-slick';
 import { Section, StarRate, TwoIPhones } from 'common/components';
 import userFeedbacks, { UserFeedback } from './feedbacks';
-import ArrowDownSvg from 'resources/svgs/arrow-down.component.svg';
+import ArrowRightSvg from 'resources/svgs/full-arrow-right.component.svg';
 import styles from './feedback-section.scss';
 
 type FeedbackSectionProps = {};
@@ -64,17 +64,22 @@ export const FeedbackSection = React.memo(function FeedbackSection(props: Feedba
                     ))}
                 </Slider>
 
-                <a href="https://dl.plark.io/app/website-appstore" target="_blank" className={cn(styles.appstoreLink, 'arrow-link')}>
-                    <img src="/img/AppStore_Icon.svg" className={styles.appstoreLinkImage} />
+                <a href="https://dl.plark.io/app/website-appstore" target="_blank"
+                   className={cn(styles.appstoreLink, 'arrow-link')}>
+                    <img src="/img/AppStore_Icon.svg"
+                         className={styles.appstoreLinkImage}
+                         alt="Plark at AppStore"
+                         title=""
+                    />
                     <span className={styles.appstoreLinkTitle}>view all appstore reviews</span>
                 </a>
 
                 <div className={styles.sliderNav}>
                     <div onClick={onPrev} className={cn(styles.sliderNavButton, styles.isNext)}>
-                        <ArrowDownSvg className={styles.sliderNavButtonArrow} />
+                        <ArrowRightSvg className={styles.sliderNavButtonArrow} />
                     </div>
                     <div onClick={onNext} className={cn(styles.sliderNavButton, styles.isPrev)}>
-                        <ArrowDownSvg className={styles.sliderNavButtonArrow} />
+                        <ArrowRightSvg className={styles.sliderNavButtonArrow} />
                     </div>
                 </div>
             </div>

@@ -116,7 +116,7 @@
     }
 
     &__value {
-        @include text-h3($color-text-white);
+        @include text-main($color-text-white);
         margin-bottom: 5px;
     }
 

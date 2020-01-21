@@ -17,7 +17,7 @@
     font-weight: bold;
 }
 
-@mixin text-h3($text-color: $color-text-dark) {
+@mixin text-main($text-color: $color-text-dark) {
     color: $text-color;
     font-size: 16px;
     line-height: 1.375; // 22px

@@ -1,124 +1,66 @@
 @import "../../styles/colors";
 @import "../../styles/media";
-
+@import "../../styles/text";
 
 .section {
     margin-top: 100px;
     margin-bottom: 100px;
 
-    @include from-md-width() {
-        margin-top: 200px;
-        margin-bottom: 200px;
+    &__content {
     }
 }
 
-.slider {
-    margin: 100px 0;
+.left {
+    @include make-width(3);
+
+    &__arrow {
+        width: 100%;
+        height: 100%;
+        color: #FFFFFF;
+    }
 }
 
-.card {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+.right {
+    @include left-margin(1);
+}
 
-    background: white;
-    padding: 20px;
-    border-radius: 5px;
-
-    width: 336px;
-    min-height: 162px;
-
-    overflow: hidden;
-
-    box-shadow: 0 10px 40px $color-gray20;
-    margin: 0 30px;
-
-    transition: all 0.6s;
-    opacity: 0.3;
-    transform: scale(0.83);
-
-    :global(.slick-active) & {
-        transition-duration: 0.3s;
-
-        opacity: 1;
-        transform: scale(1);
-    }
-
-    @include from-md-width() {
-        width: 500px;
-        min-height: 240px;
-        padding: 30px;
-    }
+.topic {
+    @include make-width(5, true);
 
     &__title {
-        font-size: 13px;
-        color: $color-text-dark;
-        font-weight: bold;
+        text-transform: lowercase;
+        @include text-h1($color-dark);
+    }
 
-        @include from-md-width() {
-            font-size: 20px;
+    &__description {
+        @include text-main($color-dark);
+    }
+
+    &__title + &__description {
+        margin-top: 50px;
+    }
+}
+
+.platforms {
+    margin: 50px 0;
+    display: flex;
+    align-items: center;
+
+    &__item {
+        display: block;
+        margin-right: 50px;
+
+        &:hover {
+            transform: scale(1.1);
         }
-    }
 
-    &__content {
-        font-size: 10px;
-        line-height: 1.42;
-        color: $color-text-secondary;
-
-        @include from-md-width() {
-            font-size: 14px;
-        }
-    }
-
-    &__title + &__content {
-        margin-top: 10px;
-    }
-
-    &__bottom {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-
-        margin-top: 30px;
-    }
-
-    &__timing {
-        font-size: 10px;
-        color: $color-text-secondary;
-
-        @include from-md-width() {
-            font-size: 12px;
-        }
-    }
-
-    &__button.card__button {
-        @include to-md-width() {
-            font-size: 8px;
-            width: 100px;
-            height: 32px;
+        &-image {
+            display: block;
+            height: 26px;
         }
     }
 }
 
-.bottom {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    &__text {
-        width: 100%;
-        max-width: 740px;
-        margin: 0 auto;
-
-        text-align: center;
-        font-size: 18px;
-        font-weight: 700;
-        line-height: 26px;
-
-        @include from-md-width() {
-            font-size: 24px;
-            font-weight: bold;
-            line-height: 1.33;
-        }
-    }
+.link {
+    @include text-subtitle3($color-text-secondary);
 }
