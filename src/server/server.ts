@@ -40,18 +40,28 @@ expressApp.use('/api', Router.createApiRouter());
 expressApp.get('/dynamic-sitemap.xml', Router.dynamicSitemap);
 expressApp.get('/robots.txt', Router.robotsTxt);
 
+function buildAppHandles() {
+    const useCache = config.get<boolean>('app.useCache', false);
 
-const appHandlers = [
-    Middlewares.redirects,
-    Middlewares.language,
-    Middlewares.cache,
-    Router.reactApplicationRender,
-];
+    const appHandlers: any[] = [];
+    appHandlers.push(Middlewares.redirects);
+    appHandlers.push(Middlewares.language);
 
-if (process.env.NODE_ENV === 'development') {
-    appHandlers.unshift(Middlewares.dev);
+    if (useCache) {
+        appHandlers.push(Middlewares.cache);
+    }
+
+    appHandlers.push(Router.reactApplicationRender);
+
+    if (process.env.NODE_ENV === 'development') {
+        appHandlers.unshift(Middlewares.dev);
+    }
+
+    return appHandlers;
 }
-expressApp.get('*', appHandlers);
+
+expressApp.get('*', buildAppHandles());
+
 
 expressApp.listen(expressApp.get('port'), (error?: Error) => {
     if (error) {

@@ -2,6 +2,7 @@ app:
   host: plark.io
   port: 80
   secure: true
+  useCache: true
 
   gtmKey: 'GTM-K8BVBNG'
 

@@ -3,6 +3,7 @@ declare global {
     type ClientConfig = {
         host: string;
         isSecure: boolean;
+        useCache: boolean;
     };
 
     interface Window {

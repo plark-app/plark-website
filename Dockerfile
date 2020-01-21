@@ -53,6 +53,7 @@ ENV NODE_ENV=production \
     HOST=localhost \
     PORT=80 \
     SECURE=true \
+    USE_CACHE=true \
     GTM_KEY="GTM-K8BVBNG" \
     MAILCHIMP_API_KEY=false \
     MAILCHIMP_LIST_ID=false \
