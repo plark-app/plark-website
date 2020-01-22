@@ -1,6 +1,7 @@
 import React from 'react';
 import { useI18n } from 'slim-i18n';
-import { Section, JoinLink } from 'common/components';
+import cn from 'classnames';
+import { Section } from 'common/components';
 import ArrowRightSvg from 'resources/svgs/full-arrow-right.component.svg';
 import styles from './community-section.scss';
 
@@ -40,12 +41,10 @@ export const CommunitySection = React.memo(function CommunitySection() {
             <div className={styles.right}>
                 <div className={styles.topic}>
                     <h2 className={styles.topicTitle}>
-                        {i18n.gettext('Who are you without a tight-knit community?')}
+                        {i18n.gettext('Plark crypto community is just\ntwo clicks away from you.')}
                     </h2>
                     <p className={styles.topicDescription}>
-                        {i18n.gettext(
-                            'Never, remember, never underestimate the power of same-minded people — it’s a machine of war.  We know it. That’s why we want people to gather around the conviction “Plark is my crypto wallet.” Talk, discuss, solve — we bet, you will find like-minded fellows.\nJoin it or die bookless!',
-                        )}
+                        {i18n.gettext('Join Plarkians to debate over the future of cryptocurrencies, get early access to new Plark features, find useful stuff, or just talk to a bunch of single-minded people.')}
                     </p>
                 </div>
 
@@ -66,9 +65,9 @@ export const CommunitySection = React.memo(function CommunitySection() {
                     ))}
                 </div>
 
-                <JoinLink href="https://community.plark.io" target="_blank">
+                <a href="https://community.plark.io" target="_blank" className={cn(styles.link, 'arrow-link')}>
                     {i18n.gettext('Join discussion in community')}
-                </JoinLink>
+                </a>
             </div>
         </Section>
     );

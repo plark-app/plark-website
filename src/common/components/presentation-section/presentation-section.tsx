@@ -50,7 +50,7 @@ export function PresentationSection(props: PresentationSectionProps): JSX.Elemen
             {citation ? (
                 <div className={styles.citation}>
                     <QuoteSvg className={styles.citationQuote} />
-                    <p className={styles.citationText}>{citation.text}</p>
+                    <p className={styles.citationText}>”{citation.text}”</p>
                     {citation.author ? (
                         <div className={cn('citation', styles.citationAuthor)}>
                             {citation.author}

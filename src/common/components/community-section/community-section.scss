@@ -25,14 +25,15 @@
 }
 
 .topic {
-    @include make-width(5, true);
-
     &__title {
+        @include make-width(7, true);
         text-transform: lowercase;
         @include text-h1($color-dark);
+        white-space: pre-wrap;
     }
 
     &__description {
+        @include make-width(4, true);
         @include text-main($color-dark);
     }
 
@@ -62,5 +63,6 @@
 }
 
 .link {
+    display: inline-block;
     @include text-subtitle3($color-text-secondary);
 }

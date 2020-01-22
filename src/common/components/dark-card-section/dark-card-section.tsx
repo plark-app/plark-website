@@ -30,15 +30,10 @@ export function DarkCardSection(props: DarkCardSectionProps): JSX.Element {
                 <p className={styles.leftSubtitle}>{props.subtitle}</p>
 
                 <div className={styles.features}>
-                    <div className={styles.featuresItem}>
-                        <p className={styles.featuresValue}>2.9% + 30¢</p>
-                        <h4 className={styles.featuresCaption}>{i18n.gettext('per successful card charge')}</h4>
-                    </div>
-
-                    <div className={styles.featuresItem}>
-                        <p className={styles.featuresValue}>+1%</p>
-                        <h4 className={styles.featuresCaption}>{i18n.gettext('for international cards')}</h4>
-                    </div>
+                    <p className={styles.featuresValue}>
+                        over 4000 excited users have
+                        joined our  Plark family
+                    </p>
                 </div>
 
                 <a className={cn(styles.downloadLink, 'arrow-link')} href="https://dl.plark.io/app/website-appstore">

@@ -9,8 +9,8 @@
 
 .citation {
     @include from-width($grid-width) {
-        margin-left: col-absolute(5) + $var-gutter / 2;
-        max-width: col-absolute(6);
+        margin-left: col-absolute(2) + $var-gutter / 2;
+        max-width: col-absolute(8);
     }
 
     &__text {

@@ -22,6 +22,8 @@ export * from './store-badge';
 export * from './store-qr';
 export * from './dark-card-section';
 export * from './card-section';
+export * from './dark-footer';
+
 
 export { default as Icons } from './icons';
 export { default as UIButton } from './ui-button';

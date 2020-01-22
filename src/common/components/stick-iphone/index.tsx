@@ -1,4 +1,5 @@
 import React from 'react';
+import { IPhoneScreen } from 'common/components';
 import styles from './stick-iphone.scss';
 
 type StickIphoneProps = {
@@ -18,10 +19,12 @@ export default React.memo(function StickIphone(props: StickIphoneProps): JSX.Ele
         <div>
             <div className={styles.container}>
                 <div className={styles.iphoneBox}>
-                    <img
+                    <IPhoneScreen
+                        src={picture.src || '/img/interfaces/PlarkScreen-dashboard.png'}
+                        type="photo"
                         className={styles.iphoneImage}
-                        src={picture.src || '/img/main-screen.png'}
                         alt={picture.alt || 'Plark Wallet'}
+                        title={picture.alt || 'Plark Wallet'}
                     />
                 </div>
             </div>

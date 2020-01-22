@@ -30,19 +30,18 @@
 
     &__topic {
         margin-top: 50px;
-        max-width: 280px;
+        max-width: 350px;
 
         &-shit {
             @include text-h1;
             margin-bottom: 10px;
-            text-transform: lowercase;
             white-space: pre-wrap;
         }
 
         &-title {
             @include text-main;
-            text-transform: lowercase;
             margin-bottom: 40px;
+            white-space: pre-wrap;
         }
     }
 

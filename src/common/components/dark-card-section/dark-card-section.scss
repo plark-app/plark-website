@@ -118,6 +118,7 @@
     &__value {
         @include text-main($color-text-white);
         margin-bottom: 5px;
+        max-width: 220px;
     }
 
     &__caption {

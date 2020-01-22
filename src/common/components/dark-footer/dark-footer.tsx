@@ -6,9 +6,9 @@ import { Section, StoreBadge, NavLink, Socials } from 'common/components';
 import PlarkLogo from 'resources/svgs/plark-logo.component.svg';
 import FooterColumn from './footer-column.component';
 
-import styles from './footer.scss';
+import styles from './dark-footer.scss';
 
-export default function Footer(): JSX.Element {
+export function DarkFooter(): JSX.Element {
     const i18n = useI18n();
 
     const [copyrightYears] = React.useState(() => {

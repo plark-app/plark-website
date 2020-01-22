@@ -7,8 +7,8 @@ import SubscribeForm from './subscribe-form';
 
 type SubscribeSectionProps = {};
 
-const title = __('Stay in touch, it’s gonna be fun.');
-const content = __('Nobody loves newsletter spamming. Remember your last time you’ve opened these “best online crypto wallet” or “crypto currency wallet for you”. Catchy pictures and funny words — that’s what we like.');
+const title = __('Hey, wanna get the hottest tips delivered right to your email?');
+const content = __('Oookaaay! Then enter your email. \nNo worries, it doesn’t hurt.');
 
 export function SubscribeSection(_props: SubscribeSectionProps): JSX.Element {
     const i18n = useI18n();

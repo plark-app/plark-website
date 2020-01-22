@@ -6,12 +6,11 @@
 .box {
     height: 40px;
     padding: 0 10px;
-    background-color: transparent;
+    background-color: white;
     display: flex;
     align-items: center;
     border-radius: 5px;
     cursor: pointer;
-    border: 1px solid $color-dark;
 
     @include to-width(640px) {
         display: none;

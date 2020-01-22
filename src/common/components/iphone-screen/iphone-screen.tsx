@@ -7,6 +7,9 @@ type IphoneScreenProps = {
     type: 'photo' | 'video';
     srcType?: string;
     className?: string;
+    
+    alt?: string;
+    title?: string;
 };
 
 export function IPhoneScreen(props: IphoneScreenProps): JSX.Element {
@@ -35,11 +38,15 @@ export function IPhoneScreen(props: IphoneScreenProps): JSX.Element {
                  alt="iphone-frame"
             />
 
-            <div className={styles.iphoneShadow}/>
+            <div className={styles.iphoneShadow} />
 
             <div className={styles.iphoneContent}>
                 {type === 'photo' ? (
-                    <img src={src} alt="screen" className={styles.iphoneImage} />
+                    <img src={src}
+                         alt={props.alt || 'screen'}
+                         title={props.title || 'scene'}
+                         className={styles.iphoneImage}
+                    />
                 ) : (
                     <video className={styles.iphoneImage}
                            controls={false}
