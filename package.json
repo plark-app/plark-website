@@ -1,6 +1,6 @@
 {
     "name": "plark-website",
-    "version": "1.0.5",
+    "version": "1.1.0",
     "main": "index.js",
     "author": "Plark Team <info@plark.io>",
     "contributors": [
