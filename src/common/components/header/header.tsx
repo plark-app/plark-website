@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import _ from 'lodash';
 import cn from 'classnames';
 import { RouteComponentProps, withRouter } from 'react-router';
@@ -7,7 +6,7 @@ import { CSSTransition } from 'react-transition-group';
 import { compose } from 'recompose';
 import { useI18n, withTranslations, WithTranslationsProps } from 'slim-i18n';
 import PlatformList from 'common/utils/install-platforms';
-import { NavLink, BurgerButton, withWindowSize, WithWindowSizeProps, Row, Col } from 'common/components';
+import { NavLink, BurgerButton, withWindowSize, WithWindowSizeProps, Row, Col, Section } from 'common/components';
 import PlarkLogo from 'resources/svgs/plark-logo.component.svg';
 import styles from './header.scss';
 
@@ -55,8 +54,7 @@ class Header extends React.Component<HeaderInnerProps, HeaderState> {
     }
 
     public render(): JSX.Element {
-        const { i18n, dimensions, showLabel = false } = this.props;
-        const { width } = dimensions;
+        const { i18n, showLabel = false } = this.props;
         const { scrolled } = this.state;
 
         const headerClassName = cn(
@@ -71,13 +69,13 @@ class Header extends React.Component<HeaderInnerProps, HeaderState> {
         );
 
         const appstore = PlatformList.apple;
-        const showMobileMenu = width > 0 && width < 768;
 
         return (
             <>
                 <header id="header" className={headerClassName}>
                     <Row className={styles.headerSection}>
-                        {showMobileMenu ? this._renderMobileMenu() : undefined}
+                        {this._renderMobileMenu()}
+
                         <NavLink to="/">
                             <PlarkLogo height={20} className={styles.headerLogo} />
                         </NavLink>
@@ -190,9 +188,9 @@ function DropdownMenu({ className, opened }: DropdownMenuProps): JSX.Element | n
         return <div />;
     }
 
-    return ReactDOM.createPortal(
+    return (
         <CSSTransition in={opened} classNames={'mobile-menu'} timeout={300} unmountOnExit>
-            <nav className={cn(styles.dropdownMenu, className)}>
+            <Section className={cn(styles.dropdownMenu, className)}>
                 <a href="https://t.me/PlarkWalletSupport"
                    className={styles.dropdownMenuItem}
                    rel="nofollow"
@@ -206,9 +204,8 @@ function DropdownMenu({ className, opened }: DropdownMenuProps): JSX.Element | n
                 <a href="https://plark.io/blog" className={styles.dropdownMenuItem}>
                     {i18n.gettext('Blog')}
                 </a>
-            </nav>
-        </CSSTransition>,
-        document.body,
+            </Section>
+        </CSSTransition>
     );
 }
 

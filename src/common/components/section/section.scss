@@ -34,7 +34,7 @@
     }
 
     &.i-left-padding {
-        @include left-padding;
+        @include left-padding(1, false);
     }
 
     &.is-flex {

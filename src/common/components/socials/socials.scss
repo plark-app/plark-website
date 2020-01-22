@@ -3,14 +3,17 @@
 @import '../../styles/media';
 
 .social {
-    margin-top: 30px;
     display: flex;
-    justify-content: space-between;
+
+    &:not(.is-title-mode) {
+        justify-content: space-between;
+    }
 
     max-width: 250px;
 
     &__item {
         color: $color-gray40;
+
         & > svg {
             width: 18px;
             height: 18px;

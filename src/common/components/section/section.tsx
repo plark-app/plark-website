@@ -8,10 +8,10 @@ export type TSectionProps = {
     className?: string | string[];
     contentClassName?: string;
     outerContent?: React.ReactNode;
-    withLeftPadding?: boolean;
     flexContent?: boolean;
-
+    withLeftPadding?: boolean;
     isDark?: boolean;
+    component?: string | any;
 };
 
 export const Section = React.memo(function Section(props: TSectionProps) {
@@ -33,10 +33,12 @@ export const Section = React.memo(function Section(props: TSectionProps) {
         },
     ), [isDark, props.className]);
 
-    return (
-        <section className={sectionClass}>
+    return React.createElement(
+        props.component || 'section',
+        { className: sectionClass },
+        <>
             {props.outerContent}
             <div className={contentClass}>{props.children}</div>
-        </section>
+        </>,
     );
 });

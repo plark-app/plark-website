@@ -135,15 +135,23 @@
 }
 
 
-@mixin left-padding($deep: 1) {
-    @include to-sm-width {
+@mixin left-padding($deep: 1, $for-main: false) {
+    // for mobile
+    @include to-width($sm-width) {
         padding-left: 16px;
     }
 
-    @include only-width($sm-width, 1280px) {
-        $percent: col-percent($deep);
+    // for tablet
+    @include only-width($sm-width, 998px) {
+        margin-left: 0;
+    }
 
-        padding-left: calc(#{$percent} - 24px + 36px);
+    // for desktop
+    @if $for-main {
+        @include only-width(998px, 1280px) {
+            $percent: col-percent($deep);
+            padding-left: calc(#{$percent} - 24px + 36px);
+        }
     }
 
     @include from-width(1280px) {
@@ -153,10 +161,23 @@
 }
 
 
-@mixin left-margin($deep: 1) {
-    @include to-width(1280px) {
-        $percent: col-percent($deep);
-        margin-left: calc(#{$percent} - 24px + 36px);
+@mixin left-margin($deep: 1, $for-main: false) {
+    // for mobile
+    @include to-width($sm-width) {
+        margin-left: 0;
+    }
+
+    // for tablet
+    @include only-width($sm-width, 998px) {
+        margin-left: 0;
+    }
+
+    // for desktop
+    @if $for-main {
+        @include only-width(998px, 1280px) {
+            $percent: col-percent($deep);
+            margin-left: calc(#{$percent} - 24px + 36px);
+        }
     }
 
     @include from-width(1280px) {
@@ -167,14 +188,25 @@
 }
 
 
-@mixin make-width($deep: 1, $maximize-width: false) {
+@mixin make-width($deep: 1, $maximize-width: false, $for-tablet: 6, $for-mobile: 4) {
     @if $maximize-width {
         width: 100%;
     }
 
-    @include to-width(1280px) {
-        $percent: col-percent($deep);
-        max-width: calc(#{$percent} - #{$var-gutter});
+    // for mobile
+    @include to-width($sm-width) {
+        @if not $maximize-width {
+            width: 100%;
+        }
+
+        $percent: col-percent($for-mobile * 3);
+        max-width: $percent;
+    }
+
+    // for tablet
+    @include only-width($sm-width, 1279px) {
+        $percent: col-percent($for-tablet * 2);
+        max-width: $percent;
     }
 
     @include from-width(1280px) {

@@ -34,13 +34,12 @@
         $percent: 1280px / 12 - 24px;
         padding-left: calc(#{$percent} + 36px);
 
-        @include to-sm-width {
-            padding-left: 50px;
+        @include to-width(1280px) {
+            padding-left: 80px;
         }
     }
 
     &.is-white {
-
     }
 
     &.is-black {
@@ -90,10 +89,6 @@
 
         &-menu-btn {
             display: flex;
-
-            @include from-md-width {
-                display: none !important;
-            }
         }
     }
 
@@ -125,7 +120,7 @@
         left: calc((100vw - 1280px) / 2);
     }
 
-    @include to-md-width {
+    @include to-width(1280px) {
         display: none;
     }
 
@@ -178,19 +173,19 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    z-index: 10;
-    top: 78px;
+    top: 0;
     bottom: 0;
 
+    z-index: 1050;
+
     left: 0;
+    right: 0;
     width: 100vw;
     background-color: $color-text-dark;
-
 
     &-item {
         display: flex;
         align-items: center;
-        padding: 0 20px;
         transition: color 0.4s;
         font-size: 20px;
         line-height: 1.55;
@@ -203,12 +198,22 @@
 
         &:hover {
             transition-duration: 0.2s;
-            color: $color-text-secondary;
+            color: $color-success;
         }
     }
 
     &-btn {
         position: absolute;
-        left: 12px;
+        color: $color-dark;
+        left: 24px;
+        z-index: 1100;
+
+        @include from-width(1280px) {
+            left: -12px;
+        }
+
+        .is-black & {
+            color: $color-gray01;
+        }
     }
 }

@@ -47,7 +47,7 @@
 
 .content {
     padding-bottom: 72px;
-    @include make-width(4);
+    @include make-width(4, true);
 }
 
 .citation {

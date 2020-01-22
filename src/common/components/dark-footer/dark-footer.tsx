@@ -1,11 +1,11 @@
 import React from 'react';
 import moment from 'moment';
+import scrollTo from 'animated-scroll-to';
 import { useI18n } from 'slim-i18n';
-import PlatformList from 'common/utils/install-platforms';
-import { Section, StoreBadge, NavLink, Socials } from 'common/components';
-import PlarkLogo from 'resources/svgs/plark-logo.component.svg';
-import FooterColumn from './footer-column.component';
-
+import ArrowRightSvg from 'resources/svgs/full-arrow-right.component.svg';
+import { Section, NavLink, Socials } from 'common/components';
+import { NavigationSide } from './navigation-side.component';
+import { ProductSide } from './product-side.component';
 import styles from './dark-footer.scss';
 
 export function DarkFooter(): JSX.Element {
@@ -23,117 +23,60 @@ export function DarkFooter(): JSX.Element {
     });
 
     return (
-        <footer>
-            <Section className={styles.footer} contentClassName={styles.footerContent}>
-                <div className={styles.footerMain}>
-                    <FooterColumn title={i18n.gettext('Product')}>
-                        <NavLink to="/ios-wallet" className={styles.navLink}>
-                            {i18n.gettext('Plark for iOS')}
-                        </NavLink>
-                        <NavLink to="/android-wallet" className={styles.navLink}>
-                            {i18n.gettext('Plark for Android')} <span style={{ fontSize: 10 }}>(coming soon)</span>
-                        </NavLink>
-                        <NavLink to="/bitcoin-wallet" className={styles.navLink}>
-                            {i18n.gettext('Plark for Bitcoin')}
-                        </NavLink>
-                        <NavLink to="/mobile-wallet" className={styles.navLink}>
-                            {i18n.gettext('Mobile Wallet')}
-                        </NavLink>
-                    </FooterColumn>
+        <Section className={styles.footer}
+                 contentClassName={styles.footerContent}
+                 withLeftPadding
+                 component="footer"
+                 outerContent={<FooterBackground />}
+        >
+            <div className={styles.main}>
+                <ProductSide />
+                <NavigationSide />
+            </div>
 
-                    <FooterColumn title={i18n.gettext('Company')}>
-                        <NavLink to="/about-us" className={styles.navLink}>
-                            {i18n.gettext('About us')}
-                        </NavLink>
-                        <NavLink to="/contact-us" className={styles.navLink}>
-                            {i18n.gettext('Contact Us')}
-                        </NavLink>
-                        {/*<NavLink to="/carriers" className={styles.navLink}>*/}
-                        {/*    {i18n.gettext('Carriers')}*/}
-                        {/*</NavLink>*/}
-                    </FooterColumn>
-
-                    <FooterColumn title={i18n.gettext('Learn')}>
-                        <a href="https://community.plark.io" className={styles.navLink}>
-                            {i18n.gettext('Community')}
-                        </a>
-                        <a href="/blog" className={styles.navLink}>
-                            {i18n.gettext('Blog')}
-                        </a>
-                        <NavLink to="/faq" className={styles.navLink}>
-                            {i18n.gettext('FAQs')}
-                        </NavLink>
-                    </FooterColumn>
-
-                    <FooterColumn title={i18n.gettext('Social')}>
-                        <a href="https://t.me/PlarkWallet" target="_blank" className={styles.navLink}>
-                            Telegram
-                        </a>
-                        <a href="https://www.facebook.com/plark.io/" target="_blank" className={styles.navLink}>
-                            Facebook
-                        </a>
-                        <a href="https://twitter.com/PlarkWallet" target="_blank" className={styles.navLink}>
-                            Twitter
-                        </a>
-                        <a href="https://www.reddit.com/r/plark" target="_blank" className={styles.navLink}>
-                            Reddit
-                        </a>
-                        <a href="https://github.com/plark-app" target="_blank" className={styles.navLink}>
-                            GitHub
-                        </a>
-                        <a
-                            href="https://www.producthunt.com/posts/plark-crypto-wallet"
-                            target="_blank"
-                            className={styles.navLink}
-                        >
-                            Product Hunt
-                        </a>
-                    </FooterColumn>
-
-                    <FooterColumn title={i18n.gettext('Get in touch')} style={{ width: '170px' }}>
-                        <a href="mailto:hi@plark.io" target="_blank" className={styles.navLink}>
-                            hi@plark.io
-                        </a>
-                        <Socials />
-                    </FooterColumn>
+            <div className={styles.bottom}>
+                <div className={styles.bottomLeft}>
+                    <Socials titleMode
+                             className={styles.bottomSocial}
+                             linkClassName={styles.bottomSocialLink}
+                    />
+                    <span className={styles.bottomCopyright}>plark @ {copyrightYears}</span>
                 </div>
 
-                <div className={styles.footerSecond}>
-                    <PlarkLogo height={25} className={styles.footerLogo} />
-                    <div className={styles.footerSecondStoreContainer}>
-                        <StoreBadge
-                            className={styles.footerBadge}
-                            platform={PlatformList.apple}
-                            height={40}
-                            alt="Install cryptocurrency wallet from App Store"
-                            title="Plark cryptocurrency wallet in App Store"
-                        />
-                    </div>
-                </div>
-            </Section>
-
-            <Section className={styles.bottomBar} contentClassName={styles.bottomBarContent}>
-                <nav className={styles.bottomBarNav}>
-                    <span className={styles.navLink}>Plark @ {copyrightYears}</span>
-                    <NavLink to="/privacy" className={styles.navLink}>
+                <div className={styles.bottomRight}>
+                    <NavLink to="/privacy" className={styles.secondaryLink}>
                         {i18n.gettext('Privacy')}
                     </NavLink>
 
-                    <NavLink to="/terms" className={styles.navLink}>
+                    <NavLink to="/terms" className={styles.secondaryLink}>
                         {i18n.gettext('Terms')}
                     </NavLink>
 
-                    <NavLink to="/sitemap" className={styles.navLink}>
+                    <NavLink to="/sitemap" className={styles.secondaryLink}>
                         {i18n.gettext('Sitemap')}
                     </NavLink>
-                </nav>
-
-                <nav className={styles.bottomBarNav}>
-                    <NavLink to="/" className={styles.navLink}>
-                        English (United States)
-                    </NavLink>
-                </nav>
-            </Section>
-        </footer>
+                </div>
+            </div>
+        </Section>
     );
+}
+
+
+function FooterBackground() {
+    const onPressToTop = React.useCallback(() => {
+        scrollTo(0);
+    }, []);
+
+    return <div className={styles.background}>
+        <div className={styles.backgroundDark} />
+        <img className={styles.backgroundImage}
+             src="/img/FooterDecoration.png"
+             alt="Plark non custodial wallet"
+             title="plark cryptocurrency wallet"
+        />
+
+        <div className={styles.backgroundTop} onClick={onPressToTop}>
+            <ArrowRightSvg className={styles.backgroundTopArrow} />
+        </div>
+    </div>;
 }

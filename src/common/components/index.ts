@@ -23,7 +23,7 @@ export * from './store-qr';
 export * from './dark-card-section';
 export * from './card-section';
 export * from './dark-footer';
-
+export * from './socials';
 
 export { default as Icons } from './icons';
 export { default as UIButton } from './ui-button';
@@ -45,4 +45,3 @@ export { default as ColumnsSection } from './columns-section';
 export { default as OpenSourceSection } from './opensource-section';
 export { default as WalletFeaturesSection } from './wallet-features-section';
 export { default as WalletColumnsSection } from './wallet-columns-section';
-export { default as Socials } from './socials';
