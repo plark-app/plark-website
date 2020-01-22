@@ -40,6 +40,7 @@ expressApp.use('/api', Router.createApiRouter());
 expressApp.get('/dynamic-sitemap.xml', Router.dynamicSitemap);
 expressApp.get('/robots.txt', Router.robotsTxt);
 
+
 function buildAppHandles() {
     const useCache = config.get<boolean>('app.useCache', false);
 
@@ -61,7 +62,6 @@ function buildAppHandles() {
 }
 
 expressApp.get('*', buildAppHandles());
-
 
 expressApp.listen(expressApp.get('port'), (error?: Error) => {
     if (error) {

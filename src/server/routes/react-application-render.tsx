@@ -31,7 +31,7 @@ export default async function reactApplicationRender(req: Request, res: Response
             initialComponentProps: {},
         };
 
-        const { markup, criticalCss } = await render({
+        const { markup, criticalCss, helmet } = await render({
             location: location,
             context: context,
             i18n: i18nInstance.getI18n(),
@@ -41,6 +41,7 @@ export default async function reactApplicationRender(req: Request, res: Response
         const html = template({
             criticalCss: criticalCss,
             markup: markup,
+            helmet: helmet,
             chunks: ['vendors', 'main', activeRoute.id],
             initData: {
                 initialComponentProps: context.initialComponentProps,
