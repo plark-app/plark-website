@@ -64,11 +64,11 @@ export function DropdownMenu(props: DropdownMenuProps): JSX.Element {
     }, []);
 
     if (!__isBrowser__) {
-        return <div />;
+        return <div className={styles.dropdownMenuDummy} />;
     }
 
     return (
-        <CSSTransition in={opened} classNames={'mobile-menu'} timeout={300} unmountOnExit>
+        <CSSTransition in={opened} classNames={'mobile-menu'} timeout={{ enter: 500, exit: 300 }} unmountOnExit>
             <Section className={cn(styles.dropdownMenu, className)} contentClassName={styles.dropdownMenuContent}>
                 <nav className={styles.dropdownMenuNav}>
                     {mainMenuElements.map((elem: MenuElement) => (
@@ -79,6 +79,9 @@ export function DropdownMenu(props: DropdownMenuProps): JSX.Element {
                         </div>
                     ))}
                 </nav>
+
+
+                
             </Section>
         </CSSTransition>
     );

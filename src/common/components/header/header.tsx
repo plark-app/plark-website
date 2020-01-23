@@ -79,8 +79,6 @@ class Header extends React.Component<HeaderInnerProps, HeaderState> {
                                       onClick={this._toggleMenu}
                         />
 
-                        <DropdownMenu opened={openedMenu} triggerClose={this._toggleMenu} />
-
                         <NavLink to="/">
                             <PlarkLogo height={20} className={styles.headerLogo} />
                         </NavLink>
@@ -97,6 +95,8 @@ class Header extends React.Component<HeaderInnerProps, HeaderState> {
                             </a>
                         </nav>
                     </Row>
+
+                    <DropdownMenu opened={openedMenu} triggerClose={this._toggleMenu} />
                 </header>
 
                 <nav className={sidenavClassName}>
@@ -110,6 +110,8 @@ class Header extends React.Component<HeaderInnerProps, HeaderState> {
                         {i18n.gettext('Support')}
                     </a>
                 </nav>
+
+
             </>
         );
     }
@@ -160,8 +162,6 @@ class Header extends React.Component<HeaderInnerProps, HeaderState> {
         }
     };
 }
-
-
 
 
 export default compose<HeaderInnerProps, HeaderOuterProps>(
