@@ -81,7 +81,7 @@ export function DropdownMenu(props: DropdownMenuProps): JSX.Element {
                 </nav>
 
 
-                
+
             </Section>
         </CSSTransition>
     );

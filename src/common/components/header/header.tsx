@@ -5,7 +5,7 @@ import { RouteComponentProps, withRouter } from 'react-router';
 import { compose } from 'recompose';
 import { withTranslations, WithTranslationsProps } from 'slim-i18n';
 import PlatformList from 'common/utils/install-platforms';
-import { NavLink, BurgerButton, withWindowSize, WithWindowSizeProps, Row, Col } from 'common/components';
+import { NavLink, BurgerButton, withWindowSize, WithWindowSizeProps, Col } from 'common/components';
 import PlarkLogo from 'resources/svgs/plark-logo.component.svg';
 import { DropdownMenu } from './dropdown-menu';
 import styles from './header.scss';
@@ -73,7 +73,7 @@ class Header extends React.Component<HeaderInnerProps, HeaderState> {
         return (
             <>
                 <header id="header" className={headerClassName}>
-                    <Row className={styles.headerSection}>
+                    <div className={styles.headerSection}>
                         <BurgerButton opened={openedMenu}
                                       className={styles.dropdownMenuBtn}
                                       onClick={this._toggleMenu}
@@ -94,7 +94,7 @@ class Header extends React.Component<HeaderInnerProps, HeaderState> {
                                  Available on App Store
                             </a>
                         </nav>
-                    </Row>
+                    </div>
 
                     <DropdownMenu opened={openedMenu} triggerClose={this._toggleMenu} />
                 </header>

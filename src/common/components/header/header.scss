@@ -63,7 +63,7 @@
     }
 
     &__center-label {
-        @include text-special;
+        @include text-special();
 
         margin-left: 12px;
         white-space: pre-wrap;
