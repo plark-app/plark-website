@@ -1,0 +1,6 @@
+{
+    "private": true,
+    "name": "team-section",
+    "main": "team-section.tsx",
+    "typings": "team-section.tsx"
+}

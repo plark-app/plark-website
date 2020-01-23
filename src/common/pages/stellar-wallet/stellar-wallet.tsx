@@ -43,7 +43,7 @@ export default function StellarWallet(): JSX.Element {
 
             <StickIphone
                 picture={{
-                    src: '/img/main-screen.png',
+                    src: '/img/interfaces/PlarkScreen-dashboard.png',
                     alt: 'Plark Main screen',
                     title: 'Plark Main screen',
                 }}

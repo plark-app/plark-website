@@ -7,7 +7,7 @@ import {
     StickIphone,
     IntroSection,
     PresentationSection,
-    PhotoCitationSection,
+    TeamSection,
     BgTitleSection,
     BigPhotoSection,
     SubscribeSection,
@@ -32,6 +32,7 @@ export default function Home(): JSX.Element {
             />
 
             <PresentationSection
+                id="history"
                 mainText={i18n.gettext('A blockchain, originally block chain, is a growing list of records, called blocks, that are linked using cryptography. Each block contains a cryptographic hash of the previous block, a timestamp, and transaction data.')}
                 secondText={i18n.gettext('We are the team of no strangers to blockchain, and we know how to make crypto your daily habit.')}
                 link={{
@@ -57,6 +58,7 @@ export default function Home(): JSX.Element {
                 }}
             >
                 <BgTitleSection
+                    id="features"
                     title="Paramount security"
                     content={i18n.gettext('Store your private key right in Plark Wallet on your device, and be the only person who keeps full control over your funds. 6-digit passcode, 12-words seed and top-notch encryption algorithms make Plark exceptionally safe.')}
                     wiki={{
@@ -87,7 +89,8 @@ export default function Home(): JSX.Element {
                 />
             </StickIphone>
 
-            <PhotoCitationSection
+            <TeamSection
+                id="team"
                 image={{
                     src: '/img/team/image_2.png',
                     alt: 'Plark team',
@@ -104,12 +107,14 @@ export default function Home(): JSX.Element {
             />
 
             <DarkCardSection
+                id="credit-card"
                 title="the card is the key"
                 subtitle="Here comes Plark’s icing on the cake — a feature allowing to buy and sell crypto for UAH right in the wallet. Add your credit or debit card and join the feast of crypto life."
                 description="Here comes Plark’s icing on the cake — a feature allowing to buy and sell crypto for UAH right in the wallet. Add your credit or debit card and join the feast of crypto life."
             />
 
             <DarkFeaturesSection
+                id="security"
                 title={i18n.gettext('a crypto wallet designed for your needs')}
                 link={{
                     url: 'https://dl.plark.io/app/website-appstore',
@@ -157,10 +162,10 @@ export default function Home(): JSX.Element {
                 lowercase
             />
 
-            <FeedbackSection />
-            <CommunitySection />
+            <FeedbackSection id="testimonials" />
+            <CommunitySection id="community" />
 
-            <SubscribeSection />
+            <SubscribeSection id="contacts" />
 
             <DarkFooter />
         </>

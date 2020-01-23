@@ -1,6 +1,0 @@
-{
-    "private": true,
-    "name": "photo-citation-section",
-    "main": "photo-citation-section.tsx",
-    "typings": "photo-citation-section.tsx"
-}

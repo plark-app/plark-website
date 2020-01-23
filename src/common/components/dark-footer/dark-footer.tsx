@@ -40,7 +40,9 @@ export function DarkFooter(): JSX.Element {
                              className={styles.bottomSocial}
                              linkClassName={styles.bottomSocialLink}
                     />
-                    <span className={styles.bottomCopyright}>plark @ {copyrightYears}</span>
+                    <span className={styles.bottomCopyright} style={{ display: 'none' }}>
+                        plark @ {copyrightYears}
+                    </span>
                 </div>
 
                 <div className={styles.bottomRight}>

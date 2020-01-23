@@ -55,6 +55,7 @@ ENV NODE_ENV=production \
     SECURE=true \
     USE_CACHE=true \
     GTM_KEY="GTM-K8BVBNG" \
+    IS_TEST=true \
     MAILCHIMP_API_KEY=false \
     MAILCHIMP_LIST_ID=false \
     TELEGRAM_BOT_TOKEN=false \

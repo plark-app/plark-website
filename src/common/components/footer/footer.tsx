@@ -1,8 +1,9 @@
 import React from 'react';
 import moment from 'moment';
+import cn from 'classnames';
 import { useI18n } from 'slim-i18n';
 import PlatformList from 'common/utils/install-platforms';
-import { Section, StoreBadge, NavLink, Socials } from 'common/components';
+import { Section, StoreBadge, NavLink, menuRoutes, IMenuRoute, IMenuRouteLink, Socials } from 'common/components';
 import PlarkLogo from 'resources/svgs/plark-logo.component.svg';
 import FooterColumn from './footer-column.component';
 
@@ -26,76 +27,23 @@ export default function Footer(): JSX.Element {
         <footer>
             <Section className={styles.footer} contentClassName={styles.footerContent}>
                 <div className={styles.footerMain}>
-                    <FooterColumn title={i18n.gettext('Product')}>
-                        <NavLink to="/ios-wallet" className={styles.navLink}>
-                            {i18n.gettext('Plark for iOS')}
-                        </NavLink>
-                        <NavLink to="/android-wallet" className={styles.navLink}>
-                            {i18n.gettext('Plark for Android')} <span style={{ fontSize: 10 }}>(coming soon)</span>
-                        </NavLink>
-                        <NavLink to="/bitcoin-wallet" className={styles.navLink}>
-                            {i18n.gettext('Plark for Bitcoin')}
-                        </NavLink>
-                        <NavLink to="/mobile-wallet" className={styles.navLink}>
-                            {i18n.gettext('Mobile Wallet')}
-                        </NavLink>
-                    </FooterColumn>
-
-                    <FooterColumn title={i18n.gettext('Company')}>
-                        <NavLink to="/about-us" className={styles.navLink}>
-                            {i18n.gettext('About us')}
-                        </NavLink>
-                        <NavLink to="/contact-us" className={styles.navLink}>
-                            {i18n.gettext('Contact Us')}
-                        </NavLink>
-                        {/*<NavLink to="/carriers" className={styles.navLink}>*/}
-                        {/*    {i18n.gettext('Carriers')}*/}
-                        {/*</NavLink>*/}
-                    </FooterColumn>
-
-                    <FooterColumn title={i18n.gettext('Learn')}>
-                        <a href="https://community.plark.io" className={styles.navLink}>
-                            {i18n.gettext('Community')}
-                        </a>
-                        <a href="/blog" className={styles.navLink}>
-                            {i18n.gettext('Blog')}
-                        </a>
-                        <NavLink to="/faq" className={styles.navLink}>
-                            {i18n.gettext('FAQs')}
-                        </NavLink>
-                    </FooterColumn>
-
-                    <FooterColumn title={i18n.gettext('Social')}>
-                        <a href="https://t.me/PlarkWallet" target="_blank" className={styles.navLink}>
-                            Telegram
-                        </a>
-                        <a href="https://www.facebook.com/plark.io/" target="_blank" className={styles.navLink}>
-                            Facebook
-                        </a>
-                        <a href="https://twitter.com/PlarkWallet" target="_blank" className={styles.navLink}>
-                            Twitter
-                        </a>
-                        <a href="https://www.reddit.com/r/plark" target="_blank" className={styles.navLink}>
-                            Reddit
-                        </a>
-                        <a href="https://github.com/plark-app" target="_blank" className={styles.navLink}>
-                            GitHub
-                        </a>
-                        <a
-                            href="https://www.producthunt.com/posts/plark-crypto-wallet"
-                            target="_blank"
-                            className={styles.navLink}
-                        >
-                            Product Hunt
-                        </a>
-                    </FooterColumn>
-
-                    <FooterColumn title={i18n.gettext('Get in touch')} style={{ width: '170px' }}>
-                        <a href="mailto:hi@plark.io" target="_blank" className={styles.navLink}>
-                            hi@plark.io
-                        </a>
-                        <Socials />
-                    </FooterColumn>
+                    {menuRoutes.map((column: IMenuRoute, i: number) => {
+                        if (column.columnType === 'hide_in_footer') {
+                            return null;
+                        }
+                        return (
+                            <FooterColumn
+                                title={column.title(i18n)}
+                                key={i}
+                                opened={column.columnType === 'get_in_touch'}
+                            >
+                                <>
+                                    <ColumnLinks links={column.links} />
+                                    {column.columnType === 'get_in_touch' && <Socials />}
+                                </>
+                            </FooterColumn>
+                        );
+                    })}
                 </div>
 
                 <div className={styles.footerSecond}>
@@ -135,5 +83,45 @@ export default function Footer(): JSX.Element {
                 </nav>
             </Section>
         </footer>
+    );
+}
+
+type ColumnLinksProps = {
+    links: IMenuRouteLink[];
+};
+
+function ColumnLinks({ links }: ColumnLinksProps): JSX.Element {
+    const i18n = useI18n();
+    return (
+        <>
+            {links.map((link: IMenuRouteLink, i: number) => {
+                if (link.source === 'external') {
+                    return (
+                        <div key={i}>
+                            <a key={i}
+                               href={link.to}
+                               className={styles.navLink}
+                               target={link.noBlank ? undefined : '_blank'}
+                               rel={link.rel}
+                            >
+                                {link.text(i18n)}
+                                {link.additional && link.additional}
+                            </a>
+                        </div>
+                    );
+                }
+
+                return (
+                    <div key={i}>
+                        <NavLink key={i} to={link.to} className={styles.navLink}>
+                            <span className={styles.navLinkContent}>{link.text(i18n)}</span>
+                            {link.comingSoon ? (
+                                <span className={cn(styles.navLinkContent, styles.navLinkSoon)}>(coming soon)</span>
+                            ) : undefined}
+                        </NavLink>
+                    </div>
+                );
+            })}
+        </>
     );
 }

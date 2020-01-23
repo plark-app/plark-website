@@ -6,10 +6,10 @@ import userFeedbacks, { UserFeedback } from './feedbacks';
 import ArrowRightSvg from 'resources/svgs/full-arrow-right.component.svg';
 import styles from './feedback-section.scss';
 
-type FeedbackSectionProps = {};
+type FeedbackSectionProps = CommonSection & {};
 
 export const FeedbackSection = React.memo(function FeedbackSection(props: FeedbackSectionProps): JSX.Element {
-    const {} = props;
+    const { id } = props;
 
     const sliderRef = React.useRef<Slider>();
 
@@ -46,10 +46,11 @@ export const FeedbackSection = React.memo(function FeedbackSection(props: Feedba
 
     return (
         <Section
+            flexContent
+            withLeftPadding
+            id={id}
             className={styles.section}
             contentClassName={styles.sectionContent}
-            withLeftPadding
-            flexContent
         >
             <div className={styles.phones}>
                 <TwoIPhones className={styles.phonesImage} />

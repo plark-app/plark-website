@@ -4,7 +4,7 @@ import { Section } from '../section';
 import TextBlock from '../text-block';
 import style from './section-bg-title.scss';
 
-type BgTitleProps = {
+type BgTitleProps = CommonSection & {
     title: string;
     content: string;
     textTag?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p';
@@ -21,7 +21,7 @@ export default function BgTitleSection(props: BgTitleProps): JSX.Element {
     const { wiki } = props;
 
     return (
-        <Section className={style.section} contentClassName={style.sectionContent} withLeftPadding>
+        <Section className={style.section} contentClassName={style.sectionContent} withLeftPadding id={props.id}>
             {props.withMobile && (
                 <div className={style.sectionWithMobile}>
                     <img src="/img/main-screen.png" alt="Main Screen" className={style.sectionWithMobileImage} />

@@ -4,7 +4,7 @@ import { Section } from 'common/components';
 import QuoteSvg from 'resources/svgs/quote.component.svg';
 import styles from './presentation-section.scss';
 
-type PresentationSectionProps = {
+type PresentationSectionProps = CommonSection & {
     mainText: string;
     secondText: string;
 
@@ -29,10 +29,11 @@ type PresentationSectionProps = {
 };
 
 export function PresentationSection(props: PresentationSectionProps): JSX.Element {
-    const { mainText, secondText, citation, link, image } = props;
+    const { id, mainText, secondText, citation, link, image } = props;
 
     return (<>
         <Section
+            id={id}
             withLeftPadding
             className={styles.section}
             contentClassName={styles.sectionContent}

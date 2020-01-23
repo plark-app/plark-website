@@ -29,11 +29,11 @@ const communityPlatforms: CommunityPlatform[] = [{
     title: 'ProductHunt',
 }];
 
-export const CommunitySection = React.memo(function CommunitySection() {
+export const CommunitySection = React.memo(function CommunitySection(props: CommonSection) {
     const i18n = useI18n();
 
     return (
-        <Section className={styles.section} withLeftPadding flexContent>
+        <Section withLeftPadding flexContent id={props.id} className={styles.section}>
             <div className={styles.left}>
                 <ArrowRightSvg className={styles.leftArrow} />
             </div>

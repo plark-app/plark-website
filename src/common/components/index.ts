@@ -12,7 +12,7 @@ export * from './topic';
 export * from './subscribe-section';
 export * from './feature-section';
 export * from './presentation-section';
-export * from './photo-citation-section';
+export * from './team-section';
 export * from './feedback-section';
 export * from './big-photo-section';
 export * from './dark-features-section';

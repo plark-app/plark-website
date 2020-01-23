@@ -18,7 +18,7 @@ export type FeatureUnitProps = {
     }
 };
 
-type BlackFeaturesProps = {
+type BlackFeaturesProps = CommonSection & {
     title: string;
     link: {
         url: string;
@@ -36,6 +36,7 @@ export function DarkFeaturesSection(props: BlackFeaturesProps): JSX.Element {
         <Section
             isDark
             withLeftPadding
+            id={props.id}
             className={styles.section}
             contentClassName={styles.sectionContent}
         >

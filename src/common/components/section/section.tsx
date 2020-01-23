@@ -4,6 +4,7 @@ import cn from 'classnames';
 import styles from './section.scss';
 
 export type TSectionProps = {
+    id?: string;
     children: React.ReactNode;
     className?: string | string[];
     contentClassName?: string;
@@ -33,9 +34,14 @@ export const Section = React.memo(function Section(props: TSectionProps) {
         },
     ), [isDark, props.className]);
 
+    const componentProps = {
+        id: props.id,
+        className: sectionClass,
+    };
+
     return React.createElement(
         props.component || 'section',
-        { className: sectionClass },
+        componentProps,
         <>
             {props.outerContent}
             <div className={contentClass}>{props.children}</div>

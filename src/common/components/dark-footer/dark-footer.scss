@@ -52,11 +52,11 @@
     padding-bottom: 100px;
 
     &-left {
-        @include make-width(4, true, 3);
+        @include make-width(4, true, 4);
     }
 
     &-right {
-        @include make-width(3, true, 3);
+        @include make-width(3, true, 2);
         @include left-margin(1);
 
         & .secondary-link {
@@ -87,12 +87,25 @@
 
 
 .nav-side {
-    @include make-width(4, true, 3);
+    @include make-width(4, true, 4);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    &__column {
+        @include make-width(2, true, 2);
+    }
 }
 
 .product-side {
-    @include make-width(3, true, 3);
+    @include make-width(3, true, 2);
     @include left-margin(1, false);
+
+    margin-bottom: 40px;
+    @include to-width($md-width) {
+        margin-bottom: 0;
+    }
 
     &__logo {
         fill: $color-gray01;
@@ -110,6 +123,11 @@
     line-height: 1.57;
 
     color: $color-text-secondary;
+
+    &.is-column-title {
+        display: block;
+        margin-bottom: 5px;
+    }
 }
 
 .main-link {
@@ -123,7 +141,6 @@
 .secondary-link,
 .main-link {
     text-decoration: underline;
-
     display: inline-block;
 
     &:hover {
@@ -158,13 +175,11 @@
         width: 50vw;
         max-width: 815px;
         left: 50%;
-
         top: 0;
     }
 
     &-top {
         z-index: 4;
-
         display: flex;
         align-items: center;
         cursor: pointer;
@@ -174,15 +189,14 @@
         right: 0;
         left: calc(1280px / 3 + 100vw / 2 - 12px);
         height: 185px;
+        background-color: $color-gray05;
 
         &__arrow {
             width: 50px;
             height: 50px;
             color: $color-dark;
             transform: rotate(-90deg) translateX(0);
-
             transition: all 0.5s ease-in-out;
-
         }
 
         &:hover &__arrow {
@@ -190,5 +204,17 @@
             color: $color-success;
             transition-duration: 0.2s;
         }
+    }
+}
+
+
+.navigation-column {
+    & + & {
+        margin-top: 50px;
+    }
+
+    & .main-link {
+        display: block;
+        text-transform: lowercase;
     }
 }

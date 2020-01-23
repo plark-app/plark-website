@@ -5,7 +5,7 @@ import { Section, ChartBackground } from 'common/components';
 import styles from './dark-card-section.scss';
 import { CardsList } from './cards-list';
 
-type DarkCardSectionProps = {
+type DarkCardSectionProps = CommonSection & {
     title: string;
     description?: string;
     subtitle?: string;
@@ -21,6 +21,7 @@ export function DarkCardSection(props: DarkCardSectionProps): JSX.Element {
         <Section
             isDark
             withLeftPadding
+            id={props.id}
             outerContent={<ChartBackground className={styles.chart} />}
             className={styles.section}
             contentClassName={styles.sectionContent}

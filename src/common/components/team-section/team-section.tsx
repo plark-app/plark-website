@@ -3,7 +3,7 @@ import ArrowDownSvg from 'resources/svgs/arrow-down.component.svg';
 import { Section, Caption } from 'common/components';
 import styles from './photo-citation-section.scss';
 
-type PhotoCitationProps = {
+type PhotoCitationProps = CommonSection & {
     image: {
         src: string;
         alt: string;
@@ -21,13 +21,14 @@ type PhotoCitationProps = {
     }
 };
 
-export function PhotoCitationSection(props: PhotoCitationProps): JSX.Element {
+export function TeamSection(props: PhotoCitationProps): JSX.Element {
     const { image, citation, caption } = props;
 
     return (
         <Section
             isDark
             withLeftPadding
+            id={props.id}
             className={styles.section}
             contentClassName={styles.sectionContent}
         >
