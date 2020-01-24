@@ -1,5 +1,6 @@
 import React from 'react';
 import cn from 'classnames';
+import { Col } from 'reactstrap';
 import { useI18n } from 'slim-i18n';
 import { Section, ChartBackground } from 'common/components';
 import styles from './dark-card-section.scss';
@@ -26,7 +27,7 @@ export function DarkCardSection(props: DarkCardSectionProps): JSX.Element {
             className={styles.section}
             contentClassName={styles.sectionContent}
         >
-            <div className={styles.left}>
+            <Col className={styles.left} lg={3} sm={6}>
                 <h2 className={styles.leftTitle}>{props.title}</h2>
                 <p className={styles.leftSubtitle}>{props.subtitle}</p>
 
@@ -40,9 +41,9 @@ export function DarkCardSection(props: DarkCardSectionProps): JSX.Element {
                 <a className={cn(styles.downloadLink, 'arrow-link')} href="https://dl.plark.io/app/website-appstore">
                     Download Plark for iOS
                 </a>
-            </div>
+            </Col>
 
-            <div className={styles.right}>
+            <Col className={styles.right} lg={{ size: 5, offset: 1 }} sm={6}>
                 <div className={styles.creditCard}>
                     <img src="/img/white-credit-card.svg"
                          className={styles.creditCardImage}
@@ -63,7 +64,7 @@ export function DarkCardSection(props: DarkCardSectionProps): JSX.Element {
                         )}
                     </p>
                 )}
-            </div>
+            </Col>
         </Section>
     );
 }

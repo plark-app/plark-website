@@ -1,6 +1,7 @@
 import React from 'react';
 import cn from 'classnames';
 import { Section } from 'common/components';
+import { Col, Row } from 'reactstrap';
 import styles from './dark-features-section.scss';
 
 export type FeatureUnitProps = {
@@ -40,16 +41,16 @@ export function DarkFeaturesSection(props: BlackFeaturesProps): JSX.Element {
             className={styles.section}
             contentClassName={styles.sectionContent}
         >
-            <div className={cn(styles.left)}>
+            <Col className={styles.left} lg={3}>
                 <h3 className={styles.leftTitle}>{props.title}</h3>
                 <a href={link.url} title={link.title} className={cn(styles.leftLink, 'arrow-link')}>
                     {link.text}
                 </a>
-            </div>
+            </Col>
 
-            <div className={cn(styles.featureList)}>
+            <Col className={cn(styles.featureList)} lg={{ size: 7, offset: 1 }} sm={12}>
                 {features.map((unit: FeatureUnitProps, index: number) => <FeatureUnit key={index} {...unit} />)}
-            </div>
+            </Col>
         </Section>
     );
 }
@@ -58,21 +59,21 @@ export function DarkFeaturesSection(props: BlackFeaturesProps): JSX.Element {
 function FeatureUnit(props: FeatureUnitProps) {
     const { text, link, image } = props;
     return (
-        <article className={styles.feature}>
-            <div className={styles.featureText}>
+        <Row className={styles.feature} noGutters>
+            <Col className={styles.featureText} lg={5} sm={6} xs={12}>
                 <p className={styles.featureTextContent}>{text}</p>
                 {link ? (
                     <a href={link.url} className={cn('citation', 'arrow-link')}>{link.text}</a>
                 ) : undefined}
-            </div>
+            </Col>
 
-            <div className={cn(styles.featureImage)}>
+            <Col className={cn(styles.featureImage)} lg={7} sm={6} xs={12}>
                 <img src={image.url}
                      alt={image.alt}
                      title={image.title}
                      className={styles.featureImageImg}
                 />
-            </div>
-        </article>
+            </Col>
+        </Row>
     );
 }

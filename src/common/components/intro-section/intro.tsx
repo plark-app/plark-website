@@ -2,6 +2,7 @@ import React from 'react';
 import cn from 'classnames';
 import scrollTo from 'animated-scroll-to';
 import { Section, DownloadCell, IPhoneScreen } from 'common/components';
+import { Col } from 'reactstrap';
 import ArrowDownSvg from 'resources/svgs/arrow-down.component.svg';
 import styles from './intro.scss';
 
@@ -33,22 +34,22 @@ export default function IntroSection(props: IntroProps): JSX.Element {
 
     return (
         <Section
+            withLeftPadding
             className={cn(styles.introSection, props.sectionClassName)}
             contentClassName={cn(styles.introSectionContent, props.contentClassName)}
-            withLeftPadding
         >
             <IntroPhoneSection
                 showDesktop={withPhone}
             />
 
-            <div>
+            <Col lg={4}>
                 <div className={topicClassName}>
                     <h3 className={styles.introTopicShit}>{props.title}</h3>
                     {React.createElement(subtitleTag, { className: styles.introTopicTitle }, props.subtitle)}
                 </div>
 
                 {!noDownload && <DownloadCell />}
-            </div>
+            </Col>
 
             <ArrowDownSvg className={styles.introArrow} onClick={onClickArrow} />
         </Section>

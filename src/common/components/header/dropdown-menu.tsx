@@ -2,6 +2,7 @@ import React, { MouseEvent } from 'react';
 import cn from 'classnames';
 import scrollTo from 'animated-scroll-to';
 import { __, TranslateFunction } from 'common/i18n';
+import { Col } from 'reactstrap';
 import { useI18n } from 'slim-i18n';
 import { CSSTransition } from 'react-transition-group';
 import { Section } from 'common/components';
@@ -73,7 +74,7 @@ export function DropdownMenu(props: DropdownMenuProps): JSX.Element {
                      className={cn(styles.dropdownMenu, className)}
                      contentClassName={styles.dropdownMenuContent}
             >
-                <nav className={styles.dropdownMenuNav}>
+                <Col className={styles.dropdownMenuNav} lg={3} sm={4}>
                     {mainMenuElements.map((elem: MenuElement) => (
                         <div className={styles.dropdownMenuItem} key={elem.key}>
                             <a href={`/#${elem.key}`} onClick={onClickMenuItem} custom-scroll-to={elem.key}>
@@ -81,7 +82,7 @@ export function DropdownMenu(props: DropdownMenuProps): JSX.Element {
                             </a>
                         </div>
                     ))}
-                </nav>
+                </Col>
             </Section>
         </CSSTransition>
     );

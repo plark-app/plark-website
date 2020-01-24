@@ -129,7 +129,7 @@ export default function Home(): JSX.Element {
                         title: 'Plark community',
                     },
                     image: {
-                        url: '/img/trade-confirmation-screen.png',
+                        url: '/img/trade-screen.png',
                         alt: 'plark cryptocurrency wallet',
                         title: 'Plark cryptocurrency wallet',
                     },
@@ -141,7 +141,7 @@ export default function Home(): JSX.Element {
                         title: 'Plark email',
                     },
                     image: {
-                        url: '/img/trade-screen.png',
+                        url: '/img/trade-confirmation-screen.png',
                         alt: 'plark cryptocurrency wallet',
                         title: 'Plark cryptocurrency wallet',
                     },

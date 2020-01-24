@@ -13,9 +13,6 @@
 }
 
 .left {
-    width: 100%;
-    @include make-width(3);
-
     &__title {
         @include text-h2($color-text-white);
     }
@@ -30,9 +27,10 @@
 }
 
 .right {
-    width: 100%;
-    @include left-margin(1);
-
+    margin-top: 60px;
+    @include from-sm-width {
+        margin-top: 0;
+    }
 }
 
 
@@ -67,8 +65,7 @@
 }
 
 .credit-card {
-    @include make-width(5);
-    max-width: 420px;
+    max-width: 510px;
     border-radius: 18px;
 
     &__image {
@@ -92,7 +89,6 @@
 }
 
 .description {
-    @include make-width(5);
     margin-bottom: 30px;
     margin-top: 70px;
 }
