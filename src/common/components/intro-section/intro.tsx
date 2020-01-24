@@ -21,7 +21,10 @@ export default function IntroSection(props: IntroProps): JSX.Element {
     const { subtitleTag = 'h2', noDownload, withPhone = false } = props;
 
     const onClickArrow = React.useCallback(() => {
-        scrollTo(window.innerHeight, {
+        const toHeight = window.innerWidth > 1280 ? 750 : window.innerHeight;
+
+
+        scrollTo(toHeight, {
             speed: 400,
         });
     }, []);
@@ -37,7 +40,7 @@ export default function IntroSection(props: IntroProps): JSX.Element {
             <IntroPhoneSection
                 showDesktop={withPhone}
             />
-            
+
             <div>
                 <div className={topicClassName}>
                     <h3 className={styles.introTopicShit}>{props.title}</h3>

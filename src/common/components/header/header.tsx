@@ -1,11 +1,12 @@
 import React from 'react';
 import _ from 'lodash';
 import cn from 'classnames';
+import { Col, Row } from 'reactstrap';
 import { RouteComponentProps, withRouter } from 'react-router';
 import { compose } from 'recompose';
 import { withTranslations, WithTranslationsProps } from 'slim-i18n';
 import PlatformList from 'common/utils/install-platforms';
-import { NavLink, BurgerButton, withWindowSize, WithWindowSizeProps, Col } from 'common/components';
+import { NavLink, BurgerButton, withWindowSize, WithWindowSizeProps } from 'common/components';
 import PlarkLogo from 'resources/svgs/plark-logo.component.svg';
 import { DropdownMenu } from './dropdown-menu';
 import styles from './header.scss';
@@ -54,7 +55,7 @@ class Header extends React.Component<HeaderInnerProps, HeaderState> {
     }
 
     public render(): JSX.Element {
-        const { i18n, showLabel = false } = this.props;
+        const { i18n } = this.props;
         const { scrolled, openedMenu } = this.state;
 
         const headerClassName = cn(
@@ -74,29 +75,31 @@ class Header extends React.Component<HeaderInnerProps, HeaderState> {
             <>
                 <header id="header" className={headerClassName}>
                     <div className={styles.headerSection}>
-                        <BurgerButton opened={openedMenu}
-                                      className={styles.dropdownMenuBtn}
-                                      onClick={this._toggleMenu}
-                        />
+                        <Row className={styles.headerRow}>
+                            <Col xs={5} lg={3} className={styles.headerLeft}>
+                                <BurgerButton opened={openedMenu}
+                                              className={styles.dropdownMenuBtn}
+                                              onClick={this._toggleMenu}
+                                />
 
-                        <NavLink to="/">
-                            <PlarkLogo height={20} className={styles.headerLogo} />
-                        </NavLink>
-
-                        {showLabel ? (
-                            <Col className={styles.headerCenterLabel}>
-                                {`An independent brand experience\nstudio based in Kiev`}
+                                <NavLink to="/">
+                                    <PlarkLogo height={20} className={styles.headerLogo} />
+                                </NavLink>
                             </Col>
-                        ) : undefined}
 
-                        <nav className={styles.headerNav}>
-                            <a href={appstore.url} className={cn(styles.headerAppstore, 'arrow-link')} rel="nofollow">
-                                 Available on App Store
-                            </a>
-                        </nav>
+                            <Col className={styles.headerCenterLabel} sm={2} md={4} lg={2}>
+                                {i18n.gettext(`Ukrainian developing company\nwith Blockchain-based solutions`)}
+                            </Col>
+
+                            <Col className={styles.headerNav} xs={5} lg={3}>
+                                <a href={appstore.url} className={cn(styles.headerAppstore, 'arrow-link')} rel="nofollow">
+                                     Available on App Store
+                                </a>
+                            </Col>
+                        </Row>
+
+                        <DropdownMenu opened={openedMenu} triggerClose={this._toggleMenu} />
                     </div>
-
-                    <DropdownMenu opened={openedMenu} triggerClose={this._toggleMenu} />
                 </header>
 
                 <nav className={sidenavClassName}>
@@ -110,8 +113,6 @@ class Header extends React.Component<HeaderInnerProps, HeaderState> {
                         {i18n.gettext('Support')}
                     </a>
                 </nav>
-
-
             </>
         );
     }

@@ -1,7 +1,6 @@
 import React from 'react';
 import cn from 'classnames';
-import { Section } from '../section';
-import TextBlock from '../text-block';
+import { Section, TextBlock } from 'common/components';
 import style from './section-bg-title.scss';
 
 type BgTitleProps = CommonSection & {

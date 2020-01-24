@@ -19,7 +19,7 @@
         padding-bottom: 100px;
 
         @include from-md-width {
-            height: 100vh;
+            height: 750px;
         }
 
         @include to-sm-width {

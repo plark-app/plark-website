@@ -7,7 +7,7 @@ type IphoneScreenProps = {
     type: 'photo' | 'video';
     srcType?: string;
     className?: string;
-    
+
     alt?: string;
     title?: string;
 };
@@ -15,21 +15,7 @@ type IphoneScreenProps = {
 export function IPhoneScreen(props: IphoneScreenProps): JSX.Element {
     const { src, type, srcType, className } = props;
 
-    const isVideo = props.type === 'video';
-
-    const videoRef = React.useRef<HTMLVideoElement>();
-    React.useEffect(() => {
-        if (!isVideo) {
-            return;
-        }
-
-        setTimeout(() => {
-            if (videoRef.current) {
-                videoRef.current.muted = false;
-                videoRef.current.play();
-            }
-        }, 1000);
-    }, [isVideo]);
+    const isVideo = type === 'video';
 
     return (
         <div className={cn(styles.iphone, className)}>
@@ -41,23 +27,22 @@ export function IPhoneScreen(props: IphoneScreenProps): JSX.Element {
             <div className={styles.iphoneShadow} />
 
             <div className={styles.iphoneContent}>
-                {type === 'photo' ? (
-                    <img src={src}
-                         alt={props.alt || 'screen'}
-                         title={props.title || 'scene'}
-                         className={styles.iphoneImage}
-                    />
-                ) : (
+                {isVideo ? (
                     <video className={styles.iphoneImage}
                            controls={false}
                            autoPlay
                            loop
                            muted
-                           ref={videoRef as any}
                     >
                         <source src={src} type={srcType} />
                         Your browser does not support HTML5 video.
                     </video>
+                ) : (
+                    <img src={src}
+                         alt={props.alt || 'screen'}
+                         title={props.title || 'scene'}
+                         className={styles.iphoneImage}
+                    />
                 )}
             </div>
         </div>

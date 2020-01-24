@@ -48,6 +48,7 @@
     &-text {
         width: 100%;
         height: calc(100vh - 300px);
+        white-space: pre-wrap;
 
         @include from-height(750px) {
             height: 450px;

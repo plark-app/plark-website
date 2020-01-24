@@ -33,7 +33,7 @@ export default function Home(): JSX.Element {
 
             <PresentationSection
                 id="history"
-                mainText={i18n.gettext('A blockchain, originally block chain, is a growing list of records, called blocks, that are linked using cryptography. Each block contains a cryptographic hash of the previous block, a timestamp, and transaction data.')}
+                mainText={i18n.gettext('We created Plark — a decentralized crypto wallet with handy stuff to get things done. Whatever feature you need to manage your digital assets is now at your fingertips. We already added the most popular cryptos with more to come. We hope, you will love our app.')}
                 secondText={i18n.gettext('We are the team of no strangers to blockchain, and we know how to make crypto your daily habit.')}
                 link={{
                     text: i18n.gettext('join discussion on Flarum'),
@@ -45,8 +45,8 @@ export default function Home(): JSX.Element {
                 }}
                 image={{
                     src: '/img/team/image_1.png',
-                    caption: i18n.gettext('Visual artist & director Ersinhan Ersin was at The Next Web Conference 2018'),
-                    subCaption: i18n.gettext('Westergasfabriek B.V., Amsterdam, Netherlands'),
+                    caption: i18n.gettext('Our software developer Max is trying to code the app the way our mad designer wants it.'),
+                    subCaption: i18n.gettext('Mad scientist’s office in the clouds. Kyiv, Ukraine.'),
                 }}
             />
 
@@ -109,7 +109,7 @@ export default function Home(): JSX.Element {
             <DarkCardSection
                 id="credit-card"
                 title="the card is the key"
-                subtitle="Here comes Plark’s icing on the cake — a feature allowing to buy and sell crypto for UAH right in the wallet. Add your credit or debit card and join the feast of crypto life."
+                subtitle="Whether you are a crypto lord or just a newcomer — trading it for fiat money right in the Plark wallet sounds like a good fit.  A bit of magic, and you are a trader. Whoosh!"
                 description="Here comes Plark’s icing on the cake — a feature allowing to buy and sell crypto for UAH right in the wallet. Add your credit or debit card and join the feast of crypto life."
             />
 
@@ -134,7 +134,7 @@ export default function Home(): JSX.Element {
                         title: 'Plark cryptocurrency wallet',
                     },
                 }, {
-                    text: i18n.gettext('Plark is always ready for conversation. If you have any question, issue, or suggestion — just drop us a line.'),
+                    text: i18n.gettext('Whatever input you share with us is like a gem.  And we’ll use it to craft a flawless experience for you. \n\nPlark is always ready for conversation. If you have any question, issue, or suggestion — just drop us a line.'),
                     link: {
                         url: 'mailto:support@plark.io',
                         text: 'drop us a line',
