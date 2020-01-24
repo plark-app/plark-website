@@ -75,8 +75,8 @@ class Header extends React.Component<HeaderInnerProps, HeaderState> {
             <>
                 <header id="header" className={headerClassName}>
                     <div className={styles.headerSection}>
-                        <Row className={styles.headerRow}>
-                            <Col xs={5} lg={3} className={styles.headerLeft}>
+                        <Row className={cn(styles.headerRow, 'free-left-space')}>
+                            <Col xs={5} lg={3} className={cn(styles.headerLeft)}>
                                 <BurgerButton opened={openedMenu}
                                               className={styles.dropdownMenuBtn}
                                               onClick={this._toggleMenu}
@@ -87,11 +87,11 @@ class Header extends React.Component<HeaderInnerProps, HeaderState> {
                                 </NavLink>
                             </Col>
 
-                            <Col className={styles.headerCenterLabel} sm={2} md={4} lg={2}>
+                            <Col className={styles.headerCenterLabel} md={4} lg={{ size: 3, offset: 1 }}>
                                 {i18n.gettext(`Ukrainian developing company\nwith Blockchain-based solutions`)}
                             </Col>
 
-                            <Col className={styles.headerNav} xs={5} lg={3}>
+                            <Col className={styles.headerNav} xs={7} lg={4}>
                                 <a href={appstore.url} className={cn(styles.headerAppstore, 'arrow-link')} rel="nofollow">
                                      Available on App Store
                                 </a>

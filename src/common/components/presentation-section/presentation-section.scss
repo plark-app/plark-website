@@ -15,9 +15,11 @@
 }
 
 .main {
-    @include make-width(3);
-    border-top: 4px solid $color-dark;
-    padding-top: 20px;
+    &-border {
+        border-top: 4px solid $color-dark;
+        border-bottom: none;
+        margin-bottom: 20px;
+    }
 
     &__caption {
         @include text-main;
@@ -40,9 +42,6 @@
 
 
 .citation {
-    @include make-width(5);
-    @include left-margin(1);
-
     &__quote {
         width: 56px;
         height: 40px;

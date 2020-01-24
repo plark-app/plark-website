@@ -1,5 +1,6 @@
 import React from 'react';
 import cn from 'classnames';
+import { Col } from 'reactstrap';
 import { Section } from 'common/components';
 import QuoteSvg from 'resources/svgs/quote.component.svg';
 import styles from './presentation-section.scss';
@@ -38,7 +39,9 @@ export function PresentationSection(props: PresentationSectionProps): JSX.Elemen
             className={styles.section}
             contentClassName={styles.sectionContent}
         >
-            <div className={styles.main}>
+            <Col className={styles.main} xs={12} md={6} lg={3}>
+                <hr className={styles.mainBorder} />
+
                 {secondText ? <p className={styles.mainCaption}>{secondText}</p> : undefined}
                 <p className={styles.mainText}>{mainText}</p>
                 {link ? (
@@ -46,10 +49,10 @@ export function PresentationSection(props: PresentationSectionProps): JSX.Elemen
                         {link.text}
                     </a>
                 ) : undefined}
-            </div>
+            </Col>
 
             {citation ? (
-                <div className={styles.citation}>
+                <Col className={styles.citation} xs={12} md={6} lg={{ size: 5, offset: 1 }}>
                     <QuoteSvg className={styles.citationQuote} />
                     <p className={styles.citationText}>”{citation.text}”</p>
                     {citation.author ? (
@@ -57,7 +60,7 @@ export function PresentationSection(props: PresentationSectionProps): JSX.Elemen
                             {citation.author}
                         </div>
                     ) : undefined}
-                </div>
+                </Col>
             ) : undefined}
         </Section>
 

@@ -69,7 +69,10 @@ export function DropdownMenu(props: DropdownMenuProps): JSX.Element {
 
     return (
         <CSSTransition in={opened} classNames={'mobile-menu'} timeout={{ enter: 500, exit: 300 }} unmountOnExit>
-            <Section className={cn(styles.dropdownMenu, className)} contentClassName={styles.dropdownMenuContent}>
+            <Section withLeftPadding
+                     className={cn(styles.dropdownMenu, className)}
+                     contentClassName={styles.dropdownMenuContent}
+            >
                 <nav className={styles.dropdownMenuNav}>
                     {mainMenuElements.map((elem: MenuElement) => (
                         <div className={styles.dropdownMenuItem} key={elem.key}>
@@ -79,9 +82,6 @@ export function DropdownMenu(props: DropdownMenuProps): JSX.Element {
                         </div>
                     ))}
                 </nav>
-
-
-
             </Section>
         </CSSTransition>
     );

@@ -27,16 +27,9 @@
     }
 
     &__row {
-        padding-left: 12px;
-        padding-right: 12px;
         height: 78px;
         align-items: center;
         justify-content: space-between;
-
-        @include from-width(1280px) {
-            $percent: 100% / 12;
-            padding-left: calc(#{$percent} + 12px);
-        }
     }
 
     &__left {

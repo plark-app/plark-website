@@ -152,12 +152,12 @@ export default function Home(): JSX.Element {
                 src="/img/team/image_3.png"
                 alt="Plark team"
                 title="Plark team"
-                caption={i18n.gettext('Visual artist & director Ersinhan Ersin was at The Next Web Conference 2018')}
-                captionDescription={i18n.gettext('Westergasfabriek B.V., Amsterdam, Netherlands')}
+                caption={i18n.gettext('Working routine at Plark be like… laughing at the $2K drop in bitcoin price.')}
+                captionDescription={i18n.gettext('Kyiv, Ukraine')}
             />
 
             <CitationSection
-                title={`We are no near done until you tell us \n“It’s the best crypto wallet I’ve ever tried.”`}
+                title={`“It’s even better than a piece \nof infinite bubble wrap”`}
                 author="— words, we would like to hear from you."
                 lowercase
             />

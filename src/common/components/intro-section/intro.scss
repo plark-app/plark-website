@@ -15,7 +15,7 @@
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
-        padding-top: 50px;
+        padding-top: 110px;
         padding-bottom: 100px;
 
         @include from-md-width {
@@ -23,7 +23,7 @@
         }
 
         @include to-sm-width {
-            padding-top: 128px;
+            padding-top: 110px;
             padding-bottom: 50px;
         }
     }
@@ -42,6 +42,10 @@
             @include text-main;
             margin-bottom: 40px;
             white-space: pre-wrap;
+        }
+
+        @include only-md-width {
+            max-width: 300px;
         }
     }
 

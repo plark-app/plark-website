@@ -1,6 +1,6 @@
 import React from 'react';
 import cn from 'classnames';
-
+import { Row } from 'reactstrap';
 import styles from './section.scss';
 
 export type TSectionProps = {
@@ -10,18 +10,23 @@ export type TSectionProps = {
     contentClassName?: string;
     outerContent?: React.ReactNode;
     flexContent?: boolean;
+    noGutters?: boolean;
     withLeftPadding?: boolean;
     isDark?: boolean;
     component?: string | any;
 };
 
 export const Section = React.memo(function Section(props: TSectionProps) {
-    const { isDark = false, flexContent = false, withLeftPadding = false } = props;
+    const { isDark = false, flexContent = false, withLeftPadding = false, noGutters = false } = props;
 
     const contentClass = cn(
         styles.sectionContent,
+    );
+
+    const rowClass = cn(
+        styles.sectionRow,
         props.contentClassName,
-        withLeftPadding && styles.iLeftPadding,
+        withLeftPadding && 'free-left-space',
         flexContent && styles.isFlex,
     );
 
@@ -44,7 +49,9 @@ export const Section = React.memo(function Section(props: TSectionProps) {
         componentProps,
         <>
             {props.outerContent}
-            <div className={contentClass}>{props.children}</div>
+            <div className={contentClass}>
+                <Row className={rowClass} noGutters={noGutters}>{props.children}</Row>
+            </div>
         </>,
     );
 });

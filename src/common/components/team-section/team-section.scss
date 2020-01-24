@@ -1,0 +1,100 @@
+@import '../../styles/colors';
+@import '../../styles/media';
+@import '../../styles/text';
+
+.section {
+    padding-top: 150px;
+    margin-top: 50px;
+
+    background-color: transparent !important;
+
+    &__content {
+        background-color: $color-dark;
+        padding-top: 0;
+        padding-bottom: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-end;
+        min-height: 750px;
+        z-index: 1;
+    }
+
+    &:after {
+        position: absolute;
+        top: 150px;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        background-color: $color-dark;
+
+        content: '';
+        display: block;
+        z-index: 0;
+    }
+}
+
+.image {
+    width: 560px;
+    height: 750px;
+
+    &__image {
+        position: relative;
+        display: block;
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+
+        margin-top: -100px;
+
+        @include from-width($sm-width) {
+            margin-top: -72px;
+        }
+    }
+
+    &__arrow {
+        transform: rotate(-90deg);
+        fill: $color-white;
+        width: 100px;
+        height: 100px;
+
+        position: absolute;
+        bottom: -30px;
+        right: 0;
+
+        @include from-width($sm-width) {
+            top: 195px;
+            right: -70px;
+            bottom: auto;
+        }
+    }
+}
+
+.content {
+    padding-bottom: 72px;
+}
+
+.citation {
+    display: none;
+
+    &__text {
+        @include text-h2($color-gray01);
+    }
+
+    &__author {
+        @include text-subtitle2($color-gray01);
+        margin-top: 30px;
+    }
+
+    @include from-width($sm-width) {
+        display: block;
+    }
+
+    @include from-width($md-width) {
+        margin-bottom: 225px;
+    }
+}
+
+.caption {
+    margin-top: 20px;
+}

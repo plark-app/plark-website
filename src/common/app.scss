@@ -1,8 +1,8 @@
 @import '~normalize.css/normalize.css';
+@import './styles/vars';
 @import './styles/bootstrap';
 @import './styles/fonts/critical-sf';
 @import './styles/colors';
-@import './styles/vars';
 @import './styles/slick';
 @import './styles/text';
 
@@ -132,6 +132,24 @@ span {
 
         &:active {
             transform: translateY(0.2em);
+        }
+    }
+
+
+    .free-left-space {
+        padding-left: 24px;
+        padding-right: 24px;
+
+        @include only-width($lg-width, 1280px) {
+            $percent: 100% / 12;
+            padding-left: #{$percent};
+            padding-right: 24px;
+        }
+
+        @include from-width(1280px) {
+            $percent: 100% / 12;
+            padding-left: $percent;
+            padding-right: 0;
         }
     }
 }

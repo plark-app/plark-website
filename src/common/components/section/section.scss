@@ -8,7 +8,7 @@
     overflow: hidden;
 
     &.is-dark {
-        background: $color-dark;
+        background-color: $color-dark;
     }
 }
 
@@ -17,28 +17,28 @@
     position: relative;
     max-width: 1280px;
     margin: 0 auto;
-    padding: 100px 20px;
-
-    @include from-md-width {
-        padding-left: 24px;
-        padding-right: 24px;
-    }
 
     .is-dark & {
         color: $color-white;
     }
+}
+
+
+.section-row {
+    padding: 100px 24px;
 
     &.i-without-padding {
-        padding-top: 0;
-        padding-bottom: 0;
-    }
-
-    &.i-left-padding {
-        @include left-padding(1, false);
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;;
     }
 
     &.is-flex {
         display: flex;
         flex-wrap: wrap;
+    }
+
+    @include from-md-width {
+        padding-left: 24px;
+        padding-right: 24px;
     }
 }

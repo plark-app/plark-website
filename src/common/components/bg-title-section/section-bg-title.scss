@@ -52,12 +52,6 @@
         height: 4px;
         background: $color-text-dark;
         border: none;
-
-        @include make-width(3);
-
-        @include to-xl-width {
-            @include make-width(8);
-        }
     }
 }
 
@@ -66,20 +60,17 @@
     flex-wrap: wrap;
 }
 
-.left-side {
-    @include make-width(3);
-
-    @include to-xl-width {
-        @include make-width(8);
-    }
-}
-
 .right-side {
     margin-top: 40px;
 
-    @include from-md-width {
+    @include from-lg-width {
         margin-top: 0;
-        @include left-margin(1);
+    }
+}
+
+.left-side {
+    @include only-md-width {
+        margin-right: 100%;
     }
 }
 
@@ -96,12 +87,6 @@
 
 .secondary-content {
     @include text-caption;
-
-    @include make-width(8);
-
-    @include from-xl-width {
-        @include make-width(3);
-    }
 
     color: $color-gray50;
 }
