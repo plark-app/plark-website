@@ -164,7 +164,6 @@ export default function Home(): JSX.Element {
 
             <FeedbackSection id="testimonials" />
             <CommunitySection id="community" />
-
             <SubscribeSection id="contacts" />
 
             <DarkFooter />

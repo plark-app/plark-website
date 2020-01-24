@@ -1,5 +1,6 @@
 import React from 'react';
 import cn from 'classnames';
+import { Col } from 'reactstrap';
 import { useI18n } from 'slim-i18n';
 import PlarkLogo from 'resources/svgs/plark-logo.component.svg';
 import styles from './dark-footer.scss';
@@ -9,7 +10,7 @@ export function ProductSide(): JSX.Element {
     const i18n = useI18n();
 
     return (
-        <div className={styles.productSide}>
+        <Col className={styles.productSide} lg={{ size: 3, offset: 1 }}>
             <PlarkLogo height={38} className={styles.productSideLogo} />
 
             <p className={styles.productSideDescription}>
@@ -22,6 +23,6 @@ export function ProductSide(): JSX.Element {
                    target="_blank"
                 >{i18n.gettext('plark for iphone')}</a>
             </NavigationColumn>
-        </div>
+        </Col>
     );
 }

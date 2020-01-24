@@ -6,7 +6,7 @@
 .footer {
     position: relative;
     z-index: 990;
-    background: $color-gray05;
+    background: $color-dark;
 
     font-size: 14px;
     line-height: 1.856;
@@ -36,7 +36,6 @@
     padding-top: 100px;
     padding-bottom: 100px;
     background-color: $color-dark;
-    @include make-width(9, true);
 
     @include from-sm-width {
         justify-content: flex-end;
@@ -45,20 +44,16 @@
 }
 
 .bottom {
-    display: flex;
-    flex-wrap: wrap;
+    width: 100%;
     background-color: $color-dark;
-    @include make-width(9, true);
     padding-bottom: 100px;
+    margin-right: 0 !important;
+    margin-left: 0 !important;
 
     &-left {
-        @include make-width(4, true, 4);
     }
 
     &-right {
-        @include make-width(3, true, 2);
-        @include left-margin(1);
-
         & .secondary-link {
             text-transform: lowercase;
             margin-right: 10px;
@@ -87,21 +82,17 @@
 
 
 .nav-side {
-    @include make-width(4, true, 4);
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
     align-items: flex-start;
 
     &__column {
-        @include make-width(2, true, 2);
+        width: 50%;
     }
 }
 
 .product-side {
-    @include make-width(3, true, 2);
-    @include left-margin(1, false);
-
+    background-color: $color-dark;
     margin-bottom: 40px;
     @include to-width($md-width) {
         margin-bottom: 0;

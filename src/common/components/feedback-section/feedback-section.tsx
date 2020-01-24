@@ -2,6 +2,7 @@ import React from 'react';
 import cn from 'classnames';
 import Slider, { Settings } from 'react-slick';
 import { Section, StarRate, TwoIPhones } from 'common/components';
+import { Col } from 'reactstrap';
 import userFeedbacks, { UserFeedback } from './feedbacks';
 import ArrowRightSvg from 'resources/svgs/full-arrow-right.component.svg';
 import styles from './feedback-section.scss';
@@ -47,16 +48,15 @@ export const FeedbackSection = React.memo(function FeedbackSection(props: Feedba
     return (
         <Section
             flexContent
-            withLeftPadding
             id={id}
             className={styles.section}
             contentClassName={styles.sectionContent}
         >
-            <div className={styles.phones}>
+            <Col className={styles.phones} sm={8} lg={{ size: 5, offset: 2 }}>
                 <TwoIPhones className={styles.phonesImage} />
-            </div>
+            </Col>
 
-            <div className={styles.slider}>
+            <Col className={styles.slider} sm={8} lg={{ size: 4, offset: 1 }}>
                 <Slider {...settings} ref={sliderRef as any}>
                     {userFeedbacks.map((data: UserFeedback, i: number) => (
                         <div key={i}>
@@ -83,7 +83,7 @@ export const FeedbackSection = React.memo(function FeedbackSection(props: Feedba
                         <ArrowRightSvg className={styles.sliderNavButtonArrow} />
                     </div>
                 </div>
-            </div>
+            </Col>
         </Section>
     );
 });

@@ -139,13 +139,13 @@ span {
     .free-left-space {
         padding-left: 24px;
         padding-right: 24px;
-        width: 100%;
 
         @include only-width($lg-width, 1281px) {
             $percent: 100% / 12;
             margin-left: $percent;
             padding-left: 0;
             padding-right: 24px;
+            width: 100%;
         }
 
         @include from-width(1281px) {
@@ -153,6 +153,7 @@ span {
             margin-left: $percent;
             padding-left: 0;
             padding-right: 0;
+            width: 100%;
         }
     }
 }

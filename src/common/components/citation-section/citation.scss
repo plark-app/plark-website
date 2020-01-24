@@ -4,15 +4,12 @@
 
 .section {
     display: flex;
-    margin-top: 150px;
+    @include from-lg-width {
+        margin-top: 150px;
+    }
 }
 
 .citation {
-    @include from-width($grid-width) {
-        margin-left: col-absolute(2) + $var-gutter / 2;
-        max-width: col-absolute(8);
-    }
-
     &__text {
         @include text-h1;
         white-space: pre-wrap;

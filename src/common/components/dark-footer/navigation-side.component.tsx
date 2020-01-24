@@ -1,4 +1,5 @@
 import React from 'react';
+import { Col } from 'reactstrap';
 import { useI18n } from 'slim-i18n';
 import { NavLink } from 'common/components';
 import { NavigationColumn } from './navigation-column';
@@ -8,14 +9,14 @@ export function NavigationSide(): JSX.Element {
     const i18n = useI18n();
 
     return (
-        <div className={styles.navSide}>
+        <Col className={styles.navSide} lg={4}>
             <div className={styles.navSideColumn}>
                 <NavigationColumn title={i18n.gettext('sitemap')}>
                     <NavLink className={styles.mainLink} to="/ios-wallet">
                         {i18n.gettext('Plark for iOS')}
                     </NavLink>
                     <NavLink to="/android-wallet" className={styles.mainLink}>
-                        {i18n.gettext('Plark for Android')} <span style={{ fontSize: 10 }}>(coming soon)</span>
+                        {i18n.gettext('Plark for Android')}
                     </NavLink>
                     <NavLink to="/mobile-wallet" className={styles.mainLink}>
                         {i18n.gettext('Mobile Wallet')}
@@ -28,19 +29,19 @@ export function NavigationSide(): JSX.Element {
                     </NavLink>
 
                     <NavLink to="/dogecoin-wallet" className={styles.mainLink}>
-                        {i18n.gettext('Dogecoin Wallet')} <span style={{ fontSize: 10 }}>(coming soon)</span>
+                        {i18n.gettext('Dogecoin Wallet')}
                     </NavLink>
                     <NavLink to="/ripple-wallet" className={styles.mainLink}>
-                        {i18n.gettext('Ripple Wallet')} <span style={{ fontSize: 10 }}>(coming soon)</span>
+                        {i18n.gettext('Ripple Wallet')}
                     </NavLink>
                     <NavLink to="/monero-wallet" className={styles.mainLink}>
-                        {i18n.gettext('Monero Wallet')} <span style={{ fontSize: 10 }}>(coming soon)</span>
+                        {i18n.gettext('Monero Wallet')}
                     </NavLink>
                     <NavLink to="/iota-wallet" className={styles.mainLink}>
-                        {i18n.gettext('IOTA Wallet')} <span style={{ fontSize: 10 }}>(coming soon)</span>
+                        {i18n.gettext('IOTA Wallet')}
                     </NavLink>
                     <NavLink to="/zcash-wallet" className={styles.mainLink}>
-                        {i18n.gettext('Zcash Wallet')} <span style={{ fontSize: 10 }}>(coming soon)</span>
+                        {i18n.gettext('Zcash Wallet')}
                     </NavLink>
                 </NavigationColumn>
             </div>
@@ -70,6 +71,6 @@ export function NavigationSide(): JSX.Element {
                     </NavLink>
                 </NavigationColumn>
             </div>
-        </div>
+        </Col>
     );
 }

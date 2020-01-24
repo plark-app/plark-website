@@ -7,11 +7,15 @@
 
     &__content {
         align-items: center;
+        justify-content: center;
+
+        @include from-lg-width {
+            justify-content: initial;
+        }
     }
 }
 
 .phones {
-    @include make-width(7, true);
     z-index: 2;
 
     &__image {
@@ -20,7 +24,6 @@
 }
 
 .slider {
-    @include make-width(4, true);
     z-index: 1;
 
     &-box {

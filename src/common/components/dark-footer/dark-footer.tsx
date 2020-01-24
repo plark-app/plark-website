@@ -1,6 +1,7 @@
 import React from 'react';
 import moment from 'moment';
 import scrollTo from 'animated-scroll-to';
+import { Col, Row } from 'reactstrap';
 import { useI18n } from 'slim-i18n';
 import ArrowRightSvg from 'resources/svgs/full-arrow-right.component.svg';
 import { Section, NavLink, Socials } from 'common/components';
@@ -23,19 +24,18 @@ export function DarkFooter(): JSX.Element {
     });
 
     return (
-        <Section className={styles.footer}
-                 contentClassName={styles.footerContent}
-                 withLeftPadding
-                 component="footer"
-                 outerContent={<FooterBackground />}
+        <Section
+            withLeftPadding
+            component="footer"
+            className={styles.footer}
+            contentClassName={styles.footerContent}
+            outerContent={<FooterBackground />}
         >
-            <div className={styles.main}>
-                <ProductSide />
-                <NavigationSide />
-            </div>
+            <NavigationSide />
+            <ProductSide />
 
-            <div className={styles.bottom}>
-                <div className={styles.bottomLeft}>
+            <Row className={styles.bottom}>
+                <Col className={styles.bottomLeft} lg={4}>
                     <Socials titleMode
                              className={styles.bottomSocial}
                              linkClassName={styles.bottomSocialLink}
@@ -43,9 +43,9 @@ export function DarkFooter(): JSX.Element {
                     <span className={styles.bottomCopyright} style={{ display: 'none' }}>
                         plark @ {copyrightYears}
                     </span>
-                </div>
+                </Col>
 
-                <div className={styles.bottomRight}>
+                <Col className={styles.bottomRight} lg={{ size: 4, offset: 1 }}>
                     <NavLink to="/privacy" className={styles.secondaryLink}>
                         {i18n.gettext('Privacy')}
                     </NavLink>
@@ -57,8 +57,8 @@ export function DarkFooter(): JSX.Element {
                     <NavLink to="/sitemap" className={styles.secondaryLink}>
                         {i18n.gettext('Sitemap')}
                     </NavLink>
-                </div>
-            </div>
+                </Col>
+            </Row>
         </Section>
     );
 }
@@ -68,6 +68,8 @@ function FooterBackground() {
     const onPressToTop = React.useCallback(() => {
         scrollTo(0);
     }, []);
+
+    return <div />;
 
     return <div className={styles.background}>
         <div className={styles.backgroundDark} />

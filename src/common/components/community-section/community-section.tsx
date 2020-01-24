@@ -1,4 +1,5 @@
 import React from 'react';
+import { Col } from 'reactstrap';
 import { useI18n } from 'slim-i18n';
 import cn from 'classnames';
 import { Section } from 'common/components';
@@ -33,12 +34,12 @@ export const CommunitySection = React.memo(function CommunitySection(props: Comm
     const i18n = useI18n();
 
     return (
-        <Section withLeftPadding flexContent id={props.id} className={styles.section}>
-            <div className={styles.left}>
+        <Section id={props.id} withLeftPadding flexContent>
+            <Col className={styles.left} xs={3} lg={3}>
                 <ArrowRightSvg className={styles.leftArrow} />
-            </div>
+            </Col>
 
-            <div className={styles.right}>
+            <Col className={styles.right} lg={{ size: 6, offset: 1 }}>
                 <div className={styles.topic}>
                     <h2 className={styles.topicTitle}>
                         {i18n.gettext('Plark crypto community is just\ntwo clicks away from you.')}
@@ -68,7 +69,7 @@ export const CommunitySection = React.memo(function CommunitySection(props: Comm
                 <a href="https://community.plark.io" target="_blank" className={cn(styles.link, 'arrow-link')}>
                     {i18n.gettext('Join discussion in community')}
                 </a>
-            </div>
+            </Col>
         </Section>
     );
 });

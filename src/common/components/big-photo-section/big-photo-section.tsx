@@ -1,5 +1,6 @@
 import React from 'react';
 import { Caption, Section } from 'common/components';
+import { Col } from 'reactstrap';
 import styles from './big-photo-section.scss';
 
 type BigPhotoSection = {
@@ -18,17 +19,19 @@ export function BigPhotoSection(props: BigPhotoSection): JSX.Element {
             className={styles.section}
             outerContent={<div className={styles.blackBlock} />}
         >
-            <img src={props.src}
-                 alt={props.alt}
-                 title={props.title}
-                 className={styles.image}
-            />
+            <Col>
+                <img src={props.src}
+                     alt={props.alt}
+                     title={props.title}
+                     className={styles.image}
+                />
 
-            <Caption
-                title={props.caption}
-                description={props.captionDescription}
-                className={styles.caption}
-            />
+                <Caption
+                    title={props.caption}
+                    description={props.captionDescription}
+                    className={styles.caption}
+                />
+            </Col>
         </Section>
     );
 }

@@ -1,9 +1,10 @@
 import React from 'react';
+import { Col } from 'reactstrap';
 import { useI18n } from 'slim-i18n';
 import { __ } from 'common/i18n';
-import { Section } from '../section';
-import styles from './subscribe-section.scss';
+import { Section } from 'common/components';
 import SubscribeForm from './subscribe-form';
+import styles from './subscribe-section.scss';
 
 type SubscribeSectionProps = CommonSection & {};
 
@@ -20,11 +21,14 @@ export function SubscribeSection(props: SubscribeSectionProps): JSX.Element {
             className={styles.section}
             contentClassName={styles.sectionContent}
         >
-            <h3 className={styles.subscribeTitle}>{title(i18n)}</h3>
-            <div className={styles.subscribeFormContainer}>
+            <Col className={styles.subscribeRight} md={4} lg={3}>
+                <h3 className={styles.subscribeTitle}>{title(i18n)}</h3>
+            </Col>
+
+            <Col className={styles.subscribeFormContainer} md={8} lg={{ size: 7, offset: 1 }}>
                 <p className={styles.subscribeContent}>{content(i18n)}</p>
                 <SubscribeForm />
-            </div>
+            </Col>
         </Section>
     );
 }

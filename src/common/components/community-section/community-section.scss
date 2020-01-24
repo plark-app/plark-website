@@ -2,16 +2,20 @@
 @import "../../styles/media";
 @import "../../styles/text";
 
-.section {
-    margin-top: 100px;
-    margin-bottom: 100px;
-
-    &__content {
-    }
-}
-
 .left {
-    @include make-width(3);
+    display: none;
+
+    @include from-sm-width {
+        display: block;
+    }
+
+    @include only-width($sm-width, $lg-width) {
+        position: absolute !important;
+        right: 24px;
+        top: 50%;
+        transform: translateY(-70%);
+        width: 40%;
+    }
 
     &__arrow {
         width: 100%;
@@ -20,21 +24,16 @@
     }
 }
 
-.right {
-    @include left-margin(1);
-}
-
 .topic {
     &__title {
-        @include make-width(7, true);
         text-transform: lowercase;
         @include text-h1($color-dark);
         white-space: pre-wrap;
     }
 
     &__description {
-        @include make-width(4, true);
         @include text-main($color-dark);
+        max-width: 400px;
     }
 
     &__title + &__description {
@@ -47,17 +46,26 @@
     display: flex;
     align-items: center;
 
+    @include from-sm-width {
+        margin-top: 100px;
+    }
+
     &__item {
         display: block;
         margin-right: 50px;
 
         &:hover {
-            transform: scale(1.1);
+            transform: scale(1.05);
         }
 
         &-image {
             display: block;
-            height: 26px;
+            height: 20px;
+
+            @include from-sm-width {
+                margin-top: 26px;
+            }
+
         }
     }
 }

@@ -6,40 +6,23 @@
 
 .section {
     &__content {
-        display: flex;
-        flex-wrap: wrap;
     }
 }
 
 .subscribe {
     &__title {
-
         margin-bottom: 20px;
-
-        width: 100%;
         @include text-h2;
-        @include from-width(1280px) {
-            max-width: col-absolute(3);
-        }
     }
 
     &__content {
         @include text-main;
         margin-bottom: 50px;
-        max-width: 100%;
-
-        @include from-width(1280px) {
-            max-width: col-absolute(4);
-        }
     }
 
     &__form-container {
         width: 100%;
         max-width: 590px;
-
-        @include from-width(1280px) {
-            margin-left: col-absolute(1) + $var-gutter * 1.5;
-        }
     }
 
     &__form {
