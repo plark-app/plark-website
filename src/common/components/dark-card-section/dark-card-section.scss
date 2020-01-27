@@ -62,6 +62,10 @@
 
 .chart {
     stroke: $color-gray70;
+
+    @include to-sm-width {
+        display: none;
+    }
 }
 
 .credit-card {

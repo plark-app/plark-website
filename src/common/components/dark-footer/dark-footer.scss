@@ -28,11 +28,12 @@
     &-start {
         display: flex;
         flex-wrap: wrap;
+        align-content: flex-start;
         width: 100%;
-        padding-bottom: 30px;
+        margin-bottom: 50px;
 
         @include from-sm-width {
-            min-height: 440px;
+            min-height: 390px;
         }
     }
 
@@ -46,6 +47,20 @@
 .product-side,
 .nav-side {
     z-index: 2;
+}
+
+.product-side .footer-start {
+    @include to-sm-width {
+        margin-bottom: 0;
+    }
+}
+
+.product-side .footer-end {
+    display: none;
+
+    @include from-sm-width {
+        display: block;
+    }
 }
 
 .bottom {
@@ -114,7 +129,7 @@
 
     &__description {
         margin-top: 20px;
-        margin-bottom: 20px;
+        margin-bottom: 50px;
         text-transform: lowercase;
 
         @include from-sm-width {
@@ -145,6 +160,13 @@
 
 .secondary-link {
     color: $color-text-secondary;
+}
+
+.main-text {
+    color: $color-gray01;
+    text-transform: lowercase;
+    display: block;
+    line-height: 1.85;
 }
 
 .secondary-link,
@@ -253,5 +275,25 @@
     & .main-link {
         display: block;
         text-transform: lowercase;
+    }
+}
+
+
+.download {
+    display: none;
+
+    @include from-sm-width {
+        display: block;
+    }
+}
+
+.download-button {
+    margin-top: 0 !important;
+    margin-bottom: 50px;
+
+    display: block;
+
+    @include from-sm-width {
+        display: none !important;
     }
 }

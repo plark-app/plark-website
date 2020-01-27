@@ -59,7 +59,9 @@ export function DropdownMenu(props: DropdownMenuProps): JSX.Element {
             const scrollToElement = document.getElementById(key);
             if (scrollToElement) {
                 _event.preventDefault();
-                scrollTo(scrollToElement);
+                scrollTo(scrollToElement, {
+                    maxDuration: 800,
+                });
             }
         }
     }, []);

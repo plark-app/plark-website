@@ -15,6 +15,11 @@
 
     transition: all 0.5s;
 
+    &.is-white {
+        background-color: $color-gray01;
+        color: $color-text-dark;
+    }
+
     &__text {
         color: currentColor;
         font-size: 15px;

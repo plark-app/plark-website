@@ -87,6 +87,12 @@
     }
 
     &__appstore {
+        display: none;
+
+        @include from-sm-width {
+            display: block;
+        }
+
         @include text-h4;
         transition: all 0.5s;
 

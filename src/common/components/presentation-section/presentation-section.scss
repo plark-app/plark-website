@@ -59,9 +59,25 @@
     }
 }
 
+.main + .citation,
+.picture {
+    margin-top: 150px;
+
+    @include from-sm-width {
+        margin-top: 0;
+    }
+}
+
 
 .picture {
     padding-left: calc((100vw - 1280px) / 2 + (1280px * 1 / 3));
+    margin-left: 20px;
+    margin-right: 20px;
+
+    @include from-sm-width {
+        margin-left: 0;
+        margin-right: 0;
+    }
 
     &__image {
         width: 100%;

@@ -2,10 +2,10 @@ import React from 'react';
 import cn from 'classnames';
 import { Col } from 'reactstrap';
 import { useI18n } from 'slim-i18n';
-import { NavLink } from 'common/components';
+import { NavLink, DownloadCell } from 'common/components';
 import PlarkLogo from 'resources/svgs/plark-logo.component.svg';
-import styles from './dark-footer.scss';
 import { NavigationColumn } from './navigation-column';
+import styles from './dark-footer.scss';
 
 export function ProductSide(): JSX.Element {
     const i18n = useI18n();
@@ -19,12 +19,13 @@ export function ProductSide(): JSX.Element {
                     {i18n.gettext('Founded in 2015, Plark is an independent studio specializing in graphic and digital production. Its creative team includes both designers and developers who are based in Ukraine.')}
                 </p>
 
-                <NavigationColumn title="download app" className={styles.productSideDownload}>
+                <NavigationColumn title="download app" className={styles.download}>
                     <a href="https://dl.plark.io/app/website-appstore"
                        className={cn(styles.mainLink, 'arrow-link')}
                        target="_blank"
                     >{i18n.gettext('plark for iphone')}</a>
                 </NavigationColumn>
+
             </div>
 
             <div className={cn(styles.footerEnd, styles.bottomRight)}>
@@ -40,6 +41,8 @@ export function ProductSide(): JSX.Element {
                     {i18n.gettext('Sitemap')}
                 </NavLink>
             </div>
+
+            <DownloadCell className={styles.downloadButton} isWhite />
         </Col>
     );
 }

@@ -25,63 +25,48 @@ export function NavigationSide(): JSX.Element {
             <div className={styles.footerStart}>
                 <div className={styles.navSideColumn}>
                     <NavigationColumn title={i18n.gettext('sitemap')}>
-                        <NavLink className={styles.mainLink} to="/ios-wallet">
-                            {i18n.gettext('Plark for iOS')}
+                        <NavLink className={styles.mainLink} to="#">
+                            {i18n.gettext('product')}
                         </NavLink>
-                        <NavLink to="/android-wallet" className={styles.mainLink}>
-                            {i18n.gettext('Plark for Android')}
+                        <NavLink className={styles.mainLink} to="#">
+                            {i18n.gettext('resources')}
                         </NavLink>
-                        <NavLink to="/mobile-wallet" className={styles.mainLink}>
-                            {i18n.gettext('Mobile Wallet')}
+                        <NavLink className={styles.mainLink} to="#">
+                            {i18n.gettext('learn')}
                         </NavLink>
-                        <NavLink to="/bitcoin-wallet" className={styles.mainLink}>
-                            {i18n.gettext('Plark for Bitcoin')}
+                        <NavLink className={styles.mainLink} to="#">
+                            {i18n.gettext('social')}
                         </NavLink>
-                        <NavLink to="/litecoin-wallet" className={styles.mainLink}>
-                            {i18n.gettext('Plark for Litecoin')}
+                        <NavLink to="#" className={styles.mainLink}>
+                            {i18n.gettext('contact')}
                         </NavLink>
+                    </NavigationColumn>
 
-                        <NavLink to="/dogecoin-wallet" className={styles.mainLink}>
-                            {i18n.gettext('Dogecoin Wallet')}
-                        </NavLink>
-                        <NavLink to="/ripple-wallet" className={styles.mainLink}>
-                            {i18n.gettext('Ripple Wallet')}
-                        </NavLink>
-                        <NavLink to="/monero-wallet" className={styles.mainLink}>
-                            {i18n.gettext('Monero Wallet')}
-                        </NavLink>
-                        <NavLink to="/iota-wallet" className={styles.mainLink}>
-                            {i18n.gettext('IOTA Wallet')}
-                        </NavLink>
-                        <NavLink to="/zcash-wallet" className={styles.mainLink}>
-                            {i18n.gettext('Zcash Wallet')}
-                        </NavLink>
+                    <NavigationColumn title={i18n.gettext('sweden')}>
+                        <span className={styles.mainText}>Banérgatan 10</span>
+                        <span className={styles.mainText}>115 23 Stockholm</span>
+                        <span className={styles.mainText}>Sweden</span>
                     </NavigationColumn>
                 </div>
 
                 <div className={styles.navSideColumn}>
+                    <NavigationColumn title={i18n.gettext('enquiries')}>
+                        <a href="mailto:hello@plark.io" className={styles.mainLink} target="_blank">
+                            hello@plark.io
+                        </a>
+                    </NavigationColumn>
+
                     <NavigationColumn title={i18n.gettext('support')}>
                         <a href="mailto:support@plark.io" className={styles.mainLink} target="_blank">
                             support@plark.io
                         </a>
                     </NavigationColumn>
 
-                    <NavigationColumn title={i18n.gettext('сompany')}>
-                        <NavLink to="/about-us" className={styles.mainLink}>
-                            {i18n.gettext('About us')}
-                        </NavLink>
-                        <NavLink to="/contact-us" className={styles.mainLink}>
-                            {i18n.gettext('Contact us')}
-                        </NavLink>
-                        <a href="https://community.plark.io" className={styles.mainLink} target="_blank">
-                            {i18n.gettext('Community')}
-                        </a>
-                        <a href="https://plark.io/blog" className={styles.mainLink}>
-                            {i18n.gettext('Blog')}
-                        </a>
-                        <NavLink to="/faq" className={styles.mainLink}>
-                            {i18n.gettext('FAQs')}
-                        </NavLink>
+                    <NavigationColumn title={i18n.gettext('new york')}>
+                        <span className={styles.mainText}>32 Avenue of the Americas</span>
+                        <span className={styles.mainText}>19th Floor</span>
+                        <span className={styles.mainText}>New York, NY 10013</span>
+                        <span className={styles.mainText}>United States</span>
                     </NavigationColumn>
                 </div>
             </div>

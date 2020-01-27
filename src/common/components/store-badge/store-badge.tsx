@@ -7,7 +7,7 @@ import styles from './store-badge.scss';
 type StoreBadgeProps = {
     platform: Platform;
     height?: number;
-    darkBg?: boolean;
+    isWhite?: boolean;
     className?: string;
 
     alt?: string;
@@ -15,7 +15,7 @@ type StoreBadgeProps = {
 };
 
 export function StoreBadge(props: StoreBadgeProps): JSX.Element {
-    const { platform } = props;
+    const { platform, isWhite = false } = props;
 
     if (!platform) {
         return <div />;
@@ -24,7 +24,7 @@ export function StoreBadge(props: StoreBadgeProps): JSX.Element {
     return (
         <a href={platform.url}
            title={platform.key}
-           className={cn(styles.badge, props.className)}
+           className={cn(styles.badge, isWhite && styles.isWhite, props.className)}
            target="_blank"
            rel="nofollow"
         >
