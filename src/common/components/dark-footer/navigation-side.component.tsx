@@ -62,11 +62,10 @@ export function NavigationSide(): JSX.Element {
                         </a>
                     </NavigationColumn>
 
-                    <NavigationColumn title={i18n.gettext('new york')}>
-                        <span className={styles.mainText}>32 Avenue of the Americas</span>
-                        <span className={styles.mainText}>19th Floor</span>
-                        <span className={styles.mainText}>New York, NY 10013</span>
-                        <span className={styles.mainText}>United States</span>
+                    <NavigationColumn title={i18n.gettext('cyprus')}>
+                        <span className={styles.mainText}>Tseriou, 136, 2nd floor</span>
+                        <span className={styles.mainText}>Strovolos, 2045</span>
+                        <span className={styles.mainText}>Nicosia</span>
                     </NavigationColumn>
                 </div>
             </div>

@@ -1,3 +1,5 @@
+@import './colors';
+
 .legal-section {
 
 }
@@ -5,6 +7,7 @@
 
 .markdown {
     margin-top: 40px;
+    font-weight: 500;
 
     &__main-title {
         margin-top: 80px !important;
@@ -12,5 +15,21 @@
 
     p + h2 {
         margin-top: 50px;
+    }
+
+    h2 {
+        margin-bottom: 20px;
+    }
+
+    a {
+        color: $color-text-dark;
+        text-decoration: underline;
+        transition: all 0.5s;
+
+        &:hover {
+            transition-duration: 0.2s;
+            color: $color-success;
+            text-decoration: none;
+        }
     }
 }

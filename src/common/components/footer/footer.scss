@@ -14,6 +14,10 @@
         padding-top: 0;
     }
 
+    &__content {
+        align-items: flex-start;
+    }
+
     &__second {
         display: flex;
         justify-content: space-between;
@@ -44,10 +48,8 @@
 
     &__main {
         display: flex;
-        flex-direction: column;
 
         @include from-md-width {
-            flex-direction: row;
             flex-wrap: wrap;
         }
     }
