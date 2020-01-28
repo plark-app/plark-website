@@ -10,10 +10,9 @@ import {
     CitationSection,
     SubscribeSection,
     ColumnsSection,
-    CardSection,
     OpenSourceSection,
     FeatureSection,
-    FeedbackSection,
+    FeedbackSection, DarkCardSection,
 } from 'common/components';
 import { useI18n } from 'slim-i18n';
 
@@ -76,7 +75,7 @@ export default function IosWallet(): JSX.Element {
             />
 
 
-            <CardSection
+            <DarkCardSection
                 title={i18n.gettext('Credit card — check!')}
                 description={i18n.gettext('What feature the best crypto wallet for iPhone should have? Possibility to buy crypto via credit or debit card? That’s right. And Plark has it.')}
             />

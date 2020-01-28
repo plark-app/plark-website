@@ -1,7 +1,7 @@
 import React from 'react';
 import { Col } from 'reactstrap';
 import { useI18n } from 'slim-i18n';
-import { Footer, Header, Section, Topic } from 'common/components';
+import { DarkFooter, Header, Section, Topic } from 'common/components';
 import MarkdownContent from 'common/components/markdown-content';
 import textPrivacyPolicy from 'resources/terms/privacy-policy.md';
 import commonStyles from 'common/styles/common.scss';
@@ -24,7 +24,7 @@ export default () => {
                 </Col>
             </Section>
 
-            <Footer />
+            <DarkFooter />
         </>
     );
 }

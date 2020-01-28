@@ -173,8 +173,7 @@
 
     &-image {
         position: absolute;
-        width: 80vw;
-        max-width: 815px;
+        width: calc(50vw + 1280px / 12);
         left: 0;
         top: -100px;
 
@@ -185,14 +184,21 @@
         z-index: 10;
         display: flex;
         align-items: center;
+        justify-content: center;
         cursor: pointer;
-        padding: 0 0 0 128px;
+        padding: 0 0 0 0;
         position: absolute;
         bottom: 0;
         left: 100%;
-        right: -100vw;
         height: 185px;
         background-color: $color-gray05;
+
+        $var-part-width: (1280px - 36px) * 0.667;
+        width: calc(16.67vw + 12px);
+        
+        @include from-width(1280px) {
+            width: calc((100vw - #{$var-part-width}) / 2);
+        }
 
         &__arrow {
             width: 50px;

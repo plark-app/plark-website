@@ -26,7 +26,9 @@ export function DarkFooter(): JSX.Element {
 
 function FooterBackground() {
     const onPressToTop = React.useCallback(() => {
-        scrollTo(0);
+        scrollTo(0, {
+            maxDuration: 700
+        });
     }, []);
 
     return (

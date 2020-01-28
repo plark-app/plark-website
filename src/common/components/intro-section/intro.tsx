@@ -16,6 +16,8 @@ type IntroProps = {
     noDownload?: boolean;
     noPartners?: boolean;
     withPhone?: boolean;
+
+    id?: string;
 };
 
 export default function IntroSection(props: IntroProps): JSX.Element {
@@ -34,6 +36,7 @@ export default function IntroSection(props: IntroProps): JSX.Element {
 
     return (
         <Section
+            id={props.id}
             withLeftPadding
             className={cn(styles.introSection, props.sectionClassName)}
             contentClassName={cn(styles.introSectionContent, props.contentClassName)}

@@ -22,23 +22,17 @@ type MenuElement = {
 };
 
 const mainMenuElements: MenuElement[] = [{
+    key: 'home',
+    name: __('Home'),
+}, {
     key: 'history',
     name: __('History'),
 }, {
     key: 'features',
     name: __('Features'),
 }, {
-    key: 'team',
-    name: __('Team'),
-}, {
     key: 'credit-card',
     name: __('Credit card'),
-}, {
-    key: 'security',
-    name: __('Security'),
-}, {
-    key: 'testimonials',
-    name: __('Testimonials'),
 }, {
     key: 'community',
     name: __('Community'),

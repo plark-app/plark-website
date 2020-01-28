@@ -27,6 +27,7 @@ export default function Home(): JSX.Element {
 
             <IntroSection
                 withPhone
+                id="home"
                 title={i18n.gettext('A piece of magic \nin your pocket')}
                 subtitle={i18n.gettext('A lightning fast app to buy, sell, exchange, \nand store your digital assets')}
             />

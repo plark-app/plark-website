@@ -1,7 +1,8 @@
 import React from 'react';
+import { Col } from 'reactstrap';
 import { useI18n } from 'slim-i18n';
 
-import { Footer, Header, NavLink, Section, Topic, IMenuRoute, IMenuRouteLink, menuRoutes } from 'common/components';
+import { Header, NavLink, Section, Topic, IMenuRoute, IMenuRouteLink, menuRoutes, DarkFooter } from 'common/components';
 import styles from './sitemap.scss';
 
 export default function SitemapPage(): JSX.Element {
@@ -11,10 +12,17 @@ export default function SitemapPage(): JSX.Element {
         <>
             <Header isWhite={true} />
 
-            <Section withLeftPadding>
-                <Topic className={styles.sitemapTopic} titleText={i18n.gettext('Sitemap')} titleTag="h1" />
+            <Section withLeftPadding
+                     className={styles.sitemapSection}
+                     contentClassName={styles.sitemapSectionContent}
+            >
+                <Col xl={11}>
+                    <Topic className={styles.sitemapTopic}
+                           titleText={i18n.gettext('Sitemap')}
+                           titleTag="h1" />
+                </Col>
 
-                <div className={styles.container}>
+                <Col className={styles.container}>
                     {menuRoutes.map((route: IMenuRoute, i: number) => {
                         if (route.columnType === 'get_in_touch') {
                             return null;
@@ -50,10 +58,10 @@ export default function SitemapPage(): JSX.Element {
                             </div>
                         );
                     })}
-                </div>
+                </Col>
             </Section>
 
-            <Footer />
+            <DarkFooter />
         </>
     );
 }
