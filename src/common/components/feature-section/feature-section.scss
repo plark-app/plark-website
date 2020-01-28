@@ -5,22 +5,15 @@
 .feature-section {
     &__content {
         display: flex;
-        flex-direction: column-reverse;
-        justify-content: flex-start;
-        align-items: flex-start;
-
         padding-top: 100px;
         padding-bottom: 0;
-
-        @include from-md-width() {
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: center;
-        }
+        align-items: center;
 
         &.is-ltr {
             @include from-md-width() {
                 flex-direction: row-reverse;
+                justify-content: flex-end;
+
             }
         }
     }
@@ -33,9 +26,6 @@
     }
 
     &__text {
-        max-width: 500px;
-        width: 100%;
-
         @include from-md-width {
             margin-right: 50px;
             margin-left: 0;
@@ -68,6 +58,8 @@
 
     &__image {
         width: 220px;
+        display: block;
+        margin: 0 auto;
 
         @include from-xxl-width {
             width: 260px;

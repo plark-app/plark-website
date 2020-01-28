@@ -7,17 +7,16 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-
-    padding: 0 20px;
-
+    padding: 0 32px;
+    width: 100%;
     border-bottom: 1px solid #dfe4eb;
-
     transition: all ease-in-out 300ms;
 
     @include from-md-width {
         width: calc(100% / 5);
         height: 100%;
         border-bottom: 0;
+        padding: 0 20px;
     }
 
     &__title {

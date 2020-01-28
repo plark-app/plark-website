@@ -10,11 +10,12 @@ import {
     BgTitleSection,
     SubscribeSection,
     ColumnsSection,
-    CardSection,
     OpenSourceSection,
     FeatureSection,
     FeedbackSection,
+    DarkCardSection,
 } from 'common/components';
+import { Col } from 'reactstrap';
 import { useI18n } from 'slim-i18n';
 
 import styles from './bitcoin-wallet.scss';
@@ -67,7 +68,7 @@ export default function BitcoinWallet(): JSX.Element {
             />
 
 
-            <CardSection
+            <DarkCardSection
                 title={i18n.gettext('Credit card to buy and sell Bitcoin!')}
                 description={i18n.gettext('Stop wasting your precious time in search of a convenient exchange: inept rates, low credibility, bad security, or even inability to create an account in your region.')}
                 subtitle={i18n.gettext('By developing the out-of-the-box solution, we’ve eliminated these issues. Add your credit or debit card to purchase or withdraw fiat currency with it — easier than ever.')}
@@ -99,26 +100,27 @@ export default function BitcoinWallet(): JSX.Element {
 
             <FeedbackSection />
 
-            <Section>
+            <Section withLeftPadding>
+                <Col xl={11}>
+                    <Topic
+                        isSmall
+                        isCenter
+                        className={styles.bitcoinTopic}
+                        titleClassName={styles.bitcoinTopicTitle}
+                        titleText={i18n.gettext('What is Bitcoin?')}
+                        descText={i18n.gettext('Bitcoin is a digital currency (with no central bank or corporate office) that can be sent between users on the peer-to-peer network without intermediaries.')}
+                    />
 
-                <Topic
-                    isSmall
-                    isCenter
-                    className={styles.bitcoinTopic}
-                    titleClassName={styles.bitcoinTopicTitle}
-                    titleText={i18n.gettext('What is Bitcoin?')}
-                    descText={i18n.gettext('Bitcoin is a digital currency (with no central bank or corporate office) that can be sent between users on the peer-to-peer network without intermediaries.')}
-                />
-
-                <Subcopy
-                    texts={[{
-                        content: i18n.gettext('Transactions get verified within the network through cryptography and documented in a “public notebook” called a blockchain. An unknown person under the name of Satoshi Nakamoto, who has released the open-source software in 2009, is considered as a Bitcoin’s inventor. '),
-                    }, {
-                        content: i18n.gettext('Bitcoin is limited, while new of those creates as a reward for a process named mining (for processing transactions).'),
-                    }, {
-                        content: i18n.gettext('Bitcoin is much simpler than you think. We’ve taken away useless information from your sight. Nothing should distract or get you info confusion. Well, need not understand how a car works to drive it — same thing with Bitcoin. And we’ve created this free Bitcoin wallet to make your life easier.'),
-                    }]}
-                />
+                    <Subcopy
+                        texts={[{
+                            content: i18n.gettext('Transactions get verified within the network through cryptography and documented in a “public notebook” called a blockchain. An unknown person under the name of Satoshi Nakamoto, who has released the open-source software in 2009, is considered as a Bitcoin’s inventor. '),
+                        }, {
+                            content: i18n.gettext('Bitcoin is limited, while new of those creates as a reward for a process named mining (for processing transactions).'),
+                        }, {
+                            content: i18n.gettext('Bitcoin is much simpler than you think. We’ve taken away useless information from your sight. Nothing should distract or get you info confusion. Well, need not understand how a car works to drive it — same thing with Bitcoin. And we’ve created this free Bitcoin wallet to make your life easier.'),
+                        }]}
+                    />
+                </Col>
             </Section>
 
             <SubscribeSection />

@@ -37,6 +37,7 @@ export default function IntroSection(props: IntroProps): JSX.Element {
             withLeftPadding
             className={cn(styles.introSection, props.sectionClassName)}
             contentClassName={cn(styles.introSectionContent, props.contentClassName)}
+            outerContent={<ArrowDownSvg className={styles.introArrow} onClick={onClickArrow} />}
         >
             <IntroPhoneSection
                 showDesktop={withPhone}
@@ -50,8 +51,6 @@ export default function IntroSection(props: IntroProps): JSX.Element {
 
                 {!noDownload && <DownloadCell />}
             </Col>
-
-            <ArrowDownSvg className={styles.introArrow} onClick={onClickArrow} />
         </Section>
     );
 }
