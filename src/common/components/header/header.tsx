@@ -103,14 +103,14 @@ class Header extends React.Component<HeaderInnerProps, HeaderState> {
                 </header>
 
                 <nav className={sidenavClassName}>
-                    <a href="https://community.plark.io" className={styles.sidenavUnit}>
-                        {i18n.gettext('Community')}
+                    <a href="https://t.me/PlarkWalletSupport" className={styles.sidenavUnit}>
+                        {i18n.gettext('Support')}
                     </a>
                     <a href="https://plark.io/blog" className={styles.sidenavUnit}>
                         {i18n.gettext('Blog')}
                     </a>
-                    <a href="https://t.me/PlarkWalletSupport" className={styles.sidenavUnit}>
-                        {i18n.gettext('Support')}
+                    <a href="https://community.plark.io" className={styles.sidenavUnit}>
+                        {i18n.gettext('Community')}
                     </a>
                 </nav>
             </>

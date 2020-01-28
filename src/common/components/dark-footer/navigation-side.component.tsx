@@ -25,27 +25,39 @@ export function NavigationSide(): JSX.Element {
             <div className={styles.footerStart}>
                 <div className={styles.navSideColumn}>
                     <NavigationColumn title={i18n.gettext('sitemap')}>
-                        <NavLink className={cnmStyles.mainLink} to="#">
-                            {i18n.gettext('product')}
+                        <NavLink className={cnmStyles.mainLink} to="/ios-wallet">
+                            {i18n.gettext('Plark for iOS')}
                         </NavLink>
-                        <NavLink className={cnmStyles.mainLink} to="#">
-                            {i18n.gettext('resources')}
+                        <NavLink className={cnmStyles.mainLink} to="/mobile-wallet">
+                            {i18n.gettext('Mobile Wallet')}
                         </NavLink>
-                        <NavLink className={cnmStyles.mainLink} to="#">
-                            {i18n.gettext('learn')}
+                        <NavLink className={cnmStyles.mainLink} to="/bitcoin-wallet">
+                            {i18n.gettext('Bitcoin Wallet')}
                         </NavLink>
-                        <NavLink className={cnmStyles.mainLink} to="#">
-                            {i18n.gettext('social')}
-                        </NavLink>
-                        <NavLink to="#" className={cnmStyles.mainLink}>
-                            {i18n.gettext('contact')}
+                        <NavLink className={cnmStyles.mainLink} to="/litecoin-wallet">
+                            {i18n.gettext('Litecoin Wallet')}
                         </NavLink>
                     </NavigationColumn>
 
-                    <NavigationColumn title={i18n.gettext('sweden')}>
-                        <span className={cnmStyles.mainText}>Banérgatan 10</span>
-                        <span className={cnmStyles.mainText}>115 23 Stockholm</span>
-                        <span className={cnmStyles.mainText}>Sweden</span>
+                    <NavigationColumn title={i18n.gettext('trending topics')}>
+                        <NavLink className={cnmStyles.mainLink} to="/android-wallet">
+                            {i18n.gettext('Plark for Android')}
+                        </NavLink>
+                        <NavLink className={cnmStyles.mainLink} to="/ripple-wallet">
+                            {i18n.gettext('Ripple Wallet')}
+                        </NavLink>
+                        <NavLink className={cnmStyles.mainLink} to="/dogecoin-wallet">
+                            {i18n.gettext('Dogecoin Wallet')}
+                        </NavLink>
+                        <NavLink className={cnmStyles.mainLink} to="/monero-wallet">
+                            {i18n.gettext('Monero Wallet')}
+                        </NavLink>
+                        <NavLink className={cnmStyles.mainLink} to="/iota-wallet">
+                            {i18n.gettext('IOTA Wallet')}
+                        </NavLink>
+                        <NavLink className={cnmStyles.mainLink} to="/zcash-wallet">
+                            {i18n.gettext('Zcash Wallet')}
+                        </NavLink>
                     </NavigationColumn>
                 </div>
 
