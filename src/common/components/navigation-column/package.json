@@ -1,0 +1,6 @@
+{
+    "private": true,
+    "name": "navigation-column",
+    "main": "navigation-column.tsx",
+    "typings": "navigation-column.tsx"
+}

@@ -2,9 +2,10 @@ import React from 'react';
 import cn from 'classnames';
 import { Col } from 'reactstrap';
 import { useI18n } from 'slim-i18n';
-import { NavLink, DownloadCell } from 'common/components';
+import { NavLink, DownloadCell, NavigationColumn } from 'common/components';
+import cnmStyles from 'common/styles/common.scss';
 import PlarkLogo from 'resources/svgs/plark-logo.component.svg';
-import { NavigationColumn } from './navigation-column';
+
 import styles from './dark-footer.scss';
 
 export function ProductSide(): JSX.Element {
@@ -21,7 +22,7 @@ export function ProductSide(): JSX.Element {
 
                 <NavigationColumn title="download app" className={styles.download}>
                     <a href="https://dl.plark.io/app/website-appstore"
-                       className={cn(styles.mainLink, 'arrow-link')}
+                       className={cn(cnmStyles.mainLink, 'arrow-link')}
                        target="_blank"
                     >{i18n.gettext('plark for iphone')}</a>
                 </NavigationColumn>
@@ -29,15 +30,15 @@ export function ProductSide(): JSX.Element {
             </div>
 
             <div className={cn(styles.footerEnd, styles.bottomRight)}>
-                <NavLink to="/privacy" className={styles.secondaryLink}>
+                <NavLink to="/privacy" className={cnmStyles.secondaryLink}>
                     {i18n.gettext('Privacy')}
                 </NavLink>
 
-                <NavLink to="/terms" className={styles.secondaryLink}>
+                <NavLink to="/terms" className={cnmStyles.secondaryLink}>
                     {i18n.gettext('Terms')}
                 </NavLink>
 
-                <NavLink to="/sitemap" className={styles.secondaryLink}>
+                <NavLink to="/sitemap" className={cnmStyles.secondaryLink}>
                     {i18n.gettext('Sitemap')}
                 </NavLink>
             </div>

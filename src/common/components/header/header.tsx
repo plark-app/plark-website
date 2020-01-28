@@ -78,7 +78,7 @@ class Header extends React.Component<HeaderInnerProps, HeaderState> {
                         <Row className={cn(styles.headerRow, 'free-left-space')}>
                             <Col xs={5} lg={3} className={cn(styles.headerLeft)}>
                                 <BurgerButton opened={openedMenu}
-                                              className={styles.dropdownMenuBtn}
+                                              className={styles.dmBtn}
                                               onClick={this._toggleMenu}
                                 />
 

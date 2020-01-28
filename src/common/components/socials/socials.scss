@@ -1,6 +1,7 @@
 @import '../../styles/colors';
-@import '../../styles/vars';
 @import '../../styles/media';
+@import '../../styles/vars';
+@import '../../styles/text';
 
 .social {
     display: flex;
@@ -10,6 +11,22 @@
     }
 
     max-width: 250px;
+
+    &.is-title-mode &__item {
+        font-size: 14px;
+        line-height: 1.85;
+        font-weight: 400;
+
+        text-transform: lowercase;
+        text-decoration: underline;
+        vertical-align: center;
+
+        &:not(:last-child):after {
+            content: '|';
+            display: inline-block;
+            margin: 0 5px;
+        }
+    }
 
     &__item {
         color: $color-gray40;

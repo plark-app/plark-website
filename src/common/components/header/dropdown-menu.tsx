@@ -5,7 +5,8 @@ import { __, TranslateFunction } from 'common/i18n';
 import { Col } from 'reactstrap';
 import { useI18n } from 'slim-i18n';
 import { CSSTransition } from 'react-transition-group';
-import { Section } from 'common/components';
+import { Section, Socials } from 'common/components';
+import { DropdownMenuRightContent } from './dropdown-menu-right-content';
 import styles from './header.scss';
 
 export type DropdownMenuProps = {
@@ -53,7 +54,7 @@ export function DropdownMenu(props: DropdownMenuProps): JSX.Element {
     const onClickMenuItem = React.useCallback((_event: MouseEvent<HTMLElement>) => {
         triggerClose && triggerClose();
 
-        const key = (_event.target as HTMLElement).getAttribute('custom-scroll-to');
+        const key = (_event.currentTarget as HTMLElement).getAttribute('custom-scroll-to');
 
         if (key) {
             const scrollToElement = document.getElementById(key);
@@ -67,24 +68,44 @@ export function DropdownMenu(props: DropdownMenuProps): JSX.Element {
     }, []);
 
     if (!__isBrowser__) {
-        return <div className={styles.dropdownMenuDummy} />;
+        return <div className={styles.dmDummy} />;
     }
 
     return (
         <CSSTransition in={opened} classNames={'mobile-menu'} timeout={{ enter: 500, exit: 300 }} unmountOnExit>
-            <Section withLeftPadding
-                     className={cn(styles.dropdownMenu, className)}
-                     contentClassName={styles.dropdownMenuContent}
+            <Section
+                className={cn(styles.dm, className)}
+                contentClassName={styles.dmContent}
+                outerContent={<div className={styles.dmDarkSide} />}
             >
-                <Col className={styles.dropdownMenuNav} lg={3} sm={4}>
-                    {mainMenuElements.map((elem: MenuElement) => (
-                        <div className={styles.dropdownMenuItem} key={elem.key}>
-                            <a href={`/#${elem.key}`} onClick={onClickMenuItem} custom-scroll-to={elem.key}>
-                                {elem.name(i18n)}
+                <Col className={styles.dmNav} lg={5} sm={8}>
+                    {mainMenuElements.map((elem: MenuElement, index: number) => (
+                        <div className={styles.dmItem} key={elem.key}>
+                            <a href={`/#${elem.key}`}
+                               onClick={onClickMenuItem}
+                               className={styles.dmItemLink}
+                               custom-scroll-to={elem.key}
+                            >
+                                <span className={styles.dmItemIndex}>0{index + 1}</span>
+                                <span className={styles.dmItemText}>{elem.name(i18n)}</span>
                             </a>
                         </div>
                     ))}
+
+                    <a href="https://dl.plark.io/app/website-appstore"
+                       className={cn(styles.dmNavDownload, 'arrow-link')}
+                       target="_blank"
+                    >{i18n.gettext(' Available on App Store')}</a>
                 </Col>
+
+                <DropdownMenuRightContent />
+
+                <span className={styles.dmCopyright}>all rights reserved 2020 © plark</span>
+
+                <Socials
+                    titleMode
+                    className={styles.dmSocial}
+                />
             </Section>
         </CSSTransition>
     );

@@ -1,6 +1,5 @@
 import React from 'react';
 import cn from 'classnames';
-
 import styles from './burger-button.scss';
 
 export type BurgerButtonProps = {

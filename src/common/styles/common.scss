@@ -33,3 +33,47 @@
         }
     }
 }
+
+.title {
+    display: block;
+    line-height: 1.57;
+    color: $color-text-secondary;
+
+    &.is-column-title {
+        display: block;
+        margin-bottom: 5px;
+    }
+}
+
+
+/*
+ * Describe the footer links
+ */
+
+.secondary-link,
+.main-link {
+    text-decoration: underline;
+    display: inline-block;
+
+    &:hover {
+        text-decoration: none;
+        color: $color-success;
+    }
+}
+
+.main-link {
+    color: $color-gray01;
+}
+
+.secondary-link {
+    color: $color-text-secondary;
+}
+
+.main-text {
+    color: $color-gray01;
+    text-transform: lowercase;
+    display: block;
+    line-height: 1.85;
+}
+
+

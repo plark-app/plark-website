@@ -22,6 +22,7 @@ export * from './dark-card-section';
 export * from './card-section';
 export * from './dark-footer';
 export * from './socials';
+export * from './navigation-column';
 
 export { default as Icons } from './icons';
 export { default as UIButton } from './ui-button';

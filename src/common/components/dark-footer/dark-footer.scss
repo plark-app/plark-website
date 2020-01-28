@@ -73,23 +73,9 @@
     }
 
     &-right {
-        & .secondary-link {
+        & a {
             text-transform: lowercase;
             margin-right: 10px;
-        }
-    }
-
-    &-social {
-        &__link {
-            text-transform: lowercase;
-            text-decoration: underline;
-            vertical-align: center;
-
-            &:not(:last-child):after {
-                content: '|';
-                display: inline-block;
-                margin: 0 5px;
-            }
         }
     }
 
@@ -135,48 +121,6 @@
         @include from-sm-width {
             margin-bottom: 56px;
         }
-    }
-}
-
-.title {
-    display: block;
-    line-height: 1.57;
-    color: $color-text-secondary;
-
-    &.is-column-title {
-        display: block;
-        margin-bottom: 5px;
-    }
-}
-
-
-/*
- * Describe the footer links
- */
-
-.main-link {
-    color: $color-gray01;
-}
-
-.secondary-link {
-    color: $color-text-secondary;
-}
-
-.main-text {
-    color: $color-gray01;
-    text-transform: lowercase;
-    display: block;
-    line-height: 1.85;
-}
-
-.secondary-link,
-.main-link {
-    text-decoration: underline;
-    display: inline-block;
-
-    &:hover {
-        text-decoration: none;
-        color: $color-success;
     }
 }
 
@@ -265,19 +209,6 @@
         }
     }
 }
-
-
-.navigation-column {
-    & + & {
-        margin-top: 50px;
-    }
-
-    & .main-link {
-        display: block;
-        text-transform: lowercase;
-    }
-}
-
 
 .download {
     display: none;

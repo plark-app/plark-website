@@ -1,6 +1,7 @@
 import React from 'react';
 import cn from 'classnames';
-import styles from './dark-footer.scss';
+import cnmStyles from 'common/styles/common.scss';
+import styles from './navigation-column.scss';
 
 type NavigationColumnProps = {
     title: string;
@@ -11,7 +12,7 @@ type NavigationColumnProps = {
 export function NavigationColumn(props: NavigationColumnProps): JSX.Element {
     return (
         <div className={cn(styles.navigationColumn, props.className)}>
-            <p className={cn(styles.title, styles.isColumnTitle)}>{props.title}</p>
+            <p className={cn(cnmStyles.title, styles.isColumnTitle)}>{props.title}</p>
             <div>{props.children}</div>
         </div>
     );
