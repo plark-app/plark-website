@@ -14,6 +14,8 @@ export type TSectionProps = {
     withLeftPadding?: boolean;
     isDark?: boolean;
     component?: string | any;
+
+    proxyRef?: React.Ref<any>;
 };
 
 export const Section = React.memo(function Section(props: TSectionProps) {
@@ -41,6 +43,7 @@ export const Section = React.memo(function Section(props: TSectionProps) {
 
     const componentProps = {
         id: props.id,
+        ref: props.proxyRef,
         className: sectionClass,
     };
 

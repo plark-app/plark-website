@@ -36,7 +36,7 @@ export function IPhoneScreen(props: IphoneScreenProps): JSX.Element {
                            autoPlay
                            loop
                            muted
-                           poster="/img/interfaces/01.png"
+                           poster="/img/interfaces/00.png"
                     >
                         <source src={src} type={srcType} />
                         Your browser does not support HTML5 video.

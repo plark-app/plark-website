@@ -61,7 +61,7 @@ class SubscribeForm extends React.PureComponent<WithTranslationsProps> {
         if (!this.state.email || this.state.email.length < 4) {
             this.setState({
                 loading: false,
-                errorMessage: 'Provide valid email',
+                errorMessage: 'That’s cool, but we need an email  👻',
             });
 
             return;
@@ -75,7 +75,7 @@ class SubscribeForm extends React.PureComponent<WithTranslationsProps> {
             await Axios.post('/api/email-subscribe', requestData, { timeout: 5000 });
             this.setState({ success: true });
         } catch (error) {
-            this.setState({ errorMessage: 'Provide valid email' });
+            this.setState({ errorMessage: 'That’s cool, but we need an email  👻' });
         } finally {
             this.setState({ loading: false });
         }

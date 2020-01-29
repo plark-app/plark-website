@@ -33,8 +33,8 @@ function buildFeatureList(i18n: ITranslationsAdapter): FeatureUnit[] {
             },
         },
         screen: {
-            src: '/img/interfaces/00.png',
-            srcset: '/img/interfaces/00@2x.png 2x'
+            src: '/img/interfaces/01.png',
+            srcset: '/img/interfaces/01@2x.png 2x'
         }
     }, {
         title: i18n.gettext('Tool set perfectly balanced'),
@@ -49,8 +49,8 @@ function buildFeatureList(i18n: ITranslationsAdapter): FeatureUnit[] {
             },
         },
         screen: {
-            src: '/img/interfaces/01.png',
-            srcset: '/img/interfaces/01@2x.png 2x'
+            src: '/img/interfaces/02.png',
+            srcset: '/img/interfaces/02@2x.png 2x'
         }
     }, {
         title: i18n.gettext('Anonymity taken further'),
@@ -65,8 +65,8 @@ function buildFeatureList(i18n: ITranslationsAdapter): FeatureUnit[] {
             },
         },
         screen: {
-            src: '/img/interfaces/02.png',
-            srcset: '/img/interfaces/02@2x.png 2x'
+            src: '/img/interfaces/03.png',
+            srcset: '/img/interfaces/03@2x.png 2x'
         }
     }];
 }
@@ -92,8 +92,8 @@ export default function Home(): JSX.Element {
                 mainText={i18n.gettext('We created Plark — a decentralized crypto wallet with handy stuff to get things done. Whatever feature you need to manage your digital assets is now at your fingertips. We already added the most popular cryptos with more to come. We hope, you will love our app.')}
                 secondText={i18n.gettext('We are the team of no strangers to blockchain, and we know how to make crypto your daily habit.')}
                 link={{
-                    text: i18n.gettext('join discussion on Flarum'),
-                    url: 'https://community.plark.io',
+                    text: i18n.gettext('Get Plark on App Store'),
+                    url: 'https://dl.plark.io/app/website-appstore',
                     rel: 'nofollow',
                 }}
                 citation={{
@@ -103,7 +103,7 @@ export default function Home(): JSX.Element {
                 image={{
                     src: '/img/team/image_1.png',
                     caption: i18n.gettext('Our software developer Max is trying to code the app the way our mad designer wants it.'),
-                    subCaption: i18n.gettext('Mad scientist’s office in the clouds. Kyiv, Ukraine.'),
+                    subCaption: i18n.gettext('And pretends he knows how to do it ;)'),
                 }}
             />
 
@@ -125,7 +125,7 @@ export default function Home(): JSX.Element {
 
                 caption={{
                     title: i18n.gettext('Dima and Stanislav showing that the entrance is over there 🤓'),
-                    description: i18n.gettext('Kyiv, Ukraine'),
+                    description: i18n.gettext('Kudos to our talented photographer'),
                 }}
             />
 

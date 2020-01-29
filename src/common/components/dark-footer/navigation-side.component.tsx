@@ -24,7 +24,7 @@ export function NavigationSide(): JSX.Element {
         <Col className={styles.navSide} lg={4} sm={8}>
             <div className={styles.footerStart}>
                 <div className={styles.navSideColumn}>
-                    <NavigationColumn title={i18n.gettext('sitemap')}>
+                    <NavigationColumn title={i18n.gettext('products')}>
                         <NavLink className={cnmStyles.mainLink} to="/ios-wallet">
                             {i18n.gettext('Plark for iOS')}
                         </NavLink>
@@ -62,7 +62,7 @@ export function NavigationSide(): JSX.Element {
                 </div>
 
                 <div className={styles.navSideColumn}>
-                    <NavigationColumn title={i18n.gettext('enquiries')}>
+                    <NavigationColumn title={i18n.gettext('inquiries')}>
                         <a href="mailto:hello@plark.io" className={cnmStyles.mainLink} target="_blank">
                             hello@plark.io
                         </a>
@@ -74,7 +74,8 @@ export function NavigationSide(): JSX.Element {
                         </a>
                     </NavigationColumn>
 
-                    <NavigationColumn title={i18n.gettext('cyprus')}>
+                    <NavigationColumn title={i18n.gettext('address')}>
+                        <span className={cnmStyles.mainText}>Cyprus</span>
                         <span className={cnmStyles.mainText}>Tseriou, 136, 2nd floor</span>
                         <span className={cnmStyles.mainText}>Strovolos, 2045</span>
                         <span className={cnmStyles.mainText}>Nicosia</span>

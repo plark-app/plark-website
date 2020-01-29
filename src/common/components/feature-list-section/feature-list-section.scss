@@ -69,20 +69,16 @@
 .sticky-iphone {
     width: 100%;
     z-index: 1;
-    margin: 0 auto 50px auto;
-
     max-width: 1045px;
     padding-top: 100px;
     top: 0;
     height: 100%;
-
     padding-right: 24px;
 
     &__image-root {
         right: 0;
         width: 100%;
         max-width: 298px;
-        margin: 0 auto;
     }
 
     &__image {
@@ -91,6 +87,18 @@
         width: 100%;
     }
 }
+
+
+@include to-sm-width {
+    .sticky-iphone {
+        margin: 0 auto 50px auto;
+
+        &__image-root {
+            margin: 0 auto;
+        }
+    }
+}
+
 
 @include from-md-width {
     .sticky-iphone {
@@ -108,6 +116,7 @@
         }
     }
 }
+
 
 @include from-lg-width {
     .right-side {

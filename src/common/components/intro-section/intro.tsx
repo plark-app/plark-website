@@ -66,9 +66,12 @@ type IntroPhoneSectionProps = {
 function IntroPhoneSection(props: IntroPhoneSectionProps): JSX.Element {
     return <div className={cn(styles.introPhoneSection, props.showDesktop && styles.iShowDesktop)}>
         <IPhoneScreen
-            src="/videos/iphone.mp4"
-            srcType="video/mp4"
-            type="video"
+            src="/img/interfaces/00.png"
+            srcset="/img/interfaces/00@2x.png 2x"
+            type="photo"
+            // src="/videos/iphone.mp4"
+            // srcType="video/mp4"
+            // type="video"
             className={styles.introPhoneSectionImage}
         />
     </div>;

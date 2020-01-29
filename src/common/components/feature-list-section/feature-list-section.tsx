@@ -1,10 +1,11 @@
 import React from 'react';
+import _ from 'lodash';
 import cn from 'classnames';
 import { Col } from 'reactstrap';
 import { IPhoneScreen, Section, TextBlock } from 'common/components';
 import style from './feature-list-section.scss';
 
-export type IPhoneScreen = {
+export type IPhoneScreenUnit = {
     src: string;
     srcset?: string;
 };
@@ -19,7 +20,7 @@ export type FeatureUnit = {
         link?: CommonLink;
     };
 
-    screen: IPhoneScreen;
+    screen: IPhoneScreenUnit;
 };
 
 type FeatureListSectionProps = CommonSection & {
@@ -28,14 +29,67 @@ type FeatureListSectionProps = CommonSection & {
 
 export const FeatureListSection = React.memo(function FeatureListSection(props: FeatureListSectionProps): JSX.Element {
     const { id, features } = props;
+    const [index, setIndex] = React.useState(0);
+    const elRefs = React.useRef(_.times(features.length, () => React.createRef()));
 
-    const [index] = React.useState(0);
+    React.useEffect(() => {
+        if (!__isBrowser__) {
+            return;
+        }
 
-    const iphoneList: Array<IPhoneScreen> = React.useMemo(() => {
+        let animationFrameHandler: number | undefined;
+        const offset: number = 100;
+
+        const handleScroll = () => {
+            if (typeof window === undefined) {
+                return;
+            }
+
+            if (animationFrameHandler) {
+                cancelAnimationFrame(animationFrameHandler);
+            }
+
+            animationFrameHandler = requestAnimationFrame(() => {
+                const windowSize = window.outerHeight || document.documentElement.clientHeight;
+                let activeIndex = 0;
+                let i: number;
+
+                for (i = 0; i < elRefs.current.length; i++) {
+                    const ref = elRefs.current[i];
+                    if (!ref || !ref.current) {
+                        continue;
+                    }
+
+                    const el = ref.current as HTMLElement;
+
+                    const top = el.getBoundingClientRect().top;
+                    const height = el.clientHeight;
+
+                    const topPosition = windowSize - top;
+                    const isActive = topPosition - offset >= 0 && top + offset <= height;
+
+                    if (isActive) {
+                        activeIndex = i;
+                    }
+                }
+
+                setIndex(activeIndex);
+                animationFrameHandler && cancelAnimationFrame(animationFrameHandler);
+            });
+        };
+
+        document.addEventListener('scroll', handleScroll);
+
+        return () => {
+            document.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
+    const iphoneList: Array<IPhoneScreenUnit> = React.useMemo(() => {
         return features.map((f: FeatureUnit) => f.screen);
     }, []);
 
-    const currentScreen: IPhoneScreen = iphoneList[index];
+    const currentScreen: IPhoneScreenUnit = iphoneList[index];
 
     return (
         <div id={id} className={style.root}>
@@ -58,6 +112,7 @@ export const FeatureListSection = React.memo(function FeatureListSection(props: 
                     withLeftPadding
                     className={style.section}
                     contentClassName={style.sectionContent}
+                    proxyRef={elRefs.current[index]}
                 >
                     <Col lg={3} md={6}>
                         <h3 className={cn(style.title)}>{elem.title}</h3>

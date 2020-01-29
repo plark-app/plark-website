@@ -88,7 +88,7 @@ class Header extends React.Component<HeaderInnerProps, HeaderState> {
                             </Col>
 
                             <Col className={styles.headerCenterLabel} md={4} lg={{ size: 3, offset: 1 }}>
-                                {i18n.gettext(`Ukrainian developing company\nwith Blockchain-based solutions`)}
+                                {i18n.gettext(`It’s all about experience`)}
                             </Col>
 
                             <Col className={styles.headerNav} xs={7} lg={4}>

@@ -17,7 +17,7 @@ export function ProductSide(): JSX.Element {
                 <PlarkLogo height={38} className={styles.productSideLogo} />
 
                 <p className={styles.productSideDescription}>
-                    {i18n.gettext('Founded in 2015, Plark is an independent studio specializing in graphic and digital production. Its creative team includes both designers and developers who are based in Ukraine.')}
+                    {i18n.gettext('Wow, you’ve scrolled right to the bottom. Here, get some 🍪. Hope you like our app and see you soon on blockchain!')}
                 </p>
 
                 <NavigationColumn title="download app" className={styles.download}>

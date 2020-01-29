@@ -13,7 +13,7 @@ export const DropdownMenuRightContent = React.memo(function DropdownMenuRightCon
     return (
         <Col className={styles.dmRight} lg={{ offset: 1, size: 5 }}>
             <div className={styles.dmRightNav}>
-                <NavigationColumn title={i18n.gettext('enquiries')}>
+                <NavigationColumn title={i18n.gettext('inquiries')}>
                     <a href="mailto:hello@plark.io" className={cn(cnmStyles.mainLink, styles.text)} target="_blank">
                         hello@plark.io
                     </a>
@@ -25,7 +25,8 @@ export const DropdownMenuRightContent = React.memo(function DropdownMenuRightCon
                     </a>
                 </NavigationColumn>
 
-                <NavigationColumn title={i18n.gettext('cyprus')}>
+                <NavigationColumn title={i18n.gettext('address')}>
+                    <span className={cn(cnmStyles.mainText, styles.text)}>Cyprus</span>
                     <span className={cn(cnmStyles.mainText, styles.text)}>Tseriou, 136, 2nd floor</span>
                     <span className={cn(cnmStyles.mainText, styles.text)}>Strovolos, 2045</span>
                     <span className={cn(cnmStyles.mainText, styles.text)}>Nicosia</span>
@@ -36,13 +37,14 @@ export const DropdownMenuRightContent = React.memo(function DropdownMenuRightCon
                 <PlarkLogo height={38} className={styles.dmRightLogo} />
 
                 <p className={styles.dmRightDescription}>
-                    {i18n.gettext('Founded in 2015, Plark is an independent studio specializing in graphic and digital production. Its creative team includes both designers and developers who are based in Ukraine.')}
+                    {i18n.gettext('Wow, you’ve scrolled right to the bottom. Here, get some 🍪. Hope you like our app and see you soon on blockchain!')}
                 </p>
 
                 <NavigationColumn title="download app">
                     <a href="https://dl.plark.io/app/website-appstore"
                        className={cn(styles.dmRightDownload, 'arrow-link')}
                        target="_blank"
+                       rel="nofollow"
                     >{i18n.gettext(' Available on App Store')}</a>
                 </NavigationColumn>
             </div>
