@@ -32,10 +32,12 @@ export function DarkFeaturesSection(props: BlackFeaturesProps): JSX.Element {
             contentClassName={styles.sectionContent}
         >
             <Col className={styles.left} lg={3}>
-                <h3 className={styles.leftTitle}>{props.title}</h3>
-                <a href={link.url} title={link.title} className={cn(styles.leftLink, 'arrow-link')} rel={link.rel}>
-                    {link.text}
-                </a>
+                <div className={styles.leftContent}>
+                    <h3 className={styles.leftTitle}>{props.title}</h3>
+                    <a href={link.url} title={link.title} className={cn(styles.leftLink, 'arrow-link')} rel={link.rel}>
+                        {link.text}
+                    </a>
+                </div>
             </Col>
 
             <Col className={cn(styles.featureList)} lg={{ size: 7, offset: 1 }} sm={12}>
