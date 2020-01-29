@@ -4,12 +4,12 @@ import {
     Footer,
     Header,
     SubscribeSection,
-    CardSection,
     OpenSourceSection,
     FeatureSection,
     TwoIPhones,
     StickIphone,
     IntroSection,
+    DarkCardSection,
 } from 'common/components';
 import style from './about-us.scss';
 
@@ -46,7 +46,7 @@ export default function AboutUs(): JSX.Element {
 
             <TwoIPhones className={style.twoIphones} />
 
-            <CardSection
+            <DarkCardSection
                 title={i18n.gettext('Buy and sell crypto with a credit card.')}
                 description={i18n.gettext(
                     'Add your credit or debit card and purchase Bitcoin, Litecoin, Ethereum, and Dash right away. The feature, which best crypto wallet should have.',

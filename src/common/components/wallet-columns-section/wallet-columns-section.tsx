@@ -18,6 +18,7 @@ export default function WalletColumnsSection(props: IWalletColumnsSectionProps):
     return (
         <Section contentClassName={styles.walletColumns}>
             <Topic
+                isCenter
                 titleText={titleText}
                 titleClassName={classnames(styles.walletColumnsTitle, titleClassName)}
                 descText={descrText}

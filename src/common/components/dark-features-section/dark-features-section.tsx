@@ -6,12 +6,7 @@ import styles from './dark-features-section.scss';
 
 export type FeatureUnitProps = {
     text: string;
-    link?: {
-        url: string;
-        text: string;
-        title?: string;
-    }
-
+    link?: CommonLink;
     image: {
         url: string;
         alt: string;
@@ -21,12 +16,7 @@ export type FeatureUnitProps = {
 
 type BlackFeaturesProps = CommonSection & {
     title: string;
-    link: {
-        url: string;
-        text: string;
-        title?: string;
-    }
-
+    link: CommonLink;
     features?: Array<FeatureUnitProps>;
 };
 
@@ -43,7 +33,7 @@ export function DarkFeaturesSection(props: BlackFeaturesProps): JSX.Element {
         >
             <Col className={styles.left} lg={3}>
                 <h3 className={styles.leftTitle}>{props.title}</h3>
-                <a href={link.url} title={link.title} className={cn(styles.leftLink, 'arrow-link')}>
+                <a href={link.url} title={link.title} className={cn(styles.leftLink, 'arrow-link')} rel={link.rel}>
                     {link.text}
                 </a>
             </Col>
@@ -63,7 +53,7 @@ function FeatureUnit(props: FeatureUnitProps) {
             <Col className={styles.featureText} lg={5} sm={6} xs={12}>
                 <p className={styles.featureTextContent}>{text}</p>
                 {link ? (
-                    <a href={link.url} className={cn('citation', 'arrow-link')}>{link.text}</a>
+                    <a href={link.url} className={cn('citation', 'arrow-link')} rel={link.rel}>{link.text}</a>
                 ) : undefined}
             </Col>
 

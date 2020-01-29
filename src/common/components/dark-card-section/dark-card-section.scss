@@ -126,3 +126,49 @@
         margin-bottom: 5px;
     }
 }
+
+
+.card {
+    &__steps {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        margin: 80px 0;
+        max-width: 640px;
+
+        @include from-md-width {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+    }
+
+    &__step {
+        width: 230px;
+        min-height: 120px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        flex-direction: column;
+
+        margin-bottom: 75px;
+
+        &-number {
+            color: $color-gray20;
+            font-size: 80px;
+            font-weight: 300;
+        }
+
+        &-description {
+            color: $color-gray01;
+            font-size: 16px;
+            font-weight: 700;
+            text-align: center;
+        }
+    }
+}

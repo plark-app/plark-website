@@ -12,23 +12,26 @@ type BgTitleProps = CommonSection & {
 
     wiki?: {
         text: string;
-        linkTitle?: string;
-        url?: string;
+        link?: CommonLink;
     };
 };
 
-export default function BgTitleSection(props: BgTitleProps): JSX.Element {
+export const BgTitleSection = React.memo(function BgTitleSection(props: BgTitleProps): JSX.Element {
     const { wiki } = props;
 
     return (
-        <Section withLeftPadding
-                 className={style.section}
-                 contentClassName={style.sectionContent}
-                 id={props.id}
+        <Section
+            withLeftPadding
+            className={style.section}
+            contentClassName={style.sectionContent}
+            id={props.id}
         >
             {props.withMobile && (
                 <div className={style.sectionWithMobile}>
-                    <img src="/img/main-screen.png" alt="Main Screen" className={style.sectionWithMobileImage} />
+                    <img src="/img/main-screen.png"
+                         alt="Main Screen"
+                         className={style.sectionWithMobileImage}
+                    />
                 </div>
             )}
 
@@ -48,17 +51,16 @@ export default function BgTitleSection(props: BgTitleProps): JSX.Element {
             {wiki ? (
                 <Col className={style.rightSide} lg={{ size: 3, offset: 1 }} md={6}>
                     <p className={style.secondaryContent}>{wiki.text}</p>
-                    {wiki.url ? (
-                        <a href={wiki.url}
-                           title={wiki.linkTitle}
+                    {wiki.link ? (
+                        <a href={wiki.link.url}
+                           title={wiki.link.title}
                            className={cn('citation', style.rightSideLink, 'arrow-link')}
                            target="_blank"
-                        >
-                            {wiki.linkTitle}
-                        </a>
+                           rel={wiki.link.rel}
+                        >{wiki.link.title}</a>
                     ) : undefined}
                 </Col>
             ) : undefined}
         </Section>
     );
-}
+});

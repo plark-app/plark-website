@@ -7,10 +7,10 @@ import {
     BgTitleSection,
     SubscribeSection,
     ColumnsSection,
-    CardSection,
     OpenSourceSection,
     FeatureSection,
     FeedbackSection,
+    DarkCardSection,
 } from 'common/components';
 import { useI18n } from 'slim-i18n';
 
@@ -76,7 +76,7 @@ export default function AndroidWallet(): JSX.Element {
                 ]}
             />
 
-            <CardSection
+            <DarkCardSection
                 title={i18n.gettext('Buy and sell crypto with a credit card.')}
                 description={i18n.gettext(
                     'Forget about an old-fashioned multi-step registration procedure. To make entry experience the smoothest, it could be, Plark allows you to buy and sell crypto with your credit or debit card directly through the app.',
@@ -90,7 +90,7 @@ export default function AndroidWallet(): JSX.Element {
                 image={{
                     src: '/img/trade-screen.png',
                     alt: 'best mobile wallet for cryptocurrency',
-                    title: 'mobile wallet for cryptocurrency'
+                    title: 'mobile wallet for cryptocurrency',
                 }}
             />
 
@@ -102,7 +102,7 @@ export default function AndroidWallet(): JSX.Element {
                 image={{
                     src: '/img/trade-confirmation-screen.png',
                     alt: 'best mobile cryptocurrency wallet',
-                    title: 'best mobile wallet for cryptocurrency'
+                    title: 'best mobile wallet for cryptocurrency',
                 }}
             />
 
@@ -113,7 +113,7 @@ export default function AndroidWallet(): JSX.Element {
                 image={{
                     src: '/img/trade-screen.png',
                     alt: 'best mobile wallet for cryptocurrency',
-                    title: 'mobile wallet for cryptocurrency'
+                    title: 'mobile wallet for cryptocurrency',
                 }}
             />
 

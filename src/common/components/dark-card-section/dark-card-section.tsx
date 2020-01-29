@@ -13,6 +13,8 @@ type DarkCardSectionProps = CommonSection & {
     caption?: string;
     titleClassName?: string;
     topicClassName?: string;
+
+    steps?: string[];
 };
 
 export function DarkCardSection(props: DarkCardSectionProps): JSX.Element {
@@ -65,6 +67,17 @@ export function DarkCardSection(props: DarkCardSectionProps): JSX.Element {
                     </p>
                 )}
             </Col>
+
+            {props.steps && (
+                <Col className={styles.cardSteps} lg={11}>
+                    {props.steps.map((step: string, i: number) => (
+                        <div key={i} className={styles.cardStep}>
+                            <span className={styles.cardStepNumber}>0{i + 1}</span>
+                            <p className={styles.cardStepDescription}>{step}</p>
+                        </div>
+                    ))}
+                </Col>
+            )}
         </Section>
     );
 }

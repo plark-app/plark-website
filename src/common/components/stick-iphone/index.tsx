@@ -11,8 +11,7 @@ type StickIphoneProps = {
     };
 };
 
-export default React.memo(function StickIphone(props: StickIphoneProps): JSX.Element {
-
+export const StickIphone = React.memo(function StickIphone(props: StickIphoneProps): JSX.Element {
     const { picture, children } = props;
 
     return (

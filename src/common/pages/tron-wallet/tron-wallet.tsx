@@ -9,10 +9,10 @@ import {
     StickIphone,
     IntroSection,
     SubscribeSection,
-    CardSection,
     FeatureSection,
     WalletFeaturesSection,
     WalletColumnsSection,
+    DarkCardSection,
 } from 'common/components';
 import { IWalletFeaturesItem } from 'common/components/wallet-features-section';
 
@@ -100,7 +100,7 @@ export default function TronWallet(): JSX.Element {
                 }}
             />
 
-            <Section>
+            <Section withLeftPadding>
                 <Topic
                     titleClassName={styles.tronWalletGoodChoice}
                     titleText={i18n.gettext('Tron online wallet? Think twice about security.')}
@@ -108,7 +108,7 @@ export default function TronWallet(): JSX.Element {
                 />
             </Section>
 
-            <CardSection
+            <DarkCardSection
                 title={i18n.gettext('Buy and Sell Tron through Bank Card')}
                 topicClassName={styles.tronWalletCardSectionTopic}
                 description={i18n.gettext(

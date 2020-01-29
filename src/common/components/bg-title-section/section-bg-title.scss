@@ -62,10 +62,6 @@
 
 .right-side {
     margin-top: 40px;
-
-    @include from-lg-width {
-        margin-top: 0;
-    }
 }
 
 .left-side {
@@ -87,6 +83,16 @@
 
 .secondary-content {
     @include text-caption;
-
     color: $color-gray50;
+}
+
+
+@include from-lg-width {
+    .right-side {
+        margin-top: 0;
+    }
+
+    .secondary-content {
+        margin-top: 64px;
+    }
 }

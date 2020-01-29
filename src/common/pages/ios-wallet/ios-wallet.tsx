@@ -1,6 +1,5 @@
 import React from 'react';
 import {
-    Footer,
     Header,
     Section,
     Topic,
@@ -12,7 +11,8 @@ import {
     ColumnsSection,
     OpenSourceSection,
     FeatureSection,
-    FeedbackSection, DarkCardSection,
+    FeedbackSection,
+    DarkCardSection, DarkFooter,
 } from 'common/components';
 import { useI18n } from 'slim-i18n';
 
@@ -23,17 +23,18 @@ export default function IosWallet(): JSX.Element {
         <>
             <Header isWhite />
 
+            <IntroSection
+                withPhone
+                title={i18n.gettext('Crypto wallet made easy')}
+                subtitle={i18n.gettext('One of the best iPhone crypto wallets.')}
+                subtitleTag="h3"
+            />
+
             <StickIphone picture={{
                 src: '/img/interfaces/PlarkScreen-dashboard.png',
                 alt: 'multi cryptocurrency mobile wallet',
                 title: 'cryptocurrency mobile wallet',
             }}>
-                <IntroSection
-                    title={i18n.gettext('Crypto wallet made easy')}
-                    subtitle={i18n.gettext('One of the best iPhone crypto wallets.')}
-                    subtitleTag="h3"
-                />
-
                 <BgTitleSection
                     title={i18n.gettext('smooth start')}
                     content={i18n.gettext('There is nothing you need to provide — no name, no phone number, no email (moreover, we won’t spam your mail with “hot deals”). A few taps and you are ready. No complexity at all, we make the flow benign and slight for you.')}
@@ -109,11 +110,11 @@ export default function IosWallet(): JSX.Element {
             <CitationSection
                 titleTag="h2"
                 title={i18n.gettext('Do we think Plark is the best IPhone crypto wallet? Better you say.')}
-                author={i18n.gettext('Plark Team')}
+                author={i18n.gettext('— Plark Team')}
             />
 
             <SubscribeSection />
-            <Footer />
+            <DarkFooter />
         </>
     );
 }

@@ -9,10 +9,10 @@ import {
     StickIphone,
     IntroSection,
     SubscribeSection,
-    CardSection,
     FeatureSection,
     WalletFeaturesSection,
     WalletColumnsSection,
+    DarkCardSection,
 } from 'common/components';
 import { IWalletFeaturesItem } from 'common/components/wallet-features-section';
 
@@ -99,7 +99,7 @@ export default function DogecoinWallet(): JSX.Element {
                 }}
             />
 
-            <CardSection
+            <DarkCardSection
                 title={i18n.gettext('Buy and Sell Dogecoin via Bank Card')}
                 topicClassName={styles.dogecoinWalletCardSectionTopic}
                 description={i18n.gettext(

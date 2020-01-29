@@ -9,6 +9,14 @@ declare global {
         id?: string;
     };
 
+
+    type CommonLink = {
+        url: string;
+        text: string;
+        title?: string;
+        rel?: string;
+    };
+
     interface Window {
         __initData: Record<string, any> & { config: ClientConfig };
         __cssChunksMap: Record<string, string[]>;

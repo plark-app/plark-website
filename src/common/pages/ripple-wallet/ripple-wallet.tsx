@@ -2,7 +2,6 @@ import React from 'react';
 import { useI18n, ITranslationsAdapter } from 'slim-i18n';
 
 import {
-    Footer,
     Header,
     Section,
     Topic,
@@ -13,6 +12,7 @@ import {
     FeatureSection,
     WalletFeaturesSection,
     WalletColumnsSection,
+    DarkFooter,
 } from 'common/components';
 import { IWalletFeaturesItem } from 'common/components/wallet-features-section';
 
@@ -27,9 +27,7 @@ function featuresList(i18n: ITranslationsAdapter): IWalletFeaturesItem[] {
             title: i18n.gettext('Sell your Ripple (XRP) with a cashout on a bank card'),
         },
         {
-            title: i18n.gettext(
-                'Store Ripple (XRP) with a 100% safety (the same security level as any Ledger wallet for Ripple has)',
-            ),
+            title: i18n.gettext('Store Ripple (XRP) with a 100% safety (the same security level as any Ledger wallet for Ripple has)'),
         },
         {
             title: i18n.gettext('Send & Receive Ripple (XRP) on different addresses'),
@@ -150,7 +148,7 @@ export default function RippleWallet(): JSX.Element {
             />
 
             <SubscribeSection />
-            <Footer />
+            <DarkFooter />
         </>
     );
 }

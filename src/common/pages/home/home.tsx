@@ -39,6 +39,7 @@ export default function Home(): JSX.Element {
                 link={{
                     text: i18n.gettext('join discussion on Flarum'),
                     url: 'https://community.plark.io',
+                    rel: 'nofollow',
                 }}
                 citation={{
                     text: i18n.gettext(`A lot of people automatically dismiss e-currency as a lost cause because of all the companies that failed since the 1990's. I hope it's obvious it was only the centrally controlled nature of those systems that doomed them. I think this is the first time we're trying a decentralized, non-trust-based system.`),
@@ -64,8 +65,12 @@ export default function Home(): JSX.Element {
                     content={i18n.gettext('Store your private key right in Plark Wallet on your device, and be the only person who keeps full control over your funds. 6-digit passcode, 12-words seed and top-notch encryption algorithms make Plark exceptionally safe.')}
                     wiki={{
                         text: i18n.gettext('A blockchain is a decentralized record-keeping technology, shared across a network of computers. All records bundle together into blocks and enter the chain one by one. Each block keeps a cryptographic hash of the previous block. Such a twisted game plan makes it impossible to alter or remove the data out of the chain. And it’s just the beginning of everything.'),
-                        linkTitle: 'en.wikipedia.org',
-                        url: 'https://en.wikipedia.org/wiki/Blockchain',
+                        link: {
+                            text: 'en.wikipedia.org',
+                            title: 'en.wikipedia.org',
+                            url: 'https://en.wikipedia.org/wiki/Blockchain',
+                            rel: 'nofollow',
+                        },
                     }}
                 />
 
@@ -74,8 +79,12 @@ export default function Home(): JSX.Element {
                     content={i18n.gettext(`Get all needed features to manage your crypto gathered in one place. Five most popular coins, low fees, and good exchange rates. Yep, it's Plark.`)}
                     wiki={{
                         text: i18n.gettext('Along with blockchain came Bitcoin — the first cryptocurrency designed by mysterious Satoshi Nakamoto. It revived an idea of instant payments that don’t need any third party involvement. Since that turnaround, many other digital currencies came along. It’s good to know that crypto is immune to central authority, like government or bank. It’s secure, anonymous, and damn good.'),
-                        linkTitle: 'en.wikipedia.org',
-                        url: 'https://en.wikipedia.org/wiki/Bitcoin',
+                        link: {
+                            text: 'en.wikipedia.org',
+                            title: 'en.wikipedia.org',
+                            url: 'https://en.wikipedia.org/wiki/Bitcoin',
+                            rel: 'nofollow',
+                        },
                     }}
                 />
 
@@ -84,8 +93,12 @@ export default function Home(): JSX.Element {
                     content={i18n.gettext('Don’t worry, you’re sneaking around an entirely anonymous space. Neither Plark, nor third-party providers collect any personal information about our users. You play invisible, leaving no trace behind. Like a true crypto ninja.')}
                     wiki={{
                         text: i18n.gettext('After many ups and downs, cryptocurrency finally finds its way towards people. As more and more uses emerged, huge investment started flowing into e-currency ecosystem. And even after the recent drop in price, the hype seems to start hitting with renewed vigour. No doubts, crypto will disrupt the traditional banking system. We only need some more time to watch it happen. And the best crypto wallet to get ready for that day.'),
-                        linkTitle: 'en.wikipedia.org',
-                        url: 'https://en.wikipedia.org/wiki/Cryptocurrency',
+                        link: {
+                            text: 'en.wikipedia.org',
+                            title: 'en.wikipedia.org',
+                            url: 'https://en.wikipedia.org/wiki/Cryptocurrency',
+                            rel: 'nofollow',
+                        },
                     }}
                 />
             </StickIphone>
@@ -121,6 +134,7 @@ export default function Home(): JSX.Element {
                     url: 'https://dl.plark.io/app/website-appstore',
                     text: i18n.gettext(' Available on the App Store'),
                     title: i18n.gettext('Get Plark app'),
+                    rel: 'nofollow',
                 }}
                 features={[{
                     text: i18n.gettext('Plark is not about features. It’s about the experiences you have whenever you tap the Trade button, see Bitcoin price going up, or import you old wallet into a sleek black-and-white interface. It’s about you buying your first but not last cryptocurrency and feeling proud. We sculpt each of these ways. And hope you will love it.'),
@@ -140,6 +154,7 @@ export default function Home(): JSX.Element {
                         url: 'mailto:support@plark.io',
                         text: 'drop us a line',
                         title: 'Plark email',
+                        rel: 'nofollow',
                     },
                     image: {
                         url: '/img/trade-confirmation-screen.png',

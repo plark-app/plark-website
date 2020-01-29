@@ -14,10 +14,7 @@ type PresentationSectionProps = CommonSection & {
         author?: string;
     }
 
-    link?: {
-        text: string;
-        url: string;
-    };
+    link?: CommonLink;
 
     image?: {
         src: string;
@@ -45,9 +42,12 @@ export function PresentationSection(props: PresentationSectionProps): JSX.Elemen
                 {secondText ? <p className={styles.mainCaption}>{secondText}</p> : undefined}
                 <p className={styles.mainText}>{mainText}</p>
                 {link ? (
-                    <a href={link.url} target="_blank" title={link.text} className={cn(styles.mainLink, 'arrow-link')}>
-                        {link.text}
-                    </a>
+                    <a target="_blank"
+                       href={link.url}
+                       title={link.text}
+                       className={cn(styles.mainLink, 'arrow-link')}
+                       rel={link.rel}
+                    >{link.text}</a>
                 ) : undefined}
             </Col>
 
