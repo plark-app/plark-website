@@ -1,14 +1,12 @@
 import React from 'react';
-import { useI18n } from 'slim-i18n';
+import { ITranslationsAdapter, useI18n } from 'slim-i18n';
 
 import {
     DarkFooter,
     Header,
-    StickIphone,
     IntroSection,
     PresentationSection,
     TeamSection,
-    BgTitleSection,
     BigPhotoSection,
     SubscribeSection,
     DarkFeaturesSection,
@@ -16,10 +14,67 @@ import {
     CitationSection,
     CommunitySection,
     FeedbackSection,
+    FeatureListSection,
+    FeatureUnit,
 } from 'common/components';
+
+
+function buildFeatureList(i18n: ITranslationsAdapter): FeatureUnit[] {
+    return [{
+        title: i18n.gettext('Paramount security'),
+        content: i18n.gettext('Store your private key right in Plark Wallet on your device, and be the only person who keeps full control over your funds. 6-digit passcode, 12-words seed and top-notch encryption algorithms make Plark exceptionally safe.'),
+        wiki: {
+            text: i18n.gettext('A blockchain is a decentralized record-keeping technology, shared across a network of computers. All records bundle together into blocks and enter the chain one by one. Each block keeps a cryptographic hash of the previous block. Such a twisted game plan makes it impossible to alter or remove the data out of the chain. And it’s just the beginning of everything.'),
+            link: {
+                text: 'en.wikipedia.org',
+                title: 'en.wikipedia.org',
+                url: 'https://en.wikipedia.org/wiki/Blockchain',
+                rel: 'nofollow',
+            },
+        },
+        screen: {
+            src: '/img/interfaces/00.png',
+            srcset: '/img/interfaces/00@2x.png 2x'
+        }
+    }, {
+        title: i18n.gettext('Tool set perfectly balanced'),
+        content: i18n.gettext(`Get all needed features to manage your crypto gathered in one place. Five most popular coins, low fees, and good exchange rates. Yep, it's Plark.`),
+        wiki: {
+            text: i18n.gettext('Along with blockchain came Bitcoin — the first cryptocurrency designed by mysterious Satoshi Nakamoto. It revived an idea of instant payments that don’t need any third party involvement. Since that turnaround, many other digital currencies came along. It’s good to know that crypto is immune to central authority, like government or bank. It’s secure, anonymous, and damn good.'),
+            link: {
+                text: 'en.wikipedia.org',
+                title: 'en.wikipedia.org',
+                url: 'https://en.wikipedia.org/wiki/Bitcoin',
+                rel: 'nofollow',
+            },
+        },
+        screen: {
+            src: '/img/interfaces/01.png',
+            srcset: '/img/interfaces/01@2x.png 2x'
+        }
+    }, {
+        title: i18n.gettext('Anonymity taken further'),
+        content: i18n.gettext('Don’t worry, you’re sneaking around an entirely anonymous space. Neither Plark, nor third-party providers collect any personal information about our users. You play invisible, leaving no trace behind. Like a true crypto ninja.'),
+        wiki: {
+            text: i18n.gettext('After many ups and downs, cryptocurrency finally finds its way towards people. As more and more uses emerged, huge investment started flowing into e-currency ecosystem. And even after the recent drop in price, the hype seems to start hitting with renewed vigour. No doubts, crypto will disrupt the traditional banking system. We only need some more time to watch it happen. And the best crypto wallet to get ready for that day.'),
+            link: {
+                text: 'en.wikipedia.org',
+                title: 'en.wikipedia.org',
+                url: 'https://en.wikipedia.org/wiki/Cryptocurrency',
+                rel: 'nofollow',
+            },
+        },
+        screen: {
+            src: '/img/interfaces/02.png',
+            srcset: '/img/interfaces/02@2x.png 2x'
+        }
+    }];
+}
 
 export default function Home(): JSX.Element {
     const i18n = useI18n();
+
+    const featureList = React.useMemo(() => buildFeatureList(i18n), [i18n.language]);
 
     return (
         <>
@@ -52,56 +107,10 @@ export default function Home(): JSX.Element {
                 }}
             />
 
-            <StickIphone
-                picture={{
-                    src: '/img/interfaces/PlarkScreen-dashboard.png',
-                    alt: 'multi cryptocurrency mobile wallet',
-                    title: 'cryptocurrency mobile wallet',
-                }}
-            >
-                <BgTitleSection
-                    id="features"
-                    title="Paramount security"
-                    content={i18n.gettext('Store your private key right in Plark Wallet on your device, and be the only person who keeps full control over your funds. 6-digit passcode, 12-words seed and top-notch encryption algorithms make Plark exceptionally safe.')}
-                    wiki={{
-                        text: i18n.gettext('A blockchain is a decentralized record-keeping technology, shared across a network of computers. All records bundle together into blocks and enter the chain one by one. Each block keeps a cryptographic hash of the previous block. Such a twisted game plan makes it impossible to alter or remove the data out of the chain. And it’s just the beginning of everything.'),
-                        link: {
-                            text: 'en.wikipedia.org',
-                            title: 'en.wikipedia.org',
-                            url: 'https://en.wikipedia.org/wiki/Blockchain',
-                            rel: 'nofollow',
-                        },
-                    }}
-                />
-
-                <BgTitleSection
-                    title="Tool set perfectly balanced"
-                    content={i18n.gettext(`Get all needed features to manage your crypto gathered in one place. Five most popular coins, low fees, and good exchange rates. Yep, it's Plark.`)}
-                    wiki={{
-                        text: i18n.gettext('Along with blockchain came Bitcoin — the first cryptocurrency designed by mysterious Satoshi Nakamoto. It revived an idea of instant payments that don’t need any third party involvement. Since that turnaround, many other digital currencies came along. It’s good to know that crypto is immune to central authority, like government or bank. It’s secure, anonymous, and damn good.'),
-                        link: {
-                            text: 'en.wikipedia.org',
-                            title: 'en.wikipedia.org',
-                            url: 'https://en.wikipedia.org/wiki/Bitcoin',
-                            rel: 'nofollow',
-                        },
-                    }}
-                />
-
-                <BgTitleSection
-                    title="anonymity taken further"
-                    content={i18n.gettext('Don’t worry, you’re sneaking around an entirely anonymous space. Neither Plark, nor third-party providers collect any personal information about our users. You play invisible, leaving no trace behind. Like a true crypto ninja.')}
-                    wiki={{
-                        text: i18n.gettext('After many ups and downs, cryptocurrency finally finds its way towards people. As more and more uses emerged, huge investment started flowing into e-currency ecosystem. And even after the recent drop in price, the hype seems to start hitting with renewed vigour. No doubts, crypto will disrupt the traditional banking system. We only need some more time to watch it happen. And the best crypto wallet to get ready for that day.'),
-                        link: {
-                            text: 'en.wikipedia.org',
-                            title: 'en.wikipedia.org',
-                            url: 'https://en.wikipedia.org/wiki/Cryptocurrency',
-                            rel: 'nofollow',
-                        },
-                    }}
-                />
-            </StickIphone>
+            <FeatureListSection
+                id="features"
+                features={featureList}
+            />
 
             <TeamSection
                 id="team"
@@ -139,25 +148,26 @@ export default function Home(): JSX.Element {
                 features={[{
                     text: i18n.gettext('Plark is not about features. It’s about the experiences you have whenever you tap the Trade button, see Bitcoin price going up, or import you old wallet into a sleek black-and-white interface. It’s about you buying your first but not last cryptocurrency and feeling proud. We sculpt each of these ways. And hope you will love it.'),
                     link: {
-                        url: 'https://community.plark.io',
+                        url: 'https://community.plark.io/d/14-how-to-create-plark-wallet',
                         text: 'join discussion on Flarum',
                         title: 'Plark community',
+                        rel: 'nofollow',
                     },
                     image: {
-                        url: '/img/trade-screen.png',
+                        url: '/img/ps/04',
                         alt: 'plark cryptocurrency wallet',
                         title: 'Plark cryptocurrency wallet',
                     },
                 }, {
                     text: i18n.gettext('Whatever input you share with us is like a gem.  And we’ll use it to craft a flawless experience for you. \n\nPlark is always ready for conversation. If you have any question, issue, or suggestion — just drop us a line.'),
                     link: {
-                        url: 'mailto:support@plark.io',
+                        url: 'https://t.me/PlarkWalletSupport',
                         text: 'drop us a line',
                         title: 'Plark email',
                         rel: 'nofollow',
                     },
                     image: {
-                        url: '/img/trade-confirmation-screen.png',
+                        url: '/img/ps/05',
                         alt: 'plark cryptocurrency wallet',
                         title: 'Plark cryptocurrency wallet',
                     },

@@ -1,0 +1,124 @@
+@import "../../styles/colors";
+@import "../../styles/media";
+@import "../../styles/vars";
+@import "../../styles/text";
+
+.section {
+    margin-top: 100px;
+    display: flex;
+    align-items: center;
+    z-index: 2;
+
+    &__content {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    @include from-md-width {
+        height: 750px;
+    }
+}
+
+.root {
+    position: relative;
+}
+
+.content-box {
+    width: 100%;
+    display: block;
+
+    &__separator {
+        margin: 30px 0;
+        height: 4px;
+        background: $color-text-dark;
+        border: none;
+    }
+}
+
+.underline-content {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.right-side {
+    margin-top: 40px;
+}
+
+.left-side {
+    @include only-md-width {
+        margin-right: 100%;
+    }
+}
+
+.title {
+    text-transform: lowercase;
+    display: block;
+    @include text-h2;
+}
+
+.content {
+    @include text-main;
+    width: 100%;
+}
+
+.secondary-content {
+    @include text-caption;
+    color: $color-gray50;
+}
+
+.sticky-iphone {
+    width: 100%;
+    z-index: 1;
+    margin: 0 auto 50px auto;
+
+    max-width: 1045px;
+    padding-top: 100px;
+    top: 0;
+    height: 100%;
+
+    padding-right: 24px;
+
+    &__image-root {
+        right: 0;
+        width: 100%;
+        max-width: 298px;
+        margin: 0 auto;
+    }
+
+    &__image {
+        top: 140px;
+        position: sticky;
+        width: 100%;
+    }
+}
+
+@include from-md-width {
+    .sticky-iphone {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+
+        display: flex;
+        justify-content: flex-end;
+
+        &__image {
+            top: 140px;
+            position: sticky;
+            width: 100%;
+        }
+    }
+}
+
+@include from-lg-width {
+    .right-side {
+        margin-top: 0;
+    }
+
+    .secondary-content {
+        margin-top: 64px;
+    }
+
+    .sticky-iphone {
+        padding-right: 0;
+    }
+}

@@ -4,6 +4,7 @@ import styles from './iphone-screen.scss';
 
 type IphoneScreenProps = {
     src: string;
+    srcset?: string;
     type: 'photo' | 'video';
     srcType?: string;
     className?: string;
@@ -13,15 +14,17 @@ type IphoneScreenProps = {
 };
 
 export function IPhoneScreen(props: IphoneScreenProps): JSX.Element {
-    const { src, type, srcType, className } = props;
+    const { src, srcset, type, srcType, className } = props;
 
     const isVideo = type === 'video';
 
     return (
         <div className={cn(styles.iphone, className)}>
-            <img src="/img/iPhoneX_Frame.png"
+            <img src="/img/interfaces/00_Frame.png"
                  className={styles.iphoneFrame}
+                 srcSet="/img/interfaces/00_Frame@2x.png 2x"
                  alt="iphone-frame"
+                 title="Plark for iPhone"
             />
 
             <div className={styles.iphoneShadow} />
@@ -33,12 +36,14 @@ export function IPhoneScreen(props: IphoneScreenProps): JSX.Element {
                            autoPlay
                            loop
                            muted
+                           poster="/img/interfaces/01.png"
                     >
                         <source src={src} type={srcType} />
                         Your browser does not support HTML5 video.
                     </video>
                 ) : (
                     <img src={src}
+                         srcSet={srcset}
                          alt={props.alt || 'screen'}
                          title={props.title || 'scene'}
                          className={styles.iphoneImage}

@@ -26,12 +26,12 @@ export function DarkFeaturesSection(props: BlackFeaturesProps): JSX.Element {
     return (
         <Section
             isDark
-            withLeftPadding
             id={props.id}
             className={styles.section}
             contentClassName={styles.sectionContent}
+            noGutters
         >
-            <Col className={styles.left} lg={3}>
+            <Col className={styles.left} lg={{ size: 3, offset: 1 }}>
                 <div className={styles.leftContent}>
                     <h3 className={styles.leftTitle}>{props.title}</h3>
                     <a href={link.url} title={link.title} className={cn(styles.leftLink, 'arrow-link')} rel={link.rel}>
@@ -50,6 +50,7 @@ export function DarkFeaturesSection(props: BlackFeaturesProps): JSX.Element {
 
 function FeatureUnit(props: FeatureUnitProps) {
     const { text, link, image } = props;
+
     return (
         <Row className={styles.feature} noGutters>
             <Col className={styles.featureText} lg={5} sm={6} xs={12}>
@@ -60,10 +61,11 @@ function FeatureUnit(props: FeatureUnitProps) {
             </Col>
 
             <Col className={cn(styles.featureImage)} lg={7} sm={6} xs={12}>
-                <img src={image.url}
+                <img src={image.url + '.png'}
                      alt={image.alt}
                      title={image.title}
                      className={styles.featureImageImg}
+                     srcSet={image.url + '@2x.png 2x'}
                 />
             </Col>
         </Row>

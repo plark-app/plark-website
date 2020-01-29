@@ -22,9 +22,10 @@
 .left {
     width: 100%;
     padding-right: 0;
-    padding-bottom: 250px;
 
     &__content {
+        max-width: 560px;
+
         top: 0;
         padding-top: 300px;
         position: sticky;
@@ -41,6 +42,15 @@
         text-transform: lowercase;
 
         @include text-subtitle2($color-gray01);
+    }
+
+    @include from-lg-width {
+        padding-bottom: 250px;
+
+        &__content {
+            padding-top: 300px;
+            margin-left: -12px;
+        }
     }
 }
 
@@ -103,7 +113,7 @@
 
             @include from-lg-width {
                 width: 20vw;
-                max-width: 230px;
+                max-width: 231px;
             }
         }
     }

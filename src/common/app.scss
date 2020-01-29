@@ -63,6 +63,10 @@ span {
 }
 
 :global {
+    ::selection {
+        background: $color-success;
+    }
+
     // animations
     .fade-enter {
         pointer-events: none;

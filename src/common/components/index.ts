@@ -26,6 +26,8 @@ export * from './navigation-column';
 export * from './stick-iphone';
 export * from './partner-list';
 export * from './bg-title-section';
+export * from './feature-list-section';
+export * from './two-iphones';
 
 export { default as Icons } from './icons';
 export { default as UIButton } from './ui-button';
@@ -36,7 +38,6 @@ export { default as TextBlock } from './text-block';
 export { default as DownloadCell } from './download-cell';
 export { default as JoinLink } from './join-link';
 export { default as StarRate } from './star-rate';
-export { default as TwoIPhones } from './two-iphones';
 export { default as Subcopy } from './subcopy';
 export { default as IntroSection } from './intro-section';
 export { default as CitationSection } from './citation-section';
