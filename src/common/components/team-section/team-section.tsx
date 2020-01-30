@@ -5,11 +5,11 @@ import { Section, Caption } from 'common/components';
 import styles from './team-section.scss';
 
 type PhotoCitationProps = CommonSection & {
-    image: {
+    images: Array<{
         src: string;
         alt: string;
         title?: string;
-    }
+    }>;
 
     citation: {
         text: string;
@@ -23,7 +23,9 @@ type PhotoCitationProps = CommonSection & {
 };
 
 export function TeamSection(props: PhotoCitationProps): JSX.Element {
-    const { image, citation, caption } = props;
+    const { images, citation, caption } = props;
+
+    const image = images[0];
 
     return (
         <Section
@@ -34,7 +36,12 @@ export function TeamSection(props: PhotoCitationProps): JSX.Element {
             contentClassName={styles.sectionContent}
         >
             <Col className={styles.image} xs={12} sm={10} lg={6}>
-                <img src={image.src} alt={image.alt} title={image.title} className={styles.imageImage} />
+                <img src={image.src}
+                     alt={image.alt}
+                     title={image.title}
+                     className={styles.imageImage}
+                />
+
                 {caption ? <Caption
                     isWhite
                     className={styles.caption}

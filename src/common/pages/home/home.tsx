@@ -120,10 +120,13 @@ export default function Home(): JSX.Element {
 
             <TeamSection
                 id="team"
-                image={{
-                    src: '/img/team/image_2.png',
+                images={[{
+                    src: '/img/team/stock-01.png',
                     alt: 'Plark team',
-                }}
+                }, {
+                    src: '/img/team/stock-02.png',
+                    alt: 'Plark team',
+                }]}
                 citation={{
                     text: i18n.gettext(`Oh yes, we can`),
                     author: i18n.gettext('— Plark team'),
