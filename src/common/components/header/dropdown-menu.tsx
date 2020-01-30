@@ -5,7 +5,7 @@ import { __, TranslateFunction } from 'common/i18n';
 import { Col } from 'reactstrap';
 import { useI18n } from 'slim-i18n';
 import { CSSTransition } from 'react-transition-group';
-import { Section, Socials } from 'common/components';
+import { AppStoreLink, Section, Socials } from 'common/components';
 import { DropdownMenuRightContent } from './dropdown-menu-right-content';
 import styles from './header.scss';
 
@@ -86,10 +86,8 @@ export function DropdownMenu(props: DropdownMenuProps): JSX.Element {
                         </div>
                     ))}
 
-                    <a href="https://dl.plark.io/app/website-appstore"
-                       className={cn(styles.dmNavDownload, 'arrow-link')}
-                       target="_blank"
-                    >{i18n.gettext(' Available on App Store')}</a>
+
+                    <AppStoreLink className={styles.dmNavDownload} />
                 </Col>
 
                 <DropdownMenuRightContent />

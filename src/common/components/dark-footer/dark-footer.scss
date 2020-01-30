@@ -116,7 +116,6 @@
     &__description {
         margin-top: 20px;
         margin-bottom: 50px;
-        text-transform: lowercase;
 
         @include from-sm-width {
             margin-bottom: 56px;
@@ -195,7 +194,7 @@
 
         $var-part-width: (1280px - 36px) * 0.667;
         width: calc(16.67vw + 12px);
-        
+
         @include from-width(1280px) {
             width: calc((100vw - #{$var-part-width}) / 2);
         }

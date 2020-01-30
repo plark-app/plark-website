@@ -64,7 +64,9 @@ span {
 
 :global {
     ::selection {
+        // background: transparentize($color-success, 0.01);
         background: $color-success;
+        color: $color-gray01 !important;
     }
 
     // animations

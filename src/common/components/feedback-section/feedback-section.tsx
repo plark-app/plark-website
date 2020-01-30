@@ -18,6 +18,7 @@ export const FeedbackSection = React.memo(function FeedbackSection(props: Feedba
         className: styles.sliderBox,
         accessibility: false,
         dots: false,
+        fade: true,
         arrows: false,
         infinite: true,
         centerMode: false,

@@ -155,7 +155,7 @@ export default function Home(): JSX.Element {
                     rel: 'nofollow',
                 }}
                 features={[{
-                    text: i18n.gettext('Plark is not about features. It’s about the experiences you have whenever you tap the Trade button, see Bitcoin price going up, or import you old wallet into a sleek black-and-white interface. It’s about you buying your first but not last cryptocurrency and feeling proud. We sculpt each of these ways. And hope you will love it.'),
+                    text: i18n.gettext('Plark is not about features. It’s about the experience you have whenever you tap the Trade button, see Bitcoin price going up, or import you old wallet into a sleek black-and-white interface. It’s about you buying your first but not last cryptocurrency and feeling proud. We sculpt each of these ways. And hope you will love it.'),
                     link: {
                         url: 'https://community.plark.io/d/14-how-to-create-plark-wallet',
                         text: 'join discussion on Flarum',
@@ -188,7 +188,7 @@ export default function Home(): JSX.Element {
                 alt="Plark team"
                 title="Plark team"
                 caption={i18n.gettext('Working routine at Plark be like… laughing at the $2K drop in bitcoin price.')}
-                captionDescription={i18n.gettext('Kyiv, Ukraine')}
+                captionDescription={i18n.gettext('and then crying in the corner')}
             />
 
             <CitationSection

@@ -2,7 +2,7 @@ import React from 'react';
 import cn from 'classnames';
 import { Col } from 'reactstrap';
 import { useI18n } from 'slim-i18n';
-import { NavigationColumn } from 'common/components';
+import { AppStoreLink, NavigationColumn } from 'common/components';
 import cnmStyles from 'common/styles/common.scss';
 import PlarkLogo from 'resources/svgs/plark-logo.component.svg';
 import styles from './header.scss';
@@ -41,11 +41,7 @@ export const DropdownMenuRightContent = React.memo(function DropdownMenuRightCon
                 </p>
 
                 <NavigationColumn title="download app">
-                    <a href="https://dl.plark.io/app/website-appstore"
-                       className={cn(styles.dmRightDownload, 'arrow-link')}
-                       target="_blank"
-                       rel="nofollow"
-                    >{i18n.gettext(' Available on App Store')}</a>
+                    <AppStoreLink className={styles.dmRightDownload} />
                 </NavigationColumn>
             </div>
         </Col>

@@ -19,5 +19,5 @@ export const AppStoreLink = React.memo(function AppStoreLink(props: AppStoreLink
               className={cn(styles.appstore, className, 'arrow-link')}
               rel="nofollow"
               target="_blank"
-    >{text ? text : `` + i18n.gettext('Available on App Store')}</a>;
+    >{text ? text : `` + i18n.gettext('Available on the App Store')}</a>;
 });
