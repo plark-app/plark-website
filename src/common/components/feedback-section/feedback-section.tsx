@@ -65,12 +65,14 @@ export const FeedbackSection = React.memo(function FeedbackSection(props: Feedba
                     ))}
                 </Slider>
 
-                <a href="https://dl.plark.io/app/website-appstore" target="_blank"
-                   className={cn(styles.appstoreLink, 'arrow-link')}>
+                <a href="https://apps.apple.com/ua/app/plark-crypto-wallet/id1455862890#see-all/reviews"
+                   target="_blank"
+                   className={cn(styles.appstoreLink, 'arrow-link')}
+                >
                     <img src="/img/AppStore_Icon.svg"
                          className={styles.appstoreLinkImage}
                          alt="Plark at AppStore"
-                         title=""
+                         title="View all AppStore reviews"
                     />
                     <span className={styles.appstoreLinkTitle}>view all appstore reviews</span>
                 </a>

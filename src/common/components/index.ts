@@ -28,6 +28,7 @@ export * from './partner-list';
 export * from './bg-title-section';
 export * from './feature-list-section';
 export * from './two-iphones';
+export * from './appstore-link';
 
 export { default as Icons } from './icons';
 export { default as UIButton } from './ui-button';

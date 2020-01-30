@@ -1,5 +1,6 @@
 @import "../../styles/media";
 @import "../../styles/colors";
+@import "../../styles/image";
 
 .container {
     display: none;
@@ -36,6 +37,8 @@
     &__image {
         width: 100%;
         max-width: 340px;
+
+        @include image-interpolation-hack;
 
         @include from-md-width {
             max-width: 269px;

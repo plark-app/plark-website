@@ -1,6 +1,5 @@
 import React from 'react';
 import {
-    Footer,
     Header,
     Section,
     Topic,
@@ -10,11 +9,13 @@ import {
     CitationSection,
     SubscribeSection,
     ColumnsSection,
-    CardSection,
     OpenSourceSection,
     FeatureSection,
     FeedbackSection,
+    DarkFooter,
+    DarkCardSection,
 } from 'common/components';
+import { Col } from 'reactstrap';
 import { useI18n } from 'slim-i18n';
 
 export default function MobileWallet(): JSX.Element {
@@ -56,14 +57,16 @@ export default function MobileWallet(): JSX.Element {
             </StickIphone>
 
 
-            <Section>
-                <Topic
-                    isSmall
-                    isCenter
-                    titleText={i18n.gettext('Simplicity = design')}
-                    descText={i18n.gettext('Design is what should help. Design is what should satisfy. No matter how experienced you are — it should be simple, understandable, and attractive. Design\n' +
-                        'is the reason why you will use Plark.')}
-                />
+            <Section withLeftPadding>
+                <Col lg={11}>
+                    <Topic
+                        isSmall
+                        isCenter
+                        titleText={i18n.gettext('Simplicity = design')}
+                        descText={i18n.gettext('Design is what should help. Design is what should satisfy. No matter how experienced you are — it should be simple, understandable, and attractive. Design\n' +
+                            'is the reason why you will use Plark.')}
+                    />
+                </Col>
             </Section>
 
 
@@ -81,7 +84,7 @@ export default function MobileWallet(): JSX.Element {
             />
 
 
-            <CardSection
+            <DarkCardSection
                 title="Credit Card is The Key"
                 description={
                     'Link up your credit or debit card to a wallet to buy and sell crypto in a tap — the feature, ' +
@@ -130,7 +133,8 @@ export default function MobileWallet(): JSX.Element {
             />
 
             <SubscribeSection />
-            <Footer />
+
+            <DarkFooter />
         </>
     );
 }

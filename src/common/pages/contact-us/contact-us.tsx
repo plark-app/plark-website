@@ -1,6 +1,7 @@
 import React from 'react';
+import { Col } from 'reactstrap';
 import { useI18n } from 'slim-i18n';
-import { Footer, Header, Section, Topic, TwoIPhones, UIButton, Socials } from 'common/components';
+import { Header, Section, Topic, TwoIPhones, UIButton, Socials, DarkFooter } from 'common/components';
 
 import styles from './contact-us.scss';
 
@@ -12,35 +13,38 @@ export default function ContactUs(): JSX.Element {
             <Header isWhite />
 
             <Section contentClassName={styles.contactUs} withLeftPadding>
-                <div className={styles.contactUsTopic}>
-                    <Topic
-                        titleClassName={styles.contactUsTitle}
-                        titleTag="h1"
-                        titleText={i18n.gettext('Stay in touch')}
-                        descText={i18n.gettext(
-                            'Plark Staff will never ask for personal information, including 12-word phrase.',
-                        )}
-                        descClassName={styles.contactUsTopicDescr}
-                    />
-                    <div className={styles.contactUsActions}>
-                        <UIButton
-                            color="primary"
-                            className={styles.contactUsActionsButton}
-                            component={'a'}
-                            href={'mailto:info@plark.io'}
-                            target={'_blank'}
-                        >
-                            {i18n.gettext('Write us')}
-                        </UIButton>
+                <Col lg={11} className={styles.contactUsBox}>
+                    <div className={styles.contactUsTopic}>
+                        <Topic
+                            titleClassName={styles.contactUsTitle}
+                            titleTag="h1"
+                            titleText={i18n.gettext('Stay in touch')}
+                            descText={i18n.gettext(
+                                'Plark Staff will never ask for personal information, including 12-word phrase.',
+                            )}
+                            descClassName={styles.contactUsTopicDescription}
+                        />
 
-                        <Socials className={styles.contactUsSocials} />
+                        <div className={styles.contactUsActions}>
+                            <UIButton
+                                color="primary"
+                                className={styles.contactUsActionsButton}
+                                component={'a'}
+                                href={'mailto:info@plark.io'}
+                                target={'_blank'}
+                            >
+                                {i18n.gettext('Write us')}
+                            </UIButton>
+
+                            <Socials className={styles.contactUsSocials} />
+                        </div>
                     </div>
-                </div>
 
-                <TwoIPhones className={styles.contactUsPhones} />
+                    <TwoIPhones className={styles.contactUsPhones} />
+                </Col>
             </Section>
 
-            <Footer />
+            <DarkFooter />
         </>
     );
 }

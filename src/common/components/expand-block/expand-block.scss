@@ -7,31 +7,33 @@
         display: flex;
         justify-content: space-between;
         cursor: pointer;
-        padding-top: 16px;
-        padding-bottom: 16px;
 
         &__title {
-            transition: color 0.2s;
             color: $color-dark;
             font-size: 18px;
             font-weight: bold;
+            transition: color 0.5s;
         }
 
         @include from-width(768px) {
-            padding-top: 24px;
-            padding-bottom: 24px;
             &__title {
                 font-size: 24px;
             }
         }
 
         &:hover &__title {
-            color: $color-primary;
+            transition-duration: 0.2s;
+            color: $color-success;
         }
     }
 
     &.is-active &-head {
         padding-bottom: 0;
+        margin-bottom: 12px;
+
+        &__title {
+            color: $color-success;
+        }
     }
 
     &-content {
@@ -45,6 +47,10 @@
 
     &.is-active &-content {
         display: block;
+    }
+
+    & + & {
+        margin-top: 24px;
     }
 }
 

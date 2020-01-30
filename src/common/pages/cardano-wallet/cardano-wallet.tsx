@@ -2,7 +2,6 @@ import React from 'react';
 import { useI18n, ITranslationsAdapter } from 'slim-i18n';
 
 import {
-    Footer,
     Header,
     Section,
     Topic,
@@ -13,6 +12,7 @@ import {
     FeatureSection,
     WalletFeaturesSection,
     WalletColumnsSection,
+    DarkFooter,
 } from 'common/components';
 import { IWalletFeaturesItem } from 'common/components/wallet-features-section';
 
@@ -89,7 +89,7 @@ export default function CardanoWallet(): JSX.Element {
                 withoutLink
                 titleText={i18n.gettext('Download Plark Wallet for Cardano')}
                 text={i18n.gettext(
-                    "Make your own Cardano iOS wallet and appreciate the accommodation and focal points of the Plark application. We ensure 100% security of your assets. There is no real way to hack your wallet since it is associated legitimately to the blockchain. We don't store your keys on our server, so you are the single individual who has full access and authority over your coins.",
+                    'Make your own Cardano iOS wallet and appreciate the accommodation and focal points of the Plark application. We ensure 100% security of your assets. There is no real way to hack your wallet since it is associated legitimately to the blockchain. We don\'t store your keys on our server, so you are the single individual who has full access and authority over your coins.',
                 )}
                 textClassName={styles.cardanoWalletDownloadSectionText}
                 image={{
@@ -125,7 +125,7 @@ export default function CardanoWallet(): JSX.Element {
                 )}
                 columns={[
                     i18n.gettext(
-                        "Wallet for Cardano isn't the single one to be included soon. To satisfy everybody's needs, our company is adding the most popular positions:",
+                        'Wallet for Cardano isn\'t the single one to be included soon. To satisfy everybody\'s needs, our company is adding the most popular positions:',
                     ),
                     i18n.gettext(
                         'Ripple, Monero, Neo, Dogecoin, Cardano, Tron, Bitcoin Cash, Stellar, EOS, Waves, Wechain, Ethereum Classic, Omisego, Qtum, Tether, Tezos, Ontology, Basic Attention Token, Chainlink, Bitcoin SV and others.',
@@ -134,7 +134,7 @@ export default function CardanoWallet(): JSX.Element {
             />
 
             <SubscribeSection />
-            <Footer />
+            <DarkFooter />
         </>
     );
 }

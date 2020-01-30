@@ -1,0 +1,6 @@
+{
+    "private": true,
+    "name": "appstore-link",
+    "main": "appstore-link.tsx",
+    "typings": "appstore-link.tsx"
+}

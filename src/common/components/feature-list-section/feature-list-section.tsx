@@ -2,12 +2,15 @@ import React from 'react';
 import _ from 'lodash';
 import cn from 'classnames';
 import { Col } from 'reactstrap';
-import { IPhoneScreen, Section, TextBlock } from 'common/components';
+import { AppStoreLink, IPhoneScreen, Section, TextBlock } from 'common/components';
+import { useI18n } from 'slim-i18n';
 import style from './feature-list-section.scss';
 
 export type IPhoneScreenUnit = {
     src: string;
     srcset?: string;
+    alt: string;
+    title?: string;
 };
 
 export type FeatureUnit = {
@@ -28,6 +31,7 @@ type FeatureListSectionProps = CommonSection & {
 };
 
 export const FeatureListSection = React.memo(function FeatureListSection(props: FeatureListSectionProps): JSX.Element {
+    const i18n = useI18n();
     const { id, features } = props;
     const [index, setIndex] = React.useState(0);
     const elRefs = React.useRef(_.times(features.length, () => React.createRef()));
@@ -105,7 +109,7 @@ export const FeatureListSection = React.memo(function FeatureListSection(props: 
             </div>
 
             {features.map((elem: FeatureUnit, index: number) => {
-                const { wiki } = elem;
+                const { wiki, screen } = elem;
 
                 return <Section
                     key={index}
@@ -114,6 +118,15 @@ export const FeatureListSection = React.memo(function FeatureListSection(props: 
                     contentClassName={style.sectionContent}
                     proxyRef={elRefs.current[index]}
                 >
+                    <IPhoneScreen
+                        className={style.screen}
+                        src={screen.src}
+                        srcset={screen.srcset}
+                        title={screen.title}
+                        alt={screen.alt}
+                        type="photo"
+                    />
+
                     <Col lg={3} md={6}>
                         <h3 className={cn(style.title)}>{elem.title}</h3>
                     </Col>
@@ -122,9 +135,14 @@ export const FeatureListSection = React.memo(function FeatureListSection(props: 
 
                     <Col lg={3} md={6} className={style.leftSide}>
                         <hr className={style.contentBoxSeparator} />
-                        <TextBlock className={cn(style.content)} tag={elem.textTag}>
+                        <TextBlock className={style.content} tag={elem.textTag}>
                             {elem.content}
                         </TextBlock>
+
+                        <AppStoreLink
+                            className={style.appstoreLink}
+                            text={i18n.gettext('Download Plark for iOS')}
+                        />
                     </Col>
 
                     {wiki ? (

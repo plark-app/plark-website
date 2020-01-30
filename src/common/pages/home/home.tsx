@@ -34,8 +34,10 @@ function buildFeatureList(i18n: ITranslationsAdapter): FeatureUnit[] {
         },
         screen: {
             src: '/img/interfaces/01.png',
-            srcset: '/img/interfaces/01@2x.png 2x'
-        }
+            srcset: '/img/interfaces/01@2x.png 2x',
+            title: i18n.gettext('Paramount security'),
+            alt: i18n.gettext('Paramount security'),
+        },
     }, {
         title: i18n.gettext('Tool set perfectly balanced'),
         content: i18n.gettext(`Get all needed features to manage your crypto gathered in one place. Five most popular coins, low fees, and good exchange rates. Yep, it's Plark.`),
@@ -50,8 +52,10 @@ function buildFeatureList(i18n: ITranslationsAdapter): FeatureUnit[] {
         },
         screen: {
             src: '/img/interfaces/02.png',
-            srcset: '/img/interfaces/02@2x.png 2x'
-        }
+            srcset: '/img/interfaces/02@2x.png 2x',
+            title: i18n.gettext('Tool set perfectly balanced'),
+            alt: i18n.gettext('Tool set perfectly balanced'),
+        },
     }, {
         title: i18n.gettext('Anonymity taken further'),
         content: i18n.gettext('Don’t worry, you’re sneaking around an entirely anonymous space. Neither Plark, nor third-party providers collect any personal information about our users. You play invisible, leaving no trace behind. Like a true crypto ninja.'),
@@ -66,8 +70,10 @@ function buildFeatureList(i18n: ITranslationsAdapter): FeatureUnit[] {
         },
         screen: {
             src: '/img/interfaces/03.png',
-            srcset: '/img/interfaces/03@2x.png 2x'
-        }
+            srcset: '/img/interfaces/03@2x.png 2x',
+            title: i18n.gettext('Anonymity taken further'),
+            alt: i18n.gettext('Anonymity taken further'),
+        },
     }];
 }
 

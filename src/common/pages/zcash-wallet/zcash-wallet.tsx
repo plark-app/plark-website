@@ -2,7 +2,6 @@ import React from 'react';
 import { useI18n, ITranslationsAdapter } from 'slim-i18n';
 
 import {
-    Footer,
     Header,
     Section,
     Topic,
@@ -13,6 +12,7 @@ import {
     FeatureSection,
     WalletFeaturesSection,
     WalletColumnsSection,
+    DarkFooter,
 } from 'common/components';
 import { IWalletFeaturesItem } from 'common/components/wallet-features-section';
 
@@ -137,7 +137,7 @@ export default function ZCashWallet(): JSX.Element {
             />
 
             <SubscribeSection />
-            <Footer />
+            <DarkFooter />
         </>
     );
 }

@@ -4,7 +4,7 @@
 @import "../../styles/text";
 
 .section {
-    margin-top: 100px;
+    margin-top: 150px;
     display: flex;
     align-items: center;
     z-index: 2;
@@ -16,6 +16,7 @@
 
     @include from-md-width {
         height: 750px;
+        margin-top: 100px;
     }
 }
 
@@ -42,6 +43,11 @@
 
 .right-side {
     margin-top: 40px;
+    display: none;
+
+    @include from-md-width {
+        display: block;
+    }
 }
 
 .left-side {
@@ -66,7 +72,25 @@
     color: $color-gray50;
 }
 
+.screen {
+    position: relative;
+    margin: 0 auto 50px auto;
+    width: 100%;
+    max-width: 335px;
+
+    @include only-width($sm-width, $md-width) {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    @include from-md-width {
+        display: none;
+    }
+}
+
 .sticky-iphone {
+    display: none;
+
     width: 100%;
     z-index: 1;
     max-width: 1045px;
@@ -88,14 +112,14 @@
     }
 }
 
+.appstore-link {
+    margin-top: 30px;
+}
 
-@include to-md-width {
+
+@include from-md-width {
     .sticky-iphone {
-        margin: 0 auto 50px auto;
-
-        &__image-root {
-            margin: 0 auto;
-        }
+        display: block;
     }
 }
 

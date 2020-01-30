@@ -1,6 +1,7 @@
 import React from 'react';
+import { useI18n } from 'slim-i18n';
+
 import {
-    Footer,
     Header,
     StickIphone,
     IntroSection,
@@ -11,8 +12,8 @@ import {
     FeatureSection,
     FeedbackSection,
     DarkCardSection,
+    DarkFooter,
 } from 'common/components';
-import { useI18n } from 'slim-i18n';
 
 export default function AndroidWallet(): JSX.Element {
     const i18n = useI18n();
@@ -127,7 +128,7 @@ export default function AndroidWallet(): JSX.Element {
             <FeedbackSection />
 
             <SubscribeSection />
-            <Footer />
+            <DarkFooter />
         </>
     );
 }

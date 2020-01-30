@@ -1,6 +1,7 @@
 @import '../../styles/media';
 @import '../../styles/colors';
 @import '../../styles/vars';
+@import '../../styles/image';
 
 .phones {
     display: flex;
@@ -20,6 +21,7 @@
         max-height: 452px;
         object-fit: cover;
 
+        @include image-interpolation-hack;
         @include from-md-width {
             max-width: 231px;
             max-height: 600px;

@@ -1,6 +1,5 @@
 import React from 'react';
 import {
-    Footer,
     Header,
     Section,
     Subcopy,
@@ -14,6 +13,7 @@ import {
     FeatureSection,
     FeedbackSection,
     DarkCardSection,
+    DarkFooter,
 } from 'common/components';
 import { Col } from 'reactstrap';
 import { useI18n } from 'slim-i18n';
@@ -124,7 +124,7 @@ export default function BitcoinWallet(): JSX.Element {
             </Section>
 
             <SubscribeSection />
-            <Footer />
+            <DarkFooter />
         </>
     );
 }

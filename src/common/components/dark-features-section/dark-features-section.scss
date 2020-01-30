@@ -1,6 +1,7 @@
 @import '../../styles/colors';
 @import '../../styles/media';
 @import '../../styles/text';
+@import '../../styles/image';
 
 
 .section {
@@ -107,6 +108,8 @@
         &__img {
             display: block;
             margin: 0 auto;
+
+            @include image-interpolation-hack;
 
             width: 80%;
             max-width: 200px;

@@ -31,7 +31,7 @@ export function IPhoneScreen(props: IphoneScreenProps): JSX.Element {
 
             <div className={styles.iphoneContent}>
                 {isVideo ? (
-                    <video className={styles.iphoneImage}
+                    <video className={cn(styles.iphoneImage, styles.isVideo)}
                            controls={false}
                            autoPlay
                            loop
@@ -46,7 +46,7 @@ export function IPhoneScreen(props: IphoneScreenProps): JSX.Element {
                          srcSet={srcset}
                          alt={props.alt || 'screen'}
                          title={props.title || 'scene'}
-                         className={styles.iphoneImage}
+                         className={cn(styles.iphoneImage, styles.isImage)}
                     />
                 )}
             </div>

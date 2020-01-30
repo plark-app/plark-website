@@ -1,7 +1,6 @@
 import React from 'react';
 import { useI18n } from 'slim-i18n';
 import {
-    Footer,
     Header,
     SubscribeSection,
     OpenSourceSection,
@@ -10,6 +9,7 @@ import {
     StickIphone,
     IntroSection,
     DarkCardSection,
+    DarkFooter,
 } from 'common/components';
 import style from './about-us.scss';
 
@@ -70,7 +70,7 @@ export default function AboutUs(): JSX.Element {
 
             <SubscribeSection />
 
-            <Footer />
+            <DarkFooter />
         </>
     );
 }

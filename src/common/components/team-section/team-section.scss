@@ -1,5 +1,6 @@
 @import '../../styles/colors';
 @import '../../styles/media';
+@import '../../styles/image';
 @import '../../styles/text';
 
 .section {
@@ -44,6 +45,7 @@
         object-fit: cover;
         width: 100%;
         height: 100%;
+        @include image-interpolation-hack;
 
         margin-top: -100px;
 

@@ -5,9 +5,8 @@ import { Col, Row } from 'reactstrap';
 import { RouteComponentProps, withRouter } from 'react-router';
 import { compose } from 'recompose';
 import { withTranslations, WithTranslationsProps } from 'slim-i18n';
-import PlatformList from 'common/utils/install-platforms';
-import { NavLink, BurgerButton, withWindowSize, WithWindowSizeProps } from 'common/components';
 import PlarkLogo from 'resources/svgs/plark-logo.component.svg';
+import { NavLink, BurgerButton, withWindowSize, WithWindowSizeProps, AppStoreLink } from 'common/components';
 import { DropdownMenu } from './dropdown-menu';
 import styles from './header.scss';
 
@@ -69,8 +68,6 @@ class Header extends React.Component<HeaderInnerProps, HeaderState> {
             this.state.colorClass,
         );
 
-        const appstore = PlatformList.apple;
-
         return (
             <>
                 <header id="header" className={headerClassName}>
@@ -92,9 +89,7 @@ class Header extends React.Component<HeaderInnerProps, HeaderState> {
                             </Col>
 
                             <Col className={styles.headerNav} xs={7} lg={4}>
-                                <a href={appstore.url} className={cn(styles.headerAppstore, 'arrow-link')} rel="nofollow">
-                                     Available on App Store
-                                </a>
+                                <AppStoreLink className={styles.headerAppstore} />
                             </Col>
                         </Row>
 

@@ -7,7 +7,7 @@ type ExpandBlockProps = {
     content: string | React.ComponentClass | React.FunctionComponent | any;
 };
 
-export default (props: ExpandBlockProps) => {
+export default function ExpandBlock(props: ExpandBlockProps): JSX.Element {
     const [opened, setOpened] = React.useState<boolean>(false);
 
     return (
@@ -19,4 +19,4 @@ export default (props: ExpandBlockProps) => {
             <div className={styles.faqContent}>{props.content}</div>
         </article>
     );
-};
+}
