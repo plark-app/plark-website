@@ -3,22 +3,22 @@
 
 .sitemap {
     &__topic {
-        margin-top: 50px;
+        margin-bottom: 50px;
+    }
 
-        @include from-md-width {
-            margin-top: 200px;
+    &__section {
+        &-content {
+            padding-top: 150px;
+            padding-bottom: 0;
         }
     }
 }
 
 .container {
-    margin-top: 100px;
-
     display: flex;
     flex-direction: column;
 
     @include from-md-width {
-        margin-top: 150px;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: flex-start;
@@ -56,7 +56,7 @@
             font-weight: 400;
             line-height: 2.5;
             text-decoration: underline;
-            
+
             &:hover {
                 text-decoration: none;
             }

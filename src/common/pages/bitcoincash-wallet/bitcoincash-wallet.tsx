@@ -2,15 +2,15 @@ import React from 'react';
 import { useI18n } from 'slim-i18n';
 
 import {
-    Footer,
     Header,
     Section,
     Topic,
     StickIphone,
     IntroSection,
     SubscribeSection,
-    CardSection,
     FeatureSection,
+    DarkCardSection,
+    DarkFooter,
 } from 'common/components';
 
 import styles from './bitcoincash-wallet.scss';
@@ -24,7 +24,7 @@ export default function BitcoincashWallet(): JSX.Element {
 
             <StickIphone
                 picture={{
-                    src: '/img/main-screen.png',
+                    src: '/img/interfaces/PlarkScreen-dashboard.png',
                     alt: 'multi cryptocurrency mobile wallet',
                     title: 'cryptocurrency mobile wallet',
                 }}
@@ -42,7 +42,7 @@ export default function BitcoincashWallet(): JSX.Element {
                     titleTag="h1"
                     titleClassName={styles.bitcoincashWalletBestWalletTitle}
                     descText={i18n.gettext(
-                        "With regard to application use, we want our clients to feel good. That is the reason we've wiped out everything that may trouble you in any way. We won’t bother you with asking name, telephone number, or email to get into Plark.",
+                        'With regard to application use, we want our clients to feel good. That is the reason we\'ve wiped out everything that may trouble you in any way. We won’t bother you with asking name, telephone number, or email to get into Plark.',
                     )}
                     descClassName={styles.bitcoincashWalletBestWalletDescr}
                 />
@@ -117,22 +117,15 @@ export default function BitcoincashWallet(): JSX.Element {
                 image={{
                     src: '/img/main-screen.png',
                     alt: 'multi cryptocurrency mobile wallet',
-                    title: 'cryptocurrency mobile wallet'
+                    title: 'cryptocurrency mobile wallet',
                 }}
             />
 
-            <Section>
-                <Topic
-                    titleClassName={styles.bitcoincashWalletGoodChoice}
-                    titleText={i18n.gettext('Use a bank card to purchase and sell Bitcoin Cash.')}
-                />
-            </Section>
-
-            <CardSection
-                title={''}
+            <DarkCardSection
+                title={i18n.gettext('Use a bank card to purchase and sell Bitcoin Cash.')}
                 topicClassName={styles.bitcoincashWalletCardSectionTopic}
                 description={i18n.gettext(
-                    "Quit burning through your valuable time looking for a decent exchange. By building up the out-of-the-crate arrangement, we've disposed of these issues. Add your bank card to buy or pull back fiat money with it — simpler than at any other time.",
+                    'Quit burning through your valuable time looking for a decent exchange. By building up the out-of-the-crate arrangement, we\'ve disposed of these issues. Add your bank card to buy or pull back fiat money with it — simpler than at any other time.',
                 )}
                 caption={i18n.gettext(
                     'For now, this feature is open for Ukraine (UAH). We will incorporate the Russian Federation (RUB), USA (US Dollar) and EEA (Euro) soon.',
@@ -140,7 +133,7 @@ export default function BitcoincashWallet(): JSX.Element {
             />
 
             <SubscribeSection />
-            <Footer />
+            <DarkFooter />
         </>
     );
 }

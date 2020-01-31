@@ -1,0 +1,174 @@
+@import "../../styles/colors";
+@import "../../styles/media";
+@import "../../styles/vars";
+@import "../../styles/text";
+
+.section {
+    &__content {
+        padding-top: 240px;
+        padding-bottom: 100px;
+
+        display: flex;
+    }
+}
+
+.left {
+    &__title {
+        @include text-h2($color-text-white);
+    }
+
+    &__subtitle {
+        @include text-subtitle2($color-text-secondary);
+    }
+
+    &__title + &__subtitle {
+        margin-top: 20px;
+    }
+}
+
+.right {
+    margin-top: 60px;
+    @include from-sm-width {
+        margin-top: 0;
+    }
+}
+
+
+.card-images {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 30px 0;
+}
+
+.subtitle {
+    display: block;
+    font-size: 16px;
+    max-width: 580px;
+    font-weight: bold;
+    margin: 50px auto 72px auto;
+    line-height: 1.38;
+    color: $color-text-secondary;
+}
+
+
+.caption {
+    display: block;
+    margin: 30px 0;
+    width: 100%;
+    max-width: 445px;
+
+    @include text-subtitle2($color-gray70);
+}
+
+.chart {
+    stroke: $color-gray70;
+
+    @include to-sm-width {
+        display: none;
+    }
+}
+
+.credit-card {
+    max-width: 510px;
+    border-radius: 18px;
+
+    &__image {
+        width: 100%;
+        display: block;
+        position: relative;
+        z-index: 2;
+    }
+
+    &:after {
+        z-index: 1;
+        content: '';
+        display: block;
+        position: absolute;
+        top: 30px;
+        left: 30px;
+        right: 30px;
+        bottom: 1px;
+        box-shadow: 0 12px 85px $color-gray70;
+    }
+}
+
+.description {
+    margin-bottom: 30px;
+    margin-top: 70px;
+}
+
+.download-link {
+    display: inline-block;
+    margin-top: 70px;
+
+    @include text-subtitle3($color-gray01);
+}
+
+.features {
+    margin-top: 30px;
+    border-top: 4px solid $color-gray01;
+    padding-top: 10px;
+    display: flex;
+
+    &__item {
+        width: 86px;
+        margin-right: 30px;
+    }
+
+    &__value {
+        @include text-main($color-text-white);
+        margin-bottom: 5px;
+        max-width: 220px;
+    }
+
+    &__caption {
+        @include text-subtitle2($color-text-secondary);
+        margin-bottom: 5px;
+    }
+}
+
+
+.card {
+    &__steps {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        margin: 80px 0;
+        max-width: 640px;
+
+        @include from-md-width {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+    }
+
+    &__step {
+        width: 230px;
+        min-height: 120px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        flex-direction: column;
+
+        margin-bottom: 75px;
+
+        &-number {
+            color: $color-gray20;
+            font-size: 80px;
+            font-weight: 300;
+        }
+
+        &-description {
+            color: $color-gray01;
+            font-size: 16px;
+            font-weight: 700;
+            text-align: center;
+        }
+    }
+}

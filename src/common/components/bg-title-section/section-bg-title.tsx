@@ -1,44 +1,66 @@
 import React from 'react';
 import cn from 'classnames';
-import { Section } from '../section';
-import TextBlock from '../text-block';
+import { Col } from 'reactstrap';
+import { Section, TextBlock } from 'common/components';
 import style from './section-bg-title.scss';
 
-type BgTitleProps = {
+type BgTitleProps = CommonSection & {
     title: string;
     content: string;
     textTag?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p';
     withMobile?: boolean;
 
-    secondaryContent?: string;
+    wiki?: {
+        text: string;
+        link?: CommonLink;
+    };
 };
 
-export default function BgTitleSection(props: BgTitleProps): JSX.Element {
+export const BgTitleSection = React.memo(function BgTitleSection(props: BgTitleProps): JSX.Element {
+    const { wiki } = props;
+
     return (
-        <Section className={style.section} contentClassName={style.sectionContent} withLeftPadding>
+        <Section
+            withLeftPadding
+            className={style.section}
+            contentClassName={style.sectionContent}
+            id={props.id}
+        >
             {props.withMobile && (
                 <div className={style.sectionWithMobile}>
-                    <img src="/img/main-screen.png" alt="Main Screen" className={style.sectionWithMobileImage} />
+                    <img src="/img/main-screen.png"
+                         alt="Main Screen"
+                         className={style.sectionWithMobileImage}
+                    />
                 </div>
             )}
 
-            <div className={style.contentBox}>
-                <span className={cn(style.title, style.leftSide)}>{props.title}</span>
+            <Col lg={3} md={6}>
+                <h3 className={cn(style.title)}>{props.title}</h3>
+            </Col>
 
+            <div style={{ width: '100%' }} />
+
+            <Col lg={3} md={6} className={style.leftSide}>
                 <hr className={style.contentBoxSeparator} />
+                <TextBlock className={cn(style.content)} tag={props.textTag}>
+                    {props.content}
+                </TextBlock>
+            </Col>
 
-                <div className={style.underlineContent}>
-                    <TextBlock className={cn(style.content, style.leftSide)} tag={props.textTag}>
-                        {props.content}
-                    </TextBlock>
-
-                    <div className={style.rightSide}>
-                        {props.secondaryContent ? (
-                            <p className={style.secondaryContent}>{props.secondaryContent}</p>
-                        ) : undefined}
-                    </div>
-                </div>
-            </div>
+            {wiki ? (
+                <Col className={style.rightSide} lg={{ size: 3, offset: 1 }} md={6}>
+                    <p className={style.secondaryContent}>{wiki.text}</p>
+                    {wiki.link ? (
+                        <a href={wiki.link.url}
+                           title={wiki.link.title}
+                           className={cn('citation', style.rightSideLink, 'arrow-link')}
+                           target="_blank"
+                           rel={wiki.link.rel}
+                        >{wiki.link.title}</a>
+                    ) : undefined}
+                </Col>
+            ) : undefined}
         </Section>
     );
-}
+});

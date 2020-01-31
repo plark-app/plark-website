@@ -1,6 +1,0 @@
-{
-    "private": true,
-    "name": "grid",
-    "main": "grid.tsx",
-    "typings": "grid.tsx"
-}

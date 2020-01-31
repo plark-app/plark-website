@@ -1,25 +1,20 @@
+@import '../../styles/colors';
+
 .burger-button {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-
     width: 25px;
     height: 20px;
-
     background-color: transparent;
-
     padding: 0;
     border: none;
     outline: none;
-
-    position: relative;
-
-    transition: all ease-in-out 0.5s;
+    transition: all 0.5s;
 
     &:hover {
         cursor: pointer;
     }
-
 
     &:before,
     &:after {
@@ -27,11 +22,9 @@
         content: ' ';
         width: 3px;
 
-        background-color: #0b0c0d;
-
+        background-color: currentColor;
         transform: rotate(90deg);
-
-        transition: all ease-in-out 0.3s;
+        transition: all 0.3s;
     }
 
     &:before {
@@ -45,6 +38,11 @@
     }
 
     &.is-open {
+        &:before,
+        &:after {
+            background-color: $color-dark !important;
+        }
+
         &:before,
         &:after {
             height: 20px;

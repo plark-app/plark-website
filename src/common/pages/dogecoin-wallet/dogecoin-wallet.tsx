@@ -2,17 +2,17 @@ import React from 'react';
 import { useI18n, ITranslationsAdapter } from 'slim-i18n';
 
 import {
-    Footer,
     Header,
     Section,
     Topic,
     StickIphone,
     IntroSection,
     SubscribeSection,
-    CardSection,
     FeatureSection,
     WalletFeaturesSection,
     WalletColumnsSection,
+    DarkCardSection,
+    DarkFooter,
 } from 'common/components';
 import { IWalletFeaturesItem } from 'common/components/wallet-features-section';
 
@@ -52,7 +52,7 @@ export default function DogecoinWallet(): JSX.Element {
 
             <StickIphone
                 picture={{
-                    src: '/img/main-screen.png',
+                    src: '/img/interfaces/PlarkScreen-dashboard.png',
                     alt: 'multi cryptocurrency mobile wallet',
                     title: 'cryptocurrency mobile wallet',
                 }}
@@ -99,7 +99,7 @@ export default function DogecoinWallet(): JSX.Element {
                 }}
             />
 
-            <CardSection
+            <DarkCardSection
                 title={i18n.gettext('Buy and Sell Dogecoin via Bank Card')}
                 topicClassName={styles.dogecoinWalletCardSectionTopic}
                 description={i18n.gettext(
@@ -137,7 +137,7 @@ export default function DogecoinWallet(): JSX.Element {
             />
 
             <SubscribeSection />
-            <Footer />
+            <DarkFooter />
         </>
     );
 }

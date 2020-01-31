@@ -1,6 +1,7 @@
 import React from 'react';
 import cn from 'classnames';
 import { Section, JoinLink } from 'common/components';
+import { Col } from 'reactstrap';
 import styles from './feature-section.scss';
 
 export type FeatureSectionProps = {
@@ -27,7 +28,7 @@ export const FeatureSection = React.memo(function FeatureSection(props: FeatureS
         text,
         withoutLink = false,
         linkText = 'Get Plark app',
-        linkUrl = 'https://itunes.apple.com/app/apple-store/id1455862890?pt=118337376&ct=site&mt=8',
+        linkUrl = 'https://dl.plark.io/app/website-appstore',
         textTag = 'p',
         titleText,
         textClassName,
@@ -39,8 +40,12 @@ export const FeatureSection = React.memo(function FeatureSection(props: FeatureS
     });
 
     return (
-        <Section className={styles.featureSection} contentClassName={contentClass} withLeftPadding>
-            <div className={styles.featureSectionText}>
+        <Section
+            withLeftPadding
+            className={styles.featureSection}
+            contentClassName={contentClass}
+        >
+            <Col className={styles.featureSectionText} lg={6}>
                 {titleText && React.createElement(
                     'p',
                     { className: cn(styles.featureSectionTextTitle, titleClassName) },
@@ -52,11 +57,11 @@ export const FeatureSection = React.memo(function FeatureSection(props: FeatureS
                         {linkText}
                     </JoinLink>
                 )}
-            </div>
+            </Col>
 
-            <div className={styles.picture}>
+            <Col className={styles.picture} lg={4}>
                 <img {...props.image} className={styles.pictureImage} />
-            </div>
+            </Col>
         </Section>
     );
 });

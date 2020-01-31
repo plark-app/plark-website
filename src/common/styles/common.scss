@@ -1,3 +1,5 @@
+@import './colors';
+
 .legal-section {
 
 }
@@ -5,6 +7,7 @@
 
 .markdown {
     margin-top: 40px;
+    font-weight: 500;
 
     &__main-title {
         margin-top: 80px !important;
@@ -13,4 +16,64 @@
     p + h2 {
         margin-top: 50px;
     }
+
+    h2 {
+        margin-bottom: 20px;
+    }
+
+    a {
+        color: $color-text-dark;
+        text-decoration: underline;
+        transition: all 0.5s;
+
+        &:hover {
+            transition-duration: 0.2s;
+            color: $color-success;
+            text-decoration: none;
+        }
+    }
 }
+
+.title {
+    display: block;
+    line-height: 1.57;
+    color: $color-text-secondary;
+
+    &.is-column-title {
+        display: block;
+        margin-bottom: 5px;
+    }
+}
+
+
+/*
+ * Describe the footer links
+ */
+
+.secondary-link,
+.main-link {
+    text-decoration: underline;
+    display: inline-block;
+
+    &:hover {
+        text-decoration: none;
+        color: $color-success;
+    }
+}
+
+.main-link {
+    color: $color-gray01;
+}
+
+.secondary-link {
+    color: $color-text-secondary;
+}
+
+.main-text {
+    color: $color-gray01;
+    text-transform: lowercase;
+    display: block;
+    line-height: 1.85;
+}
+
+

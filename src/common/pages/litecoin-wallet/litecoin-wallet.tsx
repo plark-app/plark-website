@@ -1,18 +1,19 @@
 import React from 'react';
+import { Col } from 'reactstrap';
 import { useI18n, ITranslationsAdapter } from 'slim-i18n';
 
 import {
-    Footer,
     Header,
     Section,
     Topic,
     StickIphone,
     IntroSection,
     SubscribeSection,
-    CardSection,
     FeatureSection,
     WalletFeaturesSection,
     WalletColumnsSection,
+    DarkCardSection,
+    DarkFooter,
 } from 'common/components';
 import { IWalletFeaturesItem } from 'common/components/wallet-features-section';
 
@@ -56,7 +57,7 @@ export default function LitecoinWallet(): JSX.Element {
 
             <StickIphone
                 picture={{
-                    src: '/img/main-screen.png',
+                    src: '/img/interfaces/PlarkScreen-dashboard.png',
                     alt: 'multi cryptocurrency mobile wallet',
                     title: 'cryptocurrency mobile wallet',
                 }}
@@ -79,23 +80,28 @@ export default function LitecoinWallet(): JSX.Element {
                     descClassName={styles.litecoinWalletBestWalletDescr}
                 />
             </Section>
+
             <WalletFeaturesSection featuresList={featuresList(i18n)} />
-            <Section className={styles.litecoinWalletDownloadSection}>
-                <Topic
-                    titleClassName={styles.litecoinWalletDownloadSectionTitle}
-                    className={styles.litecoinWalletDownloadSectionTopic}
-                    titleText={i18n.gettext(
-                        'Are you still using a Litecoin wallet online? Treat yourself — download Plark',
-                    )}
-                    titleTag="h2"
-                />
+
+            <Section className={styles.litecoinWalletDownloadSection} withLeftPadding>
+                <Col lg={11}>
+                    <Topic
+                        isCenter
+                        titleClassName={styles.litecoinWalletDownloadSectionTitle}
+                        className={styles.litecoinWalletDownloadSectionTopic}
+                        titleText={i18n.gettext(
+                            'Are you still using a Litecoin wallet online? Treat yourself — download Plark',
+                        )}
+                        titleTag="h2"
+                    />
+                </Col>
             </Section>
 
             <FeatureSection
                 withoutLink
                 titleText={i18n.gettext('Download Plark Wallet for Litecoin')}
                 text={i18n.gettext(
-                    "Plark offers one of the quickest and least demanding approaches to buy and oversee Litecoin. Alongside top of the line security level, Plark fills in as a wallet and trade across the board tool. Since now, you don't have to make accounts on various trades or search for an endowed one to get it or continue with alternate sorts of tasks. So prepare for an ultra utility every minute of every day (Android Litecoin wallet may see the world soon too)",
+                    'Plark offers one of the quickest and least demanding approaches to buy and oversee Litecoin. Alongside top of the line security level, Plark fills in as a wallet and trade across the board tool. Since now, you don\'t have to make accounts on various trades or search for an endowed one to get it or continue with alternate sorts of tasks. So prepare for an ultra utility every minute of every day (Android Litecoin wallet may see the world soon too)',
                 )}
                 textClassName={styles.litecoinWalletDownloadSectionText}
                 image={{
@@ -105,17 +111,20 @@ export default function LitecoinWallet(): JSX.Element {
                 }}
             />
 
-            <Section>
-                <Topic
-                    titleClassName={styles.litecoinWalletGoodChoice}
-                    titleText={i18n.gettext(
-                        'Litecoin desktop wallet is a good choice. By the way, you forgot to bring along the PC.',
-                    )}
-                    titleTag="h3"
-                />
+            <Section withLeftPadding>
+                <Col lg={11}>
+                    <Topic
+                        isCenter
+                        titleClassName={styles.litecoinWalletGoodChoice}
+                        titleText={i18n.gettext(
+                            'Litecoin desktop wallet is a good choice. By the way, you forgot to bring along the PC.',
+                        )}
+                        titleTag="h3"
+                    />
+                </Col>
             </Section>
 
-            <CardSection
+            <DarkCardSection
                 title={i18n.gettext('Trade Litecoin via Bank Card')}
                 topicClassName={styles.litecoinWalletCardSectionTopic}
                 description={i18n.gettext(
@@ -148,7 +157,8 @@ export default function LitecoinWallet(): JSX.Element {
             />
 
             <SubscribeSection />
-            <Footer />
+
+            <DarkFooter />
         </>
     );
 }

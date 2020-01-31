@@ -6,10 +6,12 @@ type StoreQRProps = {
     className?: string;
 };
 
-export default function StoreQR(props: StoreQRProps) {
+export function StoreQR(props: StoreQRProps) {
     return (
         <div className={cn(styles.box, props.className)}>
-            <img src="/img/appstore-qr.png" className={styles.boxSmall} alt="Plark AppStore QR" />
+            <img src="/img/qr-code.png" className={styles.boxSmall} alt="Plark AppStore QR" />
+            <span className={styles.boxText}>Scan to Download</span>
+
             <img src="/img/appstore-qr.png" className={styles.boxBig} alt="Plark AppStore QR" />
         </div>
     );

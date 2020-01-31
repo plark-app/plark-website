@@ -74,10 +74,10 @@ class MainRouter extends React.Component<AppProps, MainRouterState> {
         };
     }
 
-    public componentWillReceiveProps(nextProps: AppProps): void {
-        const { location: nextLocation } = nextProps;
-
-        this.setState({ location: nextLocation });
+    public static getDerivedStateFromProps(nextProps: AppProps, prevState: MainRouterState): Partial<MainRouterState> {
+        return Object.assign({}, prevState, {
+            location: nextProps.location,
+        });
     }
 
     public render(): JSX.Element {

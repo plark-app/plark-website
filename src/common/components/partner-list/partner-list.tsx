@@ -12,7 +12,7 @@ type PartnerListProps = {
     itemClassName?: string;
 };
 
-export default React.memo(function PartnerList(props: PartnerListProps): JSX.Element {
+export const PartnerList = React.memo(function PartnerList(props: PartnerListProps): JSX.Element {
     const containerClass = cn(styles.list, { [styles.isSmall]: props.isSmall }, props.className);
     const itemClassName = cn(styles.partner, props.itemClassName);
 

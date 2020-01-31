@@ -18,6 +18,25 @@
     }
 }
 
+
+@mixin from-height($height) {
+    @media screen and (min-height: $height) {
+        @content;
+    }
+}
+
+@mixin to-height($height) {
+    @media screen and (max-height: $height) {
+        @content;
+    }
+}
+
+@mixin only-height($from, $to) {
+    @media screen and (min-height: $from) and (max-height: $to - 1px) {
+        @content;
+    }
+}
+
 // from width
 @mixin from-xxl-width() {
     @include from-width($xxl-width) {
@@ -116,15 +135,28 @@
 }
 
 
-@mixin left-padding($deep: 1) {
-    @include to-sm-width {
+@function col-vw($deep: 1) {
+    @return 100vw * ($deep / $col-num);
+}
+
+
+@mixin left-padding($deep: 1, $for-main: false) {
+    // for mobile
+    @include to-width($sm-width) {
         padding-left: 16px;
     }
 
-    @include only-width($sm-width, 1280px) {
-        $percent: col-percent($deep);
+    // for tablet
+    @include only-width($sm-width, 998px) {
+        margin-left: 0;
+    }
 
-        padding-left: calc(#{$percent} - 24px + 36px);
+    // for desktop
+    @if $for-main {
+        @include only-width(998px, 1280px) {
+            $percent: col-percent($deep);
+            padding-left: calc(#{$percent} - 24px + 36px);
+        }
     }
 
     @include from-width(1280px) {
@@ -134,10 +166,23 @@
 }
 
 
-@mixin left-margin($deep: 1) {
-    @include to-width(1280px) {
-        $percent: col-percent($deep);
-        margin-left: calc(#{$percent} - 24px + 36px);
+@mixin left-margin($deep: 1, $for-main: false) {
+    // for mobile
+    @include to-width($sm-width) {
+        margin-left: 0;
+    }
+
+    // for tablet
+    @include only-width($sm-width, 998px) {
+        margin-left: 0;
+    }
+
+    // for desktop
+    @if $for-main {
+        @include only-width(998px, 1280px) {
+            $percent: col-percent($deep);
+            margin-left: calc(#{$percent} - 24px + 36px);
+        }
     }
 
     @include from-width(1280px) {
@@ -148,10 +193,26 @@
 }
 
 
-@mixin make-width($deep: 1) {
-    @include to-width(1280px) {
-        $percent: col-percent($deep);
-        max-width: calc(#{$percent} - #{$var-gutter});
+@mixin make-width($deep: 1, $maximize-width: false, $for-tablet: 6, $for-mobile: 4) {
+    @if $maximize-width {
+        width: 100%;
+    }
+
+    // for mobile
+    @include to-width($sm-width) {
+        @if not $maximize-width {
+            width: 100%;
+        }
+
+        $percent: col-vw($for-mobile * 3);
+        max-width: calc(#{$percent} - 32px);
+    }
+
+    // for tablet
+    @include only-width($sm-width, 1279px) {
+        $percent: col-vw($for-tablet * 2) ;
+
+        max-width: calc(#{$percent} - 32px);
     }
 
     @include from-width(1280px) {

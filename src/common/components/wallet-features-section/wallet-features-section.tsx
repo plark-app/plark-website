@@ -1,6 +1,7 @@
 import React from 'react';
 import cn from 'classnames';
-import { useDimensions } from 'common/components';
+import { Section, useDimensions } from 'common/components';
+import { Col } from 'reactstrap';
 
 import styles from './wallet-features-section.scss';
 
@@ -28,24 +29,26 @@ export default function WalletFeaturesSection(props: WalletFeaturesSectionInnerP
         : Math.floor((featuresList.length - 1) / 2);
 
     return (
-        <div className={cn(styles.walletFeatureSection, sectionClassName)}>
-            <ul className={cn(styles.walletFeatureSectionList, listClassName)}>
-                {featuresList.map((item: IWalletFeaturesItem, i: number) => (
-                    <li style={{ order: i, textAlign: dimensions.width >= 768 ? (i > 3 ? 'left' : 'right') : 'center' }}
-                        key={i}
-                        className={styles.walletFeatureSectionItem}
-                    >
-                        <p className={styles.walletFeatureSectionItemTitle}>{item.title}</p>
+        <Section className={cn(styles.walletFeatureSection, sectionClassName)} withLeftPadding>
+            <Col lg={11}>
+                <ul className={cn(styles.walletFeatureSectionList, listClassName)}>
+                    {featuresList.map((item: IWalletFeaturesItem, i: number) => (
+                        <li style={{ order: i, textAlign: dimensions.width >= 768 ? (i > 3 ? 'left' : 'right') : 'center' }}
+                            key={i}
+                            className={styles.walletFeatureSectionItem}
+                        >
+                            <p className={styles.walletFeatureSectionItemTitle}>{item.title}</p>
 
-                        {item.descr && <p className={styles.walletFeatureSectionItemDescr}>{item.descr}</p>}
+                            {item.descr && <p className={styles.walletFeatureSectionItemDescr}>{item.descr}</p>}
+                        </li>
+                    ))}
+                    <li style={{ order: phoneOrder }}
+                        className={cn(styles.walletFeatureSectionItemImage, imgClassName)}
+                    >
+                        <img className={styles.walletFeatureSectionImage} src={'/img/trade-screen.png'} />
                     </li>
-                ))}
-                <li style={{ order: phoneOrder }}
-                    className={cn(styles.walletFeatureSectionItemImage, imgClassName)}
-                >
-                    <img className={styles.walletFeatureSectionImage} src={'/img/trade-screen.png'} />
-                </li>
-            </ul>
-        </div>
+                </ul>
+            </Col>
+        </Section>
     );
 }

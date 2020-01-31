@@ -2,17 +2,17 @@ import React from 'react';
 import { useI18n, ITranslationsAdapter } from 'slim-i18n';
 
 import {
-    Footer,
     Header,
     Section,
     Topic,
     StickIphone,
     IntroSection,
     SubscribeSection,
-    CardSection,
     FeatureSection,
     WalletFeaturesSection,
     WalletColumnsSection,
+    DarkCardSection,
+    DarkFooter,
 } from 'common/components';
 import { IWalletFeaturesItem } from 'common/components/wallet-features-section';
 
@@ -53,7 +53,7 @@ export default function TronWallet(): JSX.Element {
 
             <StickIphone
                 picture={{
-                    src: '/img/main-screen.png',
+                    src: '/img/interfaces/PlarkScreen-dashboard.png',
                     alt: 'multi cryptocurrency mobile wallet',
                     title: 'cryptocurrency mobile wallet',
                 }}
@@ -100,7 +100,7 @@ export default function TronWallet(): JSX.Element {
                 }}
             />
 
-            <Section>
+            <Section withLeftPadding>
                 <Topic
                     titleClassName={styles.tronWalletGoodChoice}
                     titleText={i18n.gettext('Tron online wallet? Think twice about security.')}
@@ -108,7 +108,7 @@ export default function TronWallet(): JSX.Element {
                 />
             </Section>
 
-            <CardSection
+            <DarkCardSection
                 title={i18n.gettext('Buy and Sell Tron through Bank Card')}
                 topicClassName={styles.tronWalletCardSectionTopic}
                 description={i18n.gettext(
@@ -135,7 +135,7 @@ export default function TronWallet(): JSX.Element {
             />
 
             <SubscribeSection />
-            <Footer />
+            <DarkFooter />
         </>
     );
 }

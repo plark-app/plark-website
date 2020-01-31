@@ -39,7 +39,7 @@ export default function Footer(): JSX.Element {
                             >
                                 <>
                                     <ColumnLinks links={column.links} />
-                                    {column.columnType === 'get_in_touch' && <Socials />}
+                                    {column.columnType === 'get_in_touch' && <Socials className={styles.footerSocial} />}
                                 </>
                             </FooterColumn>
                         );

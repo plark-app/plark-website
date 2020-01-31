@@ -18,53 +18,62 @@
     box-shadow: 0 1px 0 0 transparent;
 
     box-sizing: border-box;
-    transition: all ease-in-out 0.2s;
+    transition: all 0.2s ease-in-out;
 
     &__section {
-        height: 78px;
         width: 100%;
         max-width: 1280px;
         margin: 0 auto;
-
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding-right: 12px;
-
-        $percent: 1280px / 12 - 24px;
-        padding-left: calc(#{$percent} + 36px);
-
-        @include to-sm-width {
-            padding-left: 50px;
-        }
     }
 
-    &.-is-white {
-        transition: all 0.4s;
+    &__row {
+        height: 78px;
+        align-items: center;
+    }
+
+    &__left {
+        display: flex;
+    }
+
+    &.is-black {
+        background-color: $color-dark;
+
+        &.is-scrolled {
+            border-bottom-color: $color-gray50;
+        }
     }
 
     &.is-scrolled {
         border-bottom-color: $color-text-dark;
     }
 
-
     &__logo {
         display: block;
+        fill: $color-dark;
+
+        .is-black & {
+            fill: $color-gray01;
+        }
     }
 
     &__center-label {
-        @include text-special;
+        @include text-special($color-text-dark);
 
         margin-left: 12px;
         white-space: pre-wrap;
 
-        @include to-sm-width {
+        @include to-lg-width {
             display: none;
+        }
+
+        .is-black & {
+            color: $color-gray05;
         }
     }
 
     &__nav {
         display: flex;
+        justify-content: flex-end;
         align-items: center;
 
         &-badge {
@@ -74,25 +83,18 @@
 
         &-menu-btn {
             display: flex;
-
-            @include from-md-width {
-                display: none !important;
-            }
         }
     }
 
     &__appstore {
-        @include text-h4;
-        transition: all 0.5s;
+        display: none;
 
-        &:hover {
-            transition: all 0.2s ease-out;
-            transform: translateX(-3px);
-            color: $color-gray50;
+        .is-black & {
+            color: $color-white;
         }
 
-        &:active {
-            transform: translateX(2px);
+        @include from-sm-width {
+            display: block;
         }
     }
 }
@@ -104,18 +106,16 @@
     z-index: 950;
 
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     left: 0;
-
-    transform: rotate(-90deg);
 
     @include from-width(1280px) {
         left: calc((100vw - 1280px) / 2);
     }
 
-    @include to-md-width {
+    @include to-width(1440px) {
         display: none;
     }
 
@@ -123,77 +123,334 @@
         @include text-special;
         transition: all 0.3s;
 
+        transform: rotate(180deg);
+        text-orientation: mixed;
+        writing-mode: vertical-lr;
+
+        .is-black & {
+            color: $color-gray05;
+        }
+
         &:hover {
-            color: $color-gray50;
+            color: $color-success;
         }
 
         & + & {
-            margin-left: 50px;
+            margin-top: 50px;
         }
     }
 }
 
+
 :global {
     .mobile-menu-enter {
-        opacity: 0;
         transform: translateX(-100vw);
     }
 
     .mobile-menu-enter-active {
-        opacity: 1;
         transform: translateX(0);
-        transition: all 300ms;
+        transition: all 0.5s;
     }
 
     .mobile-menu-exit {
-        opacity: 1;
-        transform: translateX(0);
+        transform: translateY(0);
     }
 
     .mobile-menu-exit-active {
-        opacity: 0;
         transform: translateX(-100vw);
-        transition: all 300ms;
+        transition: all 0.3s;
     }
 }
 
 
-.dropdown-menu {
+.dm {
     position: fixed;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    z-index: 10;
-    top: 78px;
+    flex-direction: row;
+    top: 0;
     bottom: 0;
-
     left: 0;
-    width: 100vw;
-    background-color: $color-text-dark;
+    right: 0;
 
+    overflow-y: auto;
+    scroll-behavior: smooth;
+
+    z-index: 1050;
+    width: 100vw;
+    background-color: $color-gray01;
+
+    &__content {
+        padding-top: 100px;
+        min-height: 100vh;
+        padding-bottom: 0;
+        z-index: 2;
+
+        @include from-sm-width {
+            padding-top: 120px;
+        }
+
+        @include from-lg-width {
+            padding-top: 175px;
+        }
+
+        &:after {
+            position: absolute;
+            content: '';
+            display: block;
+            background-color: $color-gray10;
+            width: 1px;
+            top: 100px + 400px;
+            left: 30px;
+            bottom: 0;
+            z-index: 1;
+
+            @include only-width($sm-width, $lg-width) {
+                left: 50px;
+            }
+
+            @include to-sm-width {
+                display: none;
+            }
+        }
+    }
+
+    &-dummy {
+        display: none;
+    }
+
+    &-nav {
+        position: relative;
+        padding-bottom: 70px;
+
+        @include from-lg-width {
+            padding-bottom: 150px;
+        }
+
+        &-download {
+            display: inline-block;
+            color: $color-text-dark;
+            margin-top: 50px;
+
+            @include from-sm-width {
+                display: none;
+            }
+        }
+    }
 
     &-item {
         display: flex;
         align-items: center;
-        padding: 0 20px;
-        transition: color 0.4s;
-        font-size: 20px;
-        line-height: 1.55;
-        font-weight: bold;
-        color: $color-gray05;
+        line-height: 50px; // 1.315
+        z-index: 2;
 
-        & + & {
-            margin-top: 16px;
+        &-link {
+            color: $color-text-dark;
+            display: inline-block;
+            height: 50px;
         }
 
-        &:hover {
-            transition-duration: 0.2s;
-            color: $color-text-secondary;
+        &-index {
+            display: none;
+
+            font-weight: 400;
+            font-size: 12px;
+            align-items: center;
+            position: absolute;
+            left: -12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: $color-gray10;
+
+            background-color: $color-gray01;
+
+            @include only-width($sm-width, $lg-width) {
+                left: 8px;
+            }
+        }
+
+        &-text {
+            font-size: 32px;
+            line-height: 50px; // 1.56
+            font-weight: bold;
+            color: $color-text-dark;
+            text-transform: lowercase;
+
+            display: inline-block;
+            position: relative;
+
+            &:after {
+                position: absolute;
+                content: '';
+                display: block;
+                z-index: 1;
+                left: -10px;
+                height: 4px;
+                top: 50%;
+                background-color: $color-success;
+
+                right: calc(100% + 10px);
+                transition: right 0.5s ease-in-out;
+            }
+
+            @include from-lg-width {
+                font-size: 38px;
+            }
+        }
+
+        &-link:hover &-text:after {
+            transition-duration: 0.3s;
+            right: -10px;
+        }
+
+        &-link:hover &-index {
+            color: $color-success;
+        }
+
+
+        @include from-sm-width {
+            padding-left: 110px;
+
+            &-index {
+                display: block;
+            }
         }
     }
 
     &-btn {
+        position: relative;
+        color: $color-dark;
+        margin-right: 30px;
+        z-index: 1100;
+
+        @include from-width(1281px) {
+            position: absolute;
+            left: -102px;
+        }
+
+        .is-black & {
+            color: $color-gray01;
+        }
+    }
+
+
+    &__dark-side {
         position: absolute;
-        left: 12px;
+        background-color: $color-text-dark;
+        top: 0;
+        min-height: 100vh;
+        z-index: 1;
+
+        right: 0;
+
+        $calc-col-width: (1280px - 24px) / 12;
+        left: calc(50vw - #{$calc-col-width});
+
+        @include only-width($lg-width, 1280px) {
+            left: calc(#{100vw / 12 * 5});
+        }
+
+        @include to-lg-width {
+            display: none;
+        }
+    }
+
+    &-right {
+        display: none;
+        min-height: 100%;
+        padding-bottom: 150px;
+        font-size: 14px;
+        line-height: 1.856;
+        font-weight: normal;
+
+        &-nav {
+            width: 220px;
+            margin-right: 24px;
+
+            @include from-lg-width {
+                width: 190px;
+            }
+        }
+
+        &-product {
+            width: 300px;
+        }
+
+        &__logo {
+            fill: $color-dark;
+        }
+
+        &__description {
+            margin: 20px 0 56px 0;
+        }
+
+        &__download {
+            color: $color-text-dark;
+            text-transform: none !important;
+        }
+
+        @include from-sm-width {
+            display: flex;
+        }
+
+        @include from-lg-width {
+            color: $color-gray01;
+
+            &__logo {
+                fill: $color-gray01;
+            }
+
+            &__download {
+                color: $color-gray01;
+            }
+        }
+
+        @include only-width($sm-width, $lg-width) {
+            margin-left: 110px;
+        }
+    }
+
+    &__social {
+        position: absolute;
+        left: 36px;
+        bottom: 50px;
+
+        @include only-width($sm-width, $lg-width) {
+            left: 390px;
+        }
+
+        @include from-lg-width {
+            left: calc(50% + 12px);
+        }
+    }
+
+
+    &__copyright {
+        display: none;
+
+        position: absolute;
+        bottom: 50px;
+
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.85;
+
+        @include from-sm-width {
+            display: block;
+        }
+
+        @include only-width($sm-width, $lg-width) {
+            color: $color-gray40;
+            left: 146px;
+        }
+
+        @include from-lg-width {
+            left: 146px;
+        }
+    }
+}
+
+.text {
+    @include to-lg-width {
+        color: $color-text-dark;
     }
 }

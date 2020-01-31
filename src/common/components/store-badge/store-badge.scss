@@ -1,49 +1,63 @@
+@import '../../styles/colors';
 @import '../../styles/media';
+@import '../../styles/text';
 
 .badge {
-    display: block;
-    margin-bottom: 10px;
-    transition: transform 0.4s;
+    height: 50px;
     border-radius: 5px;
     overflow: hidden;
+    padding: 0 14px;
 
-    @include from-width(640px) {
-        margin-bottom: 0;
+    background-color: $color-dark;
+    color: $color-gray01;
+    display: flex;
+    align-items: center;
+
+    transition: all 0.5s;
+
+    &.is-white {
+        background-color: $color-gray01;
+        color: $color-text-dark;
+    }
+
+    &__text {
+        color: currentColor;
+        font-size: 15px;
+        line-height: 1.66;
+        font-weight: bold;
+
+        @include from-width(640px) {
+            font-size: 12px;
+            line-height: 1.833;
+        }
     }
 
     &:hover {
         transition-duration: 0.2s;
-        transform: translateY(-3px);
+        color: $color-gray01;
+        background-color: $color-success;
     }
 
-    &:last-child {
-        margin-right: 0;
+    &__icon {
+        width: 24px;
+        height: 30px;
+        margin-right: 12px;
+        margin-top: -4px;
+        fill: currentColor;
+
+        @include from-width(640px) {
+            width: 19px;
+            height: 24px;
+            margin-right: 10px;
+        }
+    }
+
+    @include from-width(640px) {
+        height: 40px;
+        padding: 0 10px;
     }
 
     &__image {
         display: block;
-    }
-
-    &-container {
-        display: flex;
-        transition: opacity 0.2s;
-        flex-direction: row;
-        flex-wrap: wrap;
-        visibility: visible;
-        opacity: 1;
-
-        &.is-hide-mobile {
-            display: none;
-
-            @include from-width(640px) {
-                display: flex;
-            }
-        }
-
-        &.is-inactive {
-            opacity: 0;
-            visibility: hidden;
-            transition-delay: 0.4s;
-        }
     }
 }

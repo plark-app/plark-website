@@ -71,9 +71,8 @@ function getPreloadLinks(chunks: string[]): JSX.Element | null {
 
                     return <link
                         key={chunk + 'style'}
-                        rel="preload"
+                        rel="stylesheet"
                         href={link}
-                        as="style"
                     />;
                 } catch (error) {
                     return undefined;
@@ -94,7 +93,7 @@ function getClientConfig(): ClientConfig {
 }
 
 export default function template(data: TemplateData): string {
-    const { criticalCss = '', markup = '', chunks = [], initData = {}, helmet } = data;
+    const { markup = '', chunks = [], initData = {}, helmet } = data;
 
     const configString = JSON.stringify({ config: clientConfig, ...initData });
 
@@ -121,10 +120,11 @@ export default function template(data: TemplateData): string {
                 <meta name="apple-itunes-app" content="app-id=1455862890" />
                 <Favicon />
                 {getPreloadLinks(chunks)}
+                <style>{`body, html {padding: 0; margin: 0;}`}</style>
                 {helmet?.meta.toComponent()}
                 {helmet?.link.toComponent()}
                 {helmet?.script.toComponent()}
-                {criticalCss && <style dangerouslySetInnerHTML={{ __html: criticalCss }} />}
+                {/*{criticalCss && <style dangerouslySetInnerHTML={{ __html: criticalCss }} />}*/}
             </head>
             <body {...bodyAttrs}>
             <div id="app" dangerouslySetInnerHTML={{ __html: markup }} />

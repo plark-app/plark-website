@@ -1,0 +1,6 @@
+{
+    "private": true,
+    "name": "big-photo-section",
+    "main": "big-photo-section.tsx",
+    "typings": "big-photo-section.tsx"
+}

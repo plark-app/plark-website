@@ -1,15 +1,15 @@
 import React from 'react';
 import { useI18n } from 'slim-i18n';
 import {
-    Footer,
     Header,
     SubscribeSection,
-    CardSection,
     OpenSourceSection,
     FeatureSection,
     TwoIPhones,
     StickIphone,
     IntroSection,
+    DarkCardSection,
+    DarkFooter,
 } from 'common/components';
 import style from './about-us.scss';
 
@@ -21,7 +21,7 @@ export default function AboutUs(): JSX.Element {
             <Header isWhite />
             <StickIphone
                 picture={{
-                    src: '/img/main-screen.png',
+                    src: '/img/interfaces/PlarkScreen-dashboard.png',
                     alt: 'multi cryptocurrency mobile wallet',
                     title: 'cryptocurrency mobile wallet',
                 }}
@@ -46,7 +46,7 @@ export default function AboutUs(): JSX.Element {
 
             <TwoIPhones className={style.twoIphones} />
 
-            <CardSection
+            <DarkCardSection
                 title={i18n.gettext('Buy and sell crypto with a credit card.')}
                 description={i18n.gettext(
                     'Add your credit or debit card and purchase Bitcoin, Litecoin, Ethereum, and Dash right away. The feature, which best crypto wallet should have.',
@@ -70,7 +70,7 @@ export default function AboutUs(): JSX.Element {
 
             <SubscribeSection />
 
-            <Footer />
+            <DarkFooter />
         </>
     );
 }

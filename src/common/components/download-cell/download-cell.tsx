@@ -7,6 +7,7 @@ import styles from './download-cell.scss';
 
 type DownloadCellProps = {
     className?: string;
+    isWhite?: boolean;
 };
 
 export default React.memo(function DownloadCell(props: DownloadCellProps) {
@@ -17,6 +18,7 @@ export default React.memo(function DownloadCell(props: DownloadCellProps) {
                 height={40}
                 alt="Install cryptocurrency wallet from App Store"
                 title="Plark cryptocurrency wallet in App Store"
+                isWhite={props.isWhite}
             />
 
             <StoreQR className={styles.buttonsQr} />

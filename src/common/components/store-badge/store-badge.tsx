@@ -7,26 +7,15 @@ import styles from './store-badge.scss';
 type StoreBadgeProps = {
     platform: Platform;
     height?: number;
-    darkBg?: boolean;
+    isWhite?: boolean;
     className?: string;
 
     alt?: string;
     title?: string;
 };
 
-export const BadgeContainer = ({ children, className, inactive = false, hideOnMobile = true }: any) => {
-    const elementClass = cn(
-        styles.badgeContainer,
-        inactive && styles.isInactive,
-        hideOnMobile && styles.isHideMobile,
-        className,
-    );
-
-    return <div className={elementClass}>{children}</div>;
-};
-
-export default function StoreBadge(props: StoreBadgeProps): JSX.Element {
-    const { platform, height = 50 } = props;
+export function StoreBadge(props: StoreBadgeProps): JSX.Element {
+    const { platform, isWhite = false } = props;
 
     if (!platform) {
         return <div />;
@@ -35,16 +24,12 @@ export default function StoreBadge(props: StoreBadgeProps): JSX.Element {
     return (
         <a href={platform.url}
            title={platform.key}
-           className={cn(styles.badge, props.className)}
+           className={cn(styles.badge, isWhite && styles.isWhite, props.className)}
            target="_blank"
            rel="nofollow"
         >
-            <img src={platform.badge}
-                 height={height}
-                 className={styles.badgeImage}
-                 alt={props.alt}
-                 title={props.title}
-            />
+            {React.createElement(platform.icon, { className: styles.badgeIcon })}
+            <span className={styles.badgeText}>Get in {platform.name}</span>
         </a>
     );
 }

@@ -1,6 +1,9 @@
+@import '../../styles/text';
+@import '../../styles/colors';
+
 .title {
-    font-size: 80px;
-    line-height: 70px;
+
+    @include text-h1($color-text-dark);
     margin-bottom: 50px;
 }
 
@@ -9,8 +12,5 @@
 }
 
 .section {
-    min-height: 100vh;
-    display: flex;
-    align-items: flex-end;
     padding-top: 100px;
 }

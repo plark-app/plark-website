@@ -3,8 +3,8 @@ import ReactDOMServer from 'react-dom/server';
 import { HelmetProvider } from 'react-helmet-async';
 import { StaticRouter, StaticRouterContext } from 'react-router';
 import cssnano from 'cssnano';
-import { flush } from 'isomorphic-styles/lib/loader/collect-styles';
-import logger from 'server/utils/logger';
+// import { flush } from 'isomorphic-styles/lib/loader/collect-styles';
+// import logger from 'server/utils/logger';
 import { TranslationsProvider, ITranslationsAdapter } from 'slim-i18n';
 
 export type ServerRenderingContext = {
@@ -56,10 +56,12 @@ export async function render(params: RenderParams): Promise<RenderResult> {
 
     const { helmet } = helmetContext;
 
-    let criticalCss = flush(1024 * 70);
-    logger.debug(`Critical CSS size: ${criticalCss.length}, location: ${location}`);
-    criticalCss = await compressCss(criticalCss);
-    logger.debug(`Compressed Critical CSS size: ${criticalCss.length}`);
+    let criticalCss = '';
+
+    // let criticalCss = flush(1024 * 70);
+    // logger.debug(`Critical CSS size: ${criticalCss.length}, location: ${location}`);
+    // criticalCss = await compressCss(criticalCss);
+    // logger.debug(`Compressed Critical CSS size: ${criticalCss.length}`);
 
     return { markup, criticalCss, helmet };
 }
@@ -89,6 +91,7 @@ async function fetchComponentProps(component: any) {
 }
 
 
+// @ts-ignore
 async function compressCss(css: string): Promise<string> {
     return new Promise((res: (str: string) => void, rej: (err: Error) => void) => {
         // tslint:disable-next-line:no-any

@@ -1,0 +1,6 @@
+{
+    "private": true,
+    "name": "dark-card-section",
+    "main": "dark-card-section.tsx",
+    "typings": "dark-card-section.tsx"
+}

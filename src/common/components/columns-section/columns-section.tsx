@@ -1,5 +1,6 @@
 import React from 'react';
 import { Section, Topic, TwoIPhones, Subcopy } from 'common/components';
+import { Col } from 'reactstrap';
 import styles from './columns-section.scss';
 
 type FeedbackSectionProps = {
@@ -20,8 +21,8 @@ export default React.memo(function ColumnsSection(props: FeedbackSectionProps): 
     const { topic, texts } = props;
 
     return (
-        <>
-            <Section className={styles.section}>
+        <Section className={styles.section} withLeftPadding>
+            <Col lg={11}>
                 {topic ? (
                     <Topic
                         isCenter
@@ -35,10 +36,12 @@ export default React.memo(function ColumnsSection(props: FeedbackSectionProps): 
                     undefined
                 )}
 
-                <TwoIPhones className={styles.phones} />
+                <TwoIPhones
+                    className={styles.phones}
+                />
 
                 <Subcopy texts={texts} />
-            </Section>
-        </>
+            </Col>
+        </Section>
     );
 });

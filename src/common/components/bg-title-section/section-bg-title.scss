@@ -9,7 +9,7 @@
     align-items: center;
 
     @include from-md-width {
-        height: 100vh;
+        height: 750px;
     }
 
     &__content {
@@ -52,12 +52,6 @@
         height: 4px;
         background: $color-text-dark;
         border: none;
-
-        @include make-width(3);
-
-        @include to-xl-width {
-            @include make-width(8);
-        }
     }
 }
 
@@ -66,19 +60,13 @@
     flex-wrap: wrap;
 }
 
-.left-side {
-    @include make-width(3);
-
-    @include to-xl-width {
-        @include make-width(8);
-    }
-}
-
 .right-side {
     margin-top: 40px;
+}
 
-    @include from-md-width {
-        @include left-margin(1);
+.left-side {
+    @include only-md-width {
+        margin-right: 100%;
     }
 }
 
@@ -89,18 +77,22 @@
 }
 
 .content {
-    @include text-h3;
+    @include text-main;
     width: 100%;
 }
 
 .secondary-content {
     @include text-caption;
+    color: $color-gray50;
+}
 
-    @include make-width(8);
 
-    @include from-xl-width {
-        @include make-width(3);
+@include from-lg-width {
+    .right-side {
+        margin-top: 0;
     }
 
-    color: $color-gray50;
+    .secondary-content {
+        margin-top: 64px;
+    }
 }

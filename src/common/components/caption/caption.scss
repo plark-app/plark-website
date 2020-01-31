@@ -1,0 +1,21 @@
+@import '../../styles/colors';
+@import '../../styles/media';
+@import '../../styles/text';
+
+.caption {
+    &__title {
+        @include text-subtitle2;
+
+        .is-white & {
+            color: $color-gray01;
+        }
+    }
+
+    &__description {
+        @include text-caption($color-text-secondary);
+
+        .is-white & {
+            color: $color-gray70;
+        }
+    }
+}

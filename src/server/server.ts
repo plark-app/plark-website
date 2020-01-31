@@ -41,17 +41,27 @@ expressApp.get('/dynamic-sitemap.xml', Router.dynamicSitemap);
 expressApp.get('/robots.txt', Router.robotsTxt);
 
 
-const appHandlers = [
-    Middlewares.redirects,
-    Middlewares.language,
-    Middlewares.cache,
-    Router.reactApplicationRender,
-];
+function buildAppHandles() {
+    const useCache = config.get<boolean>('app.useCache', false);
 
-if (process.env.NODE_ENV === 'development') {
-    appHandlers.unshift(Middlewares.dev);
+    const appHandlers: any[] = [];
+    appHandlers.push(Middlewares.redirects);
+    appHandlers.push(Middlewares.language);
+
+    if (useCache) {
+        appHandlers.push(Middlewares.cache);
+    }
+
+    appHandlers.push(Router.reactApplicationRender);
+
+    if (process.env.NODE_ENV === 'development') {
+        appHandlers.unshift(Middlewares.dev);
+    }
+
+    return appHandlers;
 }
-expressApp.get('*', appHandlers);
+
+expressApp.get('*', buildAppHandles());
 
 expressApp.listen(expressApp.get('port'), (error?: Error) => {
     if (error) {

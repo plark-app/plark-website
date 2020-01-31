@@ -2,7 +2,6 @@ import React from 'react';
 import { useI18n } from 'slim-i18n';
 
 import {
-    Footer,
     Header,
     Section,
     Topic,
@@ -12,6 +11,7 @@ import {
     CardSection,
     FeatureSection,
     WalletColumnsSection,
+    DarkFooter,
 } from 'common/components';
 
 import styles from './eos-wallet.scss';
@@ -24,7 +24,7 @@ export default function EosWallet(): JSX.Element {
 
             <StickIphone
                 picture={{
-                    src: '/img/main-screen.png',
+                    src: '/img/interfaces/PlarkScreen-dashboard.png',
                     alt: 'multi cryptocurrency mobile wallet',
                     title: 'cryptocurrency mobile wallet',
                 }}
@@ -106,7 +106,7 @@ export default function EosWallet(): JSX.Element {
             />
 
             <SubscribeSection />
-            <Footer />
+            <DarkFooter />
         </>
     );
 }

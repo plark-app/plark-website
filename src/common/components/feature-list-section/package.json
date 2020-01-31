@@ -1,0 +1,6 @@
+{
+    "private": true,
+    "name": "feature-list-section",
+    "main": "feature-list-section.tsx",
+    "typings": "feature-list-section.tsx"
+}

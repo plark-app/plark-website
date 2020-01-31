@@ -6,14 +6,21 @@ type TwoIPhonesProps = {
     className?: string;
 };
 
-export default React.memo(function TwoIPhones(props: TwoIPhonesProps) {
+export const TwoIPhones = React.memo(function TwoIPhones(props: TwoIPhonesProps) {
     return (
         <div className={cn(styles.phones, props.className)}>
-            <img src="/img/trade-screen.png" className={styles.phonesScene} alt="Trade Screen" />
-            <img
-                src="/img/trade-confirmation-screen.png"
-                className={styles.phonesScene}
-                alt="Trade Confirmation Screen"
+            <img src="/img/ps/06.png"
+                 alt="Trade Screen"
+                 title="Trade Screen"
+                 className={styles.phonesScene}
+                 srcSet="/img/ps/06@2x.png 2x"
+            />
+
+            <img src="/img/ps/07.png"
+                 alt="Trade Confirmation Screen"
+                 title="Trade Confirmation Screen"
+                 className={styles.phonesScene}
+                 srcSet="/img/ps/07@2x.png 2x"
             />
         </div>
     );

@@ -1,0 +1,6 @@
+{
+    "private": true,
+    "name": "presentation-section",
+    "main": "presentation-section.tsx",
+    "typings": "presentation-section.tsx"
+}

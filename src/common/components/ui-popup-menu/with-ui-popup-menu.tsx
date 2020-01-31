@@ -119,8 +119,6 @@ export const WithUIPopupMenu = compose<ComponentProps, WithUIPopupMenuProps>(tog
             const popupWidth = triggerRight - triggerLeft;
             const { height: popupHeight } = popupEl.getBoundingClientRect();
 
-            console.log(triggerRight, triggerLeft);
-
             switch (placement) {
                 case 'top':
                     return this._updatePosition({

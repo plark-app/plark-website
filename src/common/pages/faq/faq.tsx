@@ -1,8 +1,9 @@
 import React from 'react';
+import { Col } from 'reactstrap';
 import { useI18n } from 'slim-i18n';
 import MarkdownContent from 'common/components/markdown-content';
 import ExpandBlock from 'common/components/expand-block';
-import { Footer, Header, Topic, Section } from 'common/components';
+import { Header, Topic, Section, DarkFooter } from 'common/components';
 
 import commonStyles from 'common/styles/common.scss';
 import styles from './faq.scss';
@@ -10,22 +11,21 @@ import styles from './faq.scss';
 const faqContent = require('./faq-content').default;
 
 export default function FaqPage(): JSX.Element {
-
     const i18n = useI18n();
 
     return (
         <>
             <Header isWhite={true} />
             <Section className={commonStyles.legalSection} withLeftPadding>
-                <Topic
-                    titleText={i18n.gettext('Frequently Asked Questions')}
-                    className={commonStyles.markdownMainTitle}
-                    titleTag="h1"
-                />
+                <Col lg={11}>
+                    <Topic
+                        titleText={i18n.gettext('Frequently Asked Questions')}
+                        className={commonStyles.markdownMainTitle}
+                        titleTag="h1"
+                    />
 
-                <div>
-                    {
-                        faqContent.map((item: any, index: number) => (
+                    <div style={{ marginTop: '24px' }}>
+                        {faqContent.map((item: any, index: number) => (
                             <ExpandBlock
                                 key={index}
                                 title={item.title}
@@ -35,11 +35,12 @@ export default function FaqPage(): JSX.Element {
                                     className={styles.faqItemContent}
                                 />}
                             />
-                        ))
-                    }
-                </div>
+                        ))}
+                    </div>
+                </Col>
             </Section>
-            <Footer />
+
+            <DarkFooter />
         </>
     );
 }

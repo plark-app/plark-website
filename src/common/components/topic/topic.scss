@@ -9,14 +9,10 @@
     &__title {
         margin: 0;
         padding: 0;
-        line-height: 1.1667;
-        font-size: 28px;
-        font-weight: 700;
         white-space: pre-line;
+        max-width: 1280px;
 
-        @include from-md-width() {
-            font-size: 60px;
-        }
+        @include text-h1;
 
         .topic.is-center > & {
             margin-left: auto;

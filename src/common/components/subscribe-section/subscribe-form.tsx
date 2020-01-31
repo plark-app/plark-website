@@ -32,12 +32,10 @@ class SubscribeForm extends React.PureComponent<WithTranslationsProps> {
                         value={this.state.email}
                         onChange={this._handleValue}
                         className={styles.subscribeInput}
-                        placeholder="email address"
+                        placeholder={i18n.gettext('email address')}
                     />
 
-                    <button disabled={loading} className={styles.subscribeButton} type="submit">
-                        {loading ? 'Loading...' : '→'}
-                    </button>
+                    <button disabled={loading} className={styles.subscribeButton} type="submit">→</button>
                 </div>
 
                 <div className={styles.subscribeErrorMessage}>{errorMessage}</div>
@@ -56,12 +54,15 @@ class SubscribeForm extends React.PureComponent<WithTranslationsProps> {
             return;
         }
 
+        const { i18n } = this.props;
+        const niceTryText = i18n.gettext('Nice try, but we need an email  👻');
+
         this.setState({ loading: true, errorMessage: '' });
 
         if (!this.state.email || this.state.email.length < 4) {
             this.setState({
                 loading: false,
-                errorMessage: 'Provide valid email',
+                errorMessage: niceTryText,
             });
 
             return;
@@ -75,7 +76,7 @@ class SubscribeForm extends React.PureComponent<WithTranslationsProps> {
             await Axios.post('/api/email-subscribe', requestData, { timeout: 5000 });
             this.setState({ success: true });
         } catch (error) {
-            this.setState({ errorMessage: 'Provide valid email' });
+            this.setState({ errorMessage: niceTryText });
         } finally {
             this.setState({ loading: false });
         }

@@ -1,0 +1,6 @@
+{
+    "private": true,
+    "name": "dark-footer",
+    "main": "dark-footer.tsx",
+    "typings": "dark-footer.tsx"
+}

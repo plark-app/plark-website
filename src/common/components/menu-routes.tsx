@@ -194,6 +194,11 @@ export const menuRoutes: IMenuRoute[] = [
                 text: __('info@plark.io'),
                 source: 'external',
             },
+            {
+                to: 'mailto:support@plark.io',
+                text: __('support@plark.io'),
+                source: 'external',
+            },
         ],
         columnType: 'get_in_touch',
     },

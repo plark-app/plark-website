@@ -1,5 +1,6 @@
 @import "../../styles/media";
 @import "../../styles/colors";
+@import "../../styles/image";
 
 .container {
     display: none;
@@ -9,7 +10,7 @@
     left: 50%;
     transform: translateX(-50%);
 
-    width: calc(100vw - 24px);
+    width: calc(100vw - 48px);
 
     @include from-md-width {
         display: block;
@@ -30,19 +31,22 @@
     &__box {
         position: sticky;
         top: 0;
-        height: 100vh;
+        height: 750px;
     }
 
     &__image {
-        max-width: 230px;
-        max-height: calc(100vh - 110px);
+        width: 100%;
+        max-width: 340px;
+
+        @include image-interpolation-hack;
+
+        @include from-md-width {
+            max-width: 269px;
+            max-height: 700px;
+        }
+
         position: absolute;
         right: 0;
         bottom: 20px;
-
-        @include from-xxl-width {
-            max-width: 230px;
-            bottom: 20px;
-        }
     }
 }

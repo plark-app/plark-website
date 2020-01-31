@@ -1,0 +1,123 @@
+@import '../../styles/colors';
+@import '../../styles/media';
+@import '../../styles/text';
+@import '../../styles/image';
+
+
+.section {
+    @include from-lg-width {
+        overflow: visible;
+    }
+
+    &__content {
+        padding-top: 0;
+        padding-bottom: 100px;
+
+        @include only-width($sm-width, $lg-width) {
+            padding-left: 24px !important;
+            padding-right: 0 !important;
+        }
+    }
+}
+
+.left {
+    width: 100%;
+    padding-right: 0;
+
+    &__content {
+        max-width: 560px;
+
+        top: 0;
+        padding-top: 300px;
+        position: sticky;
+    }
+
+    &__title {
+        @include text-h1($color-gray01);
+    }
+
+    &__link {
+        display: inline-block;
+        margin-top: 30px;
+        transition: color 0.5s;
+        text-transform: lowercase;
+
+        @include text-subtitle2($color-gray01);
+    }
+
+    @include from-lg-width {
+        padding-bottom: 250px;
+
+        &__content {
+            padding-top: 300px;
+            margin-left: -12px;
+        }
+    }
+}
+
+.feature {
+    display: flex;
+    align-items: flex-end;
+
+    @include to-sm-width {
+        flex-direction: column-reverse;
+
+        & + & {
+            margin-top: 100px;
+        }
+    }
+
+    @include from-sm-width {
+        height: 100vh;
+        max-height: 750px;
+    }
+
+    &__list {
+        width: 100%;
+    }
+
+    &-text {
+        width: 100%;
+        height: auto;
+        white-space: pre-wrap;
+
+        @include from-md-width {
+            height: calc(100vh - 300px);
+        }
+
+        @include from-height(750px) {
+            height: 450px;
+        }
+
+        &__content {
+            @include text-main($color-gray01);
+        }
+    }
+
+    &-image {
+        width: 100%;
+
+        margin-top: 50px;
+        margin-bottom: 50px;
+
+        @include from-sm-width {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        &__img {
+            display: block;
+            margin: 0 auto;
+
+            @include image-interpolation-hack;
+
+            width: 80%;
+            max-width: 200px;
+
+            @include from-lg-width {
+                width: 20vw;
+                max-width: 231px;
+            }
+        }
+    }
+}

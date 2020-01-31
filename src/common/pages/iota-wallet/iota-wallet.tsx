@@ -2,17 +2,17 @@ import React from 'react';
 import { useI18n, ITranslationsAdapter } from 'slim-i18n';
 
 import {
-    Footer,
     Header,
     Section,
     Topic,
     StickIphone,
     IntroSection,
     SubscribeSection,
-    CardSection,
     FeatureSection,
     WalletFeaturesSection,
     WalletColumnsSection,
+    DarkCardSection,
+    DarkFooter,
 } from 'common/components';
 import { IWalletFeaturesItem } from 'common/components/wallet-features-section';
 
@@ -58,7 +58,7 @@ export default function IotaWallet(): JSX.Element {
 
             <StickIphone
                 picture={{
-                    src: '/img/main-screen.png',
+                    src: '/img/interfaces/PlarkScreen-dashboard.png',
                     alt: 'multi cryptocurrency mobile wallet',
                     title: 'cryptocurrency mobile wallet',
                 }}
@@ -114,15 +114,13 @@ export default function IotaWallet(): JSX.Element {
                 }}
             />
 
-            <CardSection
+            <DarkCardSection
                 title={i18n.gettext('Buy & Sell IOTA via Bank Card')}
                 topicClassName={styles.iotaWalletCardSectionTopic}
                 description={i18n.gettext(
                     'With Plark it is now possible to buy and sell IOTA directly through your bank card. Plark simplifies your experience and make it much easier to start your journey into the world of cryptocurrency. Once you have added a bank card to your Plark account, it takes you a few taps to set the amount of IOTA coins you would like to buy or sell. With Plark’s decentralized solutions, it becomes possible to avoid centralized exchanges and never worry about your funds being insecure.',
                 )}
-                caption={i18n.gettext(
-                    'For now, this feature is available for Ukraine (UAH) only. We will add the Russian Federation (RUB), USA (US Dollar) and EEA (Euro) soon',
-                )}
+                caption={i18n.gettext('For now, this feature is available for Ukraine (UAH) only. We will add the Russian Federation (RUB), USA (US Dollar) and EEA (Euro) soon')}
             />
 
             <WalletColumnsSection
@@ -141,7 +139,7 @@ export default function IotaWallet(): JSX.Element {
             />
 
             <SubscribeSection />
-            <Footer />
+            <DarkFooter />
         </>
     );
 }

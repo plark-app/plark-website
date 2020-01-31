@@ -6,6 +6,9 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
 
     @include from-lg-width {
         flex-direction: row;

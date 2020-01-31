@@ -2,15 +2,16 @@
 @import '../../styles/media';
 
 .contact-us {
-    display: flex;
-    flex-direction: column-reverse;
-    align-items: center;
-
-
-    @include from-lg-width {
-        flex-direction: row;
-        justify-content: space-between;
+    &-box {
+        display: flex;
+        flex-direction: column-reverse;
         align-items: center;
+
+        @include from-lg-width {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
     }
 
     &__title {
@@ -22,10 +23,11 @@
         width: 100%;
         max-width: 500px;
 
-        &__descr.contact-us__topic__descr {
-            margin-top: 0px;
+        &__description {
+            margin-top: 30px;
             max-width: 365px;
             margin-bottom: 30px;
+
             text-align: left;
 
             @include from-lg-width {
@@ -38,6 +40,7 @@
     &__actions {
         display: flex;
         justify-content: flex-start;
+        align-items: center;
         flex-wrap: wrap;
 
         &__button {
