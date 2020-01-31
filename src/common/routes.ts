@@ -14,7 +14,7 @@ export const routes: RouteDescriptor[] = [
             pageName: i18n.gettext('Home'),
             title: i18n.gettext('The friendliest multi-currency crypto wallet.'),
             description: i18n.gettext(
-                'We won’t scream how good we are. We won’t beg you to install our application. We do our job. No need to convince — use Plark.',
+                'All-in-one wallet to buy, sell, exchange, and store your multiple cryptocurrencies.',
             ),
             canonicalLink: 'https://plark.io',
             path: '/',
@@ -94,7 +94,7 @@ export const routes: RouteDescriptor[] = [
             pageName: i18n.gettext('Bitcoin Wallet'),
             title: i18n.gettext('The Best Bitcoin Wallet? Well, Plark.'),
             description: i18n.gettext(
-                'When it comes to application usage, we want our users to feel comfortable. That’s why we’ we eliminated all the points that may bother you in any way.',
+                `When it comes to application usage, we want our users to feel comfortable. That’s why we’ we eliminated all the points that may bother you in any way.`,
             ),
             canonicalLink: 'https://plark.io/bitcoin-wallet',
             path: '/bitcoin-wallet',
