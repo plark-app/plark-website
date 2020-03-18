@@ -1,5 +1,5 @@
 import React from 'react';
-import { ITranslationsAdapter, useI18n } from 'slim-i18n';
+import {ITranslationsAdapter, useI18n} from 'slim-i18n';
 
 import {
     DarkFooter,
@@ -84,7 +84,7 @@ export default function Home(): JSX.Element {
 
     return (
         <>
-            <Header isWhite />
+            <Header isWhite/>
 
             <IntroSection
                 withPhone
@@ -131,7 +131,6 @@ export default function Home(): JSX.Element {
                     text: i18n.gettext(`Oh yes, we can`),
                     author: i18n.gettext('— Plark team'),
                 }}
-
                 caption={{
                     title: i18n.gettext('Dima and Stanislav showing that the entrance is over there 🤓'),
                     description: i18n.gettext('Kudos to our talented photographer'),
@@ -140,9 +139,9 @@ export default function Home(): JSX.Element {
 
             <DarkCardSection
                 id="credit-card"
-                title="the card is the key"
-                subtitle="Whether you are a crypto lord or just a newcomer — trading it for fiat money right in the Plark wallet sounds like a good fit.  A bit of magic, and you are a trader. Whoosh!"
-                description="Here comes Plark’s icing on the cake — a feature allowing to buy and sell crypto for UAH right in the wallet. Add your credit or debit card and join the feast of crypto life."
+                title={i18n.gettext('the card is the key')}
+                subtitle={i18n.gettext('Whether you are a crypto lord or just a newcomer — trading it for fiat money right in the Plark wallet sounds like a good fit.  A bit of magic, and you are a trader. Whoosh!')}
+                description={i18n.gettext('Here comes Plark’s icing on the cake — a feature allowing to buy and sell crypto for UAH right in the wallet. Add your credit or debit card and join the feast of crypto life.')}
             />
 
             <DarkFeaturesSection
@@ -158,50 +157,50 @@ export default function Home(): JSX.Element {
                     text: i18n.gettext('Plark is not about features. It’s about the experience you have whenever you tap the Trade button, see Bitcoin price going up, or import you old wallet into a sleek black-and-white interface. It’s about you buying your first but not last cryptocurrency and feeling proud. We sculpt each of these ways. And hope you will love it.'),
                     link: {
                         url: 'https://community.plark.io/d/14-how-to-create-plark-wallet',
-                        text: 'join discussion on Flarum',
-                        title: 'Plark community',
+                        text: i18n.gettext('join discussion on Flarum'),
+                        title: i18n.gettext('Plark community'),
                         rel: 'nofollow',
                     },
                     image: {
                         url: '/img/ps/04',
-                        alt: 'plark cryptocurrency wallet',
-                        title: 'Plark cryptocurrency wallet',
+                        alt: i18n.gettext('plark cryptocurrency wallet'),
+                        title: i18n.gettext('Plark cryptocurrency wallet'),
                     },
                 }, {
                     text: i18n.gettext('Whatever input you share with us is like a gem.  And we’ll use it to craft a flawless experience for you. \n\nPlark is always ready for conversation. If you have any question, issue, or suggestion — just drop us a line.'),
                     link: {
                         url: 'https://t.me/PlarkWalletSupport',
-                        text: 'drop us a line',
-                        title: 'Plark email',
+                        text: i18n.gettext('drop us a line'),
+                        title: i18n.gettext('Plark email'),
                         rel: 'nofollow',
                     },
                     image: {
                         url: '/img/ps/05',
-                        alt: 'plark cryptocurrency wallet',
-                        title: 'Plark cryptocurrency wallet',
+                        alt: i18n.gettext('plark cryptocurrency wallet'),
+                        title: i18n.gettext('Plark cryptocurrency wallet'),
                     },
                 }]}
             />
 
             <BigPhotoSection
                 src="/img/team/image_3.png"
-                alt="Plark team"
-                title="Plark team"
+                alt={i18n.gettext('Plark team')}
+                title={i18n.gettext('Plark team')}
                 caption={i18n.gettext('Working routine at Plark be like… laughing at the $2K drop in bitcoin price.')}
                 captionDescription={i18n.gettext('and then crying in the corner')}
             />
 
             <CitationSection
-                title={`“It’s even better than a piece \nof infinite bubble wrap”`}
-                author="— words, we would like to hear from you."
+                title={i18n.gettext(`“It’s even better than a piece \nof infinite bubble wrap”`)}
+                author={i18n.gettext('— words, we would like to hear from you.')}
                 lowercase
             />
 
-            <FeedbackSection id="testimonials" />
-            <CommunitySection id="community" />
-            <SubscribeSection id="contacts" />
+            <FeedbackSection id="testimonials"/>
+            <CommunitySection id="community"/>
+            <SubscribeSection id="contacts"/>
 
-            <DarkFooter />
+            <DarkFooter/>
         </>
     );
 }

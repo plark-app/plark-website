@@ -1,5 +1,6 @@
 import React from 'react';
 import cn from 'classnames';
+import { useI18n } from 'slim-i18n';
 import { Col } from 'reactstrap';
 import { Section, TextBlock } from 'common/components';
 import style from './section-bg-title.scss';
@@ -18,6 +19,7 @@ type BgTitleProps = CommonSection & {
 
 export const BgTitleSection = React.memo(function BgTitleSection(props: BgTitleProps): JSX.Element {
     const { wiki } = props;
+    const i18n = useI18n();
 
     return (
         <Section
@@ -29,7 +31,7 @@ export const BgTitleSection = React.memo(function BgTitleSection(props: BgTitleP
             {props.withMobile && (
                 <div className={style.sectionWithMobile}>
                     <img src="/img/main-screen.png"
-                         alt="Main Screen"
+                         alt={i18n.gettext('Main Screen')}
                          className={style.sectionWithMobileImage}
                     />
                 </div>

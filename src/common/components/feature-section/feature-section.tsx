@@ -1,5 +1,6 @@
 import React from 'react';
 import cn from 'classnames';
+import { useI18n } from 'slim-i18n';
 import { Section, JoinLink } from 'common/components';
 import { Col } from 'reactstrap';
 import styles from './feature-section.scss';
@@ -24,10 +25,12 @@ export type FeatureSectionProps = {
 };
 
 export const FeatureSection = React.memo(function FeatureSection(props: FeatureSectionProps): JSX.Element {
+    const i18n = useI18n();
+
     const {
         text,
         withoutLink = false,
-        linkText = 'Get Plark app',
+        linkText = i18n.gettext('Get Plark app'),
         linkUrl = 'https://dl.plark.io/app/website-appstore',
         textTag = 'p',
         titleText,

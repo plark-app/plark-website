@@ -45,8 +45,8 @@
             }
         ],
         "no-angle-bracket-type-assertion": true,
-        "no-any": true,
-        "no-arg": true,
+        "no-any": false,
+        "no-arg": false,
         "no-conditional-assignment": true,
         "no-construct": true,
         "no-debugger": true,

@@ -1,8 +1,9 @@
 import React from 'react';
 import cn from 'classnames';
 import Slider, { Settings } from 'react-slick';
-import { Section, StarRate, TwoIPhones } from 'common/components';
 import { Col } from 'reactstrap';
+import { useI18n } from 'slim-i18n';
+import { Section, StarRate, TwoIPhones } from 'common/components';
 import userFeedbacks, { UserFeedback } from './feedbacks';
 import ArrowRightSvg from 'resources/svgs/full-arrow-right.component.svg';
 import styles from './feedback-section.scss';
@@ -13,6 +14,7 @@ export const FeedbackSection = React.memo(function FeedbackSection(props: Feedba
     const { id } = props;
 
     const sliderRef = React.useRef<Slider>();
+    const i18n = useI18n();
 
     const settings: Settings = {
         className: styles.sliderBox,
@@ -72,10 +74,10 @@ export const FeedbackSection = React.memo(function FeedbackSection(props: Feedba
                 >
                     <img src="/img/AppStore_Icon.svg"
                          className={styles.appstoreLinkImage}
-                         alt="Plark at AppStore"
-                         title="View all AppStore reviews"
+                         alt={i18n.gettext('Plark at AppStore')}
+                         title={i18n.gettext('View all AppStore reviews')}
                     />
-                    <span className={styles.appstoreLinkTitle}>view all appstore reviews</span>
+                    <span className={styles.appstoreLinkTitle}>{i18n.gettext('view all appstore reviews')}</span>
                 </a>
 
                 <div className={styles.sliderNav}>

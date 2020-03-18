@@ -14,22 +14,22 @@ export function Socials(props: ISocialsProps): JSX.Element {
 
     return (
         <div className={cn(styles.social, titleMode && styles.isTitleMode, props.className)}>
-            <a target={'_blank'} href="https://github.com/plark-app"
+            <a target="_blank" href="https://github.com/plark-app"
                className={cn(styles.socialItem, linkClassName)}>
                 {titleMode ? 'Github' : <Icons.Github />}
             </a>
 
-            <a target={'_blank'} href="https://t.me/PlarkWallet"
+            <a target="_blank" href="https://t.me/PlarkWallet"
                className={cn(styles.socialItem, linkClassName)}>
                 {titleMode ? 'Telegram' : <Icons.Telegram />}
             </a>
 
-            <a target={'_blank'} href="https://twitter.com/PlarkWallet"
+            <a target="_blank" href="https://twitter.com/PlarkWallet"
                className={cn(styles.socialItem, linkClassName)}>
-                {titleMode ? 'twitter' : <Icons.Twitter />}
+                {titleMode ? 'Twitter' : <Icons.Twitter />}
             </a>
 
-            <a target={'_blank'} href="https://www.facebook.com/plark.io/"
+            <a target="_blank" href="https://www.facebook.com/plark.io/"
                className={cn(styles.socialItem, linkClassName)}>
                 {titleMode ? 'Facebook' : <Icons.Facebook />}
             </a>

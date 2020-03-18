@@ -10,7 +10,7 @@ const PlarkFAQ = require('./plark-faq');
 
 const config = dotenv.config();
 
-const locoReadKey = _.get(config, 'parsed.LOCO_READ_KEY', 'fufbK3fOmiyqE26b6TfQuv9YcU3k4fpc');
+const locoReadKey = _.get(config, 'parsed.LOCO_READ_KEY', 'S8z2_p1YMlMWX9owwJUGCCGF-fhjF1fF');
 const locoWriteKey = _.get(config, 'parsed.LOCO_WRITE_KEY');
 const locales = require('./config/locales.json');
 
@@ -60,7 +60,7 @@ gulp.task('locales:import', async () => {
 
 gulp.task('locales:export', async () => {
     if (!locoWriteKey) {
-        console.log('You have to set Locolise KEY for https://localise.biz/');
+        console.log('You have to set Localise KEY for https://localise.biz/');
         return;
     }
 
@@ -81,14 +81,12 @@ gulp.task('locales:export', async () => {
         },
     };
 
-    axios
-        .post('https://localise.biz/api/import/pot?async=1', requestBody, requestParams)
-        .then((resp) => {
-            console.log('Upload done: ', resp.status);
-        })
-        .catch((err) => {
-            console.log(err);
-        });
+    try {
+        const resp = await axios.post('https://localise.biz/api/import/pot?async=1', requestBody, requestParams);
+        console.log('Upload done: ', resp.status);
+    } catch (error) {
+        console.log(error.message);
+    }
 });
 
 function copyTask(opts) {

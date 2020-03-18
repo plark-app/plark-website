@@ -4,10 +4,10 @@ const { GettextExtractor, JsExtractors, HtmlExtractors } = require('gettext-extr
 
 let extractor = new GettextExtractor();
 
-function extract() {
+async function extract() {
     extractor
         .createJsParser([
-            JsExtractors.callExpression(['props.i18n.gettext', '[this].i18n.gettext', '__'], {
+            JsExtractors.callExpression(['props.i18n.gettext', '[this].i18n.gettext', 'i18n.gettext', '__'], {
                 arguments: {
                     text: 0,
                     context: 1,

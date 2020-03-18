@@ -3,5 +3,15 @@
         "name": "English",
         "code": "en-us",
         "shortCode": "en"
+    },
+    "uk-ua": {
+        "name": "Українська",
+        "code": "uk-ua",
+        "shortCode": "ua"
+    },
+    "ru-ru": {
+        "name": "Русский",
+        "code": "ru-ru",
+        "shortCode": "ru"
     }
 }

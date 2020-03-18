@@ -53,8 +53,8 @@ export default function Footer(): JSX.Element {
                             className={styles.footerBadge}
                             platform={PlatformList.apple}
                             height={40}
-                            alt="Install cryptocurrency wallet from App Store"
-                            title="Plark cryptocurrency wallet in App Store"
+                            alt={i18n.gettext('Install cryptocurrency wallet from App Store')}
+                            title={i18n.gettext('Plark cryptocurrency wallet in App Store')}
                         />
                     </div>
                 </div>
@@ -79,6 +79,12 @@ export default function Footer(): JSX.Element {
                 <nav className={styles.bottomBarNav}>
                     <NavLink to="/" className={styles.navLink}>
                         English (United States)
+                    </NavLink>
+                    <NavLink to="/uk-ua" className={styles.navLink}>
+                        Українська
+                    </NavLink>
+                    <NavLink to="/ru-ru" className={styles.navLink}>
+                        Русский
                     </NavLink>
                 </nav>
             </Section>

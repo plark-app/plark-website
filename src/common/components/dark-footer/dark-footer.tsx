@@ -1,4 +1,5 @@
 import React from 'react';
+import { useI18n } from 'slim-i18n';
 import scrollTo from 'animated-scroll-to';
 import ArrowRightSvg from 'resources/svgs/full-arrow-right.component.svg';
 import { Section } from 'common/components';
@@ -25,6 +26,8 @@ export function DarkFooter(): JSX.Element {
 
 
 function FooterBackground() {
+    const i18n = useI18n();
+
     const onPressToTop = React.useCallback(() => {
         scrollTo(0, {
             maxDuration: 700
@@ -35,8 +38,8 @@ function FooterBackground() {
         <div className={styles.background}>
             <img className={styles.backgroundImage}
                  src="/img/FooterDecoration.png"
-                 alt="Plark non custodial wallet"
-                 title="plark cryptocurrency wallet"
+                 alt={i18n.gettext('Plark non custodial wallet')}
+                 title={i18n.gettext('plark cryptocurrency wallet')}
             />
 
             <div className={styles.backgroundCover} />

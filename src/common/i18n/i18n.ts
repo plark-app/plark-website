@@ -12,6 +12,12 @@ i18next.init({
         'en-us': {
             translation: require(`resources/locales/en-us.json`),
         },
+        'uk-ua': {
+            translation: require(`resources/locales/uk-ua.json`),
+        },
+        'ru-ru': {
+            translation: require(`resources/locales/ru-ru.json`),
+        },
     },
 });
 
@@ -32,11 +38,18 @@ export default class I18N {
         return {
             language: this.currentLanguage,
             languageCode: this.currentLanguageCode,
-            gettext: (key: string) => i18next.t(key),
-            ngettext: (singularKey: string, _pluralKey: string, count: number) => i18next.t(singularKey, { count }),
-            pgettext: (context: string, key: string) => i18next.t(key, { context }),
-            npgettext: (context: string, key: string, _pluralKey: string, count: number) =>
-                i18next.t(key, { context, count }),
+            gettext: (key: string, props?: Record<string, any>, context?: string) => {
+                return i18next.t(key, { context: context, ...(props ? props : {}) });
+            },
+            ngettext: (singularKey: string, _pluralKey: string, count: number) => {
+                return i18next.t(singularKey, { count });
+            },
+            pgettext: (context: string, key: string) => {
+                return i18next.t(key, { context });
+            },
+            npgettext: (context: string, key: string, _pluralKey: string, count: number) => {
+                return i18next.t(key, { context, count });
+            },
         };
     };
 
@@ -50,9 +63,9 @@ export default class I18N {
         }
 
         // Load resource
-        const {
-            default: resource,
-        } = await import(/* webpackChunkName: '[request]' */ `resources/locales/${language}.json`);
+        const { default: resource } = await import(
+            /* webpackChunkName: '[request]' */ `resources/locales/${language}.json`
+        );
 
         // Workaround for localise.biz exported json
         if ('' in resource) {
