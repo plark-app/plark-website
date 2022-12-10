@@ -38,7 +38,7 @@
         "cssnano": "4.1.10",
         "deep-assign": "2.0.0",
         "dotenv": "8.2.0",
-        "express": "4.17.1",
+        "express": "4.17.3",
         "express-static-gzip": "2.0.6",
         "formik": "1.0.3",
         "geoip-lite": "1.4.0",
